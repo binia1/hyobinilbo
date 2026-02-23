@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈일보 - 진실을 향한 정직한 눈</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- 최상단 바 -->
+    <div class="top-bar">
+        <div class="max-w-[1100px] mx-auto flex justify-between px-2">
+            <div>효빈시의 아침을 여는 신문</div>
+            <div>
+                <a href="index.html" class="hover:underline">효빈위키 홈</a> | 
+                <span class="cursor-pointer hover:underline">로그인</span> | 
+                <span class="cursor-pointer hover:underline">구독신청</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.reload()">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="#" class="active">홈</a>
+                <a href="#">정치</a>
+                <a href="#">경제</a>
+                <a href="#">사회</a>
+                <a href="#">국제</a>
+                <a href="#">문화</a>
+                <a href="#">IT/과학</a>
+                <a href="#">오피니언</a>
+                <a href="#">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 메인 컬럼 -->
+        <div class="main-column">
+            
+            <!-- 헤드라인 뉴스 (메인 기사) -->
+            <div class="headline-card" onclick="location.href='news_article.html'">
+                <img src="https://via.placeholder.com/800x400/333333/FFFFFF?text=Major+Breaking+News" alt="헤드라인" class="headline-img">
+                <div class="headline-content">
+                    <div class="text-[#0055aa] font-bold text-sm mb-2">사회 > 사건사고</div>
+                    <h2 class="headline-title">[단독] 윤대환·윤재훈 부자, 위키 여론 조작 '덜미'... "IP 추적 결과 충격"</h2>
+                    <p class="headline-desc">
+                        전임 시장 부자가 다수의 차명 계정을 동원해 범죄 사실을 삭제하고 여론을 조작하려다 덜미가 잡혔다. 이들은 엉성한 IP 관리로 인해 자택과 두청운수 본사에서 접속한 사실이 들통났으며...
+                    </p>
+                </div>
+            </div>
+
+            <!-- 주요 뉴스 그리드 -->
+            <div class="sub-grid">
+                <!-- 국제 기사 -->
+                <div class="news-card" onclick="location.href='news_philippines.html'">
+                    <img src="https://via.placeholder.com/400x200/003366/FFFFFF?text=International+News" alt="필리핀">
+                    <div class="news-card-content">
+                        <div class="news-card-title">"Don't touch our blood"... 필리핀 '피노이 프라이드', 윤재훈 심판</div>
+                        <div class="news-card-meta">국제 | 이국제 특파원</div>
+                    </div>
+                </div>
+
+                <!-- 기획 기사 -->
+                <div class="news-card" onclick="location.href='news_park_past.html'">
+                    <img src="https://via.placeholder.com/400x200/5577AA/FFFFFF?text=Mayor+Park+Feature" alt="박효빈">
+                    <div class="news-card-content">
+                        <div class="news-card-title">[기획] "비 새는 단칸방 오타쿠"... 박효빈 시장의 '눈물 젖은 빵'</div>
+                        <div class="news-card-meta">정치 | 이사람 기자</div>
+                    </div>
+                </div>
+
+                <!-- 일반 기사 1 -->
+                <div class="news-card" onclick="location.href='news_article.html'">
+                    <img src="https://via.placeholder.com/400x200/228822/FFFFFF?text=Subway+Line+8" alt="8호선">
+                    <div class="news-card-content">
+                        <div class="news-card-title">박효빈 시장, '8호선 정상화 1주년' 현장 점검... "시민의 승리"</div>
+                        <div class="news-card-meta">행정 | 정시청 기자</div>
+                    </div>
+                </div>
+
+                <!-- 일반 기사 2 -->
+                <div class="news-card" onclick="location.href='news_article.html'">
+                    <img src="https://via.placeholder.com/400x200/DD8800/FFFFFF?text=Goods+Shop" alt="굿즈샵">
+                    <div class="news-card-content">
+                        <div class="news-card-title">효빈교통공사 굿즈샵 '과진점' 오픈... 옛 두청힐스 부지의 변신</div>
+                        <div class="news-card-meta">문화 | 문덕후 기자</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 분야별 속보 -->
+            <div class="news-list-box">
+                <div class="section-title">
+                    <span>분야별 주요 뉴스</span>
+                    <span class="text-xs text-gray-500 cursor-pointer">더보기 +</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_article.html'">
+                    <span class="list-title">[사회] 두청운수 불법 차고지, 시청 '원상복구 명령' 및 구상권 청구</span>
+                    <span class="list-time">1시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_article.html'">
+                    <span class="list-title">[법원] 윤대환 일가 '루트 M' 소송 패소 확정... 13억 빚더미 앉아</span>
+                    <span class="list-time">2시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_article.html'">
+                    <span class="list-title">[생활] 효빈대 학식 '누마즈 귤 샐러드' 연일 매진... "괴식인가 별미인가"</span>
+                    <span class="list-time">3시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_article.html'">
+                    <span class="list-title">[문화] 1호선 캐릭터 '고나미', 효빈시 공식 홍보대사 위촉</span>
+                    <span class="list-time">3시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_article.html'">
+                    <span class="list-title">[정치] 효빈 시민 85%, "현 시정에 만족한다" 역대 최고치 기록</span>
+                    <span class="list-time">4시간 전</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 사이드바 컬럼 -->
+        <div class="side-column">
+            <!-- 실시간 랭킹 -->
+            <div class="ranking-box">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <span class="text-xs text-gray-500">14:00 기준</span>
+                </div>
+                <ul class="ranking-list">
+                    <li onclick="location.href='news_philippines.html'">
+                        <span class="rank-num">1</span>
+                        <span class="rank-title">윤재훈 필리핀 입국 금지, 갱단 연루설 '사실로 확인'</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">2</span>
+                        <span class="rank-title">[단독] 윤대환·윤재훈 위키 조작 덜미</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">3</span>
+                        <span class="rank-title">두청운수 불법 차고지 강제 철거 시작</span>
+                    </li>
+                    <li onclick="location.href='news_park_past.html'">
+                        <span class="rank-num">4</span>
+                        <span class="rank-title">[기획] "비 새는 단칸방"... 박효빈의 눈물</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">5</span>
+                        <span class="rank-title">효빈대 '귤 샐러드' 먹으러 일본인 관광객 줄 서</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">6</span>
+                        <span class="rank-title">고나미 굿즈 '과진점' 오픈 첫날 매출 1억</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">7</span>
+                        <span class="rank-title">윤대환 남구 저택 경매... 3차 유찰 굴욕</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">8</span>
+                        <span class="rank-title">8호선 개통 1주년, 시민 만족도 98%</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">9</span>
+                        <span class="rank-title">효빈공항 2활주로 착공, 소음 피해 보상안 확정</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">10</span>
+                        <span class="rank-title">안다야 여사, '자랑스러운 시민상' 수상</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈교통공사</div>
+                    <div class="text-xs">더 빠르고 안전하게<br>시민의 발이 되겠습니다</div>
+                </div>
+            </div>
+            <div class="ad-banner" style="background: #fff8e1; border-color: #ffe082;">
+                <div class="text-center">
+                    <div class="font-bold text-orange-600 mb-1">성심당 효빈점</div>
+                    <div class="text-xs text-orange-400">튀김소보로의 전설<br>이제 효빈에서 만나요</div>
+                </div>
+            </div>
+            <div class="ad-banner" style="background: #e3f2fd; border-color: #90caf9;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈대학교</div>
+                    <div class="text-xs text-blue-400">꿈을 현실로<br>2026 신입생 모집</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">회사소개</a>
+                <a href="#">구독신청</a>
+                <a href="#">고충처리</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+            <div>
+                <p class="mb-1">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+                <p class="mb-1">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+                <p>전화: 079-212-2123 | 팩스: 079-212-2124</p>
+                <p class="mt-2 text-gray-500">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+<script>
+(function(){
+  // ===== Hyobin News Search Enhancer (news_list) =====
+  const MAX_RECENT = 8;
+  const RECENT_KEY = "hb_news_recent";
+
+  function norm(s){ return (s||"").toString().trim(); }
+  function normKey(s){ return norm(s).toLowerCase(); }
+
+  function loadRecent(){
+    try{ return JSON.parse(localStorage.getItem(RECENT_KEY)||"[]") || []; }catch(e){ return []; }
+  }
+  function saveRecent(list){
+    try{ localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0,MAX_RECENT))); }catch(e){}
+  }
+  function pushRecent(q){
+    q = norm(q);
+    if(!q) return;
+    const list = loadRecent().filter(x=>normKey(x)!==normKey(q));
+    list.unshift(q);
+    saveRecent(list);
+  }
+
+  function collectNews(){
+    // 1) cards with onclick="location.href='...'"
+    const items = [];
+    const cardNodes = Array.from(document.querySelectorAll("[onclick*=\"location.href\"], a[href]"));
+    cardNodes.forEach(node=>{
+      let href = "";
+      if(node.getAttribute){
+        const oc = node.getAttribute("onclick") || "";
+        const m = oc.match(/location\.href\s*=\s*'([^']+)'/);
+        if(m) href = m[1];
+      }
+      if(!href && node.tagName === "A") href = node.getAttribute("href") || "";
+      if(!href) return;
+
+      // get title text: try known classes first
+      let title = "";
+      const t1 = node.querySelector?.(".news-card-title, .headline-title, .list-title, .rank-title");
+      if(t1) title = norm(t1.textContent);
+      if(!title) title = norm(node.textContent);
+      if(!title) return;
+
+      // category/meta
+      const meta = node.querySelector?.(".news-card-meta, .headline-meta, .list-time, .rank-meta");
+      const category = meta ? norm(meta.textContent) : "";
+
+      // dedupe
+      const key = normKey(title)+"|"+href;
+      if(items.some(x=>x.key===key)) return;
+      items.push({key, title, href, category});
+    });
+    // Prefer shorter unique list
+    return items.map(({key, ...rest})=>rest);
+  }
+
+  const NEWS = collectNews();
+
+  function score(item, q){
+    const t = normKey(item.title);
+    const k = normKey(q);
+    if(!k) return 0;
+    if(t === k) return 100;
+    if(t.startsWith(k)) return 60;
+    if(t.includes(k)) return 30;
+    if(item.category && normKey(item.category).includes(k)) return 15;
+    return 0;
+  }
+
+  function ensureDropdown(input){
+    const wrap = input.parentElement;
+    if(wrap && getComputedStyle(wrap).position === "static") wrap.style.position = "relative";
+
+    let dd = wrap.querySelector(".hn-autocomplete");
+    if(!dd){
+      dd = document.createElement("div");
+      dd.className = "hn-autocomplete";
+      dd.style.position = "absolute";
+      dd.style.left = "0";
+      dd.style.right = "0";
+      dd.style.top = "100%";
+      dd.style.marginTop = "8px";
+      dd.style.background = "white";
+      dd.style.border = "1px solid rgba(0,0,0,0.12)";
+      dd.style.borderRadius = "12px";
+      dd.style.boxShadow = "0 10px 25px rgba(0,0,0,0.15)";
+      dd.style.overflow = "hidden";
+      dd.style.zIndex = "9999";
+      dd.style.maxHeight = "280px";
+      dd.style.overflowY = "auto";
+      dd.style.display = "none";
+      wrap.appendChild(dd);
+    }
+    return dd;
+  }
+
+  function hide(dd){ if(dd) dd.style.display="none"; }
+  function show(dd){ if(dd) dd.style.display="block"; }
+
+  function row(dd, label, cb, muted=false){
+    const r = document.createElement("button");
+    r.type="button";
+    r.style.display="flex";
+    r.style.width="100%";
+    r.style.alignItems="center";
+    r.style.justifyContent="space-between";
+    r.style.gap="12px";
+    r.style.padding="10px 12px";
+    r.style.fontSize="13px";
+    r.style.background="white";
+    r.style.border="0";
+    r.style.textAlign="left";
+    r.style.cursor= muted ? "default" : "pointer";
+    r.onmouseenter=()=>{ if(!muted) r.style.background="rgba(0,0,0,0.04)"; };
+    r.onmouseleave=()=>{ r.style.background="white"; };
+    r.innerHTML = `<span style="color:${muted?'#888':'#111'}">${label}</span>`;
+    if(!muted) r.addEventListener("click", cb);
+    dd.appendChild(r);
+  }
+
+  function renderDropdown(dd, input, q){
+    dd.innerHTML="";
+    const query = norm(q);
+    const recent = loadRecent();
+
+    if(!query){
+      row(dd, "최근 검색어", ()=>{}, true);
+      if(recent.length===0) row(dd, "검색어를 입력하세요", ()=>{}, true);
+      else{
+        recent.forEach(r=>{
+          row(dd, r, ()=>{ input.value=r; doSearch(r); });
+        });
+        const clear = document.createElement("button");
+        clear.type="button";
+        clear.style.width="100%";
+        clear.style.padding="10px 12px";
+        clear.style.fontSize="13px";
+        clear.style.background="white";
+        clear.style.border="0";
+        clear.style.textAlign="left";
+        clear.style.cursor="pointer";
+        clear.style.color="#b91c1c";
+        clear.textContent="최근 검색어 지우기";
+        clear.onmouseenter=()=>{ clear.style.background="rgba(0,0,0,0.04)"; };
+        clear.onmouseleave=()=>{ clear.style.background="white"; };
+        clear.addEventListener("click", ()=>{ saveRecent([]); renderDropdown(dd,input,""); });
+        dd.appendChild(clear);
+      }
+      show(dd);
+      return;
+    }
+
+    const matches = NEWS
+      .map(it=>({it, s: score(it, query)}))
+      .filter(x=>x.s>0)
+      .sort((a,b)=>b.s-a.s || a.it.title.localeCompare(b.it.title))
+      .slice(0,8)
+      .map(x=>x.it);
+
+    if(matches.length===0) row(dd,"일치하는 뉴스가 없습니다", ()=>{}, true);
+    else{
+      matches.forEach(it=>{
+        row(dd, it.title, ()=>{ pushRecent(query); location.href = it.href; });
+      });
+    }
+    show(dd);
+  }
+
+  function showModal(query, items){
+    let modal = document.getElementById("hn-search-modal");
+    if(!modal){
+      modal = document.createElement("div");
+      modal.id = "hn-search-modal";
+      modal.style.position="fixed";
+      modal.style.inset="0";
+      modal.style.background="rgba(0,0,0,0.4)";
+      modal.style.zIndex="10000";
+      modal.style.display="none";
+      modal.innerHTML = `
+        <div data-close="1" style="position:absolute; inset:0;"></div>
+        <div style="position:relative; margin:80px auto 0; width:min(820px,94vw); background:white; border-radius:18px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.35);">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid rgba(0,0,0,0.08);">
+            <div style="font-weight:900; font-size:14px;">뉴스 검색 결과</div>
+            <button type="button" data-close="1" style="padding:6px 10px; border-radius:10px; border:0; background:rgba(0,0,0,0.04); cursor:pointer;">닫기</button>
+          </div>
+          <div style="padding:12px 14px;">
+            <div id="hn-search-meta" style="font-size:12px; color:#666; margin-bottom:10px;"></div>
+            <div id="hn-search-list" style="border-top:1px solid rgba(0,0,0,0.06);"></div>
+          </div>
+        </div>
+      `;
+      modal.addEventListener("click", (e)=>{
+        const t = e.target;
+        if(t && t.getAttribute && t.getAttribute("data-close")==="1") close();
+      });
+      document.body.appendChild(modal);
+    }
+    const meta = modal.querySelector("#hn-search-meta");
+    const list = modal.querySelector("#hn-search-list");
+    meta.textContent = `“${query}” 결과 ${items.length}건`;
+    list.innerHTML = "";
+
+    if(items.length===0){
+      const empty = document.createElement("div");
+      empty.style.padding="12px 0";
+      empty.style.color="#666";
+      empty.style.fontSize="13px";
+      empty.textContent = "일치하는 뉴스가 없습니다.";
+      list.appendChild(empty);
+    } else {
+      items.slice(0,30).forEach(it=>{
+        const row = document.createElement("a");
+        row.href = it.href;
+        row.style.display="block";
+        row.style.padding="12px 6px";
+        row.style.textDecoration="none";
+        row.style.color="#111";
+        row.style.borderBottom="1px solid rgba(0,0,0,0.06)";
+        row.innerHTML = `<div style="font-weight:800; margin-bottom:3px;">${it.title}</div>
+                         <div style="font-size:12px; color:#666;">${it.category||it.href}</div>`;
+        list.appendChild(row);
+      });
+    }
+
+    function open(){ modal.style.display="block"; document.body.style.overflow="hidden"; }
+    function close(){ modal.style.display="none"; document.body.style.overflow=""; }
+    modal._hnClose = close;
+    open();
+  }
+
+  function doSearch(q){
+    q = norm(q);
+    if(!q) return;
+    const k = normKey(q);
+    const exact = NEWS.find(it=>normKey(it.title)===k);
+    if(exact){ pushRecent(q); location.href = exact.href; return; }
+
+    const matches = NEWS
+      .map(it=>({it, s: score(it, q)}))
+      .filter(x=>x.s>0)
+      .sort((a,b)=>b.s-a.s || a.it.title.localeCompare(b.it.title))
+      .map(x=>x.it);
+
+    pushRecent(q);
+    if(matches.length===0){
+      // fallback: keep user on page but show empty modal
+      showModal(q, []);
+      return;
+    }
+    showModal(q, matches);
+  }
+
+  const input = document.getElementById("hnNewsSearchInput");
+  if(!input) return;
+  const dd = ensureDropdown(input);
+
+  input.addEventListener("keydown", (e)=>{
+    if(e.key==="Enter"){
+      e.preventDefault();
+      hide(dd);
+      doSearch(input.value);
+    } else if(e.key==="Escape"){
+      hide(dd);
+      input.blur();
+    }
+  });
+
+  input.addEventListener("input", ()=>renderDropdown(dd,input,input.value));
+  input.addEventListener("focus", ()=>renderDropdown(dd,input,input.value));
+
+  document.addEventListener("click", (e)=>{
+    const wrap = input.parentElement;
+    if(wrap && wrap.contains(e.target)) return;
+    hide(dd);
+  });
+
+  // if there is a search button next to it, bind by heuristic
+  const btn = input.parentElement.querySelector("button");
+  if(btn) btn.addEventListener("click", ()=>doSearch(input.value));
+})();
+</script>
+
+
+    <script src="assets/wiki_index.js"></script>
+    <script src="assets/hb_wiki_core.js"></script>
+</body>
+</html>
