@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈부동산원 - 투명하고 정확한 효빈시 부동산의 기준</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; color: #1e293b; }
+
+        /* 헤더 */
+        .header { background-color: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; }
+        .nav-link { color: #475569; font-weight: 500; transition: color 0.2s; font-size: 15px; cursor: pointer; }
+        .nav-link:hover { color: #2563eb; }
+        .nav-link.active { color: #2563eb; font-weight: 700; }
+
+        /* 히어로 섹션 */
+        .hero { 
+            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.6)), url('https://via.placeholder.com/1920x600/2563eb/FFFFFF?text=Hyobin+City+Skyline'); 
+            background-size: cover; background-position: center; 
+            padding: 80px 0; text-align: center; color: white; 
+        }
+        .hero h1 { font-size: 42px; font-weight: 900; margin-bottom: 15px; letter-spacing: -1px; }
+        .hero p { font-size: 18px; font-weight: 300; margin-bottom: 40px; opacity: 0.9; }
+
+        /* 검색창 */
+        .search-bar { max-width: 700px; margin: 0 auto; background: white; border-radius: 50px; padding: 8px; display: flex; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .search-input { flex: 1; border: none; padding: 12px 20px; font-size: 16px; outline: none; border-radius: 50px; }
+        .search-btn { background: #2563eb; color: white; px-8; py-3; border-radius: 40px; font-weight: bold; transition: background 0.2s; padding: 0 30px; cursor: pointer; }
+        .search-btn:hover { background: #1d4ed8; }
+
+        /* 섹션 공통 */
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { font-size: 28px; font-weight: 800; margin-bottom: 30px; color: #0f172a; display: flex; align-items: center; gap: 10px; }
+        .section-title::before { content: ''; display: block; width: 6px; height: 28px; background: #2563eb; border-radius: 3px; }
+
+        /* 스쿨아이돌 힐스 특화 섹션 */
+        .brand-town-box { background: white; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .brand-header { background: linear-gradient(to right, #ec4899, #8b5cf6, #3b82f6); padding: 30px; color: white; }
+        .brand-logo { font-size: 32px; font-weight: 900; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .brand-badges { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .brand-badge { background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 5px 12px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid rgba(255,255,255,0.4); }
+
+        .complex-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #e2e8f0; }
+        @media (max-width: 768px) {
+            .complex-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .complex-item { background: white; padding: 25px; text-align: center; transition: all 0.2s; cursor: pointer; }
+        .complex-item:hover { background: #f8fafc; }
+        .complex-name { font-weight: 800; font-size: 18px; margin-bottom: 5px; }
+        .complex-desc { font-size: 13px; color: #64748b; line-height: 1.4; }
+        
+        /* 매물 카드 */
+        .apt-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+        .apt-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: #cbd5e1; }
+        .apt-img { height: 200px; background-color: #cbd5e1; position: relative; }
+        .apt-img img { width: 100%; height: 100%; object-fit: cover; }
+        .status-badge { position: absolute; top: 15px; left: 15px; background: #2563eb; color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .apt-body { padding: 20px; }
+        .apt-name { font-size: 18px; font-weight: 700; margin-bottom: 5px; color: #1e293b; }
+        .apt-loc { font-size: 13px; color: #64748b; display: flex; align-items: center; gap: 4px; margin-bottom: 12px; }
+        .apt-price { font-size: 20px; font-weight: 800; color: #2563eb; }
+        .apt-feature { margin-top: 12px; padding-top: 12px; border-top: 1px solid #f1f5f9; font-size: 13px; color: #475569; }
+
+        /* 상권 분석 테이블 */
+        .market-table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+        .market-table th { background: #f8fafc; font-weight: 600; text-align: left; padding: 15px; border-bottom: 1px solid #e2e8f0; color: #475569; }
+        .market-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; background: white; color: #334155; font-size: 14px; }
+        .market-table tr:last-child td { border-bottom: none; }
+        .trend-up { color: #dc2626; font-weight: 700; }
+        .trend-stable { color: #2563eb; font-weight: 700; }
+
+        /* 푸터 */
+        .footer { background: #0f172a; color: #94a3b8; padding: 50px 0; margin-top: 60px; font-size: 14px; }
+
+        /* 팝업 모달 스타일 (추가됨) */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6); z-index: 100;
+            display: none; justify-content: center; items-center; align-items: center;
+            opacity: 0; transition: opacity 0.3s ease;
+            backdrop-filter: blur(3px);
+        }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        .modal-content {
+            background: white; border-radius: 16px; padding: 0;
+            width: 90%; max-width: 600px; position: relative;
+            transform: translateY(20px); transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-height: 90vh; overflow-y: auto;
+        }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .close-modal {
+            position: absolute; top: 15px; right: 15px;
+            background: rgba(0,0,0,0.1); border: none; border-radius: 50%;
+            width: 32px; height: 32px; font-size: 18px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10; transition: background 0.2s;
+        }
+        .close-modal:hover { background: rgba(0,0,0,0.2); }
+        .modal-body { padding: 30px; }
+        .modal-header-img { width: 100%; height: 250px; object-fit: cover; }
+        .modal-tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="max-w-[1200px] mx-auto px-5 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <a href="#" class="text-2xl font-black text-blue-600 tracking-tighter" onclick="location.reload(); return false;">효빈부동산원</a>
+                <nav class="hidden md:flex gap-6">
+                    <div class="nav-link active" onclick="scrollToSection('apt-list')">매물정보</div>
+                    <div class="nav-link" onclick="scrollToSection('brand-town')">분양일정</div>
+                    <div class="nav-link" onclick="openTransactionModal()">실거래가</div>
+                    <div class="nav-link" onclick="scrollToSection('market-analysis')">상권분석</div>
+                    <div class="nav-link" onclick="openReportModal()">통계/리포트</div>
+                </nav>
+            </div>
+            <div class="flex gap-3">
+                <button class="px-4 py-2 text-sm font-bold text-gray-600 hover:text-blue-600 transition" onclick="openLoginModal()">로그인</button>
+                <button class="px-4 py-2 text-sm font-bold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition shadow-sm" onclick="openRegisterModal()">매물등록</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <div class="hero">
+        <div class="max-w-4xl mx-auto px-5">
+            <h1>효빈시의 가치, 정확하게 봅니다</h1>
+            <p>공신력 있는 데이터와 투명한 정보로 시민 여러분의 내 집 마련을 돕겠습니다.</p>
+            <div class="search-bar">
+                <input type="text" id="searchInput" class="search-input" placeholder="아파트, 지역, 지하철역으로 검색해보세요 (예: 스쿨아이돌 힐스, 고송 우미린)" onkeypress="if(event.key === 'Enter') performSearch()">
+                <button class="search-btn" onclick="performSearch()">검색</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="section-container">
+
+        <!-- 섹션 1: 스쿨아이돌 힐스 -->
+        <div class="mb-16" id="brand-town">
+            <h2 class="section-title text-2xl">🌟 효빈시의 새로운 랜드마크 '스쿨아이돌 힐스'</h2>
+            <p class="mb-6 text-gray-600">청엽구 효빈동2가 신도시의 중심, 문화와 주거가 결합된 프리미엄 라이프스타일</p>
+            
+            <div class="brand-town-box">
+                <div class="brand-header">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="brand-logo">SCHOOL IDOL HILLS</div>
+                            <div class="text-lg opacity-90 font-medium">효빈도시공사 X SUNRISE 공식 협업 프로젝트</div>
+                        </div>
+                        <div class="text-right hidden md:block">
+                            <div class="text-3xl font-bold">빈효선 효빈동신도시역</div>
+                            <div class="text-sm opacity-80">도보 1분 초역세권 (지하 연결)</div>
+                        </div>
+                    </div>
+                    <div class="brand-badges">
+                        <span class="brand-badge">🏆 효빈시 건축대상 수상</span>
+                        <span class="brand-badge">🚄 광역전철 직통</span>
+                        <span class="brand-badge">🎵 전 세대 방음 시공</span>
+                        <span class="brand-badge">🖼️ 빌트인 굿즈 장식장</span>
+                    </div>
+                </div>
+
+                <div class="complex-grid">
+                    <div class="complex-item hover:text-orange-600" onclick="openComplexModal('muse')">
+                        <div class="complex-name text-orange-500">1단지: 뮤즈(Muse)</div>
+                        <p class="complex-desc">전통과 역사의 클래식 디자인<br>오토노키자카 테마 정원</p>
+                    </div>
+                    <div class="complex-item hover:text-blue-600" onclick="openComplexModal('aqours')">
+                        <div class="complex-name text-blue-500">2단지: 아쿠아(Aqours)</div>
+                        <p class="complex-desc">우치우라의 바다를 품은 오션뷰<br>수변 공원 연계 설계</p>
+                    </div>
+                    <div class="complex-item hover:text-yellow-600" onclick="openComplexModal('niji')">
+                        <div class="complex-name text-yellow-500">3단지: 레인보우(Niji)</div>
+                        <p class="complex-desc">스마트 IoT & 개성 넘치는 공간<br>다양성이 공존하는 커뮤니티</p>
+                    </div>
+                    <div class="complex-item hover:text-pink-600" onclick="openComplexModal('superstar')">
+                        <div class="complex-name text-pink-500">4단지: 슈퍼스타(SuperStar)</div>
+                        <p class="complex-desc">트렌디한 감각의 영 라이프<br>유이가오카 스타일 스트리트</p>
+                    </div>
+                </div>
+                <div class="p-5 bg-gray-50 text-sm text-gray-500 border-t border-e2e8f0">
+                    ※ 본 단지는 원작사(Sunrise)와의 정식 로열티 계약을 통해 합법적으로 IP를 활용하며, 수익금의 일부는 효빈시 문화예술 발전 기금으로 조성됩니다. (저작권 분쟁 우려 없음)
+                </div>
+            </div>
+        </div>
+
+        <!-- 섹션 2: 주요 아파트 매물 -->
+        <div class="mb-16" id="apt-list">
+            <h2 class="section-title">🏠 주목할 만한 아파트</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 매물 1 -->
+                <div class="apt-card" onclick="openAptModal('woomi')">
+                    <div class="apt-img">
+                        <img src="https://via.placeholder.com/400x300/000080/FFFFFF?text=Woomi+Lynn" alt="고송 우미린">
+                        <span class="status-badge">인기 급상승</span>
+                    </div>
+                    <div class="apt-body">
+                        <div class="apt-name">고송 우미린 (Woomi Lynn)</div>
+                        <div class="apt-loc">📍 북구 고송동 | 고송교차로역 도보 5분</div>
+                        <div class="apt-price">매매 6억 2,000만 ~</div>
+                        <div class="apt-feature">
+                            <span class="font-bold text-blue-600">Tip.</span> '우미'와 '린'이라는 이름 덕분에 특정 팬덤(러브라이브)의 성지로 불리며 젊은 층 실거주 선호도 1위. 단지 내 조경 우수.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 매물 2 -->
+                <div class="apt-card" onclick="openAptModal('kasumi')">
+                    <div class="apt-img">
+                        <img src="https://via.placeholder.com/400x300/FFFF00/000000?text=Kasumi+Apartment" alt="중수 카스미">
+                        <span class="status-badge bg-orange-500">시장 거주지</span>
+                    </div>
+                    <div class="apt-body">
+                        <div class="apt-name">중수 카스미 아파트</div>
+                        <div class="apt-loc">📍 북구 중수동 | 중수역 역세권</div>
+                        <div class="apt-price">매매 4억 8,000만 ~</div>
+                        <div class="apt-feature">
+                            <span class="font-bold text-blue-600">Tip.</span> 박효빈 시장 실거주 단지로 보안 및 주변 환경 정비 상태 최상. '카스미'라는 이름의 유래에 대한 팬들의 관심도 높음.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 매물 3 -->
+                <div class="apt-card" onclick="openAptModal('thesharp')">
+                    <div class="apt-img">
+                        <img src="https://via.placeholder.com/400x300/555555/FFFFFF?text=Hyobin+The+Sharp" alt="효빈 더샵">
+                        <span class="status-badge bg-green-600">분양 중</span>
+                    </div>
+                    <div class="apt-body">
+                        <div class="apt-name">효빈 더샵 (The Sharp)</div>
+                        <div class="apt-loc">📍 청엽구 효빈동2가 | 신도시 중심상권</div>
+                        <div class="apt-price">분양가 5억 5,000만 ~</div>
+                        <div class="apt-feature">
+                            <span class="font-bold text-blue-600">Tip.</span> 브랜드 네임(샾)과 아이돌마스터 283 프로덕션의 연관성 밈 확산 중. 2030 세대 청약 경쟁률 치열.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 매물 4 -->
+                <div class="apt-card" onclick="openAptModal('dongri')">
+                    <div class="apt-img">
+                        <img src="https://via.placeholder.com/400x300/333333/FFFFFF?text=Dongri+Muse" alt="동리 뮤즈">
+                        <span class="status-badge bg-gray-600">재건축 호재</span>
+                    </div>
+                    <div class="apt-body">
+                        <div class="apt-name">동리 뮤즈 & 아쿠아</div>
+                        <div class="apt-loc">📍 청엽구 동리동 | 조용한 학군지</div>
+                        <div class="apt-price">매매 3억 후반 ~</div>
+                        <div class="apt-feature">
+                            <span class="font-bold text-blue-600">Tip.</span> 효빈시 초기에 지어진 구축이나, '오석 아쿠아' 재건축 확정으로 투자 가치 상승 중.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 매물 5 -->
+                <div class="apt-card" onclick="openAptModal('oseok')">
+                    <div class="apt-img">
+                        <img src="https://via.placeholder.com/400x300/990099/FFFFFF?text=Oseok+New" alt="오석 아쿠아">
+                        <span class="status-badge bg-purple-600">건설 중</span>
+                    </div>
+                    <div class="apt-body">
+                        <div class="apt-name">오석 아쿠아 아파트 (신축)</div>
+                        <div class="apt-loc">📍 청엽구 오석동 | 6호선 인접</div>
+                        <div class="apt-price">전세 2억 5,000만 ~</div>
+                        <div class="apt-feature">
+                            <span class="font-bold text-blue-600">Tip.</span> 물의 도시 효빈의 이미지를 살린 친환경 단지. 신혼부부 추천.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 섹션 3: 상권 분석 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="market-analysis">
+            <div class="lg:col-span-2">
+                <h2 class="section-title">📊 주요 역세권 상권 분석</h2>
+                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <table class="market-table">
+                        <thead>
+                            <tr>
+                                <th class="w-1/4">지역 (역세권)</th>
+                                <th class="w-1/4">임대 시세 (평당)</th>
+                                <th class="w-1/4">주요 업종</th>
+                                <th class="w-1/4">전망</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cursor-pointer hover:bg-gray-50" onclick="alert('상세 분석 리포트는 회원 전용 서비스입니다.')">
+                                <td class="font-bold">고송교차로역</td>
+                                <td>20만 원 ▲</td>
+                                <td>카페, 굿즈샵, 공방</td>
+                                <td class="trend-up">매우 맑음</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="px-4 py-2 text-sm text-gray-500 bg-gray-50">
+                                    * 8호선 개통 및 <strong>'굿즈샵 과진점'</strong> 낙수 효과로 공실률 0% 기록. 과거 윤대환 전 시장 시절 두청운수 불법 차고지로 죽어있던 상권이 박효빈 시정 이후 부활함.
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover:bg-gray-50" onclick="alert('상세 분석 리포트는 회원 전용 서비스입니다.')">
+                                <td class="font-bold">중수역</td>
+                                <td>15만 원 ▲</td>
+                                <td>일반 음식점, 관공서 관련</td>
+                                <td class="trend-stable">맑음</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="px-4 py-2 text-sm text-gray-500 bg-gray-50">
+                                    * 시청 및 관공서 인접으로 안정적인 오피스 상권 형성. 박 시장 거주지 인근이라 치안과 환경이 쾌적해 유동인구 증가.
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover:bg-gray-50" onclick="alert('상세 분석 리포트는 회원 전용 서비스입니다.')">
+                                <td class="font-bold">중앙로역</td>
+                                <td>30만 원 -</td>
+                                <td>베이커리, 편집샵</td>
+                                <td class="trend-stable">보합</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="px-4 py-2 text-sm text-gray-500 bg-gray-50">
+                                    * 구도심의 중심. '엠마의 빵' 성지순례객 유입으로 F&B 매출 꾸준함. 전통과 현대가 공존하는 문화 거리로 육성 중.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-1">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 h-full">
+                    <h3 class="font-bold text-lg text-blue-900 mb-3">📢 효빈부동산원 알림</h3>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        최근 일부 인터넷 커뮤니티(파이낸스 투데이 등)에서 <strong>'두청힐스'</strong> 관련 허위 매물 정보가 유포되고 있습니다.
+                    </p>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        <span class="text-red-600 font-bold">주의:</span> '두청힐스' 예정 부지(서구 당선동)는 지반 침하 우려로 사업 승인이 취소되었으며, 현재는 <strong>'효빈교통공사 굿즈샵 과진점'</strong>이 합법적으로 운영되고 있습니다.
+                    </p>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        해당 지역에 아파트가 들어선다는 정보는 100% 거짓이오니 투자 사기에 유의하시기 바랍니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="max-w-[1200px] mx-auto px-5 flex flex-col md:flex-row justify-between items-start gap-8">
+            <div>
+                <h4 class="text-xl font-bold text-white mb-4">효빈부동산원</h4>
+                <p class="mb-1">주소: 효빈광역시 청엽구 효빈동2가 101 효빈비즈니스센터 3층</p>
+                <p class="mb-1">등록번호: 123-45-67890 | 대표: 정직한</p>
+                <p class="mb-1">전화: 079-114-1234 | 팩스: 079-114-1235</p>
+                <p class="mt-4 opacity-50">Copyright © Hyobin Real Estate Agency. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:text-white transition" onclick="alert('준비 중입니다.')">이용약관</a>
+                <a href="#" class="hover:text-white transition" onclick="alert('준비 중입니다.')">개인정보처리방침</a>
+                <a href="#" class="hover:text-white transition" onclick="alert('고객센터: 079-114-1234')">매물광고문의</a>
+                <a href="#" class="hover:text-white transition" onclick="alert('제휴 문의는 메일로 부탁드립니다.')">제휴문의</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 공통 모달 컨테이너 -->
+    <div id="commonModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">✕</button>
+            <div id="modalBody">
+                <!-- 동적 컨텐츠가 여기에 들어갑니다 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 데이터 베이스 (HTML 컨텐츠 기반)
+        const aptData = {
+            'woomi': {
+                title: "고송 우미린 (Woomi Lynn)",
+                img: "https://via.placeholder.com/600x400/000080/FFFFFF?text=Woomi+Lynn+Detail",
+                price: "매매 6억 2,000만 ~",
+                loc: "북구 고송동 | 고송교차로역 도보 5분",
+                tag: "인기 급상승",
+                tagColor: "bg-blue-600 text-white",
+                desc: `
+                    <p class="mb-4">효빈시 북구 고송동의 대장 아파트입니다. <br>'우미'와 '린'이라는 네이밍이 주는 친숙함으로 인해 젊은 층의 유입이 폭발적입니다.</p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>학군:</strong> 고송초등학교 초품아, 효빈고등학교 인접</li>
+                        <li><strong>교통:</strong> 8호선 고송교차로역 도보 5분</li>
+                        <li><strong>특이사항:</strong> 단지 내 궁도장 및 일본식 정원 조경 보유. 커뮤니티 시설 활성화 우수.</li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-gray-100 rounded text-sm text-gray-600">
+                        "매물이 나오면 바로 계약되는 인기 단지입니다. 실거주 만족도가 매우 높습니다." - 담당 중개사
+                    </div>
+                `
+            },
+            'kasumi': {
+                title: "중수 카스미 아파트",
+                img: "https://via.placeholder.com/600x400/FFFF00/000000?text=Kasumi+Apartment+Detail",
+                price: "매매 4억 8,000만 ~",
+                loc: "북구 중수동 | 중수역 역세권",
+                tag: "시장 거주지",
+                tagColor: "bg-orange-500 text-white",
+                desc: `
+                    <p class="mb-4">효빈시청과 인접한 직주근접 최상의 단지입니다. 박효빈 시장이 실제로 거주하고 있는 것으로 알려져, 치안과 주변 도로 정비 상태가 효빈시 내 최고 수준입니다.</p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>입지:</strong> 시청, 경찰서, 법원 등 관공서 밀집 지역</li>
+                        <li><strong>환경:</strong> '별의 고동' 공원 산책로와 직접 연결</li>
+                        <li><strong>특이사항:</strong> 입주민 전용 옥상 정원에서 매년 여름 '스타비트 축제' 불꽃놀이 관람 가능.</li>
+                    </ul>
+                `
+            },
+            'thesharp': {
+                title: "효빈 더샵 (The Sharp)",
+                img: "https://via.placeholder.com/600x400/555555/FFFFFF?text=Hyobin+The+Sharp+Detail",
+                price: "분양가 5억 5,000만 ~",
+                loc: "청엽구 효빈동2가 | 신도시 중심상권",
+                tag: "분양 중",
+                tagColor: "bg-green-600 text-white",
+                desc: `
+                    <p class="mb-4">청엽구 신도시의 중심 상업지구 바로 옆에 위치한 주상복합입니다. 젊고 트렌디한 감각의 설계가 돋보입니다.</p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>상권:</strong> 대형 쇼핑몰 및 영화관 입점 예정</li>
+                        <li><strong>설계:</strong> 283가지의 다양한 평면 설계로 개인의 취향 존중</li>
+                        <li><strong>커뮤니티:</strong> 단지 내 음악 연습실 및 방송 스튜디오 구비</li>
+                    </ul>
+                `
+            },
+            'dongri': {
+                title: "동리 뮤즈 & 아쿠아",
+                img: "https://via.placeholder.com/600x400/333333/FFFFFF?text=Dongri+Muse+Detail",
+                price: "매매 3억 후반 ~",
+                loc: "청엽구 동리동 | 조용한 학군지",
+                tag: "재건축 호재",
+                tagColor: "bg-gray-600 text-white",
+                desc: `
+                    <p class="mb-4">효빈시의 전통적인 주거 지역입니다. 구축 아파트이지만 튼튼한 시공과 넓은 대지지분으로 재건축 투자 가치가 매우 높습니다.</p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>투자 포인트:</strong> 인근 '오석 아쿠아' 재건축 확정으로 인한 동반 상승 효과 기대</li>
+                        <li><strong>교육:</strong> 효빈시 최고의 명문 학군지</li>
+                        <li><strong>특이사항:</strong> 오래된 나무들이 많아 조경이 훌륭함.</li>
+                    </ul>
+                `
+            },
+            'oseok': {
+                title: "오석 아쿠아 아파트 (신축)",
+                img: "https://via.placeholder.com/600x400/990099/FFFFFF?text=Oseok+New+Detail",
+                price: "전세 2억 5,000만 ~",
+                loc: "청엽구 오석동 | 6호선 인접",
+                tag: "건설 중",
+                tagColor: "bg-purple-600 text-white",
+                desc: `
+                    <p class="mb-4">효빈시를 가로지르는 하천변에 위치한 친환경 웰빙 단지입니다. 현재 골조 공사가 마무리 단계에 있습니다.</p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>특징:</strong> 전 세대 남향 위주 배치, 친환경 자재 사용</li>
+                        <li><strong>교통:</strong> 6호선 오석역 도보 10분, 순환도로 진입 용이</li>
+                        <li><strong>혜택:</strong> 신혼부부 및 청년 특별 공급 물량 다수 배정</li>
+                    </ul>
+                `
+            }
+        };
+
+        const complexData = {
+            'muse': {
+                title: "스쿨아이돌 힐스 1단지: 뮤즈(Muse)",
+                desc: "9명의 여신들이 머무는 곳이라는 컨셉으로 지어진 프리미엄 단지입니다. 클래식하고 고풍스러운 외관 디자인이 특징이며, 단지 중앙에는 오토노키자카 학원을 모티브로 한 중앙 광장이 있습니다.",
+                color: "orange"
+            },
+            'aqours': {
+                title: "스쿨아이돌 힐스 2단지: 아쿠아(Aqours)",
+                desc: "우치우라의 바다를 닮은 수경 시설이 단지 곳곳에 배치되어 있습니다. 여름에는 물놀이장으로 활용 가능한 아쿠아리움 테마 파크가 단지 내에 조성되어 있어 자녀를 둔 세대에 인기입니다.",
+                color: "blue"
+            },
+            'niji': {
+                title: "스쿨아이돌 힐스 3단지: 레인보우(Niji)",
+                desc: "개성 넘치는 색채와 모던한 디자인이 어우러진 스마트 단지입니다. 최첨단 IoT 시스템이 적용되어 있으며, 입주민들이 자유롭게 소통할 수 있는 커뮤니티 공간이 다양하게 마련되어 있습니다.",
+                color: "yellow"
+            },
+            'superstar': {
+                title: "스쿨아이돌 힐스 4단지: 슈퍼스타(SuperStar)",
+                desc: "가장 최근에 분양된 단지로, 트렌디한 스트리트 몰이 함께 조성되어 있습니다. 유이가오카 지역의 세련된 감성을 담은 인테리어와 개방감 있는 설계가 돋보입니다.",
+                color: "pink"
+            }
+        };
+
+        // 모달 열기 함수 (아파트)
+        function openAptModal(id) {
+            const data = aptData[id];
+            if (!data) return;
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <img src="${data.img}" class="modal-header-img rounded-t-lg">
+                <div class="modal-body">
+                    <span class="modal-tag ${data.tagColor}">${data.tag}</span>
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">${data.title}</h2>
+                    <p class="text-blue-600 font-bold text-xl mb-4">${data.price}</p>
+                    <p class="text-gray-500 text-sm mb-6 border-b pb-4">${data.loc}</p>
+                    <div class="text-gray-700 leading-relaxed mb-6">
+                        ${data.desc}
+                    </div>
+                    <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg" onclick="alert('담당 중개사에게 연결 요청을 보냈습니다.\\n곧 연락드리겠습니다.')">중개사에게 문의하기</button>
+                </div>
+            `;
+            document.getElementById('commonModal').classList.add('active');
+        }
+
+        // 모달 열기 함수 (단지 정보)
+        function openComplexModal(id) {
+            const data = complexData[id];
+            if (!data) return;
+
+            // Tailwind 색상 매핑
+            const colorMap = {
+                'orange': 'text-orange-600 bg-orange-50 border-orange-200',
+                'blue': 'text-blue-600 bg-blue-50 border-blue-200',
+                'yellow': 'text-yellow-600 bg-yellow-50 border-yellow-200',
+                'pink': 'text-pink-600 bg-pink-50 border-pink-200',
+            };
+            const themeClass = colorMap[data.color];
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="modal-body pt-10">
+                    <div class="border-l-4 pl-4 mb-6 ${themeClass.replace('bg-', 'border-').split(' ')[2]}">
+                        <h2 class="text-2xl font-bold text-gray-800">${data.title}</h2>
+                    </div>
+                    <div class="p-6 rounded-lg ${themeClass}">
+                        <p class="leading-relaxed font-medium">${data.desc}</p>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-700 mb-2">단지 특징</h4>
+                        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                            <div class="bg-gray-100 p-2 rounded">🏢 세대수: 500세대 이상</div>
+                            <div class="bg-gray-100 p-2 rounded">🅿️ 주차: 세대당 1.5대</div>
+                            <div class="bg-gray-100 p-2 rounded">🔥 난방: 지역난방</div>
+                            <div class="bg-gray-100 p-2 rounded">👮 보안: 24시간 경비</div>
+                        </div>
+                    </div>
+                    <button class="w-full mt-8 bg-gray-800 text-white font-bold py-3 rounded-lg hover:bg-black transition" onclick="closeModal()">닫기</button>
+                </div>
+            `;
+            document.getElementById('commonModal').classList.add('active');
+        }
+
+        // 로그인 모달
+        function openLoginModal() {
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="modal-body">
+                    <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">로그인</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">아이디</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="user@hyobin.city">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">비밀번호</label>
+                            <input type="password" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="••••••••">
+                        </div>
+                        <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition" onclick="alert('로그인 되었습니다. (데모)')">로그인</button>
+                        <div class="text-center text-sm text-gray-500 mt-4">
+                            <span class="cursor-pointer hover:underline">회원가입</span> | 
+                            <span class="cursor-pointer hover:underline">아이디/비밀번호 찾기</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('commonModal').classList.add('active');
+        }
+
+        // 실거래가 모달 (추가)
+        function openTransactionModal() {
+             const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="modal-body">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">📉 실거래가 조회</h2>
+                    <p class="text-sm text-gray-500 mb-6">국토교통부 데이터 기반 최근 1개월 효빈시 주요 거래 내역입니다.</p>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-3">단지명</th>
+                                    <th class="px-4 py-3">전용</th>
+                                    <th class="px-4 py-3">계약일</th>
+                                    <th class="px-4 py-3 text-right">거래금액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-3 font-medium text-gray-900">고송 우미린</td>
+                                    <td class="px-4 py-3">84㎡</td>
+                                    <td class="px-4 py-3">12.05</td>
+                                    <td class="px-4 py-3 text-right font-bold text-blue-600">6억 2,500만</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-3 font-medium text-gray-900">중수 카스미</td>
+                                    <td class="px-4 py-3">59㎡</td>
+                                    <td class="px-4 py-3">12.02</td>
+                                    <td class="px-4 py-3 text-right font-bold text-blue-600">4억 8,000만</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-3 font-medium text-gray-900">동리 뮤즈</td>
+                                    <td class="px-4 py-3">84㎡</td>
+                                    <td class="px-4 py-3">11.28</td>
+                                    <td class="px-4 py-3 text-right font-bold text-blue-600">3억 9,500만</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-3 font-medium text-gray-900">스쿨아이돌 힐스</td>
+                                    <td class="px-4 py-3">84㎡</td>
+                                    <td class="px-4 py-3">11.15</td>
+                                    <td class="px-4 py-3 text-right font-bold text-blue-600">7억 1,000만</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-400 text-right">
+                        * 자료 출처: 국토교통부 실거래가 공개시스템
+                    </div>
+                    <button class="w-full mt-6 bg-gray-800 text-white font-bold py-3 rounded-lg hover:bg-black transition" onclick="closeModal()">닫기</button>
+                </div>
+            `;
+            document.getElementById('commonModal').classList.add('active');
+        }
+
+        // 통계/리포트 모달 (추가)
+        function openReportModal() {
+             const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="modal-body">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">📊 월간 부동산 리포트 (12월)</h2>
+                    <p class="text-sm text-gray-500 mb-6">효빈부동산원에서 분석한 최신 시장 동향입니다.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="p-4 bg-blue-50 rounded-lg border border-blue-100">
+                            <h3 class="font-bold text-blue-800 mb-2">📈 매매가격지수 변동</h3>
+                            <div class="flex items-end gap-2">
+                                <span class="text-3xl font-black text-blue-600">102.5</span>
+                                <span class="text-sm text-red-500 font-bold mb-1">▲ 0.5% (전월 대비)</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">신도시 입주 물량 소화와 함께 북구 주요 단지를 중심으로 상승세 지속.</p>
+                        </div>
+
+                        <div class="p-4 bg-green-50 rounded-lg border border-green-100">
+                            <h3 class="font-bold text-green-800 mb-2">📉 전세가격지수 변동</h3>
+                            <div class="flex items-end gap-2">
+                                <span class="text-3xl font-black text-green-600">98.2</span>
+                                <span class="text-sm text-blue-500 font-bold mb-1">▼ 0.1% (전월 대비)</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">겨울 비수기 및 '스쿨아이돌 힐스' 대규모 입주장 영향으로 약보합세 전환.</p>
+                        </div>
+                        
+                        <div class="border-t pt-4 mt-4">
+                            <h4 class="font-bold text-gray-800 mb-2">🔥 Hot Issue</h4>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                <strong>'효빈 교통공사 굿즈샵'</strong> 주변 상권 활성화로 인해 고송동 인근 소형 아파트 및 오피스텔 임대 수익률 상승 중. 투자자 관심 요망.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full mt-6 bg-gray-800 text-white font-bold py-3 rounded-lg hover:bg-black transition" onclick="closeModal()">닫기</button>
+                </div>
+            `;
+            document.getElementById('commonModal').classList.add('active');
+        }
+
+        // 매물 등록 모달
+        function openRegisterModal() {
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="modal-body">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">매물 등록 신청</h2>
+                    <p class="text-sm text-gray-500 mb-6">효빈부동산원에 매물을 의뢰하세요. 담당자가 확인 후 연락드립니다.</p>
+                    <div class="space-y-4">
+                        <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="의뢰인 성명">
+                        <input type="tel" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="연락처">
+                        <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="아파트/건물명">
+                        <textarea class="w-full border border-gray-300 rounded-lg px-4 py-2 h-24 resize-none" placeholder="매물 특징이나 요청사항을 적어주세요."></textarea>
+                        <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition" onclick="alert('매물 등록 신청이 접수되었습니다.'); closeModal();">신청하기</button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('commonModal').classList.add('active');
+        }
+
+        // 검색 기능
+        function performSearch() {
+            const query = document.getElementById('searchInput').value;
+            if (!query.trim()) {
+                alert('검색어를 입력해주세요.');
+                return;
+            }
+            alert(`'${query}'에 대한 검색 결과가 없습니다.\n\n(Tip: '우미린', '카스미' 등으로 검색해보세요.)`);
+        }
+
+        // 모달 닫기
+        function closeModal() {
+            document.getElementById('commonModal').classList.remove('active');
+        }
+
+        // 배경 클릭 시 닫기
+        document.getElementById('commonModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // 스크롤 이동
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                const headerOffset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }
+    </script>
+
+    <script src="assets/wiki_index.js"></script>
+    <script src="assets/hb_wiki_core.js"></script>
+</body>
+</html>

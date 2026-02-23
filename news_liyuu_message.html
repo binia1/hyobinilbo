@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[토픽] "제 굿즈 때문에 다치셨다니..." 성우 Liyuu, 폭행 피해 공무원에 '눈물의 응원' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.06 (화)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html" class="active">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">세계 > 일본/문화</div>
+                <h2 class="article-title">"제 굿즈 때문에 다치셨다니..." 성우 Liyuu, 효빈시청 폭행 피해자에 '눈물의 응원'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김도쿄 특파원</span> (tokyo@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.06. 09:30 | 수정 2026.01.06. 10:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">Liyuu "폭력은 절대 용서 못 해... 이 주무관님 꼭 완쾌하시길"<br>日 성우계도 격분... "취향 존중 없는 야만의 행위"<br>피해자 이 주무관 "새 굿즈와 응원 받아... 맞길 잘했다(?)"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="리유_응원메시지.png" alt="리유_공식입장.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/FF88AA/FFFFFF?text=Liyuu+Official+Message'">
+                        <div class="img-caption">▲ 성우 Liyuu가 자신의 SNS를 통해 효빈시청 폭행 피해자인 이 주무관에게 보낸 응원 메시지. (사진=Liyuu 공식 계정 캡처)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김도쿄 특파원] 효빈시청 문화관광과에서 발생한 이른바 **'뚝배기 폭행 사건'**이 일본 성우계까지 강타했다. 피해자인 이 주무관(9급)이 성우 <a href="리유.html" class="text-blue-600 underline">Liyuu</a>의 캐릭터(탕쿠쿠) 굿즈를 소지했다는 이유만으로 상사에게 폭행당했다는 소식이 전해지자, Liyuu 본인이 직접 나서 위로의 메시지를 전했다.</p>
+
+                    <p>Liyuu는 5일 밤, 자신의 공식 SNS 계정을 통해 "효빈시 뉴스를 보고 너무나 마음이 아팠다"며 **"제 굿즈 때문에 소중한 분이 다치셨다는 사실에 눈물이 났다. 폭력은 어떤 이유로도 정당화될 수 없다"**고 밝혔다. 이어 "이 주무관님, 부디 상처가 남지 않게 완쾌하시길 기도하겠다. 당신은 진정한 '러브라이버'이자 용기 있는 분"이라고 응원했다.</p>
+
+                    <p>동료 성우들의 분노도 이어졌다. <a href="사가라_마유.html" class="text-blue-600 underline">사가라 마유</a>(나카스 카스미 역)는 "남의 소중한 보물을 찢고 때리다니, 악당이나 하는 짓! 절대 용서 못 해!"라며 격분했고, <a href="마에다_카오리.html" class="text-blue-600 underline">마에다 카오리</a>(오사카 시즈쿠 역) 역시 "취향의 차이를 폭력으로 짓밟는 건 야만인(Barbarian)의 행태"라고 강도 높게 비판했다.</p>
+
+                    <div class="my-6">
+                        <img src="탕쿠쿠_파일.png" alt="피해_물품_파일.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Damaged+Goods'">
+                        <div class="img-caption">▲ 사건 당시 가해자 김 팀장이 찢어버린 탕쿠쿠 L4 파일. 이 주무관은 이를 지키려다 변을 당했다. (사진=효빈시청 제공)</div>
+                    </div>
+
+                    <p>한편, 전치 3주의 부상을 입고 입원 중인 이 주무관은 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장으로부터 새 탕쿠쿠 굿즈 세트와 특별 포상 휴가를 약속받은 것으로 알려졌다. 이 주무관은 Liyuu의 응원 메시지를 접한 뒤 **"성덕(성공한 덕후)이 되어 영광이다. 흉터가 남아도 좋다. 맞길 잘했다(?)"**며 기쁨의 눈물을 흘렸다는 후문이다.</p>
+
+                    <p>효빈시 관계자는 "이번 사건은 단순한 사내 폭력을 넘어 인권과 문화적 취향에 대한 테러"라며 "가해자 김 전 팀장에 대한 파면 조치는 물론, 민형사상 책임을 끝까지 물을 것"이라고 재차 강조했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">124</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "HyobinGuard", time: "방금 전", like: 12500, dislike: 3, isPunished: false,
+                                content: "이 주무관님 쾌유를 빕니다! Liyuu가 직접 언급해 주다니 진짜 전화위복이네요. 김 팀장은 감방에서 콩밥 먹으면서 반성해라. 아, 반성할 지능이 없으려나?",
+                                replies: [
+                                    { nick: "Roveliver", content: "이 주무관님이야말로 진정한 기사(Knight)입니다. 존경합니다." },
+                                    { nick: "CivilServant", content: "같은 공무원으로서 부럽... 아니 자랑스럽습니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Sarang", time: "10분 전", like: 12, dislike: 8900, isPunished: true,
+                                content: "일본 광대 계집이 한국 공무원 징계에 감 놔라 배 놔라 하네? 자존심도 없냐? 김 팀장님은 애국자다! 왜색 문화 척결하려다 희생당하신 거다! 윤재훈 후보님 말이 맞았어.",
+                                replies: [
+                                    { nick: "HistoryTeacher", content: "애국? 니네 대장 윤대환은 일본산 재떨이로 비서관 머리 깼는데 그건 친일파냐?" },
+                                    { nick: "FactCheck", content: "리유는 중국인(상하이 출신)입니다. 무식하면 제발 좀 조용히 하세요." },
+                                    { nick: "NormalCitizen", content: "사람 패는 게 애국이면 조폭은 독립투사냐? 궤변 좀 작작 해라." },
+                                    { nick: "HyobinPolice", content: "허위사실 유포 및 명예훼손 채증 완료." }
+                                ]
+                            },
+                            { 
+                                nick: "K-Culture", time: "20분 전", content: "문화에는 국경이 없지만 폭력에는 감옥이 있다. 박효빈 시장님의 '무관용 원칙' 지지합니다. 혐오 세력들 싹 다 청소해 주세요.", like: 5600, dislike: 5, 
+                                replies: [
+                                    {nick:"Supporter", content:"명언이네요. 혐오에는 미래가 없습니다."}, 
+                                    {nick:"YoonJaehoon(IP)", content:"박효빈 독재야! 표현의 자유라고!"},
+                                    {nick:"Lawyer", content:"폭력은 표현의 자유가 아닙니다. 징역형 확정이니 콩밥이나 드세요."}
+                                ] 
+                            },
+                            { 
+                                nick: "Anti_Otaku", time: "30분 전", content: "아니 근데 다 큰 성인이 만화 캐릭터 파일 들고 다니는 건 좀 역겹지 않나? 김 팀장이 욱할 만도 했네. 사회생활 안 해봄?", like: 5, dislike: 4200, isPunished: true,
+                                replies: [
+                                    {nick:"OfficeWorker", content:"니가 꼰대라는 건 잘 알겠다. 남 취향에 역겨울 게 뭐 있냐? 니 인성이 더 역겨움."},
+                                    {nick:"Psychiatrist", content:"타인의 취향을 못 견디고 폭력을 옹호하는 건 반사회적 인격장애 의심해 봐야 합니다."},
+                                    {nick:"Judge", content:"욱한다고 사람 머리를 결재판으로 찍어요? 그건 살인미수입니다 아저씨."}
+                                ] 
+                            },
+                            { 
+                                nick: "YoonJaehoon(IP)", time: "40분 전", content: "이건 다 조작이야! 리유도 박효빈한테 돈 받고 쓴 걸 거야! 김 팀장님은 억울해! 아빠(윤대환)가 다 해결해 줄 거야!", like: 1, dislike: 3800, isPunished: true, 
+                                replies: [
+                                    {nick:"IT_Expert", content:"IP 추적해보니 '효빈구치소' 뜨네요? 영치금으로 스마트폰 밀반입했냐?"},
+                                    {nick:"PrisonGuard", content:"2508번(윤재훈), 방에서 조용히 안 해? 징벌방 가고 싶어?"},
+                                    {nick:"Citizen", content:"추하다 재훈아... 2.2% 받은 이유를 알겠다."}
+                                ] 
+                            },
+                            { 
+                                nick: "TangKeke_Fan", time: "50분 전", content: "리유 님 메시지 보고 울었습니다 ㅠㅠ 이 주무관님, 저희 갤러리에서 치료비 모금하고 있습니다. 꼭 받아주세요!", like: 3000, dislike: 0, 
+                                replies: [
+                                    {nick:"Lee_Official", content:"(본인) 마음만 받겠습니다! 시장님이 치료비 전액 지원해 주셨어요. 대신 그 돈으로 맛있는 거 드세요! - 이 주무관"}, 
+                                    {nick:"TangKeke_Fan", content:"헉 본인 등판! 쾌유 기원합니다!"}
+                                ] 
+                            },
+                            { 
+                                nick: "Quezon_Friend", time: "1시간 전", content: "필리핀 교민입니다. 우리 시장님 혈통 비하하던 그 김 팀장, 꼴 좋네요. Liyuu 씨도 대인배시군요. 효빈시는 사랑이 넘치는 도시입니다.", like: 2800, dislike: 2, 
+                                replies: [
+                                    {nick:"Welcome", content:"함께해서 행복합니다. 혐오 세력은 우리가 몰아낼게요."}
+                                ] 
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Anti") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_quezon_city.html" class="ranking-link">케손시티 시장의 '영상 메시지'</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_liyuu_message.html" class="ranking-link font-bold text-[#0055aa]">Liyuu, 피해자에 '눈물의 응원'</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_foreign_press.html" class="ranking-link">필리핀 언론 '한국 인종차별' 보도</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_chosun_fake.html" class="ranking-link">조선일보 '잡종 혈통' 망언 파문</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, 구치소 '망고 구걸' 굴욕</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈서점</div>
+                    <div class="text-xs">Liyuu 사진집 입고!<br>한정판 굿즈 증정</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

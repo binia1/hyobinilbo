@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈일보 - 사회</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- 최상단 바 -->
+    <div class="top-bar">
+        <div class="max-w-[1100px] mx-auto flex justify-between px-2">
+            <div>효빈시의 아침을 여는 신문</div>
+            <div>
+                <a href="index.html" class="hover:underline">효빈위키 홈</a> | 
+                <span class="cursor-pointer hover:underline">로그인</span> | 
+                <span class="cursor-pointer hover:underline">구독신청</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html" class="active">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 메인 컬럼 -->
+        <div class="main-column">
+            
+            <div class="page-header">
+                <span class="page-title">사회</span>
+                <span class="text-gray-500 text-sm ml-2">Society</span>
+            </div>
+
+            <!-- 사회 메인 헤드라인 -->
+            <div class="headline-card" onclick="location.href='news_univ.html'">
+                <img src="효빈대_인간띠.png" alt="학생들이_만든_인간띠.png" class="headline-img" onerror="this.src='https://via.placeholder.com/800x400/003366/FFFFFF?text=Human+Wall'">
+                <div class="headline-content">
+                    <div class="text-[#0055aa] font-bold text-sm mb-2">사회 > 사건사고/미담</div>
+                    <h2 class="headline-title">"우리 성우님은 우리가 지킨다"... 효빈대생 3천 명, '인간 방어막'의 감동</h2>
+                    <p class="headline-desc">
+                        윤재훈 일당의 '빵 테러' 위협 속에 진행된 성우 초청 행사에서 학생과 시민들이 자발적으로 인간띠를 만들어 행사장 입구를 사수했다. 경찰도 감탄한 성숙한 시민 의식에 박효빈 시장은 "이것이 바로 효빈의 품격"이라며 찬사를 보냈다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 주요 사회 뉴스 그리드 -->
+            <div class="sub-grid">
+                <!-- 1. 쿠쿠스 배리어 (조례) -->
+                <div class="news-card" onclick="location.href='news_kukus_barrier.html'">
+                    <img src="시의회_조례통과.png" alt="조례안_통과_의사봉.png" onerror="this.src='https://via.placeholder.com/400x200/550055/FFFFFF?text=Ordinance+Passed'">
+                    <div class="news-card-content">
+                        <div class="news-card-title">혐오 표현엔 '무관용' 원칙... '쿠쿠스 배리어' 조례, 오늘부터 전격 시행</div>
+                        <div class="news-card-meta">인권/법조 | 법대로 기자</div>
+                    </div>
+                </div>
+
+                <!-- 2. 파랑새 정책 (복지) -->
+                <div class="news-card" onclick="location.href='news_bluebird_welfare.html'">
+                    <img src="파랑새_지원금.png" alt="청소년_문화_바우처.png" onerror="this.src='https://via.placeholder.com/400x200/00AADD/FFFFFF?text=Bluebird+Policy'">
+                    <div class="news-card-content">
+                        <div class="news-card-title">"가난해도 덕질할 권리 있다"... 효빈시 '블루버드 정책'에 청소년 환호</div>
+                        <div class="news-card-meta">복지/교육 | 김복지 기자</div>
+                    </div>
+                </div>
+
+                <!-- 3. 지하철 안전 (6호선) -->
+                <div class="news-card" onclick="location.href='news_line6_safety.html'">
+                    <img src="6호선_안전요원.png" alt="6호선_역사_순찰.png" onerror="this.src='https://via.placeholder.com/400x200/881188/FFFFFF?text=Line6+Safety'">
+                    <div class="news-card-content">
+                        <div class="news-card-title">시장님 출퇴근길 '6호선(보라색)', 안심 귀가 스카우트 배치 강화</div>
+                        <div class="news-card-meta">교통/안전 | 박안전 기자</div>
+                    </div>
+                </div>
+
+                <!-- 4. 환경 미담 -->
+                <div class="news-card" onclick="location.href='news_clean_campaign.html'">
+                    <img src="쓰레기_줍는_코스어.png" alt="청소하는_시민들.png" onerror="this.src='https://via.placeholder.com/400x200/22AA44/FFFFFF?text=Clean+Campaign'">
+                    <div class="news-card-content">
+                        <div class="news-card-title">"머물다 간 자리도 아름답게"... HAF 폐막 후 쓰레기 '0' 기록</div>
+                        <div class="news-card-meta">환경 | 이지구 기자</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사회 브리핑 -->
+            <div class="news-list-box">
+                <div class="section-title">
+                    <span>사회 브리핑</span>
+                    <span class="text-xs text-gray-500 cursor-pointer">더보기 +</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_police_scalper.html'">
+                    <span class="list-title text-red-600 font-bold">[경찰] 효빈경찰청, HAF 암표상 특별 단속... 20대 일당 검거</span>
+                    <span class="list-time">20분 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_weather_heat.html'">
+                    <span class="list-title">[날씨] 효빈시 전역 폭염경보... "야외 코스프레 시 온열질환 주의"</span>
+                    <span class="list-time">1시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_education_highschool.html'">
+                    <span class="list-title">[교육] 효빈 애니메이션 특성화고 경쟁률 15:1... 역대 최고</span>
+                    <span class="list-time">2시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_traffic_control.html'">
+                    <span class="list-title">[교통] 주말 HAF 퍼레이드로 중앙대로 일부 통제... 2호선(초록색) 우회 안내</span>
+                    <span class="list-time">3시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_hospital_strike.html'">
+                    <span class="list-title">[의료] 대학병원 노사 협상 타결... "축제 기간 의료 공백 없다"</span>
+                    <span class="list-time">4시간 전</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 사이드바 컬럼 -->
+        <div class="side-column">
+            <!-- 실시간 랭킹 -->
+            <div class="ranking-box">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <span class="text-xs text-gray-500">사회면</span>
+                </div>
+                <ul class="ranking-list">
+                    <li onclick="location.href='news_univ.html'">
+                        <span class="rank-num">1</span>
+                        <span class="rank-title font-bold text-[#0055aa]">효빈대 '인간 방어막' 화제</span>
+                    </li>
+                    <li onclick="location.href='news_philippines.html'">
+                        <span class="rank-num">2</span>
+                        <span class="rank-title">윤재훈 필리핀 사건 전말</span>
+                    </li>
+                    <li onclick="location.href='news_kukus_barrier.html'">
+                        <span class="rank-num">3</span>
+                        <span class="rank-title">'쿠쿠스 배리어' 조례 시행</span>
+                    </li>
+                    <li onclick="location.href='news_police_scalper.html'">
+                        <span class="rank-num">4</span>
+                        <span class="rank-title">암표상 일당 검거 소식</span>
+                    </li>
+                    <li onclick="location.href='news_bluebird_welfare.html'">
+                        <span class="rank-num">5</span>
+                        <span class="rank-title">청소년 '블루버드' 복지 호평</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈지방경찰청</div>
+                    <div class="text-xs">안전한 축제 만들기<br>시민 여러분과 함께합니다</div>
+                </div>
+            </div>
+            <div class="ad-banner" style="background: #e0f2f1; border-color: #80cbc4;">
+                <div class="text-center">
+                    <div class="font-bold text-teal-700 mb-1">약산대학교병원</div>
+                    <div class="text-xs text-teal-500">24시간 응급실 운영<br>최상의 의료 서비스</div>
+                </div>
+            </div>
+            <div class="ad-banner" style="background: #f3e5f5; border-color: #ce93d8;">
+                <div class="text-center">
+                    <div class="font-bold text-purple-700 mb-1">법무법인 시민</div>
+                    <div class="text-xs text-purple-500">저작권/사이버 명예훼손<br>무료 법률 상담</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="회사소개.html">회사소개</a>
+                <a href="구독신청.html">구독신청</a>
+                <a href="고충처리.html">고충처리</a>
+                <a href="이용약관.html">이용약관</a>
+                <a href="개인정보처리방침.html">개인정보처리방침</a>
+            </div>
+            <div>
+                <p class="mb-1">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+                <p class="mb-1">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+                <p>전화: 079-212-2123 | 팩스: 079-212-2124</p>
+                <p class="mt-2 text-gray-500">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

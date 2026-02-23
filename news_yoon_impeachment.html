@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] "혐오의 시대가 끝났다"... 윤석열 탄핵 소식에 효빈시 '축제 분위기' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #bae6fd 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2025.04.04 (금)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 탄핵속보</div>
+                <h2 class="article-title">"혐오의 시대가 끝났다"... 윤석열 탄핵 소식에 효빈시 '축제 분위기'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">강직 기자</span> (honest@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2025.04.04. 17:10 | 수정 2025.04.04. 18:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">헌재, 윤석열 대통령 탄핵 소추안 인용... 헌정 사상 두 번째 파면<br>계엄령 선포 시도로 법치주의 훼손한 대가... '혐오의 뒷배' 사라졌다<br>효빈 시민들, 문화광장 집결해 "민주주의 승리" 환호... 윤재훈 일당은 '패닉'</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈문화광장_탄핵축제.png" alt="탄핵_환호하는_효빈시민들.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0077DD/FFFFFF?text=Hyobin+Citizens+Celebrating+Impeachment'">
+                        <div class="img-caption">▲ 4일 오후 윤석열 대통령의 탄핵 인용 소식이 전해지자 효빈문화광장에 모인 시민들이 환호하고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 강직 기자] 2025년 4월 4일, 대한민국은 다시 한번 정의를 바로 세웠다. 헌법재판소가 윤석열 대통령에 대한 탄핵 소추안을 만장일치로 인용하면서, 계엄령 선포 시도로 국가를 혼란에 빠뜨렸던 권력자가 무대 뒤로 퇴장했다.</p>
+
+                    <p>탄핵 소식이 전해진 직후, <a href="효빈시.html" class="text-blue-600 underline">효빈시</a>는 말 그대로 축제 분위기에 휩싸였다. 그간 윤 대통령의 비호를 받으며 박효빈 시장을 인종차별적으로 공격하고, 결식아동의 빵을 훼손했던 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 일당의 '뒷배'가 사라졌기 때문이다.</p>
+
+                    <p><a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장은 긴급 담화문을 통해 **"오늘은 혐오와 차별을 부추기던 낡은 시대가 종언을 고한 날"**이라며 **"상식과 공존이 승리하는 새로운 효빈의 역사를 계속 써나가겠다"**고 밝혔다. 시청 앞에는 퇴근길 시민들이 몰려들어 서로 빵을 나눠 먹으며 승리의 기쁨을 나눴다.</p>
+
+                    <div class="my-6">
+                        <img src="박효빈_시장_미소.png" alt="박효빈_시장_담화문발표.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/881188/FFFFFF?text=Mayor+Park+Smiling'">
+                        <div class="img-caption">▲ 담화문을 발표하며 미소 짓는 박효빈 시장. 시민들은 "진정한 법치의 승리"라며 시장을 응원했다.</div>
+                    </div>
+
+                    <p>반면, 출소 후에도 대통령의 백을 믿고 큰소리치던 윤재훈 씨는 멘탈이 완전히 붕괴된 모습이다. 그는 자신의 SNS에 "이건 쿠데타다", "빨갱이들이 나라를 먹었다"는 등 광기 어린 글을 올렸으나, 시민들의 싸늘한 반응과 쏟아지는 조롱에 계정을 비공개로 전환했다.</p>
+
+                    <p>법조계 관계자는 "대통령이 탄핵됨에 따라 그간 수사가 미진했던 윤재훈 일당의 조직적 혐오 범죄 및 비리 의혹 수사가 탄력을 받을 것"이라며 **"이제 그들을 보호해 줄 수 있는 성역은 더 이상 존재하지 않는다"**고 못 박았다.</p>
+
+                    <p>오늘 밤 효빈시는 <a href="보라색6호선.html" class="text-blue-600 underline" style="color:#881188">보라색 6호선</a>을 타고 축제장으로 향하는 시민들로 인산인해를 이룰 것으로 보인다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">24,512</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                    <div class="text-right mt-2"><button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499]">등록</button></div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Justice_Prevails", time: "방금 전", like: 35000, dislike: 2,
+                                content: "대한민국 만세! 효빈시 만세! 드디어 그 바보 같은 계엄령 대통령이 쫓겨났네요. 박 시장님 이제 방해받지 말고 일해주세요!",
+                                replies: [
+                                    { nick: "YoonJaehoon(망함)", content: "이건 무효야! 우리 대통령님이 억울하게 당하신 거라고! 니들 다 반역죄로 처단할 거야! 아아아악!" },
+                                    { nick: "Fact_Bomber", content: "반역은 계엄령 선포한 니네 대통령이 한 거고요 ㅋㅋㅋ 넌 이제 백도 없는데 어쩌냐? 짐 싸서 다시 들어갈 준비나 해라." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Citizen_A", time: "5분 전", like: 28000, dislike: 5,
+                                content: "사능동 빵집 사장입니다. 오늘은 빵 1,000개 무료 나눔 합니다! 혐오가 이기지 못한다는 걸 오늘 확인했네요. 너무 기쁩니다!",
+                                replies: [
+                                    { nick: "YoonJaehoon(망함)", content: "빵에 독 탔지? 다 알아! 오타쿠들 멸살하려는 음모야! 내가 신고할 거야!" },
+                                    { nick: "Hygiene_Dept", content: "재훈아, 넌 침 뱉어서 영업방해한 거나 반성해. 오늘 빵 먹어보니 너무 맛있더라. 너 빼고 다 행복해." }
+                                ]
+                            },
+                            {
+                                nick: "Metro_Lover", time: "10분 전", like: 22000,
+                                content: "축배를 들자! 보라색 6호선 타고 문화광장 가고 있습니다. 효빈의 평화는 우리가 지켰습니다!",
+                                replies: [
+                                    { nick: "YoonJaehoon(망함)", content: "보라색 지하철 폭파해버릴 거야! 박효빈 꼬봉들 다 죽어!" },
+                                    { nick: "Cyber_Police", content: "테러 협박으로 추가 고발 접수되었습니다. 현재 거주하시는 고시원 위치 추적 완료했습니다. 그대로 계세요." }
+                                ]
+                            },
+                            {
+                                nick: "Mama_Cafe_Leader", time: "15분 전", like: 19500,
+                                content: "아이들 빵 테러 미수 때부터 탄핵만 기다렸습니다. 인과응보네요. 이제 우리 아이들이 차별 없는 효빈에서 자라겠네요.",
+                                replies: [
+                                    { nick: "YoonJaehoon(망함)", content: "세뇌당한 아줌마들아 정신 차려! 나라가 필리핀에 먹히고 있다고!" },
+                                    { nick: "Smart_Mom", content: "너 같은 놈이랑 같은 하늘 아래 사는 게 더 무섭단다. 이제 대통령 방패도 없으니 법대로 죗값 치르렴 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Univ_Guard", time: "20분 전", like: 17800,
+                                content: "인간 방어막 만들었던 학생입니다. 오늘 탄핵 인용 문구 듣는데 눈물 났습니다. 정의는 살아있네요.",
+                                replies: [
+                                    { nick: "YoonJaehoon(망함)", content: "학생 놈들이 박효빈한테 얼마 받았어! 알바비 내놔! 내 돈이야!" },
+                                    { nick: "Senior_A", content: "재훈아, 넌 2.2%라 돈의 가치를 모르나 본데, 우린 자발적으로 한 거야. 넌 평생 이해 못 하겠지?" }
+                                ]
+                            },
+                            { id: 6, nick: "Global_Citizen", content: "International News! Impeachment confirmed! Korea is showing true democracy. Congrats to Mayor Park!", replies: [{nick:"YoonJaehoon(망함)", content:"Shut up Jungle people! Go back!"}, {nick:"Fact_Check", content:"영어라도 제대로 쓰고 욕해라 무식아 ㅋㅋㅋ 아, 이제 님 인생은 영원히 'Closed'입니다."}] },
+                            { id: 7, nick: "Bakery_Fan", content: "엠마 빵 사먹으러 줄 서 있는데 탄핵 소식 듣고 앞뒤 사람끼리 박수치고 난리 났음 ㅋㅋㅋ 이게 민심이다.", replies: [{nick:"YoonJaehoon(망함)", content:"빵집 다 부숴버릴 거야! 내 침 맛 좀 봐라!"}, {nick:"Saneung_Baker", content:"응~ 이미 가게 앞에 경찰관님들 대기 중이야. 오기만 해봐 ㅋㅋㅋ"}] },
+                            { id: 8, nick: "Economics_Major", content: "탄핵 이후 시장 불확실성 제거로 효빈시 주식/부동산 반등 예감. 혐오 세력 청산이 가장 큰 호재임.", replies: [{nick:"YoonJaehoon(망함)", content:"다 조작이야! 거품이야! 박효빈이 가짜 장부 만든 거야!"}, {nick:"Real_Estate", content:"님 저택 경매 낙찰금으로 피해 보상 다 끝났습니다. 이제 님은 0원 ㅋㅋㅋ"}] },
+                            { id: 9, nick: "Railway_Fan", content: "빈효선(연청색) 열차 안에서도 다들 휴대폰 보면서 만세 부름 ㅋㅋㅋ 오늘 퇴근길 너무 즐겁다.", replies: [{nick:"YoonJaehoon(망함)", content:"기차 놀이 하냐? ㅉㅉ 다 탈선해버려라!"}, {nick:"Signal_Team", content:"악담 부리지 마라. 시스템은 완벽하니까 님 멘탈 탈선이나 걱정하시길."}] },
+                            { id: 10, nick: "History_Teacher", content: "2025년 4월 4일은 대한민국 현대사의 위대한 변곡점으로 기록될 겁니다. 혐오 독재의 종말!", replies: [{nick:"YoonJaehoon(망함)", content:"역사 교과서 다 불태워야 해! 내가 다시 쓸 거야!"}, {nick:"History_Student", content:"재훈아, 넌 전과 기록이나 관리해. 그게 니 유일한 역사야."}] },
+                            { id: 11, nick: "Taxi_Driver_Kim", content: "손님들이 다들 기분 좋아서 팁도 주시네요 ㅋㅋㅋ 오늘 효빈시는 축제날입니다!", replies: [{nick:"YoonJaehoon(망함)", content:"택시 기사도 한패냐? 너 박효빈 첩이지?"}, {nick:"Taxi_Driver_Kim", content:"미친 소리 말고 일이나 해라. 아, 넌 무직이지? ㅋㅋㅋ 미안."}] },
+                            { id: 12, nick: "Angel_Donator", content: "기분 좋아서 결식아동 돕기에 100만원 기부했습니다! 박 시장님 지지합니다!", replies: [{nick:"YoonJaehoon(망함)", content:"그 돈 나 주지! 내가 지금 배고파 죽겠는데! 나도 서민이야!"}, {nick:"Justice", content:"남구 저택 살며 갑질하던 놈이 배고프다니... 진짜 추함의 끝판왕이네."}] },
+                            { id: 13, nick: "Law_Firm_Pro", content: "대통령 탄핵으로 윤재훈 일당에 대한 검찰의 봐주기 수사는 이제 불가능합니다. 전면 재수사 가시죠.", replies: [{nick:"YoonJaehoon(망함)", content:"검찰 내 친구들 많아! 다들 나 도와줄 거야!"}, {nick:"Prosecutor_X", content:"님 친구들 이미 다 징계 위원회 회부됐습니다. 연락 끊으세요."}] },
+                            { id: 14, nick: "Anime_Fan_Club", content: "성우님들 이제 안심하고 효빈시 오셔도 됩니다! 우리가 끝까지 지켜드릴게요!", replies: [{nick:"YoonJaehoon(망함)", content:"쪽바리 광대들! 내가 다 때려잡는다!"}, {nick:"Nijigasaki_Knight", content:"와봐 ㅋㅋㅋ '인간 방어막'이 '인간 분쇄기'로 변하는 거 보고 싶으면."}] },
+                            { id: 15, nick: "Budget_Checker", content: "탄핵으로 계엄령 공포 정치 끝났으니 효빈시 문화 산업에 투자 더 들어오겠네요. 나이스!", replies: [{nick:"YoonJaehoon(망함)", content:"문화는 개뿔 ㅋㅋㅋ 망해라! 다 망해라!"}, {nick:"Investor", content:"님 인생만 망하는 중입니다 ㅋㅋㅋ 효빈시는 떡상 중."}] },
+                            { id: 16, nick: "Future_Hope", content: "오늘을 잊지 맙시다. 혐오를 투표와 연대로 이겨낸 위대한 날입니다.", replies: [{nick:"YoonJaehoon(망함)", content:"연대는 무슨! 다 박효빈한테 돈 받은 알바들이지!"}, {nick:"Citizen_V", content:"응 2.2% ㅋㅋㅋ 표 차이 보고도 그런 소리가 나오냐?"}] },
+                            { id: 17, nick: "Dangga_Love", content: "당가동 디저트 거리 오늘 맥주 무한 리필 한답니다 ㅋㅋㅋ 탄핵 축제 가즈아!", replies: [{nick:"YoonJaehoon(망함)", content:"음주운전으로 다 신고할 거야! 경찰 불러!"}, {nick:"Traffic_Police", content:"단속 나갈 테니 걱정 마세요. 님 위치부터 말해주시면 감사."}] },
+                            { id: 18, nick: "Small_Biz_Success", content: "박효빈 시장님 덕분에 장사 잘되고 나라까지 바로 잡히니 너무 행복합니다.", replies: [{nick:"YoonJaehoon(망함)", content:"벤츠 뺏은 도둑놈들! 내가 다시 뺏을 거야!"}, {nick:"Auction_Team", content:"님 벤츠 이미 공매 낙찰돼서 다른 분이 타고 계세요 ㅋㅋㅋ 번호판 바뀜."}] },
+                            { id: 19, nick: "Peace_Maker", content: "윤재훈 댓글은 그냥 웃음벨로 둡시다. 패배자의 처절한 절규네요 ㅋㅋㅋ", replies: [{nick:"YoonJaehoon(망함)", content:"내가 왜 패배자야! 나 주인공이야! 내가 다 이길 거야! 아빠!!! 나 좀 도와줘!!!"}, {nick:"Ghost_Yoon", content: "(윤대환) 재훈아... 아빠도 면회 금지 당했다... 이제 우린 끝이야..."}] },
+                            { id: 20, nick: "Final_Boss", content: "결론: 윤석열 탄핵 = 정의 구현, 윤재훈 = 효빈시의 거름(똥).", replies: [{nick:"YoonJaehoon(망함)", content:"아니야!!! 나 똥 아니야!!! 나 사람이야!!! 으아아아앙!!!"}, {nick:"Citizen_Z", content: "사람답게 살았어야 사람 대접을 해주지 ㅋㅋㅋ 잘 가라 멀리 안 나간다."}] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            const isYoonMain = cmt.nick.includes("Yoon");
+                            div.className = isYoonMain ? "best-comment border-red-300 bg-red-50" : (cmt.like > 15000 ? "best-comment shadow-md" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const isYoon = reply.nick.includes("Yoon");
+                                    const styleClass = isYoon ? "bg-red-100 border border-red-200" : "bg-gray-50 border border-gray-200";
+                                    const nickClass = isYoon ? "text-red-700 font-black" : "text-gray-700 font-bold";
+                                    const tag = isYoon ? '<span class="bg-red-700 text-white text-[10px] px-1 rounded ml-1">사면범/망함/정신이상</span>' : '';
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass} p-3 rounded mb-2">
+                                            <span class="${nickClass}">${reply.nick}${tag}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm text-blue-800">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-3 font-medium">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn border px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn border px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active', 'active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm border-blue-200">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">탄핵 특집 뉴스</span>
+                </div>
+                <ul class="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_yoon_impeachment.html" class="ranking-link font-bold">윤석열 탄핵 인용... 헌재 결정문 요지</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_park_speech.html" class="ranking-link">박효빈 시장 "정의로운 승리"</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_yoon_family_fear.html" class="ranking-link">윤대환·윤재훈 부자, 재수사 위기</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_blue_house_eviction.html" class="ranking-link">용산 대통령실 퇴거 현장 중계</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_election_special.html" class="ranking-link">조기 대선 정국 돌입... 유력 후보는?</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#0077DD] p-6 text-white rounded text-center shadow-lg">
+                <div class="font-black text-xl mb-2 italic">DEMOCRACY WINS</div>
+                <div class="text-sm font-bold">민주주의의 꽃은<br>연대와 공존입니다</div>
+            </div>
+
+            <div class="ad-banner" style="background: #881188; color: white;">
+                <div class="text-center p-4">
+                    <div class="font-bold mb-1">효빈교통공사</div>
+                    <div class="text-xs">승리의 기쁨을 싣고<br>보라색 6호선이 달립니다</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

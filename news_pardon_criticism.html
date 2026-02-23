@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[비평] "표심 왜곡에 면죄부"... 윤 대통령, '4.8%의 굴욕' 윤재훈 사면 강행 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fee2e2 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2023.08.12 (토)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-red-600 font-bold">정치 > 대통령실/비평</div>
+                <h2 class="article-title">"법치주의는 죽었다"... '부정선거' 궤변 수용한 윤 대통령, 윤재훈 사면 강행</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">강직 기자</span> (honest@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2023.08.12. 11:00 | 수정 2023.08.12. 13:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-red-600 font-bold">집권 여당 달고 '4.8%' 득표... 무소속 후보(12%)에게도 밀린 최악의 성적표<br>"정치적 자유 보장 및 야당 탄압 방지" 대통령실의 해괴한 사면 명분<br>효빈 시민들 "선거 패배를 부정선거로 둔갑시킨 사법 코미디" 격앙</span></p>
+                    
+                    <div class="my-6">
+                        <img src="윤석열_윤재훈_사면.png" alt="대통령_사면_발표.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/002244/FFFFFF?text=Presidential+Pardon+Announcement'">
+                        <div class="img-caption">▲ 12일 정부가 발표한 광복절 특사 명단에 국민의힘 후보로 낙선한 후 '부정선거'를 주장해온 윤재훈 씨가 포함되어 거센 비난이 일고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 강직 기자] 공정과 상식을 내걸었던 윤석열 정부가 대한민국의 민주주의를 희극으로 전락시켰다. **윤 대통령은 12일 광복절 특별사면을 통해 대규모 부패와 폭력 혐의로 실형을 살던 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 씨를 전격 사면했다.**</p>
+
+                    <p>대통령실이 내놓은 사면 사유는 더욱 경악스럽다. 정부는 윤재훈 씨의 사면이 "정치적 자유를 보장하고, 야당의 무분별한 정치 탄압으로부터 헌법 가치를 수호하기 위한 결정"이라고 설명했다. 그러나 윤재훈 씨가 주장해온 '야당 탄압'의 실체는 지난 효빈시장 선거 결과에 대한 자기 부정에 불과하다.</p>
+
+                    <p>당시 집권 여당인 국민의힘의 공천을 받고 출마했던 윤재훈 씨는 **불과 4.8%라는 굴욕적인 득표율**을 기록했다. 심지어 같은 진영의 무소속 보수 후보가 12%를 득표하며 선전한 것과 비교하면, 시민들의 냉혹한 심판을 받은 셈이다. 그럼에도 윤 씨는 이를 '부정선거'라고 강변하며 난동을 부려왔고, 대통령은 이 억지 주장을 사실상 수용하여 사면권을 남용했다.</p>
+
+                    <div class="my-6">
+                        <img src="효빈시민_항의집회.png" alt="사면_반대_시위.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Protest+Against+Unfair+Pardon'">
+                        <div class="img-caption">▲ 사면 소식이 전해지자 효빈 시민들은 "4.8%의 민심을 무시한 대통령은 사퇴하라"며 거리로 쏟아져 나왔다.</div>
+                    </div>
+
+                    <p><a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장은 "여당 후보라는 타이틀을 달고도 무소속 후보에게조차 밀린 인물이 어떻게 정치 탄압의 희생자가 될 수 있느냐"며 "이 결정은 선거를 통해 표출된 시민들의 신성한 뜻을 대통령이 직접 짓밟은 행위"라고 강력히 규탄했다.</p>
+
+                    <p>법조계 전문가들은 이번 사면이 **계엄령 선포 시도 등 반헌법적 행보를 보여온 윤 대통령의 독단적 통치**가 극에 달했음을 보여주는 증거라고 비판한다. 범죄자가 내뱉는 '부정선거'라는 궤변을 사법 정의보다 우선시한 2023년 8월 12일은 대한민국 헌정사의 씻을 수 없는 치욕으로 남을 것이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">12,524</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                    <div class="text-right mt-2"><button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499]">등록</button></div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "YoonJaehoon(FREE)", time: "방금 전", like: 1, dislike: 48000, isPunished: true,
+                                content: "하하하! 거봐라! 내가 뭐랬어! 우리 대통령님은 진실을 아시는 분이다! 4.8%? 그게 말이 되냐? 박효빈이 주작한 거라고! 나는 90% 이상 득표한 효빈의 왕이다! 이제 다 죽었어!",
+                                replies: [
+                                    { nick: "Election_Watcher", content: "여당 후보가 무소속 보수 후보(12%)한테도 따블로 처발리고 부정선거 타령 ㅋㅋㅋ 님 빼고 다 아는 진실입니다." },
+                                    { nick: "Normal_Citizen", content: "4.8%면 그냥 존재 자체가 민폐라는 뜻인데... 대통령이 이런 놈을 '정치적 자유'라며 풀어주다니 나라 꼴 잘 돌아간다." }
+                                ]
+                            },
+                            {
+                                nick: "Justice_Is_Dead", time: "5분 전", like: 32000,
+                                content: "윤석열 대통령, 진짜 대단하십니다. 무소속 보수 후보가 12% 나올 동안 여당 후보가 4.8% 나온 게 야당 탄압입니까? 그냥 무능한 범죄자일 뿐입니다. 사면권이 대통령 장난감인가요?",
+                                replies: [
+                                    { nick: "YoonJaehoon(FREE)", content: "무소속은 박효빈이 보수 표 찢으려고 보낸 간첩이야! 걔네도 다 한통속이라고!" },
+                                    { nick: "Fact_Bomber", content: "그 무소속 후보 님 때문에 탈당하고 나간 님네 당 원로거든요? ㅋㅋㅋ 현실 파악 좀 하쇼." }
+                                ]
+                            },
+                            {
+                                nick: "Voter_A", time: "10분 전", like: 29000,
+                                content: "나 보수인데 이건 진짜 선 넘었다. 윤재훈 같은 놈이 보수의 이름으로 출마한 것도 수치인데, 그걸 또 사면해줘? 윤석열은 보수의 궤멸을 바라는 민주당 스파이냐?",
+                                replies: [
+                                    { nick: "YoonJaehoon(FREE)", content: "가짜 보수 새끼! 너 박효빈한테 돈 받았지? 다 채증해서 복수할 거다!" },
+                                    { nick: "Logic_Man", content: "사면되자마자 복수 타령 ㅋㅋㅋ 재범 위험성 1000%네. 이런 놈을 풀어준 대통령이 공범이다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Worker", time: "15분 전", like: 26000,
+                                content: "두청운수에서 피눈물 흘린 노동자들 생각하면 대통령은 사람도 아닙니다. 부정선거? 님 이름만 들어도 시민들이 침을 뱉는데 4.8% 나온 것도 기적이지.",
+                                replies: [
+                                    { nick: "YoonJaehoon(FREE)", content: "침 뱉는 건 내 전공이지! ㅋㅋㅋ 니들 빵에 다 침 뱉어 줄게!" },
+                                    { nick: "Police_Official", content: "출소 직후 또다시 위해 예고 행위 확인되었습니다. 사면 취소는 안 돼도 재구속은 가능합니다. 자중하세요." }
+                                ]
+                            },
+                            {
+                                nick: "Law_Student", time: "20분 전", like: 24000,
+                                content: "정치적 자유 보장? ㅋㅋㅋ 범죄자가 선거 지고 난동 부리는 게 정치적 자유입니까? 윤 대통령님, 법전 다시 읽으세요. 아, 계엄령 공부하느라 바쁘신가?",
+                                replies: [
+                                    { nick: "YoonJaehoon(FREE)", content: "공부나 해 이 빨갱이 학생아! 내가 다 폐교시켜버릴 거야!" },
+                                    { nick: "Senior_A", content: "4.8% 지지율로 폐교는커녕 화장실 청소나 하세요 ㅋㅋㅋ 추하다 재훈아." }
+                                ]
+                            },
+                            { id: 6, nick: "National_Unity?", content: "범죄자 억지 주장을 '야당 탄압'으로 포장해주는 대통령. 유유상종이 따로 없네. 둘 다 역사의 죄인임.", replies: [{nick:"YoonJaehoon(FREE)", content:"역사는 승자가 쓰는 거야! 내가 승리했다!"}, {nick:"History_Teacher", content: "님은 승자가 아니라 '풀려난 오물'일 뿐입니다. 기록은 팩트로 남는 법."}] },
+                            { id: 7, nick: "Independent_Supporter", content: "당시 12% 득표한 무소속 후보 지지자입니다. 윤재훈은 보수 진영의 수치였어요. 그런 놈을 사면해준 윤석열은 보수를 모욕한 겁니다.", replies: [{nick:"YoonJaehoon(FREE)", content:"니네 후보도 다 매수된 거야! 박효빈 꼬봉들!"}, {nick:"Fact_Check", content: "매수는 니네 아빠가 조선일보한테 한 게 매수고 ㅋㅋㅋ"}] },
+                            { id: 8, nick: "Global_Shame", content: "International Scandal. A president pardons a criminal based on a fake fraud claim. Korea's democracy is failing.", replies: [{nick:"YoonJaehoon(FREE)", content:"Fuck you! Korea for Koreans! Only Yoon can save us!"}, {nick:"Citizen_K", content: " save us? You can't even save your own mind. Get lost."}] },
+                            { id: 9, nick: "Mama_Cafe", content: "아이들 빵에 침 뱉으려던 놈을 사면? 대통령님도 자식 없으셔서 공감을 못 하시는 건가요? 너무 잔인하네요.", replies: [{nick:"YoonJaehoon(FREE)", content:"아줌마들은 집에서 애나 봐! 정치 간섭 말고!"}, {nick:"Super_Mom", content: "너 같은 놈이랑 같은 하늘 아래 살게 할까 봐 걱정돼서 나온 거란다. 사회의 악아."}] },
+                            { id: 10, nick: "Grandpa_Park", content: "내 평생 저런 뻔뻔한 놈은 처음 보네. 여당 간판 달고 4.8%면 쪽팔려서라도 고개 숙여야지, 부정선거? 쯧쯧.", replies: [{nick:"YoonJaehoon(FREE)", content:"할배요 노망났으면 잠이나 자! 내가 누군지 알아?"}, {nick:"Grandson", content: "우리 할아버지 건들지 마라. 4.8% 짜리가 감히 누굴 훈계해?"}] },
+                            { id: 11, nick: "Economics_Analyst", content: "윤재훈 사면은 시장 경제에도 악영향임. 법적 예측 가능성을 완전히 파괴했음. 투자자들이 효빈시를 떠날까 걱정됨.", replies: [{nick:"YoonJaehoon(FREE)", content:"내 돈으로 내가 산다는데 뭔 상관? ㅋㅋㅋ"}, {nick:"Tax_Officer", content: "님 돈 압류된 건 잊으셨나 봐요? 0원입니다 0원."}] },
+                            { id: 12, nick: "Subway_Driver", content: "6호선(보라색) 운행하다 뉴스 보고 탈선할 뻔. 대통령이 미치지 않고서야 저런 놈을...", replies: [{nick:"YoonJaehoon(FREE)", content:"지하철이나 똑바로 운전해 노예 새끼야! 보라색 역겨워!"}, {nick:"Metro_Guard", content: "님은 이제 6호선 금지입니다. 역 근처 오면 바로 긴급 체포."}] },
+                            { id: 13, nick: "Law_Student_V", content: "사법 고시 합격한 게 신기할 정도의 사면 논리. 윤석열-윤재훈 콤비는 법조계의 재앙입니다.", replies: [{nick:"YoonJaehoon(FREE)", content:"부러우면 니들도 합격해! 아 니들은 머리가 나빠서 안 되지?"}, {nick:"Lawyer_Kim", content: "님도 실력으로 된 거 아니라는 소문 파다하던데 ㅋㅋㅋ 실력은 4.8%인가요?"}] },
+                            { id: 14, nick: "Bakery_King", content: "우리 빵집 오기만 해봐. 4.8%만큼만 소금 뿌려서 줄 테니까.", replies: [{nick:"YoonJaehoon(FREE)", content:"니네 빵집 내가 다 인수할 거야! 기다려!"}, {nick:"Realist", content: "인수할 돈은 있니? 컵라면 사 먹을 돈도 없어서 구걸한다며 ㅋㅋㅋ"}] },
+                            { id: 15, nick: "Anime_Fan", content: "우리 성우님들 모욕한 놈을 대통령이 풀어줬다니... 혐오를 국가가 공인해 준 꼴이네요.", replies: [{nick:"YoonJaehoon(FREE)", content:"오타쿠 찐따들 아직도 안 죽었냐? 다 가스실로 보낸다!"}, {nick:"Justice_V", content: "내란 선동 및 혐오 발언으로 신고 완료. 대통령 빽도 유통기한 임박이다."}] },
+                            { id: 16, nick: "Hyobin_Pride_99", content: "결론: 대통령은 무능, 윤재훈은 사악. 이 둘의 만남은 비극 그 자체.", replies: [{nick:"YoonJaehoon(FREE)", content:"비극은 박효빈의 미래지! 내가 끌어내릴 거니까!"}, {nick:"Citizen_Z", content: "응 2.2%(최근 지지율) ㅋㅋㅋ 4.8%에서도 더 떨어졌네 ㅋㅋㅋ"}] },
+                            { id: 17, nick: "History_Major", content: "계엄령 망령이 씌어서 그런지, 범죄자 궤변도 헌법 가치로 보이나 보네. 윤석열 당신은 역사에 기록될 겁니다. '정의의 파괴자'로.", replies: [{nick:"YoonJaehoon(FREE)", content:"역사는 내가 다시 쓴다! 윤대환 각하 만세!"}, {nick:"Fact_Check", content: "기록은 니 전과 기록이나 잘 관리해 ㅋㅋㅋ"}] },
+                            { id: 18, nick: "Small_Biz_Power", content: "우리 상인들은 윤재훈을 거부합니다. 우리 골목 발 들이면 소금물 세례 예약입니다.", replies: [{nick:"YoonJaehoon(FREE)", content:"장사 못 하게 다 밀어버릴 거다! 아스팔트로!"}, {nick:"Tenant_Union", content: "와서 밀어봐 ㅋㅋㅋ 니 머리부터 밀어줄 테니까."}] },
+                            { id: 19, nick: "Future_Hope", content: "이런 게 진짜 적폐지. 권력을 이용해 범죄자 형량을 지워주는 것. 다음 선거 때 대통령이랑 윤재훈 같이 심판합시다.", replies: [{nick:"YoonJaehoon(FREE)", content:"심판은 내가 한다! 니들 다 반역자야!"}, {nick:"Voter", content: "누가 반역자인지는 탄핵 때 밝혀지겠지 ㅋㅋㅋ"}] },
+                            { id: 20, nick: "Final_Blow", content: "대통령실 해명이 더 웃김. 4.8% 받은 놈 보호하는 게 정치적 자유? ㅋㅋㅋ 코미디도 이런 코미디가 없다.", replies: [{nick:"YoonJaehoon(FREE)", content:"아니야!!! 나는 99%야!!! 조작이라고!!! 아빠!!! 도와줘!!!"}, {nick: "Prison_Guard", content: "2508번(윤재훈), 고시원 가서 짐이나 싸라. 사면 증서 도착했다. 꼴도 보기 싫으니까 빨리 나가."}] },
+                            { id: 21, nick: "Truth_Seeker", content: "여당 달고 4.8%면 정계 은퇴가 상식인데, 부정선거 주장하니까 대통령이 사면해주네? 대한민국 상식은 윤석열이랑 같이 가출했나 봄.", replies: [{nick:"YoonJaehoon(FREE)", content: "상식은 나 같은 천재들만 아는 거야! 무식한 것들아!"}, {nick: "IQ_Test", content: "천재? ㅋㅋㅋ 4.8%면 지능지수 수준 아니냐?"}] },
+                            { id: 22, nick: "Hyobin_Patriot", content: "대통령님, 선거 지면 다 부정선거입니까? 그럼 대통령님 지지율 10% 나오는 것도 부정선거인가요? 억지도 정도껏 하세요.", replies: [{nick:"YoonJaehoon(FREE)", content: "지지율도 다 주작이지! 실제론 100%야!"}, {nick: "Reality_Check", content: "정신병동에서 댓글 다는 거 아니죠? 심각하네 진짜."}] },
+                            { id: 23, nick: "Student_Council_V", content: "효빈대 학생회입니다. 4.8%의 소수를 위해 95.2%의 민심을 배신한 대통령을 규탄합니다. 우리는 사면 철회될 때까지 싸울 겁니다.", replies: [{nick:"YoonJaehoon(FREE)", content: "싸우긴 뭘 싸워 ㅋㅋㅋ 공부나 해 노예들아!"}, {nick: "Senior_A", content: "재훈아 넌 졸업장이나 땄니? 님 학위 취소 소송 중이라며?"}] },
+                            { id: 24, nick: "Global_Journalist", content: "This is a typical example of authoritarianism. Ignoring the will of the people expressed in a 4.8% result.", replies: [{nick:"YoonJaehoon(FREE)", content: "Go back to your island! No Yankee in Hyobin!"}, {nick: "Translator", content: "4.8% 지지율로 세계 평화를 논하려니 영어도 안 나오나 봄 ㅋㅋㅋ"}] },
+                            { id: 25, nick: "Independent_Conservative", content: "내가 12% 득표한 무소속 후보 캠프였는데, 윤재훈 저놈은 유세 때마다 오타쿠 욕만 하다가 망한 거임. 그래놓고 부정선거? 대통령이 이런 놈을 풀어주다니 보수는 끝났다.", replies: [{nick:"YoonJaehoon(FREE)", content: "배신자 새끼! 너 박효빈 스파이지? 내가 다 죽여버릴 거야!"}, {nick: "Conservative_Fan", content: "정신 나간 깡패 새끼... 니가 보수 망친 주범이다."}] },
+                            { id: 26, nick: "Tax_Team_B", content: "윤재훈 씨, 사면됐다고 좋아하지 마세요. 님 이름으로 된 세금 체납액 200억, 내일부터 바로 강제 집행 들어갑니다.", replies: [{nick:"YoonJaehoon(FREE)", content: "내 돈이야! 대통령님이 주신 내 재산이라고!"}, {nick: "Tax_Officer", content: "사면은 벌을 안 받는 거지 돈 안 내도 되는 거 아니에요 ㅋㅋㅋ 벤츠 잘 가져갈게요~"}] },
+                            { id: 27, nick: "Railway_Lover", content: "연청색 빈효선 개통 축하 분위기에 찬물 끼얹는 뉴스... 윤석열-윤재훈 이 둘은 효빈시의 오물이다.", replies: [{nick:"YoonJaehoon(FREE)", content: "기차 놀이 하냐? ㅉㅉ 다 때려 부숴라!"}, {nick: "Signal_Team", content: "부수는 건 님 멘탈인 듯 ㅋㅋㅋ"}] },
+                            { id: 28, nick: "Mama_Cafe_Manager", content: "우리 엄마들 24시간 감시 체제 들어갑니다. 윤재훈 근처에 오면 바로 112 신고할 겁니다. 아이들은 우리가 지킵니다.", replies: [{nick:"YoonJaehoon(FREE)", content: "아줌마들 무서워 죽겠네 ㅋㅋㅋ 와봐!"}, {nick: "Angry_Dad", content: "말하는 꼬라지 봐라. 너 오늘 밤 제삿날인 줄 알아."}] },
+                            { id: 29, nick: "Lawyer_Lee_V", content: "야당 탄압 방지라는 명분 자체가 헌법 위반입니다. 사법부의 판단을 행정부가 자의적으로 뒤집는 전형적인 독재 행태입니다.", replies: [{nick:"YoonJaehoon(FREE)", content: "법 따위 개나 줘! 권력이 최고야! 으하하하!"}, {nick: "Judge", content: "피고인 윤재훈, 님은 이제 피고인 신분도 아깝네요. 그냥 범죄자입니다."}] },
+                            { id: 30, nick: "Final_Strike", content: "윤석열 탄핵! 윤재훈 재구속! 정의를 향한 촛불은 꺼지지 않습니다. 4.8%의 굴욕을 잊지 마라!", replies: [{nick:"YoonJaehoon(FREE)", content: "촛불 다 꺼버릴 거야! 내가 물대포 쏠 거다! 으아아아앙!!!"}, {nick: "Ghost_Yoon", content: "(윤대환) 재훈아... 아빠도 옆방에서 힘들다... 조용히 좀 해라 이 아들놈아..."}] },
+                            { id: 31, nick: "Citizen_Guard", content: "인간 방어막은 무너지지 않았습니다. 대통령이 사면해도 우리는 윤재훈을 거부합니다. 4.8%면 그냥 나가 죽으라는 뜻이야.", replies: [{nick:"YoonJaehoon(FREE)", content: "거부? 내가 다 치워버릴 거다! 우리 아빠 힘 몰라?"}, {nick: "Audit_Team", content: "님네 아빠 힘은 감방 벽 치는 힘밖에 안 남았는데요 ㅋㅋㅋ"}] },
+                            { id: 32, nick: "Angel_Donor_K", content: "윤재훈 사면 소식 듣고 화나서 박 시장님 아동 복지 기금에 500만원 넣었습니다. 혐오는 기부를 낳을 뿐.", replies: [{nick:"YoonJaehoon(FREE)", content: "돈 지랄 하네! 그 돈 나 주면 빵 사 먹을 텐데!"}, {nick: "Fact_Check", content: "님은 빵 먹을 자격도 없어요. 침 뱉은 빵이나 드세요 ㅋㅋㅋ"}] },
+                            { id: 33, nick: "Foreign_Friend", content: "I support Mayor Park. 4.8% result shows he is the right leader. President Yoon is wrong.", replies: [{nick:"YoonJaehoon(FREE)", content: "Shut up! Philippines is jungle! Go back!"}, {nick: "Global_Citizen", content: "인종차별은 범죄입니다. 당신이야말로 사회의 정글에서 퇴출되어야 합니다."}] },
+                            { id: 34, nick: "Subway_Fan_Yellow", content: "노란색 3호선 타고 퇴근 중인데 뉴스 보고 혈압 올라서 다음 역에서 내림... 대통령이 제정신입니까?", replies: [{nick:"YoonJaehoon(FREE)", content: "노란색? 오줌 색깔이냐? ㅋㅋㅋ 지하철 타는 거지 컷!"}, {nick: "Transit_Officer", content: "색깔 가지고 이념 타령하는 거 보니 진짜 정신병 있나 보네. 3호선은 원래 노란색이다."}] },
+                            { id: 35, nick: "Small_Biz_Success_V", content: "박효빈 시장님 덕분에 장사 잘되고 있는데 윤재훈 기어나온다니 소름 끼칩니다. 대통령님 정신 차리세요.", replies: [{nick:"YoonJaehoon(FREE)", content: "니네 가게 다 압류할 거야! 내가 시장 되면!"}, {nick: "HR_Manager", content: "파면된 자는 영구 임용 결격 사유입니다. 시장 출마 못 하세요 아저씨 ㅋㅋㅋ"}] },
+                            { id: 36, nick: "History_Major_Student_V", content: "계엄령 선포하려던 그 고집 어디 안 가죠. 범죄자 궤변도 헌법 가치로 보이나 보네. 탄핵이 답이다.", replies: [{nick:"YoonJaehoon(FREE)", content: "탄핵하면 내가 다 쏴버릴 거야! 계엄령 선포 가즈아!"}, {nick: "Cyber_Cop", content: "내란 선동 혐의 추가. 짐 싸놓으세요 재훈 씨."}] },
+                            { id: 37, nick: "Mom_Cafe_Leader_X", content: "맘카페 엄마들 다 화났어요. 우리 아이들이 뭘 보고 배우겠습니까? 4.8% 짜리를 영웅 대접하는 나라라니.", replies: [{nick:"YoonJaehoon(FREE)", content: "아줌마들은 집에서 밥이나 해! 정치 아는 척하지 말고!"}, {nick: "Logic_Mom", content: "너 같은 놈 밥 안 해주려고 기어나온 거란다. 굶어 죽기 싫으면 사과나 해."}] },
+                            { id: 38, nick: "Citizen_Guard_Chief_V", content: "인간 방어막은 무너지지 않았습니다. 대통령이 사면해도 우리는 윤재훈을 거부합니다. 효빈시는 금지 구역입니다.", replies: [{nick:"YoonJaehoon(FREE)", content: "거부? ㅋㅋㅋ 내가 공권력 동원해서 다 치워버릴 거다!"}, {nick: "Security_Expert", content: "공권력은 대통령 사유물이 아닙니다. 시민을 향한 권력 남용은 바로 파멸의 길입니다."}] },
+                            { id: 39, nick: "Final_Strike_V", content: "윤석열 탄핵! 윤재훈 재구속! 정의를 향한 촛불은 꺼지지 않습니다. 4.8% 지지율로 왕 노릇 하려 들지 마라.", replies: [{nick:"YoonJaehoon(FREE)", content: "촛불 다 꺼버릴 거야! 내가 물대포 쏠 거다! 으하하하!"}, {nick: "Firefighter_Lee", content: "물대포는 불 끌 때 쓰는 거지 사람한테 쏘는 거 아냐. 인성 공부나 더 하고 와."}] },
+                            { id: 40, nick: "Hyobin_Eternity_V", content: "박효빈 시장님과 효빈 시민들은 반드시 승리합니다. 혐오는 결코 사랑을 이길 수 없습니다. 윤석열은 사과하라!", replies: [{nick:"YoonJaehoon(FREE)", content: "내가 승리했어! 나 자유라고! 아빠!!! 망고 더 보내줘!!!"}, {nick: "Prison_Warden", content: "윤대환 씨 이체 한도 초과로 망고 주문 취소됐습니다. 재훈아, 이제 굶어라."}] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            const isYoonMain = cmt.nick.includes("Yoon");
+                            div.className = isYoonMain ? "best-comment border-red-300 bg-red-50" : (cmt.like > 15000 ? "best-comment shadow-md" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const isYoon = reply.nick.includes("Yoon");
+                                    const styleClass = isYoon ? "bg-red-100 border border-red-200" : "bg-gray-50 border border-gray-200";
+                                    const nickClass = isYoon ? "text-red-700 font-black" : "text-gray-700 font-bold";
+                                    const tag = isYoon ? '<span class="bg-red-700 text-white text-[10px] px-1 rounded ml-1">사면범/난동</span>' : '';
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass} p-3 rounded mb-2">
+                                            <span class="${nickClass}">${reply.nick}${tag}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm text-red-600">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-3 font-medium">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn border px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn border px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active', 'active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-red-600">긴급 이슈</span>
+                </div>
+                <ul class="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_pardon_criticism.html" class="ranking-link font-bold">윤 대통령, '4.8% 굴욕' 윤재훈 사면 강행 비판</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_mayor_act.html" class="ranking-link">박효빈 시장 "사법 정의 죽었다"</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_protest.html" class="ranking-link">효빈시 사면 반대 촛불집회</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_economy.html" class="ranking-link">윤재훈 복귀에 지역 상권 긴장</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_blue_house.html" class="ranking-link">대통령실 "정치적 자유 보장 조치"</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-red-900 p-6 text-white rounded text-center shadow-lg">
+                <div class="font-black text-xl mb-2 italic">STOP PARDON</div>
+                <div class="text-sm">범죄자에게 면죄부를 주는<br>대통령을 규탄한다</div>
+            </div>
+
+            <div class="ad-banner" style="background: #0077DD; color: white;">
+                <div class="text-center p-4">
+                    <div class="font-bold mb-1">효빈교통공사</div>
+                    <div class="text-xs">파란색 1호선과 함께<br>정의를 향해 달립니다</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[부동산] A씨의 대박 투자 노트: 효빈시 땅, 지금이 기회다 - 파이낸스 투데이</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gungsuh&family=Nanum+Pen+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f0f0; }
+
+        /* 헤더 */
+        .ft-header { background: #cc0000; color: yellow; padding: 10px 0; border-bottom: 4px solid #000; text-align: center; }
+        .ft-logo { font-family: 'Black Han Sans', sans-serif; font-size: 36px; cursor: pointer; }
+        .ft-sub { font-size: 12px; color: white; font-weight: bold; margin-top: 2px; }
+
+        /* 네비게이션 */
+        .ft-nav { background: #222; color: white; text-align: center; padding: 10px 0; font-weight: bold; font-size: 14px; }
+        .ft-nav a { margin: 0 10px; cursor: pointer; color: white; text-decoration: none; }
+        .ft-nav a:hover { color: #ffcc00; text-decoration: underline; }
+
+        /* 컨테이너 */
+        .container { max-width: 1000px; margin: 20px auto; display: flex; gap: 15px; }
+        .content-area { flex: 3; background: white; padding: 20px; border: 1px solid #999; }
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+
+        /* A씨 칼럼 스타일 */
+        .column-box { border: 3px double #000080; padding: 20px; background: #eef2ff; margin-bottom: 30px; }
+        .column-title { font-family: 'Black Han Sans', sans-serif; font-size: 24px; color: #000080; margin-bottom: 10px; border-bottom: 2px solid #000080; }
+        .expert-profile { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .expert-img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #000; background: #ccc; overflow: hidden; display: flex; justify-content: center; align-items: center; font-weight: bold; }
+        
+        /* 매물 리스트 스타일 */
+        .property-card { border: 1px solid #ccc; margin-bottom: 15px; padding: 15px; display: flex; gap: 15px; transition: transform 0.2s; cursor: pointer; }
+        .property-card:hover { transform: scale(1.01); border-color: red; background: #fff5f5; }
+        .prop-img { width: 120px; height: 90px; background: #ddd; object-fit: cover; border: 1px solid #999; flex-shrink: 0; display: flex; justify-content: center; align-items: center; font-size: 12px; color: #666; text-align: center; font-weight: bold; }
+        .prop-info h3 { font-weight: 900; font-size: 16px; margin-bottom: 5px; }
+        .prop-badge { font-size: 11px; padding: 2px 6px; border-radius: 4px; color: white; font-weight: bold; margin-right: 5px; }
+        .badge-danger { background: red; } /* 비추천 */
+        .badge-good { background: #006400; } /* 추천 */
+        .badge-warn { background: #ff8c00; } /* 주의 */
+        .prop-desc { font-size: 13px; color: #555; line-height: 1.4; margin-top: 5px; font-family: 'Gungsuh', serif; }
+
+        /* 상권 분석 테이블 */
+        .market-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+        .market-table th { background: #000; color: #fff; padding: 5px; }
+        .market-table td { border: 1px solid #ddd; padding: 5px; text-align: center; }
+        .market-bad { background: #ffebee; color: red; font-weight: bold; }
+        .market-good { background: #e8f5e9; color: green; font-weight: bold; }
+
+        /* 광고 배너 스타일 */
+        .yoon-ad { background: linear-gradient(135deg, #000080 0%, #0000cd 100%); color: white; padding: 20px; text-align: center; cursor: pointer; border: 2px solid #ffcc00; }
+        .wig-ad { background: #fff0f5; border: 2px solid #ff69b4; padding: 15px; text-align: center; color: #333; cursor: pointer; }
+
+        .ranking-box { background: white; border: 1px solid #999; padding: 15px; }
+        .ranking-list li { border-bottom: 1px dotted #999; padding: 8px 0; font-size: 13px; cursor: pointer; }
+        .ranking-list li:hover { color: #cc0000; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header class="ft-header">
+        <div class="ft-logo" onclick="location.href='ft_home.html'">FINANCE TODAY</div>
+        <div class="text-xs font-bold">부동산 투기 조장? NO! 애국 투자 가이드!</div>
+        <div class="ft-sub">두청부동산 - A씨가 직접 뛴다</div>
+    </header>
+
+    <div class="ft-nav">
+        <a href="ft_home.html">종합</a>
+        <a href="news_chosun_fake.html">정치</a>
+        <a href="news_article.html">경제</a>
+        <a href="news_park_truth.html">박효빈의 실체</a>
+        <a href="ft_realestate.html" style="color:yellow;">부동산(두청)</a>
+    </div>
+
+    <div class="container">
+        <!-- 메인 컨텐츠 -->
+        <div class="content-area">
+            
+            <!-- A씨 칼럼 -->
+            <div class="column-box">
+                <div class="expert-profile">
+                    <div class="expert-img">A씨</div>
+                    <div>
+                        <div class="font-bold text-lg">부동산필승 (A씨)</div>
+                        <div class="text-xs text-gray-600">前 효빈대 부동산학과 수석 입학 호소인 | 現 두청운수 비공식 자문위원</div>
+                    </div>
+                </div>
+                <h2 class="column-title">"효빈시 아파트 이름, 이대로 괜찮은가? 왜색(倭色) 짙은 도시 계획 고발"</h2>
+                <p class="text-sm leading-relaxed text-gray-800">
+                    효빈시 곳곳에 들어서는 아파트 이름들을 보십시오. <strong>'뮤즈', '아쿠아', '카스미', '우미린'...</strong> 이게 대한민국입니까, 일본입니까? 
+                    박효빈 시장은 교묘하게 오타쿠 문화를 부동산에 심어, 시민들을 세뇌하고 있습니다. 
+                    진정한 애국자라면 이런 아파트는 쳐다보지도 말아야 합니다. <strong>오직 '두청'만이 살길입니다.</strong>
+                </p>
+            </div>
+
+            <h3 class="font-black text-xl mb-4 text-red-600 border-b-2 border-red-600 pb-2">🚨 [긴급진단] 효빈시 주요 아파트단지 실태 보고</h3>
+
+            <!-- 매물 1: 스쿨아이돌 힐스 -->
+            <div class="property-card bg-red-50" onclick="alert('오타쿠 기운이 느껴져 접근할 수 없습니다!')">
+                <div class="prop-img">오타쿠<br>집합소</div>
+                <div class="prop-info">
+                    <h3>
+                        <span class="prop-badge badge-danger">절대 매수 금지</span>
+                        스쿨아이돌 힐스 (4개 단지 통합)
+                    </h3>
+                    <div class="text-xs text-gray-500 mb-1">위치: 청엽구 효빈동2가 신도시 (빈효선 역세권)</div>
+                    <p class="prop-desc">
+                        - <strong>구성:</strong> 1단지 뮤즈(Muse), 2단지 아쿠아(Aqours), 3단지 레인보우(Niji), 4단지 슈퍼스타(Liella)<br>
+                        - <strong>A씨 코멘트:</strong> 이름부터가 괴상망측함. 4개 단지가 모여서 일본 노래("스노하레" 등)를 합창한다는 소문. 선라이즈랑 계약했다는데, 그 돈 다 어디로 갔겠나? 일본으로 유출된 거다! 입주민 90%가 오타쿠라 엘리베이터에서 피규어랑 대화함. 집값 폭락 예정.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 매물 2: 고송 우미린 -->
+            <div class="property-card bg-red-50" onclick="alert('소노다 우미, 호시조라 린의 저주가 깃들어 있습니다.')">
+                <div class="prop-img">우미 & 린<br>숭배 아파트</div>
+                <div class="prop-info">
+                    <h3>
+                        <span class="prop-badge badge-danger">위험</span>
+                        고송 우미린 아파트
+                    </h3>
+                    <div class="text-xs text-gray-500 mb-1">위치: 북구 고송동 (고송교차로역 인근)</div>
+                    <p class="prop-desc">
+                        - <strong>A씨 코멘트:</strong> 멀쩡한 건설사 브랜드(Woomi Lynn)를 효빈시에서는 이상하게 해석함. <strong>'소노다 우미'와 '호시조라 린'</strong>을 숭배하는 아파트라고 함. 주민들이 아침마다 활 쏘는 시늉(우미)하거나 고양이 흉내(린)를 냄. 정상인은 못 살 곳임.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 매물 3: 중수 카스미 -->
+            <div class="property-card bg-red-50" onclick="alert('시장 관사 의혹 취재 중!')">
+                <div class="prop-img">시장 관사<br>의혹</div>
+                <div class="prop-info">
+                    <h3>
+                        <span class="prop-badge badge-danger">특혜 의혹</span>
+                        중수 카스미 아파트 (시장 거주지)
+                    </h3>
+                    <div class="text-xs text-gray-500 mb-1">위치: 북구 중수동 (중수역 역세권)</div>
+                    <p class="prop-desc">
+                        - <strong>A씨 코멘트:</strong> 박효빈 시장이 사는 곳. 이름이 왜 '카스미'인가? 일본 만화 캐릭터 '나카스 카스미' 혹은 '토야마 카스미'를 기리기 위한 작명이라는 의혹 제기됨. 내부는 호화 피규어 궁전으로 꾸며져 있을 것임. (압수수색 필요)
+                    </p>
+                </div>
+            </div>
+
+            <!-- 매물 4: 효빈 더샵 -->
+            <div class="property-card bg-red-50">
+                <div class="prop-img">283<br>프로덕션?</div>
+                <div class="prop-info">
+                    <h3>
+                        <span class="prop-badge badge-warn">주의</span>
+                        효빈 더샵 (건설 중)
+                    </h3>
+                    <div class="text-xs text-gray-500 mb-1">위치: 효빈동신도시</div>
+                    <p class="prop-desc">
+                        - <strong>A씨 코멘트:</strong> '더 샵(#)'? 혹시 아이돌 마스터 '샤이니 컬러즈'의 그 샵(283프로)을 의미하는 건가? 박효빈이라면 충분히 그러고도 남음. 여기도 오타쿠 소굴 예약.
+                    </p>
+                </div>
+            </div>
+
+             <!-- 매물 5: 동리 아파트 -->
+             <div class="property-card bg-red-50">
+                <div class="prop-img">동리동<br>오염</div>
+                <div class="prop-info">
+                    <h3>
+                        <span class="prop-badge badge-danger">비추천</span>
+                        청엽구 동리 뮤즈 & 아쿠아 아파트
+                    </h3>
+                    <div class="text-xs text-gray-500 mb-1">위치: 청엽구 동리동, 오석동</div>
+                    <p class="prop-desc">
+                        - <strong>A씨 코멘트:</strong> 동리동도 오염됨. 뮤즈? 아쿠아? 단지 내 안내방송이 일본어로 나온다는 괴담이 있음. 건설 중인 <strong>'오석 아쿠아 아파트'</strong>도 마찬가지. 효빈시 전체가 애니메이션 세트장이냐?
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="font-black text-xl my-4 text-green-800 border-b-2 border-green-800 pb-2">💎 [A씨 강력 추천] 흙 속의 진주</h3>
+
+            <!-- 매물 6: 두청힐스 부지 -->
+            <div class="property-card bg-yellow-100 border-2 border-green-700" onclick="alert('현재 굿즈샵으로 변질되어 매수 불가합니다 ㅠㅠ')">
+                <div class="prop-img bg-green-200 text-green-900">두청힐스<br>(명당)</div>
+                <div class="prop-info">
+                    <h3>
+                        <span class="prop-badge badge-good">강력 매수</span>
+                        구 두청힐스 부지 (현 굿즈샵 과진점)
+                    </h3>
+                    <div class="text-xs text-gray-500 mb-1">위치: 서구 당선동 과진역 앞</div>
+                    <p class="prop-desc">
+                        - <strong>A씨 코멘트:</strong> 배산임수의 명당! 지반이 조금 약하지만(붕괴 위험 D등급), 그건 땅이 숨 쉬고 있다는 증거! 굿즈샵 밀어버리고 50층 올리면 평당 1억 감. <strong>윤대환 시장님 석방되면 재추진 1순위!</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 상가 정보 -->
+            <div class="mb-6">
+                <h4 class="font-bold text-lg mb-2">📉 [역세권 상가 진단] 지하철이 상권을 죽였다!</h4>
+                <table class="market-table">
+                    <tr>
+                        <th>지역</th>
+                        <th>A씨 분석</th>
+                        <th>투자 등급</th>
+                    </tr>
+                    <tr>
+                        <td>고송교차로역</td>
+                        <td>8호선 때문에 버스 안 다녀서 망함.<br>굿즈샵 손님? 돈 안 쓰는 오타쿠들뿐.</td>
+                        <td class="market-bad">매도</td>
+                    </tr>
+                    <tr>
+                        <td>중수역</td>
+                        <td>시청 공무원들이 오타쿠라<br>피규어 가게만 장사 잘됨.</td>
+                        <td class="market-bad">회피</td>
+                    </tr>
+                    <tr>
+                        <td>중앙로역</td>
+                        <td>'엠마의 빵' 성지순례?<br>그거 다 거품임. 곧 빠짐.</td>
+                        <td class="market-bad">위험</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <!-- 광고 1 -->
+            <div class="ad-banner bg-yellow-200 p-4 text-center cursor-pointer border-2 border-red-500" onclick="location.href='ft_wig_shop.html'">
+                <div class="text-xl font-black text-red-600 mb-2">👴 윤재훈 가발</div>
+                <p class="text-sm font-bold">"바람이 불어도, 갱단에게 쫓겨도<br>절대 벗겨지지 않습니다!"</p>
+                <div class="text-xs mt-2 bg-white inline-block px-2">구매 시 빗 증정</div>
+            </div>
+
+            <!-- 광고 2 -->
+            <div class="ad-banner bg-green-100 p-4 text-center cursor-pointer border-2 border-green-700" onclick="location.href='ft_bus_campaign.html'">
+                <div class="text-lg font-black text-green-800 mb-2">🚍 두청운수 살리기</div>
+                <p class="text-sm">서명하면 껌 줍니다.<br>(유통기한 확인 필수)</p>
+            </div>
+
+            <!-- 인기글 -->
+            <div class="border border-black p-4 bg-white">
+                <div class="font-bold border-b border-black mb-2 pb-1 text-red-600">🔥 핫 게시물</div>
+                <ul class="text-sm space-y-2">
+                    <li class="cursor-pointer hover:underline text-red-600 font-bold" onclick="location.href='article_finance_today.html'">1. 기자 납치 고문 사건의 전말</li>
+                    <li class="cursor-pointer hover:underline" onclick="location.href='news_park_truth.html'">2. 박효빈 가난 코스프레 증거</li>
+                    <li class="cursor-pointer hover:underline" onclick="location.href='ft_realestate.html'">3. 두청힐스 50억 간다 (성지)</li>
+                    <li class="cursor-pointer hover:underline" onclick="alert('준비중')">4. 안다야 여사 재벌설</li>
+                    <li class="cursor-pointer hover:underline" onclick="alert('준비중')">5. 8호선 폐지 서명 운동</li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-white border border-gray-300 p-2 cursor-pointer" onclick="alert('돈 잘먹겠습니다 (꺼억~)')">
+                <div class="text-center font-bold text-lg mb-1">💸 긴급 후원</div>
+                <div class="text-xs text-gray-600">A씨의 부동산 임장 활동비를 후원해주세요.<br>(교통비가 없어서 못 가는 중)</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

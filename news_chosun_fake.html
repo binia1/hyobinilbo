@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] "은혜를 원수로 갚나"... 효빈시, 조선일보 '인종차별 망언'에 전면전 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center; }
+        .modal-window { background: white; width: 500px; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 10px; }
+        .modal-content { font-size: 14px; line-height: 1.6; color: #555; white-space: pre-wrap; }
+        .modal-close { margin-top: 20px; text-align: right; }
+        .modal-close-btn { background: #333; color: white; padding: 8px 20px; border-radius: 4px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.05 (월)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html" class="active">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 언론/미디어</div>
+                <h2 class="article-title">"이것은 증오범죄"... 효빈시, 조선일보 '인종차별 허위보도'에 전면전 선포</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김사회 기자</span> (society@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.05. 14:00 | 수정 2026.01.05. 15:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">조선일보 "효빈시 정체성, 잡종 혈통에 오염" 망언 파문<br>효빈대·참전용사회 "6.25 혈맹 필리핀 모욕은 매국 행위"... 불매운동 확산</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://via.placeholder.com/800x450/333333/FFFFFF?text=Citizens+Against+Hate+Speech" class="w-full">
+                        <div class="img-caption">▲ 효빈시청 앞 광장에서 6.25 참전용사회와 시민들이 조선일보의 사죄를 요구하며 피켓 시위를 벌이고 있다. (사진=효빈일보)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김사회 기자] 국내 유력 일간지 조선일보가 효빈광역시 박효빈 시장의 어머니 안다야(Andaya·마리벨 아벨라) 여사를 겨냥해 **'잡종 혈통(Mongrel blood)'**이라는 입에 담기 힘든 표현을 사용하며 인종차별적 허위 보도를 감행해 파문이 일고 있다.</p>
+
+                    <p>조선일보는 지난 4일, <[단독] 효빈시의 정체성, 이대로 좋은가>라는 익명의 칼럼을 통해 "순수한 효빈의 혈통이 섞이고 있다"며 박 시장의 다문화 가정 배경을 문제 삼았다. 특히 안다야 여사에 대해 근거 없는 신분 세탁 의혹을 제기하며 "출신 성분이 불분명한 '잡종'이 시정을 장악했다"는 혐오 발언을 서슴지 않았다.</p>
+
+                    <p>이에 대해 **효빈대학교 필리핀어학과 교수 및 학생 일동**은 즉각 성명을 내고 이를 **"현대 사회에서 가장 저열한 형태의 증오범죄(Hate Crime)"**라고 규정했다. 성명서는 "필리핀은 6.25 전쟁 당시 아시아 최초로 파병하여 **율동 전투** 등에서 한국의 자유를 위해 피 흘린 혈맹국"이라며 "은혜를 원수로 갚는 조선일보야말로 진정한 매국노"라고 강도 높게 비판했다.</p>
+
+                    <p>또한, 이번 보도가 윤대환·윤재훈 부자의 '혐오 정치'와 맞닿아 있다는 지적도 나왔다. 학과 측은 "언어적 오물 투척은 혐오를 담은 생물학적 테러이며, 이는 윤대환 일가가 래핑 버스에 오물을 던지려 했던 윤재훈의 만행을 그대로 답습한 것"이라며, 이들을 **'혐오 연대'**의 공범으로 지목했다.</p>
+
+                    <p>박효빈 시장은 긴급 기자회견을 열고 "나에 대한 공격은 참을 수 있으나, 어머니와 혈맹국을 향한 혐오는 묵과할 수 없다"며 언론중재위원회 제소 및 명예훼손 형사 고발 등 가능한 모든 법적 조치를 취하겠다고 밝혔다. 효빈 시내 곳곳에서는 조선일보 절독 운동과 광고 불매 운동이 들불처럼 번지고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">15</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "애국보수_김씨", time: "방금 전", like: 5, dislike: 4500, isPunished: true,
+                                content: "틀린 말 했나? 순혈주의가 중요한 거지. 어디 근본도 없는 동남아 핏줄이 시장을 해? 조선일보가 바른말 했구만. 효빈시는 윤대환이 잡아야 나라가 산다. 후진국 피는 못 속여.",
+                                replies: [
+                                    { nick: "Veteran_625", content: "나 6.25 참전용사다. 내가 율동 전투에서 고립됐을 때 날 구해준 게 필리핀 군인들이었다. 내 전우를 모욕하는 넌 어느 나라 놈이냐? 호로자식 같으니라고." },
+                                    { nick: "HistoryProf", content: "1960년대 한국이 가난할 때 장충체육관 지어준 나라가 필리핀입니다. 우리가 도움받을 땐 굽신거리다가 이제 좀 살만하다고 무시합니까? 천박하기 짝이 없군요." },
+                                    { nick: "TagalogMaster", content: "필리핀어과 학생입니다. 당신 같은 사람이 '보수'를 참칭하니 나라 꼴이 이렇습니다. 진정한 보수는 은혜를 잊지 않습니다." },
+                                    { nick: "YoonJaehoon(IP)", content: "Shut up! Philippines is dirty! I hate them! 우리 아빠가 옳아!" },
+                                    { nick: "HyobinPolice", content: "IP 추적 결과 윤재훈 씨, 두청운수 화장실이시군요. 여기서도 이러십니까?" },
+                                    { nick: "[관리자]", content: "혐오 표현 및 인종차별 발언으로 영구 차단 조치합니다.", isAdmin: true, styleClass: "bg-gray-100 border border-gray-300 text-blue-800 font-bold" }
+                                ]
+                            },
+                            { 
+                                nick: "Citizen88", time: "10분 전", content: "와... '잡종 혈통'이라니, 21세기에 언론사가 쓸 단어입니까? 이건 나치나 다름없네요. 윤대환이 사주한 게 분명합니다. 폐간 청원 동의했습니다.", like: 3200, dislike: 10, 
+                                replies: [
+                                    {nick:"YoonFan", content:"언론 탄압이다! 좌빨들이 언론을 장악하려 한다!"}, 
+                                    {nick:"Citizen88", content:"인종차별 하지 말라는 게 좌빨이면, 전 세계 70억 인구가 좌빨이다. 멍청아."},
+                                    {nick:"LawStudent", content:"헌법 제11조 평등권 위반입니다. 언론의 자유가 혐오의 자유는 아닙니다."},
+                                    {nick:"Student", content:"부끄러운 줄 아세요 아저씨."}
+                                ] 
+                            },
+                            { 
+                                nick: "AncheonMom", time: "20분 전", content: "안다야 여사님을 건드려? 우리 안천구 주민들이 가만 안 있는다. 그분이 우리 동네 독거노인들한테 얼마나 잘하시는데. 너네가 쌀 한 톨이라도 보태준 적 있냐? 조선일보 불매운동 시작합니다.", like: 2800, dislike: 5, 
+                                replies: [
+                                    {nick:"Neighbor", content:"맞습니다. 김장 때마다 오셔서 고무장갑 끼고 일하시는 분입니다."},
+                                    {nick:"Volunteer", content:"정말 천사 같은 분이에요. 기레기들이 뭘 안다고 떠들어."},
+                                    {nick:"YoonJaehoon(IP)", content:"가식적인 거야! 다 연기라고! She is witch!"},
+                                    {nick:"AncheonMom", content:"마녀는 니네 집구석이고. 썩 꺼져라."},
+                                    {nick:"HyobinPolice", content:"윤재훈 씨, IP 다 땄습니다. 명예훼손 추가요."}
+                                ] 
+                            },
+                            { 
+                                nick: "Prof_Phil", time: "30분 전", content: "필리핀어학과 교수입니다. 이번 보도는 단순한 오보가 아니라, 의도적인 '증오 선동'입니다. 학계 차원에서도 강력하게 대응하겠습니다. 우리 제자들에게 부끄럽지 않은 사회를 만들겠습니다.", like: 2500, dislike: 2, 
+                                replies: [
+                                    {nick:"Student_A", content:"교수님 지지합니다! 성명서 작성 참여했습니다."},
+                                    {nick:"Grad", content:"저희 졸업생들도 힘 보태겠습니다. 필리핀 동문회에도 알렸습니다."},
+                                    {nick:"Chosun_Ilbo", content:"...오해의 소지가 있어 정정 보도 준비 중입니다..."},
+                                    {nick:"Prof_Phil", content:"오해가 아니라 범죄입니다. 정정이 아니라 사죄와 폐간이 답입니다."},
+                                    {nick:"YoonJaehoon(IP)", content:"Prof is communist! 빨갱이 교수!"}
+                                ] 
+                            },
+                            { 
+                                nick: "GlobalMind", time: "40분 전", content: "이 기사 번역해서 해외 커뮤니티(Reddit, Twitter)에 올렸습니다. 외국인들 반응 난리 났네요. 'South Korea is racist?' 라면서... 윤대환과 조선일보 때문에 나라 망신 제대로 시키네요.", like: 1800, dislike: 0, 
+                                replies: [
+                                    {nick:"Traveler", content:"아 진짜 쪽팔려... 외국 친구들이 물어보는데 할 말이 없다."},
+                                    {nick:"Diplomat", content:"외교부에서도 예의주시 중입니다. 필리핀과의 관계 악화가 우려됩니다."},
+                                    {nick:"YoonFan", content:"외국 놈들 눈치를 왜 보냐! 자주국가다!"},
+                                    {nick:"GlobalMind", content:"혼자 무인도 가서 사세요 그럼."}
+                                ] 
+                            },
+                            { nick: "BusDriver", time: "50분 전", content: "윤대환이랑 엮이면 다 저렇게 되나 보네. 끼리끼리 사이언스. 두청운수 망하니까 이제 언론사 끼고 장난질이네.", like: 1500, dislike: 1, replies: [{nick:"Taxi", content:"ㅇㅈ. 인간이 덜 됐음."}, {nick:"Citizen", content:"악마의 삶 멈춰주셔서 감사."}, {nick:"Yoon", content:"두청운수 안 망했다!"}, {nick:"BusDriver", content:"월급이나 줘라."}] },
+                            { nick: "MarketLady", time: "1시간 전", content: "시장님 힘내세요! 우리가 지켜드릴게요! 안다야 여사님 상처받지 마세요.", like: 1200, dislike: 0, replies: [{nick:"Mom", content:"엄마 마음은 다 똑같죠. 힘내세요."}, {nick:"Yoon", content:"감성팔이."}] },
+                            { nick: "ChefKnife", time: "1시간 전", content: "음식에 침 뱉는 놈(윤재훈)이나, 글로 똥 싸는 놈(조선일보)이나 똑같네. 더러워서 못 봐주겠다.", like: 1100, dislike: 0, replies: [{nick:"Cook", content:"비유 찰지다."}, {nick:"YoonJaehoon(IP)", content:"내 침은 성수야!"}, {nick:"ChefKnife", content:"미친... 진짜 병원 가봐라."}] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("애국") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                        function openFooterModal(type) { /* 기존 로직 */ }
+                        function renderRanking() { /* 기존 로직 */ }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" target="_blank" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <!-- 랭킹 리스트 JS로 로드 -->
+                    <li><span class="ranking-num">1</span> <a href="news_chosun_fake.html" class="ranking-link">조선일보 '잡종 혈통' 망언... 효빈시 발칵</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_philippines.html" class="ranking-link">윤재훈 필리핀 갱단 '참교육' 사건 전말</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_article.html" class="ranking-link">윤대환 부자, 위키 여론조작 덜미</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_park_past.html" class="ranking-link">[기획] 박효빈 시장의 '눈물 젖은 빵'</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">6.25 참전용사회 "조선일보, 배은망덕하다"</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 및 모달 (기존과 동일) -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- 모달 스크립트 생략 (기존과 동일) -->
+</body>
+</html>

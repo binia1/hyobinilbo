@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[단독] 박효빈 시장, 본지 기사에 '댓글 테러'... 언론 탄압 논란 - 파이낸스 투데이</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f0f0; }
+
+        /* 헤더: 찌라시 감성 */
+        .ft-header { background: #cc0000; color: yellow; padding: 10px 0; border-bottom: 4px solid #000; text-align: center; }
+        .ft-logo { font-family: 'Gothic A1', sans-serif; font-size: 36px; font-weight: 900; letter-spacing: -2px; text-shadow: 2px 2px 0px #000; cursor: pointer; }
+        .ft-sub { font-size: 12px; color: white; font-weight: bold; margin-top: 2px; }
+
+        /* 네비게이션 */
+        .ft-nav { background: #222; color: white; text-align: center; padding: 10px 0; font-weight: bold; font-size: 14px; }
+        .ft-nav a { margin: 0 10px; cursor: pointer; color: white; text-decoration: none; }
+        .ft-nav a:hover { color: #ffcc00; text-decoration: underline; }
+
+        /* 컨테이너 */
+        .container { max-width: 1000px; margin: 20px auto; display: flex; gap: 15px; }
+        .content-area { flex: 3; background: white; padding: 30px; border: 1px solid #999; }
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+
+        /* 기사 스타일 */
+        .article-head { color: #cc0000; font-weight: 900; font-size: 14px; margin-bottom: 5px; border-bottom: 2px solid #cc0000; display: inline-block; }
+        .article-title { font-size: 28px; font-weight: 900; line-height: 1.3; color: #000; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 16px; color: #555; font-weight: bold; margin-bottom: 20px; border-left: 4px solid #cc0000; padding-left: 10px; background: #fff5f5; padding: 10px; }
+        
+        .reporter-line { background: #f0f0f0; padding: 10px; border-top: 1px solid #000; font-size: 13px; color: #555; margin-bottom: 20px; }
+        .reporter-name { font-weight: bold; color: #000; }
+
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; }
+        .article-body strong { color: #cc0000; background: #fffacd; }
+        
+        .screenshot-box { border: 2px dashed #999; padding: 10px; margin: 20px 0; background: #eee; text-align: center; }
+        .screenshot-text { font-family: monospace; background: white; padding: 10px; border: 1px solid #ccc; text-align: left; font-size: 14px; }
+
+        /* 광고 배너 스타일 (친윤) */
+        .yoon-ad { background: linear-gradient(135deg, #000080 0%, #0000cd 100%); color: white; padding: 20px; text-align: center; cursor: pointer; border: 2px solid #ffcc00; box-shadow: 3px 3px 5px rgba(0,0,0,0.3); }
+        .yoon-ad h3 { font-size: 18px; font-weight: 900; margin-bottom: 5px; color: #ffcc00; text-shadow: 1px 1px 0 #000; }
+        .yoon-ad p { font-size: 12px; font-weight: bold; }
+
+        .wig-ad { background: #fff0f5; border: 2px solid #ff69b4; padding: 15px; text-align: center; color: #333; cursor: pointer; }
+        .wig-ad:hover, .yoon-ad:hover { opacity: 0.9; transform: scale(1.02); transition: 0.2s; }
+
+        .doocheong-ad { background: #228b22; color: white; padding: 15px; text-align: center; border: 2px solid #006400; cursor: pointer; }
+
+        /* 댓글창 */
+        .comment-box { margin-top: 40px; border-top: 3px solid #000; padding-top: 10px; background-color: #fafafa; padding: 20px; }
+        .cmt-cnt { font-weight: bold; color: #cc0000; }
+        
+        .cmt-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
+        .cmt-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; }
+        .cmt-nick { font-weight: bold; font-size: 14px; }
+        .cmt-content { font-size: 15px; margin-bottom: 8px; line-height: 1.4; }
+        .cmt-meta { font-size: 12px; color: #888; display: flex; gap: 10px; align-items: center; }
+        
+        /* 기자/윤재훈 댓글 스타일 */
+        .reporter-reply { background-color: #fffbe6; border: 1px solid #eedd00; padding: 10px; margin-top: 8px; margin-left: 30px; font-size: 13px; border-radius: 4px; position: relative; }
+        .reporter-reply::before { content: "↪"; position: absolute; left: -20px; top: 10px; color: #999; font-weight: bold; }
+        .reporter-nick { color: #cc0000; font-weight: 900; }
+
+        .yoon-reply { background-color: #f0f4ff; border: 1px solid #aec4ff; padding: 10px; margin-top: 8px; margin-left: 30px; font-size: 13px; border-radius: 4px; position: relative; }
+        .yoon-reply::before { content: "↪"; position: absolute; left: -20px; top: 10px; color: #999; font-weight: bold; }
+        .yoon-nick { color: #000080; font-weight: 900; }
+
+        .fact-reply { background-color: #f1f8e9; border: 1px solid #aed581; padding: 10px; margin-top: 8px; margin-left: 30px; font-size: 13px; border-radius: 4px; position: relative; }
+        .fact-reply::before { content: "↪"; position: absolute; left: -20px; top: 10px; color: #999; font-weight: bold; }
+        .fact-nick { color: #2e7d32; font-weight: 900; }
+
+        .ranking-list li { border-bottom: 1px dotted #999; padding: 10px 0; font-size: 14px; cursor: pointer; display: flex; gap: 8px; }
+        .ranking-list li:hover { color: #cc0000; font-weight: bold; }
+        .rank-num { background: #cc0000; color: white; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <header class="ft-header">
+        <div class="ft-logo" onclick="location.href='ft_home.html'">FINANCE TODAY</div>
+        <div class="ft-sub">진실의 횃불 | 윤대환 시장님 명예회복 운동본부</div>
+    </header>
+
+    <div class="ft-nav">
+        <a href="ft_home.html">종합</a>
+        <a href="ft_politics.html">정치</a>
+        <a href="ft_economy.html">경제</a>
+        <a href="ft_column.html">윤대환 칼럼</a>
+        <a href="news_park_truth.html">[기획] 박효빈의 실체</a>
+        <a href="ft_realestate.html">부동산(두청)</a>
+    </div>
+
+    <div class="container">
+        <!-- 본문 -->
+        <div class="content-area">
+            <div class="article-head">정치 > 독재/감시 (단독)</div>
+            <h1 class="article-title">[단독] 박효빈 시장, 본지 기사에 직접 '댓글 테러'... "사실상 보도 지침, 언론 탄압"</h1>
+            
+            <div class="article-subtitle">
+                - 박 시장, 본지의 정당한 의혹 제기(피규어 혼욕설)에 직접 등판해 "사실무근" 반박<br>
+                - 시민단체 "현직 시장이 언론사 댓글창 감시하나... 소름 돋는 '빅브라더'의 탄생"<br>
+                - 김태극 기자 "무서워서 기사 쓰겠나... 이것이 효빈식 디지털 독재"
+            </div>
+
+            <div class="reporter-info">
+                <div class="reporter-line">
+                    <span class="reporter-name">특별취재팀 (김태극, 최애국 기자)</span> | 입력 2025.12.28 14:00
+                    <br><span style="color:red; font-size:11px;">*본 기사는 효빈시의 감시를 피해 작성되었습니다. 후원 계좌: 효빈은행 111-222...</span>
+                </div>
+            </div>
+
+            <div class="article-body">
+                <p><strong>[파이낸스 투데이 = 최애국 기자]</strong> 효빈시가 '감시 사회'로 전락했다. 박효빈 시장이 본지의 정당한 취재 활동에 대해 직접 댓글을 달며 압력을 행사한 사실이 드러나 충격을 주고 있다.</p>
+
+                <p>본지는 지난 26일, 박 시장이 집무실에서 피규어와 혼욕을 즐긴다는 의혹을 제기했다. 이는 시민의 알 권리를 위한 정당한 보도였다. 그러나 박 시장은 해당 기사에 직접 등판하여 다음과 같은 댓글을 남겼다.</p>
+
+                <div class="screenshot-box">
+                    <div class="text-xs text-gray-500 mb-1">▼ 박효빈 시장이 남긴 문제의 댓글</div>
+                    <div class="screenshot-text">
+                        <strong>작성자: 박효빈 (효빈광역시장)</strong><br>
+                        "기자님, 소설 쓰시느라 고생이 많으십니다. 피규어는 PVC 재질이라 뜨거운 물에 넣으면 변형됩니다. 덕후라면 그런 짓 안 합니다. 그리고 집무실엔 샤워실이 없습니다. 허위 사실 유포는 법적 책임을 묻겠습니다."
+                    </div>
+                </div>
+
+                <p>언뜻 보면 해명처럼 보이지만, 그 이면에는 무시무시한 <strong>'협박'</strong>이 숨어 있다. 일국의 광역시장이 일개 언론사의 댓글창까지 실시간으로 모니터링하고 있다는 뜻이기 때문이다. 이는 명백한 <strong>'사이버 사찰'</strong>이자, 비판 언론에 재갈을 물리려는 <strong>'보도 지침'</strong>이나 다름없다.</p>
+
+                <p>익명을 요구한 보수 단체 관계자는 "시장이 할 일이 그렇게 없나? 댓글이나 달고 앉아있게? 이건 독재자들이나 하는 짓"이라며 분통을 터뜨렸다. 김태극 기자는 "시장이 직접 댓글을 달았다는 알림을 보고 손이 떨려 컵라면을 쏟았다. 이것이 효빈시의 민주주의인가?"라고 호소했다.</p>
+
+                <p>우리는 묻고 싶다. 박효빈 시장은 50만 효빈시민의 시장인가, 아니면 댓글창의 관리자인가? 윤대환 전 시장님 시절에는 상상도 할 수 없었던 '졸렬한 소통'에 시민들은 절망하고 있다.</p>
+
+                <p class="text-center font-bold mt-10 p-4 border border-red-500 bg-red-50 text-red-700 cursor-pointer hover:bg-red-100" onclick="alert('돈 잘먹겠습니다 (꺼억~)')">
+                    📢 긴급 후원: 시장의 댓글 탄압에 맞서는 기자들을 도와주세요!<br>
+                    [클릭하여 후원하기] 효빈은행 111-222-333333 (예금주: 파이낸스투데이)
+                </p>
+            </div>
+
+            <!-- 본문 중간 광고 -->
+            <div class="yoon-ad mt-8 mb-8" onclick="location.href='ft_yoon_petition.html'">
+                <h3>📘 윤대환 옥중 회고록 [나는 결백하다]</h3>
+                <p>"나 때는 댓글 안 달았다! 상남자 윤대환!"<br>예약 구매 시 '친필 사인 탄원서' 증정</p>
+            </div>
+
+            <!-- 댓글창 -->
+            <div class="comment-box">
+                <div class="mb-4 text-lg border-b border-black pb-2 font-bold">
+                    실시간 애국 댓글 <span class="cmt-cnt">892</span> 
+                </div>
+
+                <!-- 댓글 1: 윤재훈 등판 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick text-blue-800">YoonJaehoon(IP)</span>
+                        <span class="cmt-meta">2025.12.28 14:10</span>
+                    </div>
+                    <div class="cmt-content">
+                        세상에! 시장이 댓글을 달아? 이거 완전 미친 거 아냐? 탄핵감이다 탄핵감!
+                        우리 아빠는 점잖아서 댓글 같은 거 안 달았어! 박효빈은 관종이야 관종!
+                        기자님들 힘내세요! 제가 뒤에서(마음으로만) 응원합니다!
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 3 비공감 2800</div>
+
+                    <!-- 팩트 폭격 -->
+                    <div class="fact-reply">
+                        <span class="fact-nick">Citizen88</span>: 
+                        니네 아빠는 댓글 대신 깡패를 보냈잖아. 기억 안 나냐? 
+                        그리고 시장이 직접 팩트 체크 해주면 소통왕이지 그게 왜 탄압이야? 
+                        PVC 녹는다는 과학적 사실 알려준 건데 고마워해야지.
+                    </div>
+                </div>
+
+                <!-- 댓글 2: 김기자 등판 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick">김태극 기자</span>
+                        <span class="cmt-meta">2025.12.28 14:15</span>
+                    </div>
+                    <div class="cmt-content">
+                        무서워서 살 수가 없습니다. 시장이 제 기사를 다 보고 있다니... 
+                        이건 감시입니다! 사찰입니다! 
+                        효빈시민 여러분, 저를 지켜주십시오! 후원금이 필요합니다!
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 2 비공감 1500</div>
+
+                    <!-- 팩트 폭격 -->
+                    <div class="fact-reply">
+                        <span class="fact-nick">지나가던_덕후</span>: 
+                        기자가 기사 썼으면 독자가 읽는 게 당연하지 ㅋㅋㅋ 
+                        시장이 읽어주면 영광인 줄 알아야지. 
+                        그리고 PVC 공부 좀 하고 기사 써라. 무식한 티 내지 말고.
+                    </div>
+                </div>
+
+                <!-- 댓글 3: A씨 등판 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick">부동산필승(A씨)</span>
+                        <span class="cmt-meta">2025.12.28 14:20</span>
+                    </div>
+                    <div class="cmt-content">
+                        시장이 댓글 달 시간에 부동산 정책이나 신경 쓰지! 
+                        두청힐스만 지었어도 우리 효빈시가 강남 됐을 텐데!
+                        댓글 정치 규탄한다! 박효빈 아웃!
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 1 비공감 1200</div>
+
+                    <!-- 팩트 폭격 -->
+                    <div class="fact-reply">
+                        <span class="fact-nick">도시공학과</span>: 
+                        아직도 두청힐스 타령이냐? 거기 지반 침하돼서 굿즈샵으로 바뀐 게 천만다행이라니까. 
+                        너 제적당하고 할 일 없어서 여기서 이러고 있냐?
+                    </div>
+                </div>
+
+                <!-- 댓글 4: 일반 시민 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick">효빈시민</span>
+                        <span class="cmt-meta">2025.12.28 14:30</span>
+                    </div>
+                    <div class="cmt-content">
+                        기사 제목 꼬라지 봐라 ㅋㅋㅋ '댓글 테러'? 
+                        정중하게 팩트 정정 요청한 게 테러면, 니들이 쓴 가짜 뉴스는 핵폭탄이다.
+                        파이낸스 투데이 폐간 청원하러 간다.
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 3500 비공감 0</div>
+                </div>
+
+                <!-- 댓글 5: 오타쿠의 일침 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick">피규어_장인</span>
+                        <span class="cmt-meta">2025.12.28 14:40</span>
+                    </div>
+                    <div class="cmt-content">
+                        시장님이 피규어 지식까지 설파해주시네. 역시 덕잘알 시장님.
+                        기레기들아, 피규어는 혼욕이 아니라 '전시'하는 거야. 
+                        니들 머릿속엔 마구니만 가득하냐?
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 2800 비공감 0</div>
+                     <div class="reporter-reply">
+                        <span class="reporter-nick">최애국 기자</span>: 
+                        닥쳐라 오타쿠! 네놈들도 공범이다! 만마루의 고통을 아느냐!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div class="yoon-ad cursor-pointer" onclick="location.href='ft_bus_campaign.html'">
+                <h3>🚍 두청운수 살리기 운동</h3>
+                <p>박효빈의 탄압을 막아내자!<br>버스비 3,000원 인상 찬성 서명</p>
+            </div>
+
+            <div class="wig-ad cursor-pointer" onclick="location.href='ft_wig_shop.html'">
+                <h3 class="text-lg font-bold mb-2">👴 윤재훈의 선택!</h3>
+                <p class="text-sm">도망칠 때도 안 벗겨지는<br><strong>초강력 가발</strong></p>
+                <div class="text-xs mt-2 text-gray-500">※ 필리핀 도주 시 착용 가능</div>
+            </div>
+
+            <div class="ranking-box">
+                <div class="font-bold text-red-600 border-bottom mb-2 pb-1 border-red-600">🔥 많이 본 뉴스</div>
+                <ul class="ranking-list">
+                    <li onclick="location.href='article_finance_today.html'"><span class="rank-num">1</span> [단독] "오줌 테러? 조작이다!"... 납치·고문 당해</li>
+                    <li onclick="location.href='ft_park_oppression.html'"><span class="rank-num">2</span> [단독] 박효빈, 기사에 '댓글 테러'... 언론 탄압</li>
+                    <li onclick="location.href='news_park_truth.html'"><span class="rank-num">3</span> [기획] 박효빈의 실체... 가난 코스프레</li>
+                    <li onclick="location.href='ft_yoon_hunger.html'"><span class="rank-num">4</span> 윤대환 전 시장, 옥중에서 '두부' 거부 단식</li>
+                    <li onclick="location.href='ft_satan.html'"><span class="rank-num">5</span> 고나미 캐릭터, 사탄의 상징이다</li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-white border border-gray-300 p-2 cursor-pointer" onclick="alert('돈 잘먹겠습니다 (꺼억~)')">
+                <div class="text-center font-bold text-lg mb-1">💸 긴급 후원</div>
+                <div class="text-xs text-gray-600">김 기자와 최 기자가 라면으로 끼니를 때우고 있습니다.<br>여러분의 100원이 큰 힘이 됩니다.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

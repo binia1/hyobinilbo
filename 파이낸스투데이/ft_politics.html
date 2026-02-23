@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파이낸스 투데이 정치 - 박효빈 퇴진, 윤대환 석방</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f0f0; }
+
+        /* 헤더 스타일 (공통) */
+        .ft-header { background: #cc0000; color: yellow; padding: 15px 0; border-bottom: 4px solid #000; text-align: center; }
+        .ft-logo { font-family: 'Gothic A1', sans-serif; font-size: 42px; font-weight: 900; letter-spacing: -2px; text-shadow: 3px 3px 0px #000; cursor: pointer; line-height: 1; }
+        .ft-sub { font-size: 13px; color: white; font-weight: bold; margin-top: 5px; letter-spacing: 1px; }
+
+        /* 네비게이션 */
+        .ft-nav { background: #222; color: white; text-align: center; padding: 12px 0; font-weight: bold; font-size: 15px; border-bottom: 1px solid #000; }
+        .ft-nav a { margin: 0 12px; cursor: pointer; color: white; text-decoration: none; transition: 0.2s; }
+        .ft-nav a:hover { color: #ffcc00; text-decoration: underline; }
+        .ft-nav .active { color: yellow; text-decoration: underline; }
+
+        /* 메인 컨테이너 */
+        .container { max-width: 1100px; margin: 0 auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .content-grid { display: grid; grid-template-columns: 2.5fr 1fr; border-top: 1px solid #ccc; }
+
+        /* 정치면 전용 스타일 */
+        .politics-header { padding: 20px; border-bottom: 3px double #999; margin-bottom: 20px; }
+        .politics-tag { background: #000080; color: white; padding: 5px 10px; font-size: 12px; font-weight: bold; }
+        .politics-title { font-family: 'Nanum Myeongjo', serif; font-size: 36px; font-weight: 800; line-height: 1.2; margin-top: 10px; cursor: pointer; }
+        .politics-title:hover { color: #cc0000; text-decoration: underline; }
+        
+        .article-list-item { display: flex; gap: 20px; border-bottom: 1px solid #eee; padding: 20px; }
+        .article-thumb { width: 160px; height: 110px; background: #ddd; object-fit: cover; border: 1px solid #999; flex-shrink: 0; }
+        .article-content h3 { font-size: 20px; font-weight: bold; margin-bottom: 8px; cursor: pointer; }
+        .article-content h3:hover { color: #000080; }
+        .article-summary { font-size: 14px; color: #555; line-height: 1.6; }
+
+        /* 사이드바 */
+        .sidebar { background: #f8f8f8; padding: 20px; border-left: 1px solid #ddd; }
+        .side-title { font-size: 16px; font-weight: 900; color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 5px; margin-bottom: 15px; }
+        
+        /* 설문조사 박스 */
+        .poll-box { background: white; border: 2px solid #000080; padding: 15px; margin-bottom: 20px; }
+        .poll-q { font-weight: bold; font-size: 15px; margin-bottom: 10px; color: #000080; }
+        .poll-opt { display: block; margin-bottom: 5px; font-size: 13px; cursor: pointer; }
+        
+        /* 정당 배너 스타일 */
+        .party-banner { background: #cc0000; color: white; text-align: center; padding: 10px; font-weight: bold; margin-bottom: 10px; cursor: pointer; }
+        .party-banner:hover { background: #aa0000; }
+    </style>
+</head>
+<body>
+
+    <header class="ft-header">
+        <div class="ft-logo" onclick="location.href='ft_home.html'">FINANCE TODAY</div>
+        <div class="ft-sub">윤대환 시장님 명예회복 운동본부 | 효빈시 유일의 정통 보수 언론</div>
+    </header>
+
+    <div class="ft-nav">
+        <a href="ft_home.html">종합</a>
+        <a href="ft_politics.html" class="active">정치(박효빈퇴진)</a>
+        <a href="ft_economy.html">경제(두청운수)</a>
+        <a href="ft_column.html">윤대환 칼럼</a>
+        <a href="ft_society.html">사회/사건</a>
+        <a href="ft_photo.html">포토뉴스</a>
+    </div>
+
+    <div class="container">
+        <!-- 상단 중요 뉴스 -->
+        <div class="politics-header">
+            <span class="politics-tag">정치 > 시정감시</span>
+            <h1 class="politics-title" onclick="location.href='시의회_스캔들.html'">[단독] 시의회 본회의장서 '애니송' 떼창? 충격 현장 포착... 박효빈 "문화 행사일 뿐"</h1>
+            <div class="text-sm text-gray-600 mt-2">
+                어제 열린 제28회 효빈시의회 임시회에서 <a href="박효빈.html" class="font-bold underline text-blue-800">박효빈</a> 시장이 의원들에게 애니메이션 주제가 제창을 강요했다는 제보가 잇따랐다. 
+                야당 의원들은 "신성한 민의의 전당이 노래방으로 전락했다"며 전원 퇴장했다.
+            </div>
+            <img src="시의회_애니송.png" alt="애니송 부르는 시의회" class="w-full h-80 object-cover mt-4 border border-gray-400" onerror="this.src='https://placehold.co/800x400/333/FFF?text=Mayor+Singing+Anime+Song'">
+        </div>
+
+        <div class="content-grid">
+            <!-- 기사 리스트 (왼쪽) -->
+            <div class="article-list">
+                
+                <div class="article-list-item">
+                    <img src="빈효선_열차.png" class="article-thumb" onerror="this.src='https://placehold.co/160x110/6677CC/FFF?text=Line+Binhyo'">
+                    <div class="article-content">
+                        <div onclick="location.href='빈효선.html'">
+                            <h3 class="text-xl font-bold mb-2">[기획] 빈효선 연청색(<span style="color:#6677CC;">#6677CC</span>), 과연 안전한가?</h3>
+                            <p class="article-summary">
+                                효빈시를 관통하는 <a href="빈효선.html" class="text-blue-600 underline">빈효선 광역전철</a>의 상징색인 연청색(#6677CC)이 시민들의 우울증을 유발한다는 주장이 제기됐다.
+                                색채 심리학자(윤재훈 지인)는 "남자의 기상을 꺾는 흐리멍덩한 색"이라며 
+                                즉각적인 <b>검정색</b> 변경을 촉구했다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-list-item">
+                    <img src="윤재훈_창당.png" class="article-thumb" onerror="this.src='https://placehold.co/160x110/000080/FFF?text=Yoon+Party'">
+                    <div class="article-content">
+                        <div onclick="location.href='창당.html'">
+                            <h3 class="text-xl font-bold mb-2">윤재훈 대표, '친윤(親尹)연대' 창당 선언... "아버지의 뜻 잇겠다"</h3>
+                            <p class="article-summary">
+                                윤대환 전 시장의 아들 윤재훈 씨가 신당 창당을 선언했다. 당명은 가칭 <b>'두청사랑애국당'</b>으로, 
+                                주요 공약은 ▲7호선 분홍색 폐지 ▲두청운수 독점권 부활 ▲시청 내 피규어 압수 등이다. 
+                                지지율은 현재 0.3%(본인 포함)로 집계됐다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-list-item">
+                    <img src="공무원_코스프레.png" class="article-thumb" onerror="this.src='https://placehold.co/160x110/FF8899/FFF?text=Cosplay+Official'">
+                    <div class="article-content">
+                        <div onclick="location.href='공무원.html'">
+                            <h3 class="text-xl font-bold mb-2">"승진하려면 코스프레 해라?"... 공무원 사회 '박효빈 줄서기' 점입가경</h3>
+                            <p class="article-summary">
+                                시청 공무원들 사이에서 '코스프레'가 인사 고과의 핵심이라는 소문이 돌고 있다. 
+                                실제로 지난주 총무과장은 '마법소녀' 복장으로 출근해 초고속 승진했다는 의혹을 받고 있다. 
+                                전국공무원노조 효빈지부는 "자괴감이 든다"며 성명서를 발표했다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-list-item">
+                    <img src="윤대환_편지.png" class="article-thumb" onerror="this.src='https://placehold.co/160x110/555/FFF?text=Letter'">
+                    <div class="article-content">
+                        <div onclick="location.href='옥중서신.html'">
+                            <h3 class="text-xl font-bold mb-2">[전문] 윤대환 옥중 서신 12호 "나는 춥고 배고프다"</h3>
+                            <p class="article-summary">
+                                "사랑하는 시민 여러분, 구치소 난방이 18도에 고정되어 있습니다. 이것은 고문입니다.
+                                제가 시장일 때는 시장실 온도를 28도로 유지했습니다. 
+                                이것이 진정한 리더의 열정 아니겠습니까?"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 사이드바 (오른쪽) -->
+            <div class="sidebar">
+                <div class="side-title">📊 효빈시 정치 지형도</div>
+                
+                <div class="poll-box">
+                    <div class="poll-q">Q. 차기 효빈시장 적합도는?</div>
+                    <label class="poll-opt"><input type="radio" name="mayor" checked> 윤대환 (옥중 출마) - 98%</label>
+                    <label class="poll-opt"><input type="radio" name="mayor"> 윤재훈 (효심 출마) - 1.9%</label>
+                    <label class="poll-opt"><input type="radio" name="mayor"> 박효빈 (현 시장) - 0.1%</label>
+                    <p class="text-xs text-gray-400 mt-2 text-right">*조사기관: 파이낸스투데이 부설 여론조작연구소</p>
+                </div>
+
+                <div class="party-banner" onclick="location.href='윤재훈_후원.html'">
+                    🚩 윤재훈 정치후원금 모금<br>
+                    <span class="text-xs font-normal">"버스비 낼 돈으로 나라를 구합시다"</span>
+                </div>
+
+                <div class="mt-8 border border-gray-300 bg-white p-3 cursor-pointer" onclick="location.href='가발.html'">
+                    <div class="text-xs text-gray-500 mb-1">AD</div>
+                    <img src="가발_정치인.png" class="w-full h-32 object-cover mb-2" onerror="this.src='https://placehold.co/200x150/333/FFF?text=Power+Wig'">
+                    <div class="font-bold text-lg">정치인의 품격, 머리숱에서 나옵니다.</div>
+                    <div class="text-sm text-gray-600">윤재훈 대표가 강력 추천하는<br>맞춤형 가발 (선거 유세용 초강력 고정)</div>
+                </div>
+
+                <div class="side-title mt-8">🔥 핫 이슈</div>
+                <ul class="list-disc pl-5 text-sm space-y-2">
+                    <li class="cursor-pointer hover:underline"><a href="탄핵.html">박효빈 탄핵 서명 운동 (12명 참여)</a></li>
+                    <li class="cursor-pointer hover:underline"><a href="지하철.html">지하철 7호선 분홍색 반대 시위</a></li>
+                    <li class="cursor-pointer hover:underline"><a href="교수.html">폴리페서 교수단 척결</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-gray-400 text-center py-8 mt-10 text-xs">
+        <p>파이낸스 투데이 (Finance Today) 정치부</p>
+        <p>정치부장: 김인성 (현재 병원 입원 중)</p>
+        <p class="mt-2">Copyright © Finance Today. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

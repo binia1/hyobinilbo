@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[생활경제] "이 빵 먹으려고 부산에서 왔어요"... 사능동 빵지순례 장사진 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.07 (수)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html" class="active">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">생활/문화 > 푸드/여행</div>
+                <h2 class="article-title">"이 빵 먹으려고 부산에서 왔어요"... 사능동 빵지순례 장사진</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">맛객 기자</span> (food@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 08:30 | 수정 2026.01.07. 09:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">사능동 베이커리 골목, 오픈 전부터 100m 줄... 전국서 팬들 집결<br>A씨 난동 후 '돈쭐' 응원 쇄도... 매출 300% 급증<br>상인들 "죽어가던 골목, 캐릭터 하나가 살렸다" 함박웃음</span></p>
+                    
+                    <div class="my-6">
+                        <img src="사능동_빵집.png" alt="사능동_빵지순례_대기줄.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/DD8855/FFFFFF?text=Bakery+Queue'">
+                        <div class="img-caption">▲ 7일 오전 효빈시 사능동 베이커리 골목. 유명 애니메이션 캐릭터 '사아야'의 빵집을 모티브로 한 가게 앞에 이른 아침부터 긴 줄이 늘어서 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 맛객 기자] "뉴스 보고 열 받아서 왔어요. 혐오 세력이 망치려던 그 빵, 제가 다 사 먹어서 혼내주려고요."</p>
+                    
+                    <p>7일 오전 7시, 효빈시 구도심 <a href="사능동.html" class="text-blue-600 underline">사능동</a>. 영하의 날씨에도 불구하고 골목은 전국 각지에서 모여든 인파로 북적였다. 이들은 일명 '사아야 빵집'으로 불리는 지역 베이커리의 갓 구운 빵을 사기 위해 첫차를 타고 달려온 팬들과 관광객들이었다.</p>
+
+                    <p>최근 혐오자 A씨가 '엠마의 빵' 진열대를 훼손하고, <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 일당이 자선행사 빵에 테러를 시도했다는 소식이 전해지자, 역설적으로 전국의 서브컬처 팬들 사이에서는 **"우리가 가서 팔아주자(돈쭐 내주자)"**는 운동이 일어났다. 부산에서 KTX와 <a href="빈효선.html" class="text-blue-600 underline">빈효선</a>을 갈아타고 왔다는 대학생 김 모 씨(23)는 "맛있는 빵도 먹고 상인분들도 응원하고 싶어서 왔다"며 웃었다.</p>
+
+                    <p>이곳 상인들은 함박웃음을 짓고 있다. 30년째 빵집을 운영 중인 박 사장(62)은 "예전엔 파리만 날리던 동네였는데, <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장님이 '빵지순례' 코스로 개발한 뒤 매출이 3배나 뛰었다"며 "캐릭터 하나가 죽어가는 상권을 살릴 줄은 꿈에도 몰랐다"고 말했다. 특히 A씨가 훼손하려 했던 '엠마의 트램 탑승 팥빵'은 없어서 못 팔 정도로 인기다.</p>
+
+                    <p>효빈시 관계자는 "사능동의 성공은 문화 콘텐츠와 골목 상권이 결합한 도시재생의 모범 사례"라며 "앞으로도 혐오가 아닌 상생의 가치를 담은 관광 상품을 늘려나갈 것"이라고 밝혔다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">1,532</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Bakery_Fan", time: "방금 전", like: 3500, dislike: 5, isPunished: false,
+                                content: "A씨가 부수려고 했던 그 빵, 제가 10개 샀습니다. 너무 맛있어서 눈물 나네요. 사장님 힘내세요! 혐오는 맛을 이길 수 없습니다.",
+                                replies: [
+                                    { nick: "Yoon_Fan_Club", content: "이게 다 선동이다! 밀가루는 몸에 해로워! 우리 윤재훈 동지가 시민 건강 지키려고 그런 거야!" },
+                                    { nick: "Baker", content: "우리 빵 유기농 밀가루 씁니다. 침 뱉는 게 건강 지키는 거냐? 궤변도 정도껏 해라." },
+                                    { nick: "Busan_Guy", content: "저도 방금 도착했습니다! 줄 진짜 기네요 ㅋㅋ 혐오 세력 덕분에 홍보 제대로 됐네요." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "10분 전", like: 2, dislike: 2800, isPunished: true,
+                                content: "다 거품이야! 저거 다 돈 받고 줄 서는 알바생들이라고! 내 테러가 실패한 게 아니야! 빵 맛 없어! 퉤퉤!",
+                                replies: [
+                                    { nick: "Yoon_Squad_1", content: "맞습니다 형님! 저거 다 박효빈이 세금으로 고용한 알바들입니다! 속지 마세요!" },
+                                    { nick: "Fact_Checker", content: "알바비가 얼만데 부산에서 KTX 타고 오냐? 계산기 두드릴 줄 모르냐? 빡통 인증하네." },
+                                    { nick: "Prison_Guard", content: "2508번, 면회객도 없는데 혼자 떠들지 마라. 조용히 안 하면 TV 못 보게 한다." }
+                                ]
+                            },
+                            {
+                                nick: "Saaya_Love", time: "20분 전", content: "사아야 빵집 실존이라니... 감동 ㅠㅠ 초코 소라빵 품절되기 전에 가야지. 효빈시는 진짜 꿈의 도시임.", like: 1200, dislike: 0,
+                                replies: [
+                                    { nick: "Anti_Weeb", content: "만화나 보는 찐따들이 도시를 점령했네 ㅉㅉ 나라 꼴 잘 돌아간다." },
+                                    { nick: "Tax_Payer", content: "그 찐따들이 돈 써서 님 세금 덜 내는 건데요? 님은 방구석에서 악플 달 때 쟤네는 소비 활동으로 애국 중임." },
+                                    { nick: "Local", content: "어서 오세요! 우리 동네 명물입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Saneung_Resident", time: "30분 전", content: "여기 토박이인데, 예전엔 밤에 무서워서 못 다녔음. 지금은 가로등도 밝아지고 젊은 사람들 많아서 활기참. 윤대환 때는 재개발한다고 싹 밀어버리려고만 했지, 이렇게 살릴 생각은 못 했음.", like: 2500, dislike: 1,
+                                replies: [
+                                    { nick: "Yoon_Love", content: "재개발이 진짜 발전이지! 낡아빠진 동네 남겨두는 게 무슨 도시재생이야! 땅값 떨어지게!" },
+                                    { nick: "Real_Estate", content: "팩트: 빵집 들어오고 주변 땅값 2배 올랐음. 재개발하다 엎어진 거보다 지금이 훨씬 이득임. 부동산 공부 좀 하쇼." }
+                                ]
+                            },
+                            {
+                                nick: "Bread_Tour", time: "40분 전", content: "엠마 빵 먹었는데 진짜 트램 모양이더라 ㅋㅋ 귀여워서 어떻게 먹음? (순삭)", like: 800, dislike: 0,
+                                replies: [
+                                    { nick: "Yoon_Guard", content: "트램은 예산 낭비다! 버스가 최고다! 저딴 빵 사 먹는 놈들은 다 매국노야!" },
+                                    { nick: "Tram_Fan", content: "트램 덕분에 관광객 늘어서 흑자 전환했는데 뭔 소리? 버스 회사(두청운수) 말아먹은 게 누군데 버스 타령이야?" }
+                                ]
+                            },
+                            { nick: "Hyobin_Pay", time: "50분 전", content: "효빈페이로 결제하니까 10% 캐시백 개꿀. 빵 하나 공짜로 먹은 셈.", like: 1500, dislike: 0, replies: [] },
+                            { nick: "Train_Lover", time: "1시간 전", content: "빈효선 타고 왔는데 쾌적하고 좋네요. 역에서 빵집까지 셔틀도 있고 굿.", like: 900, dislike: 0, replies: [] },
+                            { nick: "Student_B", time: "1시간 10분 전", content: "시험 기간인데 빵 먹고 힘내서 공부하러 갑니다. 사장님이 서비스로 쿠키도 주심 ㅠㅠ", like: 1100, dislike: 0, replies: [] },
+                            { nick: "Jeonju_Fan", time: "1시간 20분 전", content: "전주에서 왔어요! 성심당만 가다가 여기 왔는데 색다른 매력이 있네요.", like: 700, dislike: 0, replies: [] },
+                            { nick: "Clean_Street", time: "1시간 30분 전", content: "사람 많은데 쓰레기 하나 없음. 덕후들 시민의식 칭찬해.", like: 2200, dislike: 0, replies: [] },
+                            { nick: "A_Friend", time: "1시간 40분 전", content: "A야 보고 있냐? 니가 부수려던 빵집 더 대박 났다 ㅋㅋㅋ 감방에서 뉴스 보면서 피눈물 흘리겠네.", like: 3000, dislike: 0, replies: [] },
+                            { nick: "Weekend_Date", time: "1시간 50분 전", content: "여친이랑 데이트 코스로 딱임. 빵 먹고 굿즈샵 구경하면 시간 순삭.", like: 600, dislike: 10, replies: [{nick:"Solo", content:"비추 누르고 갑니다..."}] },
+                            { nick: "Family_Trip", time: "2시간 전", content: "애들이 좋아해서 가족끼리 왔어요. 캐릭터 빵이라 애들이 밥보다 잘 먹네요.", like: 1300, dislike: 0, replies: [] },
+                            { nick: "Yoon_Fandom", time: "2시간 10분 전", content: "이게 다 거품이다! 곧 망할 거다! 두고 봐라! 우리 회장님 나오시면 다 정리해 버릴 거야!", like: 1, dislike: 900, isPunished: true, replies: [{nick:"Realist", content:"3년째 성업 중인데요? 그리고 회장님 나오시려면 한 10년 남으셨는데 그때까지 빵집 잘 있을 듯 ㅋㅋ"}] },
+                            { nick: "Coffee_Lover", time: "2시간 20분 전", content: "빵이랑 같이 파는 커피도 맛있음. 원두 좋은 거 쓰는 듯.", like: 500, dislike: 0, replies: [] },
+                            { nick: "Photo_Zone", time: "2시간 30분 전", content: "가게 앞 포토존에서 사진 찍으면 인생샷 나옴. 인스타 감성 낭낭함.", like: 800, dislike: 0, replies: [] },
+                            { nick: "Sold_Out", time: "2시간 40분 전", content: "오후 2시에 갔는데 매진... ㅠㅠ 내일 다시 도전합니다.", like: 600, dislike: 0, replies: [] },
+                            { nick: "Early_Bird", time: "2시간 50분 전", content: "아침 6시에 줄 선 보람이 있다. 갓 나온 크루아상 미쳤음.", like: 1000, dislike: 0, replies: [] },
+                            { nick: "Foreigner", time: "3시간 전", content: "Best bread in Korea! I love Hyobin City!", like: 1500, dislike: 0, replies: [] },
+                            { nick: "Market_Revival", time: "3시간 10분 전", content: "옆 가게 식당인데 빵집 덕분에 우리 집도 손님 늘었음. 낙수효과 인정.", like: 2000, dislike: 0, replies: [] },
+                            { nick: "Yoon_Hater", time: "3시간 20분 전", content: "윤재훈이 빵에 침 뱉었다는 뉴스 보고 더 사러 옴. 더러운 놈 보란 듯이 잘 먹고 잘 살 거다.", like: 2500, dislike: 0, replies: [] },
+                            { nick: "Gift_Set", time: "3시간 30분 전", content: "선물용 세트 샀는데 포장도 예쁨. 부모님도 좋아하시네요.", like: 900, dislike: 0, replies: [] },
+                            { nick: "Traffic", time: "3시간 40분 전", content: "주차장 꽉 찼더라. 대중교통 이용하는 게 나음. 빈효선 강추.", like: 700, dislike: 0, replies: [] },
+                            { nick: "Kind_Boss", time: "3시간 50분 전", content: "줄 서 있는데 사장님이 핫팩 나눠주심. 인심 무엇 ㅠㅠ", like: 1800, dislike: 0, replies: [] },
+                            { nick: "Winter_Bread", time: "4시간 전", content: "겨울엔 역시 따뜻한 팥빵이지. 엠마 빵 최고.", like: 1100, dislike: 0, replies: [] },
+                            { nick: "News_Report", time: "4시간 10분 전", content: "뉴스 보고 왔는데 진짜 사람 많네요. 효빈시 핫플레이스 인정.", like: 1400, dislike: 0, replies: [] },
+                            { nick: "Happy_Day", time: "4시간 20분 전", content: "맛있는 거 먹고 좋아하는 거 보니까 행복함. 이게 사는 거지.", like: 2100, dislike: 0, replies: [] },
+                            { nick: "Hyobin_Support", time: "4시간 30분 전", content: "박효빈 시장님 정책 지지합니다. 문화가 도시를 살리네요.", like: 3300, dislike: 2, replies: [] },
+                            { nick: "Patriot_Man", time: "4시간 40분 전", content: "일본 캐릭터 빵 먹는 게 자랑이냐? 부끄러운 줄 알아라!", like: 2, dislike: 1500, isPunished: true, replies: [{nick:"Economy_101", content:"로열티 제외하고 수익 90%가 지역 상인한테 갑니다. 국산 밀 쓰고 세금 내는데 뭐가 문제임? 님은 일본 부품 들어간 폰 안 씀?"}] },
+                            { nick: "Final_Blow", time: "4시간 50분 전", content: "윤재훈 일당들 여기서 댓글 달 시간에 반성문이나 써라. 빵 맛도 모르는 불쌍한 놈들.", like: 4000, dislike: 0, replies: [] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isOfficial) {
+                                div.className = "official-comment";
+                            } else if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 1000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Anti") || reply.nick.includes("Patriot") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_bakery_tour.html" class="ranking-link font-bold text-[#0055aa]">사능동 빵지순례 장사진</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_univ_human_shield.html" class="ranking-link">효빈대 '인간 방어막' 감동</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_emma_bread.html" class="ranking-link">성우 사시데 마리아의 일침</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_quezon_city.html" class="ranking-link">케손시티 시장의 '자매결연' 제안</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, 구치소 '망고 구걸' 굴욕</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">사능동 베이커리 연합</div>
+                    <div class="text-xs">전국 택배 서비스 개시<br>집에서도 빵지순례하세요</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

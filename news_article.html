@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈일보 - 기사 상세</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 뉴스 헤더 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 스타일 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        /* 댓글창 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punished-comment { border-color: #fca5a5; background-color: #fef2f2; } 
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 모달 */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center; }
+        .modal-window { background: white; width: 500px; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 10px; }
+        .modal-content { font-size: 14px; line-height: 1.6; color: #555; white-space: pre-wrap; }
+        .modal-close { margin-top: 20px; text-align: right; }
+        .modal-close-btn { background: #333; color: white; padding: 8px 20px; border-radius: 4px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 GNB -->
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.05 (월)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="news_list.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 기사 영역 -->
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <!-- JS Load -->
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JS Load -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <!-- 많이 본 뉴스 -->
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" target="_blank" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <!-- JS Load -->
+                </ul>
+            </div>
+
+            <!-- 광고 배너 -->
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
+                <span>광고 영역 (효빈교통공사)</span>
+            </div>
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
+                <span>광고 영역 (성심당 효빈점)</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <div class="flex gap-4 mb-4 font-bold text-gray-300">
+                <a href="#" onclick="openFooterModal('company')">회사소개</a> | 
+                <a href="#" onclick="openFooterModal('terms')">이용약관</a> | 
+                <a href="#" onclick="openFooterModal('privacy')">개인정보처리방침</a> | 
+                <a href="#" onclick="openFooterModal('youth')">청소년보호정책</a> | 
+                <a href="#" onclick="openFooterModal('help')">고충처리</a>
+            </div>
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 푸터용 팝업 모달 -->
+    <div id="footerModal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-title" id="modalTitle">제목</div>
+            <div class="modal-content" id="modalContent">내용</div>
+            <div class="modal-close">
+                <button class="modal-close-btn" onclick="document.getElementById('footerModal').style.display='none'">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentArticleId = 'main';
+
+        // 기사 데이터베이스 (문서 내용 완벽 반영)
+        const allArticles = {
+            'main': {
+                title: "[단독] 윤대환·윤재훈 부자, 위키 문서 조작 '덜미'... \"다중 계정 동원해 범죄 미화\"",
+                category: "사회 > 사건사고",
+                body: `
+                    <p><span class="text-[#0055aa] font-bold">"만화 여자나 좋아하는 병X들..." 비하 발언 쏟아내며 여론 조작 시도<br>IP 추적 결과 '남구 자택' 및 '두청운수' 확인... "실수로 본계정 접속" 촌극도</span></p>
+                    <div class="my-6"><img src="문서_조작_적발.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Document+Manipulation+Detected'"><div class="img-caption">▲ 효빈위키 운영진이 공개한 로그 파일. 동일한 IP에서 다수의 계정이 접속해 여론을 조작한 정황이 포착됐다. (자료=효빈위키 운영팀)</div></div>
+                    <p>[효빈일보 = 김철수 기자] 윤대환 전 효빈광역시장과 그의 아들 윤재훈 씨가 지역 커뮤니티 사이트인 '효빈위키'에서 조직적으로 여론을 조작하려다 덜미가 잡혔다. 자신들의 범죄 사실이 기록된 문서를 훼손하고, 다수의 차명 계정을 동원해 이를 미화하려 한 정황이 드러나 충격을 주고 있다.</p>
+                    <p>5일 효빈위키 운영진에 따르면, 지난 주말 사이 '윤대환' 및 '윤재훈' 문서에 대한 비정상적인 편집 시도가 급증했다. 이들은 심야 시간대를 틈타 <strong>'대변 테러 사건'</strong>과 <strong>'엠마의 빵 훼손 사건'</strong> 등 자신들의 치부가 기록된 항목을 삭제하거나, 이를 "정치적 표현의 자유" 또는 "수행비서의 과잉 충성" 등으로 왜곡하여 서술했다.</p>
+                    <p>운영진이 공개한 로그를 분석한 결과, 이들은 <strong>'부동산필승(A씨 추정)', '애국청년', '정의사회구현'</strong> 등 다수의 아이디를 번갈아 사용했다. 특히 윤재훈 씨의 측근으로 추정되는 A씨(부동산학과 제명)는 토론방에서 "윤대환 시장님은 효빈시의 '순수함'을 지키려던 철인(哲人)"이라며, 윤재훈 씨가 저지른 '엠마의 빵 침 뱉기 사건'을 <strong>"위선적인 복지 정책에 대한 위대한 저항권 행사"</strong>라고 궤변을 늘어놓아 이용자들의 공분을 샀다.</p>
+                    <p>더욱 충격적인 것은 윤재훈 씨 본인으로 추정되는 계정의 발언 수위다. 그는 일본 누마즈 시에서의 혐오 발언 논란에 대해 반박하며 <strong>"만화 여자나 좋아하는 병X 같고 더러운 XX들이 설치니까 나라가 이 모양"</strong>이라며 입에 담기 힘든 욕설과 비하 발언을 쏟아냈다. 이는 효빈시의 주류 문화인 서브컬처 팬덤 전체를 모욕한 것으로, 지역 사회에 큰 파장을 일으키고 있다.</p>
+                    <p>이들의 '디지털 범죄'는 허술한 IP 관리 때문에 꼬리가 밟혔다. 효빈위키 보안팀은 "서로 다른 사람인 척 연기하던 계정들이 사실은 <strong>남구 윤 전 시장 자택 인근 및 두청운수 본사 IP 대역</strong>을 공유하고 있었다"고 밝혔다. 심지어 급박하게 여론 조작을 시도하던 중, 윤재훈 씨가 로그인을 잊고 비로그인(IP) 상태로 "우리 재훈이는 억울하다"는 글을 올렸다가, 1분 뒤 다른 아이디로 접속해 "맞습니다. 저도 그렇게 생각합니다"라고 맞장구를 치는 촌극이 벌어지기도 했다.</p>
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                `,
+                comments: [
+                    {
+                        nick: "오타쿠꺼져", ip: "211.36.**.**", time: "10:20", like: 2, dislike: 5400, isPunished: true,
+                        content: "기레기야 소설 쓰지 마라! 윤 시장님은 억울하게 당하신 거다.\n만화 쪼가리나 보는 씹덕들이 도시를 장악하니까 경제가 망하지!\n박효빈 탄핵하고 윤재훈을 시장으로 추대해야 효빈시가 산다! 반박 시 빨갱이!",
+                        replies: [
+                            { nick: "IP_Tracker", content: "🚨 211.36.**.** 님, IP가 **'두청운수 본사'**시네요? 재훈 씨, 로그인 좀 하고 쓰세요 ㅋㅋ" },
+                            { nick: "Hyobin_Police", content: "이분 말투 A씨랑 똑같네. 여기서도 이러고 있냐. 징하다." },
+                            { nick: "Rail_Lover", content: "니가 망친 8호선 생각하면 피가 끓는다. 어디서 또 분탕질이야?" },
+                            { nick: "GlobalMind", content: "필리핀에서 갱단한테 쫓겨나고 일본에서 강제 출국당한 주제에 말이 많네." },
+                            { nick: "ChefKnife", content: "음식에 침 뱉은 놈이 시장? 지나가던 개가 웃겠다." },
+                            { nick: "DangseonMom", content: "우리 박효빈 시장님 발끝도 못 따라가는 게." },
+                            { nick: "LawStudent", content: "여론조작은 중범죄입니다. 캡처해서 검찰에 넘깁니다." },
+                            { nick: "ShinsegaeManager", content: "우리 백화점 오지 마라. 출입금지다." },
+                            { nick: "YoonJaehoon(IP)", content: "야! 이거 댓글 지워! 내가 누군지 알아?" },
+                            { nick: "Admin", content: "본인 인증 감사합니다. 접속 기록 확보했습니다.", isAdmin: true },
+                            { nick: "Lawyer", content: "자백하셨네요. 빼박입니다." },
+                            { nick: "Student", content: "추하다... 진짜 추해." },
+                            { nick: "BusDriver", content: "두청운수 직원들도 너 싫어해. 월급이나 제때 줘라." },
+                            { nick: "TaxPayer", content: "세금 체납자가 인터넷 할 시간은 있나 보네?" },
+                            { nick: "Citizen88", content: "평생 감옥에서 썩어라." },
+                            { nick: "[관리자]", content: "해당 사용자는 '여론 조작 방지법 위반' 및 '허위사실 유포', '모욕' 혐의로 영구 차단 및 경찰 이관 조치되었습니다.", isAdmin: true }
+                        ]
+                    },
+                    { nick: "Citizen88", time: "09:45", content: "와... 진짜 가지가지 한다. 빵에 침 뱉는 것도 모자라서 이제는 인터넷 여론 조작까지? 나이 먹고 추하다 진짜.", like: 5231, dislike: 12, 
+                        replies: [
+                            { nick: "부동산필승(A씨)", content: "이게 다 도시의 순수함을 지키려는 노력이다! 네가 뭘 알아!" }, 
+                            {nick:"Citizen88", content:"범죄가 노력이냐? 감옥 가서 노력해라."},
+                            {nick:"RealEstateRep", content:"A씨 너 제명당했잖아. 우리 과 사칭하지 마."},
+                            {nick:"Prof_C", content:"내 수업 F 맞은 놈이 말이 많네."}
+                        ] 
+                    },
+                    { nick: "Rail_Lover", time: "10:02", content: "\"만화 여자나 좋아하는 병X\"? 본색 드러냈네 ㅋㅋ IP 걸려서 자폭한 게 코미디네.", like: 4890, dislike: 45, 
+                        replies: [
+                            { nick: "윤대환(IP)", content: "닥쳐라 씹덕아! 니들이 좋아하는 건 다 가짜야!" }, 
+                            {nick:"Rail_Lover", content:"본인 등판 감사요. 이 댓글도 캡처해서 경찰서 보냅니다^^"},
+                            {nick:"OtakuPower", content:"우리가 낸 세금으로 월급 받았으면서 배은망덕하네."},
+                            {nick:"HyobinMom", content:"문화의 다양성도 모르는 꼰대."}
+                        ] 
+                    },
+                    { nick: "RealEstate_Student", time: "10:10", content: "부동산학과 재학생입니다. A씨 제명된 지가 언젠데 아직도 저러고 다니나요?", like: 3120, dislike: 3, 
+                        replies: [
+                            { nick: "118.235.**.** (A씨)", content: "교수? 그 꼰대? 나중에 내 앞에서 무릎 꿇을 날이 올 거다." }, 
+                            {nick:"RealEstate_Student", content:"교수님이 님 고소장 쓰고 계십니다. 합의금이나 준비하세요."},
+                            {nick:"Classmate", content:"너 때문에 우리 과 이미지 망쳤어. 책임져."}
+                        ] 
+                    },
+                    { nick: "Bus_Fan", time: "10:33", content: "8호선 고철 덩어리 만들어놓고 뻔뻔하게 다시 시장 나오려다 광탈하더니...", like: 2400, dislike: 10, replies: [{ nick: "ChilyangBus_Driver", content: "우리 회사 버스 다 망가뜨린 거 생각하면 아직도 이가 갈립니다." }, {nick:"Citizen", content:"두청운수 불매운동 합시다."}, {nick:"Driver", content:"이미 망해가고 있음 ㅋㅋ"}] },
+                    { nick: "Mom_Cafe_Manager", time: "10:40", content: "애들 먹는 빵에 침 뱉은 건 진짜 사람이 할 짓이 아닙니다. 우리 맘카페에서도 영구 보이콧입니다.", like: 1850, dislike: 5, replies: [{ nick: "WelfareAngel", content: "맞습니다. 사회복지학과 학생으로서 치가 떨립니다." }, {nick:"Cook", content:"음식 가지고 장난치는 놈은 천벌 받음."}, {nick:"Mom", content:"절대 용서 못 함."}] },
+                    { nick: "Global_Student", time: "10:55", content: "필리핀에서 갱단한테 쫓겨난 거 진짜임? ㅋㅋㅋ 국제 망신 레전드네.", like: 1200, dislike: 8, replies: [{ nick: "TagalogMaster", content: "현지 뉴스에도 나왔어요. 'Korean idiot'이라고 대서특필됨."}, {nick:"Traveler", content:"Putang ina라고 욕했다가 총 맞을 뻔했음."}, {nick:"Diplomat", content:"영사관 직원들이 고생했지."}] },
+                    { nick: "H_Univ_Grad", time: "11:10", content: "학교 선배로서 A씨 같은 후배가 있다는 게 부끄럽습니다. 제명 처분은 당연한 결과입니다.", like: 980, dislike: 2, replies: [] },
+                    { nick: "ChefKnife", time: "11:20", content: "조리학과 학생입니다. 빵에 침 뱉은 거 보고 저희 과 애들 칼(칼집 낀 거) 들고 쫓아갔던 기억나네요.", like: 1500, dislike: 1, replies: [{ nick: "A씨(IP)", content: "미개한 요리사 놈들... 예술을 모르는구나." }, {nick:"ChefKnife", content:"음식 갖고 장난치는 게 예술이냐? 넌 평생 내 주방 근처에도 오지 마라."}, {nick:"FoodProf", content:"자네는 요리사의 자격이 없다."}] },
+                    { nick: "Citizen_01", time: "11:25", content: "박효빈 시장님, 저런 악플러들 신경 쓰지 마시고 시정에만 집중해주세요.", like: 3500, dislike: 150, replies: [] },
+                    { nick: "OldMan", time: "11:30", content: "나도 보수지만 윤대환은 아니다. 사람이 기본이 안 됐어.", like: 800, dislike: 10, replies: [] },
+                    { nick: "ShopOwner", time: "11:35", content: "두청운수 때문에 가게 앞 막혀서 망할 뻔했다. 보상해라.", like: 600, dislike: 0, replies: [] },
+                    { nick: "Student", time: "11:40", content: "학식 샐러드 욕하던 놈이 윤재훈이었구나. 넌 먹을 자격도 없다.", like: 500, dislike: 0, replies: [] },
+                    { nick: "Lawyer", time: "11:45", content: "여론조작 증거 다 확보됐네요. 징역형 추가될 듯.", like: 1000, dislike: 0, replies: [] },
+                    { nick: "History", time: "11:50", content: "이 사건은 효빈시 역사에 길이길이 남을 흑역사다.", like: 400, dislike: 0, replies: [] },
+                    { nick: "NijiFan", time: "11:55", content: "우리 렌 짱 욕한 거 사과해라!", like: 300, dislike: 0, replies: [] },
+                    { nick: "AqoursFan", time: "12:00", content: "누마즈 가서 깽판 친 것도 사과해라!", like: 300, dislike: 0, replies: [] },
+                    { nick: "LierellaFan", time: "12:05", content: "버스에 오물 투척한 것도 사과해!", like: 300, dislike: 0, replies: [] },
+                    { nick: "SubwayFan", time: "12:10", content: "8호선 망친 것도 사과해!", like: 300, dislike: 0, replies: [] },
+                    { nick: "Citizen", time: "12:15", content: "그냥 효빈시를 떠나라.", like: 2000, dislike: 0, replies: [] }
+                ]
+            },
+            'news1': {
+                title: "윤재훈 필리핀 입국 금지, 갱단 연루설 '사실로 확인'", category: "국제 > 아시아",
+                body: `<p>[효빈일보 = 이국제 기자] 윤재훈 씨가 필리핀 세부에서 현지 갱단과 마찰을 빚어 입국 금지된 사실이 확인되었습니다. 현지 경찰에 따르면 윤 씨는 공항에서 경찰에게 "Putang ina(개XX)"라고 욕설을 퍼붓는 등 난동을 부렸으며, 이 소식을 SNS로 접한 갱단 리더가 "Bring him(쟤 끌고 와)"이라고 지시하여 경찰이 그를 급히 피신시키는 소동이 빚어졌습니다.</p><p>당시 현장 지휘관은 "He broke the ban again. We cannot protect him forever(그가 또 금기를 깼다. 영원히 보호해 줄 순 없다)"라며 보호를 포기하려 했으나, 한국 영사관의 간곡한 요청으로 마지막으로 추방 조치되었습니다. 윤 씨는 현재 필리핀 이민국 블랙리스트에 등재되어 영구 입국 금지 상태입니다.</p>`,
+                comments: [
+                    { nick: "GlobalMind", time: "방금 전", content: "국제 망신도 이런 망신이 없다. 제발 여권 뺏어라.", like: 1200, dislike: 5, replies: [] },
+                    { nick: "Traveler", time: "10분 전", content: "Putang ina라고 욕했다며? ㅋㅋㅋ 진짜 간도 크다. 거기서 그 욕하면 총 맞아도 할 말 없음.", like: 800, dislike: 2, 
+                        replies: [{nick:"윤재훈(IP)", content:"내가 언제! 그건 한국말로 한거야! 조작이다!"}, {nick:"FactChecker", content:"CCTV 입모양 분석 결과 명백합니다. 거짓말 그만하세요."}, {nick:"Local", content:"현지 뉴스 봤는데 진짜 쪽팔리더라."}, {nick:"Student", content:"영어 공부나 더 하고 가라."}] },
+                    { nick: "Diplomat", time: "30분 전", content: "영사관 직원들 불쌍하다... 저런 인간 뒤치다꺼리하느라 무릎 꿇고 빌었다니.", like: 500, dislike: 0, replies: [] },
+                    { nick: "YoonSupporter", time: "1시간 전", content: "동남아 애들한테 그정도 말도 못하냐? 윤재훈이 상남자네!", like: 3, dislike: 900, replies: [{nick:"GlobalMind", content:"남의 나라 공항에서 쌍욕하는 게 상남자냐? 그건 그냥 국제 찐따다."}, {nick:"Citizen", content:"국격 살살 녹는다."}, {nick:"Traveler", content:"너도 같이 추방당해라."}] },
+                    { nick: "SafetyFirst", time: "2시간 전", content: "갱단한테 안 잡힌 게 기적이네.", like: 100, dislike: 0, replies: [] },
+                    { nick: "StudyAbroad", time: "3시간 전", content: "저 사람 때문에 한국인 인식 나빠질까 봐 걱정됨.", like: 200, dislike: 1, replies: [] }
+                ]
+            },
+            'news2': {
+                title: "[단독] 두청운수 불법 차고지, 시청 '원상복구 명령'", category: "사회 > 교통",
+                body: `<p>[효빈일보 = 박교통 기자] 윤대환 전 시장 일가가 소유한 '두청운수'가 수년간 도로를 불법 점유해 차고지로 사용해온 사실이 드러났습니다. 심지어 이곳을 불법 세차장으로 사용하여 오폐수를 무단 방류한 정황도 포착되었습니다.</p><p>효빈시는 즉각적인 원상복구와 함께 변상금을 부과하고, 도로 파손에 대한 구상권을 청구하기로 했습니다. 인근 상인들은 "두청운수 버스들이 가게 앞을 막아서 손님이 끊겼다"며 윤 전 시장을 상대로 집단 손해배상 소송을 준비 중입니다.</p>`,
+                comments: [
+                    { nick: "BusDriver", time: "방금 전", content: "드디어 정의구현! 도로 막아놓고 세차장으로 쓰는 거 볼 때마다 화났는데 꼬시다.", like: 300, dislike: 1, replies: [] },
+                    { nick: "Citizen", time: "20분 전", content: "윤대환 시장 때 봐준 거 이제야 터지네. 구상권 청구해서 다 받아내라.", like: 250, dislike: 0, replies: [] },
+                    { nick: "YoonSupporter", time: "1시간 전", content: "기업 죽이기다! 경제 살리려면 좀 봐줘야지 너무 빡빡하네.", like: 2, dislike: 500, 
+                        replies: [{nick:"JusticeK", content:"불법 점유가 경제 활동입니까? 도둑질이지. 말이 되는 소리를 하세요."}, {nick:"TaxPayer", content:"법 지키며 장사하는 사람들은 호구냐?"}, {nick:"Merchant", content:"우리 가게 앞 막아서 망하게 해놓고 경제 타령?"}, {nick:"Lawyer", content:"업무방해죄 추가요."}] },
+                    { nick: "FireFighter", time: "2시간 전", content: "저기 불법주차 때문에 소방차 진입 못해서 큰일날 뻔 했음. 사실상 살인미수임.", like: 400, dislike: 0, replies: [] },
+                    { nick: "EnvGroup", time: "3시간 전", content: "오폐수 무단 방류도 심각함. 환경법 위반으로도 고발해야 함.", like: 150, dislike: 0, replies: [] },
+                    { nick: "LocalResident", time: "4시간 전", content: "매연 냄새 때문에 창문을 못 열고 살았음.", like: 120, dislike: 0, replies: [] }
+                ]
+            },
+            'news3': {
+                title: "효빈대 학식 '누마즈 귤 샐러드' 연일 매진 행렬", category: "생활 > 음식",
+                body: `<p>[효빈일보 = 최맛객 기자] 효빈대학교 학생식당의 신메뉴 '누마즈 귤 샐러드'가 독특한 맛과 상징성으로 인기를 끌고 있습니다. 일본 누마즈 시와의 자매결연을 기념해 출시된 이 메뉴는 박효빈 시장이 시식 후 '우마이!(맛있다)'를 외쳐 화제가 되었습니다.</p><p>점심시간마다 '효빈 식당' 앞에는 이 메뉴를 맛보려는 학생들과 성지순례객들로 장사진을 이루고 있으며, SNS에는 인증샷이 쏟아지고 있습니다. 영양사는 "비타민C가 풍부해 학생들 건강에도 좋다"고 전했습니다.</p>`,
+                comments: [
+                    { nick: "YohaneCook", time: "방금 전", content: "솔직히 맛은 좀 미묘한데 자꾸 생각남 ㅋㅋㅋ", like: 50, dislike: 10, replies: [] },
+                    { nick: "Student123", time: "1시간 전", content: "외부인도 먹을 수 있나요? 성지순례 가고 싶어요.", like: 100, dislike: 0, replies: [] },
+                    { nick: "YoonJaehoon(IP)", time: "2시간 전", content: "저딴 돼지 사료를 돈 주고 먹냐? 미개한 놈들.", like: 0, dislike: 300, 
+                        replies: [{nick:"ChefKnife", content:"음식 모독하지 마라. 니 입맛이 더 미개함. 니가 뱉은 침 묻은 빵보다는 백배 맛있다."}, {nick:"Nutritionist", content:"영양학적으로 균형 잡힌 식단입니다. 억지 부리지 마세요."}, {nick:"Student", content:"네 다음 필리핀 추방자."}, {nick:"Admin", content:"비하 발언 경고합니다."}] },
+                    { nick: "AqoursFan", time: "3시간 전", content: "귤 하나도 소중히 여기는 마음... 이게 효빈시지. 박 시장님 센스 굿.", like: 150, dislike: 1, replies: [] },
+                    { nick: "Freshman", time: "4시간 전", content: "처음엔 이상했는데 먹다 보니 중독성 있음.", like: 80, dislike: 5, replies: [] },
+                    { nick: "Grad", time: "5시간 전", content: "나 졸업하니까 맛있는 거 나오네...", like: 60, dislike: 0, replies: [] }
+                ]
+            },
+            'news4': {
+                title: "박효빈 시장, '8호선 정상화' 현장 점검... \"시민의 승리\"", category: "정치 > 행정",
+                body: `<p>[효빈일보 = 정시청 기자] 박효빈 시장이 8호선 공사 재개 현장을 방문했습니다. 그는 '이 모든 것은 포기하지 않은 시민들의 승리'라고 소감을 밝혔습니다.</p><p>8호선은 윤대환 전 시장 시절 두청운수의 독점을 위해 공사가 중단되어 '도심 속 흉물'로 방치되었으나, 시민들의 끈질긴 요구와 박 시장의 결단으로 정상화되었습니다. 박 시장은 "다시는 시민의 발을 볼모로 잡는 일이 없도록 하겠다"며 조기 개통을 약속했습니다.</p>`,
+                comments: [
+                    { nick: "RailMan", time: "방금 전", content: "감격입니다 ㅠㅠ 윤대환이 망쳐놓은 거 드디어 복구하네요.", like: 500, dislike: 5, replies: [] },
+                    { nick: "A_ssi_Follower", time: "10분 전", content: "8호선도 윤대환이 기획한 거다! 숟가락 얹지 마라!", like: 5, dislike: 200, 
+                        replies: [{nick:"FactCheck", content:"기획은 전전임 시장이고 윤대환은 백지화했습니다. 날조 작작 하세요."}, {nick:"RailLover", content:"공사 중단시킨 사람이 누군데 기획 타령임?"}, {nick:"Citizen", content:"윤대환이 한 건 철도 파괴밖에 없다."}, {nick:"Student", content:"역사 왜곡 그만."}] },
+                    { nick: "CityPlanner", time: "30분 전", content: "정상화되는데 10년 걸렸네요. 도시 발전의 혈관이 다시 뚫린 기분입니다.", like: 300, dislike: 0, replies: [] },
+                    { nick: "GoSongMom", time: "1시간 전", content: "우리 아이들 통학 걱정 덜었네요. 시장님 감사합니다.", like: 400, dislike: 2, replies: [] },
+                    { nick: "SubwayFan", time: "2시간 전", content: "개통식 날 윤대환 규탄 비석 하나 세워야 함.", like: 200, dislike: 1, replies: [] },
+                    { nick: "OldMan", time: "3시간 전", content: "이제 병원 가기 편해지겠네. 늙은이들한테는 지하철이 최고여.", like: 150, dislike: 0, replies: [] }
+                ]
+            },
+            'news5': {
+                title: "효빈교통공사 굿즈샵 '과진점' 오픈... \"덕질과 교통의 만남\"", category: "문화 > 쇼핑",
+                body: `<p>[효빈일보 = 문덕후 기자] 효빈교통공사가 과진역 내에 공식 굿즈샵 '과진점'을 오픈했습니다. 당초 이 자리는 윤대환 전 시장이 추진하던 고층 아파트 단지 **'두청힐스'**가 들어설 예정이었으나, 난개발 논란과 붕괴 위험성으로 백지화된 후 시민들을 위한 문화 공간으로 탈바꿈했습니다.</p><p>(※ 참고: 논란이 되었던 '스쿨아이돌 힐스'는 청엽구 효빈동2가 신도시에서 정상적으로 건축 중입니다.)</p><p>오픈 첫날부터 1호선 캐릭터 '고나미'와 철도 굿즈를 구매하려는 인파로 역사가 마비될 정도였으며, 한정판 피규어는 10분 만에 매진되었습니다.</p>`,
+                comments: [
+                    { nick: "OtakuPower", time: "방금 전", content: "대박! 고나미 아크릴 스탠드 사러 지금 갑니다.", like: 300, dislike: 2, replies: [] },
+                    { nick: "RealEstateKing", time: "30분 전", content: "두청힐스 지었으면 집값 떡상인데 장난감 가게라니... 박효빈 물러나라!", like: 10, dislike: 150, 
+                        replies: [{nick:"CityPlanner", content:"거기 옹벽 20미터 쌓아야 되는 위험지대였습니다. 무너져서 사람 죽는 것보다 굿즈샵이 훨씬 경제적 가치 높아요."}, {nick:"SafetyFirst", content:"안전 불감증이시네. 돈이면 다입니까?"}, {nick:"Local", content:"오히려 유동인구 늘어서 상권 살아남."}, {nick:"Student", content:"투기꾼 아웃."}] },
+                    { nick: "RailKid", time: "1시간 전", content: "엄마랑 같이 가서 샀어요! 너무 예뻐요!", like: 500, dislike: 0, replies: [] },
+                    { nick: "YoonDaeHwan_Fan", time: "2시간 전", content: "돈도 안 되는 거 짓고 앉았네. 아파트 지었으면 세수가 얼만데.", like: 1, dislike: 200, 
+                        replies: [{nick:"TaxPayer", content:"산사태 나서 복구비용 나가는 것보다 백배 낫습니다. 세수 타령 그만 좀."}] },
+                    { nick: "Tourist", time: "3시간 전", content: "타지에서 왔는데 굿즈샵 퀄리티 미쳤음. 효빈시는 천국이다.", like: 200, dislike: 0, replies: [] },
+                    { nick: "ShopOwner", time: "4시간 전", content: "덕분에 역 주변 식당도 장사 잘 됨.", like: 150, dislike: 0, replies: [] }
+                ]
+            },
+            'news6': {
+                title: "1호선 캐릭터 '고나미', 효빈시 홍보대사 위촉", category: "문화 > 캐릭터",
+                body: `<p>[효빈일보 = 김문화 기자] 효빈도시철도 1호선의 마스코트 '고나미'가 시 공식 홍보대사로 위촉되었습니다. 가상 캐릭터로는 이례적인 행보입니다.</p><p>고나미는 과거 윤대환 전 시장의 '비정상 도시' 발언에 대해 "그 아이의 순수함을 비정상이라 부른 대가를 치를 것"이라는 명대사로 시민들의 마음을 대변한 바 있습니다. 박효빈 시장은 "고나미는 효빈시의 회복 탄력성을 상징하는 아이콘"이라며 위촉 배경을 밝혔습니다.</p>`,
+                comments: [
+                    { nick: "Citizen1", time: "방금 전", content: "고나미 짱! 우리 시의 자랑입니다.", like: 200, dislike: 1, replies: [] },
+                    { nick: "58.142.**.**", time: "1시간 전", content: "만화 캐릭터가 홍보대사? 시장이 미쳤구만. 애들 장난도 아니고.", like: 5, dislike: 100, 
+                        replies: [{nick:"HyobinMom", content:"시대 흐름 못 읽는 꼰대 인증 ㅋㅋㅋ 펭수도 못 보셨나? 경제 효과가 얼만데."}, {nick:"MarketingExpert", content:"가상 인플루언서 마케팅이 대세입니다. 공부 좀 하세요."}, {nick:"Kid", content:"아저씨는 고나미보다 인기 없잖아요."}, {nick:"Admin", content:"비하 발언 자제하세요."}] },
+                    { nick: "Rail_Lover", time: "2시간 전", content: "윤대환이 오타쿠라고 비하할 때 고나미가 사이다 날려준 거 잊지 못함.", like: 300, dislike: 0, replies: [] },
+                    { nick: "Tourist", time: "3시간 전", content: "고나미 보러 타지에서 왔습니다. 굿즈 더 만들어주세요.", like: 150, dislike: 0, replies: [] },
+                    { nick: "Artist", time: "4시간 전", content: "디자인 진짜 잘 뽑음. 효빈시 마스코트 중 역대급.", like: 100, dislike: 0, replies: [] },
+                    { nick: "FanClub", time: "5시간 전", content: "고나미 팬클럽 창단식 언제 합니까?", like: 80, dislike: 0, replies: [] }
+                ]
+            },
+            'news7': {
+                title: "[기획] \"가난과 폭력을 넘어\"... 박효빈 시장의 '눈물 젖은 빵'", category: "정치 > 인물",
+                body: `<p>[효빈일보 = 이사람 기자] 박효빈 시장의 과거사가 재조명되고 있습니다. <strong>서구 당선동</strong>의 허름한 단칸방 출신인 그는 어린 시절 극심한 가난과 학교 폭력에 시달렸던 아픔을 딛고 일어선 인물입니다. 당시 그에게 유일한 위로는 '서브컬처'와 '철도'였습니다.</p><p>박 시장은 인터뷰에서 "비 새는 단칸방에서 만화책을 보며 꿈을 꿨다. 누군가의 '덕질'이 비웃음거리가 되지 않는 도시, 약자도 존중받는 도시를 만들고 싶었다"며 자신의 시정 철학인 '상생과 연결'의 배경을 설명했습니다. 시민들은 그의 진정성에 큰 응원을 보내고 있습니다.</p>`,
+                comments: [
+                    {
+                        nick: "YoonJaehoon(IP)", ip: "211.36.**.**", time: "방금 전", like: 3, dislike: 4800, isPunished: true,
+                        content: "감성팔이 지겹다 ㅋㅋㅋ 가난한 게 자랑이냐? 돈 없으면 기술이나 배워서 공장이나 가지 뭔 정치를 한다고 설치냐? 거지 근성은 못 고친다.",
+                        replies: [
+                            { nick: "Citizen88", content: "야 이 윤재훈! 금수저 물고 태어나서 사고만 치고 다니는 네가 할 소리냐? 인성 수준 진짜 바닥이네." },
+                            { nick: "DangseonMom", content: "우리 당선동 사람들 모욕하지 마라. 우리는 가난해도 너처럼 남 등쳐먹고 불법은 안 저질렀다." },
+                            { nick: "Schoolmate", content: "나 박효빈이랑 같은 반이었는데, 그때 괴롭히던 일진 무리 중 하나가 너랑 같이 다니던 애들이었잖아. 기억 안 나냐?" },
+                            { nick: "TaxPayer", content: "세금 체납자 주제에 어디서 훈수질이야. 니네 아빠가 해먹은 돈이나 뱉어내라." },
+                            { nick: "WelfareStudent", content: "그 가난을 겪어봤기에 진짜 복지 정책이 나오는 거다. 너 같은 놈은 죽었다 깨어나도 이해 못 해." },
+                            { nick: "BusDriver", content: "니네 아버지가 도로 불법 점유해서 우리 생계 위협할 때, 박 시장은 우리 편 들어줬다. 꺼져라." },
+                            { nick: "HyobinPolice", content: "IP 추적 완료. 두청운수 본사시네요? 또 오셨어요? 캡처해서 추가 증거로 제출합니다.", isAdmin: true, nickClass: "text-blue-600" },
+                            { nick: "[관리자]", content: "특정 지역 및 계층 비하, 인신공격성 발언으로 영구 차단 조치합니다.", isAdmin: true, styleClass: "bg-gray-100 border border-gray-300 text-blue-800 font-bold" }
+                        ]
+                    },
+                    { nick: "Supporter", time: "10분 전", content: "기사 읽다가 눈물 흘렸습니다... 그런 아픔이 있었기에 지금의 따뜻한 시정이 가능한 거군요. 끝까지 응원합니다.", like: 1200, dislike: 2, 
+                        replies: [{nick:"OldLady", content:"맞아요. 젋은 양반이 참 대견해."}, {nick:"Youth", content:"우리 시대의 진짜 영웅입니다."}, {nick:"Citizen", content:"초심 잃지 마세요."}] 
+                    },
+                    { nick: "Teacher", time: "20분 전", content: "현직 교사입니다. 박 시장님의 스토리가 학폭 피해 학생들에게 큰 희망이 되고 있습니다. '버티면 이길 수 있다'는 걸 증명해주셔서 감사합니다.", like: 800, dislike: 0, replies: [] },
+                    { nick: "RailMan", time: "30분 전", content: "철도 덕후가 시장이 되니 8호선도 살리고 굿즈샵도 만들고... 덕업일치의 표본이네요. 존경합니다.", like: 500, dislike: 1, replies: [] },
+                    { nick: "A_ssi_Follower", time: "40분 전", content: "흥, 그래봤자 흙수저 출신이 뭘 알겠어? 정치는 엘리트가 해야지. 윤대환 시장님이 그립다.", like: 5, dislike: 600, 
+                        replies: [{nick:"FactCheck", content:"그 엘리트가 뇌물 받고 횡령해서 감옥 갔는데요?"}, {nick:"Citizen", content:"범죄자 그리워하는 거 보니 수준 알만하다."}, {nick:"Student", content:"엘리트가 다 해먹었지."}] },
+                    { nick: "AncheonResident", time: "50분 전", content: "안천구 출신으로서 정말 자랑스럽습니다. 우리 동네도 이제 살기 좋아지고 있어요.", like: 350, dislike: 0, replies: [] },
+                    { nick: "OtakuPower", time: "1시간 전", content: "덕후가 세상을 바꾼다! 박효빈 화이팅! 굿즈샵 과진점 대박 나세요!", like: 200, dislike: 0, replies: [] },
+                    { nick: "Observer", time: "2시간 전", content: "스토리가 영화네 영화. 나중에 드라마로 만들어도 될 듯.", like: 150, dislike: 0, replies: [] }
+                ]
+            },
+            'news8': {
+                title: "[포토] 효빈국제공항 2활주로 착공식 현장", category: "포토 > 뉴스",
+                body: `<p>[효빈일보 = 박포토 기자] 효빈국제공항의 새로운 도약을 알리는 2활주로 착공식이 열렸습니다. 이번 확장은 전 세계에서 몰려드는 성지순례 관광객 수요를 감당하기 위한 것입니다.</p><p>한편, 공항 확장에 따른 소음 피해 지역 주민들을 위해 방음벽 설치 및 'Liella! 효빈 콘서트 우선 예매권' 지급 등의 파격적인 보상 대책도 발표되어 주민들의 환영을 받았습니다.</p>`,
+                comments: [
+                    { nick: "AvGeek", time: "방금 전", content: "드디어! 이제 직항 노선 늘어나겠네.", like: 150, dislike: 0, replies: [] },
+                    { nick: "LocalResident", time: "1시간 전", content: "소음 걱정했는데 보상안 나쁘지 않네요. 콘서트 티켓 개이득. 딸이 좋아함.", like: 100, dislike: 5, replies: [] },
+                    { nick: "NoNoise", time: "2시간 전", content: "그래도 시끄러운 건 싫다. 보상금 더 줘라.", like: 20, dislike: 30, 
+                        replies: [{nick:"CityHall", content:"법적 기준 이상의 보상안입니다. 협의체와 지속적으로 논의 중입니다."}, {nick:"Neighbor", content:"이 정도면 혜자인데? 욕심 부리지 말자."}, {nick:"AvFan", content:"공항 커지면 땅값 오르잖아. 윈윈이지."}] },
+                    { nick: "Tourist_JP", time: "3시간 전", content: "일본에서 가기 더 편해지겠네요. 기대됩니다.", like: 80, dislike: 0, replies: [] },
+                    { nick: "Pilot", time: "4시간 전", content: "활주로 늘어나면 안전 운항에도 도움 됨.", like: 90, dislike: 0, replies: [] },
+                    { nick: "Taxi", time: "5시간 전", content: "공항 손님 많아지겠네. 굿.", like: 70, dislike: 0, replies: [] }
+                ]
+            },
+            'news9': {
+                title: "윤대환 일가 '루트 M' 소송 패소 확정... 13억 빚더미", category: "사회 > 법원",
+                body: `<p>[효빈일보 = 김법정 기자] 윤대환 일가가 박효빈 시장을 상대로 제기한 13억 원 규모의 손해배상 소송(일명 '루트 M' 작전)에서 최종 패소했습니다.</p><p>재판부는 "원고의 주장은 논리적 근거가 없으며, 개인적 원한에 기반한 소모적 소송"이라고 기각했습니다. 이로 인해 윤 일가는 막대한 소송 비용을 떠안게 되어, 남구 본가 저택이 경매에 넘어가는 등 가세가 급격히 기울고 있습니다. 시민들은 이를 두고 "자업자득"이라는 반응을 보이고 있습니다.</p>`,
+                comments: [
+                    { nick: "LawStudent", time: "방금 전", content: "자폭 소송의 말로 ㅋㅋㅋ 변호사만 돈 벌었네.", like: 400, dislike: 1, replies: [] },
+                    { nick: "YoonFamily", time: "30분 전", content: "판사가 매수됐다! 이건 정치 탄압이야! 박효빈이 사법부도 장악했다!", like: 2, dislike: 300, 
+                        replies: [{nick:"FactChecker", content:"증거가 하나도 없는데 뭘로 이깁니까? 억지 그만 부리세요."}, {nick:"Lawyer", content:"소장부터가 엉망이더만. 예견된 패소임."}, {nick:"Citizen", content:"남 탓 좀 그만해라 지겹다."}] },
+                    { nick: "AuctionHunter", time: "1시간 전", content: "남구 저택 유찰 3번 돼서 반값 됐음. 근데 흉가 소문나서 아무도 안 삼.", like: 200, dislike: 0, replies: [] },
+                    { nick: "TaxPayer", time: "2시간 전", content: "소송비용 낼 돈으로 밀린 세금이나 내라. 체납자 주제에 소송은 무슨.", like: 350, dislike: 0, replies: [] },
+                    { nick: "Neighbor", time: "3시간 전", content: "동네 망신이다 진짜. 이사 좀 갔으면.", like: 100, dislike: 0, replies: [] },
+                    { nick: "Justice", time: "4시간 전", content: "사필귀정. 인과응보.", like: 150, dislike: 0, replies: [] }
+                ]
+            },
+            'news10': {
+                title: "효빈 시민 85%, \"현 시정에 만족한다\" 역대 최고치", category: "정치 > 여론조사",
+                body: `<p>[효빈일보 = 최통계 기자] 민선 8기 박효빈 시정에 대한 시민 만족도가 85%를 기록했습니다. 이는 효빈시 역사상 가장 높은 수치로, 특히 2030 청년층과 6070 노년층의 지지가 두드러졌습니다.</p><p>전문가들은 "윤대환 암흑기 시절의 트라우마가 박효빈 시장의 '상생' 정책으로 치유되면서 지지율 결집으로 이어진 것"이라고 분석했습니다. 박 시장은 "더 낮은 자세로 시민을 섬기겠다"고 화답했습니다.</p>`,
+                comments: [
+                    { nick: "Citizen_Best", time: "방금 전", content: "당연한 결과. 도시가 살아나는 게 눈에 보임.", like: 500, dislike: 10, replies: [] },
+                    { nick: "112.154.**.**", time: "1시간 전", content: "여론조사 조작이다! 내 주변엔 다 박효빈 욕하던데?", like: 5, dislike: 200, 
+                        replies: [{nick:"StatMaster", content:"님 주변이 다 윤씨 일가니까 그렇겠죠 ㅋㅋ 표본 오차범위 밖 압승입니다."}, {nick:"Voter", content:"현실 부정 애잔하다."}, {nick:"Passerby", content:"꿈에서 깨세요."}] },
+                    { nick: "YoungVoter", time: "2시간 전", content: "청년들 목소리 들어주는 시장은 처음임. 계속 지지합니다.", like: 300, dislike: 5, replies: [] },
+                    { nick: "OldMan", time: "3시간 전", content: "노인네들도 좋아해. 버스도 편해지고 병원 가기도 좋아졌어.", like: 250, dislike: 2, replies: [] },
+                    { nick: "Mom", time: "4시간 전", content: "아이 키우기 좋은 도시 만들어주셔서 감사합니다.", like: 200, dislike: 1, replies: [] },
+                    { nick: "ShopOwner", time: "5시간 전", content: "상권 살려줘서 고마움. 장사할 맛 납니다.", like: 180, dislike: 0, replies: [] }
+                ]
+            }
+        };
+
+        const rankingData = [
+            { id: 'news1', title: "윤재훈 필리핀 입국 금지, 갱단 연루설 '사실로 확인'" },
+            { id: 'news2', title: "[단독] 두청운수 불법 차고지, 시청 '원상복구 명령'" },
+            { id: 'news3', title: "효빈대 학식 '누마즈 귤 샐러드' 연일 매진 행렬" },
+            { id: 'news4', title: "박효빈 시장, '8호선 정상화' 현장 점검... \"시민의 승리\"" },
+            { id: 'news5', title: "효빈교통공사 굿즈샵 '과진점' 오픈... \"덕질과 교통의 만남\"" },
+            { id: 'news6', title: "1호선 캐릭터 '고나미', 효빈시 홍보대사 위촉" },
+            { id: 'news7', title: "[기획] \"가난과 폭력을 넘어\"... 박효빈 시장의 '눈물 젖은 빵'" },
+            { id: 'news8', title: "[포토] 효빈국제공항 2활주로 착공식 현장" },
+            { id: 'news9', title: "윤대환 일가 '루트 M' 소송 패소 확정... 13억 빚더미" },
+            { id: 'news10', title: "효빈 시민 85%, \"현 시정에 만족한다\" 역대 최고치" }
+        ];
+
+        window.onload = function() {
+            // URL 파라미터 체크 로직 추가
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+
+            if (articleId && (allArticles[articleId] || rankingData.some(item => item.id === articleId))) {
+                renderArticle(articleId);
+            } else {
+                renderArticle('main');
+            }
+            
+            renderRanking();
+        };
+
+        function renderArticle(id) {
+            currentArticleId = id;
+            let data = allArticles[id];
+            
+            if (!data) {
+                const rankItem = rankingData.find(item => item.id === id);
+                data = {
+                    title: rankItem ? rankItem.title : "기사 제목 없음",
+                    category: "사회 > 일반",
+                    body: `<p>해당 기사의 상세 내용은 준비 중입니다.</p><div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보&gt;</div>`,
+                    comments: []
+                };
+            }
+
+            document.getElementById('article-content-area').innerHTML = `
+                <div class="mb-2 text-[#0055aa] font-bold">${data.category}</div>
+                <h2 class="article-title">${data.title}</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김철수 기자</span> (chulsoo@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.05. 09:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">${data.body}</div>
+            `;
+
+            renderComments(data.comments);
+            document.getElementById('comment-count').innerText = data.comments.length;
+            window.scrollTo(0, 0);
+        }
+
+        function renderComments(comments) {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = "";
+
+            comments.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "normal-comment");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                    if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.isAdmin ? "bg-gray-100 border border-gray-300 text-blue-800 font-bold" : "";
+                        let nickClass = "";
+                        if(reply.nick === "Hyobin_Police" || reply.nick === "IP_Tracker") nickClass = "text-blue-600";
+                        else if(reply.nick === "오타쿠꺼져" || reply.nick.includes("A씨") || reply.nick.includes("윤재훈") || reply.nick.includes("윤대환") || reply.nick.includes("Yoon")) nickClass = "text-red-600 font-bold";
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="font-bold text-xs ${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') {
+                el.style.display = 'none';
+            } else {
+                el.style.display = 'block';
+            }
+        }
+
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            
+            const isLike = btn.innerText.includes('공감') && !btn.innerText.includes('비공감');
+            const likeBtn = parent.children[0];
+            const dislikeBtn = parent.children[1];
+
+            const getCount = (el) => parseInt(el.querySelector('.count').innerText.replace(/,/g, ''));
+            const setCount = (el, num) => el.querySelector('.count').innerText = num.toLocaleString();
+
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                setCount(btn, getCount(btn) - 1);
+            } else {
+                if (isLike) {
+                    if (dislikeBtn.classList.contains('active-hate')) {
+                        dislikeBtn.classList.remove('active-hate');
+                        setCount(dislikeBtn, getCount(dislikeBtn) - 1);
+                    }
+                    btn.classList.add('active');
+                } else {
+                    if (likeBtn.classList.contains('active')) {
+                        likeBtn.classList.remove('active');
+                        setCount(likeBtn, getCount(likeBtn) - 1);
+                    }
+                    btn.classList.add('active-hate');
+                }
+                setCount(btn, getCount(btn) + 1);
+            }
+        }
+
+        function addComment() {
+            const nick = document.getElementById('cmt-nick').value.trim();
+            const pw = document.getElementById('cmt-pw').value.trim();
+            const content = document.getElementById('cmt-content').value.trim();
+
+            if (!nick || !pw || !content) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const badWords = ["시발", "씨발", "병신", "개새끼", "지랄", "좆", "씹", "빨갱이", "매국노", "기레기", "미친", "새끼"];
+            for (let word of badWords) {
+                if (content.includes(word) || nick.includes(word)) {
+                    alert("⚠️ 경고: 욕설이나 비하 발언, 부적절한 단어는 사용할 수 없습니다.\n(건전한 댓글 문화를 만들어주세요.)");
+                    return;
+                }
+            }
+
+            const div = document.createElement('div');
+            div.className = "normal-comment bg-yellow-50"; 
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm">${nick}</span>
+                    <span class="text-xs text-gray-500">방금 전</span>
+                </div>
+                <p class="text-sm mb-2">${content}</p>
+                <div class="text-xs text-gray-500 flex gap-3">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">0</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">0</span></span>
+                </div>
+            `;
+            
+            const container = document.getElementById('comment-list');
+            if (container.children.length > 0 && container.children[0].classList.contains('border-red-300')) {
+                 container.insertBefore(div, container.children[1]); 
+            } else {
+                 container.insertBefore(div, container.firstChild);
+            }
+
+            document.getElementById('cmt-content').value = "";
+            alert("댓글이 등록되었습니다.");
+        }
+
+        function renderRanking() {
+            const list = document.getElementById('ranking-list');
+            rankingData.forEach((news, index) => {
+                const li = document.createElement('li');
+                li.onclick = () => renderArticle(news.id);
+                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link">${news.title}</span>`;
+                list.appendChild(li);
+            });
+        }
+
+        function openFooterModal(type) {
+            const modal = document.getElementById('footerModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            modal.style.display = 'flex';
+            
+            let text = "";
+            switch(type) {
+                case 'company': text = "회사소개...\n발행인: 최진언 | 편집인: 강정직"; break;
+                case 'terms': text = "이용약관 내용..."; break;
+                case 'privacy': text = "개인정보처리방침 내용..."; break;
+                case 'youth': text = "청소년보호정책 내용..."; break;
+                case 'help': text = "고충처리인: 박공정 (079-212-2123)"; break;
+            }
+            title.innerText = type.toUpperCase();
+            content.innerText = text;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('footerModal');
+            if (event.target == modal) { modal.style.display = 'none'; }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈일보 - 기사 상세</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 뉴스 헤더 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 스타일 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        /* 댓글창 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punished-comment { border-color: #fca5a5; background-color: #fef2f2; } 
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 모달 */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center; }
+        .modal-window { background: white; width: 500px; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 10px; }
+        .modal-content { font-size: 14px; line-height: 1.6; color: #555; white-space: pre-wrap; }
+        .modal-close { margin-top: 20px; text-align: right; }
+        .modal-close-btn { background: #333; color: white; padding: 8px 20px; border-radius: 4px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 GNB -->
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.29 (목)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="news_list.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 기사 영역 -->
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <!-- JS Load -->
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JS Load -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <!-- 많이 본 뉴스 -->
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" target="_blank" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <!-- JS Load -->
+                </ul>
+            </div>
+
+            <!-- 광고 배너 -->
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
+                <span>광고 영역 (효빈교통공사)</span>
+            </div>
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
+                <span>광고 영역 (성심당 효빈점)</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <div class="flex gap-4 mb-4 font-bold text-gray-300">
+                <a href="#" onclick="openFooterModal('company')">회사소개</a> | 
+                <a href="#" onclick="openFooterModal('terms')">이용약관</a> | 
+                <a href="#" onclick="openFooterModal('privacy')">개인정보처리방침</a> | 
+                <a href="#" onclick="openFooterModal('youth')">청소년보호정책</a> | 
+                <a href="#" onclick="openFooterModal('help')">고충처리</a>
+            </div>
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 푸터용 팝업 모달 -->
+    <div id="footerModal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-title" id="modalTitle">제목</div>
+            <div class="modal-content" id="modalContent">내용</div>
+            <div class="modal-close">
+                <button class="modal-close-btn" onclick="document.getElementById('footerModal').style.display='none'">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentArticleId = 'news_nico'; // 기본값을 니코니코니 기사로 설정
+
+        // 기사 데이터베이스
+        const allArticles = {
+            'news_nico': {
+                title: "[현장] \"니코니코니~ 시의회에 마법을\"... 박효빈 시장, 엄숙주의 깨고 '소통'을 입다",
+                category: "정치 > 의회/행정",
+                body: `
+                    <p><span class="text-[#0055aa] font-bold">제28회 임시회서 파격적인 '애니송' 제창... 방청석 시민들 "환호와 박수"<br>야당 "품위 손상" 퇴장 vs 시민들 "권위 내려놓은 신선한 충격" 호평 일색<br>외신도 주목... "한국의 젊은 시장, 경직된 관료 사회에 '모에(Moe)' 던지다"</span></p>
+                    <div class="my-6"><img src="시의회_니코니코니.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Nico+Nico+Ni+in+Council'"><div class="img-caption">▲ 박효빈 효빈시장이 28일 시의회 본회의장에서 '니코니코니' 포즈를 취하며 미소 짓고 있다. (사진=효빈일보)</div></div>
+                    <p>[효빈일보 = 강소통 기자] "아나타노 하토니~ 니코니코니~ (당신의 하트에 니코니코니)"</p>
+                    <p>28일 오전, 무거운 침묵이 감돌던 효빈시의회 본회의장에 경쾌한 애니메이션 주제가가 울려 퍼졌다. 박효빈 효빈시장이 제28회 임시회 식전 행사에서 인기 애니메이션 '러브라이브'의 주제곡 'Snow halation'을 제창하고, 시그니처 포즈인 '니코니코니'를 선보이는 파격을 감행한 것이다.</p>
+                    <p>통상적인 개회식이었다면 엄숙한 훈시가 이어졌겠지만, 이날은 달랐다. 박 시장이 주황색 펜라이트를 흔들며 등장하자 방청석을 가득 메운 200여 명의 시민과 학생들은 "와아!" 하는 함성과 함께 박수로 화답했다. 딱딱하기만 했던 의회 공기가 순식간에 축제의 장으로 변모하는 순간이었다.</p>
+                    <p>박 시장은 "그동안 정치는 너무나 근엄하고 재미없는 것이었다"며 "시민들에게 더 친근하게 다가가고, 효빈시가 지향하는 '서브컬처 중심 도시'의 비전을 몸소 보여주고 싶었다"고 취지를 밝혔다. 실제로 이날 행사의 유튜브 생중계 동시 접속자 수는 평소의 50배인 10만 명을 돌파하며 폭발적인 관심을 입증했다.</p>
+                    <p>물론 반발도 있었다. 야당 의원들은 "신성한 민의의 전당을 희화화했다"며 전원 퇴장했다. 그러나 현장의 반응은 정반대였다. 방청객 이모(22, 대학생) 씨는 "정치인이 이렇게 유쾌할 수 있다는 게 충격적이다. 권위를 내려놓고 시민의 눈높이에서 소통하려는 모습이 보기 좋았다"고 말했다. </p>
+                    <p>해외 반응도 뜨겁다. 일본의 한 유력 방송사는 "한국의 젊은 시장이 경직된 관료 사회에 '모에(Moe)'라는 마법을 걸었다"며 "세계에서 가장 쿨(Cool)한 시장"이라고 소개했다.</p>
+                    <p>문화평론가 김덕후 씨는 "박 시장의 행동은 단순한 기행이 아니라, 기존의 낡은 정치 문법을 거부하는 MZ세대의 새로운 리더십"이라며 "퇴장한 야당 의원들이야말로 시대의 변화를 읽지 못하는 '구태'로 비칠 수 있다"고 지적했다.</p>
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                `,
+                comments: [
+                    {
+                        nick: "Hyobin_Lover", time: "방금 전", content: "와... 진짜 신선하다. 시장님이 니코니코니라니 ㅋㅋㅋ 권위적이지 않아서 너무 좋아요!", like: 5200, dislike: 15,
+                        replies: [{ nick: "Student", content: "우리 학교 애들 다 난리 났음. 시장님 호감도 급상승." }, { nick: "Citizen", content: "정치가 이렇게 재밌을 수도 있구나." }]
+                    },
+                    {
+                        nick: "RailMan", time: "10분 전", content: "퇴장한 의원들 꼰대 인증 제대로 했네. 저게 뭐 어때서? 분위기 좋기만 하구만.", like: 4800, dislike: 20,
+                        replies: [{ nick: "YoungVoter", content: "지들은 맨날 국회에서 멱살 잡고 싸우면서 ㅋㅋㅋ 노래 부르는 게 훨씬 낫다." }]
+                    },
+                    {
+                        nick: "NicoNico", time: "20분 전", content: "당신의 하트에 니코니코니~ 시장님 센스 미쳤다 ㅋㅋㅋ 효빈시민인 게 자랑스럽습니다.", like: 3500, dislike: 10, replies: []
+                    },
+                    {
+                        nick: "Foreigner", time: "30분 전", content: "Hyobin City is amazing! The Mayor is so cool. I want to visit there.", like: 2000, dislike: 0, replies: []
+                    },
+                    {
+                        nick: "YoonJaehoon(IP)", time: "40분 전", content: "나라가 망했다... 시의회에서 오타쿠 춤이라니... 조상님들이 통곡한다... (부들부들)", like: 5, dislike: 6800, isPunished: true,
+                        replies: [
+                            { nick: "Citizen88", content: "넌 남의 나라 공항에서 욕하다 쫓겨난 주제에 말이 많다." },
+                            { nick: "FactChecker", content: "통곡은 니네 아빠가 횡령했을 때 하셨겠지." },
+                            { nick: "HyobinMom", content: "보기 좋기만 하구만 왜 저래? 넌 빵에 침이나 뱉지 마라." },
+                            { nick: "Admin", content: "비추 폭탄 축하드립니다." }
+                        ]
+                    },
+                    {
+                        nick: "Culture_Prof", time: "50분 전", content: "이것이야말로 진정한 소통 행정입니다. 형식과 격식에 얽매이지 않는 모습, 높이 평가합니다.", like: 1500, dislike: 5, replies: []
+                    },
+                    {
+                        nick: "BusDriver", time: "1시간 전", content: "우리 두청운수 기사들도 니코니코니 연습 중입니다. 손님들이 좋아하시더라고요.", like: 1200, dislike: 0, replies: [{ nick: "Passenger", content: "기사님 화이팅 ㅋㅋㅋ" }]
+                    }
+                ]
+            },
+            'news1': {
+                title: "윤재훈 필리핀 입국 금지, 갱단 연루설 '사실로 확인'", category: "국제 > 아시아",
+                body: `<p>[효빈일보 = 이국제 기자] 윤재훈 씨가 필리핀 세부에서 현지 갱단과 마찰을 빚어 입국 금지된 사실이 확인되었습니다. 현지 경찰에 따르면 윤 씨는 공항에서 경찰에게 "Putang ina(개XX)"라고 욕설을 퍼붓는 등 난동을 부렸으며, 이 소식을 SNS로 접한 갱단 리더가 "Bring him(쟤 끌고 와)"이라고 지시하여 경찰이 그를 급히 피신시키는 소동이 빚어졌습니다.</p><p>당시 현장 지휘관은 "He broke the ban again. We cannot protect him forever(그가 또 금기를 깼다. 영원히 보호해 줄 순 없다)"라며 보호를 포기하려 했으나, 한국 영사관의 간곡한 요청으로 마지막으로 추방 조치되었습니다. 윤 씨는 현재 필리핀 이민국 블랙리스트에 등재되어 영구 입국 금지 상태입니다.</p>`,
+                comments: [
+                    { nick: "GlobalMind", time: "방금 전", content: "국제 망신도 이런 망신이 없다. 제발 여권 뺏어라.", like: 1200, dislike: 5, replies: [] },
+                    { nick: "Traveler", time: "10분 전", content: "Putang ina라고 욕했다며? ㅋㅋㅋ 진짜 간도 크다. 거기서 그 욕하면 총 맞아도 할 말 없음.", like: 800, dislike: 2, 
+                        replies: [{nick:"윤재훈(IP)", content:"내가 언제! 그건 한국말로 한거야! 조작이다!"}, {nick:"FactChecker", content:"CCTV 입모양 분석 결과 명백합니다. 거짓말 그만하세요."}, {nick:"Local", content:"현지 뉴스 봤는데 진짜 쪽팔리더라."}, {nick:"Student", content:"영어 공부나 더 하고 가라."}] }
+                ]
+            },
+            'main': {
+                title: "[단독] 윤대환·윤재훈 부자, 위키 문서 조작 '덜미'... \"다중 계정 동원해 범죄 미화\"",
+                category: "사회 > 사건사고",
+                body: `
+                    <p><span class="text-[#0055aa] font-bold">"만화 여자나 좋아하는 병X들..." 비하 발언 쏟아내며 여론 조작 시도<br>IP 추적 결과 '남구 자택' 및 '두청운수' 확인... "실수로 본계정 접속" 촌극도</span></p>
+                    <div class="my-6"><img src="문서_조작_적발.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Document+Manipulation+Detected'"><div class="img-caption">▲ 효빈위키 운영진이 공개한 로그 파일. 동일한 IP에서 다수의 계정이 접속해 여론을 조작한 정황이 포착됐다. (자료=효빈위키 운영팀)</div></div>
+                    <p>[효빈일보 = 김철수 기자] 윤대환 전 효빈광역시장과 그의 아들 윤재훈 씨가 지역 커뮤니티 사이트인 '효빈위키'에서 조직적으로 여론을 조작하려다 덜미가 잡혔다. 자신들의 범죄 사실이 기록된 문서를 훼손하고, 다수의 차명 계정을 동원해 이를 미화하려 한 정황이 드러나 충격을 주고 있다.</p>
+                    <p>5일 효빈위키 운영진에 따르면, 지난 주말 사이 '윤대환' 및 '윤재훈' 문서에 대한 비정상적인 편집 시도가 급증했다. 이들은 심야 시간대를 틈타 <strong>'대변 테러 사건'</strong>과 <strong>'엠마의 빵 훼손 사건'</strong> 등 자신들의 치부가 기록된 항목을 삭제하거나, 이를 "정치적 표현의 자유" 또는 "수행비서의 과잉 충성" 등으로 왜곡하여 서술했다.</p>
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                `,
+                comments: [
+                    { nick: "Citizen88", time: "09:45", content: "와... 진짜 가지가지 한다. 빵에 침 뱉는 것도 모자라서 이제는 인터넷 여론 조작까지? 나이 먹고 추하다 진짜.", like: 5231, dislike: 12, replies: [] }
+                ]
+            },
+            'news2': {
+                title: "[단독] 두청운수 불법 차고지, 시청 '원상복구 명령'", category: "사회 > 교통",
+                body: `<p>[효빈일보 = 박교통 기자] 윤대환 전 시장 일가가 소유한 '두청운수'가 수년간 도로를 불법 점유해 차고지로 사용해온 사실이 드러났습니다. 심지어 이곳을 불법 세차장으로 사용하여 오폐수를 무단 방류한 정황도 포착되었습니다.</p><p>효빈시는 즉각적인 원상복구와 함께 변상금을 부과하고, 도로 파손에 대한 구상권을 청구하기로 했습니다. 인근 상인들은 "두청운수 버스들이 가게 앞을 막아서 손님이 끊겼다"며 윤 전 시장을 상대로 집단 손해배상 소송을 준비 중입니다.</p>`,
+                comments: []
+            },
+            'news3': {
+                title: "효빈대 학식 '누마즈 귤 샐러드' 연일 매진 행렬", category: "생활 > 음식",
+                body: `<p>[효빈일보 = 최맛객 기자] 효빈대학교 학생식당의 신메뉴 '누마즈 귤 샐러드'가 독특한 맛과 상징성으로 인기를 끌고 있습니다. 일본 누마즈 시와의 자매결연을 기념해 출시된 이 메뉴는 박효빈 시장이 시식 후 '우마이!(맛있다)'를 외쳐 화제가 되었습니다.</p>`,
+                comments: []
+            },
+            'news4': {
+                title: "박효빈 시장, '8호선 정상화' 현장 점검... \"시민의 승리\"", category: "정치 > 행정",
+                body: `<p>[효빈일보 = 정시청 기자] 박효빈 시장이 8호선 공사 재개 현장을 방문했습니다. 그는 '이 모든 것은 포기하지 않은 시민들의 승리'라고 소감을 밝혔습니다.</p>`,
+                comments: []
+            },
+            'news5': {
+                title: "효빈교통공사 굿즈샵 '과진점' 오픈... \"덕질과 교통의 만남\"", category: "문화 > 쇼핑",
+                body: `<p>[효빈일보 = 문덕후 기자] 효빈교통공사가 과진역 내에 공식 굿즈샵 '과진점'을 오픈했습니다. 당초 이 자리는 윤대환 전 시장이 추진하던 고층 아파트 단지 **'두청힐스'**가 들어설 예정이었으나, 난개발 논란과 붕괴 위험성으로 백지화된 후 시민들을 위한 문화 공간으로 탈바꿈했습니다.</p>`,
+                comments: []
+            },
+            'news6': {
+                title: "1호선 캐릭터 '고나미', 효빈시 홍보대사 위촉", category: "문화 > 캐릭터",
+                body: `<p>[효빈일보 = 김문화 기자] 효빈도시철도 1호선의 마스코트 '고나미'가 시 공식 홍보대사로 위촉되었습니다. 가상 캐릭터로는 이례적인 행보입니다.</p>`,
+                comments: []
+            },
+            'news7': {
+                title: "[기획] \"가난과 폭력을 넘어\"... 박효빈 시장의 '눈물 젖은 빵'", category: "정치 > 인물",
+                body: `<p>[효빈일보 = 이사람 기자] 박효빈 시장의 과거사가 재조명되고 있습니다. <strong>서구 당선동</strong>의 허름한 단칸방 출신인 그는 어린 시절 극심한 가난과 학교 폭력에 시달렸던 아픔을 딛고 일어선 인물입니다. 당시 그에게 유일한 위로는 '서브컬처'와 '철도'였습니다.</p>`,
+                comments: []
+            },
+            'news8': {
+                title: "[포토] 효빈국제공항 2활주로 착공식 현장", category: "포토 > 뉴스",
+                body: `<p>[효빈일보 = 박포토 기자] 효빈국제공항의 새로운 도약을 알리는 2활주로 착공식이 열렸습니다. 이번 확장은 전 세계에서 몰려드는 성지순례 관광객 수요를 감당하기 위한 것입니다.</p>`,
+                comments: []
+            },
+            'news9': {
+                title: "윤대환 일가 '루트 M' 소송 패소 확정... 13억 빚더미", category: "사회 > 법원",
+                body: `<p>[효빈일보 = 김법정 기자] 윤대환 일가가 박효빈 시장을 상대로 제기한 13억 원 규모의 손해배상 소송(일명 '루트 M' 작전)에서 최종 패소했습니다.</p>`,
+                comments: []
+            },
+            'news10': {
+                title: "효빈 시민 85%, \"현 시정에 만족한다\" 역대 최고치", category: "정치 > 여론조사",
+                body: `<p>[효빈일보 = 최통계 기자] 민선 8기 박효빈 시정에 대한 시민 만족도가 85%를 기록했습니다. 이는 효빈시 역사상 가장 높은 수치로, 특히 2030 청년층과 6070 노년층의 지지가 두드러졌습니다.</p>`,
+                comments: []
+            }
+        };
+
+        const rankingData = [
+            { id: 'news_nico', title: "\"니코니코니~\" 박효빈 시장, 시의회서 파격 소통... 반응 '폭발'" },
+            { id: 'main', title: "[단독] 윤대환·윤재훈 부자, 위키 문서 조작 '덜미'" },
+            { id: 'news1', title: "윤재훈 필리핀 입국 금지, 갱단 연루설 '사실로 확인'" },
+            { id: 'news2', title: "[단독] 두청운수 불법 차고지, 시청 '원상복구 명령'" },
+            { id: 'news3', title: "효빈대 학식 '누마즈 귤 샐러드' 연일 매진 행렬" },
+            { id: 'news4', title: "박효빈 시장, '8호선 정상화' 현장 점검... \"시민의 승리\"" },
+            { id: 'news5', title: "효빈교통공사 굿즈샵 '과진점' 오픈... \"덕질과 교통의 만남\"" },
+            { id: 'news6', title: "1호선 캐릭터 '고나미', 효빈시 홍보대사 위촉" },
+            { id: 'news7', title: "[기획] \"가난과 폭력을 넘어\"... 박효빈 시장의 '눈물 젖은 빵'" },
+            { id: 'news8', title: "[포토] 효빈국제공항 2활주로 착공식 현장" }
+        ];
+
+        window.onload = function() {
+            // URL 파라미터 체크 로직 추가
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+
+            if (articleId && (allArticles[articleId] || rankingData.some(item => item.id === articleId))) {
+                renderArticle(articleId);
+            } else {
+                renderArticle('news_nico'); // 기본값: 니코니코니 기사
+            }
+            
+            renderRanking();
+        };
+
+        function renderArticle(id) {
+            currentArticleId = id;
+            let data = allArticles[id];
+            
+            if (!data) {
+                const rankItem = rankingData.find(item => item.id === id);
+                data = {
+                    title: rankItem ? rankItem.title : "기사 제목 없음",
+                    category: "사회 > 일반",
+                    body: `<p>해당 기사의 상세 내용은 준비 중입니다.</p><div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보&gt;</div>`,
+                    comments: []
+                };
+            }
+
+            document.getElementById('article-content-area').innerHTML = `
+                <div class="mb-2 text-[#0055aa] font-bold">${data.category}</div>
+                <h2 class="article-title">${data.title}</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김철수 기자</span> (chulsoo@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.29. 10:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">${data.body}</div>
+            `;
+
+            renderComments(data.comments);
+            document.getElementById('comment-count').innerText = data.comments.length;
+            window.scrollTo(0, 0);
+        }
+
+        function renderComments(comments) {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = "";
+
+            comments.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "normal-comment");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                    if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.isAdmin ? "bg-gray-100 border border-gray-300 text-blue-800 font-bold" : "";
+                        let nickClass = "";
+                        if(reply.nick === "Hyobin_Police" || reply.nick === "IP_Tracker") nickClass = "text-blue-600";
+                        else if(reply.nick === "오타쿠꺼져" || reply.nick.includes("A씨") || reply.nick.includes("윤재훈") || reply.nick.includes("윤대환") || reply.nick.includes("Yoon")) nickClass = "text-red-600 font-bold";
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="font-bold text-xs ${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') {
+                el.style.display = 'none';
+            } else {
+                el.style.display = 'block';
+            }
+        }
+
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            
+            const isLike = btn.innerText.includes('공감') && !btn.innerText.includes('비공감');
+            const likeBtn = parent.children[0];
+            const dislikeBtn = parent.children[1];
+
+            const getCount = (el) => parseInt(el.querySelector('.count').innerText.replace(/,/g, ''));
+            const setCount = (el, num) => el.querySelector('.count').innerText = num.toLocaleString();
+
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                setCount(btn, getCount(btn) - 1);
+            } else {
+                if (isLike) {
+                    if (dislikeBtn.classList.contains('active-hate')) {
+                        dislikeBtn.classList.remove('active-hate');
+                        setCount(dislikeBtn, getCount(dislikeBtn) - 1);
+                    }
+                    btn.classList.add('active');
+                } else {
+                    if (likeBtn.classList.contains('active')) {
+                        likeBtn.classList.remove('active');
+                        setCount(likeBtn, getCount(likeBtn) - 1);
+                    }
+                    btn.classList.add('active-hate');
+                }
+                setCount(btn, getCount(btn) + 1);
+            }
+        }
+
+        function addComment() {
+            const nick = document.getElementById('cmt-nick').value.trim();
+            const pw = document.getElementById('cmt-pw').value.trim();
+            const content = document.getElementById('cmt-content').value.trim();
+
+            if (!nick || !pw || !content) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const badWords = ["시발", "씨발", "병신", "개새끼", "지랄", "좆", "씹", "빨갱이", "매국노", "기레기", "미친", "새끼"];
+            for (let word of badWords) {
+                if (content.includes(word) || nick.includes(word)) {
+                    alert("⚠️ 경고: 욕설이나 비하 발언, 부적절한 단어는 사용할 수 없습니다.\n(건전한 댓글 문화를 만들어주세요.)");
+                    return;
+                }
+            }
+
+            const div = document.createElement('div');
+            div.className = "normal-comment bg-yellow-50"; 
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm">${nick}</span>
+                    <span class="text-xs text-gray-500">방금 전</span>
+                </div>
+                <p class="text-sm mb-2">${content}</p>
+                <div class="text-xs text-gray-500 flex gap-3">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">0</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">0</span></span>
+                </div>
+            `;
+            
+            const container = document.getElementById('comment-list');
+            if (container.children.length > 0 && container.children[0].classList.contains('border-red-300')) {
+                 container.insertBefore(div, container.children[1]); 
+            } else {
+                 container.insertBefore(div, container.firstChild);
+            }
+
+            document.getElementById('cmt-content').value = "";
+            alert("댓글이 등록되었습니다.");
+        }
+
+        function renderRanking() {
+            const list = document.getElementById('ranking-list');
+            rankingData.forEach((news, index) => {
+                const li = document.createElement('li');
+                li.onclick = () => renderArticle(news.id);
+                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link">${news.title}</span>`;
+                list.appendChild(li);
+            });
+        }
+
+        function openFooterModal(type) {
+            const modal = document.getElementById('footerModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            modal.style.display = 'flex';
+            
+            let text = "";
+            switch(type) {
+                case 'company': text = "회사소개...\n발행인: 최진언 | 편집인: 강정직"; break;
+                case 'terms': text = "이용약관 내용..."; break;
+                case 'privacy': text = "개인정보처리방침 내용..."; break;
+                case 'youth': text = "청소년보호정책 내용..."; break;
+                case 'help': text = "고충처리인: 박공정 (079-212-2123)"; break;
+            }
+            title.innerText = type.toUpperCase();
+            content.innerText = text;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('footerModal');
+            if (event.target == modal) { modal.style.display = 'none'; }
+        }
+    </script>
+    <script src="assets/wiki_index.js"></script>
+    <script src="assets/hb_wiki_core.js"></script>
+</body>
+</html>

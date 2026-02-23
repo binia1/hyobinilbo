@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[세계] "오타쿠가 시장인 도시가 있다?"... 日 SNS서 효빈시 인기 급상승 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.07 (수)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html" class="active">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">세계 > 일본/문화</div>
+                <h2 class="article-title">[일본] "오타쿠가 시장인 도시가 있다?"... 日 SNS서 효빈시 인기 급상승</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김도쿄 특파원</span> (tokyo@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 11:30 | 수정 2026.01.07. 12:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">일본 트위터 트렌드에 '#효빈시', '#박시장' 등장<br>인간 방어막 사건 본 日 네티즌 "성우 지켜줘서 감사... 효빈시는 성지"<br>시장실 피규어 사진 화제... "이 사람이 시장? 신뢰가 간다"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="일본_SNS_반응.png" alt="일본_트위터_트렌드.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/1DA1F2/FFFFFF?text=Japan+Twitter+Trends+Hyobin'">
+                        <div class="img-caption">▲ 7일 오전 일본 트위터(X) 실시간 트렌드에 '효빈시(ヒョビン市)', '박시장(パク市長)', '인간방어막(人間の盾)' 등의 키워드가 상위권에 올랐다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김도쿄 특파원] "한국에 오타쿠가 시장인 도시가 있다고? 게다가 시민들이 성우를 지키기 위해 인간 방어막을 만들었어? 여기는 천국인가?"</p>
+
+                    <p>최근 발생한 효빈대 '인간 방어막' 사건이 일본 열도까지 뜨겁게 달구고 있다. <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 일당의 성우 폭행 미수 사건과 이를 막아낸 시민들의 활약상이 일본 SNS를 통해 실시간으로 퍼지며, 효빈시가 '덕후들의 유토피아'로 급부상하고 있는 것이다.</p>
+
+                    <p>특히 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장의 정체가 알려지며 일본 네티즌들은 충격과 환호를 동시에 보내고 있다. 시장 집무실에 진열된 수많은 피규어 사진과, 관용차 대신 <a href="6호선.html" class="text-blue-600 underline">6호선</a>을 타고 출근하며 애니메이션 음악을 듣는다는 일화가 소개되자 "이 사람은 '진짜'다", "신뢰할 수 있는 정치인", "효빈시로 이민 가고 싶다"는 반응이 쇄도했다.</p>
+
+                    <div class="my-6">
+                        <img src="시장실_피규어.png" alt="박효빈_시장실.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Mayor+Office+Figures'">
+                        <div class="img-caption">▲ 일본 커뮤니티에서 화제가 된 박효빈 시장의 집무실 사진. 1/1 스케일 피규어와 각종 굿즈가 눈길을 끈다.</div>
+                    </div>
+
+                    <p>일본의 한 유명 인플루언서는 "자국의 문화를 존중하고, 손님(성우)을 지키기 위해 몸을 던지는 효빈 시민들의 민도(민주시민 의식)에 감동했다"며 "다음 휴가지는 무조건 효빈시"라고 밝혔다. 반면, 빵에 침을 뱉고 테러를 시도한 윤재훈에 대해서는 "세계 공통의 수치", "인류의 적"이라며 맹비난을 쏟아냈다.</p>
+
+                    <p>효빈시 관광과 관계자는 "일본발 효빈시 여행 문의가 평소보다 10배 이상 폭증했다"며 "HAF 기간에 맞춰 일본 관광객을 위한 맞춤형 패키지를 준비 중"이라고 전했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">2,410</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Japanese_Otaku", time: "방금 전", like: 8500, dislike: 10, isPunished: false,
+                                content: "ヒョビン市の皆さん、声優さんを守ってくれて本当にありがとうございます！(효빈시 여러분, 성우분들을 지켜주셔서 정말 감사합니다!) 시장님이 오타쿠라니 너무 부럽습니다. 다음 HAF 때 꼭 갈게요!",
+                                replies: [
+                                    { nick: "Hyobin_Welcome", content: "환영합니다! 맛있는 빵도 드시고 즐겁게 놀다 가세요." },
+                                    { nick: "Translator", content: "어서 오세요! 효빈시는 언제나 열려있습니다." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "5분 전", like: 3, dislike: 6200, isPunished: true,
+                                content: "나라 망신이다! 일본놈들한테 칭찬받아서 좋냐? 시장이 오타쿠인 게 자랑이야? 나는 애국자다! 쪽바리 물러가라!",
+                                replies: [
+                                    { nick: "History_Major", content: "애국자 같은 소리 하네. 니네 아빠가 일본산 재떨이 쓴 건 잊었냐? 그게 친일이지." },
+                                    { nick: "Global_Standard", content: "손님한테 침 뱉는 게 나라 망신이지, 지켜주는 게 국위선양이다 멍청아." },
+                                    { nick: "Prison_Guard", content: "2508번, 일본 뉴스에도 너 나왔더라. '최악의 빌런'으로. 축하한다 글로벌 스타네." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Univ_Student", time: "10분 전", content: "일본 트위터 보는데 우리 학교 학생들 영웅 취급받음 ㅋㅋㅋ 뿌듯하다. 윤재훈은 '인간 쓰레기'라고 박제됨.", like: 4500, dislike: 0, 
+                                replies: [
+                                    {nick:"Student_Council", content:"학우 여러분이 만든 기적입니다. 자랑스럽습니다!"}
+                                ] 
+                            },
+                            {
+                                nick: "Yoon_Sarang", time: "15분 전", content: "박효빈은 일본 간첩이다! 시청에 피규어가 웬 말이냐! 당장 때려 부숴라!", like: 5, dislike: 3800, isPunished: true,
+                                replies: [
+                                    {nick:"City_Hall_Staff", content:"그 피규어 관광객들이 보러 와서 입장료 수익 냅니다. 님보다 돈 잘 벌어요."},
+                                    {nick:"Art_Curator", content:"현대 미술품으로 인정받는 작품들입니다. 무식하면 용감하다더니."}
+                                ] 
+                            },
+                            {
+                                nick: "Tourism_Team", time: "20분 전", content: "지금 일본 여행사에서 문의 전화 빗발칩니다. 호텔 예약률 200% 찍을 기세네요. 효빈시 물 들어옵니다 노 저읍시다!", like: 5200, dislike: 0,
+                                replies: []
+                            },
+                            { nick: "Nijigasaki_Love", time: "25분 전", content: "시장님 집무실에 니지동 피규어 있는 거 실화냐... 진짜 배우신 분 ㅠㅠ 평생 지지합니다.", like: 3100, dislike: 0, replies: [] },
+                            { nick: "Anime_Fan_KR", time: "30분 전", content: "한국에도 이런 도시가 있다니... 서울 사는데 효빈시로 이사 가고 싶음. 집값 어떤가요?", like: 2800, dislike: 0, replies: [{nick:"Real_Estate", content:"지금 오셔야 합니다. 계속 오르고 있어요. 살기 좋습니다."}] },
+                            { nick: "Anti_Yoon", time: "35분 전", content: "윤재훈 덕분에 효빈시 홍보 제대로 됐네 ㅋㅋㅋ 노이즈 마케팅 장인이네 아주.", like: 4000, dislike: 0, replies: [] },
+                            { nick: "Safe_City", time: "40분 전", content: "일본인들이 '치안 좋은 도시'라고 칭찬함. 시민들이 직접 나서서 테러 막는 거 보고 감동했대.", like: 3500, dislike: 0, replies: [] },
+                            { nick: "Patriot_Man", time: "45분 전", content: "독립운동가들이 지하에서 통곡한다! 왜놈들을 지켜주다니!", like: 2, dislike: 2500, isPunished: true, replies: [{nick:"Ethics_Teacher", content:"독립운동가분들은 약자를 보호하고 평화를 사랑하셨습니다. 폭력을 정당화하지 마세요."}] },
+                            { nick: "Bread_Owner", time: "50분 전", content: "일본 손님들도 빵 사러 오시네요. '사아야 빵' 달라고 하시는데 감동 ㅠㅠ", like: 4200, dislike: 0, replies: [] },
+                            { nick: "Taxi_Driver", time: "55분 전", content: "공항에서 일본 손님 태웠는데, 박효빈 시장님 존경한다고 하더라. 내가 다 어깨가 으쓱했음.", like: 3800, dislike: 0, replies: [] },
+                            { nick: "Cosplayer", time: "1시간 전", content: "일본 코스어들도 HAF 참가하겠다고 난리 남. 이번 축제 역대급일 듯.", like: 2900, dislike: 0, replies: [] },
+                            { nick: "YoonJaehoon(IP)", time: "1시간 5분 전", content: "다 꺼져! 내가 시장 되면 일본인 입국 금지 시킬 거야! 쇄국정책 할 거라고!", like: 1, dislike: 5000, isPunished: true, replies: [{nick:"History_Prof", content:"흥선대원군 코스프레 하냐? 21세기에 쇄국? 나라 망칠 일 있니?"}] },
+                            { nick: "Diplomat", time: "1시간 10분 전", content: "이게 진정한 민간 외교지. 문화로 소통하고 서로 지켜주는 거. 정치인들보다 낫다.", like: 4800, dislike: 0, replies: [] },
+                            { nick: "Subway_6", time: "1시간 15분 전", content: "6호선 타면 시장님 만날 수 있나요? 성지순례 코스에 추가해야지.", like: 2200, dislike: 0, replies: [] },
+                            { nick: "K-Pop_Fan", time: "1시간 20분 전", content: "아이돌 판에서도 효빈시 유명함. 팬덤 존중해주는 분위기가 너무 좋음.", like: 1800, dislike: 0, replies: [] },
+                            { nick: "Business_Man", time: "1시간 25분 전", content: "효빈시 투자 가치 확실하네요. 문화 콘텐츠가 도시 경쟁력이라는 걸 증명함.", like: 3300, dislike: 0, replies: [] },
+                            { nick: "Yoon_Squad", time: "1시간 30분 전", content: "박효빈은 오타쿠 표 팔아먹는 포퓰리스트다! 정신 차려라 개돼지들아!", like: 3, dislike: 2900, isPunished: true, replies: [{nick:"Voter", content:"니네 윤대환은 표 팔아먹고 감방 갔잖아. 일 잘하는 시장 욕하지 마라."}] },
+                            { nick: "Peace_Lover", time: "1시간 35분 전", content: "한일 양국 네티즌들이 이렇게 훈훈한 거 처음 봄. 혐오를 이긴 사랑의 힘.", like: 4100, dislike: 0, replies: [] },
+                            { nick: "Gamer", time: "1시간 40분 전", content: "게임 규제 없는 효빈시로 이민 갑니다. 박 시장님 게이머 마음도 잘 알 듯.", like: 2500, dislike: 0, replies: [] },
+                            { nick: "Mom_Cafe", time: "1시간 45분 전", content: "우리 애들도 일본 애니 좋아하는데, 효빈시는 편견 없이 즐길 수 있어서 좋아요.", like: 3000, dislike: 0, replies: [] },
+                            { nick: "Foodie", time: "1시간 50분 전", content: "일본인들이 사능동 빵집 줄 선 거 보고 국뽕 참 ㅋㅋ K-빵 맛 좀 봐라.", like: 3600, dislike: 0, replies: [] },
+                            { nick: "YoonJaehoon(IP)", time: "1시간 55분 전", content: "아아악! 댓글 못 달게 해! 와이파이 끊지 마! 내 말 좀 들어줘!", like: 0, dislike: 6000, isPunished: true, replies: [{nick:"System_Admin", content:"신고 누적으로 글쓰기 권한이 제한되었습니다."}] },
+                            { nick: "Justice", time: "2시간 전", content: "윤재훈 입 좀 다물게 해서 속이 시원하네 ㅋㅋㅋ", like: 5500, dislike: 0, replies: [] },
+                            { nick: "Future_City", time: "2시간 5분 전", content: "효빈시는 미래형 도시다. 다양성을 존중하는 도시가 살아남는다.", like: 4400, dislike: 0, replies: [] },
+                            { nick: "Animation_Student", time: "2시간 10분 전", content: "애니 전공자로서 효빈시가 너무 자랑스러움. 내 꿈을 펼칠 곳이다.", like: 3200, dislike: 0, replies: [] },
+                            { nick: "Respect_Park", time: "2시간 15분 전", content: "취미가 본업에 도움 되는 케이스의 정석. 박 시장님 리스펙.", like: 3900, dislike: 0, replies: [] },
+                            { nick: "No_Hate", time: "2시간 20분 전", content: "혐오 세력은 이제 설 자리가 없다. 글로벌 망신 당하기 싫으면 찌그러져 있어라.", like: 4700, dislike: 0, replies: [] },
+                            { nick: "We_Are_One", time: "2시간 25분 전", content: "국적을 떠나서 문화를 사랑하는 사람들은 다 친구다. 효빈시 파이팅!", like: 5000, dislike: 0, replies: [] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 3000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Patriot") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_japan_otaku.html" class="ranking-link font-bold text-[#0055aa]">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_univ_human_shield.html" class="ranking-link">효빈대 '인간 방어막'의 감동</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_emma_bread.html" class="ranking-link">성우 사시데 마리아의 일침</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_quezon_city.html" class="ranking-link">케손시티 시장의 '자매결연' 제안</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, 구치소 '망고 구걸' 굴욕</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈관광공사</div>
+                    <div class="text-xs">일본어 가능 가이드 모집<br>시급 1.5만원 + α</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

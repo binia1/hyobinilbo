@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈일보 - 오피니언</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 사설 (헤드라인 스타일 변형) */
+        .editorial-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; display: flex; }
+        .editorial-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .editorial-img-box { flex: 1; overflow: hidden; }
+        .editorial-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+        .editorial-card:hover .editorial-img { transform: scale(1.05); }
+        .editorial-content { flex: 1; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+        .editorial-badge { display: inline-block; background: #0055aa; color: white; padding: 3px 8px; font-size: 12px; font-weight: bold; margin-bottom: 10px; width: fit-content; }
+        .editorial-title { font-size: 26px; font-weight: bold; margin-bottom: 15px; font-family: 'Nanum Myeongjo', serif; line-height: 1.4; }
+        .editorial-desc { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 15px; }
+        .editorial-writer { font-size: 13px; color: #888; font-weight: bold; }
+
+        /* 칼럼 그리드 */
+        .column-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .column-card { background: white; border: 1px solid #e2e2e2; padding: 20px; cursor: pointer; transition: transform 0.2s; position: relative; }
+        .column-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-color: #0055aa; }
+        .column-type { color: #0055aa; font-weight: bold; font-size: 12px; margin-bottom: 8px; }
+        .column-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; line-height: 1.4; font-family: 'Nanum Myeongjo', serif; }
+        .column-desc { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 15px; height: 44px; overflow: hidden; }
+        .column-writer { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+        .writer-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid #eee; }
+        .writer-info { font-size: 12px; }
+        .writer-name { font-weight: bold; color: #333; }
+        .writer-role { color: #888; }
+
+        /* 만평 */
+        .cartoon-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 30px; text-align: center; }
+        .cartoon-title { font-size: 18px; font-weight: bold; margin-bottom: 15px; text-align: left; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .cartoon-img { max-width: 100%; height: auto; margin: 0 auto; border: 1px solid #eee; }
+
+        /* 리스트형 오피니언 */
+        .opinion-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-writer { font-size: 12px; color: #0055aa; font-weight: bold; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- 최상단 바 -->
+    <div class="top-bar">
+        <div class="max-w-[1100px] mx-auto flex justify-between px-2">
+            <div>효빈시의 아침을 여는 신문</div>
+            <div>
+                <a href="index.html" class="hover:underline">효빈위키 홈</a> | 
+                <span class="cursor-pointer hover:underline">로그인</span> | 
+                <span class="cursor-pointer hover:underline">구독신청</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html" class="active">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 메인 컬럼 -->
+        <div class="main-column">
+            
+            <div class="page-header">
+                <span class="page-title">오피니언</span>
+                <span class="text-gray-500 text-sm ml-2">Opinion</span>
+            </div>
+
+            <!-- 메인 사설 -->
+            <div class="editorial-card" onclick="location.href='news_editorial_bread.html'">
+                <div class="editorial-img-box">
+                    <img src="빵과_장미.png" alt="빵과_꽃.png" class="editorial-img" onerror="this.src='https://via.placeholder.com/400x300/333333/FFFFFF?text=Editorial'">
+                </div>
+                <div class="editorial-content">
+                    <span class="editorial-badge">사설</span>
+                    <h2 class="editorial-title">혐오가 빵을 짓밟을 때, 시민은 '인간의 품격'을 증명했다</h2>
+                    <p class="editorial-desc">
+                        윤재훈 일당이 결식아동의 빵에 가한 침 뱉기 테러는 단순한 범죄를 넘어선 반인륜적 행태였다. 그러나 그보다 더 빛난 것은 3천 명 효빈 시민이 만든 '인간 방어막'이었다. 혐오는 결코 연대를 이길 수 없음을, 우리는 똑똑히 목격했다.
+                    </p>
+                    <div class="editorial-writer">효빈일보 논설위원실</div>
+                </div>
+            </div>
+
+            <!-- 만평 -->
+            <div class="cartoon-box">
+                <div class="cartoon-title">효빈만평</div>
+                <img src="효빈만평.png" alt="고립된_윤재훈.png" class="cartoon-img" onerror="this.src='https://via.placeholder.com/600x300/eeeeee/333333?text=Hyobin+Cartoon'">
+                <p class="mt-2 text-sm text-gray-500">"고립주의? 아니, 그냥 왕따." (그림: 김화백)</p>
+            </div>
+
+            <!-- 칼럼 그리드 -->
+            <div class="column-grid">
+                <!-- 칼럼 1 -->
+                <div class="column-card" onclick="location.href='news_column_otaku.html'">
+                    <div class="column-type">효빈시평</div>
+                    <div class="column-title">'덕질'이 밥 먹여주냐고? 네, 아주 잘 먹여줍니다</div>
+                    <div class="column-desc">
+                        두청운수가 망하고 칠양여객이 일어선 비결은 무엇인가. '래핑버스'와 '팬덤 경제'는 효빈시를 먹여 살리는 새로운 성장 동력이다. 문화를 혐오하는 자는 가난해질 뿐이다.
+                    </div>
+                    <div class="column-writer">
+                        <img src="논설위원_1.png" alt="프로필.png" class="writer-img" onerror="this.src='https://via.placeholder.com/40/cccccc/ffffff?text=U'">
+                        <div class="writer-info">
+                            <div class="writer-name">강논설</div>
+                            <div class="writer-role">주필</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 칼럼 2 -->
+                <div class="column-card" onclick="location.href='news_column_quezon.html'">
+                    <div class="column-type">기자수첩</div>
+                    <div class="column-title">케손시티에서 날아온 '형제애', 그리고 우리의 부끄러움</div>
+                    <div class="column-desc">
+                        박효빈 시장의 혈통을 공격하던 이들의 무지는 국제적 망신을 샀다. 하지만 케손시티 시장의 따뜻한 제안은 우리에게 '진정한 품격'이 무엇인지 가르쳐주었다.
+                    </div>
+                    <div class="column-writer">
+                        <img src="기자_1.png" alt="프로필.png" class="writer-img" onerror="this.src='https://via.placeholder.com/40/cccccc/ffffff?text=K'">
+                        <div class="writer-info">
+                            <div class="writer-name">이특파원</div>
+                            <div class="writer-role">기자</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 칼럼 3 -->
+                <div class="column-card" onclick="location.href='news_column_fake_news.html'">
+                    <div class="column-type">데스크칼럼</div>
+                    <div class="column-title">언론의 자유는 '거짓말 면허'가 아니다</div>
+                    <div class="column-desc">
+                        특정 언론사가 가해자 김 팀장을 '피해자'로 둔갑시킨 보도는 저널리즘의 사망 선고였다. CCTV가 없었다면 진실은 묻혔을 것이다. 펜은 칼보다 강하지만, 거짓은 팩트를 이길 수 없다.
+                    </div>
+                    <div class="column-writer">
+                        <img src="데스크_1.png" alt="프로필.png" class="writer-img" onerror="this.src='https://via.placeholder.com/40/cccccc/ffffff?text=D'">
+                        <div class="writer-info">
+                            <div class="writer-name">최진실</div>
+                            <div class="writer-role">사회부장</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 칼럼 4 -->
+                <div class="column-card" onclick="location.href='news_reader_essay.html'">
+                    <div class="column-type">독자투고</div>
+                    <div class="column-title">트램 타는 엠마 빵을 먹으며: 공존의 맛</div>
+                    <div class="column-desc">
+                        A씨가 그토록 부수고 싶어 했던 그 빵을 샀다. 달콤한 팥앙금 속에는 구도심 상인의 웃음과 트램의 편리함이 녹아 있었다. 혐오는 결코 이 맛을 알 수 없을 것이다.
+                    </div>
+                    <div class="column-writer">
+                        <img src="독자_1.png" alt="프로필.png" class="writer-img" onerror="this.src='https://via.placeholder.com/40/cccccc/ffffff?text=R'">
+                        <div class="writer-info">
+                            <div class="writer-name">김시민</div>
+                            <div class="writer-role">효빈대 학생</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 오피니언 브리핑 -->
+            <div class="opinion-list-box">
+                <div class="section-title">
+                    <span>오피니언 브리핑</span>
+                    <span class="text-xs text-gray-500 cursor-pointer">더보기 +</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_opinion_1.html'">
+                    <span class="list-title">[시론] 윤대환 방지법, '이해충돌'의 고리를 끊어야 산다</span>
+                    <span class="list-writer">박법률 변호사</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_opinion_2.html'">
+                    <span class="list-title">[경제노트] HAF 메타버스, 가상 공간에서 창출되는 실물 가치</span>
+                    <span class="list-writer">정경제 교수</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_opinion_3.html'">
+                    <span class="list-title">[문화산책] '니나관' 25층에서 바라본 효빈의 스카이라인</span>
+                    <span class="list-writer">이건축 평론가</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_opinion_4.html'">
+                    <span class="list-title">[발언대] '4호선(주황색)' 연장, 약산시 교통 혁명의 시작</span>
+                    <span class="list-writer">최교통 연구원</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 사이드바 컬럼 -->
+        <div class="side-column">
+            <!-- 실시간 랭킹 -->
+            <div class="ranking-box">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 오피니언</span>
+                    <span class="text-xs text-gray-500">주간</span>
+                </div>
+                <ul class="ranking-list">
+                    <li onclick="location.href='news_editorial_bread.html'">
+                        <span class="rank-num">1</span>
+                        <span class="rank-title font-bold text-[#0055aa]">[사설] 혐오가 빵을 짓밟을 때</span>
+                    </li>
+                    <li onclick="location.href='news_column_otaku.html'">
+                        <span class="rank-num">2</span>
+                        <span class="rank-title">[효빈시평] '덕질'이 밥 먹여주냐고?</span>
+                    </li>
+                    <li onclick="location.href='news_column_fake_news.html'">
+                        <span class="rank-num">3</span>
+                        <span class="rank-title">[데스크] 언론의 자유는 거짓말 면허 아냐</span>
+                    </li>
+                    <li onclick="location.href='news_column_quezon.html'">
+                        <span class="rank-num">4</span>
+                        <span class="rank-title">[수첩] 케손시티의 형제애와 우리의 부끄러움</span>
+                    </li>
+                    <li onclick="location.href='news_reader_essay.html'">
+                        <span class="rank-num">5</span>
+                        <span class="rank-title">[투고] 트램 타는 엠마 빵을 먹으며</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈대학교 대학원</div>
+                    <div class="text-xs">지성인 여러분을 기다립니다<br>석/박사 과정 모집</div>
+                </div>
+            </div>
+            <div class="ad-banner" style="background: #e0f7fa; border-color: #80deea;">
+                <div class="text-center">
+                    <div class="font-bold text-cyan-700 mb-1">효빈문학상</div>
+                    <div class="text-xs text-cyan-600">당신의 이야기를 들려주세요<br>총상금 5천만원</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="회사소개.html">회사소개</a>
+                <a href="구독신청.html">구독신청</a>
+                <a href="고충처리.html">고충처리</a>
+                <a href="이용약관.html">이용약관</a>
+                <a href="개인정보처리방침.html">개인정보처리방침</a>
+            </div>
+            <div>
+                <p class="mb-1">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+                <p class="mb-1">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+                <p>전화: 079-212-2123 | 팩스: 079-212-2124</p>
+                <p class="mt-2 text-gray-500">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

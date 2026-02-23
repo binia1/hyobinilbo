@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] 효빈경찰청, HAF 암표상 특별 단속... 20대 일당 검거 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fee2e2 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-num { font-weight: bold; color: #0055aa; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .yoon-comment { background: #fff1f2; border: 1px solid #fecaca; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end px-4">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.02.01 (일)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav px-4">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html" class="active">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container px-4">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-red-600 font-bold">사회 > 경찰/사건</div>
+                <h2 class="article-title">효빈경찰청, HAF 암표상 특별 단속... 20대 일당 전격 검거</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김정의 기자</span> (justice@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.02.01. 22:55 | 수정 2026.02.01. 23:10</span>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p>[효빈일보 = 김정의 기자] **효빈경찰청이 제5회 효빈 애니메이션 페스티벌(HAF)의 입장권을 불법 거래해 폭리를 취하려던 암표상 일당을 끈질긴 추적 끝에 검거했다.**</p>
+                    
+                    <div class="my-6">
+                        <img src="HAF_암표상_검거.png" alt="암표상_검거_현장.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Police+Arrest+Scalpers'">
+                        <div class="img-caption">▲ 1일 오후 효빈경찰청 사이버수사대가 HAF 입장권을 불법 유통한 일당으로부터 압수한 대량의 티켓과 증거 물품들.</div>
+                    </div>
+
+                    <p>효빈경찰청은 1일 오후, <a href="효빈터미널.html" class="text-blue-600 underline">효빈터미널</a> 인근에서 암표를 현장 거래하던 20대 남성 A씨 등 5명을 경범죄 처벌법 및 업무방해 혐의로 현행범 체포했다고 밝혔다. 이들은 매크로 프로그램을 이용해 HAF 입장권 수백 장을 선점한 뒤, 온라인 커뮤니티와 중고 거래 사이트에서 정가의 10배가 넘는 가격에 재판매한 혐의를 받고 있다.</p>
+
+                    <p>이번 단속은 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장의 강력한 의지에 따라 시행된 'HAF 클린 티켓팅 캠페인'의 일환이다. 박 시장은 **"팬들의 순수한 열정을 돈벌이 수단으로 악용하는 행위는 도시의 축제 정신을 훼손하는 중죄"**라며 **"암표 거래는 물론, 이를 묵인하는 플랫폼에 대해서도 강력한 법적 책임을 묻겠다"**고 선포한 바 있다.</p>
+
+                    <p>효빈경찰청 사이버수사대는 효빈시 IT 밸리가 개발한 '실시간 가짜뉴스 및 불법 거래 AI 모니터링 시스템'을 활용해 이들의 접속 IP를 추적했다. 특히 범인 중 일부가 <a href="보라색6호선.html" class="text-blue-600 underline" style="color:#881188; font-weight:bold;">보라색 6호선</a> 리사역 물품보관함을 거점으로 티켓을 전달하려다 미리 매복 중이던 형사들에게 덜미가 잡힌 것으로 알려졌다.</p>
+
+                    <p>한편, 출소 후 SNS를 통해 이번 단속을 '민간 경제 탄압'이라 주장하며 암표상을 옹호하던 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 씨 일당에 대해서도 경찰은 수사를 검토 중이다. 윤 씨는 아들 윤재훈의 게시물에 직접 '좋아요'를 누르며 동조해 온 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 전 시장과 함께 "박효빈이 공포 정치를 한다"는 가짜뉴스를 퍼뜨려 빈축을 사고 있다.</p>
+
+                    <p>경찰 관계자는 "이미 판매된 암표는 전권 무효 처리되며, 적발된 일당은 범죄 수익 환수와 함께 실형 선고를 피하기 어려울 것"이라고 경고했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">댓글 <span class="text-[#0055aa]" id="comment-count">1,842</span></div>
+                
+                <div id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Justice_Winner", time: "방금 전", like: 15600, dislike: 1,
+                                content: "경찰관님들 나이스! 3만 원짜리 티켓을 50만 원에 파는 게 제정신인가? 박 시장님 말대로 이런 놈들은 본보기를 보여줘야 함. 덕분에 저 오늘 취소표 구했습니다!",
+                                replies: [
+                                    { nick: "YoonJaehoon(출소/무직)", content: "이게 무슨 범죄야! 자유 시장 경제 아니냐? 박효빈이 오타쿠들 환심 사려고 청년들 경제 활동 막는 거다! 암표상들도 먹고살아야지!" },
+                                    { nick: "Fact_Bomber", content: "재훈아 ㅋㅋㅋ 매크로 돌려서 남의 기회 뺏는 게 경제 활동이냐? 넌 2.2% 지능이라 경제학 정의도 새로 쓰나 보네. 조용히 하고 컵라면이나 먹어." },
+                                    { nick: "Hyobin_Citizen", content: "부자가 쌍으로 출소해서 범죄 옹호나 하고 있네. 님네 아빠가 횡령한 세금은 100% 공짜 경제였냐?" }
+                                ]
+                            },
+                            {
+                                nick: "Anime_Fan_Club", time: "5분 전", like: 12000, dislike: 3,
+                                content: "매복 수사 대박 ㅋㅋㅋ 6호선 보라색 열차 타고 가다가 잡히는 거 본 사람? 형사님들 포스 지리더라. 암표상들은 효빈시 근처에도 오지 마라.",
+                                replies: [
+                                    { nick: "YoonDaehwan(출소/동조)", content: "재훈아 아빠가 왔다! 경찰이 함정 수사한 거 아니냐? 선량한 시민을 매도하지 마라! 박효빈은 공포 정치를 멈춰라!" },
+                                    { nick: "Worker_A", content: "회장님 ㅋㅋㅋ 함정은 님이 임금 체불하고 판 함정이 진짜 함정이죠. 2차 출소했으면 자숙이나 하세요 제발." }
+                                ]
+                            },
+                            {
+                                nick: "Global_Standard", time: "10분 전", like: 9800,
+                                content: "미국이나 일본이었으면 징벌적 손해배상으로 인생 끝났을 텐데 한국은 너무 약함. 효빈시는 조례로 암표 수익 100배 추징한다면서요? 응원합니다!",
+                                replies: [
+                                    { nick: "YoonJaehoon(출소/무직)", content: "독재다! 사유재산 침해다! 내가 법원에 탄원서 쓸 거다! 암표 만세!" },
+                                    { nick: "Lawyer_Lee", content: "윤재훈 씨, 탄원서가 아니라 고발장 받으실 시간입니다. 가짜뉴스 유포 혐의로 AI 센터에서 이미 님 자료 다 넘겼어요." }
+                                ]
+                            },
+                            { id: 4, nick: "Mama_Cafe", content: "우리 애들 축제 가고 싶어서 1년 내내 기다렸는데 암표 때문에 못 갈 뻔했어요. 나쁜 사람들 싹 다 잡아주셔서 속이 다 시원합니다.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"애 교육 똑바로 시켜! 오타쿠 만들지 말고!"}, {nick:"Super_Mom", content: "니는 애 안 거치고 바로 범죄자로 태어났냐? 인성 수준 보소 ㅋㅋㅋ"}] },
+                            { id: 5, nick: "Subway_Lover", content: "보라색 6호선 전광판에 암표상 검거 영상 틀어주세요 ㅋㅋㅋ 출근길 꿀맛 사이다일 듯!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"보라돌이 새끼들 ㅋㅋㅋ 다 때려 부숴라!"}, {nick:"Transit_Guard", content: "기물 파손 선동으로 신고 누적 중입니다. 짐 싸두세요."}] },
+                            { id: 6, nick: "History_Major", content: "부자가 나란히 출소해서 키보드 배틀이나 하고 있는 꼬라지가 역사에 남을 코미디네 ㅋㅋㅋ 4.8%에서 2.2%면 멸종 위기종 아니냐?", replies: [{nick:"YoonJaehoon(출소/무직)", content:"역사는 내가 다시 쓴다! 내가 승자야!"}, {nick:"Fact", content: "님은 전과 기록부만 쓰시잖아요 ㅋㅋㅋ"}] },
+                            { id: 7, nick: "Quezon_Friend", content: "Philippines supports clean HAF! Scalpers are global problem. Good job Hyobin Police!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"Shut up Jungle people! Go back!"}, {nick:"Global_Citizen", content: "님보다 그분들이 효빈시 세금 더 많이 낼 듯. 무직 백수 컷!"}] },
+                            { id: 8, nick: "Small_Biz_Power", content: "상인들 입장에선 암표상들이 제일 원수임. 관광객 돈을 걔네가 다 뜯어가니까. 경찰님들 고생 많으셨습니다!", replies: [{nick:"YoonDaehwan(출소/동조)", content:"돈은 돌고 도는 거다! 암표상 돈도 시장에 풀린다!"}, {nick:"Investor", content: "회장님 ㅋㅋㅋ 범죄 자금이 시장 경제에 도움이 된다니... 경제학 다시 배우셔야 할 듯."}] },
+                            { id: 9, nick: "BinHyo_Staff", content: "연청색 빈효선 안에서도 암표 거래 시도하던 놈 하나 오늘 저희가 신고해서 잡았습니다 ㅋㅋㅋ 정의 구현!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"배신자 새끼! 기차 놀이나 하는 주제에!"}, {nick:"Signal_Team", content: "부러우면 님도 빈효선 타세요 ㅋㅋㅋ 아, 님은 돈 없어서 못 타나?"}] },
+                            { id: 10, nick: "Final_Boss", content: "결론: 암표상 = 쓰레기, 윤씨 부자 = 쓰레기 봉투, 박효빈 시장 = 환경미화원.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"아니야!!! 내가 최고야!!! 으아아아앙!!!"}, {nick: "Prison_Warden", content: "2508번, 돌아온 걸 환영한다. 이번엔 방 깨끗이 닦아놨다."}] },
+                            { id: 11, nick: "Audit_Team_Fan", content: "감사원 조사에 검찰 수사에 이제 암표 단속까지 ㅋㅋㅋ 부자 동반 입소 멀지 않았네요.", replies: [{nick:"YoonJaehoon(출소/무직)", content: "나 안 들어가! 우리 아빠가 지켜줄 거야!"}, {nick: "Realist", content: "님네 아빠 옆에서 같이 댓글 다는 거 다 보이는데요 ㅋㅋㅋ"}] },
+                            { id: 12, nick: "Subway_Fan_Green", content: "초록색 2호선 타고 오다 잡혔어야 더 웃겼을 텐데 ㅋㅋㅋ 암표 근절 화이팅!", replies: [{nick:"YoonJaehoon(출소/무직)", content: "초록색 좌파 색깔!"}, {nick: "Fact_Check", content: "서울 부산 대구도 다 좌파냐? ㅋㅋㅋ 지능 2.2% 수준."}] },
+                            { id: 13, nick: "Angel_Donor", content: "기분 좋아서 결식아동 돕기에 220만 원 기부했습니다. 2.2% 기념입니다 ㅋㅋㅋ", replies: [{nick:"YoonJaehoon(출소/무직)", content: "그 돈 나 주지! 내가 지금 배고파 죽겠는데!"}, {nick: "Justice", content: "일 좀 하세요 이 깡패 새끼야 ㅋㅋㅋ"}] },
+                            { id: 14, nick: "Tax_Officer_V", content: "암표상 수익도 기타 소득으로 간주해서 탈세 조사 들어갑니다. 효빈시는 세금에 진심입니다 ^^", replies: [{nick:"YoonDaehwan(출소/동조)", content: "세금이 너무 과하다! 이건 수탈이야!"}, {nick: "Audit_Fan", content: "횡령한 수백억 세탁하던 분이 할 소리는 아닌 듯 ㅋㅋㅋ"}] },
+                            { id: 15, nick: "Future_Hope", content: "박효빈 시장님이 만든 깨끗한 축제, 우리가 지킵니다. 혐오 세력은 이제 안녕~", replies: [{nick:"YoonJaehoon(출소/무직)", content: "내가 돌아올 거다! 으아아악!"}, {nick: "Citizen_V", content: "응 2.2%~ 영원히 오지 마~ ㅋㅋㅋ"}] },
+                            { id: 16, nick: "Anime_Artist", content: "우리 작품 가치를 돈으로 환산해서 등쳐먹는 놈들 극혐입니다. 경찰님들 최고!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"환쟁이들 ㅋㅋㅋ 다 손목을..."}, {nick:"Cyber_Cop", content:"협박죄 추가 확정. 캡처 끝났습니다."}] },
+                            { id: 17, nick: "Taxi_Captain", content: "오늘 암표상 일당 터미널에서 끌려가는 거 봤음 ㅋㅋㅋ 손이 다 시원하네.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"택시 거지 새끼야!"}, {nick:"Taxi_Driver", content:"무직 백수한테 거지 소리 들으니 어이가 없네 ㅋㅋㅋ"}] },
+                            { id: 18, nick: "Old_Lady_Choi", content: "박 시장이 일 잘하니까 도둑놈들이 설쳐대. 경찰 양반들, 나쁜 놈들 싹 다 잡아가!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"할망구 속지 마!"}, {nick:"Grandson", content:"우리 할매 건드리지 마라. 너 오늘 제삿날이다."}] },
+                            { id: 19, nick: "Peace_Maker", content: "싸우지 마세요... 라고 하고 싶지만 윤재훈은 도저히 안 되겠다. 팩트 폭격 가즈아!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"날 죽여라! 죽여!"}, {nick:"Citizen_K", content:"안 죽여 ㅋㅋㅋ 90살까지 살면서 2.2% 조롱받는 거 봐야지."}] },
+                            { id: 20, nick: "Ghost_Hunter", content: "윤씨 부자 고시원에서 와이파이 훔쳐 쓰는 거 신고하면 포상금 주나요? ㅋㅋㅋ", replies: [{nick:"YoonJaehoon(출소/무직)", content:"내 돈이야! 내가 낸 월세야!"}, {nick: "Ghost_Yoon", content: "(윤대환) 재훈아... 아빠 지금 감사원 전화 와서 바쁘다... 나중에 해라..."}] },
+                            { id: 21, nick: "HAF_Warrior", content: "암표상 잡고 티켓 정가에 풀리니까 진짜 축제 분위기 나네요. 효빈시 짱!", replies: [{nick:"YoonJaehoon(출소/무직)", content: "다 가짜야! 조작이야!"}, {nick: "Reality_Check", content: "님 인생이 제일 큰 조작인 듯 ㅋㅋㅋ"}] },
+                            { id: 22, nick: "Subway_Fan_Yellow", content: "노란색 3호선 타고 가면서 보는데 오늘 효빈경찰청 열일하네. 응원합니다!", replies: [{nick:"YoonJaehoon(출소/무직)", content: "오줌 색깔 지하철 ㅋㅋㅋ"}, {nick: "Transit_Officer", content: "색깔 가지고 이념 타령하는 거 보니 진짜 정신병 있나 보네."}] },
+                            { id: 23, nick: "Small_Biz_Success", content: "박 시장님 덕분에 장사 잘되고 부패 척결도 되고 너무 행복합니다.", replies: [{nick:"YoonJaehoon(출소/무직)", content: "니네 가게 다 압류할 거야!"}, {nick: "HR_Manager", content: "님은 시장 출마 못 하세요 ㅋㅋㅋ 피선거권 박탈 컷."}] },
+                            { id: 24, nick: "Foreign_Reporter", content: "Hyobin is making history in cleaning up fandom black markets. Impressive.", replies: [{nick:"YoonJaehoon(출소/무직)", content: "Fake News! Get out!"}, {nick: "Global_Journal", content: "World is laughing at you, 2.2% loser."}] },
+                            { id: 25, nick: "Railway_Watcher", content: "연청색 빈효선 쾌적함 미쳤음... 이런 도시를 누가 안 좋아하냐? 윤씨 부자 빼고 ㅋㅋㅋ", replies: [{nick:"YoonDaehwan(출소/동조)", content: "내 공이 크다!"}, {nick: "Audit_Team", content: "님 공은 횡령 500억 스택 쌓은 공밖에 없으세요."}] },
+                            { id: 26, nick: "Mama_Cafe_Leader", content: "우리 엄마들 유모차 부대 결성해서 암표 감시단 활동 중입니다. 윤재훈 근처에 오면 바로 신고함.", replies: [{nick:"YoonJaehoon(출소/무직)", content: "아줌마들은 밥이나 해!"}, {nick: "Super_Dad", content: "말하는 꼬라지 보소. 너 오늘 밤 제삿날인 줄 알아."}] },
+                            { id: 27, nick: "IT_Engineer", content: "효빈시 AI 검증 시스템 덕분에 암표 거래 90% 이상 차단됐네요. 기술의 승리!", replies: [{nick:"YoonJaehoon(출소/무직)", content: "기계가 뭘 알아!"}, {nick: "Developer", content: "기계보다 지능 낮은 니 뇌부터 검증받아라 ㅋㅋㅋ"}] },
+                            { id: 28, nick: "Peace_Maker_V2", content: "혐오는 결코 사랑을 이길 수 없습니다. HAF 성료 가즈아!", replies: [{nick:"YoonJaehoon(출소/무직)", content: "전쟁이다!"}, {nick: "Citizen_Z", content: "님 혼자만의 정신병 전쟁 ㅋㅋㅋ 응원 안 함."}] },
+                            { id: 29, nick: "Final_Strike_V", content: "결론: 윤석열 탄핵, 윤재훈 재구속, 효빈시 떡상. 반박 시 2.2%.", replies: [{nick:"YoonJaehoon(출소/무직)", content: "아니야!!! 으아아아앙!!!"}, {nick: "Lawyer_K", content: "방금 쓴 댓글도 증거로 제출합니다. ㅂㅇ"}] },
+                            { id: 30, nick: "Hyobin_Forever_99", content: "박효빈 시장님과 함께 효빈의 전성기를! 암표 없는 깨끗한 축제 사랑해요!", replies: [{nick:"YoonJaehoon(출소/무직)", content: "나도 티켓 줘! 나도 구경 갈래!"}, {nick: "Security_Team", content: "님 블랙리스트라 입장 금지에요 ㅋㅋㅋ 입구 컷."}] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt) => {
+                            const div = document.createElement('div');
+                            const isYoonMain = cmt.nick.includes("Yoon");
+                            div.className = isYoonMain ? "yoon-comment" : (cmt.like > 10000 ? "best-comment shadow-md" : "comment-item");
+                            
+                            let repliesHtml = `<div class="reply-container">`;
+                            cmt.replies.forEach(reply => {
+                                const isYoon = reply.nick.includes("Yoon");
+                                const styleClass = isYoon ? "bg-red-100 border border-red-200" : "bg-gray-50 border border-gray-200";
+                                const nickClass = isYoon ? "text-red-600 font-black" : "text-gray-700 font-bold";
+                                const tag = isYoon ? `<span class="bg-red-700 text-white text-[10px] px-1 rounded ml-1">${reply.nick.includes('Daehwan') ? '2차출소' : '출소/무직'}</span>` : '';
+
+                                repliesHtml += `
+                                    <div class="reply-item ${styleClass} p-3 rounded mb-2">
+                                        <span class="${nickClass}">${reply.nick}${tag}</span>: 
+                                        <span class="text-gray-800">${reply.content}</span>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${isYoonMain ? 'text-red-600' : 'text-blue-800'}">${cmt.nick} ${isYoonMain ? `<span class="bg-red-600 text-white text-[10px] px-1 rounded ml-1">출소/무직</span>` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-3 font-medium">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn border border-gray-300 px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                                    <span class="vote-btn border border-gray-300 px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active', 'active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-red-600 font-black">실시간 뉴스 랭킹</span>
+                </div>
+                <ul class="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_police_scalper.html" class="ranking-link font-bold text-red-600">HAF 암표상 일당 전격 검거</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_mayor_approval.html" class="ranking-link">박효빈 지지율 78% 고공행진</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_fake_news_punishment.html" class="ranking-link">이재명 대통령 "가짜뉴스 엄벌"</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_hyobin_cooperation.html" class="ranking-link">효빈시 AI 검증 시스템 성과</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_audit_yoon.html" class="ranking-link">감사원, 윤씨 부자 비리 정조준</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#881188] p-6 text-white rounded text-center shadow-lg">
+                <div class="font-black text-xl mb-2 italic">LINE 6 PURPLE</div>
+                <div class="text-sm font-bold">정의를 싣고 달리는<br>보라색 6호선</div>
+            </div>
+
+            <div class="ad-banner" style="background: #00CCAA; color: white;">
+                <div class="text-center p-4">
+                    <div class="font-bold mb-1">효빈교통공사</div>
+                    <div class="text-xs">민심의 발이 되는<br>초록색 2호선</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

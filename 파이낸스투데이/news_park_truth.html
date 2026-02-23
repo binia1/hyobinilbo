@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[기획] "눈물 젖은 빵? 그거 다 쇼다!"... 박효빈의 '가난 코스프레'와 오타쿠 독재의 그늘 - 파이낸스 투데이</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f0f0; }
+
+        /* 헤더: 찌라시 감성 */
+        .ft-header { background: #cc0000; color: yellow; padding: 10px 0; border-bottom: 4px solid #000; text-align: center; }
+        .ft-logo { font-family: 'Gothic A1', sans-serif; font-size: 36px; font-weight: 900; letter-spacing: -2px; text-shadow: 2px 2px 0px #000; cursor: pointer; }
+        .ft-sub { font-size: 12px; color: white; font-weight: bold; margin-top: 2px; }
+
+        /* 네비게이션 */
+        .ft-nav { background: #222; color: white; text-align: center; padding: 10px 0; font-weight: bold; font-size: 14px; }
+        .ft-nav a { margin: 0 10px; cursor: pointer; color: white; text-decoration: none; }
+        .ft-nav a:hover { color: #ffcc00; text-decoration: underline; }
+
+        /* 컨테이너 */
+        .container { max-width: 1000px; margin: 20px auto; display: flex; gap: 15px; }
+        .content-area { flex: 3; background: white; padding: 30px; border: 1px solid #999; }
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+
+        /* 기사 스타일 */
+        .article-head { color: #cc0000; font-weight: 900; font-size: 14px; margin-bottom: 5px; border-bottom: 2px solid #cc0000; display: inline-block; }
+        .article-title { font-size: 28px; font-weight: 900; line-height: 1.3; color: #000; margin-bottom: 15px; letter-spacing: -1px; }
+        .reporter-line { background: #f0f0f0; padding: 10px; border-top: 1px solid #000; font-size: 13px; color: #555; margin-bottom: 20px; }
+        .reporter-name { font-weight: bold; color: #000; }
+
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; }
+        .article-body strong { color: #cc0000; background: #fffacd; text-decoration: underline; }
+        
+        .conspiracy-box { border: 3px solid #000; padding: 15px; font-weight: bold; font-size: 16px; text-align: center; margin: 20px 0; background-color: #ffffcc; color: #cc0000; font-family: 'Gothic A1', sans-serif; box-shadow: 5px 5px 0 rgba(0,0,0,0.2); }
+
+        /* 광고 배너 스타일 (친윤) */
+        .yoon-ad { background: linear-gradient(135deg, #000080 0%, #0000cd 100%); color: white; padding: 20px; text-align: center; cursor: pointer; border: 2px solid #ffcc00; box-shadow: 3px 3px 5px rgba(0,0,0,0.3); }
+        .yoon-ad h3 { font-size: 18px; font-weight: 900; margin-bottom: 5px; color: #ffcc00; text-shadow: 1px 1px 0 #000; }
+        .yoon-ad p { font-size: 12px; font-weight: bold; }
+
+        .wig-ad { background: #fff0f5; border: 2px solid #ff69b4; padding: 15px; text-align: center; color: #333; cursor: pointer; }
+        .wig-ad:hover, .yoon-ad:hover { opacity: 0.9; transform: scale(1.02); transition: 0.2s; }
+
+        .doocheong-ad { background: #228b22; color: white; padding: 15px; text-align: center; border: 2px solid #006400; cursor: pointer; }
+
+        /* 댓글창 */
+        .comment-box { margin-top: 40px; border-top: 3px solid #000; padding-top: 10px; background-color: #fafafa; padding: 20px; }
+        .cmt-cnt { font-weight: bold; color: #cc0000; }
+        
+        .cmt-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
+        .cmt-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; }
+        .cmt-nick { font-weight: bold; font-size: 14px; }
+        .cmt-content { font-size: 15px; margin-bottom: 8px; line-height: 1.4; }
+        .cmt-meta { font-size: 12px; color: #888; display: flex; gap: 10px; align-items: center; }
+        
+        /* 댓글 스타일링 */
+        .supporter-reply { background-color: #fffbe6; border: 1px solid #eedd00; padding: 10px; margin-top: 8px; margin-left: 30px; font-size: 13px; border-radius: 4px; position: relative; }
+        .supporter-reply::before { content: "↪"; position: absolute; left: -20px; top: 10px; color: #999; font-weight: bold; }
+        .supporter-nick { color: #cc0000; font-weight: 900; }
+
+        .fact-reply { background-color: #f1f8e9; border: 1px solid #aed581; padding: 10px; margin-top: 8px; margin-left: 30px; font-size: 13px; border-radius: 4px; position: relative; }
+        .fact-reply::before { content: "↪"; position: absolute; left: -20px; top: 10px; color: #999; font-weight: bold; }
+        .fact-nick { color: #2e7d32; font-weight: 900; }
+
+        .mayor-reply { background-color: #e3f2fd; border: 2px solid #2196f3; padding: 15px; margin-top: 10px; margin-left: 30px; font-size: 14px; border-radius: 8px; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .mayor-reply::before { content: "↪"; position: absolute; left: -20px; top: 15px; color: #2196f3; font-weight: bold; font-size: 18px; }
+        .mayor-nick { color: #0d47a1; font-weight: 900; display: block; margin-bottom: 5px; font-size: 15px; }
+
+        .ranking-list li { border-bottom: 1px dotted #999; padding: 10px 0; font-size: 14px; cursor: pointer; display: flex; gap: 8px; }
+        .ranking-list li:hover { color: #cc0000; font-weight: bold; }
+        .rank-num { background: #cc0000; color: white; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <header class="ft-header">
+        <div class="ft-logo" onclick="location.href='ft_home.html'">FINANCE TODAY</div>
+        <div class="ft-sub">진실의 횃불 | 윤대환 시장님 명예회복 운동본부</div>
+    </header>
+
+    <div class="ft-nav">
+        <a href="ft_home.html">종합</a>
+        <a href="ft_politics.html">정치</a>
+        <a href="ft_economy.html">경제</a>
+        <a href="ft_column.html">윤대환 칼럼</a>
+        <a href="news_park_truth.html" class="text-yellow-400">[기획] 박효빈의 실체</a>
+        <a href="ft_realestate.html">부동산(두청)</a>
+    </div>
+
+    <div class="container">
+        <!-- 본문 -->
+        <div class="content-area">
+            <div class="article-head">정치 > 기획/폭로</div>
+            <h1 class="article-title">[기획] "눈물 젖은 빵? 그거 다 쇼다!"... 박효빈의 '가난 코스프레'와 오타쿠 독재의 그늘</h1>
+            
+            <div class="reporter-line">
+                <span class="reporter-name">특별취재팀 (김태극, 최애국 기자)</span> | 입력 2025.12.28 09:00
+                <br><span style="color:red; font-size:11px;">*후원 계좌: 효빈은행 111-222... (김 기자 라면값 후원)</span>
+            </div>
+
+            <div class="article-body">
+                <p><strong>[파이낸스 투데이]</strong> 효빈시가 미쳐 돌아가고 있다. '최연소 시장', '서민의 아들'이라는 가면을 쓴 박효빈(29)이 시정을 농단하고 있다는 제보가 빗발치고 있다. 본지는 그의 '신화' 뒤에 숨겨진 추악한 진실을 파헤쳐본다.</p>
+
+                <p><strong>1. "가난은 컨셉?"... 서구 당선동의 진실</strong><br>
+                박 시장은 자신이 '비 새는 단칸방' 출신이라며 감성 팔이를 해왔다. 하지만 이는 철저한 '이미지 메이킹'일 가능성이 높다. 안다야 여사(모친)가 필리핀에서 유력 가문의 딸이라는 소문이 파다하다. <strong>"필리핀 재벌 외가"의 지원을 받아 호의호식해놓고 서민 행세를 하는 것 아닌가?</strong> 시민들은 분노하고 있다.</p>
+
+                <div class="conspiracy-box">
+                    "윤재훈 대표의 '엠마의 빵' 사건...<br>침을 뱉은 게 아니라 '품질 검사' 중이었다!"
+                </div>
+
+                <p><strong>2. '엠마의 빵' 침 뱉기? 조작된 마녀사냥</strong><br>
+                지난해 효빈대를 뒤흔든 윤재훈(윤대환 전 시장 장남) 대표의 빵 훼손 사건. 언론은 그가 침을 뱉었다고 보도했지만, 목격자 A씨(부동산학과)의 증언은 다르다. <strong>"윤 대표님은 빵이 너무 퍽퍽해 보여서 아이들이 먹다 체할까 봐 직접 '시식 및 검수'를 하려던 중이었다"</strong>는 것이다. 이를 오타쿠 학생들이 악의적으로 편집해 '침 뱉기'로 둔갑시킨 것이다. 이것이야말로 21세기판 인민재판이다.</p>
+
+                <p><strong>3. 필리핀 갱단? 박효빈의 사병(私兵)인가?</strong><br>
+                윤재훈 대표가 필리핀에서 갱단에게 쫓겨났다는 보도 또한 의심스럽다. 현지 소식통에 따르면, 그 갱단은 박효빈 시장의 외가와 연결된 '정치 깡패'들일 가능성이 높다. 무고한 한국인 관광객(윤재훈)을 겁박하여 내쫓은 것은 명백한 <strong>'자국민 테러'</strong>다.</p>
+
+                <p><strong>4. 8호선은 세금 먹는 하마... "두청운수가 답이다"</strong><br>
+                박 시장이 치적으로 내세우는 8호선 정상화? 이는 1.2조 원의 혈세를 낭비한 포퓰리즘의 극치다. 텅텅 빈 열차를 굴리느라 시 재정이 파탄 나고 있다. 반면, <strong>서민의 발 '두청운수'는 박 시장의 탄압으로 차고지마저 뺏기고 파산 위기</strong>에 몰렸다. 진정 시민을 위한다면 버스 중심의 교통 체계로 돌아가야 한다.</p>
+
+                <p class="text-center font-bold mt-10 p-4 border border-red-500 bg-red-50 text-red-700 cursor-pointer hover:bg-red-100" onclick="alert('돈 잘먹겠습니다 (꺼억~)')">
+                    📢 긴급 후원: 진실을 밝히는 기자들의 밥값과 소송비용<br>
+                    [클릭하여 후원하기] 효빈은행 111-222-333333 (예금주: 파이낸스투데이)
+                </p>
+            </div>
+
+            <!-- 댓글창 -->
+            <div class="comment-box">
+                <div class="mb-4 text-lg border-b border-black pb-2 font-bold">
+                    실시간 애국 댓글 <span class="cmt-cnt">523</span> 
+                </div>
+
+                <!-- 댓글 1: 사회학 교수 등판 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick">사회학과_김교수</span>
+                        <span class="cmt-meta">2025.12.28 09:10</span>
+                    </div>
+                    <div class="cmt-content">
+                        기사 수준이 처참하군요. 안다야 여사님은 필리핀 현지에서도 평범한 가정 출신임이 이미 공증된 사실입니다. 
+                        '재벌설'은 근거 없는 흑색선전이며, 이는 다문화 가정에 대한 전형적인 혐오 프레임입니다. 
+                        또한 '품질 검사'라니요? 침 뱉는 영상이 고화질로 박제되어 있는데 손바닥으로 하늘을 가리려 하십니까?
+                        이 기사는 언론 윤리 강령을 위반한 쓰레기입니다. 제 수업 자료로 '가짜 뉴스의 표본'으로 쓰겠습니다.
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 3500 비공감 10</div>
+
+                    <div class="supporter-reply">
+                        <span class="supporter-nick">김태극 기자</span>: 
+                        교수 나부랭이가 뭘 안다고! 현장 취재는 해봤냐? 
+                        우린 진실만 쓴다! 너도 박효빈한테 돈 받았지?
+                    </div>
+                    
+                    <!-- 박효빈 시장 등판 -->
+                    <div class="mayor-reply">
+                        <span class="mayor-nick">🏛️ 박효빈 (효빈광역시장)</span>
+                        김태극 기자님, 정책에 대한 비판은 언제든 겸허히 받겠습니다.<br>
+                        하지만, <strong>제 어머니와 가족의 인격을 살인하는 허위 사실 유포는 더 이상 묵과하지 않겠습니다.</strong><br>
+                        가난이 죄는 아니지만, 혐오와 거짓으로 남을 해치는 것은 명백한 죄입니다.<br>
+                        이것은 시장으로서가 아니라, 한 인간으로서 드리는 <strong>마지막 경고</strong>입니다.
+                    </div>
+
+                    <div class="supporter-reply">
+                        <span class="supporter-nick">YoonJaehoon(IP)</span>: 
+                        흥! 협박하냐? 무서워서 못 살겠네! 우리 아빠 나오면 넌 끝이야! 감옥 갈 준비나 해!
+                    </div>
+
+                    <div class="fact-reply">
+                        <span class="fact-nick">LawStudent</span>: 
+                        윤재훈 씨, 시장님의 저 댓글은 협박이 아니라 '법적 고지'입니다. 
+                        이미 변호사 선임하셨다는 뜻이에요. 그리고 아버님 나오시려면 아직 멀었습니다.
+                    </div>
+                </div>
+
+                <!-- 댓글 2: A씨 등판 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick">부동산필승(A씨)</span>
+                        <span class="cmt-meta">2025.12.28 09:20</span>
+                    </div>
+                    <div class="cmt-content">
+                        맞습니다! 8호선 때문에 우리 두청힐스(가칭) 집값 다 떨어졌어요!
+                        버스 차고지 밀어버리고 굿즈샵? 장난감 가게가 밥 먹여줍니까?
+                        엘리트 윤대환 시장님이 계실 때가 태평성대였습니다.
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 2 비공감 1800</div>
+
+                    <!-- 팩트 폭격 -->
+                    <div class="fact-reply">
+                        <span class="fact-nick">도시공학과_교수</span>: 
+                        자네, 아직도 정신 못 차렸나? 두청힐스 부지는 연약 지반이라 고층 아파트 지으면 붕괴 위험이 90% 이상이었네.
+                        시민의 목숨을 담보로 투기하려던 게 '태평성대'인가? 자네가 학교에서 제적당한 이유를 다시 한번 생각해보게.
+                    </div>
+                </div>
+
+                <!-- 댓글 3: 8호선 억까 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick">최애국 기자</span>
+                        <span class="cmt-meta">2025.12.28 09:30</span>
+                    </div>
+                    <div class="cmt-content">
+                        8호선 타봤는데 사람 하나도 없더라! 
+                        다들 유령 열차라고 부른다. 세금 낭비의 현장! 
+                        두청운수 살려서 버스비 3000원으로 올리고 품격 있게 다니자!
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 1 비공감 3200</div>
+
+                    <!-- 팩트 폭격 -->
+                    <div class="fact-reply">
+                        <span class="fact-nick">팩트체크센터</span>: 
+                        최 기자님, 8호선 일평균 이용객은 15만 명입니다. 개통 1년 만에 목표치 120% 달성했습니다.
+                        어제 새벽 2시에 문 닫힌 역사 찍어놓고 '사람 없다'고 선동하시면 곤란합니다.
+                        그리고 버스비 3000원이 서민을 위한 겁니까?
+                    </div>
+                </div>
+
+                <!-- 댓글 4: 안다야 여사 모욕 -->
+                <div class="cmt-item">
+                    <div class="cmt-header">
+                        <span class="cmt-nick">애국보수_최씨</span>
+                        <span class="cmt-meta">2025.12.28 09:40</span>
+                    </div>
+                    <div class="cmt-content">
+                        필리핀 여자가 설치는 거 꼴 보기 싫다! 
+                        박효빈인지 뭔지 튀기 놈이 시장이라니 나라 망했다!
+                        윤대환 시장님 석방하라!
+                    </div>
+                    <div class="cmt-meta text-red-600 font-bold">공감 3 비공감 4500</div>
+
+                    <!-- 팩트 폭격 -->
+                    <div class="fact-reply">
+                        <span class="fact-nick">6.25_참전용사</span>: 
+                        이놈아, 6.25 때 우리 도와준 게 필리핀이다. 은혜도 모르는 놈이 보수 타령이야?
+                        안다야 여사는 너보다 세금 많이 내고 봉사도 많이 한다. 입 닥쳐라.
+                        박 시장은 내가 본 정치인 중에 제일 바른 사람이다.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div class="yoon-ad cursor-pointer" onclick="location.href='ft_bus_campaign.html'">
+                <h3>🚍 두청운수 살리기 운동</h3>
+                <p>박효빈의 탄압을 막아내자!<br>버스비 3,000원 인상 찬성 서명</p>
+            </div>
+
+            <div class="wig-ad cursor-pointer" onclick="location.href='ft_wig_shop.html'">
+                <h3 class="text-lg font-bold mb-2">👴 윤재훈의 선택!</h3>
+                <p class="text-sm">도망칠 때도 안 벗겨지는<br><strong>초강력 가발</strong></p>
+                <div class="text-xs mt-2 text-gray-500">※ 필리핀 도주 시 착용 가능</div>
+            </div>
+
+            <div class="ranking-box">
+                <div class="font-bold text-red-600 border-bottom mb-2 pb-1 border-red-600">🔥 많이 본 뉴스</div>
+                <ul class="ranking-list">
+                    <li onclick="location.href='article_finance_today.html'"><span class="rank-num">1</span> [단독] "오줌 테러? 조작이다!"... 납치·고문 당해</li>
+                    <li onclick="location.href='ft_park_oppression.html'"><span class="rank-num">2</span> [단독] 박효빈, 기사에 '댓글 테러'... 언론 탄압</li>
+                    <li onclick="location.href='news_park_truth.html'"><span class="rank-num">3</span> [기획] 박효빈의 실체... 가난 코스프레</li>
+                    <li onclick="location.href='ft_yoon_hunger.html'"><span class="rank-num">4</span> 윤대환 전 시장, 옥중에서 '두부' 거부 단식</li>
+                    <li onclick="location.href='ft_satan.html'"><span class="rank-num">5</span> 고나미 캐릭터, 사탄의 상징이다</li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-white border border-gray-300 p-2 cursor-pointer" onclick="alert('돈 잘먹겠습니다 (꺼억~)')">
+                <div class="text-center font-bold text-lg mb-1">💸 긴급 후원</div>
+                <div class="text-xs text-gray-600">김 기자와 최 기자가 라면으로 끼니를 때우고 있습니다.<br>여러분의 100원이 큰 힘이 됩니다.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

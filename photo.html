@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈일보 - 포토</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 포토 */
+        .main-photo-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 30px; cursor: pointer; transition: box-shadow 0.2s; position: relative; }
+        .main-photo-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .main-photo-img { width: 100%; height: 500px; object-fit: cover; }
+        .main-photo-overlay { padding: 25px; background: white; border-top: 1px solid #eee; }
+        .main-photo-tag { display: inline-block; background: #0055aa; color: white; padding: 4px 10px; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+        .main-photo-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .main-photo-title:hover { text-decoration: underline; color: #0055aa; }
+        .main-photo-desc { font-size: 15px; color: #666; line-height: 1.6; }
+
+        /* 포토 그리드 */
+        .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .photo-card { background: white; border: 1px solid #e2e2e2; cursor: pointer; transition: transform 0.2s; }
+        .photo-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .photo-img-box { width: 100%; height: 250px; overflow: hidden; position: relative; }
+        .photo-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+        .photo-card:hover .photo-img { transform: scale(1.05); }
+        .photo-icon { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.6); color: white; padding: 5px; border-radius: 4px; font-size: 12px; }
+        .photo-content { padding: 15px; }
+        .photo-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .photo-meta { font-size: 12px; color: #888; display: flex; justify-content: space-between; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- 최상단 바 -->
+    <div class="top-bar">
+        <div class="max-w-[1100px] mx-auto flex justify-between px-2">
+            <div>효빈시의 아침을 여는 신문</div>
+            <div>
+                <a href="index.html" class="hover:underline">효빈위키 홈</a> | 
+                <span class="cursor-pointer hover:underline">로그인</span> | 
+                <span class="cursor-pointer hover:underline">구독신청</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html" class="active">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 메인 컬럼 -->
+        <div class="main-column">
+            
+            <div class="page-header">
+                <span class="page-title">포토뉴스</span>
+                <span class="text-gray-500 text-sm ml-2">Photo News</span>
+            </div>
+
+            <!-- 메인 포토 -->
+            <div class="main-photo-card" onclick="location.href='news_univ_human_shield.html'">
+                <img src="효빈대_인간띠.png" alt="효빈대_인간_방어막_현장.png" class="main-photo-img" onerror="this.src='https://via.placeholder.com/800x500/003366/FFFFFF?text=Human+Shield'">
+                <div class="main-photo-overlay">
+                    <span class="main-photo-tag">화제의 현장</span>
+                    <h2 class="main-photo-title">"이것이 효빈의 품격"... 3천 명 시민이 만든 감동의 '인간 방어막'</h2>
+                    <p class="main-photo-desc">
+                        6일 효빈대학교 베르데홀 앞 광장. 윤재훈 일당의 테러 위협에 맞서 학생들과 시민들이 자발적으로 인간띠를 만들어 행사장을 보호하고 있다. 이들의 질서 정연한 모습은 성우들과 현장 관계자들에게 큰 감동을 주었다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 포토 그리드 -->
+            <div class="photo-grid">
+                <!-- 포토 1 -->
+                <div class="photo-card" onclick="location.href='news_haf_cosplay.html'">
+                    <div class="photo-img-box">
+                        <img src="HAF_코스프레.png" alt="코스프레_퍼레이드.png" class="photo-img" onerror="this.src='https://via.placeholder.com/400x250/9955FF/FFFFFF?text=Cosplay'">
+                        <span class="photo-icon">📷 화보</span>
+                    </div>
+                    <div class="photo-content">
+                        <div class="photo-title">"현실이야 만화야?"... 효빈시 수놓은 HAF 코스프레 퍼레이드</div>
+                        <div class="photo-meta">
+                            <span>문화부</span>
+                            <span>2026.01.07</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 포토 2 -->
+                <div class="photo-card" onclick="location.href='news_wrapping_bus.html'">
+                    <div class="photo-img-box">
+                        <img src="래핑버스_운행.png" alt="칠양여객_래핑버스.png" class="photo-img" onerror="this.src='https://via.placeholder.com/400x250/FF5522/FFFFFF?text=Wrapping+Bus'">
+                        <span class="photo-icon">📷 포토</span>
+                    </div>
+                    <div class="photo-content">
+                        <div class="photo-title">"버스가 너무 예뻐요"... 도심 누비는 '움직이는 갤러리'</div>
+                        <div class="photo-meta">
+                            <span>사회부</span>
+                            <span>2026.01.06</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 포토 3 -->
+                <div class="photo-card" onclick="location.href='news_quezon_city.html'">
+                    <div class="photo-img-box">
+                        <img src="케손시티_시장_영상.png" alt="케손시티_시장.png" class="photo-img" onerror="this.src='https://via.placeholder.com/400x250/003399/FFFFFF?text=Quezon+Mayor'">
+                        <span class="photo-icon">📷 캡처</span>
+                    </div>
+                    <div class="photo-content">
+                        <div class="photo-title">케손시티 시장의 영상 메시지... "우리는 형제입니다"</div>
+                        <div class="photo-meta">
+                            <span>국제부</span>
+                            <span>2026.01.06</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 포토 4 -->
+                <div class="photo-card" onclick="location.href='news_line6_safety.html'">
+                    <div class="photo-img-box">
+                        <img src="박효빈_지하철.png" alt="지하철_출근하는_시장.png" class="photo-img" onerror="this.src='https://via.placeholder.com/400x250/881188/FFFFFF?text=Mayor+Subway'">
+                        <span class="photo-icon">📷 포착</span>
+                    </div>
+                    <div class="photo-content">
+                        <div class="photo-title">[포착] 관용차 대신 6호선... 박효빈 시장의 '뚜벅이 출근길'</div>
+                        <div class="photo-meta">
+                            <span>정치부</span>
+                            <span>2026.01.05</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 포토 5 -->
+                <div class="photo-card" onclick="location.href='news_emma_bread.html'">
+                    <div class="photo-img-box">
+                        <img src="사능동_빵집.png" alt="빵지순례_대기줄.png" class="photo-img" onerror="this.src='https://via.placeholder.com/400x250/DD8855/FFFFFF?text=Bread+Queue'">
+                        <span class="photo-icon">📷 현장</span>
+                    </div>
+                    <div class="photo-content">
+                        <div class="photo-title">"이 빵 먹으려고 부산에서 왔어요"... 사능동 빵지순례 장사진</div>
+                        <div class="photo-meta">
+                            <span>생활경제부</span>
+                            <span>2026.01.05</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 포토 6 -->
+                <div class="photo-card" onclick="location.href='news_yaksan_city.html'">
+                    <div class="photo-img-box">
+                        <img src="약산시_야경.png" alt="약산시_야경.png" class="photo-img" onerror="this.src='https://via.placeholder.com/400x250/004488/FFFFFF?text=Yaksan+Night'">
+                        <span class="photo-icon">📷 풍경</span>
+                    </div>
+                    <div class="photo-content">
+                        <div class="photo-title">불 밝힌 약산시... 덕북의 새로운 랜드마크로 우뚝</div>
+                        <div class="photo-meta">
+                            <span>사진부</span>
+                            <span>2026.01.04</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 사이드바 컬럼 -->
+        <div class="side-column">
+            <!-- 실시간 랭킹 -->
+            <div class="ranking-box">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 포토</span>
+                    <span class="text-xs text-gray-500">실시간</span>
+                </div>
+                <ul class="ranking-list">
+                    <li onclick="location.href='news_univ_human_shield.html'">
+                        <span class="rank-num">1</span>
+                        <span class="rank-title font-bold text-[#0055aa]">감동의 '인간 방어막' 현장</span>
+                    </li>
+                    <li onclick="location.href='news_haf_cosplay.html'">
+                        <span class="rank-num">2</span>
+                        <span class="rank-title">HAF 코스프레 역대급 퀄리티</span>
+                    </li>
+                    <li onclick="location.href='news_liyuu_message.html'">
+                        <span class="rank-num">3</span>
+                        <span class="rank-title">Liyuu의 눈물 젖은 응원</span>
+                    </li>
+                    <li onclick="location.href='news_wrapping_bus.html'">
+                        <span class="rank-num">4</span>
+                        <span class="rank-title">움직이는 갤러리 '래핑버스'</span>
+                    </li>
+                    <li onclick="location.href='news_emma_bread.html'">
+                        <span class="rank-num">5</span>
+                        <span class="rank-title">훼손된 엠마 빵... 처참한 현장</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈사진작가협회</div>
+                    <div class="text-xs">제10회 효빈 사진 공모전<br>당신의 시선으로 담아주세요</div>
+                </div>
+            </div>
+            <div class="ad-banner" style="background: #e0f2f1; border-color: #80cbc4;">
+                <div class="text-center">
+                    <div class="font-bold text-teal-700 mb-1">캐논 효빈점</div>
+                    <div class="text-xs text-teal-600">최신 미러리스 카메라<br>체험단 모집 중</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="회사소개.html">회사소개</a>
+                <a href="구독신청.html">구독신청</a>
+                <a href="고충처리.html">고충처리</a>
+                <a href="이용약관.html">이용약관</a>
+                <a href="개인정보처리방침.html">개인정보처리방침</a>
+            </div>
+            <div>
+                <p class="mb-1">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+                <p class="mb-1">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+                <p>전화: 079-212-2123 | 팩스: 079-212-2124</p>
+                <p class="mt-2 text-gray-500">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

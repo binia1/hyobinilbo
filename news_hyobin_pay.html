@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[경제] "굿즈 살 땐 필수"... 효빈페이, 서브컬처 성지서 결제액 1위 등극 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fef08a 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.07 (수)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">경제 > 금융/핀테크</div>
+                <h2 class="article-title">"굿즈 살 땐 필수"... 효빈페이, 서브컬처 성지서 결제액 1위 등극</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">돈바람 기자</span> (money@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 14:00 | 수정 2026.01.07. 15:20</span>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">HAF 2025 기간 중 결제액 500억 돌파... 신용카드 제치고 점유율 65%<br>10% 상시 인센티브에 '덕후 맞춤형' 혜택 주효<br>상인들 "수수료 낮고 정산 빨라 대환영"... 혐오 세력의 비난에도 성장은 '지속'</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈페이_굿즈샵_결제.png" alt="효빈페이_결제현장.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/FFCC00/333333?text=Hyobin+Pay+Success'">
+                        <div class="img-caption">▲ 효빈시 중앙동의 한 굿즈샵에서 한 시민이 '효빈페이' 앱을 이용해 한정판 피규어를 결제하고 있다. 효빈페이는 편리함과 높은 혜택을 무기로 지역 내 대세 결제 수단으로 자리 잡았다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 돈바람 기자] 효빈시 전용 지역화폐인 <a href="효빈페이.html" class="text-blue-600 underline">효빈페이</a>가 서브컬처 팬들의 전폭적인 지지에 힘입어 지역 경제의 '게임 체인저'가 되고 있다. 특히 최근 성황리에 막을 내린 HAF 2025 기간 동안 굿즈샵과 테마 카페 등에서의 결제액이 기존 신용카드를 압도하며 역대 최고치를 경신했다.</p>
+
+                    <p>효빈시청 세무과 통계에 따르면, 지난 일주일간 주요 서브컬처 상권 내 효빈페이 점유율은 65.4%를 기록했다. 이는 대형 카드사들의 합산 점유율보다 높은 수치다. 비결은 파격적인 인센티브다. <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장은 'L-Project'의 일환으로 서브컬처 가맹점에서 효빈페이 사용 시 상시 10% 할인을 제공하고, 한정판 굿즈 구매 시 추가 적립을 해주는 등 철저히 '팬심'을 공략했다.</p>
+
+                    <p><a href="사능동.html" class="text-blue-600 underline">사능동</a>에서 '엠마의 트램 빵'을 판매하는 박 사장(62)은 "과거 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 전 시장 시절엔 종이 딱지 같은 지역 상품권을 돌려 상인들도 사용하기 불편했는데, 지금은 앱 하나로 결제부터 정산까지 1초 만에 끝나니 너무 편하다"며 "효빈페이 덕분에 매출이 40% 이상 늘었다"고 전했다.</p>
+
+                    <div class="my-6">
+                        <img src="효빈페이_인센티브_안내.png" alt="효빈페이_혜택.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/003366/FFFFFF?text=Hyobin+Pay+Benefit+10%25'">
+                        <div class="img-caption">▲ 효빈페이의 10% 인센티브 혜택 안내판. '덕질'을 응원하는 지자체의 정책이 소비자의 지갑을 열게 만들고 있다.</div>
+                    </div>
+
+                    <p>반면, <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 일당을 비롯한 일부 혐오 세력은 효빈페이를 "오타쿠 전용 화폐", "세금 낭비"라며 깎아내리고 있다. 그러나 경제 전문가들은 효빈페이의 유통액이 고스란히 지역 소상공인에게 돌아가고, 역외 유출을 막는 효과가 뚜렷하다며 긍정적인 평가를 내놓고 있다.</p>
+
+                    <p>효빈시 경제국 관계자는 "효빈페이는 단순한 결제 수단을 넘어 효빈 시민의 자부심이 담긴 브랜드"라며 "앞으로 <a href="치남동.html" class="text-blue-600 underline">치남동</a> 스마트 밸리 등 전역으로 사용처를 확대해 대한민국 1등 지역화폐로 키우겠다"고 포부를 밝혔다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">1,942</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                    <div class="text-right mt-2"><button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm">등록</button></div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Fintech_Master", time: "방금 전", like: 15600, dislike: 10,
+                                content: "지역화폐의 가장 완벽한 성공 사례. 특정 타겟(팬덤)의 소비 패턴을 정확히 분석해서 인센티브를 녹여냈음. 박효빈 시장 경제 감각은 진짜 천재적이다.",
+                                replies: [
+                                    { nick: "Economics_Student", content: "동감합니다. 윤대환 때 종이 상품권 돌리면서 뒷돈 챙기던 거랑은 수준이 다르네요." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Team_Leader", time: "5분 전", like: 12, dislike: 12500, isPunished: true,
+                                content: "효빈페이는 가짜 돈이다! 박효빈이 시장실 피규어 사려고 만든 비자금 창구 아니냐? 오타쿠들 세뇌시켜서 세금 갈취하는 수단일 뿐이다! 윤재훈 장군님이 나가면 다 폐지할 거다!",
+                                replies: [
+                                    { nick: "Fact_Bomber", content: "비자금? ㅋㅋㅋ 투명하게 앱에 결제 내역 다 뜨는데 무슨 소리? 니네 윤대환 시장이 두청운수 공금 횡령한 건 기억 안 나냐? 그게 진짜 갈취지." },
+                                    { nick: "Business_Owner", content: "나 중앙시장 상인인데 효빈페이 덕에 자식 대학 보냈다. 찌질하게 굴지 말고 일이나 해라 멍청아." },
+                                    { nick: "Detective_K", content: "2508번 일당인가 보네. 허위사실 유포로 IP 추적 들어갑니다. 잘 가세요." }
+                                ]
+                            },
+                            {
+                                nick: "Mayuchi_Fan_Club", time: "10분 전", like: 9800, dislike: 5,
+                                content: "마유치 한정판 굿즈 살 때 효빈페이 썼는데, 할인받은 금액으로 엠마 빵 한 박스 더 샀음 ㅋㅋ 소비의 선순환 지렸다. 효빈시 살기 너무 좋아요!",
+                                replies: []
+                            },
+                            {
+                                nick: "Yoon_Squad_Member", time: "15분 전", like: 8, dislike: 11000, isPunished: true,
+                                content: "에라이 오타쿠들 ㅋㅋㅋ 만화 쪼가리에 돈 쓰는 게 자랑이냐? 그 돈으로 건설 현장 가서 땀이나 흘려라! 생산성 제로의 한심한 족속들!",
+                                replies: [
+                                    { nick: "IT_Engineer", content: "님, 애니메이션 산업 부가가치가 건설업보다 높은 거 모르시죠? 아, 무식해서 모르겠구나. 님 땀 한 방울보다 마유치 윙크 한 번에 움직이는 돈이 더 큼." },
+                                    { nick: "Tax_Team", content: "그 '생산성 제로'인 분들이 낸 세금으로 님 사는 동네 도로 보수하는 겁니다. 감사한 줄 아세요." }
+                                ]
+                            },
+                            { id: 5, nick: "Saneung_Merchant", content: "예전엔 카드 수수료 떼면 남는 것도 없었는데 효빈페이는 수수료 거의 제로라 너무 좋아요. 박 시장님 진짜 효자임.", like: 8200, dislike: 1, time: "20분 전", replies: [] },
+                            { id: 6, nick: "Traveler_Kim", content: "서울에서 왔는데 효빈페이 깔고 신세계 경험 중. 카드 챙길 필요도 없고 혜택 빵빵함. 서울페이보다 백배 낫다.", like: 7500, dislike: 0, time: "25분 전", replies: [] },
+                            {
+                                nick: "Ducheong_Ex_Staff", time: "30분 전", like: 5, dislike: 9200, isPunished: true,
+                                content: "박효빈이 시장 되고 나서 효빈시가 오염됐다! 어디 쪽바리 문화에 세금을 퍼붓냐! 윤대환 시장님이 닦아놓은 터전 다 망가뜨리고 있어!",
+                                replies: [
+                                    { nick: "Realist", content: "윤대환이 닦아놓은 게 아니라 털어먹은 거겠지 ㅋㅋㅋ 두청운수 기사님들 임금 체불하던 시절이 좋았냐? 정신 좀 차려 꼰대야." },
+                                    { nick: "Chilyang_Employee", content: "우리 칠양여객은 효빈페이 도입하고 전 노선 흑자 전환했다. 너 같은 놈들 때문에 효빈시가 망할 뻔한 거야." }
+                                ]
+                            },
+                            { id: 8, nick: "Smart_Consumer", content: "NFC 결제 속도 미쳤음. 삼성페이만큼 빠름. 효빈시 IT 수준 실감나네.", like: 5200, dislike: 0, time: "35분 전", replies: [] },
+                            { id: 9, nick: "Global_Citizen", content: "외국인 관광객용 패스도 효빈페이랑 연동돼서 너무 편해요. 필리핀 친구들도 다 이거 씀!", like: 6100, dislike: 2, time: "40분 전", replies: [] },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "45분 전", like: 2, dislike: 15000, isPunished: true,
+                                content: "다 조작이야! 박효빈이 가짜 데이터 만든 거야! 효빈페이는 불법 화폐다! 내가 당장 고발하겠다! 아빠! 나 좀 꺼내줘!!!",
+                                replies: [
+                                    { nick: "Prison_Guard", content: "2508번(윤재훈), 벽 보고 반성해. 소리 지르면 TV 시청 금지한다. 그리고 구치소 밥맛 좋지? 효빈페이로 산 쌀이란다." },
+                                    { nick: "Hyobin_Citizen", content: "재훈아, 2.2%면 고발할 자격도 없어. 조용히 콩밥이나 먹어." }
+                                ]
+                            },
+                            { id: 11, nick: "Bakery_Lover", content: "효빈페이로 엠마 빵 사면 포인트 2배 적립 개이득 ㅋㅋㅋ 사장님 적립금 벌써 만원 넘었어요!", like: 4100, dislike: 0, time: "50분 전", replies: [] },
+                            { id: 12, nick: "Economy_Analyst", content: "지방 소멸 막는 가장 좋은 방법은 지역화폐 성공임. 효빈시는 이미 자생력을 갖췄음.", like: 3900, dislike: 0, time: "55분 전", replies: [] },
+                            { id: 13, nick: "Yoon_Colleague_A", content: "지역경제가 아니라 덕후경제겠지! 시장이 자기 취미생활에 공금 쓰는 게 정상이냐!", like: 4, dislike: 8500, isPunished: true, replies: [{nick:"Fact_Check", content:"공금이 아니라 수익입니다. 축제 입장료랑 굿즈 판매 로열티로 시 금고 꽉 찼음. 님 뇌피셜보다 회계 장부가 더 정확함."}] },
+                            { id: 14, nick: "Metro_Staff", content: "역사 내 키오스크 결제 1위가 효빈페이임. 교통카드 기능까지 완벽함.", like: 3200, dislike: 0, time: "1시간 전", replies: [] },
+                            { id: 15, nick: "Mom_Cafe_Leader", content: "학원비도 효빈페이로 되니까 생활비 절약 많이 돼요. 주부들도 박 시장님 팬임.", like: 5800, dislike: 0, time: "1시간 10분 전", replies: [] },
+                            { id: 16, nick: "Yoon_Supporter_99", content: "박효빈은 포퓰리스트다! 나라가 베네수엘라 꼴 나고 싶냐!", like: 1, dislike: 7200, isPunished: true, replies: [{nick:"History_Prof", content:"베네수엘라는 기름값 폭락해서 망한 거고, 효빈시는 문화 산업으로 돈을 벌고 있는데 뭔 상관? 단어 좀 알고 써라."}] },
+                            { id: 17, nick: "HAF_Volunteer", content: "행사장에서 효빈페이 오류 한 번도 안 남. 시스템 안정성 대박임.", like: 2900, dislike: 0, time: "1시간 30분 전", replies: [] },
+                            { id: 18, nick: "Student_Council", content: "대학가 밥집들도 다 효빈페이 가맹점이라 학생들 밥값 부담 줄어듬. 최고임.", like: 4500, dislike: 0, time: "1시간 40분 전", replies: [] },
+                            { id: 19, nick: "Yoon_Team_B", content: "오타쿠 시장 덕분에 도시 수준 떨어지네. 창피해서 다른 지역 친구들 못 만나겠다.", like: 3, dislike: 6500, isPunished: true, replies: [{nick:"Fashion_Student", content:"창피한 건 니 면상이겠지 ㅋㅋㅋ 내 친구들은 다 효빈시 놀러 오고 싶어 하는데?"}] },
+                            { id: 20, nick: "Justice_Served", content: "윤재훈 댓글에 답글 달리는 꼬라지 보러 옴 ㅋㅋㅋ 오늘도 팩폭 당하느라 수고가 많다.", like: 8800, dislike: 0, time: "2시간 전", replies: [] },
+                            { id: 21, nick: "Taxi_Captain", content: "택시 기사입니다. 효빈페이 앱 결제 도입하고 나서 손님들이랑 잔돈 실랑이 안 해서 너무 좋습니다.", like: 3600, dislike: 0, time: "2시간 10분 전", replies: [] },
+                            { id: 22, nick: "Art_Center_Staff", content: "박물관, 미술관 입장료 효빈페이로 하면 50% 할인! 효빈 시민이라 행복해요.", like: 4200, dislike: 0, time: "2시간 20분 전", replies: [] },
+                            { id: 23, nick: "Yoon_Forever_1", content: "조작이다! 다 알바다! 내 통장엔 돈 한 푼 안 들어오는데 누가 쓴단 말이냐!", like: 1, dislike: 5500, isPunished: true, replies: [{nick:"Income_Tax", content:"님 통장에 돈 안 들어오는 건 님이 백수라 그런 거고요. 일 좀 하세요."}] },
+                            { id: 24, nick: "Design_Major", content: "효빈페이 카드 디자인 캐릭터 버전으로 바꿨는데 너무 예쁨. 소장 가치 100%.", like: 3100, dislike: 0, time: "2시간 40분 전", replies: [] },
+                            { id: 25, nick: "Foreign_Press", content: "Hyobin Pay is a great example of smart city fintech. - Global Finance Magazine", like: 2500, dislike: 0, time: "2시간 50분 전", replies: [] },
+                            { id: 26, nick: "Yoon_Squad_Elite", content: "회장님 나오시면 니들 다 뒤졌다! 박효빈이랑 오타쿠들 싹 다 청소할 거다!", like: 2, dislike: 9000, isPunished: true, replies: [{nick:"Cyber_Cop", content:"살해 협박 및 공포심 유발로 채증 완료. 정모 장소는 효빈경찰청입니다."}] },
+                            { id: 27, nick: "Small_Business", content: "동네 구멍가게인데 효빈페이 덕에 대형마트랑 경쟁이 됩니다. 정말 고마운 정책입니다.", like: 4900, dislike: 0, time: "3시간 전", replies: [] },
+                            { id: 28, nick: "Peace_Maker", content: "싸우지 마세요. 효빈시는 이미 앞서나가고 있습니다. 뒤처진 건 윤재훈 일당들뿐.", like: 5200, dislike: 5, time: "3시간 10분 전", replies: [] },
+                            { id: 29, nick: "Final_Boss", content: "결론: 효빈페이 = 돈, 윤대환 = 똥.", like: 11000, dislike: 2, time: "3시간 20분 전", replies: [] },
+                            { id: 30, nick: "Hyobin_Future", content: "효빈시의 성장은 멈추지 않는다. 혐오를 팩트로 짓밟고 나아가자!", like: 9500, dislike: 0, time: "3시간 30분 전", replies: [] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 5000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    const nickClass = (reply.nick.includes("Yoon") || reply.nick.includes("Ducheong") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 경제 뉴스</span>
+                </div>
+                <ul class="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_hyobin_pay.html" class="ranking-link font-bold">효빈페이 결제액 역대 최고</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_yaksan_city.html" class="ranking-link">약산시 집값 폭등의 이유</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_wrapping_bus.html" class="ranking-link">칠양여객 흑자 전환 비결</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_bakery_tour.html" class="ranking-link">사능동 빵지순례 지도</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_it_valley.html" class="ranking-link">치남동 IT 밸리 기업 유치 현황</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#FFCC00] p-6 text-black rounded text-center">
+                <div class="font-black text-xl mb-2 italic">HYOBIN PAY</div>
+                <div class="text-sm font-bold">지금 결제하면<br>10%가 즉시 적립!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

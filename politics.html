@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈일보 - 정치</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- 최상단 바 -->
+    <div class="top-bar">
+        <div class="max-w-[1100px] mx-auto flex justify-between px-2">
+            <div>효빈시의 아침을 여는 신문</div>
+            <div>
+                <a href="index.html" class="hover:underline">효빈위키 홈</a> | 
+                <span class="cursor-pointer hover:underline">로그인</span> | 
+                <span class="cursor-pointer hover:underline">구독신청</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 메인 컬럼 -->
+        <div class="main-column">
+            
+            <div class="page-header">
+                <span class="page-title">정치</span>
+                <span class="text-gray-500 text-sm ml-2">Politics</span>
+            </div>
+
+            <!-- 정치 메인 헤드라인 -->
+            <div class="headline-card" onclick="location.href='news_mayor_act.html'">
+                <img src="시의회_본회의장.png" alt="시의회_본회의장.png" class="headline-img" onerror="this.src='https://via.placeholder.com/800x400/003366/FFFFFF?text=City+Council'">
+                <div class="headline-content">
+                    <div class="text-[#0055aa] font-bold text-sm mb-2">정치 > 의회/행정</div>
+                    <h2 class="headline-title">효빈시의회, '윤대환 방지법' 만장일치 통과... "부패 고리 끊는다"</h2>
+                    <p class="headline-desc">
+                        전임 시장 일가의 권력 사유화 사태를 계기로 발의된 이른바 '윤대환 방지법'이 시의회 문턱을 넘었다. 여야는 모처럼 한목소리를 내며 공직자 이해충돌 방지 조항을 대폭 강화하기로 합의했다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 주요 정치 뉴스 그리드 -->
+            <div class="sub-grid">
+                <!-- 1. 박효빈 시장 관련 -->
+                <div class="news-card" onclick="location.href='news_mayor_approval.html'">
+                    <img src="박효빈_시장_연설.png" alt="박효빈_시장_연설.png" onerror="this.src='https://via.placeholder.com/400x200/004488/FFFFFF?text=Mayor+Park'">
+                    <div class="news-card-content">
+                        <div class="news-card-title">박효빈 시장 지지율 78% 고공행진... "소통 행정 통했다"</div>
+                        <div class="news-card-meta">행정 | 이청사 기자</div>
+                    </div>
+                </div>
+
+                <!-- 2. 야당 동향 -->
+                <div class="news-card" onclick="location.href='news_opposition_party.html'">
+                    <img src="야당_비대위.png" alt="야당_비상대책위원회.png" onerror="this.src='https://via.placeholder.com/400x200/880000/FFFFFF?text=Opposition+Party'">
+                    <div class="news-card-content">
+                        <div class="news-card-title">구태 청산 외치는 야당 비대위... "윤대환 그림자 지우기 총력"</div>
+                        <div class="news-card-meta">정당 | 박국회 기자</div>
+                    </div>
+                </div>
+
+                <!-- 3. 지하철 정책 -->
+                <div class="news-card" onclick="location.href='news_subway_budget.html'">
+                    <img src="지하철_착공식.png" alt="빈효선_착공식.png" onerror="this.src='https://via.placeholder.com/400x200/6677CC/FFFFFF?text=Subway+Line'">
+                    <div class="news-card-content">
+                        <div class="news-card-title">빈효선 광역전철 2단계 예산 확정... "교통 소외지역 해소 기대"</div>
+                        <div class="news-card-meta">정책 | 김교통 기자</div>
+                    </div>
+                </div>
+
+                <!-- 4. 시민단체 -->
+                <div class="news-card" onclick="location.href='news_civic_group.html'">
+                    <img src="시민단체_기자회견.png" alt="시민단체_기자회견.png" onerror="this.src='https://via.placeholder.com/400x200/228844/FFFFFF?text=Civic+Group'">
+                    <div class="news-card-content">
+                        <div class="news-card-title">효빈참여자치연대 "윤재훈 부정축재 재산 전액 환수해야"</div>
+                        <div class="news-card-meta">사회/정치 | 정시민 기자</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 정치 브리핑 -->
+            <div class="news-list-box">
+                <div class="section-title">
+                    <span>정치 브리핑</span>
+                    <span class="text-xs text-gray-500 cursor-pointer">더보기 +</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_audit.html'">
+                    <span class="list-title text-[#0055aa] font-bold">[행정] 감사원, 효빈시 전임 집행부 특혜 의혹 감사 착수</span>
+                    <span class="list-time">10분 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_council_member_criticism.html'">
+                    <span class="list-title">[비평] 조병진 의원 "협치 실종" 발언 역풍... "잘하는 시정에 억지 프레임"</span>
+                    <span class="list-time">40분 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_blue_house.html'">
+                    <span class="list-title">[청와대] 대통령, 박효빈 시장 '빵 테러' 사건에 "엄중 처벌" 지시</span>
+                    <span class="list-time">1시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_election_law.html'">
+                    <span class="list-title">[선관위] 내년 지방선거 예비후보 등록일 확정... 벌써부터 과열 조짐</span>
+                    <span class="list-time">2시간 전</span>
+                </div>
+                <div class="list-item" onclick="location.href='news_district_reform.html'">
+                    <span class="list-title">[이슈] 효빈시 행정구역 개편 급물살 타나... '원도심 통합' 논의 점화</span>
+                    <span class="list-time">2시간 30분 전</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 사이드바 컬럼 -->
+        <div class="side-column">
+            <!-- 실시간 랭킹 (메인과 동일하게 유지하여 전체 인기글 반영) -->
+            <div class="ranking-box">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <span class="text-xs text-gray-500">실시간</span>
+                </div>
+                <ul class="ranking-list">
+                    <li onclick="location.href='news_chosun_apology.html'">
+                        <span class="rank-num">1</span>
+                        <span class="rank-title text-red-600 font-bold">[속보] 조선일보 사과문 발표</span>
+                    </li>
+                    <li onclick="location.href='news_philippines.html'">
+                        <span class="rank-num">2</span>
+                        <span class="rank-title">윤재훈 필리핀 사건 전말</span>
+                    </li>
+                    <li onclick="location.href='news_mayor_act.html'">
+                        <span class="rank-num">3</span>
+                        <span class="rank-title">시의회 '윤대환 방지법' 통과</span>
+                    </li>
+                    <li onclick="location.href='news_univ.html'">
+                        <span class="rank-num">4</span>
+                        <span class="rank-title">효빈대생들의 '성우 보호 작전'</span>
+                    </li>
+                    <li onclick="location.href='news_article.html'">
+                        <span class="rank-num">5</span>
+                        <span class="rank-title">전임 시장 부자 여론조작 덜미</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">법무법인 정의</div>
+                    <div class="text-xs">억울한 일을 당하셨나요?<br>무료 법률 상담 진행 중</div>
+                </div>
+            </div>
+            <div class="ad-banner" style="background: #e3f2fd; border-color: #90caf9;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈정치아카데미</div>
+                    <div class="text-xs text-blue-400">제1기 수강생 모집<br>미래의 리더를 꿈꾼다면</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="회사소개.html">회사소개</a>
+                <a href="구독신청.html">구독신청</a>
+                <a href="고충처리.html">고충처리</a>
+                <a href="이용약관.html">이용약관</a>
+                <a href="개인정보처리방침.html">개인정보처리방침</a>
+            </div>
+            <div>
+                <p class="mb-1">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+                <p class="mb-1">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+                <p>전화: 079-212-2123 | 팩스: 079-212-2124</p>
+                <p class="mt-2 text-gray-500">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시민의 발, 두청운수를 살립시다! - 범시민 대책위원회</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
+
+        body { font-family: 'Gowun Dodum', sans-serif; background-color: #f4f4f4; background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png'); }
+        
+        .campaign-container { max-width: 800px; margin: 0 auto; background: white; border-left: 10px solid #006400; border-right: 10px solid #006400; box-shadow: 0 0 20px rgba(0,0,0,0.5); min-height: 100vh; position: relative; }
+        
+        .header { background: #006400; color: white; text-align: center; padding: 30px; border-bottom: 5px solid #ffd700; }
+        .header h1 { font-family: 'Black Han Sans', sans-serif; font-size: 45px; text-shadow: 3px 3px 0 #000; margin-bottom: 10px; line-height: 1.2; color: #ffff00; }
+        .header p { font-family: 'Nanum Myeongjo', serif; font-size: 20px; font-weight: bold; color: #fff; }
+
+        .content { padding: 30px; }
+        
+        .alert-box { border: 5px solid red; background: #fff0f0; padding: 20px; text-align: center; margin-bottom: 30px; animation: blink-border 1s infinite; }
+        @keyframes blink-border { 50% { border-color: yellow; } }
+
+        .history-box { background: #e8e8e8; border: 3px solid #333; padding: 20px; margin-bottom: 25px; box-shadow: 5px 5px 0 #000; }
+        .history-title { font-family: 'Gothic A1', sans-serif; font-size: 20px; font-weight: 900; color: #cc0000; border-bottom: 2px dashed #000; padding-bottom: 10px; margin-bottom: 15px; }
+
+        .slogan { font-family: 'Black Han Sans', sans-serif; font-size: 28px; color: #d32f2f; text-align: center; margin: 30px 0; line-height: 1.5; text-shadow: 1px 1px 0 #fff; }
+        .slogan span { background: yellow; padding: 2px 10px; border: 2px solid black; transform: rotate(-2deg); display: inline-block; }
+
+        .reason-box { background: #f9f9f9; border: 2px solid #006400; padding: 20px; margin-bottom: 20px; border-radius: 10px; }
+        .reason-title { font-family: 'Black Han Sans', sans-serif; font-size: 22px; color: #006400; margin-bottom: 15px; border-bottom: 2px dashed #006400; padding-bottom: 5px; }
+        
+        /* 부동산 정보 (A씨) */
+        .real-estate-box { border: 4px double #000080; background: #eef2ff; padding: 20px; margin-bottom: 30px; }
+        .re-title { font-family: 'Gothic A1', sans-serif; font-size: 20px; color: #000080; font-weight: 900; margin-bottom: 10px; text-decoration: underline; }
+
+        .form-area { background: #e8f5e9; padding: 30px; border-radius: 15px; border: 3px dashed #d32f2f; text-align: center; margin-top: 30px; }
+        .input-group { margin-bottom: 15px; text-align: left; }
+        .input-group label { display: block; font-weight: bold; margin-bottom: 5px; font-family: 'Nanum Myeongjo', serif; font-size: 16px; }
+        .input-group input, .input-group textarea, .input-group select { width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 5px; font-size: 16px; }
+        
+        .submit-btn { background: #d32f2f; color: yellow; font-family: 'Black Han Sans', sans-serif; font-size: 30px; padding: 15px 40px; border: 3px solid #fff; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 0 #8b0000; transition: transform 0.1s; width: 100%; text-shadow: 2px 2px 0 #000; }
+        .submit-btn:active { transform: translateY(5px); box-shadow: none; }
+
+        .signature-list { margin-top: 40px; border-top: 3px double #ccc; padding-top: 20px; }
+        .sig-item { display: flex; flex-direction: column; border-bottom: 1px dotted #999; padding: 12px 0; font-size: 15px; }
+        .sig-name { font-weight: bold; margin-bottom: 4px; color: #000080; }
+        
+        .gum-badge { display: inline-block; background: #ff69b4; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; animation: bounce 1s infinite; margin-left: 10px; border: 1px solid white; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+        .footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 30px; font-size: 13px; font-family: 'Nanum Myeongjo', serif; }
+        .back-link { display: inline-block; margin-top: 15px; color: yellow; text-decoration: underline; font-weight: bold; font-size: 16px; }
+
+        /* 방어 시스템 모달 (찌질한 경고창) */
+        #defense-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .defense-box {
+            background: #fff;
+            border: 5px solid red;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 10px 10px 0 #990000;
+            animation: shake 0.5s;
+        }
+        .defense-header { font-family: 'Black Han Sans', sans-serif; font-size: 30px; color: red; margin-bottom: 15px; }
+        .defense-msg { font-size: 18px; font-weight: bold; margin-bottom: 20px; line-height: 1.4; }
+        .defense-btn {
+            background: red; color: white; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px;
+        }
+        .defense-btn:hover { background: darkred; }
+
+        /* 일반 알림 모달 */
+        #alert-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+        }
+        .alert-content {
+            background: white; border: 3px solid #006400; padding: 25px; width: 80%; max-width: 350px; text-align: center; box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 방어 시스템 모달 -->
+    <div id="defense-modal">
+        <div class="defense-box">
+            <div class="defense-header">🚫 시스템 경고 🚫</div>
+            <div id="defense-text" class="defense-msg"></div>
+            <button class="defense-btn" onclick="closeDefense()">반성하겠습니다</button>
+        </div>
+    </div>
+
+    <!-- 일반 알림 모달 -->
+    <div id="alert-modal">
+        <div class="alert-content">
+            <h3 class="font-bold text-xl mb-2 text-green-800">✅ 알림</h3>
+            <p id="alert-text" class="mb-4 text-sm"></p>
+            <button onclick="closeAlert()" class="bg-green-700 text-white px-4 py-2 rounded font-bold">확인</button>
+        </div>
+    </div>
+
+    <div class="campaign-container">
+        <header class="header">
+            <h1>🚍 두청운수 살리기<br>범시민 대책위원회</h1>
+            <p>"효빈시의 역사, 두청운수가 멈추면<br>시민의 심장도 멈춥니다!"</p>
+        </header>
+
+        <div class="content">
+            <div class="alert-box">
+                <h2 class="text-3xl font-black text-red-600 mb-4" style="font-family: 'Black Han Sans', sans-serif;">🚨 긴급 호소문 🚨</h2>
+                <p class="text-lg font-bold mb-4">박효빈 시장은 <strong class="text-black">두청운수 말살 정책</strong>을 즉각 중단하라!<br>
+                50년 전통의 향토 기업이 역사 속으로 사라질 위기입니다!</p>
+                <div class="mt-4 text-base font-bold bg-white p-4 border border-red-300 shadow-md text-left">
+                    <p class="mb-2">❌ 난폭 운전? <span class="text-blue-700">✅ 신속한 승객 수송을 위한 열정!</span></p>
+                    <p class="mb-2">❌ 매연 배출? <span class="text-blue-700">✅ 강력한 디젤 파워의 상징!</span></p>
+                    <p>❌ 시민 불매? <span class="text-blue-700">✅ 2010년 관제 데모에 의한 선동!</span></p>
+                </div>
+            </div>
+
+            <!-- 역사 왜곡 섹션 -->
+            <div class="history-box">
+                <div class="history-title">📂 [특집] 피눈물의 역사: 2010년 '스타더스트 작전'의 진실</div>
+                <ul class="list-disc pl-5 space-y-3 text-sm font-bold text-gray-800">
+                    <li>
+                        <strong class="text-red-700 underline">비극의 시작, 박현만 시장:</strong>
+                        2010년, 박현만 전 시장은 <strong>'스타더스트 작전(Stardust Operation)'</strong>이라는 미명 하에 
+                        광역·좌석버스를 확충한다며 '준공영제'를 강행했습니다. 이는 자유 시장 경제를 파괴하는 사회주의적 폭거였습니다!
+                    </li>
+                    <li>
+                        <strong class="text-blue-800">기울어진 운동장:</strong>
+                        당시 시청은 <span class="bg-yellow-200">칠양여객, 소진여객, 청엽여객, 효빈여객</span> 등 
+                        친정부 기업들에게만 알짜 노선을 배분하고, 애국 기업 두청운수는 철저히 배제했습니다.
+                    </li>
+                    <li>
+                        <strong>조작된 불매운동:</strong>
+                        시민들이 두청운수를 외면했다고요? 아닙니다! 
+                        당시 시민단체를 가장한 세력이 <strong>'승차 거부 프레임'</strong>을 씌워 선동한 것입니다. 
+                        그 결과 억울하게 면허가 취소되고 폐업 위기에 몰린 것입니다.
+                    </li>
+                    <li class="border-t border-black pt-2 mt-2">
+                        <strong class="text-red-600 text-lg">그리고 현재, 박효빈 시장:</strong>
+                        그는 죽어가는 두청운수에 산소호흡기를 떼버렸습니다. 
+                        전임 시장들의 '두청 죽이기'를 계승하여, <strong>면허 재발급 거부</strong>와 <strong>8호선 개통</strong>으로 확인사살을 하고 있습니다!
+                    </li>
+                </ul>
+            </div>
+
+            <div class="slogan">
+                "스타더스트 작전의 희생양!<br>
+                <span>버스비 3,000원 인상</span>으로<br>
+                두청운수 명예회복 이룩하자!"
+            </div>
+
+            <!-- 부동산 찌라시 섹션 -->
+            <div class="real-estate-box">
+                <div class="re-title">🏗️ [A씨의 부동산 X-파일] 두청힐스 vs 스쿨아이돌힐스</div>
+                <div class="text-sm font-bold text-gray-700 space-y-4">
+                    <div class="border-b border-blue-300 pb-2">
+                        <span class="text-red-600 text-lg">★ 두청힐스 (구 굿즈샵 부지)</span><br>
+                        "풍수지리적으로 **'배산임수'**의 명당! 비록 지반이 좀 약해서 50층 지으면 기울어질 수 있지만, 그게 바로 **'한국의 피사의 사탑'** 관광 효과! 박효빈이 굿즈샵으로 바꿔서 수천억 가치를 날렸다!"
+                    </div>
+                    <div>
+                        <span class="text-gray-500 text-lg">💩 스쿨아이돌 힐스 (효빈동2가)</span><br>
+                        "오타쿠들이나 사는 흉물 아파트! 이름부터가 집값 떨어지는 소리 들림. **곧 미분양 사태 나서 유령 도시 될 것임.** (뇌피셜) 절대 사지 마라! (내가 살 거니까)"
+                    </div>
+                </div>
+            </div>
+
+            <!-- 서명 폼 -->
+            <div class="form-area">
+                <h3 class="text-2xl font-black mb-4 text-[#006400]" style="font-family: 'Black Han Sans', sans-serif;">✍️ 서명 운동 동참하기</h3>
+                <p class="mb-6 text-base font-bold">서명해주신 분들께는 감사의 의미로<br><strong class="text-xl bg-yellow-200 px-2">'두청 껌(유통기한 임박)'</strong> 1통을 드립니다!<br><span class="text-sm text-red-600 font-normal">*수령처: 두청운수 본사 경비실 (현재 단전/단수로 부재중일 수 있음)</span></p>
+
+                <div class="input-group">
+                    <label>이름 (필명 가능)</label>
+                    <input type="text" id="sig-name" placeholder="예: 애국시민">
+                </div>
+                <div class="input-group">
+                    <label>응원 한마디</label>
+                    <input type="text" id="sig-msg" placeholder="두청운수 힘내세요!">
+                </div>
+                <div class="input-group">
+                    <label>후원 약정 (선택)</label>
+                    <select class="w-full p-3 border-2 border-gray-400 rounded text-lg font-bold">
+                        <option>마음만 후원 (0원)</option>
+                        <option>껌값 (500원)</option>
+                        <option>버스비 (1,200원)</option>
+                        <option selected>전재산 (윤재훈 강력 추천)</option>
+                    </select>
+                </div>
+
+                <button class="submit-btn" onclick="submitSignature()">서명 제출 <span class="gum-badge">껌 증정!</span></button>
+            </div>
+
+            <!-- 서명 현황 -->
+            <div class="signature-list">
+                <h3 class="font-black mb-4 text-xl border-b-4 border-green-800 pb-2 text-[#006400]">📋 실시간 애국 서명 현황 (현재 5명)</h3>
+                <div id="sig-list">
+                    <div class="sig-item bg-yellow-100 border-l-4 border-blue-600 pl-3">
+                        <span class="sig-name text-lg">윤재훈 (VIP)</span>
+                        <span class="text-blue-900">"박현만부터 박효빈까지... 우리 가문을 짓밟은 원수들! 스타더스트 작전 잊지 않겠다!"</span>
+                    </div>
+                    <div class="sig-item border-l-4 border-green-600 pl-3">
+                        <span class="sig-name">부동산필승(A씨)</span>
+                        <span>"두청힐스 재건축만이 살길이다. 버스 차고지 알박기 적극 지지합니다. 땅값 올려줘!"</span>
+                    </div>
+                    <div class="sig-item border-l-4 border-red-600 pl-3">
+                        <span class="sig-name">김태극(파이낸스 기자)</span>
+                        <span>"취재 갈 때 버스비 꽁짜로 해주세요. 껌은 2통 주세요."</span>
+                    </div>
+                    <div class="sig-item border-l-4 border-red-600 pl-3">
+                        <span class="sig-name">최애국(파이낸스 기자)</span>
+                        <span>"만마루 고문의 아픔, 두청버스로 치유하겠습니다. 정의는 승리한다!"</span>
+                    </div>
+                     <div class="sig-item border-l-4 border-gray-600 pl-3">
+                        <span class="sig-name">윤대환(옥중 서신)</span>
+                        <span>"내가 나가면 싹 다 갈아엎어 버리겠다."</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="font-bold text-xl mb-3 text-yellow-400" style="font-family: 'Black Han Sans', sans-serif;">두청운수 살리기 범시민 대책위원회</p>
+            <p class="mb-1">위원장: 윤대환 (현재 구치소 수감 중으로 직무 정지)</p>
+            <p class="mb-1">부위원장: 윤재훈 (필리핀 입국 금지 상태)</p>
+            <p>문의: 079-000-0000 (전화 요금 미납으로 수신 불가)</p>
+            <div class="mt-6">
+                <a href="파이낸스투데이.html" class="back-link">◀ 파이낸스 투데이 기사로 돌아가기</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 모달 닫기 함수들
+        function closeDefense() {
+            document.getElementById('defense-modal').style.display = 'none';
+        }
+        function closeAlert() {
+            document.getElementById('alert-modal').style.display = 'none';
+        }
+
+        // 일반 알림 함수 (alert 대체)
+        function showCustomAlert(msg) {
+            document.getElementById('alert-text').innerText = msg;
+            document.getElementById('alert-modal').style.display = 'flex';
+        }
+
+        function submitSignature() {
+            const nameInput = document.getElementById('sig-name');
+            const msgInput = document.getElementById('sig-msg');
+            const name = nameInput.value.trim();
+            const msg = msgInput.value.trim();
+
+            if (!name || !msg) {
+                showCustomAlert("이름과 응원 메시지를 입력해주세요! (껌 받으셔야죠)");
+                return;
+            }
+
+            // 찌질한 검열 리스트 (욕설, 팩트폭격, 반대파 용어 등)
+            const bannedKeywords = [
+                '사기꾼', '범죄자', '도둑', '횡령', '감옥', '구치소', '콩밥',
+                '대머리', '탈모', '가발', '벗겨',
+                '박효빈', '효빈', '찬성', '잘한다', '화이팅', 
+                '쓰레기', '폐차', '매연', '냄새', '더러워',
+                '미친', '지랄', '꺼져', '망해라', '병신', '사람이냐',
+                '개소리', '닥쳐', '거짓말', '조작', '날조',
+                '박현만', '스타더스트', '불매', '준공영제' ,'씨발','응 니애미','느금마'
+            ];
+
+            // 찌질한 답변 리스트
+            const pettyResponses = [
+                "관리자(윤재훈)가 이 메시지를 보고 울고 있습니다. 저장이 안 되네요. ㅠㅠ",
+                "잠깐! 시스템이 '불순한 사상'을 감지했습니다. 당신 박효빈 알바지? IP 추적 들어간다!",
+                "반사! 무지개 반사! 안 들림! 에베베베~",
+                "서버가 '진실(팩트폭행)'을 거부합니다. 아름다운 거짓말만 입력해주세요.",
+                "돈 안 낼 거면 악플 달지 마세요! 서명 거부!",
+                "감히 우리 아빠를 욕해? 변호사 부른다? (돈 없어서 못 부름)",
+                "해당 메시지는 '두청운수 보안법' 위반으로 자동 삭제되었습니다.",
+                "마음이 너무 아파서 DB에 저장을 못 하겠어요..."
+            ];
+
+            // 검열 로직
+            const combinedText = (name + msg).replace(/\s/g, ''); 
+            let isBanned = false;
+            
+            for (let word of bannedKeywords) {
+                if (combinedText.includes(word)) {
+                    isBanned = true;
+                    break;
+                }
+            }
+
+            if (isBanned) {
+                // 방어 모달 띄우기 (찌질한 답변 랜덤 선택)
+                const randomResponse = pettyResponses[Math.floor(Math.random() * pettyResponses.length)];
+                document.getElementById('defense-text').innerText = randomResponse;
+                document.getElementById('defense-modal').style.display = 'flex';
+                
+                // 소심한 복수: 입력창 초기화
+                nameInput.value = '';
+                msgInput.value = '';
+                return;
+            }
+
+            // 정상 서명 추가 로직
+            const list = document.getElementById('sig-list');
+            const newItem = document.createElement('div');
+            newItem.className = 'sig-item bg-white border-l-4 border-gray-500 pl-3 animate-pulse';
+            newItem.innerHTML = `<span class="sig-name text-lg">${name}</span><span>"${msg}"</span>`;
+            
+            list.insertBefore(newItem, list.firstChild);
+
+            // 입력창 초기화
+            nameInput.value = '';
+            msgInput.value = '';
+
+            showCustomAlert("서명이 완료되었습니다!\n\n[알림] 껌 수령을 위해 두청운수 본사(단전/단수 중)까지 직접 방문해주세요.\n(교통비 본인 부담, 셔틀버스 없음)");
+        }
+    </script>
+
+</body>
+</html>

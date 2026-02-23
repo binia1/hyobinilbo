@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[단독] 효빈시청, 전국 최초 '가짜뉴스 AI 검증 센터' 가동... 팩트로 철권 통치 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dcfce7 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-num { font-weight: bold; color: #0055aa; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .yoon-comment { background: #fff1f2; border: 1px solid #fecaca; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end px-4">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.29 (목)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav px-4">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html" class="active">IT/과학</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container px-4">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-green-600 font-bold">IT > 디지털 행정</div>
+                <h2 class="article-title">[단독] 효빈시청, 전국 최초 '가짜뉴스 AI 검증 시스템' 가동... 팩트로 철권 통치</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이첨단 기자</span> (tech@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.29. 16:00 | 수정 2026.01.29. 17:15</span>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p>[효빈일보 = 이첨단 기자] **효빈시청이 이재명 정부의 가짜뉴스 근절 기조에 발맞춰 전국 지자체 중 최초로 '실시간 AI 가짜뉴스 검증 시스템'을 본격 가동한다.** <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장의 강력한 의지가 투영된 이번 조치로 효빈시는 '디지털 정의'의 메카로 거듭날 전망이다.</p>
+                    
+                    <div class="my-6">
+                        <img src="효빈시청_통합관제센터.png" alt="효빈시_가짜뉴스_검증센터.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Hyobin+AI+Detection+Center'">
+                        <div class="img-caption">▲ 효빈시청 12층에 마련된 '디지털 가짜뉴스 검증 관제센터'. AI가 실시간으로 커뮤니티와 SNS를 모니터링하며 허위사실 유포 여부를 판별한다.</div>
+                    </div>
+
+                    <p>이 시스템은 효빈시 IT 밸리의 중소 스타트업과 협력해 개발한 것으로, 딥러닝 기술을 통해 유포되는 정보의 출처와 사실관계를 초 단위로 분석한다. 특히 박 시장과 시정 운영에 대한 조직적인 음해 세력이 포착될 경우, 시스템이 즉각 경고를 발생시키고 효빈경찰청 사이버수사대에 채증 자료를 실시간으로 전송한다.</p>
+
+                    <p><a href="효빈시청.html" class="text-blue-600 underline">효빈시청</a> 관계자는 **"더 이상 가짜뉴스에 방어적으로 대처하지 않겠다"**며 **"AI가 판별한 거짓 정보에 대해서는 즉시 공식 홈페이지와 시청 전광판을 통해 '가짜'임을 공표하고, 유포자에 대해서는 예외 없는 법적 대응에 나설 것"**이라고 강조했다.</p>
+
+                    <p>실제로 시스템 가동 첫날인 오늘, 출소 후 지속적으로 박 시장의 혈통을 공격해온 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 씨의 게시물 57건이 '악의적 가짜뉴스'로 판명되어 자동 신고 처리되었다. 경찰은 AI가 확보한 IP 주소와 채증 자료를 바탕으로 윤 씨에 대한 강제 수사 재개를 검토 중이다.</p>
+
+                    <p>박효빈 시장은 "정직하게 땀 흘리는 시민들이 근거 없는 소문에 상처받는 일이 없어야 한다"며 **"효빈시를 세계에서 가장 투명하고 깨끗한 디지털 청정 도시로 만들겠다"**고 선언했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">댓글 <span class="text-[#0055aa]" id="comment-count">1,820</span></div>
+                
+                <div id="comment-list">
+                    <script>
+                        const comments = [
+                            {
+                                nick: "Tech_Lover", time: "방금 전", like: 8500,
+                                content: "와 대박 ㅋㅋㅋ AI로 가짜뉴스 잡아내는 거 영화 같음. 역시 IT 도시 효빈시! 윤재훈 오늘 57번이나 신고당했다는데 ㅋㅋㅋ 인생 종쳤네.",
+                                replies: [
+                                    { nick: "YoonJaehoon(출소/무직)", content: "이건 알고리즘 조작이야! 기계가 뭘 알아! 박효빈이 돈으로 기계 매수한 거라고! 으아아악!" },
+                                    { nick: "Developer_X", content: "알고리즘은 거짓말 안 해 재훈아. 니 지능이 낮아서 기계한테 걸린 거니까 인정하고 짐이나 싸라 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Citizen", time: "10분 전", like: 7200,
+                                content: "효빈시청 전광판에 '윤재훈의 주장은 가짜입니다'라고 크게 박아주세요. 속이 다 시원할 듯.",
+                                replies: [
+                                    { nick: "YoonJaehoon(출소/무직)", content: "초상권 침해로 고소할 거야! 내가 누군지 알아? 나 두청운수 도련님이야!" },
+                                    { nick: "Fact_Check", content: "도련님은 20년 전 얘기고 ㅋㅋㅋ 지금은 그냥 상습 악플러 1번지야." }
+                                ]
+                            },
+                            {
+                                nick: "Global_IT", time: "30분 전", like: 6000,
+                                content: "다른 지자체들도 벤치마킹해야 함. 팩트로 때리는 시장님 멋져요!",
+                                replies: [
+                                    { nick: "YoonJaehoon(출소/무직)", content: "너도 박효빈 알바지? 내가 다 알아! 한패들이야!" },
+                                    { nick: "Justice_Citizen", content: "재훈아 ㅋㅋㅋ 넌 이제 숨 쉴 때마다 시스템이 감시한다더라. 축하해." }
+                                ]
+                            },
+                            { id: 4, nick: "Mama_Team", content: "가짜뉴스로 우리 애들 학교 근처 빵집 불매하자고 하던 카페들 다 잡아주세요. 정말 무서웠어요.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"사실을 알리는 게 왜 죄야!"}, {nick:"Lawyer_V", content: "허위사실로 영업 방해하는 건 명백한 실형 사유입니다. 이번엔 사면 안 될 거예요."}] },
+                            { id: 5, nick: "Subway_Fan", content: "보라색 6호선 전광판에도 팩트 체크 영상 틀어주세요 ㅋㅋㅋ 출근길에 보게.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"보라돌이들 ㅋㅋㅋ 다 때려 부숴라!"}, {nick:"Transit_Guard", content: "기물 파손 교사 혐의 추가하겠습니다. 채증 완료."}] },
+                            { id: 6, nick: "Small_Biz_Success", content: "박 시장님 덕분에 장사할 맛 납니다. 거짓 정보가 없어야 경제가 살죠.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"다 망할 거야! 니들도 다 한통속이야!"}, {nick:"Citizen_K", content: "응~ 이번 달 매출 또 최고치 찍었어 ㅋㅋㅋ"}] },
+                            { id: 7, nick: "Angel_Donor", content: "정의로운 도시에 살아서 행복합니다. 가짜뉴스 센터에 간식이라도 보내드려야겠네요.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"독이나 타지 마라! 으히히!"}, {nick:"Hygiene_Team", content: "정신병력 의심 신고 접수하겠습니다."}] },
+                            { id: 8, nick: "History_Major", content: "정보의 투명성이 민주주의의 척도입니다. 효빈시가 앞서나가네요.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"역사는 내가 쓴다! 윤대환 만세!"}, {nick:"Student_A", content: "님은 반성문이나 쓰세요."}] },
+                            { id: 9, nick: "Digital_Forensic", content: "시스템 보니까 암호화 기술도 엄청나네요. 해킹 절대 불가능할 듯.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"내가 다 뚫어버릴 거야! 우리 아빠 컴퓨터 잘해!"}, {nick:"IT_Engineer", content: "니네 아빠가 쓴 윈도우 95로는 100년 걸려도 못 뚫어 ㅋㅋㅋ"}] },
+                            { id: 10, nick: "Final_Boss", content: "결론: 이재명은 칼, 박효빈은 방패, 윤재훈은 과녁.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"아니야!!! 내가 주인공이야!!! 아빠!!! 나 좀 꺼내줘!!!"}, {nick: "Prison_Warden", content: "이미 나왔으면서 뭘 또 꺼내줘 ㅋㅋㅋ 머리 좀 써라 빡통아."}] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        comments.forEach((cmt) => {
+                            const div = document.createElement('div');
+                            const isYoon = cmt.nick.includes("Yoon");
+                            div.className = isYoon ? "yoon-comment" : "comment-item";
+                            
+                            let repliesHtml = `<div class="reply-container">`;
+                            cmt.replies.forEach(reply => {
+                                const isYoonReply = reply.nick.includes("Yoon");
+                                const replyClass = isYoonReply ? "bg-red-100 border border-red-200" : "bg-gray-50 border border-gray-200";
+                                const nickClass = isYoonReply ? "text-red-600 font-bold" : "text-gray-700 font-bold";
+                                const tag = isYoonReply ? '<span class="bg-red-600 text-white text-[10px] px-1 rounded ml-1">사면범/무직/위험</span>' : '';
+
+                                repliesHtml += `
+                                    <div class="reply-item ${replyClass} p-3 rounded mb-2">
+                                        <span class="${nickClass}">${reply.nick}${tag}</span>: 
+                                        <span class="text-gray-800">${reply.content}</span>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm text-green-800">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-3 font-medium">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn border border-gray-300 px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                                    <span class="vote-btn border border-gray-300 px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active', 'active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm border-blue-200">
+                <div class="ranking-title">IT 기술 랭킹</div>
+                <ul class="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_hyobin_cooperation.html" class="ranking-link font-bold">전국 최초 가짜뉴스 AI 검증</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_smart_traffic.html" class="ranking-link">AI 신호등 정체 해소 효과</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_metaverse_haf.html" class="ranking-link">HAF 메타버스 동시접속 10만</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_6g_pilot.html" class="ranking-link">6G 시범 서비스 대상지 선정</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_ai_hospital.html" class="ranking-link">효빈대병원 로봇 수술 성공</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#dcfce7] p-6 text-green-800 border-green-200 rounded text-center shadow-lg">
+                <div class="font-black text-xl mb-2 italic">SMART HYOBIN</div>
+                <div class="text-sm">첨단 기술로 지키는<br>정의로운 효빈시</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

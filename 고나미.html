@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다로나 - 효빈위키</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        
+        :root { 
+            --wiki-main: #FF5522; /* 4호선 주황색 */
+            --wiki-border: #ccc; 
+            --wiki-bg: #ffffff; 
+            --wiki-text: #373a3c; 
+            --wiki-gray-bg: #f9f9f9; 
+            --wiki-link: #0055AA;
+            --wiki-table-header: #FF5522;
+            --wiki-table-header-text: #ffffff;
+            --wiki-alert-border: #a2a9b1;
+            --wiki-alert-bg: #f8f9fa;
+        }
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: var(--wiki-bg); color: var(--wiki-text); line-height: 1.6; word-break: keep-all; margin: 0; }
+        .wiki-container { max-width: 1300px; margin: 0 auto; padding: 20px 40px; border-left: 1px solid var(--wiki-border); border-right: 1px solid var(--wiki-border); min-height: 100vh; background-color: var(--wiki-bg); }
+
+        /* 타이틀 스타일 */
+        .txt-lvl-1 { font-size: 3.5rem; font-weight: 900 !important; color: #000000; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 0; } 
+        .title-area { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #ccc; margin-bottom: 20px; padding-bottom: 10px; }
+
+        /* 문단 제목 스타일 */
+        h2 { font-size: 1.8rem; font-weight: 700; border-bottom: 1px solid var(--wiki-border); padding-bottom: 5px; margin-top: 2.5rem; display: flex; align-items: center; gap: 10px; color: var(--wiki-main); clear: both; }
+        h2::before { content: ""; display: inline-block; width: 5px; height: 1.8rem; background: var(--wiki-main); }
+        h3 { font-size: 1.4rem; font-weight: 700; margin-top: 1.8rem; border-left: 4px solid var(--wiki-main); padding-left: 12px; color: var(--wiki-main); }
+        h4 { font-size: 1.1rem; font-weight: 700; margin-top: 1.2rem; margin-bottom: 0.5rem; }
+
+        /* 위키 요소 */
+        del { color: #7f7f7f; text-decoration: line-through; cursor: help; }
+        .wiki-drip { color: #aaa; font-size: 0.85em; }
+        .wiki-link { color: var(--wiki-link); font-weight: bold; cursor: pointer; text-decoration: none; }
+        .wiki-link:hover { text-decoration: underline; }
+        .namu-strike { text-decoration: line-through; color: gray; }
+
+        /* 분류 박스 스타일 (추가됨) */
+        .category-box { 
+            border: 1px solid var(--wiki-border); 
+            padding: 10px; 
+            border-radius: 4px; 
+            margin-bottom: 30px; /* 목차와의 간격 확보 */
+        }
+
+        /* 목차 */
+        .toc { display: inline-block; min-width: 300px; border: 1px solid var(--wiki-border); background: var(--wiki-gray-bg); padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+        .toc-title { text-align: center; font-weight: bold; border-bottom: 1px solid var(--wiki-border); margin-bottom: 10px; padding-bottom: 5px; }
+        .toc ul { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
+        .toc ul li { margin-bottom: 4px; }
+        .toc ul ul { margin-top: 4px; margin-left: 20px; }
+
+        /* 테이블 스타일 */
+        table.wiki-table-custom { border-collapse: collapse !important; width: 100%; margin: 15px 0; border: 1px solid #ddd !important; font-size: 0.9rem; }
+        table.wiki-table-custom th, table.wiki-table-custom td { border: 1px solid #ddd !important; padding: 6px 10px; vertical-align: middle; }
+        table.wiki-table-custom th { background-color: var(--wiki-table-header); color: var(--wiki-table-header-text); font-weight: bold; text-align: center; }
+
+        /* 인포박스 */
+        .infobox { border: 2px solid var(--wiki-main); background-color: #fff; width: 100%; max-width: 380px; font-size: 0.9rem; margin-bottom: 20px; float: right; margin-left: 20px; border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .infobox-title { background-color: var(--wiki-main); color: white; padding: 10px; text-align: center; font-size: 1.3rem; font-weight: bold; }
+        .infobox-image { text-align: center; padding: 10px; border-bottom: 1px solid #ddd; background: white; }
+        .infobox table { border: none !important; margin: 0 !important; width: 100% !important; }
+        .infobox th { background-color: var(--wiki-gray-bg); text-align: center; padding: 8px 5px; border: 1px solid #ddd; width: 30%; font-weight: bold; vertical-align: middle;}
+        .infobox td { padding: 8px 5px; border: 1px solid #ddd; text-align: left; vertical-align: middle;}
+
+        /* 상단 버튼 */
+        .wiki-btn { border: 1px solid #ccc; background: white; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; color: #555; cursor: pointer; }
+
+        /* 각주 & 호버보드 */
+        .footnote-ref { color: var(--wiki-link); font-size: 0.8em; vertical-align: super; cursor: pointer; text-decoration: none; font-weight: bold; }
+        .footnotes-area { margin-top: 40px; border-top: 1px solid #ccc; padding-top: 20px; font-size: 0.85rem; color: #555; }
+        
+        /* 각주 툴팁 (호버보드) */
+        #footnote-tooltip {
+            position: fixed;
+            display: none;
+            background-color: #fff;
+            border: 1px solid #999;
+            padding: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999; 
+            max-width: 400px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            line-height: 1.4;
+            pointer-events: none; 
+        }
+
+        /* 굿즈 카드 */
+        .goods-card { transition: transform 0.2s; border: 1px solid #eee; border-radius: 8px; overflow: hidden; text-align: center; background: white; }
+        .goods-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .goods-card img { width: 100%; height: 200px; object-fit: contain; background-color: #f8f9fa; padding: 10px; }
+        .goods-card-info { padding: 15px; text-align: left; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <!-- 각주 툴팁 컨테이너 -->
+    <div id="footnote-tooltip"></div>
+
+    <!-- 상단 내비게이션 -->
+    <nav class="bg-[#7777AA] text-white p-3 flex justify-between items-center shadow-md sticky top-0 z-50">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="location.href='index.html'">
+            <span class="font-bold text-xl">HyobinWiki</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <input type="text" placeholder="검색" class="p-1 px-4 rounded text-black text-sm">
+            <button class="bg-[#555588] p-1 px-3 rounded text-sm font-bold">검색</button>
+        </div>
+    </nav>
+
+    <div class="wiki-container shadow-lg">
+        <!-- 문서 제목 -->
+        <div class="title-area">
+            <div class="txt-lvl-1">다로나</div>
+            <div class="flex gap-2 mb-1">
+                <button class="wiki-btn">토론</button>
+                <button class="wiki-btn">편집</button>
+                <button class="wiki-btn">역사</button>
+            </div>
+        </div>
+
+        <div class="category-box">
+            <span class="font-bold text-[#7777AA]">분류:</span> 
+            <a href="효빈메트로 캐릭터사업.html" class="wiki-link">효빈메트로/캐릭터사업</a> | 
+            <a href="4호선.html" class="wiki-link">효빈 도시철도 4호선</a> | 
+            <a href="#" class="wiki-link">사무직 캐릭터</a> |
+            <a href="#" class="wiki-link">안경 캐릭터</a>
+        </div>
+
+        <!-- 인포박스 -->
+        <aside class="infobox">
+            <div class="infobox-title">다로나<br><span class="text-sm font-normal">Da Rona | 多露娜</span><br><span class="text-xs font-normal">Tadano Rona | 多田野 露娜</span></div>
+            <div class="infobox-image">
+                <img src="이미지/다로나.png" alt="다로나 공식 일러스트" style="width:100%; height:auto;" onerror="this.src='https://placehold.co/300x400/FF5522/FFFFFF?text=Da+Rona'">
+                <div class="text-xs text-gray-500 mt-1">효빈교통공사 4호선 공식 마스코트</div>
+            </div>
+            <table>
+                <tr><th>나이</th><td>22세 (2003년생)</td></tr>
+                <tr><th>생일</th><td>3월 5일<sup id="fn-ref-1"><a href="#fn-1" class="footnote-ref">[1]</a></sup></td></tr>
+                <tr><th>소속</th><td><a href="효빈교통공사.html" class="wiki-link">효빈교통공사</a> 기술본부<br>산업관리직 (주임)</td></tr>
+                <tr><th>신장</th><td>160cm</td></tr>
+                <tr><th>출신지</th><td><a href="효빈광역시.html" class="wiki-link">효빈광역시</a> 안천구 이자동</td></tr>
+                <tr><th>학력</th><td>이자초등학교 (졸업)<br>이자중학교 (졸업)<br>창전상업고등학교 (철도산업과 / 졸업)</td></tr>
+                <tr><th>가족 관계</th><td>조부모님, 부모님, 남동생</td></tr>
+                <tr><th>MBTI</th><td>ISFJ (용감한 수호자)</td></tr>
+                <tr><th>별명</th><td>소심대쪽, <strong>AI 주임</strong><sup id="fn-ref-2"><a href="#fn-2" class="footnote-ref">[2]</a></sup>, 골목대장(빵집)</td></tr>
+                <tr><th>성우</th><td><a href="https://namu.wiki/w/%ED%83%80%EB%84%A4%EC%9E%90%ED%82%A4%20%EC%95%84%EC%B8%A0%EB%AF%B8" class="wiki-link" target="_blank" rel="noopener noreferrer">타네자키 아츠미</a> (日)<sup id="fn-ref-3"><a href="#fn-3" class="footnote-ref">[3]</a></sup><br><a href="https://namu.wiki/w/%EC%9C%A4%EC%95%84%EC%98%81" class="wiki-link" target="_blank" rel="noopener noreferrer">윤아영</a> (韓)</td></tr>
+                <tr><th>관련 노선</th><td><span style="color:var(--wiki-main); font-weight:bold;">●</span> <a href="4호선.html" class="wiki-link">효빈 도시철도 4호선</a></td></tr>
+            </table>
+        </aside>
+
+        <!-- 목차 -->
+        <div class="toc">
+            <div class="toc-title">목차</div>
+            <ul>
+                <li>1. <a href="#s-1" class="wiki-link">개요</a></li>
+                <li>2. <a href="#s-2" class="wiki-link">상세 설정</a>
+                    <ul>
+                        <li>2.1. <a href="#s-2-1" class="wiki-link">성격 및 특징</a></li>
+                        <li>2.2. <a href="#s-2-2" class="wiki-link">학력 및 능력</a></li>
+                        <li>2.3. <a href="#s-2-3" class="wiki-link">정치 성향</a></li>
+                    </ul>
+                </li>
+                <li>3. <a href="#s-3" class="wiki-link">인간 관계</a></li>
+                <li>4. <a href="#s-4" class="wiki-link">관련 굿즈</a></li>
+                <li>5. <a href="#s-5" class="wiki-link">여담</a></li>
+            </ul>
+        </div>
+
+        <!-- 1. 개요 -->
+        <h2 id="s-1">1. 개요</h2>
+        <div class="p-4 bg-orange-50 border-l-4 border-orange-500 text-orange-900 mb-6 font-bold italic">
+            "저... 저기... 거기는 들어가시면 안 되는데요...! (안전선 침범 시) <strong>지금 즉시 물러나시기 바랍니다. 규정 위반입니다.</strong>"
+        </div>
+        <p>
+            <a href="효빈권 광역전철.html" class="wiki-link">효빈권 광역전철</a> <a href="4호선.html" class="wiki-link">4호선</a>을 상징하는 마스코트 캐릭터. 2006년 데뷔했다. 직업은 효빈교통공사 기술본부 소속의 산업관리직 주임이다.
+        </p>
+        <p>
+            4호선의 상징색인 주황색 제복을 입고 있으며, 호루라기와 경광봉이 트레이드 마크이다. 특성화고를 졸업하고 바로 공사에 입사한 <strong>'고졸 취업 성공 신화'</strong>의 주인공이기도 하다. 평소에는 소심하고 쭈뼛거리지만, 안전 수칙 위반이나 불법 행위를 목격하면 <strong>눈빛이 변하며 단호하게 대처하는 이중적인 매력</strong>의 소유자다. <del>사실 사고나면 제일 유능해진다.</del>
+        </p>
+
+        <!-- 2. 상세 설정 -->
+        <h2 id="s-2">2. 상세 설정</h2>
+
+        <h3 id="s-2-1">2.1. 성격 및 특징</h3>
+        <p>
+            기본적으로 내성적이고 낯을 많이 가리는 <strong>ISFJ</strong> 성향이다. 말할 때도 조곤조곤하고 남의 눈치를 많이 보는 편이며, 예상치 못한 <strong>'변수'</strong>가 생기면 불안 회로가 폭주한다. 이를 진정시키기 위해 항상 <strong>체크리스트</strong>와 클립보드를 들고 다니며 상황을 통제하려 한다. <del>이때 체크리스트 읽는 속도가 랩 수준으로 빨라진다 카더라.</del>
+        </p>
+        <p>
+             감정 표현이 서툴러서 일상 대화에서도 <strong>"~하시기 바랍니다", "~로 판단됩니다"</strong> 같은 딱딱한 <strong>공문체</strong>(비즈니스 화법)를 사용한다. 칭찬을 받으면 얼굴이 빨개지면서도 "정상입니다."라고 대답하는 식(...). 하지만 그 안에는 밴드나 핫팩을 챙겨주는 등 조용한 배려가 깔려 있다.
+        </p>
+        <p>
+            평소에는 소심하지만 위기 상황이나 규정 위반(특히 안전선 침범, 무단 촬영 등)을 목격하면 각성하여 엄청난 침착함을 보여준다. <del>이때 목소리 톤이 확 바뀌어서 성우가 바뀐 게 아니냐는 드립이 나온다.</del> 가장 싫어하는 말은 <strong>"괜찮겠지"</strong>. 안전 불감증을 극도로 혐오한다.
+        </p>
+
+        <h3 id="s-2-2">2.2. 학력 및 능력</h3>
+        <p>
+            안천구의 이자초, 이자중을 거쳐 효빈시의 명문 특성화고인 <strong>창전상업고등학교</strong> 철도산업과에 진학했다. 고등학교 시절 내내 <strong>전교권 성적</strong>을 유지했으며, 각종 철도 관련 자격증을 섭렵했다. 대학 진학 대신 현장 실무를 택했고, 치열한 경쟁률을 뚫고 효빈교통공사 공채에 합격했다. 실무 능력만큼은 대졸 사원 못지않게 뛰어나다는 평가를 받는다.
+        </p>
+        
+        <h4>학업 성취도</h4>
+        <p>규정과 메뉴얼을 달달 외우는 암기형 인재이자, 시스템을 이해하는 이과적 성향이 강하다.</p>
+        <table class="wiki-table-custom" style="width: 80%; margin: 10px auto;">
+            <tr>
+                <th style="width:20%">과목</th>
+                <th>등급 (내신)</th>
+                <th>비고</th>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td style="text-align:center;">2 ~ 3</td>
+                <td>기계 및 운영 시스템 이해도 높음</td>
+            </tr>
+            <tr>
+                <td>과학</td>
+                <td style="text-align:center;">2 ~ 3</td>
+                <td>물리적 법칙, 안전 공학 이해</td>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td style="text-align:center;">3 ~ 4</td>
+                <td>문학적 감수성보다는 메뉴얼 독해 위주</td>
+            </tr>
+            <tr>
+                <td>영어</td>
+                <td style="text-align:center;">3 ~ 4</td>
+                <td>실무 용어 위주 습득</td>
+            </tr>
+            <tr>
+                <td>사회</td>
+                <td style="text-align:center;">4 ~ 5</td>
+                <td><del>정치질과 사회생활에 약하다</del></td>
+            </tr>
+        </table>
+        <p>
+            <strong>안전 규정 암기 속도 1위</strong>를 자랑하며, 철도 덕력(철덕 레벨)은 <strong>C랭크</strong>(규정·매뉴얼파)로 분류된다. 딱히 철도를 덕질한다기보단 직업 정신이 투철한 케이스.
+        </p>
+
+        <h3 id="s-2-3">2.3. 정치 성향</h3>
+        <p>
+            <strong>對 윤대환: 극도로 혐오.</strong><br>
+            다로나는 윤대환 전 시장 시절의 각종 비리와 행정 난맥상을 단순한 실책이 아닌 <strong>'범죄'</strong>로 규정한다. 공사 입사 과정에서 불공정한 채용 비리 의혹 등을 목격하며 공정에 대한 갈망이 커졌기 때문이다.
+        </p>
+        <p>
+            <strong>對 박효빈: 호감 및 지지.</strong><br>
+            비정상의 정상화를 추진하고, 자신과 같은 고졸 인재들에게도 공정한 기회를 열어준 박효빈 시장을 신뢰한다. 다만 <a href="고나미.html" class="wiki-link">고나미</a>처럼 열렬한 팬심을 드러내기보다는 조용히 응원하는 편이다.
+        </p>
+
+        <!-- 3. 인간 관계 -->
+        <h2 id="s-3">3. 인간 관계</h2>
+        <ul class="list-disc pl-5">
+            <li>
+                <strong><a href="유리아.html" class="wiki-link">유리아</a> (8호선):</strong> <del>사고뭉치</del> 아끼는 후배. 효빈기계공고에 재학 중인 유리아를 친동생처럼 아낀다. 같은 특성화고 출신(공고/상고)이라는 공통점 때문에 멘토 역할을 자처한다. 유리아가 사고 칠 것 같으면 귀신같이 나타나서 "위험합니다."라며 제지한다.
+            </li>
+            <li>
+                <strong><a href="고나미.html" class="wiki-link">고나미</a> (1호선):</strong> 어려운 선배님 1순위. 고나미가 4호선 구간 운행 지원을 나올 때마다 실수할까 봐 안절부절못한다. 하지만 고나미는 다로나의 꼼꼼한 일 처리를 내심 마음에 들어 한다.
+            </li>
+            <li>
+                <strong><a href="하루빈.html" class="wiki-link">하루빈</a> (2호선):</strong> 천적 관계(?). 다로나가 공문체로 말하면 하루빈이 옆에서 "성우 바뀐 거 아님?"이라며 <del>메타 발언</del> 놀린다. 다로나가 당황해서 버벅거리는 걸 즐기는 듯. 그래도 다로나가 스트레스받으면 맛있는 빵집에 데려가 준다.
+            </li>
+        </ul>
+
+        <!-- 4. 관련 굿즈 -->
+        <h2 id="s-4">4. 관련 굿즈</h2>
+        <p>주로 <a href="이자공원역.html" class="wiki-link">이자공원역점</a>(4호선)과 도변요우점에서 구할 수 있다. 주황색과 경찰/안전용품 컨셉의 굿즈가 많다.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+            <div class="goods-card cursor-pointer" onclick="alert('상품 상세 페이지로 이동합니다.')">
+                <img src="이미지/32.jpg" alt="1/7 스케일 피규어">
+                <div class="goods-card-info">
+                    <div class="text-sm font-bold text-gray-800 mb-1">[SEGA] 4호선 다로나 1/7 스케일 피규어</div>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 inline-block rounded">경광봉 액션 Ver.</div>
+                    <div class="text-lg font-black text-orange-600 mt-2">75,900원</div>
+                </div>
+            </div>
+            <div class="goods-card cursor-pointer" onclick="alert('상품 상세 페이지로 이동합니다.')">
+                <img src="이미지/34.jpg" alt="넨도로이드">
+                <div class="goods-card-info">
+                    <div class="text-sm font-bold text-gray-800 mb-1">넨도로이드 다로나</div>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 inline-block rounded">호루라기 파츠 포함</div>
+                    <div class="text-lg font-black text-orange-600 mt-2">45,000원</div>
+                </div>
+            </div>
+            <div class="goods-card cursor-pointer" onclick="alert('상품 상세 페이지로 이동합니다.')">
+                <img src="이미지/4.jpg" alt="호루라기 볼펜">
+                <div class="goods-card-info">
+                    <div class="text-sm font-bold text-gray-800 mb-1">다로나의 '정의 구현' 호루라기 볼펜</div>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 inline-block rounded">LED 경광 기능</div>
+                    <div class="text-lg font-black text-orange-600 mt-2">4,500원</div>
+                </div>
+            </div>
+             <div class="goods-card cursor-pointer" onclick="alert('상품 상세 페이지로 이동합니다.')">
+                <img src="이미지/20.jpg" alt="스마트톡">
+                <div class="goods-card-info">
+                    <div class="text-sm font-bold text-gray-800 mb-1">캐릭터 얼굴 3단 스마트톡 (다로나)</div>
+                    <div class="text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 inline-block rounded">귀여운 SD 디자인</div>
+                    <div class="text-lg font-black text-orange-600 mt-2">9,000원</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. 여담 -->
+        <h2 id="s-5">5. 여담</h2>
+        <ul class="list-disc pl-5 space-y-2">
+            <li>
+                <strong>일본어 이름 유래:</strong> 일본어 이름인 '타다노 로나(Tadano Rona)'는 일본어 '타다노(ただの, 평범한)'에서 따온 것으로 추정된다. <del>하지만 하는 짓은 전혀 평범하지 않다.</del>
+            </li>
+            <li>
+                4호선이 주거지와 공단을 연결하는 노선이라, 출퇴근 시간대의 혼잡함을 온몸으로 겪으며 성장했다. 덕분에 인내심 하나는 끝내준다.
+            </li>
+            <li>
+                도변요우점에서 판매하는 '요소로!' 굿즈를 남몰래 수집하고 있다. 본인은 덕후가 아니라고 부정하지만, 책상 위에 굿즈가 늘어가고 있다.
+            </li>
+            <li>
+                공문체를 읽을 때 발음이 너무 또렷해서 <strong>'AI 안내방송'</strong>이라는 소리를 듣는다. <a href="하루빈.html" class="wiki-link">하루빈</a>이 몰래 다로나의 목소리를 녹음해서 안내방송으로 쓴 적이 있는데, 아무도 위화감을 못 느꼈다고(...).
+            </li>
+            <li>
+                술을 거의 못 마시지만, 회식 자리에서는 끝까지 남아서 취한 동료들을 챙겨 보내는 '뒤처리 담당'이다. <del>물론 다음날 "음주는 건강에 해롭습니다"라며 잔소리를 시전한다.</del>
+            </li>
+        </ul>
+
+        <!-- 하단 각주 영역 -->
+        <div class="footnotes-area">
+            <h3 style="margin-top:0; font-size:1.1rem; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 10px;">각주</h3>
+            <div id="fn-1" class="footnote-content">[1] 4호선 최초 개통일과 동일하다. 실제 노선 개통년도는 1996년, 계획은 1989년에 시작되었다.</div>
+            <div id="fn-2" class="footnote-content">[2] 목소리가 너무 또박또박해서 붙은 별명.</div>
+            <div id="fn-3" class="footnote-content">[3] 평소의 소심한 목소리(아냐 포저 톤)와 각성 시의 냉철한 목소리(프리렌/비비 톤) 갭 차이가 엄청나다. <a href="하루빈.html" class="wiki-link">하루빈</a>이 성우 바뀐 거 아니냐고 놀리는 이유.</div>
+        </div>
+
+        <footer class="mt-20 border-t pt-10 text-center text-gray-400 text-xs pb-10">
+            <p>이 저작물은 CC BY-NC-SA 2.0 KR에 따라 이용할 수 있습니다. (단, 라이선스가 명시된 일부 문서 및 삽화 제외)</p>
+            <p>기여하신 문서의 저작권은 각 기여자에게 있으며, 각 기여자는 기여하신 부분의 저작권을 갖습니다.</p>
+            <br>
+            <p>효빈위키는 백과사전이 아니며 검증되지 않았거나, 편향적이거나, 잘못된 서술이 있을 수 있습니다.</p>
+            <p>효빈위키는 위키위키입니다. 여러분이 직접 문서를 고칠 수 있으며, 다른 사람의 의견을 원할 경우 직접 토론을 발제할 수 있습니다.</p>
+        </footer>
+    </div>
+
+    <script>
+        // 각주 호버보드 (툴팁) 기능
+        document.addEventListener('DOMContentLoaded', () => {
+            const refs = document.querySelectorAll('.footnote-ref a');
+            const tooltip = document.getElementById('footnote-tooltip');
+
+            refs.forEach(ref => {
+                ref.addEventListener('mouseenter', (e) => {
+                    e.preventDefault(); 
+                    const targetId = ref.getAttribute('href').substring(1); 
+                    const targetContent = document.querySelector(`.footnote-content[id="${targetId}"]`);
+                    
+                    if (targetContent) {
+                        tooltip.innerHTML = targetContent.innerHTML;
+                        tooltip.style.display = 'block';
+                        moveTooltip(e);
+                    }
+                });
+
+                ref.addEventListener('mousemove', (e) => {
+                    moveTooltip(e);
+                });
+
+                ref.addEventListener('mouseleave', () => {
+                    tooltip.style.display = 'none';
+                });
+            });
+
+            function moveTooltip(e) {
+                const x = e.clientX + 15;
+                const y = e.clientY + 15;
+                
+                const tooltipRect = tooltip.getBoundingClientRect();
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                let finalX = x;
+                let finalY = y;
+
+                if (x + tooltipRect.width > windowWidth) {
+                    finalX = x - tooltipRect.width - 20;
+                }
+                if (y + tooltipRect.height > windowHeight) {
+                    finalY = y - tooltipRect.height - 20;
+                }
+
+                tooltip.style.left = finalX + 'px';
+                tooltip.style.top = finalY + 'px';
+            }
+        });
+    </script>
+
+    <script src="assets/wiki_index.js"></script>
+    <script src="assets/hb_wiki_core.js"></script>
+</body>
+</html>

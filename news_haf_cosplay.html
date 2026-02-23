@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문화] "현실이야 만화야?"... 효빈시 수놓은 HAF 코스프레 퍼레이드 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.07 (수)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html" class="active">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">문화 > 축제/트렌드</div>
+                <h2 class="article-title">"현실이야 만화야?"... 효빈시 수놓은 HAF 코스프레 퍼레이드</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">문덕후 기자</span> (culture@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 15:00 | 수정 2026.01.07. 16:30</span>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">역대 최대 규모 10만 인파 운집... '효빈터미널'부터 '중앙대로'까지 마비<br>글로벌 코스어 5천 명 참여, 영화제 방불케 하는 고퀄리티 의상 눈길<br>박효빈 시장, 시민들과 함께 걷는 '깜짝 참여'로 축제 열기 더해</span></p>
+                    
+                    <div class="my-6">
+                        <img src="HAF_코스프레_퍼레이드.png" alt="HAF_코스프레_퍼레이드.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/9955FF/FFFFFF?text=HAF+Cosplay+Parade'">
+                        <div class="img-caption">▲ 7일 오후 효빈시 중앙대로에서 열린 '제5회 HAF 코스프레 퍼레이드'. 전 세계에서 모인 코스어들이 화려한 퍼포먼스를 선보이고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 문덕후 기자] 효빈시가 다시 한번 '서브컬처의 메카'임을 입증했다. 7일 열린 제5회 효빈 애니메이션 페스티벌(HAF)의 백미, '코스프레 퍼레이드'에 역대 최대 인파인 10만 명이 몰리며 도시 전체가 만화 속 한 장면으로 변했다.</p>
+
+                    <p>오후 2시, <a href="효빈터미널.html" class="text-blue-600 underline">효빈터미널</a>에서 시작된 행진은 중앙대로를 거쳐 효빈문화광장까지 약 2km 구간에 걸쳐 진행됐다. 이번 퍼레이드에는 국내외 유명 코스어 5,000여 명이 참여했으며, 단순한 의상 착용을 넘어 캐릭터의 동작과 말투까지 완벽히 재현해 관람객들의 찬사를 자아냈다.</p>
+
+                    <p>특히 눈길을 끈 것은 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장의 깜짝 등장이었다. 박 시장은 특별한 의전 없이 평소 좋아하는 애니메이션 캐릭터의 소품을 착용한 채 시민들과 섞여 행진에 참여했다. 시민들은 "시장님이 아니라 진짜 동네 형, 오빠 같다"며 열광적인 호응을 보냈다.</p>
+
+                    <div class="my-6">
+                        <img src="코스프레_퍼레이드_인파.png" alt="퍼레이드_관람객.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Huge+Crowd+at+HAF'">
+                        <div class="img-caption">▲ 퍼레이드를 관람하기 위해 구름 인파가 몰린 효빈시 중앙대로. 인근 상권은 HAF 특수로 연일 최고 매출을 경신하고 있다.</div>
+                    </div>
+
+                    <p>퍼레이드 행렬이 지나는 길목마다 배치된 <a href="칠양여객.html" class="text-blue-600 underline">칠양여객</a>의 '래핑버스'들도 축제 분위기를 고조시켰다. 버스 기사들은 캐릭터 테마곡을 틀거나 손을 흔들어 화답하며 축제의 일부가 되었다. <a href="사능동.html" class="text-blue-600 underline">사능동</a> 베이커리 골목 상인들은 퍼레이드 참가자들에게 무료 시식용 빵을 나눠주는 등 민관이 하나 된 축제의 장이 펼쳐졌다.</p>
+
+                    <p>경제적 효과도 막대하다. 시 관계자는 "오늘 하루에만 지역 경제에 약 200억 원 이상의 부가가치가 창출된 것으로 추산된다"며 "HAF는 이제 효빈시를 넘어 대한민국을 대표하는 글로벌 축제로 자리매김했다"고 강조했다.</p>
+
+                    <p>한편, 일부 혐오 세력의 방해 우려에도 불구하고 효빈대 학생들의 자발적인 '질서 유지단' 활동 덕분에 단 한 건의 사고 없이 안전하게 행사가 마무리되었다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">4,285</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="비로그인 댓글 작성이 가능합니다."></textarea>
+                    <div class="text-right mt-2"><button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm">등록</button></div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "HAF_Mania", time: "방금 전", like: 12000, dislike: 15,
+                                content: "내 눈이 잘못된 줄 알았다... 코스프레 퀄리티가 거의 헐리우드급임 ㄷㄷ 시장님 지나가실 때 같이 하이파이브 했는데 인성 진짜 좋으심.",
+                                replies: [
+                                    { nick: "Busan_Otaku", content: "부산에서 올라온 보람이 있네요. 내년엔 저도 퍼레이드 참가할 겁니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Forever", time: "5분 전", like: 5, dislike: 9800, isPunished: true,
+                                content: "이게 무슨 짓거리냐! 신성한 도로를 오타쿠들이 점령하다니! 윤대환 시장님 때는 상상도 못 할 일이다! 나라가 망해가고 있다!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "망하긴요 ㅋㅋ 오늘 효빈시 세수만 수십억 늘어났는데. 님네 윤대환은 세금 횡령해서 망한 거고요." },
+                                    { nick: "Business_Owner", content: "나 중앙대로 식당 사장인데 오늘 매출 500 찍었다. 윤대환 때 파리 날리던 거 생각하면 지금이 극락임. 닥치고 있으쇼." },
+                                    { nick: "Hyobin_Univ_Student", content: "님 인생이나 걱정하세요. 여기 있는 코스어들 대다수가 님보다 고학력에 고연봉자들임." }
+                                ]
+                            },
+                            {
+                                nick: "Cosplay_Queen", time: "10분 전", like: 8500, dislike: 5,
+                                content: "외국 코스어 친구들이 효빈시 치안이랑 시민의식 보고 엄청 놀라더라고요. 쓰레기 하나 안 남기고 정리하는 거 보고 다들 리스펙트 보냈습니다! 효빈시 최고!",
+                                replies: [
+                                    { nick: "Global_Fan", content: "I love Hyobin City! Best anime festival ever!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "15분 전", like: 2, dislike: 11000, isPunished: true,
+                                content: "다 조작이야! 저거 다 박효빈이 돈 주고 데려온 외국인들이라고! 내 빵이 더 맛있어! 으아아아!",
+                                replies: [
+                                    { nick: "Prison_Guard", content: "2508번, 독방에서도 헛소리네. 오늘 콩밥 대신 굶고 싶냐?" },
+                                    { nick: "Saneung_Baker", content: "침 뱉은 빵이나 먹어라 이 더러운 놈아." },
+                                    { nick: "Realist", content: "재훈아, 2.2%면 그냥 조용히 있는 게 도와주는 거란다." }
+                                ]
+                            },
+                            { nick: "Taxi_Driver_Kim", time: "20분 전", content: "오늘 손님 90%가 축제 가는 분들이었음. 다들 매너 좋고 효빈시 칭찬 많이 하더라. 기사로서 뿌듯한 하루였음.", like: 6200, dislike: 2, replies: [] },
+                            { nick: "Hyobin_Pride", time: "25분 전", content: "이게 진짜 도시 활력이지. 낡은 고정관념 버리니까 도시가 살아나네.", like: 5800, dislike: 0, replies: [] },
+                            {
+                                nick: "Anti_Cringe", time: "30분 전", like: 10, dislike: 7500, isPunished: true,
+                                content: "저게 뭐 하는 짓들이냐... 다 큰 어른들이 인형놀이 하고 앉아있고... ㅉㅉ",
+                                replies: [
+                                    { nick: "Open_Mind", content: "축구 보면서 소리 지르는 건 되고 코스프레는 안 됨? 취향 차이일 뿐인데 꼰대질 오지네." },
+                                    { nick: "Economy_101", content: "저 '인형놀이' 하는 분들이 오늘 효빈시 경제 살린 거 안 보이심?" }
+                                ]
+                            },
+                            { id: 8, nick: "Miyu_Fan", content: "퍼레이드 중간에 엠마 빵 나눠준 상인분들 너무 감사해요! 당 보충하고 끝까지 걸었습니다!", like: 4200, dislike: 0, time: "35분 전", replies: [] },
+                            { id: 9, nick: "Parent_A", content: "애들이랑 같이 왔는데 안전 요원들이 잘 통제해줘서 편하게 봤습니다. 효빈시 진짜 아이 키우기 좋은 도시네요.", like: 3900, dislike: 1, time: "40분 전", replies: [] },
+                            { id: 10, nick: "Tourist_JP", content: "ヒョビン市はアニメの天国です！(효빈시는 애니의 천국입니다!) 내년에도 꼭 올게요!", like: 5100, dislike: 0, time: "45분 전", replies: [] },
+                            { id: 11, nick: "Univ_Guard", content: "학생회 소속으로 안내 봉사했는데 시민분들이 간식도 주시고 격려해주셔서 안 힘들었습니다. 보람차네요.", like: 3500, dislike: 0, time: "50분 전", replies: [] },
+                            { id: 12, nick: "Yoon_Squad_3", content: "도로 통제 때문에 차 막혀 죽는 줄 알았다! 오타쿠들 때문에 시민들이 피해 봐야 하냐!", like: 4, dislike: 6200, isPunished: true, replies: [{nick:"Metro_User", content:"지하철 타세요 아저씨. 6호선 보라색 안 보임? 배차 간격도 짧은데 굳이 차 끌고 나와서 징징대기는."}] },
+                            { id: 13, nick: "Shop_Staff", content: "굿즈샵 알바생인데 오늘 퇴근 못 할 뻔... 그래도 손님들이 인사해주고 가셔서 기분 좋게 일했습니다.", like: 2800, dislike: 0, time: "1시간 전", replies: [] },
+                            { id: 14, nick: "Photo_Artist", content: "역대급 사진 많이 건졌습니다. 코스어분들 열정이 대단하네요. 전시회 열고 싶을 정도!", like: 3100, dislike: 0, time: "1시간 10분 전", replies: [] },
+                            { id: 15, nick: "Grandpa_Park", content: "나이 먹은 사람도 구경하니 재밌더만. 세상 참 좋아졌어. 젊은이들이 웃으니 보기 좋네.", like: 4500, dislike: 0, time: "1시간 20분 전", replies: [] },
+                            { id: 16, nick: "Yoon_Supporter", content: "이게 다 선동이다! 오타쿠들 세뇌시켜서 정치적으로 이용하는 거다!", like: 1, dislike: 5500, isPunished: true, replies: [{nick:"Psychiatrist", content:"세상을 다 음모론으로 보시는 거 보니 상담이 필요해 보입니다."}] },
+                            { id: 17, nick: "Railway_Fan", content: "래핑버스랑 코스어들 같이 찍은 사진 베스트 컷임. 칠양여객 기사님들도 신나 보이셨음 ㅋㅋ", like: 2900, dislike: 0, time: "1시간 40분 전", replies: [] },
+                            { id: 18, nick: "Clean_Hyobin", content: "퍼레이드 끝나고 뒤에서 쓰레기 줍는 코스어분들 봤음... 인성까지 완벽 그 자체.", like: 4800, dislike: 0, time: "1시간 50분 전", replies: [] },
+                            { id: 19, nick: "Foreigner_Mark", content: "Hyobin is like Akihabara but bigger and cleaner. Amazing energy!", like: 3600, dislike: 0, time: "2시간 전", replies: [] },
+                            { id: 20, nick: "YoonJaehoon(IP)", content: "나 무죄야! 곧 나갈 거야! 나가서 저기 있는 것들 다... 읍읍!", like: 0, dislike: 8000, isPunished: true, replies: [{nick:"Lawyer_Lee", content:"협박죄 추가요~ 형량 차곡차곡 쌓이네."}] },
+                            { id: 21, nick: "Market_Vendor", content: "중앙시장 떡볶이 오늘 다 팔렸습니다! 젊은 손님들이 '성지순례'라며 많이 오셨네요. 효빈시 만세!", like: 4100, dislike: 0, time: "2시간 10분 전", replies: [] },
+                            { id: 22, nick: "Student_B", content: "퍼레이드 대열에 시장님 계신 거 보고 깜놀 ㅋㅋ 진짜 소통왕 인정합니다.", like: 3700, dislike: 2, time: "2시간 20분 전", replies: [] },
+                            { id: 23, nick: "Fashion_Major", content: "의상 제작 기법 보러 갔는데 디테일 미쳤음. 장인 정신이 느껴지네요.", like: 2500, dislike: 0, time: "2시간 30분 전", replies: [] },
+                            { id: 24, nick: "Yoon_Bot", content: "오타쿠 시장 물러가라! 단일 민족의 수치다!", like: 2, dislike: 4900, isPunished: true, replies: [{nick:"Global_Citizen", content:"시장님 어머니 케손시티 사람인 게 뭐 어때서? 일만 잘하면 장땡이지. 님은 일이나 하쇼."}] },
+                            { id: 25, nick: "Security_Team", content: "큰 사고 없이 끝나서 다행입니다. 협조해주신 시민 여러분 감사합니다.", like: 5000, dislike: 0, time: "2시간 50분 전", replies: [] },
+                            { id: 26, nick: "HAF_Volunteer", content: "오늘 하루 너무 힘들었지만 사람들의 미소 보니까 피로가 싹 가시네요. 내년에 또 만나요!", like: 3200, dislike: 0, time: "3시간 전", replies: [] },
+                            { id: 27, nick: "Review_Blog", content: "제 블로그에 퍼레이드 사진 500장 올렸습니다. 구경 오세요!", like: 1800, dislike: 0, time: "3시간 10분 전", replies: [] },
+                            { id: 28, nick: "Peace_Maker", content: "혐오 글 무시합시다. 오늘 우리는 충분히 행복했으니까요.", like: 4400, dislike: 3, time: "3시간 20분 전", replies: [] },
+                            { id: 29, nick: "Final_Boss", content: "효빈시는 이제 넘사벽이다. 혐오 세력들은 그냥 다른 데로 이사 가길.", like: 5500, dislike: 0, time: "3시간 30분 전", replies: [] },
+                            { id: 30, nick: "Hyobin_Lover", content: "박효빈 시장님, 이 축제 평생 하게 해주세요! 사랑합니다!", like: 6000, dislike: 1, time: "3시간 40분 전", replies: [] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 5000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    const nickClass = (reply.nick.includes("Yoon") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                </div>
+                <ul class="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_haf_cosplay.html" class="ranking-link font-bold">HAF 코스프레 퍼레이드 인파</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_univ_human_shield.html" class="ranking-link">효빈대 '인간 방어막' 감동</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_bakery_tour.html" class="ranking-link">사능동 빵지순례 장사진</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_quezon_city.html" class="ranking-link">케손시티 자매결연 제안</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner bg-[#9955FF] p-6 text-white rounded text-center">
+                <div class="font-black text-xl mb-2 italic">HAF 2026</div>
+                <div class="text-sm">축제의 열기는<br>계속됩니다!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

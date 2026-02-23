@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈일보 - 기사 템플릿</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 뉴스 헤더 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 스타일 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body a { color: #0055aa; text-decoration: underline; } /* 본문 링크 스타일 */
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        /* 댓글창 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punished-comment { border-color: #fca5a5; background-color: #fef2f2; } 
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 모달 */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center; }
+        .modal-window { background: white; width: 500px; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 10px; }
+        .modal-content { font-size: 14px; line-height: 1.6; color: #555; white-space: pre-wrap; }
+        .modal-close { margin-top: 20px; text-align: right; }
+        .modal-close-btn { background: #333; color: white; padding: 8px 20px; border-radius: 4px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 GNB -->
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.02.06 (금)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="news_list.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 기사 영역 -->
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <!-- JS Load: articleData의 내용이 여기에 표시됩니다 -->
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JS Load -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <!-- 많이 본 뉴스 (Ranking) -->
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" target="_blank" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <!-- JS Load -->
+                </ul>
+            </div>
+
+            <!-- 광고 배너 -->
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
+                <span>광고 영역 (효빈교통공사)</span>
+            </div>
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
+                <span>광고 영역 (성심당 효빈점)</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <div class="flex gap-4 mb-4 font-bold text-gray-300">
+                <a href="#" onclick="openFooterModal('company')">회사소개</a> | 
+                <a href="#" onclick="openFooterModal('terms')">이용약관</a> | 
+                <a href="#" onclick="openFooterModal('privacy')">개인정보처리방침</a> | 
+                <a href="#" onclick="openFooterModal('youth')">청소년보호정책</a> | 
+                <a href="#" onclick="openFooterModal('help')">고충처리</a>
+            </div>
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 푸터용 팝업 모달 -->
+    <div id="footerModal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-title" id="modalTitle">제목</div>
+            <div class="modal-content" id="modalContent">내용</div>
+            <div class="modal-close">
+                <button class="modal-close-btn" onclick="document.getElementById('footerModal').style.display='none'">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // [1] 기사 데이터 설정 영역 (이곳을 수정하세요)
+        // ==========================================
+        const articleData = {
+            title: "기사 제목을 입력해 주세요", // 기사 제목
+            category: "카테고리 > 세부", // 카테고리
+            reporter: "김철수 기자", // 기자 이름
+            email: "chulsoo@hyobinilbo.com", // 이메일
+            date: "2026.02.06. 14:00", // 입력 시간
+            // 본문 내용 (HTML 태그 사용 가능)
+            // 이미지 예시: <img src="이미지파일명.png" class="w-full">
+            // 링크 예시: <a href="단어.html">단어</a>
+            body: `
+                <p><span class="text-[#0055aa] font-bold">부제나 요약문을 이곳에 입력하세요.<br>줄바꿈은 br 태그를 사용하세요.</span></p>
+                
+                <div class="my-6">
+                    <!-- 이미지 경로 규칙: 한국어이름.png -->
+                    <img src="기사이미지.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/cccccc/333333?text=Article+Image'">
+                    <div class="img-caption">▲ 사진 설명을 입력하세요. (사진=효빈일보)</div>
+                </div>
+
+                <p>[효빈일보 = 김철수 기자] 첫 번째 문단입니다. 이곳에 기사 내용을 작성하세요. <a href="효빈시.html">효빈시</a>와 같이 링크를 걸 수 있습니다.</p>
+                
+                <p>두 번째 문단입니다. <strong>강조할 내용</strong>은 strong 태그를 사용하세요.</p>
+                
+                <p>마지막 문단입니다. 내용을 자유롭게 추가하거나 삭제할 수 있습니다.</p>
+
+                <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+            `,
+            // 초기 댓글 데이터 (비워두려면 [] 로 설정)
+            comments: [
+                {
+                    nick: "Hyobin_Citizen", time: "방금 전", content: "기사 잘 봤습니다. 좋은 정보 감사합니다.", like: 120, dislike: 2,
+                    replies: [{ nick: "ReplyMan", content: "동감합니다." }]
+                },
+                {
+                    nick: "BestUser", time: "10분 전", content: "[베스트 댓글 예시] 좋아요가 많으면 파란색 배경이 됩니다.", like: 1500, dislike: 10,
+                    replies: []
+                },
+                {
+                    nick: "BadUser", time: "20분 전", content: "[비추 폭탄 댓글 예시] 비추천이 많거나 제재된 댓글은 붉은색으로 표시됩니다.", like: 5, dislike: 500, isPunished: true,
+                    replies: [{ nick: "Admin", content: "운영원칙 위반으로 경고 조치되었습니다.", isAdmin: true }]
+                }
+            ]
+        };
+
+        // ==========================================
+        // [2] 사이드바 랭킹 데이터 (수정 가능)
+        // ==========================================
+        const rankingData = [
+            { id: '#', title: "1위 기사 제목을 입력하세요" },
+            { id: '#', title: "2위 기사 제목을 입력하세요" },
+            { id: '#', title: "3위 기사 제목을 입력하세요" },
+            { id: '#', title: "4위 기사 제목을 입력하세요" },
+            { id: '#', title: "5위 기사 제목을 입력하세요" }
+        ];
+
+        // ==========================================
+        // [3] 시스템 로직 (수정 불필요)
+        // ==========================================
+        
+        window.onload = function() {
+            renderArticle();
+            renderRanking();
+        };
+
+        function renderArticle() {
+            document.getElementById('article-content-area').innerHTML = `
+                <div class="mb-2 text-[#0055aa] font-bold">${articleData.category}</div>
+                <h2 class="article-title">${articleData.title}</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">${articleData.reporter}</span> (${articleData.email})<br>
+                        <span class="text-xs text-gray-400">입력 ${articleData.date}</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">${articleData.body}</div>
+            `;
+
+            renderComments(articleData.comments);
+            document.getElementById('comment-count').innerText = articleData.comments.length;
+        }
+
+        function renderComments(comments) {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = "";
+
+            comments.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "normal-comment");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                    // 처벌된 댓글(비추폭탄)의 경우 답글을 기본적으로 펼침 (선택사항)
+                    if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.isAdmin ? "bg-gray-100 border border-gray-300 text-blue-800 font-bold" : "";
+                        let nickClass = "";
+                        // 특정 키워드나 닉네임에 색상 부여 로직 (템플릿에서도 유지)
+                        if(reply.nick.includes("Police") || reply.nick.includes("Admin") || reply.nick.includes("Tracker")) nickClass = "text-blue-600";
+                        else if(reply.nick.includes("Yoon") || reply.nick.includes("욕설")) nickClass = "text-red-600 font-bold";
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="font-bold text-xs ${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') {
+                el.style.display = 'none';
+            } else {
+                el.style.display = 'block';
+            }
+        }
+
+        // 좋아요/싫어요 상호 배타성 기능 유지
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            
+            const isLike = btn.innerText.includes('공감') && !btn.innerText.includes('비공감');
+            const likeBtn = parent.children[0];
+            const dislikeBtn = parent.children[1];
+
+            const getCount = (el) => parseInt(el.querySelector('.count').innerText.replace(/,/g, ''));
+            const setCount = (el, num) => el.querySelector('.count').innerText = num.toLocaleString();
+
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                // 이미 활성화된 상태면 취소
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                setCount(btn, getCount(btn) - 1);
+            } else {
+                // 새로 누르는 경우
+                if (isLike) {
+                    // 좋아요를 눌렀는데 싫어요가 켜져있으면 싫어요 끄고 좋아요 켬
+                    if (dislikeBtn.classList.contains('active-hate')) {
+                        dislikeBtn.classList.remove('active-hate');
+                        setCount(dislikeBtn, getCount(dislikeBtn) - 1);
+                    }
+                    btn.classList.add('active');
+                } else {
+                    // 싫어요를 눌렀는데 좋아요가 켜져있으면 좋아요 끄고 싫어요 켬
+                    if (likeBtn.classList.contains('active')) {
+                        likeBtn.classList.remove('active');
+                        setCount(likeBtn, getCount(likeBtn) - 1);
+                    }
+                    btn.classList.add('active-hate');
+                }
+                setCount(btn, getCount(btn) + 1);
+            }
+        }
+
+        function addComment() {
+            const nick = document.getElementById('cmt-nick').value.trim();
+            const pw = document.getElementById('cmt-pw').value.trim();
+            const content = document.getElementById('cmt-content').value.trim();
+
+            if (!nick || !pw || !content) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const badWords = ["시발", "씨발", "병신", "개새끼", "지랄", "좆", "씹", "빨갱이", "매국노", "기레기", "미친", "새끼"];
+            for (let word of badWords) {
+                if (content.includes(word) || nick.includes(word)) {
+                    alert("⚠️ 경고: 욕설이나 비하 발언, 부적절한 단어는 사용할 수 없습니다.\n(건전한 댓글 문화를 만들어주세요.)");
+                    return;
+                }
+            }
+
+            const div = document.createElement('div');
+            div.className = "normal-comment bg-yellow-50"; 
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm">${nick}</span>
+                    <span class="text-xs text-gray-500">방금 전</span>
+                </div>
+                <p class="text-sm mb-2">${content}</p>
+                <div class="text-xs text-gray-500 flex gap-3">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">0</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">0</span></span>
+                </div>
+            `;
+            
+            const container = document.getElementById('comment-list');
+            if (container.children.length > 0 && container.children[0].classList.contains('border-red-300')) {
+                 container.insertBefore(div, container.children[1]); 
+            } else {
+                 container.insertBefore(div, container.firstChild);
+            }
+
+            document.getElementById('cmt-content').value = "";
+            alert("댓글이 등록되었습니다.");
+        }
+
+        function renderRanking() {
+            const list = document.getElementById('ranking-list');
+            rankingData.forEach((news, index) => {
+                const li = document.createElement('li');
+                // 실제 링크로 이동하려면 news.id를 실제 파일명으로 바꾸세요
+                li.onclick = () => { if(news.id !== '#') location.href = news.id; else alert("링크가 설정되지 않았습니다."); };
+                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link">${news.title}</span>`;
+                list.appendChild(li);
+            });
+        }
+
+        function openFooterModal(type) {
+            const modal = document.getElementById('footerModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            modal.style.display = 'flex';
+            
+            let text = "";
+            switch(type) {
+                case 'company': text = "회사소개...\n발행인: 최진언 | 편집인: 강정직"; break;
+                case 'terms': text = "이용약관 내용..."; break;
+                case 'privacy': text = "개인정보처리방침 내용..."; break;
+                case 'youth': text = "청소년보호정책 내용..."; break;
+                case 'help': text = "고충처리인: 박공정 (079-212-2123)"; break;
+            }
+            title.innerText = type.toUpperCase();
+            content.innerText = text;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('footerModal');
+            if (event.target == modal) { modal.style.display = 'none'; }
+        }
+    </script>
+</body>
+</html>

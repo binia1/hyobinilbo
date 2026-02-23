@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[특파원] "Don't touch our blood"... 필리핀 '피노이 프라이드', 윤재훈을 심판하다 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punished-comment { border-color: #fca5a5; background-color: #fef2f2; } 
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center; }
+        .modal-window { background: white; width: 500px; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 10px; }
+        .modal-content { font-size: 14px; line-height: 1.6; color: #555; white-space: pre-wrap; }
+        .modal-close { margin-top: 20px; text-align: right; }
+        .modal-close-btn { background: #333; color: white; padding: 8px 20px; border-radius: 4px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.05 (월)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html" class="active">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">국제 > 아시아/대양주</div>
+                <h2 class="article-title">[특파원] "Don't touch our blood"... 필리핀 '피노이 프라이드', 윤재훈을 심판하다</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">마닐라=이국제 특파원</span> (world@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.05. 10:00 | 공동취재: The Philippine Star</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">세부 추방 후 '니노이 아키노' 공항 2차 밀입국 시도... 목적은 "안다야 여사 뒷조사"<br>필리핀 청년들 "박효빈은 우리의 형제"... 공항서 분노의 '인간 띠' 형성</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://via.placeholder.com/800x450/333333/FFFFFF?text=Ninoy+Aquino+Airport+Scene" class="w-full">
+                        <div class="img-caption">▲ 마닐라 니노이 아키노 국제공항(NAIA)에서 경찰과 현지 청년들에게 둘러싸여 연행되는 윤재훈 씨의 모습. (사진=The Philippine Star 제공)</div>
+                    </div>
+
+                    <p>[효빈일보·필리핀 스타 공동취재] 윤대환 전 효빈광역시장의 아들 윤재훈 씨가 필리핀에서 **두 번째 추방**을 당하는 촌극을 빚었다. 세부 공항에서의 난동으로 블랙리스트에 올랐음에도, 그는 가발 등으로 위장하여 마닐라 **니노이 아키노 국제공항(NAIA)**으로 2차 밀입국을 시도하다 적발되었다.</p>
+
+                    <p>현지 경찰에 따르면, 윤 씨의 목적지는 마닐라 인근의 **케손시티(Quezon City)**였다. 이곳은 박효빈 시장의 어머니인 **안다야(Andaya) 여사**의 고향이다. 윤 씨는 현지 흥신소를 고용해 안다야 여사의 과거를 조작하거나 험담을 수집해 정치적 공격 수단으로 삼으려 했던 것으로 드러났다.</p>
+
+                    <p>하지만 그는 필리핀 국민들의 **'피노이 프라이드(Pinoy Pride)'**를 간과했다. 박효빈 시장은 필리핀계 혼혈로서 한국의 광역시장에 당선된 인물로, 현지 청년들에게는 '매니 파퀴아오'에 버금가는 입지전적인 영웅(Anak ng Bayan, 조국의 아들)으로 통한다. 특히 안다야 여사는 한국에서 온갖 차별을 견디고 아들을 훌륭히 키워낸 '위대한 어머니'로 존경받고 있다.</p>
+
+                    <p>윤 씨의 입국 사실이 공항 직원의 SNS를 통해 퍼지자, 공항에는 순식간에 수백 명의 필리핀 청년들이 몰려들었다. 이들은 "Don't touch our blood(우리의 핏줄을 건드리지 마라)"라는 구호를 외치며 인간 띠를 만들어 윤 씨를 포위했다. 갱단은 없었지만, 분노한 시민들의 기세는 갱단보다 더 무서웠다.</p>
+
+                    <p>현장 목격자에 따르면, 윤 씨는 성난 군중에 둘러싸이자 공포에 질려 도망치다 공항 기둥에 머리를 부딪힐 뻔했으며, 바닥에 주저앉아 **"Mommy! Help me!"**라고 울부짖는 추태를 보였다. 현지 경찰 지휘관조차 "그는 또다시 금기를 깼다. 우리도 그를 보호해주고 싶은 마음이 없다"며 혀를 찼다.</p>
+
+                    <p>결국 윤 씨는 한국 영사관의 필사적인 사정 끝에 성난 군중들에게 린치를 당하기 직전, 화물기 편으로 한국으로 강제 송환되었다.</p>
+
+                    <p>한편, 인천공항 입국장에는 **"필리핀 갱단이 한국까지 쫓아온다"는 헛소문과 달리**, 갱단은 없었다. 대신 소식을 듣고 달려온 **분노한 효빈 시민들과 '8호선 개통 1주년'을 축하하던 시민들**이 입국장 게이트를 빠져나오는 윤 씨를 향해 날달걀과 밀가루를 투척하며 "나라 망신 시키지 말고 이민 가라", "**이미 개통 1주년이나 된 8호선** 잔치에 재 뿌리지 마라"고 거세게 항의했다. 윤 씨는 경호원도 없이 홀로 옷으로 얼굴을 가린 채 "Mommy!"를 찾으며 도망치듯 공항을 빠져나갔다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">25</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 댓글 데이터 주입 -->
+                    <script>
+                        const commentsData = [
+                            // 1. 윤재훈 본인 등판 & 무한 대댓글 발악 (초대형 스케일)
+                            {
+                                nick: "YoonJaehoon(IP)", ip: "211.36.**.**", time: "방금 전", like: 1, dislike: 56000, isPunished: true,
+                                content: "야 이 미개한 것들아! 내가 누군지 알아? 효빈시장 아들이야! I am rich! P.I mo! 필리핀 거지 떼들이 어딜 감히! 니네가 감히 날 건드려? 한국 가면 니네 다 고소할 거야! My lawyer is coming!",
+                                replies: [
+                                    { nick: "TagalogMaster", content: "필리핀어과 학생입니다. P.I가 'Putang Ina'인 거 모를 줄 아세요? 그건 패드립 중에서도 최악입니다. 현지에서 칼 안 맞은 게 기적입니다." },
+                                    { nick: "YoonJaehoon(IP)", content: "Shut up! P.I means 'Please Inform'! I am polite guy! You are ignorant! 내 영어 실력 무시하지 마!" },
+                                    { nick: "GlobalMind", content: "와... 'Please Inform'이래 ㅋㅋㅋ 님 영어를 어디서 배운 거임? 필리핀 초등학생도 님보단 잘하겠다." },
+                                    { nick: "YoonJaehoon(IP)", content: "Do not ignore me! I studied in USA! Online course! I have certificate!" },
+                                    { nick: "Diplomat", content: "현직 외교관입니다. 당신 살리려고 영사님이 현지 경찰 서장한테 무릎 꿇었습니다. 제발 부끄러운 줄 아십시오." },
+                                    { nick: "YoonJaehoon(IP)", content: "That is your job! My father pay tax! Work for me, servant! 내가 낸 세금이 얼만데!" },
+                                    { nick: "Traveler", content: "공항 CCTV 봤음? 갱단도 아니고 일반 시민들이 몰려오니까 'Mommy!' 하면서 기둥 뒤에 숨어서 오줌 지린 거 다 찍혔더라 ㅋㅋㅋ" },
+                                    { nick: "YoonJaehoon(IP)", content: "Fake Video! AI deepfake! I fought 1 vs 20 and won! I am Spartacus! 나는 전사다!" },
+                                    { nick: "Citizen88", content: "스파르타쿠스가 아니라 그냥 찌질이겠지. 박효빈 시장님 얼굴에 먹칠 좀 그만해라." },
+                                    { nick: "YoonJaehoon(IP)", content: "Park Hyobin is fake! I am real Mayor! He stole my seat! 부정선거다!" },
+                                    { nick: "HyobinPolice", content: "IP 추적 결과 두청운수 본사 화장실로 확인됩니다. 데이터 아까우니까 와이파이 끄세요." },
+                                    { nick: "Tondo_Boss", content: "We are watching you. (우리가 지켜보고 있다.)" },
+                                    { nick: "YoonJaehoon(IP)", content: "으악! 필리핀 갱단이다! 엄마! 아빠! 경호원 불러!" },
+                                    { nick: "Citizen", content: "여기 한국 인터넷이야 멍청아... 진짜 가지가지 한다." },
+                                    { nick: "[관리자]", content: "지속적인 허위사실 유포, 모욕, 도배 행위로 영구 차단합니다. 경찰청 사이버수사대에 IP 넘겼습니다.", isAdmin: true, styleClass: "bg-gray-100 border border-gray-300 text-blue-800 font-bold" }
+                                ]
+                            },
+                            // 2. 8호선 관련 팩트 체크 & 윤재훈 난입
+                            { 
+                                nick: "RailLover", time: "10분 전", content: "오늘 8호선 개통 1주년이라 기념행사 보고 왔는데, 윤재훈 이 인간은 아직도 정신 못 차렸네. 1년 동안 시민들이 얼마나 편하게 다니는데, 니네 아버지가 공사 중단시켜서 흉물로 놔뒀던 거 생각하면 아직도 이가 갈린다.", like: 3500, dislike: 4, 
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"8호선 그거 우리 아빠 아이디어야! 박효빈이 숟가락 얹은 거라고! That is mine! 내 거야!"}, 
+                                    {nick:"FactCheck", content:"팩트) 8호선 기획은 전전임 시장 때 했고, 윤대환은 당선되자마자 '돈 안 된다'며 백지화하고 그 자리에 두청운수 차고지 만들려다 걸렸다."},
+                                    {nick:"YoonJaehoon(IP)", content:"No! Bus is better! Subway is for poor people! Rich people drive Benz! 부자는 지하철 안 타!"},
+                                    {nick:"SubwayFan", content:"지금 효빈시민 85%가 8호선 이용하는데 다 거지냐? 니 마인드가 거지네."},
+                                    {nick:"YoonJaehoon(IP)", content:"Shut up! All beggars! I will close line 8 when I become Mayor! 내가 시장 되면 8호선 없앨 거야!"},
+                                    {nick:"Voter", content:"응~ 너 득표율 3%~ 평생 시장 될 일 없어~ 꿈 깨~ 이미 개통한 지 1년 넘었는데 뭘 없애 ㅋㅋㅋ 심시티 하냐?"},
+                                    {nick:"YoonJaehoon(IP)", content:"3% is big number! It is elite number! 선택받은 소수다!"},
+                                    {nick:"MathTeacher", content:"3%가 엘리트면, 나머지 97%는 뭐 신이냐? 수학 공부 다시 해라. 그리고 개통 1주년이라고 기사에 써 있잖아 난독증아."}
+                                ] 
+                            },
+                            // 3. 필리핀 현지 반응 & 윤재훈 난입
+                            { 
+                                nick: "Maria_Santos", time: "15분 전", content: "I am from Quezon City. We all saw the news. Mayor Park is our hero. You insulted his mother Andaya. You are lucky you are in Korea now. If you were still here... (우린 뉴스를 다 봤다. 박 시장은 영웅이다. 넌 그의 어머니를 모욕했다. 한국에 있는 걸 다행으로 여겨라.)", like: 4200, dislike: 1, 
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Korea is strong! Philippines weak! I have money! I can buy you! 얼마면 돼?"},
+                                    {nick:"Maria_Santos", content:"You have no money. Your house is in auction. You are bankrupt. (너 돈 없잖아. 니네 집 경매 넘어갔다며. 파산했으면서.)"},
+                                    {nick:"YoonJaehoon(IP)", content:"How do you know?! Who told you?! Spy! Spy! 너 간첩이지?"},
+                                    {nick:"GlobalCitizen", content:"전 세계가 다 알아 이 바보야. 뉴스에 다 떴어 13억 패소한 거."},
+                                    {nick:"YoonJaehoon(IP)", content:"No! That is fake news! My father has secret gold bars! 우리 아빠 금괴 있어!"},
+                                    {nick:"TaxPayer", content:"금괴? 국세청에 신고했다. 땡큐. 은닉 재산 자백 굿."},
+                                    {nick:"YoonJaehoon(IP)", content:"Delete this! Delete right now! 야 지워! 지우라고!"},
+                                    {nick:"Admin", content:"삭제 안 합니다. 박제합니다."}
+                                ] 
+                            },
+                            // 4. A씨(부동산필승)와 윤재훈의 콜라보
+                            {
+                                nick: "RealEstateKing", time: "20분 전", content: "두청힐스 짓겠다고 8호선 막았던 거 생각나네. 지금 그 자리에 굿즈샵 들어와서 대박 난 거 보면 박효빈 안목이 맞았음. 윤재훈은 부동산도 볼 줄 모름.", like: 2800, dislike: 2,
+                                replies: [
+                                    {nick:"A_ssi(IP)", content:"부동산은 층수가 깡패다! 50층 아파트 지었으면 랜드마크였다! 박효빈이 망친 거야!"},
+                                    {nick:"YoonJaehoon(IP)", content:"Yes! My brother A! We are genius! Hyobin is stupid! 우린 천재야!"},
+                                    {nick:"CityPlanner", content:"거기 지반 약해서 50층 지었으면 지금쯤 붕괴 사고 났습니다. 사람 죽일 셈이었어요?"},
+                                    {nick:"A_ssi(IP)", content:"무너져도 재건축하면 돈 더 번다! 그게 창조경제다!"},
+                                    {nick:"YoonJaehoon(IP)", content:"Right! Disaster is opportunity! Money Money! 사고 나면 또 지으면 되지!"},
+                                    {nick:"SafetyFirst", content:"와... 진짜 소름 돋는다. 니들은 인간도 아냐."},
+                                    {nick:"Citizen", content:"이 대화 캡처해서 영구 박제해야 됨. 싸이코패스들."},
+                                    {nick:"HyobinPolice", content:"A씨, 당신은 테러 미수로 수배 중입니다. IP 땄으니 기다리세요."}
+                                ]
+                            },
+                            // 5. 일본 누마즈 사건 & 윤재훈 난입
+                            {
+                                nick: "Tanaka_Yuki", time: "25분 전", content: "I saw news in Japan. You were very rude in Numazu too. You shouted at orange farmers. Shame on you. (일본에서 뉴스 봤다. 너 누마즈에서도 무례했잖아. 귤 농부들한테 소리 지르고. 부끄러운 줄 알아라.)", like: 3000, dislike: 1,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Shut up Sushi! I hate Japan! I am noble! Anime is dirty plastic! 나는 고귀해서 그런 거 안 봐! 피규어는 쓰레기야!"},
+                                    {nick:"NihonGo_Rep", content:"번역: 닥쳐 스시! 난 일본 싫어! 난 고귀해! 애니는 더러운 플라스틱이야! -> 횡설수설하네 ㅋㅋㅋ"},
+                                    {nick:"AqoursFan", content:"누마즈 귤 썩었다고 욕해놓고 지가 고귀하대. 웃기지도 않네. 너 같은 게 귀족이면 난 황제다."},
+                                    {nick:"YoonJaehoon(IP)", content:"You are low class! Otaku is disease! 오타쿠는 병이야! 치료받아!"},
+                                    {nick:"OtakuPower", content:"정신분열 왔나 보네. 너나 치료받아라. 병원비 없냐?"},
+                                    {nick:"YoonJaehoon(IP)", content:"No! I am perfect! I am King! 내가 왕이다!"},
+                                    {nick:"Police", content:"왕이 아니라 피의자입니다. 서에서 봅시다."},
+                                    {nick:"YoonJaehoon(IP)", content:"Run! 도망쳐!"}
+                                ]
+                            },
+                            // 6. 맘카페 반응 & 윤재훈 난입
+                            {
+                                nick: "Mom_Cafe_Manager", time: "30분 전", content: "애들 먹는 빵에 침 뱉은 건 진짜 사람이 할 짓이 아닙니다. 우리 맘카페에서도 윤재훈 영구 보이콧입니다. 효빈시 떠나주세요.", like: 1850, dislike: 5,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"It was art! Performance art! 빵에 침 뱉는 건 현대 미술이야! 무식한 아줌마들아!"},
+                                    {nick:"WelfareAngel", content:"결식아동 빵에 침 뱉는 게 예술이냐? 그건 범죄다. 아동학대라고."},
+                                    {nick:"YoonJaehoon(IP)", content:"Bread was dry anyway! 맛도 없었어! 나는 미슐랭만 먹어! 빵 따위!"},
+                                    {nick:"ChefKnife", content:"니가 뱉은 침보다는 맛있다. 편의점 삼각김밥 훔쳐먹는 주제에 미슐랭 찾냐?"},
+                                    {nick:"YoonJaehoon(IP)", content:"That was tasting! 시식한 거야! I will sue you! 명예훼손이야!"},
+                                    {nick:"ConvenienceStore", content:"CCTV 넘겼습니다. 절도죄입니다. 콩밥이나 드세요."}
+                                ]
+                            },
+                            // 7. 학폭 피해자 & 윤재훈 난입
+                            {
+                                nick: "Schoolmate", time: "35분 전", content: "나 박효빈이랑 같은 반이었는데, 윤재훈 너 그때 박효빈한테 '냄새난다'고 괴롭혔잖아. 그래놓고 이제 와서 엘리트인 척하냐?", like: 2200, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"He smelled like poverty! Poor smell! 가난한 냄새 났다고! 나는 샤넬 뿌렸어!"},
+                                    {nick:"Citizen88", content:"인성에서 썩은 내 나는 건 너다. 돈으로 인성은 못 사지. 샤넬이 아깝다."},
+                                    {nick:"YoonJaehoon(IP)", content:"I am rich! I can buy everything! Friends too! 친구도 살 수 있어!"},
+                                    {nick:"Teacher", content:"그래서 네 옆에 남은 친구가 A씨 하나뿐이냐? 불쌍하다. 선생으로서 부끄럽다."},
+                                    {nick:"YoonJaehoon(IP)", content:"Shut up! You gave me C grade! I hate you! 점수 짜게 줬잖아!"},
+                                    {nick:"Teacher", content:"수업도 안 들어왔으면서 F 안 준 걸 다행으로 알아라. 시험지에 낙서만 해놓고."},
+                                    {nick:"YoonJaehoon(IP)", content:"My father will fire you! 우리 아빠한테 이를 거야!"},
+                                    {nick:"Board", content:"윤대환 전 시장님, 지금 감옥에 계십니다만. 면회 가서 이르시던가."}
+                                ]
+                            },
+                            // 8. 인천공항 계란 투척 사건
+                            {
+                                nick: "EggThrower", time: "40분 전", content: "오늘 인천공항에서 윤재훈한테 계란 던진 사람입니다. 비싼 계란 아깝긴 했는데, 나라 망신 시킨 거 생각하면 하나도 안 아깝네요. 밀가루 못 뿌린 게 한입니다.", like: 5000, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"내 옷값 500만원이야! 다 물어내! 거지들아! My suit is Armani!"},
+                                    {nick:"EggThrower", content:"500만원? 짝퉁이던데? 동대문에서 5만원 주고 샀냐? 실밥 다 터졌더라."},
+                                    {nick:"YoonJaehoon(IP)", content:"Original! Limited Edition! You envy me! 부러워서 그러지!"},
+                                    {nick:"Lawyer", content:"공익 목적의 시위라 참작될 겁니다. 윤재훈 씨는 모욕죄로 맞고소 당할 준비나 하세요."},
+                                    {nick:"Laundry", content:"그 옷 세탁해도 계란 냄새 안 빠짐 ㅋㅋ 버리셈."},
+                                    {nick:"Citizen", content:"계란 던지신 분, 제가 계란 한 판 보내드릴게요. 주소 주세요."},
+                                    {nick:"YoonJaehoon(IP)", content:"Mommy! They are bullying me! 엄마! 쟤네가 나 괴롭혀!"},
+                                    {nick:"Citizen88", content:"나이 서른 넘게 먹고 엄마 찾는 거 실화냐. 니네 엄마도 너 포기했다."}
+                                ]
+                            },
+                            // 9. 안다야 여사 모욕 & 응징
+                            {
+                                nick: "AncheonMom", time: "45분 전", content: "안다야 여사님은 정말 훌륭한 분이세요. 힘든 환경에서도 아들 반듯하게 키우시고, 지금도 안천구에서 봉사활동 하시잖아요. 윤재훈이 감히 입에 올릴 분이 아닙니다.", like: 1800, dislike: 2,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"She is fake! She is witch! 마녀야! 흑마술 쓰는 마녀라고!"},
+                                    {nick:"AncheonMom", content:"마녀는 니네 집안 말아먹은 니 욕심이지. 안다야 여사님은 천사다."},
+                                    {nick:"YoonJaehoon(IP)", content:"No! She used magic on Hyobin! 그래서 시장 된 거야!"},
+                                    {nick:"Citizen", content:"판타지 소설 쓰냐? 병원 좀 가봐라 진짜. 조현병 의심됨."},
+                                    {nick:"Doctor", content:"정신과 전문의입니다. 진지하게 상담 권유 드립니다. 상태가 심각하네요."},
+                                    {nick:"YoonJaehoon(IP)", content:"I am sane! You are crazy! 니들이 미친 거야! 나는 천재야!"},
+                                    {nick:"Nurse", content:"약 드실 시간입니다 환자분. 진정제 놔드릴까요?"},
+                                    {nick:"Admin", content:"허위사실 유포 중단하세요. IP 차단합니다."}
+                                ]
+                            },
+                            // 10. 조리학과 학생들
+                            {
+                                nick: "ChefKnife", time: "50분 전", content: "조리학과 학생입니다. 빵에 침 뱉은 거 보고 저희 과 애들 칼(칼집 낀 거) 들고 쫓아갔던 기억나네요. 다시 마주치면 그땐 국자로 혼내줄 겁니다.", like: 1500, dislike: 1,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Food is just fuel! 맛만 좋으면 그만이지! 침 좀 섞이면 어때! 나는 미식가야!"},
+                                    {nick:"ChefKnife", content:"위생 관념 밥 말아 드셨나. 넌 식당 출입 금지다. 우리 학교 식당 얼씬도 하지 마."},
+                                    {nick:"YoonJaehoon(IP)", content:"I will buy your restaurant and fire you! 내가 니 식당 사서 해고할 거야!"},
+                                    {nick:"Owner", content:"안 팝니다. 그리고 님 파산해서 돈 없잖아요. 컵라면 사 먹을 돈은 있냐?"},
+                                    {nick:"YoonJaehoon(IP)", content:"I have hidden money! Bitcoin! 비트코인 있어! 떡상하면 다 죽었어!"},
+                                    {nick:"TaxPayer", content:"비트코인? 그것도 압류 대상이다. 땡큐. 국세청에 제보함."},
+                                    {nick:"YoonJaehoon(IP)", content:"No!! My coin!! 내 돈!!"}
+                                ]
+                            },
+                            // 11. 세부 다이빙 강사 (new)
+                            {
+                                nick: "Cebu_Diver", time: "55분 전", content: "세부에서 다이빙 강사 하는 사람입니다. 윤재훈이 현지 강사한테 '물고기보다 수영 못한다'고 비하하고 팁도 안 주고 도망가려다 걸린 거 제가 봤습니다. 진짜 진상 중의 상진상입니다.", like: 600, dislike: 1,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"He was slow! 서비스가 엉망이었어! I am customer! 손님은 왕이야!"},
+                                    {nick:"Cebu_Diver", content:"서비스 문제가 아니라 니가 장비 착용도 못 해서 도와준 거잖아. 고마운 줄도 모르고."},
+                                    {nick:"Traveler", content:"어휴 나라 망신. 팁 2달러도 아까워서 도망가냐?"},
+                                    {nick:"YoonJaehoon(IP)", content:"I gave him smile! 내 미소가 팁이야!"},
+                                    {nick:"Citizen", content:"미친... 니 미소는 공해다."}
+                                ]
+                            },
+                            // 12. 8호선 기관사 (new)
+                            {
+                                nick: "Metro_Driver", time: "1시간 전", content: "8호선 기관사입니다. 오늘 개통 1주년이라 승객분들이 웃으며 타시는 모습 보니 뿌듯하더군요. 윤 전 시장 시절에는 8호선 라인이 그냥 흉물이었는데, 박 시장님 덕분에 살아났습니다.", like: 900, dislike: 2,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Train is noisy! 버스가 조용하고 좋아! 두청운수 이용해! 지하철 없애버려!"},
+                                    {nick:"Metro_Driver", content:"두청운수 버스는 난폭운전으로 유명한데요. 승객 안전부터 챙기시죠. 1년 넘게 잘 다니는 지하철을 어떻게 없애냐?"},
+                                    {nick:"BusFan", content:"철도가 정시성 최고임. 버스는 차 막히면 답 없음. 윤재훈은 차도 없으면서."},
+                                    {nick:"YoonJaehoon(IP)", content:"I have Benz! 벤츠 있다고!"},
+                                    {nick:"Banker", content:"그거 경매 넘어갔습니다. 압류 딱지 붙은 거 타고 다니세요?"}
+                                ]
+                            },
+                            // 13. 효빈대 편의점 점주 (new)
+                            {
+                                nick: "CU_Owner", time: "1시간 전", content: "우리 편의점 와서 삼각김밥 껍질 까고 한 입 먹은 뒤에 '맛없다'면서 환불해달라고 난동 피운 거 윤재훈 씨 맞죠? CCTV 돌려보니 딱 당신이던데.", like: 1200, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"It was tasting! 시식 코너 없어서 먹어본 거야! Customer Right! 환불해내!"},
+                                    {nick:"CU_Owner", content:"편의점에 시식 코너가 어디 있습니까? 그리고 다 먹어놓고 맛없다고? 경찰 신고합니다."},
+                                    {nick:"LawStudent", content:"절도죄 및 업무방해죄 성립합니다. 합의금 준비하세요."},
+                                    {nick:"YoonJaehoon(IP)", content:"It was only 1000 won! 천원 가지고 쪼잔하게!"},
+                                    {nick:"Citizen", content:"천원도 없는 거지 인증하네."}
+                                ]
+                            },
+                            // 14. 베르데 홀 경비원 (new)
+                            {
+                                nick: "Security", time: "1시간 전", content: "A씨가 베르데 홀 침입하려다 잡혔을 때 윤재훈 씨도 근처 차 안에 있었던 거 다 압니다. 같이 모의한 거 아닙니까?", like: 800, dislike: 1,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"I was just driving! 드라이브한 거야! 우연이라고! 나는 A씨 몰라!"},
+                                    {nick:"Security", content:"차 안에서 무전기 들고 지시하는 거 다 찍혔습니다. 공범으로 넘깁니다. A씨 폰에서 통화 내역도 나왔어요."},
+                                    {nick:"Police", content:"추가 수사 들어갑니다. 거짓말은 법정에서 하세요."},
+                                    {nick:"RealEstateRep", content:"A씨도 손절하더니 윤재훈도 손절하네. 의리라곤 없다."}
+                                ]
+                            },
+                            // 15. 케손시티 가이드 (new)
+                            {
+                                nick: "Quezon_Guide", time: "2시간 전", content: "I am a local guide in Quezon City. Yoon tried to hire me to spy on Ms. Andaya. I refused and reported him to the police. He offered me fake money. (윤재훈이 나한테 안다야 여사 뒷조사 해달라고 고용하려 했다. 난 거절하고 경찰에 신고했다. 심지어 위조지폐를 주려고 했다.)", like: 1500, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"It was souvenir money! 기념품 돈이야! 장난감이라고! 농담도 못하냐!"},
+                                    {nick:"Quezon_Guide", content:"Trying to pay with toy money? You are crazy. (장난감 돈으로 지불하려고? 미쳤구나.)"},
+                                    {nick:"GlobalMind", content:"위조지폐 사용은 중범죄입니다. 필리핀 감옥 갈 뻔했네. 국제적 사기꾼 등극."},
+                                    {nick:"YoonJaehoon(IP)", content:"It was magic trick! 마술 보여준 거야!"},
+                                    {nick:"Citizen", content:"변명도 참 창의적으로 한다."}
+                                ]
+                            },
+                            // 16. 택시기사 (new)
+                            {
+                                nick: "Taxi_Driver", time: "2시간 전", content: "윤재훈이 내 택시 타고 '내가 누군지 알아?' 시전하면서 요금 안 내고 튄 적 있음. 잡히면 가만 안 둔다. 블랙박스 영상 보관 중이다.", like: 1000, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"I forgot my wallet! 지갑을 깜빡한 거야! 나중에 주려고 했다고!"},
+                                    {nick:"Taxi_Driver", content:"도망가면서 엿 날린 건 뭐냐? 그것도 깜빡한 거냐?"},
+                                    {nick:"Citizen", content:"인성 진짜 터졌네."}
+                                ]
+                            },
+                            // 17. 환경미화원 (new)
+                            {
+                                nick: "Cleaner_Kim", time: "2시간 전", content: "선거 유세할 때 전단지 바닥에 다 버리고 가더라. 줍느라 허리 나갈 뻔했다. 시민을 위한 시장? 웃기지 마라.", like: 900, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"I created jobs for you! 내가 일자리 만들어 준 거야! 고마워해야지!"},
+                                    {nick:"Cleaner_Kim", content:"쓰레기 투기가 일자리 창출이냐? 궤변 늘어놓지 마라."},
+                                    {nick:"Citizen88", content:"니 존재 자체가 사회적 쓰레기다."}
+                                ]
+                            },
+                            // 18. 유치원 교사 (new)
+                            {
+                                nick: "Kinder_Teacher", time: "3시간 전", content: "애들이 뉴스 보고 저 아저씨 나쁜 사람이라고 배워요. 교육상 안 좋습니다. 제발 TV에도 나오지 마세요.", like: 1100, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"I am star! Superstar! 애들이 나를 질투하는 거야!"},
+                                    {nick:"Kinder_Teacher", content:"애들이 널 무서워해. 괴물이라고."},
+                                    {nick:"Mom", content:"우리 애가 너 보고 울었다. 책임져."}
+                                ]
+                            },
+                            // 19. 헬스 트레이너 (new)
+                            {
+                                nick: "Health_Trainer", time: "3시간 전", content: "우리 헬스장 와서 기구 다 차지하고 운동은 안 하고 폰만 보던 진상. 회원들이 다 싫어해서 환불해주고 내쫓음.", like: 700, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"I was resting! 쉬는 시간이었어! 니네 헬스장 망하게 할 거야!"},
+                                    {nick:"Health_Trainer", content:"30분 동안 기구에 앉아서 셀카만 찍었잖아. 그리고 우리 헬스장 박효빈 시장님도 다니셔서 더 잘 된다."},
+                                    {nick:"YoonJaehoon(IP)", content:"Park goes there? I will never go there! 더러워!"}
+                                ]
+                            },
+                            // 20. 도서관 사서 (new)
+                            {
+                                nick: "Librarian", time: "3시간 전", content: "도서관에서 소리 지르다 쫓겨난 적도 있음. 책 빌려가서 라면 국물 쏟아오고 변상도 안 함. 기본 예의가 없음.", like: 800, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Book was dirty! 책이 원래 더러웠어! 내가 씻어준 거야!"},
+                                    {nick:"Librarian", content:"책을 라면 국물로 씻냐? 변상금 청구서 보냈으니 입금해라."},
+                                    {nick:"Student", content:"지식의 전당을 모독하지 마라."}
+                                ]
+                            },
+                            // 21. 카페 알바 (new)
+                            {
+                                nick: "Cafe_Alba", time: "4시간 전", content: "아메리카노 시켜놓고 라떼 왜 안 나오냐고 진상 부림. 영수증 보여줘도 막무가내. 컵 던져서 화상 입을 뻔함.", like: 1300, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Service is bad! 니가 주문 잘못 받은 거야! 손님을 가르치려 들어?"},
+                                    {nick:"Cafe_Alba", content:"키오스크로 주문하셨잖아요 아저씨. 본인이 잘못 눌러놓고 왜 나한테 그래?"},
+                                    {nick:"Lawyer", content:"특수폭행입니다. 컵 던진 거."}
+                                ]
+                            },
+                            // 22. 꽃집 사장 (new)
+                            {
+                                nick: "Flower_Shop", time: "4시간 전", content: "선거 때 화환 주문하고 돈 안 줌. 외상값 갚아라. 3년 지났다.", like: 600, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Wait! I will pay later! 나중에 준다고! 이자 쳐서!"},
+                                    {nick:"Flower_Shop", content:"3년 동안 이자만 몇백이다. 당장 갚아."},
+                                    {nick:"Citizen", content:"돈 떼먹는 게 특기네."}
+                                ]
+                            },
+                            // 23. 치킨집 사장 (new)
+                            {
+                                nick: "Chicken_Boss", time: "4시간 전", content: "닭다리 하나 없다고 환불해달라고 난리 침. CCTV 보니까 지가 먹고 뼈 버려놓고 거짓말함. 진짜 찌질함의 극치.", like: 900, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Chicken was small! 닭이 너무 작았어! 사기꾼들아!"},
+                                    {nick:"Chicken_Boss", content:"정량 준수합니다. 그리고 다 처먹고 환불해달라는 게 사람이냐?"},
+                                    {nick:"Pig", content:"돼지도 너보단 깨끗하게 먹겠다."}
+                                ]
+                            },
+                            // 24. 피시방 알바 (new)
+                            {
+                                nick: "PC_Room", time: "5시간 전", content: "게임 지니까 키보드 부수고 도망감. 샷건 치는 소리에 손님들 다 놀람. 수리비 내놔라.", like: 750, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"Lag! Computer was slow! 렉 걸려서 진 거야! 컴퓨터 탓이야!"},
+                                    {nick:"PC_Room", content:"사양 최고급입니다. 님 실력이 구린 거임."},
+                                    {nick:"Gamer", content:"브론즈가 장비 탓은 ㅋㅋㅋ"}
+                                ]
+                            },
+                            // 25. 효빈시민 (new)
+                            {
+                                nick: "Hyobin_Citizen", time: "5시간 전", content: "그냥 효빈시를 떠나주세요. 그게 애국입니다. 제발 눈에 안 띄게 살아주세요.", like: 2000, dislike: 0,
+                                replies: [
+                                    {nick:"YoonJaehoon(IP)", content:"No! I will be Mayor! I will return! I am Terminator!"},
+                                    {nick:"Hyobin_Citizen", content:"터미네이터는 기계고 넌 인간 말종이고."},
+                                    {nick:"Voter", content:"꿈 깨세요 영원히."},
+                                    {nick:"Admin", content:"영구 차단되었습니다."}
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; // 초기화
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                // 윤재훈이 털리는 댓글은 기본으로 펼쳐둠
+                                if(cmt.isPunished || cmt.replies.some(r => r.nick.includes("YoonJaehoon"))) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("A_ssi") || reply.nick.includes("Yoon") || reply.nick.includes("IP") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) { /* 기존 로직 유지 */ }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                        function openFooterModal(type) { /* 기존 로직 유지 */ }
+                        function renderRanking() { /* 기존 로직 유지 */ }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">

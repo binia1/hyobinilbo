@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[토픽] "그분은 인성 교육이 필요해"... 日 성우, '빵 테러범'에 우아한 일침 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.07 (수)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html" class="active">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 사건/이슈</div>
+                <h2 class="article-title">"그분은 경제학보다 인성 교육이 필요해"... 日 성우, '빵 난동'에 우아한 일침</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이문화 기자</span> (culture@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 13:30 | 수정 2026.01.07. 14:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">혐오자 A씨, '엠마의 빵' 부수며 "씹덕 낭비" 난동... 성우 사시데 마리아 성명 발표<br>"그 빵은 상생의 톱니바퀴... 파괴가 아닌 공존 배워야"<br>효빈대 학생들, 철도·부동산·애니학과 연합으로 A씨 '논리적 참교육'</span></p>
+                    
+                    <div class="my-6">
+                        <img src="엠마의빵_난동.png" alt="난동_현장_CCTV.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Bread+Riot+CCTV'">
+                        <div class="img-caption">▲ 지난 주말 리사역 환승 통로에서 A씨가 '엠마의 트램 탑승 팥빵' 진열대를 훼손하고 있다. (사진=경찰청 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 이문화 기자] 효빈시 문화 상생의 상징인 **'엠마의 트램 탑승 팥빵'**을 훼손하며 "문화 자본의 낭비"라고 난동을 부린 20대 남성 A씨에게, 해당 캐릭터 '엠마 베르데'의 성우 <a href="사시데_마리아.html" class="text-blue-600 underline">사시데 마리아</a>가 우아하지만 뼈 있는 일침을 가했다.</p>
+
+                    <p>사시데 마리아는 6일 공식 SNS를 통해 "그 빵의 가격에는 트램 운영사(<a href="회주공업.html" class="text-blue-600 underline">회주공업</a>)의 로열티와 구도심 상인의 땀, 효빈시의 세금이 포함되어 있다"며 **"그 빵은 낭비가 아니라 도시 경제의 선순환을 증명하는 톱니바퀴"**라고 지적했다. 이어 "그분은 경제학을 논하지만, 정작 필요한 것은 파괴가 아닌 공존을 배우는 인성 교육"이라고 꼬집었다.</p>
+
+                    <div class="my-6">
+                        <img src="사시데마리아_성명.png" alt="사시데마리아_SNS.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/44AA44/FFFFFF?text=Sashide+Maria+Statement'">
+                        <div class="img-caption">▲ 성우 사시데 마리아가 발표한 한국어 성명문. A씨의 혐오 논리를 정면으로 반박하고 있다.</div>
+                    </div>
+
+                    <p>이에 <a href="효빈대학교.html" class="text-blue-600 underline">효빈대학교</a> 학생들은 각 전공 지식을 동원해 A씨를 '참교육'했다. 철도운영학과는 "트램 운영사를 욕하며 빵을 부순 건 자기 발등을 찍은 꼴"이라 비판했고, 부동산학과는 "트램 덕분에 오른 집값은 어쩔 셈이냐"며 A씨의 논리적 모순을 지적했다. 니지가사키 성우진 전원 또한 "도시의 성공을 증오하는 불쌍한 분"이라며 공동 성명을 통해 A씨를 규탄했다.</p>
+
+                    <p>결국 A씨는 법원으로부터 징역형을 선고받음과 동시에, 효빈대 에브리타임에서 '논리적 파산' 선고를 받으며 쓸쓸히 퇴장하게 되었다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">2,890</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Emma_Fan", time: "방금 전", like: 9800, dislike: 12, isPunished: false,
+                                content: "사시데 마리아 성우님 말씀 하나하나가 주옥같다. '경제학보다 인성 교육이 필요하다' ㅋㅋㅋ A씨 뼈 맞아서 순살 됐을 듯. 빵 사 먹으면서 응원하겠습니다!",
+                                replies: [
+                                    { nick: "Bakery_Owner", content: "감사합니다. A씨가 부순 진열대보다 더 많은 빵이 팔리고 있습니다. 전화위복이네요." },
+                                    { nick: "Tram_Driver", content: "트램 기사입니다. 저희도 엠마 빵 먹고 힘내서 운전합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "A_the_Isolated", time: "10분 전", like: 1, dislike: 4500, isPunished: true,
+                                content: "다 닥쳐! 니지가사키 따위가 내 고립주의를 비웃어? 이건 문화 자본의 폭력이야! 빵 쪼가리가 뭐라고! 나는 순교자다! 트램도 망하고 빵도 망해라!",
+                                replies: [
+                                    { nick: "Economics_Major", content: "경제학과입니다. 당신의 행동은 '소비 위축'이 아니라 '기물 파손'이라는 범죄입니다. 경제학 원론 다시 배우세요." },
+                                    { nick: "RealEstate_Prof", content: "부동산학과 교수입니다. 트램 들어오고 리사역 주변 상권 매출 300% 올랐습니다. 당신만 부정하는 현실입니다." },
+                                    { nick: "Mental_Health", content: "순교자가 아니라 사회부적응자입니다. 치료받으세요." }
+                                ]
+                            },
+                            { 
+                                nick: "Hyobin_Univ_Union", time: "20분 전", content: "효빈대 7개 학과 연합입니다. A씨의 마지막 발악 글 보고 왔습니다. 논리적으로 반박할 가치도 없지만, 팩트로 밟아드렸습니다. 에타 와서 확인하세요 ^^", like: 3200, dislike: 2, 
+                                replies: [
+                                    {nick:"Architecture", content:"건축공학과 추가요. 구조적으로 말이 안 되는 소리만 하더군요."},
+                                    {nick:"Freshman", content:"선배님들 멋지십니다! A씨는 학교 망신 그만 시키고 자퇴해라."}
+                                ] 
+                            },
+                            { 
+                                nick: "YoonJaehoon(IP)", time: "30분 전", content: "A씨야 힘내라! 나도 빵 싫어해! 우리 아빠도 트램 싫어해! 우리가 남이냐! 효빈시는 썩었어!", like: 3, dislike: 5600, isPunished: true,
+                                replies: [
+                                    {nick:"Prison_Mate", content:"옆방인데 좀 조용히 해라. 너 때문에 잠을 못 자겠다."},
+                                    {nick:"Citizen", content:"끼리끼리 논다더니 과학이네. 둘 다 손잡고 사회 격리 축하드림."}
+                                ] 
+                            },
+                            { 
+                                nick: "Nijigasaki_Forever", time: "40분 전", content: "성우진 전원이 성명 낸 거 실화냐... 진짜 감동이다. A씨는 그냥 어그로꾼인 줄 알았는데, 덕분에 니지동 단합력만 보여줬네. 고맙다 바보야.", like: 2800, dislike: 0, 
+                                replies: [
+                                    {nick:"Agupon", content:"아유무 성우 오니시입니다. 여러분의 사랑이 혐오를 이겼어요! (가상 계정)"}
+                                ] 
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("A_the") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_emma_bread.html" class="ranking-link font-bold text-[#0055aa]">성우 사시데 마리아의 일침</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_univ_human_shield.html" class="ranking-link">효빈대 '인간 방어막'의 감동</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_quezon_city.html" class="ranking-link">케손시티 시장의 '자매결연' 제안</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_chosun_fake.html" class="ranking-link">조선일보 망언 파문</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, 구치소 '망고 구걸' 굴욕</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">엠마의 트램 빵</div>
+                    <div class="text-xs">상생의 맛, 공존의 가치<br>리사역, 당가역 판매 중</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

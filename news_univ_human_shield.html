@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] "결식아동 빵에 침 뱉고 성우 폭행 시도"... 효빈대생 3천 명 '분노의 인간 방어막' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.07 (수)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html" class="active">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 사건/사고</div>
+                <h2 class="article-title">"결식아동 빵에 침 뱉고 사가라 마유 폭행 시도"... 효빈대생 3천 명 '철벽 방어'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김사회 기자</span> (society@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 10:00 | 수정 2026.01.07. 12:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">윤재훈 일당, 자선행사장 난입해 아동용 빵 훼손 시도<br>학생들, 3중 스크럼으로 시야까지 차단... 성우진은 테러 사실 모른 채 행사 마쳐<br>현행범 체포된 윤재훈 "내 침은 성수, 정의 구현이다" 궤변</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈대_인간띠.png" alt="효빈대_인간_방어막.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/003366/FFFFFF?text=Human+Shield+at+Hyobin+Univ'">
+                        <div class="img-caption">▲ 효빈대학교 자선행사장에서 윤재훈 일당의 접근을 막기 위해 학생들과 시민들이 3중으로 스크럼을 짜고 있다. 이들의 완벽한 방어로 행사장 내부는 평온을 유지했다. (사진=독자 제보)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김사회 기자] 지난 6일 <a href="효빈대학교.html" class="text-blue-600 underline">효빈대학교</a> 베르데홀 자선행사장에서 발생한 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a>(28) 일당의 난동이 시민들의 완벽한 대처로 미수에 그쳤다. 윤재훈 일당이 결식아동에게 전달될 빵에 침을 뱉고, 일본인 성우들을 폭행하려 했으나, 3,000여 명의 '인간 방어막'에 가로막혀 현장 접근조차 하지 못했기 때문이다.</p>
+
+                    <p>경찰에 따르면 윤재훈은 행사장 외곽 진열대에 놓인 빵에 **다짜고짜 침을 뱉으며 "거지 새끼들은 내 침이나 먹어라"**고 소리쳤다. 이어 무대 쪽을 향해 **"더러운 왜놈들!"이라고 욕설을 퍼부으며 주먹을 휘두르며 돌진**을 시도했다.</p>
+
+                    <p>그러나 윤재훈의 악의는 시민들의 벽을 넘지 못했다. 이미 테러 징후를 포착하고 있던 효빈대 학생들과 시민들은 행사장 입구부터 겹겹이 인간띠를 형성해 시야를 완전히 차단했다. 체육학과 학생들은 윤재훈 일당을 조용하고 신속하게 제압해 경찰에 인계했다. 이 과정이 워낙 질서 정연하게 이루어진 덕분에, 무대 위에 있던 <a href="사가라_마유.html" class="text-blue-600 underline">사가라 마유</a>와 <a href="마에다_카오리.html" class="text-blue-600 underline">마에다 카오리</a>는 **소란이 일어난 사실조차 모른 채 밝은 표정으로 행사를 마쳤다.**</p>
+
+                    <div class="my-6">
+                        <img src="성우_미소.png" alt="밝은표정의_성우진.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/FF88AA/FFFFFF?text=Seiyuu+Smiling'">
+                        <div class="img-caption">▲ 시민들의 완벽한 보호 덕분에 윤재훈의 난동을 전혀 목격하지 못한 성우들이 밝은 표정으로 팬들에게 인사하고 있다.</div>
+                    </div>
+
+                    <p>행사가 끝난 후, 대기실에서 뒤늦게 사건의 전말을 전해 들은 성우진은 놀란 가슴을 쓸어내리면서도 팬들을 향한 깊은 신뢰를 드러냈다. <a href="사가라_마유.html" class="text-blue-600 underline">사가라 마유</a>는 SNS를 통해 **"무대 위에서는 여러분의 미소밖에 보이지 않았어요. 저희의 시야까지 지켜주신 여러분의 섬세한 배려에 눈물이 날 것 같아요. 효빈시의 기사님(Knight)들, 정말 감사합니다!"**라고 감사를 전했다.</p>
+
+                    <p><a href="마에다_카오리.html" class="text-blue-600 underline">마에다 카오리</a> 또한 **"무서운 일이 있었다는 건 나중에 알았지만, 그 순간 저는 세상에서 가장 안전한 곳에 있다고 느꼈어요. 여러분이 만들어주신 벽은 단순한 인간띠가 아니라 사랑의 요새였습니다."**라며 팬들의 용기에 감동적인 소감을 남겼다.</p>
+
+                    <p>한편, 현행범으로 체포된 윤재훈은 연행되면서도 **"내 침은 성수다! 왜놈을 때려잡는 게 애국이다!"**라는 궤변을 늘어놓아 지켜보던 시민들의 공분을 샀다. <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장은 "아이들의 먹거리를 더럽히고 손님에게 주먹질을 하려 한 자에게 관용은 없다"며 엄벌을 시사했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">13,285</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Sagara_Mayu_Official", time: "방금 전", like: 52000, dislike: 0, isPunished: false, isOfficial: true,
+                                content: "효빈시의 여러분, 정말 감사합니다! 무대 위에서는 여러분의 반짝이는 미소밖에 보이지 않았어요. 저희의 시야까지 지켜주신 여러분의 섬세한 배려와 용기에 눈물이 멈추지 않아요. 효빈시의 기사님(Knight)들, 정말 사랑합니다! (번역됨)",
+                                replies: [
+                                    { nick: "Mayuchi_Fan", content: "마유치! 우리가 평생 지켜줄게! ㅠㅠ 무사해서 정말 다행이야" },
+                                    { nick: "Hyobin_Citizen", content: "다치지 않으셔서 정말 다행입니다. 효빈시는 언제나 성우님을 환영합니다!" },
+                                    { nick: "Student_A", content: "제가 스크럼 제일 앞에 있었습니다! 성우님 글 보니 뿌듯하네요!" }
+                                ]
+                            },
+                            {
+                                nick: "Maeda_Kaori_Official", time: "5분 전", like: 49000, dislike: 0, isPunished: false, isOfficial: true,
+                                content: "무서운 일이 있었다는 건 나중에야 알았지만, 그 순간 저는 여러분 덕분에 세상에서 가장 안전한 곳에 있다고 느꼈어요. 여러분이 만들어주신 벽은 단순한 인간띠가 아니라 '사랑의 요새'였습니다. 효빈시는 제게 따뜻한 추억만 남겨주었습니다. 감사합니다! (번역됨)",
+                                replies: [
+                                    { nick: "Kaoring_Guard", content: "카오링 ㅠㅠ 그 말이 더 감동이야... 사랑의 요새라니 ㅠㅠ" },
+                                    { nick: "Student_Council", content: "저희의 진심이 닿아서 기쁩니다. 언제든 안심하고 오세요!" },
+                                    { nick: "Bread_Lover", content: "카오링이 나눠준 빵은 제가 맛있게 먹었습니다! 빵도 지키고 성우님도 지켰다!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Patriot_Union", time: "6분 전", like: 15, dislike: 48500, isPunished: true,
+                                content: "웃기지 마라! 일본 계집들이 뭐가 고맙냐! 윤재훈 열사는 더러운 일본 문화를 척결하려다 억울하게 잡혀간 거다! 빵에 침 뱉은 건 자본주의에 대한 저항이고 성수다! 니들이 애국을 아냐!",
+                                replies: [
+                                    { nick: "Fact_Bomber", content: "애국? 결식아동 빵에 침 뱉는 게 애국이면 노상방뇨범은 독립투사냐? 궤변 좀 작작 해라." },
+                                    { nick: "Psychiatrist", content: "침을 성수라고 생각하는 시점에서 이미 정신과 상담이 시급합니다. 조현병 초기 증상 의심됩니다." },
+                                    { nick: "History_Teacher", content: "독립운동가 분들은 남의 밥그릇에 침 안 뱉으셨다. 어디서 더러운 입으로 애국을 들먹여?" }
+                                ]
+                            },
+                            {
+                                nick: "Free_Yoon_Daehwan", time: "7분 전", like: 8, dislike: 45000, isPunished: true,
+                                content: "박효빈이 시켜서 학생들 동원한 거 다 안다! 윤재훈 장군님은 함정에 빠진 거다! 감히 손님한테 주먹질 좀 했다고 구속해? 이게 나라냐!",
+                                replies: [
+                                    { nick: "Hyobin_Univ_Student", content: "동원? 내 돈 내고 내가 가서 지켰다. 3천 명이 다 알바면 효빈시 파산했겠다 멍청아." },
+                                    { nick: "Lawyer_K", content: "'주먹질 좀 했다고'? 특수폭행 미수에 업무방해입니다. 법치국가에서 깡패짓 하면 감방 가는 게 나라입니다." },
+                                    { nick: "Citizen_B", content: "장군님 ㅋㅋㅋ 빵에 침 뱉는 장군님도 있냐? 찌질해서 눈물 난다 진짜." }
+                                ]
+                            },
+                            {
+                                nick: "Human_Shield_Leader", time: "10분 전", like: 45000, dislike: 5, isPunished: false,
+                                content: "현장 지휘했던 예비역입니다. 윤재훈이 주먹질하면서 들어오는데 우리 후배들이 눈 하나 깜짝 안 하고 스크럼 짜서 막아냈습니다. 성우님들 쪽은 아예 쳐다보지도 못하게 시야 차단했고요. 덕분에 마유치랑 카오링 웃는 모습 지켜서 다행입니다.",
+                                replies: [
+                                    { nick: "Freshman", content: "선배님 진짜 멋있었습니다. 뒤에서 보는데 든든했어요." },
+                                    { nick: "Nijigasaki_Fan", content: "성우님들이 그 더러운 꼴 안 봐서 천만다행입니다. 진짜 감사합니다." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "15분 전", like: 2, dislike: 28500, isPunished: true,
+                                content: "이건 무효야! 내가 때리는 걸 보여줬어야 하는데! 내 침 맛을 보여줬어야 하는데! 니들이 다 망쳤어! 내 침은 성수라고! 영광인 줄 알아야지! 왜놈 계집들 내가 심판할 거야!",
+                                replies: [
+                                    { nick: "Police_Official", content: "2508번, 특수폭행 미수, 재물손괴, 업무방해, 모욕죄 추가입니다. 심판은 법정에서 받으세요." },
+                                    { nick: "Mental_Clinic", content: "성수 망상증... 심각하네요. 격리 치료가 시급합니다." },
+                                    { nick: "Dirty_Guy", content: "니 침은 똥물이야 이 더러운 놈아." }
+                                ]
+                            },
+                            { 
+                                nick: "Hyobin_Univ_Guard", time: "20분 전", content: "우리 학교 성우님들은 우리가 지킵니다. 윤재훈이 침 뱉으려고 할 때 체대생들이 우산으로 딱 막아내는 거 보셨나요? 쾌감 쩔었습니다.", like: 15500, dislike: 0, 
+                                replies: [
+                                    {nick:"Umbrella_Man", content:"접니다 ㅋㅋ 킹스맨 된 기분이었음."}, 
+                                    {nick:"Bread_Volunteer", content:"덕분에 빵 지켰습니다. 감사합니다."}
+                                ] 
+                            },
+                            { 
+                                nick: "Angry_Mom", time: "25분 전", content: "결식아동 빵에 침을 뱉어? 애 키우는 입장에서 진짜 손이 떨린다. 저런 놈은 굶겨 죽여야 돼. 인간 말종 새끼.", like: 12000, dislike: 1, 
+                                replies: [] 
+                            },
+                            { 
+                                nick: "Global_Shame", time: "30분 전", content: "성우님들이 못 봐서 진짜 다행이다... 봤으면 얼마나 충격받았겠어. 한국 이미지 지켜준 학생들에게 박수를 보냅니다.", like: 11000, dislike: 0, 
+                                replies: [] 
+                            },
+                            {
+                                nick: "Yoon_Sarang", time: "35분 전", like: 5, dislike: 9800, isPunished: true,
+                                content: "윤재훈 열사님은 일본의 문화 침략에 맞서 싸우신 거다! 침 뱉는 건 항일 투쟁의 일환이다! 학생들은 세뇌당한 거다!",
+                                replies: [
+                                    { nick: "History_Teacher", content: "독립운동가 모욕하지 마세요. 그분들은 빵에 침 안 뱉으셨습니다." },
+                                    { nick: "Normal_Person", content: "항일 투쟁이 아니라 그냥 행패 부리는 양아치 짓입니다." }
+                                ]
+                            },
+                            { nick: "Bakery_Owner", time: "40분 전", content: "빵 기부한 사장입니다. 훼손된 빵은 전량 폐기했고, 윤재훈에게 민사소송 들어갑니다. 합의 없습니다.", like: 18000, dislike: 0, replies: [] },
+                            { nick: "Law_Student", time: "45분 전", content: "특수폭행 미수도 처벌 셉니다. 게다가 아동 대상 기부 물품 훼손이라 가중처벌 각이네요. 콩밥 든든하게 드세요.", like: 9500, dislike: 0, replies: [] },
+                            { nick: "Safe_Zone", time: "50분 전", content: "효빈시는 덕후들의 '세이프 존'이다. 혐오 세력은 발도 못 붙이게 우리가 지킨다.", like: 8800, dislike: 1, replies: [] },
+                            { nick: "Donation_Angel", time: "55분 전", content: "열 받아서 기부 더 하고 왔습니다. 윤재훈이 빵 하나 망치면 우리는 빵 100개 더 기부한다.", like: 13000, dislike: 0, replies: [] },
+                            { nick: "Hyobin_Citizen", time: "1시간 전", content: "박효빈 시장님 격노하실 만하네. 내 도시에서 저런 꼴 보면 나라도 눈 돌아갈 듯.", like: 7500, dislike: 2, replies: [] },
+                            { nick: "Mayuchi_Love", time: "1시간 전", content: "마유치 웃는 거 보니까 힐링된다... 못 봐서 진짜 다행이야 ㅠㅠ 지켜줘서 고마워요 효빈대생들!", like: 6200, dislike: 0, replies: [] },
+                            { nick: "Kaoring_Fan", time: "1시간 5분 전", content: "카오링한테 주먹질하려고 했다고? 와... 진짜 잡히면 죽여버리고 싶네. 경찰이 빨리 잡아서 다행이다.", like: 5900, dislike: 0, replies: [] },
+                            { nick: "Trash_Collector", time: "1시간 10분 전", content: "윤재훈은 재활용도 안 되는 쓰레기임. 그냥 소각장에 묻어야 함.", like: 8200, dislike: 0, replies: [] },
+                            { nick: "YoonJaehoon(IP)", time: "1시간 15분 전", content: "나 풀어줘! 아빠한테 이를 거야! 변호사 불러!", like: 1, dislike: 12000, isPunished: true, replies: [{nick:"Prison_Guard", content:"니네 아빠도 옆방에 있다."}] },
+                            { nick: "Justice_Served", time: "1시간 20분 전", content: "정의구현 ㅋㅋㅋ 아빠 찬스도 못 쓰고 감방 엔딩 ㅋㅋㅋ", like: 7000, dislike: 0, replies: [] },
+                            { nick: "Clean_Hyobin", time: "1시간 25분 전", content: "효빈시가 점점 깨끗해지네요. 오물(윤재훈)이 치워져서.", like: 6500, dislike: 0, replies: [] },
+                            { nick: "Student_A", time: "1시간 30분 전", content: "스크럼 짤 때 옆에 있던 여학우분 떨고 계시던데 끝까지 안 비키시더라. 진짜 멋있었음.", like: 9800, dislike: 0, replies: [] },
+                            { nick: "Foreigner", time: "1시간 35분 전", content: "Hyobin students are heroes. Respect from USA.", like: 4500, dislike: 0, replies: [] },
+                            { nick: "Jp_Fan", time: "1시간 40분 전", content: "日本のファンです。声優さんを守ってくれてありがとうございます。(일본 팬입니다. 성우분들을 지켜주셔서 감사합니다.)", like: 5200, dislike: 0, replies: [] },
+                            { nick: "Anti_Violence", time: "1시간 45분 전", content: "폭력은 어떤 이유로도 정당화될 수 없습니다. 윤재훈은 테러리스트입니다.", like: 6000, dislike: 0, replies: [] },
+                            { nick: "Bread_Lover", time: "1시간 50분 전", content: "빵이 무슨 죄냐 ㅠㅠ 맛있는 빵에 침을 왜 뱉어 미친놈아.", like: 5500, dislike: 0, replies: [] },
+                            { nick: "Child_Care", time: "1시간 55분 전", content: "아이들이 먹을 거라는 거 알고도 그랬다는 게 더 소름... 사이코패스 아님?", like: 7200, dislike: 0, replies: [] },
+                            { nick: "Hyobin_Pride", time: "2시간 전", content: "이게 효빈의 품격이다. 혐오에는 연대로 맞선다.", like: 8500, dislike: 1, replies: [] },
+                            { nick: "Fact_Check", time: "2시간 5분 전", content: "윤재훈 28살 처먹고 하는 짓이 침 뱉기 ㅋㅋㅋ 수준 알만하다.", like: 9000, dislike: 0, replies: [] },
+                            { nick: "Future_Hope", time: "2시간 10분 전", content: "이런 학생들이 있어서 대한민국의 미래가 밝습니다.", like: 6800, dislike: 0, replies: [] },
+                            { nick: "Iron_Wall", time: "2시간 15분 전", content: "인간 방어막 뚫으려고 발악하던 윤재훈 표정 ㅋㅋㅋ 평생 박제각임.", like: 7700, dislike: 0, replies: [] },
+                            { nick: "Seiyuu_Guard", time: "2시간 20분 전", content: "성우님들 퇴근길까지 안전하게 모셨습니다. 효빈시는 안전합니다.", like: 5400, dislike: 0, replies: [] },
+                            { nick: "Final_Boss", time: "2시간 25분 전", content: "박효빈 시장님 '짐승만도 못한 짓'이라고 할 때 사이다였음.", like: 8100, dislike: 1, replies: [] },
+                            { nick: "End_Game", time: "2시간 30분 전", content: "윤재훈 인생 섭종 축하해~", like: 9900, dislike: 0, replies: [] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isOfficial) {
+                                div.className = "official-comment";
+                            } else if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 5000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished || cmt.isOfficial) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : (cmt.isOfficial ? 'text-[#0055aa]' : '')}">${cmt.nick} ${cmt.isOfficial ? '<span class="bg-blue-100 text-blue-800 text-xs px-1 rounded ml-1">OFFICIAL</span>' : ''} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_univ_human_shield.html" class="ranking-link font-bold text-[#0055aa]">효빈대 '인간 방어막' 감동</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_emma_bread.html" class="ranking-link">성우 사시데 마리아의 일침</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_philippines.html" class="ranking-link">윤재훈 일당 체포 소식</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_chosun_fake.html" class="ranking-link">조선일보 망언 파문</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_liyuu_message.html" class="ranking-link">Liyuu 응원 메시지</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈지방경찰청</div>
+                    <div class="text-xs">폭력행위 엄정 대처<br>안전한 효빈을 만듭니다</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

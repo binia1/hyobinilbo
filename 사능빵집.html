@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사능베이커리 - 마음을 굽는 빵집</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #fdfbf7; color: #4a4a4a; }
+        .font-serif { font-family: 'Nanum Myeongjo', serif; }
+        .font-hand { font-family: 'Gaegu', cursive; }
+
+        /* 따뜻한 빵집 색감 */
+        .bg-bread { background-color: #d97706; }
+        .text-bread { color: #d97706; }
+        .bg-cream { background-color: #fff8e1; }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('사능동_빵집_전경.png');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.15); }
+        .menu-img { width: 100%; height: 250px; object-fit: cover; }
+
+        .sold-out-badge {
+            background-color: #ef4444;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .notice-bar {
+            background-color: #fef3c7;
+            border-bottom: 1px solid #fde68a;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #92400e;
+            font-weight: bold;
+        }
+
+        /* 방명록 스타일 */
+        .guestbook-card {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .reply-container {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #eee;
+        }
+        .reply-box {
+            margin-top: 8px;
+            background-color: #f9fafb;
+            padding: 10px 15px;
+            border-left: 3px solid #d97706;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9em;
+        }
+        .reply-box.malicious-reply { /* 윤재훈 전용 참교육 답글 스타일 */
+            border-left: 3px solid #ef4444; 
+            background-color: #fef2f2;
+        }
+        .deleted-comment {
+            color: #999;
+            font-style: italic;
+        }
+        .reply-btn {
+            font-size: 12px;
+            color: #999;
+            cursor: pointer;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        .reply-btn:hover { color: #d97706; font-weight: bold; }
+        
+        .reply-form {
+            display: none;
+            margin-top: 10px;
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .reply-form.active { display: block; }
+
+        /* 모달 스타일 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.open { display: flex; opacity: 1; }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.open .modal-content { transform: translateY(0); }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 공지바 (실시간 상황) -->
+    <div class="notice-bar">
+        📢 [긴급] 악성 댓글 및 허위 사실 유포자에 대해 법무팀을 통해 무관용 법적 조치를 진행 중입니다. (합의 없음)
+    </div>
+
+    <!-- 헤더 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="location.href='saneung_bakery.html'">
+                <img src="사능빵집_로고.png" alt="로고" class="w-10 h-10" onerror="this.src='https://via.placeholder.com/40/d97706/ffffff?text=SB'">
+                <h1 class="text-2xl font-black text-bread font-serif tracking-tight">사능베이커리</h1>
+            </div>
+            <nav class="hidden md:flex gap-8 font-bold text-gray-600">
+                <a href="#about" class="hover:text-bread transition">소개</a>
+                <a href="#menu" class="hover:text-bread transition">대표 메뉴</a>
+                <a href="#location" class="hover:text-bread transition">오시는 길</a>
+                <a href="#review" class="hover:text-bread transition">방명록</a>
+            </nav>
+            <button class="bg-bread text-white px-5 py-2 rounded-full font-bold hover:bg-yellow-700 transition shadow-md">
+                택배 예약하기
+            </button>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero-section text-center px-4" onerror="this.style.backgroundColor='#555'">
+        <div>
+            <p class="text-xl md:text-2xl mb-4 font-light">효빈시 구도심의 따뜻한 랜드마크</p>
+            <h2 class="text-4xl md:text-6xl font-black font-serif mb-6 leading-tight">
+                30년 정성으로 구운<br>
+                <span class="text-yellow-400">행복</span>을 드립니다
+            </h2>
+            <div class="flex gap-4 justify-center">
+                <button class="bg-white text-bread px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition" onclick="location.href='#menu'">
+                    메뉴 보기
+                </button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/20 transition" onclick="location.href='#location'">
+                    매장 위치
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 스토리 섹션 -->
+    <section id="about" class="py-20 bg-cream">
+        <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="제빵사_박사장.png" alt="제빵사_박사장.png" class="rounded-2xl shadow-xl w-full" onerror="this.src='https://via.placeholder.com/600x400/d97706/ffffff?text=Baker+Park'">
+            </div>
+            <div>
+                <h3 class="text-bread font-bold text-lg mb-2">Since 1996</h3>
+                <h2 class="text-4xl font-serif font-bold mb-6">"만화 빵? 아니요, <br>상생의 맛입니다."</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    <a href="사능동.html" class="text-bread font-bold hover:underline">사능동</a> 골목 한편에서 30년간 묵묵히 빵을 구웠습니다.
+                    쇠락해가던 거리에 <a href="박효빈.html" class="text-bread font-bold hover:underline">박효빈</a> 시장님의 '빵지순례' 프로젝트가 시작되었을 때,
+                    처음엔 반신반의했습니다.
+                </p>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    하지만 지금은 압니다. 캐릭터 하나에 담긴 여러분의 사랑이
+                    이 거리를 다시 숨 쉬게 했다는 것을요. 
+                    저희는 좋은 재료와 정직한 맛으로 그 사랑에 보답하겠습니다.
+                </p>
+                <div class="flex gap-4 items-center">
+                    <img src="HAF_공식파트너.png" alt="HAF파트너" class="h-12" onerror="this.style.display='none'">
+                    <span class="font-bold text-gray-500">HAF 공식 협력 베이커리</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 메뉴 섹션 -->
+    <section id="menu" class="py-20 max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-serif font-bold mb-4">사능 베이커리 시그니처</h2>
+            <p class="text-gray-500">사진을 클릭하면 상세 정보(영양성분, 설명)를 볼 수 있습니다.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- 메뉴 1: 엠마 빵 -->
+            <div class="menu-card relative" onclick="openModal('emma')">
+                <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full font-bold text-sm shadow-md">Best 1위</div>
+                <img src="엠마_트램빵.png" alt="엠마_트램빵.png" class="menu-img" onerror="this.src='https://via.placeholder.com/400x300/eab308/ffffff?text=Emma+Tram+Bread'">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">엠마의 트램 탑승 팥빵</h3>
+                    <p class="text-gray-500 text-sm mb-4">
+                        <a href="사시데_마리아.html" class="text-bread hover:underline" onclick="event.stopPropagation()">사시데 마리아</a> 성우도 극찬한 그 맛! 
+                        효빈 트램 모양의 빵 속에 국산 통팥...
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold">5,000원</span>
+                        <span class="sold-out-badge">오늘 품절</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메뉴 2: 초코 소라빵 -->
+            <div class="menu-card" onclick="openModal('choco')">
+                <div class="absolute top-4 left-4 bg-bread text-white px-3 py-1 rounded-full font-bold text-sm shadow-md">인기</div>
+                <img src="초코소라빵.png" alt="초코소라빵.png" class="menu-img" onerror="this.src='https://via.placeholder.com/400x300/5d4037/ffffff?text=Choco+Cornet'">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">리미의 초코 소라빵</h3>
+                    <p class="text-gray-500 text-sm mb-4">
+                        뱅드림 팬들의 영원한 스테디셀러. 
+                        진한 벨기에산 초콜릿 커스터드...
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold">3,500원</span>
+                        <span class="text-green-600 font-bold text-sm">주문 가능</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메뉴 3: 사아야 식빵 -->
+            <div class="menu-card" onclick="openModal('saaya')">
+                <img src="야마부키_베이커리_식빵.png" alt="사아야_식빵.png" class="menu-img" onerror="this.src='https://via.placeholder.com/400x300/f59e0b/ffffff?text=Saaya+Bread'">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">사아야의 아침 식빵</h3>
+                    <p class="text-gray-500 text-sm mb-4">
+                        애니메이션 속 '야마부키 베이커리' 재현!
+                        탕종 공법으로 3일간 숙성...
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold">4,500원</span>
+                        <span class="text-green-600 font-bold text-sm">주문 가능</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메뉴 4: 카스미 도넛 -->
+            <div class="menu-card" onclick="openModal('kasumi')">
+                <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full font-bold text-sm shadow-md">New</div>
+                <img src="카스미_별도넛.png" alt="카스미_별도넛.png" class="menu-img" onerror="this.src='https://via.placeholder.com/400x300/FF5555/ffffff?text=Star+Donut'">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">카스미의 별도넛</h3>
+                    <p class="text-gray-500 text-sm mb-4">
+                        한 입 베어 물면 키라키라 도키도키! 
+                        상큼한 딸기 글레이즈가 올라간...
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold">3,000원</span>
+                        <span class="text-green-600 font-bold text-sm">주문 가능</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메뉴 5: 소금빵 -->
+            <div class="menu-card" onclick="openModal('salt')">
+                <img src="효빈_소금빵.png" alt="효빈_소금빵.png" class="menu-img" onerror="this.src='https://via.placeholder.com/400x300/eecfa1/ffffff?text=Salt+Bread'">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">효빈 소금빵</h3>
+                    <p class="text-gray-500 text-sm mb-4">
+                        겉은 바삭하고 속은 버터 동굴로 촉촉한 소금빵의 정석. 프랑스산 고메 버터와 게랑드 천일염을 사용했습니다.",
+                        cal: "195 kcal",
+                        ing: "프랑스 고메 버터, 게랑드 소금",
+                        allergy: "밀, 우유"
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold">2,800원</span>
+                        <span class="text-green-600 font-bold text-sm">주문 가능</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메뉴 6: 쿠키 세트 -->
+            <div class="menu-card" onclick="openModal('cookie')">
+                <div class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full font-bold text-sm shadow-md">선물용</div>
+                <img src="HAF_쿠키세트.png" alt="HAF_쿠키세트.png" class="menu-img" onerror="this.src='https://via.placeholder.com/400x300/88ccff/ffffff?text=HAF+Cookie+Set'">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">HAF 기념 쿠키 박스</h3>
+                    <p class="text-gray-500 text-sm mb-4">
+                        효빈시 마스코트와 HAF 캐릭터 아이싱 쿠키.
+                        효빈 여행 선물로 강력 추천...
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold">12,000원</span>
+                        <span class="sold-out-badge">일시 품절</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 안내 섹션 -->
+    <section class="py-16 bg-[#fffbf0]">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-8 font-serif">🥖 빵지순례 가이드</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">🕘</div>
+                    <h4 class="font-bold mb-2">오픈런 추천</h4>
+                    <p class="text-sm text-gray-500">주말에는 오전 9시 이전에<br>대부분의 시그니처 빵이<br>매진될 수 있습니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">💳</div>
+                    <h4 class="font-bold mb-2">효빈페이 환영</h4>
+                    <p class="text-sm text-gray-500"><a href="효빈페이.html" class="text-bread hover:underline">효빈페이</a>로 결제 시<br>10% 즉시 할인 및<br>적립 혜택을 드립니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">🎁</div>
+                    <h4 class="font-bold mb-2">HAF 패스 혜택</h4>
+                    <p class="text-sm text-gray-500">HAF 패스 소지자에게는<br>미니 마들렌 1개를<br>서비스로 드립니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 위치 및 정보 -->
+    <section id="location" class="py-20 max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- 지도 (이미지로 대체) -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gray-100 flex items-center justify-center h-[400px]">
+                <img src="사능동_지도.png" alt="지도.png" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x400/ddd/888?text=Map+Placeholder'">
+            </div>
+            
+            <div class="flex flex-col justify-center">
+                <h2 class="text-3xl font-serif font-bold mb-6">오시는 길</h2>
+                <ul class="space-y-4 text-lg">
+                    <li class="flex items-start gap-3">
+                        <span class="text-bread">📍</span>
+                        <span>효빈광역시 구도심구 사능동 104-2 (사능 베이커리 골목)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-bread">📞</span>
+                        <span>079-123-4567</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-bread">⏰</span>
+                        <span>매일 07:00 ~ 20:00 (재료 소진 시 마감)<br><span class="text-sm text-gray-500">* 매주 월요일 휴무</span></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-bread">🚇</span>
+                        <div>
+                            <div class="mb-2"><span style="color:#FFCC11; font-weight:bold;">● 3호선</span> 사능역 2번 출구 도보 5분</div>
+                            <div><span style="color:#FF8899; font-weight:bold;">● 7호선</span> 치남역 1번 출구 버스 환승 10분</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="mt-8 p-4 bg-gray-100 rounded-lg text-sm text-gray-600">
+                    * 주차 공간이 협소하오니 대중교통 이용을 권장합니다.<br>
+                    * 가게 앞 <a href="칠양여객.html" class="text-bread hover:underline">칠양여객</a> 래핑버스 정류장이 있습니다. (인증샷 명소!)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 방명록 섹션 -->
+    <section id="review" class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold mb-8 text-center">🍞 빵지순례 방명록</h2>
+            <p class="text-center text-red-600 text-sm mb-6 font-bold">※ 악성 댓글 및 허위 사실 유포 시 IP 추적을 통해 법적 대응합니다. (윤재훈 씨, 보고 계시죠?)</p>
+            
+            <!-- 작성 폼 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm mb-10">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                    <input type="text" id="guestName" placeholder="닉네임" class="border p-2 rounded md:col-span-1">
+                    <input type="text" id="guestMsg" placeholder="응원 메시지나 후기를 남겨주세요!" class="border p-2 rounded md:col-span-3">
+                </div>
+                <div class="text-right">
+                    <button onclick="addGuestbook()" class="bg-bread text-white px-6 py-2 rounded font-bold hover:bg-yellow-700 transition">남기기</button>
+                </div>
+            </div>
+
+            <!-- 목록 -->
+            <div id="guestbookList" class="space-y-4">
+                <!-- 초기 데이터는 JS로 로드 -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#3d3d3d] text-gray-400 py-10 text-sm">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-bold text-white text-lg mb-2">사능베이커리 (Saneung Bakery)</p>
+                <p>대표: 박정직 | 사업자등록번호: 123-45-67890</p>
+                <p>주소: 효빈광역시 사능동 빵지순례길 1</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white">인스타그램</a>
+                <a href="#" class="hover:text-white">트위터</a>
+                <a href="#" class="hover:text-white">이용약관</a>
+            </div>
+        </div>
+        <div class="text-center mt-8 border-t border-gray-600 pt-4">
+            &copy; 2026 Saneung Bakery. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- 상세 정보 모달 -->
+    <div id="infoModal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle" class="text-2xl font-serif font-bold mb-4 text-bread"></h3>
+            <img id="modalImg" src="" alt="빵이미지" class="w-full h-48 object-cover rounded-lg mb-4">
+            <div class="space-y-3 text-gray-700">
+                <p id="modalDesc" class="leading-relaxed"></p>
+                <div class="bg-gray-50 p-3 rounded text-sm">
+                    <p><strong>🔥 열량:</strong> <span id="modalCal"></span></p>
+                    <p><strong>🌾 주요 성분:</strong> <span id="modalIng"></span></p>
+                    <p><strong>⚠️ 알레르기 정보:</strong> <span id="modalAllergy"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 메뉴 데이터
+        const menuData = {
+            emma: {
+                title: "엠마의 트램 탑승 팥빵",
+                img: "엠마_트램빵.png",
+                desc: "효빈 트램을 형상화한 시그니처 빵입니다. HAF 공식 캐릭터 '엠마 베르데'와의 콜라보 제품으로, 성우 사시데 마리아가 직접 시식 후 극찬했습니다.",
+                cal: "385 kcal",
+                ing: "국산 팥앙금(경주산), 우유 생크림, 유기농 밀가루",
+                allergy: "밀, 우유, 계란"
+            },
+            choco: {
+                title: "리미의 초코 소라빵",
+                img: "초코소라빵.png",
+                desc: "뱅드림의 '우시고메 리미'가 사랑하는 그 빵! 진한 벨기에산 초콜릿으로 만든 커스터드 크림이 꼬리 끝까지 가득 차 있습니다.",
+                cal: "320 kcal",
+                ing: "벨기에산 다크 초콜릿, 동물성 생크림",
+                allergy: "밀, 우유, 계란, 대두"
+            },
+            saaya: {
+                title: "사아야의 아침 식빵",
+                img: "야마부키_베이커리_식빵.png",
+                desc: "'야마부키 베이커리'의 맛을 그대로! 탕종 공법으로 3일간 저온 숙성하여 쫄깃하고 부드러운 식감이 일품입니다.",
+                cal: "210 kcal (1쪽)",
+                ing: "유기농 강력분, 앵커 버터, 천일염",
+                allergy: "밀, 우유"
+            },
+            kasumi: {
+                title: "카스미의 반짝반짝 별도넛",
+                img: "카스미_별도넛.png",
+                desc: "기타 보컬 카스미의 별 모양 머리를 닮은 도넛입니다. 튀기지 않고 구워서 담백하며, 상큼한 딸기 글레이즈가 포인트!",
+                cal: "280 kcal",
+                ing: "건조 딸기 가루, 화이트 초콜릿",
+                allergy: "밀, 우유, 계란"
+            },
+            salt: {
+                title: "효빈 소금빵",
+                img: "효빈_소금빵.png",
+                desc: "겉은 바삭하고 속은 버터 동굴로 촉촉한 소금빵의 정석. 프랑스산 고메 버터와 게랑드 천일염을 사용했습니다.",
+                cal: "195 kcal",
+                ing: "프랑스 고메 버터, 게랑드 소금",
+                allergy: "밀, 우유"
+            },
+            cookie: {
+                title: "HAF 기념 쿠키 박스",
+                img: "HAF_쿠키세트.png",
+                desc: "효빈시 마스코트와 다양한 애니메이션 캐릭터가 그려진 아이싱 쿠키 세트입니다. 선물용으로 가장 인기가 좋습니다.",
+                cal: "120 kcal (1개)",
+                ing: "아몬드 가루, 슈가 파우더, 식용 색소",
+                allergy: "밀, 우유, 계란, 아몬드"
+            }
+        };
+
+        function openModal(key) {
+            const data = menuData[key];
+            if (!data) return;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('modalDesc').innerText = data.desc;
+            document.getElementById('modalCal').innerText = data.cal;
+            document.getElementById('modalIng').innerText = data.ing;
+            document.getElementById('modalAllergy').innerText = data.allergy;
+            document.getElementById('infoModal').classList.add('open');
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').classList.remove('open');
+        }
+
+        // 방명록 데이터
+        const guestbookList = document.getElementById('guestbookList');
+        const initialData = [
+            { 
+                id: 1,
+                name: "빵순이", 
+                msg: "부산에서 첫차 타고 왔어요! 엠마 빵 실물 영접 ㅠㅠ 사장님 번창하세요!", 
+                time: "2026.01.07",
+                replies: []
+            },
+            {
+                id: 2,
+                name: "YoonJaehoon(IP:192.***)",
+                msg: "야 이 XXXXXX 빵집아! 맛도 X같이 없는 게 어디서 X랄이야! 내가 나가면 가게 불질러버린다!!!",
+                time: "2026.01.06",
+                isMalicious: true,
+                replies: [
+                    { name: "사장(박정직)", msg: "윤재훈 씨, 해당 댓글 채증 완료했습니다. 업무방해 및 협박죄로 추가 고소 조치 들어갑니다. 합의는 절대 없습니다. 경찰서에서 봅시다." },
+                    { name: "지나가던_시민", msg: "아직도 정신 못 차렸네. 감방 가서 콩밥이나 드세요." },
+                    { name: "법대생", msg: "협박죄 성립 요건 완벽하네요. 축하드립니다. 형량 +1" },
+                    { name: "효빈경찰", msg: "사건 접수되었습니다. 곧 소환장 발송됩니다." }
+                ]
+            },
+            { 
+                id: 3,
+                name: "효빈시민", 
+                msg: "우리 동네 자랑 사능빵집! 소금빵 진짜 맛있어요.", 
+                time: "2026.01.07",
+                replies: [
+                    { name: "사장(박정직)", msg: "감사합니다^^ 이웃분들 덕분에 힘이 납니다!" }
+                ]
+            },
+            { 
+                id: 4,
+                name: "카스미사랑", 
+                msg: "별도넛 너무 귀여워요... 먹기 아까워서 사진만 100장 찍음.", 
+                time: "2026.01.06",
+                replies: []
+            },
+            { id: 5, name: "멀리서 왔는데 보람있네요", msg: "서울에서 첫차타고 왔는데 줄이 길어서 걱정했는데 다행히 샀네요! 맛도 최고!", time: "2026.01.07", replies: [] },
+            { id: 6, name: "사장님 힘내세요", msg: "이상한 사람들 악플 신경쓰지 마세요. 응원하는 사람이 훨씬 많습니다!", time: "2026.01.07", replies: [] },
+            { id: 7, name: "엠마 빵 너무 맛있어요", msg: "팥앙금이랑 생크림 조화가 미쳤음 ㅠㅠ", time: "2026.01.07", replies: [] },
+            { id: 8, name: "윤재훈 아직도 정신 못 차렸네", msg: "진짜 가지가지 한다. 나이 먹고 부끄럽지도 않냐?", time: "2026.01.07", replies: [] },
+            { id: 9, name: "소금빵 맛집 인정", msg: "겉바속촉 그 자체. 10개 사갈걸 후회중...", time: "2026.01.07", replies: [] },
+            { id: 10, name: "택배 주문도 되나요?", msg: "지방이라 가기 힘든데 택배 좀 열어주세요 제발 ㅠㅠ", time: "2026.01.07", replies: [{name: "사장(박정직)", msg: "현재 택배 준비 중입니다! 조금만 기다려주세요^^"}] },
+            { id: 11, name: "오픈런 성공!", msg: "7시에 왔는데 벌써 줄이... 그래도 갓 나온 빵 먹어서 행복함.", time: "2026.01.07", replies: [] },
+            { id: 12, name: "효빈시 여행 필수 코스", msg: "빵지순례 1번지 인정합니다.", time: "2026.01.07", replies: [] },
+            { id: 13, name: "가격도 착하고 맛도 착함", msg: "요즘 빵값 비싼데 여긴 혜자네요.", time: "2026.01.07", replies: [] },
+            { id: 14, name: "직원분들 친절해요", msg: "바쁘신데도 웃으면서 응대해주셔서 기분 좋았습니다.", time: "2026.01.06", replies: [] },
+            { id: 15, name: "주말에 또 갈게요", msg: "친구들 데리고 재방문 예정!", time: "2026.01.06", replies: [] },
+            { id: 16, name: "악플러 고소미 먹여주세요", msg: "선처 절대 해주지 마세요!", time: "2026.01.06", replies: [] },
+            { id: 17, name: "빵지순례 성공적", msg: "인증샷 찍기에도 너무 예쁨.", time: "2026.01.06", replies: [] },
+            { id: 18, name: "친구랑 같이 왔어요", msg: "둘 다 빵순이라 눈 돌아감 ㅋㅋ", time: "2026.01.06", replies: [] },
+            { id: 19, name: "분위기 너무 좋아요", msg: "매장 안에서 먹고 가는데 냄새도 좋고 분위기도 따뜻함.", time: "2026.01.06", replies: [] },
+            { id: 20, name: "캐릭터 빵 퀄리티 대박", msg: "모양만 흉내낸 게 아니라 맛까지 완벽함.", time: "2026.01.06", replies: [] },
+            { id: 21, name: "오래오래 장사해주세요", msg: "이 맛 변치 말아주세요 사장님!", time: "2026.01.06", replies: [] },
+            { id: 22, name: "다른 지역에도 분점 내주세요", msg: "대구에도 내주시면 매일 갈게요.", time: "2026.01.06", replies: [] },
+            { id: 23, name: "사랑해요 사능빵집", msg: "제 인생 빵집 등극!", time: "2026.01.06", replies: [] },
+            { id: 24, name: "오늘 다 팔려서 아쉽 ㅠㅠ", msg: "퇴근하고 갔더니 품절... 내일은 일찍 가야지.", time: "2026.01.06", replies: [] }
+        ];
+
+        function renderGuestbook() {
+            guestbookList.innerHTML = "";
+            initialData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = "guestbook-card";
+                
+                let content = item.msg;
+                if (item.isMalicious) {
+                    content = `<span class="deleted-comment">[관리자에 의해 블라인드 처리된 댓글입니다. 사유: 욕설 및 협박]</span><br><span style="font-size:0.8em; color:#aaa;">(원문: ${item.msg})</span>`;
+                }
+
+                // 답글 렌더링
+                let repliesHtml = "";
+                if (item.replies && item.replies.length > 0) {
+                    repliesHtml = `<div class="reply-container">`;
+                    item.replies.forEach(reply => {
+                        // 윤재훈 악플에 달린 답글은 특별 스타일 (참교육)
+                        const replyClass = item.isMalicious ? "reply-box malicious-reply" : "reply-box";
+                        repliesHtml += `
+                            <div class="${replyClass}">
+                                <div class="font-bold text-sm mb-1" style="color:${item.isMalicious ? '#ef4444' : '#d97706'}">↳ ${reply.name}</div>
+                                <div class="text-gray-700 text-sm">${reply.msg}</div>
+                            </div>
+                        `;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 답글 달기 버튼 및 폼
+                const replyFormId = `replyForm-${item.id}`;
+                const replyInputId = `replyInput-${item.id}`;
+                const replyNameId = `replyName-${item.id}`;
+
+                div.innerHTML = `
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-bold ${item.isMalicious ? 'text-red-600' : 'text-bread'}">${item.name}</span>
+                        <span class="text-xs text-gray-400">${item.time}</span>
+                    </div>
+                    <p class="text-gray-700">${content}</p>
+                    ${repliesHtml}
+                    <div class="text-right">
+                        <span class="reply-btn" onclick="toggleReplyForm(${item.id})">💬 답글 달기</span>
+                    </div>
+                    <div id="${replyFormId}" class="reply-form">
+                        <div class="flex gap-2 mb-2">
+                            <input type="text" id="${replyNameId}" placeholder="닉네임" class="border p-1 text-sm rounded w-1/3">
+                            <input type="text" id="${replyInputId}" placeholder="답글을 입력하세요" class="border p-1 text-sm rounded w-2/3">
+                        </div>
+                        <div class="text-right">
+                            <button onclick="submitReply(${item.id})" class="bg-gray-500 text-white px-3 py-1 rounded text-xs hover:bg-gray-600">등록</button>
+                        </div>
+                    </div>
+                `;
+                guestbookList.appendChild(div);
+            });
+        }
+
+        function toggleReplyForm(id) {
+            const form = document.getElementById(`replyForm-${id}`);
+            if (form.style.display === 'block') {
+                form.style.display = 'none';
+            } else {
+                form.style.display = 'block';
+            }
+        }
+
+        function submitReply(id) {
+            const nameInput = document.getElementById(`replyName-${id}`);
+            const msgInput = document.getElementById(`replyInput-${id}`);
+            
+            if (!nameInput.value || !msgInput.value) {
+                alert("닉네임과 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const targetItem = initialData.find(item => item.id === id);
+            if (targetItem) {
+                targetItem.replies.push({
+                    name: nameInput.value,
+                    msg: msgInput.value
+                });
+                renderGuestbook();
+                alert("답글이 등록되었습니다!");
+            }
+        }
+
+        function addGuestbook() {
+            const nameInput = document.getElementById('guestName');
+            const msgInput = document.getElementById('guestMsg');
+            
+            if (!nameInput.value || !msgInput.value) {
+                alert("닉네임과 메시지를 입력해주세요.");
+                return;
+            }
+
+            const today = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
+            initialData.unshift({
+                id: Date.now(), // simple unique ID
+                name: nameInput.value,
+                msg: msgInput.value,
+                time: today,
+                replies: []
+            });
+
+            nameInput.value = "";
+            msgInput.value = "";
+            renderGuestbook();
+            alert("방명록이 등록되었습니다! (악성 댓글은 법적 조치 됩니다)");
+        }
+
+        // 초기 렌더링
+        renderGuestbook();
+    </script>
+
+</body>
+</html>

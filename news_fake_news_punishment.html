@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 이재명 대통령, 가짜뉴스 선전포고 "민주주의 파괴하는 독버섯... 무관용 엄벌" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fee2e2 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-num { font-weight: bold; color: #0055aa; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .yoon-comment { background: #fff1f2; border: 1px solid #fecaca; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end px-4">
+            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='hyobin_ilbo.html'">효빈일보</h1>
+            <div class="text-sm text-gray-500">2026.01.29 (목)</div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1080px] mx-auto flex py-3 news-nav px-4">
+                <a href="hyobin_ilbo.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container px-4">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-red-600 font-bold">정치 > 대통령실</div>
+                <h2 class="article-title">이재명 대통령, 가짜뉴스 선전포고 "민주주의 파괴하는 독버섯... 무관용 엄벌"</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">국정 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.29. 14:00 | 수정 2026.01.29. 15:30</span>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p>[효빈일보 = 국정 기자] **이재명 대통령이 29일 청와대 브리핑룸에서 열린 국정 현안 회의에서 가짜뉴스와의 전면전을 선포했다.** 이 대통령은 가짜뉴스를 "표현의 자유 뒤에 숨어 공동체를 파괴하는 암세포"라고 규정하며 검찰과 경찰에 강력한 특별 수사를 지시했다.</p>
+                    
+                    <div class="my-6">
+                        <img src="이재명_대통령_발표.png" alt="이재명_대통령_가짜뉴스_브리핑.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/003366/FFFFFF?text=President+Lee+Statement'">
+                        <div class="img-caption">▲ 이재명 대통령이 29일 청와대에서 열린 '가짜뉴스 근절 범정부 대책 회의'에서 발언하고 있다.</div>
+                    </div>
+
+                    <p>이 대통령은 특히 최근 <a href="효빈시.html" class="text-blue-600 underline">효빈시</a>에서 발생했던 박효빈 시장에 대한 인종차별적 허위사실 유포와 빵 테러 미수 사건 등을 언급하며 격노했다. 이 대통령은 **"사실관계가 확인되지 않은 저열한 비방으로 공직자의 명예를 훼손하고 시민들을 불안에 떨게 하는 행위는 결코 표현의 자유가 될 수 없다"**고 못 박았다.</p>
+
+                    <p>이어 **"조직적으로 가짜뉴스를 생성하고 유포하는 배후 세력에 대해서는 발본색원하여 엄중한 법의 심판을 받게 할 것"**이라며, 범죄 수익 환수는 물론 가중 처벌까지 고려하겠다는 강력한 의지를 내비쳤. 이는 지난 정권에서 발생했던 각종 여론 조작 및 선동 행위들에 대한 철저한 단죄 의지를 표현한 것으로 풀이된다.</p>
+
+                    <p>정부는 방송통신위원회, 법무부, 경찰청 합동으로 '가짜뉴스 신속 대응 전담팀'을 구성하기로 했다. 특히 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장이 이끄는 효빈시의 디지털 검증 모델을 전국으로 확산시키는 방안도 검토 중인 것으로 알려졌다.</p>
+
+                    <p>한편, 이 소식을 접한 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 씨 일당은 "정부의 입을 막으려는 언론 탄압"이라며 SNS를 통해 반발하고 있으나, 법조계는 "협박과 허위사실 유포를 일삼아온 이들에게 가장 두려운 소식이 될 것"이라고 진단했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">댓글 <span class="text-[#0055aa]" id="comment-count">3,942</span></div>
+                
+                <div id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Justice_Lee", time: "방금 전", like: 12500, dislike: 2,
+                                content: "대통령님 지지합니다! 가짜뉴스로 사람 인격 살인하는 놈들은 징역 20년씩 때려야 합니다. 특히 윤재훈 같은 애들은 평생 감옥에 가두세요.",
+                                replies: [
+                                    { nick: "YoonJaehoon(출소/무직)", content: "이게 나라냐! 독재다! 내가 하는 말은 다 진실이야! 박효빈이 사기꾼인 게 가짜뉴스라고? 니들 다 세뇌당한 거야!" },
+                                    { nick: "Fact_Bomber", content: "재훈아 ㅋㅋㅋ 대통령님이 님 같은 애들 잡으려고 선전포고하신 거야. 이제 고시원 와이파이 쓸 시간도 얼마 안 남았네. 축하한다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Pride", time: "10분 전", like: 9800,
+                                content: "박효빈 시장님이 그동안 얼마나 가짜뉴스에 시달리셨는데... 이제야 나라가 바로 잡히네요. 혐오는 결코 진실을 이길 수 없습니다.",
+                                replies: [
+                                    { nick: "YoonJaehoon(출소/무직)", content: "박효빈이 필리핀 간첩인 거 다 아는데 대통령이 감싸주는 거 봐라! 빨갱이 정권이다!" },
+                                    { nick: "Security_Cop", content: "윤재훈 씨, 현재 발언 허위사실 유포 및 국가원수 모독죄 채증 완료되었습니다. 곧 댁으로 찾아뵙겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Normal_Citizen", time: "20분 전", like: 7200,
+                                content: "가짜뉴스 유포해서 번 수익 싹 다 환수하는 게 정답입니다. 돈 때문에 거짓말하는 유튜버들 이번 기회에 다 망했으면 좋겠네요.",
+                                replies: [
+                                    { nick: "YoonJaehoon(출소/무직)", content: "내 채널 구독자 100명 무시하냐! 이게 민심이다! 이재명 물러가라!" },
+                                    { nick: "Part_Timer", content: "구독자 100명 ㅋㅋㅋ 그중 90명은 너 조롱하러 가는 거잖아 멍청아." }
+                                ]
+                            },
+                            { id: 4, nick: "Mama_Cafe", content: "아이들이 뭘 보고 배우겠어요. 어른들이 대놓고 거짓말하고 테러하는 세상을... 대통령님 잘하셨습니다.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"아줌마들은 집에서 밥이나 해! 정치 간섭 말고!"}, {nick:"Super_Mom", content: "니는 밥 해줄 사람도 없어서 컵라면만 먹잖아 ㅋㅋㅋ 냄새나니까 입 닥치렴."}] },
+                            { id: 5, nick: "Univ_Student", content: "효빈대생들은 박 시장님 끝까지 지지합니다. 가짜뉴스로 우리 시의 명예를 더럽히지 마세요.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"공부나 해 이 빡대가리들아! 박효빈 노예 새끼들!"}, {nick:"Senior_A", content: "응~ 너보단 공부 잘해서 2.2%는 안 받아~"}] },
+                            { id: 6, nick: "Old_Lady_Park", content: "박 시장이 일 잘하니까 배가 아파서 저러는 거지. 나쁜 놈들 다 잡아넣어!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"할망구야 속지 마! 박효빈은 악마야!"}, {nick:"Grandson", content: "우리 할머니 건드리면 너 오늘 밤에 뒤진다. 주소 찍어라."}] },
+                            { id: 7, nick: "Global_Friend", content: "President Lee is doing the right thing. Fake news is global problem. Hyobin is a good model.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"Fuck off Yankee! Korea for pure Koreans!"}, {nick:"Fact_Check", content: "영어 못하면 좀 가만히라도 있어라... 나라 망신 다 시키네."}] },
+                            { id: 8, nick: "Bakery_King", content: "사능동 빵집 사장입니다. 가짜뉴스로 우리 가게 불매운동 하려던 놈들 이번에 다 고소할 겁니다.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"니네 빵에 내가 침 뱉어놨다니까! 으히히!"}, {nick:"Police_Official", content: "영업방해 및 위해 예고로 현장 검거 대상입니다. 위치 파악 중."}] },
+                            { id: 9, nick: "Law_Pro", content: "가중처벌 조항 신설이 핵심입니다. 범죄 수익보다 벌금이 더 많아야 가짜뉴스가 사라지죠.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"돈 따위 개나 줘버려! 난 신념으로 한다!"}, {nick:"Tax_Officer", content: "신념이라면서 세금은 왜 안 내세요? 압류 집행 들어갑니다."}] },
+                            { id: 10, nick: "Metro_Staff", content: "6호선 보라색 열차 안에서도 다들 이 뉴스 보며 박수치네요. 속이 다 시원합니다.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"지하철이나 똑바로 운전해 노예들아!"}, {nick:"Citizen_V", content: "너보단 6호선 기관사님이 사회에 1억 배는 더 도움 됨 ㅋㅋㅋ"}] },
+                            { id: 11, nick: "Anti_Yoon_Jaehoon", content: "윤재훈 저놈은 출소해도 정신 못 차리네 ㅋㅋㅋ 저 정도면 그냥 병 아니냐?", replies: [{nick:"YoonJaehoon(출소/무직)", content:"난 정상이야! 니들이 미친 거야!"}, {nick:"Psychiatrist", content: "원래 환자는 본인이 아픈 걸 모릅니다. 저희 병원 비어있으니 오세요."}] },
+                            { id: 12, nick: "Small_Biz_Power", content: "상권 활성화 방해하는 선동꾼들 싹 다 청소해 주세요. 효빈시는 지금 떡상 중입니다.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"다 거품이야! 박효빈 사기극이라고!"}, {nick:"Investor", content: "응 너 빼고 다 돈 벌어 ㅋㅋㅋ 4.8%의 굴욕 잊었니?"}] },
+                            { id: 13, nick: "Student_Council", content: "효빈대 학생회 차원에서도 가짜뉴스 모니터링단 운영하겠습니다. 대통령님 지지합니다!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"박효빈 꼬봉들 ㅋㅋㅋ 빵이나 받아먹어라!"}, {nick:"Student_B", content: "니 침 섞인 거 말고 사장님이 정성껏 구운 거 먹을게~"}] },
+                            { id: 14, nick: "History_Major", content: "독재자들이 쓰던 수법이 가짜뉴스와 혐오 선동입니다. 이재명 정부가 이를 뿌리 뽑는 건 역사적 과제입니다.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"이재명이 독재자야! 나 같은 야당 탄압하잖아!"}, {nick:"Realist", content: "님 야당 아니잖아요... 그냥 백수지."}] },
+                            { id: 15, nick: "Donation_Angel", content: "뉴스 보고 기분 좋아서 결식아동 돕기에 500만 원 보냈습니다. 정의가 살아있네요.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"그 돈 나 주지! 내가 지금 굶고 있는데!"}, {nick:"Justice", content: "일 좀 해라 이 깡패 새끼야 ㅋㅋㅋ"}] },
+                            { id: 16, nick: "Future_Hope", content: "혐오 없는 세상에서 아이들을 키우고 싶습니다. 가짜뉴스는 아이들의 미래를 망칩니다.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"오타쿠로 키우는 게 더 미래 망치는 거야!"}, {nick:"Teacher", content: "너처럼 키우는 게 인류의 재난이지 ㅋㅋㅋ"}] },
+                            { id: 17, nick: "Railway_Fan", content: "연청색 빈효선 개통하고 너무 행복한데 윤재훈 악플 보면 기분 잡침... 입 좀 닥치게 해주세요.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"기차 놀이 하냐? ㅉㅉ 다 탈선해버려라!"}, {nick:"BinHyo_Staff", content: "악담 수준 보소... 님 멘탈 탈선이나 걱정하시길."}] },
+                            { id: 18, nick: "Peace_Maker", content: "싸우지 마세요... 라고 하고 싶지만 윤재훈은 도저히 안 되겠다. 사이버 수사대님 출동해 주세요.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"날 잡으면 민란이 일어날 거다! 효빈 시민들이 나를 원해!"}, {nick:"Citizen_K", content: "아무도 안 원해 ㅋㅋㅋ 제발 착각 좀 그만해."}] },
+                            { id: 19, nick: "Final_Boss", content: "결론: 이재명 대통령 = 청소부, 가짜뉴스 = 쓰레기, 윤재훈 = 쓰레기 봉투.", replies: [{nick:"YoonJaehoon(출소/무직)", content:"아니야!!! 내가 최고야!!! 아빠!!! 도와줘!!!"}, {nick: "Ghost_Yoon", content: "(윤대환) 재훈아... 아빠 지금 콩밥 먹기도 힘들다... 고만해라..."}] },
+                            { id: 20, nick: "Hyobin_Eternity", content: "박효빈 시장님과 이재명 정부의 환상적인 복식조! 가짜뉴스 싹 다 날려버립시다!", replies: [{nick:"YoonJaehoon(출소/무직)", content:"다 죽여버릴 거야! 내가 시장 되면!"}, {nick: "Election_Board", content: "피선거권 박탈당하셨습니다 아저씨 ㅋㅋㅋ 평생 투표나 잘하세요."}] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            const isYoonMain = cmt.nick.includes("Yoon");
+                            div.className = isYoonMain ? "yoon-comment" : (cmt.like > 10000 ? "best-comment shadow-md" : "comment-item");
+                            
+                            let repliesHtml = `<div class="reply-container">`;
+                            cmt.replies.forEach(reply => {
+                                const isYoon = reply.nick.includes("Yoon");
+                                const styleClass = isYoon ? "bg-red-100 border border-red-200" : "bg-gray-50 border border-gray-200";
+                                const nickClass = isYoon ? "text-red-600 font-black" : "text-gray-700 font-bold";
+                                const tag = isYoon ? '<span class="bg-red-600 text-white text-[10px] px-1 rounded ml-1">사면범/난동/무직</span>' : '';
+
+                                repliesHtml += `
+                                    <div class="reply-item ${styleClass} p-3 rounded mb-2">
+                                        <span class="${nickClass}">${reply.nick}${tag}</span>: 
+                                        <span class="text-gray-800">${reply.content}</span>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm text-blue-800">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-3 font-medium">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn border border-gray-300 px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                                    <span class="vote-btn border border-gray-300 px-2 py-1 rounded bg-white hover:bg-gray-100" onclick="toggleVote(this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active', 'active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">정치 핫이슈</div>
+                <ul class="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_fake_news_punishment.html" class="ranking-link font-bold">대통령, 가짜뉴스 선전포고</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_hyobin_cooperation.html" class="ranking-link">효빈시 AI 검증 시스템 가동</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_mayor_act.html" class="ranking-link">윤대환 방지법 전국 확대 검토</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_winter_preview_v2.html" class="ranking-link">성우 내한 성료와 경제효과</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail_return.html" class="ranking-link">윤재훈 재구속 영장 임박</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#0055aa] p-6 text-white rounded text-center shadow-lg">
+                <div class="font-black text-xl mb-2 italic">DIGITAL JUSTICE</div>
+                <div class="text-sm">가짜뉴스는 범죄입니다<br>끝까지 추적합니다</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

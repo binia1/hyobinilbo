@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[윤대환 칼럼] "차가운 감방에서... 콩밥은 거부한다" - 파이낸스 투데이</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f0f0; }
+
+        /* 헤더: 찌라시 감성 */
+        .ft-header { background: #cc0000; color: yellow; padding: 10px 0; border-bottom: 4px solid #000; text-align: center; }
+        .ft-logo { font-family: 'Gothic A1', sans-serif; font-size: 36px; font-weight: 900; letter-spacing: -2px; text-shadow: 2px 2px 0px #000; cursor: pointer; }
+        .ft-sub { font-size: 12px; color: white; font-weight: bold; margin-top: 2px; }
+
+        /* 네비게이션 */
+        .ft-nav { background: #222; color: white; text-align: center; padding: 10px 0; font-weight: bold; font-size: 14px; }
+        .ft-nav a { margin: 0 10px; cursor: pointer; color: white; text-decoration: none; }
+        .ft-nav a:hover { color: #ffcc00; text-decoration: underline; }
+        .ft-nav .active { color: yellow; text-decoration: underline; }
+
+        /* 컨테이너 */
+        .container { max-width: 1000px; margin: 20px auto; display: flex; gap: 15px; }
+        .content-area { flex: 3; background: white; padding: 40px; border: 1px solid #999; }
+        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+
+        /* 칼럼 스타일 */
+        .column-header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 20px; }
+        .column-tag { background: #000080; color: white; padding: 5px 15px; font-size: 14px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        .column-title { font-family: 'Nanum Myeongjo', serif; font-size: 32px; font-weight: 700; line-height: 1.3; color: #333; margin-bottom: 15px; word-break: keep-all; }
+        .column-author { display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 20px; }
+        .author-img { width: 80px; height: 80px; border-radius: 50%; border: 3px solid #cc0000; object-fit: cover; background: #eee; }
+        .author-info { text-align: left; }
+        .author-name { font-size: 18px; font-weight: 900; color: #000; }
+        .author-desc { font-size: 12px; color: #666; }
+
+        .column-body { font-family: 'Nanum Myeongjo', serif; font-size: 18px; line-height: 2.0; color: #222; text-align: justify; }
+        .column-body p { margin-bottom: 25px; }
+        .column-body b { color: #cc0000; text-decoration: underline; }
+        
+        /* 인용구 스타일 */
+        .pull-quote { 
+            border-top: 2px solid #000; 
+            border-bottom: 2px solid #000; 
+            padding: 20px; 
+            font-size: 22px; 
+            font-weight: bold; 
+            text-align: center; 
+            margin: 30px 0; 
+            background-color: #f9f9f9; 
+            color: #000080;
+            font-family: 'Gothic A1', sans-serif;
+        }
+
+        /* 서명/바닥글 */
+        .column-footer { text-align: right; font-style: italic; color: #555; margin-top: 40px; border-top: 1px dotted #999; padding-top: 10px; }
+
+        /* 광고 및 사이드바 공통 */
+        .ad-box { border: 1px solid #ddd; cursor: pointer; }
+        .yoon-ad { background: linear-gradient(135deg, #000080 0%, #0000cd 100%); color: white; padding: 20px; text-align: center; border: 2px solid #ffcc00; }
+        .wig-ad { background: #fff0f5; border: 2px solid #ff69b4; padding: 15px; text-align: center; color: #333; }
+        
+        /* 댓글창 */
+        .comment-section { background: #fafafa; border-top: 2px solid #333; padding: 20px; margin-top: 50px; }
+        .cmt-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
+        .cmt-nick { font-weight: bold; font-size: 14px; margin-bottom: 5px; display: block; }
+        .cmt-text { font-size: 15px; line-height: 1.4; }
+        
+        .best-badge { background: #cc0000; color: white; font-size: 11px; padding: 2px 5px; border-radius: 3px; margin-right: 5px; }
+    </style>
+</head>
+<body>
+
+    <header class="ft-header">
+        <div class="ft-logo" onclick="location.href='ft_home.html'">FINANCE TODAY</div>
+        <div class="ft-sub">진실의 횃불 | 윤대환 시장님 명예회복 운동본부</div>
+    </header>
+
+    <div class="ft-nav">
+        <a href="ft_home.html">종합</a>
+        <a href="ft_politics.html">정치</a>
+        <a href="ft_economy.html">경제</a>
+        <a href="ft_column.html" class="active">윤대환 칼럼</a>
+        <a href="ft_special.html">[기획] 박효빈의 실체</a>
+        <a href="ft_realestate.html">부동산(두청)</a>
+    </div>
+
+    <div class="container">
+        <!-- 메인 칼럼 영역 -->
+        <div class="content-area">
+            
+            <div class="column-header">
+                <span class="column-tag">윤대환의 옥중단상(獄中斷想)</span>
+                <h1 class="column-title">제발 밥에 '콩' 좀 넣지 마라...<br>이 치졸한 식단이 '정치 보복'이다</h1>
+                
+                <div class="column-author">
+                    <!-- 요청하신 이미지 경로 규칙 준수: 한국어이름.png -->
+                    <img src="윤대환_수감사진.png" alt="윤대환" class="author-img" onerror="this.src='https://placehold.co/80x80/000080/FFF?text=YOON'">
+                    <div class="author-info">
+                        <div class="author-name">윤대환 (前 효빈시장)</div>
+                        <div class="author-desc">두청운수 설립자 | 현(現) 효빈구치소 4885번 수감자 | 자유민주주의 수호자</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column-body">
+                <p>
+                    효빈시의 겨울이 춥다. 내 마음도 춥다. 하지만 나를 더욱 춥게 만드는 것은 3.3㎡(1평) 남짓한 독방의 냉기가 아니라, <a href="박효빈.html" style="color:blue; text-decoration:underline;">박효빈</a> 시장이 자행하고 있는 치졸한 <strong>'식단 테러'</strong>다.
+                </p>
+
+                <p>
+                    나는 평소 콩을 싫어한다. 이는 시장 재임 시절 널리 알려진 사실이다. 그런데 내가 수감된 이후, 구치소 식단에는 유독 <strong>'완두콩밥'</strong>과 <strong>'콩자반'</strong>이 빠지지 않고 등장한다. 이것이 우연인가? 아니다. 이것은 명백한 <a href="정치탄압.html" style="color:red; text-decoration:underline;">정치탄압</a>이자, 전임 시장에 대한 인격 모독이다.
+                </p>
+
+                <div class="pull-quote">
+                    "알록달록한 지하철 노선도...<br>이것은 시민을 현혹하는 '무지개빛 환각'일 뿐!"
+                </div>
+
+                <p>
+                    창살 너머로 들려오는 소식은 더욱 참담하다. 박효빈 시장이 지하철 노선 색깔을 제멋대로 바꾸고 있다고 한다. 
+                    <span style="color:#FF8899; font-weight:bold;">7호선은 분홍색</span>, <span style="color:#6677CC; font-weight:bold;">빈효선은 연청색</span>이라니... 
+                    이 무슨 망측한 색깔 놀음인가? 
+                </p>
+
+                <p>
+                    남자는 자고로 <strong>진한 청색(Navy)</strong>이나 <strong>검정</strong>, 기껏해야 <strong>국방색</strong>이면 충분하다. 
+                    알록달록한 파스텔톤으로 지하철을 칠한다고 해서, 그 지하철이 시민들을 행복으로 데려다주지 않는다. 
+                    오히려 시민들의 정신을 혼미하게 만들어, 그가 좋아하는 '오타쿠 문화'에 빠뜨리려는 <a href="세뇌공작.html" style="color:red; text-decoration:underline;">세뇌공작</a>이 의심된다.
+                </p>
+                
+                <p>
+                    나는 꿈꾼다. 다시 효빈시의 모든 버스가 '두청운수'의 푸른 깃발 아래 통합되는 날을. 
+                    지하철 대신 웅장한 디젤 버스가 매연을 뿜으며 역동적으로 달리는 거리를.
+                    그날이 올 때까지, 나는 이 차가운 콩밥을 씹어 삼키며 와신상담(臥薪嘗膽) 할 것이다.
+                </p>
+
+                <p>
+                    오늘도 교도관에게 외쳤다. "흰 쌀밥을 다오! 아니면 차라리 나를 죽여라!" 
+                    그러나 돌아온 것은 싸늘한 냉소뿐이었다. 효빈시민 여러분, 부디 저를 잊지 말아 주십시오.
+                </p>
+
+                <div class="column-footer">
+                    2026년 1월 29일, 효빈구치소 독방에서 윤대환 씀.
+                </div>
+            </div>
+
+            <!-- 하단 광고 -->
+            <div class="mt-8 border border-yellow-400 bg-yellow-50 p-4 text-center cursor-pointer" onclick="location.href='윤재훈.html'">
+                <h3 class="font-bold text-red-600 text-xl">[긴급] 윤대환 옥중 뒷바라지 자금 마련</h3>
+                <p class="text-sm mt-2">아들 윤재훈이 웁니다. "아버지가 콩을 골라내고 드실 수 있게 영치금이 필요합니다."</p>
+                <button class="mt-3 bg-red-600 text-white px-4 py-1 rounded font-bold">후원하기 (효빈은행 111-222)</button>
+            </div>
+
+            <!-- 댓글창 -->
+            <div class="comment-section">
+                <h3 class="text-lg font-bold mb-4">💬 독자 의견 (32)</h3>
+                
+                <div class="cmt-item">
+                    <span class="cmt-nick text-blue-800">애국청년_윤재훈</span>
+                    <p class="cmt-text">아버지! ㅠㅠ 콩밥이라니요! 제가 당장 치킨 넣어드리겠습니다! 
+                    근데 아버지 숨겨둔 비자금 계좌 비밀번호가 뭐였죠? 변호사 비용이 급해서요! (진짜임)</p>
+                    <div class="text-xs text-gray-500 mt-1">공감 2 · 비공감 52</div>
+                </div>
+
+                <div class="cmt-item">
+                    <span class="cmt-nick"><span class="best-badge">BEST</span> 효빈시_영양사협회</span>
+                    <p class="cmt-text">윤 수감자님, 콩은 단백질이 풍부하여 탈모 예방과 노화 방지에 좋습니다. 
+                    편식하지 마시고 골고루 드셔야 죗값을 오래오래 치르시죠. 식단은 규정대로 제공됩니다.</p>
+                    <div class="text-xs text-gray-500 mt-1">공감 1250 · 비공감 3</div>
+                </div>
+
+                <div class="cmt-item">
+                    <span class="cmt-nick">지하철덕후</span>
+                    <p class="cmt-text">7호선 분홍색(#FF8899)이랑 빈효선 연청색(#6677CC) 색감 개이쁜데? 
+                    아저씨 미적 감각이 80년대에 멈춰 있어서 그래요. 
+                    그리고 디젤 버스 매연? 환경오염 생각은 안 하세요? 진짜 꼰대 레전드네.</p>
+                    <div class="text-xs text-gray-500 mt-1">공감 890 · 비공감 10</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <!-- 지난 칼럼 리스트 -->
+            <div class="border border-black bg-white p-4">
+                <h3 class="font-bold border-bottom border-black pb-2 mb-2">📜 지난 윤대환 칼럼</h3>
+                <ul class="text-sm space-y-2">
+                    <li class="cursor-pointer hover:underline text-gray-700">· [25.12.20] 구치소 난방이 너무 약하다 (조작이다)</li>
+                    <li class="cursor-pointer hover:underline text-gray-700">· [25.11.15] 나는 뇌물을 받지 않았다, 그냥 주길래...</li>
+                    <li class="cursor-pointer hover:underline text-gray-700">· [25.10.01] 박효빈, 그는 인간이 아니라 AI인가?</li>
+                </ul>
+            </div>
+
+            <div class="yoon-ad cursor-pointer" onclick="location.href='윤재훈_가발.html'">
+                <h3>👨‍🦲 "아버지는 머리가 빠지셨지만..."</h3>
+                <p class="text-sm mt-2">저는 지킵니다.<br><strong>윤재훈의 '강철' 부분가발</strong></p>
+                <div class="mt-2 bg-white text-black text-xs p-1">※ 100% 인모 (출처 불분명)</div>
+            </div>
+
+            <div class="ad-box p-0">
+                <img src="두청운수_배너.png" alt="두청운수" style="width:100%;" onerror="this.src='https://placehold.co/250x150/228b22/FFF?text=Doocheong+Bus'">
+                <div class="p-2 bg-green-800 text-white text-center text-xs">
+                    <b>그리운 엔진 소리, 두청운수</b><br>
+                    우리는 멈추지 않습니다.
+                </div>
+            </div>
+
+            <div class="ranking-box mt-4">
+                <div class="font-bold text-red-600 border-bottom mb-2 pb-1 border-red-600">🔥 파이낸스 많이 본 뉴스</div>
+                <ul class="text-sm space-y-2">
+                    <li class="cursor-pointer hover:text-red-600">1. 윤대환, 옥중에서 "박효빈은 애니 끊어라" 일침</li>
+                    <li class="cursor-pointer hover:text-red-600">2. 효빈시청 앞, '두청운수 부활' 1인 시위 (윤재훈)</li>
+                    <li class="cursor-pointer hover:text-red-600">3. 7호선 분홍색 도색, 예산 낭비 논란 (파이낸스 단독)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
