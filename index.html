@@ -5,17 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>효빈일보 - 진실을 향한 정직한 눈</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // 클래스 기반 다크모드 활성화
+        }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
 
-        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        :root {
+            --bg-body: #f5f7fa;
+            --bg-card: #ffffff;
+            --border-color: #e2e2e2;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --text-meta: #888888;
+            --link-hover: #0055aa;
+            --top-bar-bg: #f8f9fa;
+        }
+
+        html.dark {
+            --bg-body: #121212;
+            --bg-card: #1e1e1e;
+            --border-color: #333333;
+            --text-main: #e0e0e0;
+            --text-sub: #aaaaaa;
+            --text-meta: #777777;
+            --link-hover: #4dabf7;
+            --top-bar-bg: #1a1a1a;
+        }
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: var(--bg-body); color: var(--text-main); transition: background-color 0.3s, color 0.3s; }
         
         /* 헤더 스타일 */
-        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
-        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
-        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
-        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+        .news-header { background: var(--bg-card); border-bottom: 1px solid var(--border-color); transition: background-color 0.3s, border-color 0.3s; }
+        .top-bar { background: var(--top-bar-bg); border-bottom: 1px solid var(--border-color); padding: 5px 0; font-size: 12px; color: var(--text-sub); transition: all 0.3s; }
+        .news-nav a { color: var(--text-main); font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: var(--link-hover); border-bottom: 3px solid var(--link-hover); }
 
         /* 레이아웃 */
         .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
@@ -23,57 +50,86 @@
         .side-column { flex: 1; }
 
         /* 메인 헤드라인 */
-        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
-        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-card { background: var(--bg-card); border: 1px solid var(--border-color); margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s, background-color 0.3s, border-color 0.3s; position: relative; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         .headline-img { width: 100%; height: 400px; object-fit: cover; }
         .headline-content { padding: 25px; }
-        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
-        .headline-title:hover { text-decoration: underline; color: #0055aa; }
-        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; color: var(--text-main); }
+        .headline-title:hover { text-decoration: underline; color: var(--link-hover); }
+        .headline-desc { font-size: 15px; color: var(--text-sub); line-height: 1.6; height: 48px; overflow: hidden; }
 
         /* 서브 그리드 뉴스 */
         .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
-        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
-        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card { background: var(--bg-card); border: 1px solid var(--border-color); display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s, background-color 0.3s; position: relative; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         .news-card img { width: 100%; height: 180px; object-fit: cover; }
         .news-card-content { padding: 15px; }
-        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
-        .news-card-meta { font-size: 12px; color: #888; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; color: var(--text-main); }
+        .news-card-meta { font-size: 12px; color: var(--text-meta); display: flex; justify-content: space-between; align-items: center; }
 
         /* 리스트형 뉴스 */
-        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
-        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
-        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
-        .list-title { font-size: 15px; color: #333; }
-        .list-time { font-size: 12px; color: #999; }
+        .news-list-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; transition: background-color 0.3s; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid var(--text-main); padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; color: var(--text-main); }
+        .list-item { padding: 12px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; cursor: pointer; position: relative; }
+        .list-item:hover .list-title { text-decoration: underline; color: var(--link-hover); }
+        .list-title { font-size: 15px; color: var(--text-main); }
+        .list-time { font-size: 12px; color: var(--text-meta); }
 
         /* 사이드바 랭킹 */
-        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
-        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
-        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .ranking-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; margin-bottom: 20px; transition: background-color 0.3s; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; gap: 10px; align-items: flex-start; cursor: pointer; position: relative; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: var(--link-hover); }
         .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
-        .rank-title { font-size: 14px; line-height: 1.4; }
+        html.dark .rank-num { color: #4dabf7; }
+        .rank-title { font-size: 14px; line-height: 1.4; color: var(--text-main); flex: 1; }
+
+        /* 북마크/스크랩 버튼 */
+        .scrap-btn { color: #ccc; font-size: 18px; cursor: pointer; transition: color 0.2s; background: none; border: none; padding: 0; display: inline-flex; align-items: center; justify-content: center; z-index: 10; }
+        .scrap-btn:hover { color: #facc15; }
+        .scrap-btn.active { color: #eab308; } /* 노란 별 */
+        
+        .card-scrap { position: absolute; bottom: 15px; right: 15px; }
+        .list-scrap { margin-left: 10px; }
+
+        /* 모달 스크롤바 */
+        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        html.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
 
         /* 광고 배너 */
         .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+        html.dark .ad-banner { background: #2a2a2a; border-color: #444; color: #bbb; }
+        html.dark .ad-banner[style*="background: #fff8e1"] { background: #3a2e12 !important; border-color: #5c430a !important; }
+        html.dark .ad-banner[style*="background: #e3f2fd"] { background: #11273d !important; border-color: #1a4269 !important; }
 
         /* 푸터 */
-        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        footer { background: #222; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        html.dark footer { background: #0a0a0a; border-top: 1px solid #222; }
         .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
         .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
     </style>
 </head>
-<body>
+<body class="transition-colors duration-300">
 
-    <!-- 최상단 바 -->
+    <!-- 최상단 바 (날씨, 다크모드, 스크랩 추가) -->
     <div class="top-bar">
-        <div class="max-w-[1100px] mx-auto flex justify-between px-2">
-            <div>효빈시의 아침을 여는 신문</div>
-            <div>
+        <div class="max-w-[1100px] mx-auto flex justify-between px-2 items-center">
+            <div class="flex items-center gap-4">
+                <span class="font-bold text-[#0055aa] dark:text-[#4dabf7]">효빈일보</span>
+                <span id="current-time">2026.03.26 (목) 10:42</span>
+                <span id="current-weather" class="text-orange-500 dark:text-orange-400 font-bold">☀️ 맑음 22℃ / 미세먼지 좋음 (효빈시)</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="toggle-dark-mode" class="hover:underline flex items-center gap-1" title="야간 모드 전환">
+                    <span id="dark-mode-icon">🌙</span> <span id="dark-mode-text">야간 모드</span>
+                </button> |
+                <button id="open-scrapbook" class="hover:underline flex items-center gap-1 text-yellow-600 dark:text-yellow-400 font-bold" title="저장한 기사 보기">
+                    ⭐ 스크랩북 (<span id="scrap-count">0</span>)
+                </button> | 
                 <a href="index.html" class="hover:underline">효빈위키 홈</a> | 
-                <span class="cursor-pointer hover:underline">로그인</span> | 
-                <span class="cursor-pointer hover:underline">구독신청</span>
+                <span id="btn-login-top" class="cursor-pointer hover:underline text-gray-800 dark:text-gray-200">로그인</span> |
+                <span id="btn-subscribe-top" class="cursor-pointer hover:underline text-[#0055aa] dark:text-[#4dabf7] font-bold">구독신청</span>
             </div>
         </div>
     </div>
@@ -81,78 +137,93 @@
     <!-- 헤더 -->
     <header class="news-header">
         <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.reload()">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            <h1 class="text-4xl font-black text-[#0055aa] dark:text-[#4dabf7] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2 relative">
+                <input type="text" placeholder="기사, 아카이브 검색" class="border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-3 py-1 text-sm w-64 focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] hover:bg-[#004488] dark:bg-[#0066cc] dark:hover:bg-[#0055aa] text-white px-3 py-1 text-sm font-bold transition-colors">검색</button>
             </div>
         </div>
-        <nav class="border-t border-gray-200">
+        <nav class="border-t border-gray-200 dark:border-gray-700">
             <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="#" class="active">홈</a>
-                <a href="#">정치</a>
-                <a href="#">경제</a>
-                <a href="#">사회</a>
-                <a href="#">국제</a>
-                <a href="#">문화</a>
-                <a href="#">IT/과학</a>
-                <a href="#">오피니언</a>
-                <a href="#">포토</a>
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
             </div>
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container relative">
         <!-- 메인 컬럼 -->
         <div class="main-column">
             
             <!-- 헤드라인 뉴스 (메인 기사) -->
-            <div class="headline-card" onclick="location.href='news_article.html'">
-                <img src="https://via.placeholder.com/800x400/333333/FFFFFF?text=Major+Breaking+News" alt="헤드라인" class="headline-img">
+            <div class="headline-card group" onclick="if(!event.target.closest('.scrap-btn')) location.href='[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html'">
+                <img src="https://via.placeholder.com/800x400/228822/FFFFFF?text=Approval+Rating" alt="헤드라인" class="headline-img">
                 <div class="headline-content">
-                    <div class="text-[#0055aa] font-bold text-sm mb-2">사회 > 사건사고</div>
-                    <h2 class="headline-title">[단독] 윤대환·윤재훈 부자, 위키 여론 조작 '덜미'... "IP 추적 결과 충격"</h2>
+                    <div class="text-[#0055aa] dark:text-[#4dabf7] font-bold text-sm mb-2 flex justify-between">
+                        <span>정치 > 시정여론조사</span>
+                    </div>
+                    <h2 class="headline-title">[여론조사] 박효빈 효빈시장, 취임 후 지지율 82.4% '역대 최고치 갱신'</h2>
                     <p class="headline-desc">
-                        전임 시장 부자가 다수의 차명 계정을 동원해 범죄 사실을 삭제하고 여론을 조작하려다 덜미가 잡혔다. 이들은 엉성한 IP 관리로 인해 자택과 두청운수 본사에서 접속한 사실이 들통났으며...
+                        효빈시민들의 전폭적인 지지가 수치로 증명되었다. 2026년 3월 26일 오늘 발표된 정기 여론조사 결과, 박효빈 시장의 시정 운영에 대한 긍정 평가가 82.4%를 기록하며 또다시 역대 최고치를 갈아치웠다. 최근 위기 상황에서 보여준 굳건한 시민 중심 행보가...
                     </p>
+                    <button class="scrap-btn card-scrap" data-url="[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html" data-title="[여론조사] 박효빈 지지율 82.4%" title="스크랩하기">★</button>
                 </div>
             </div>
 
             <!-- 주요 뉴스 그리드 -->
             <div class="sub-grid">
-                <!-- 국제 기사 -->
-                <div class="news-card" onclick="location.href='news_philippines.html'">
-                    <img src="https://via.placeholder.com/400x200/003366/FFFFFF?text=International+News" alt="필리핀">
+                <!-- 서브 기사 1 -->
+                <div class="news-card" onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html'">
+                    <img src="https://via.placeholder.com/400x200/224488/FFFFFF?text=Democracy+Wins" alt="민주주의 승리">
                     <div class="news-card-content">
-                        <div class="news-card-title">"Don't touch our blood"... 필리핀 '피노이 프라이드', 윤재훈 심판</div>
-                        <div class="news-card-meta">국제 | 이국제 특파원</div>
+                        <div class="news-card-title">[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 환호</div>
+                        <div class="news-card-meta">
+                            <span>정치 | 박효빈 기자</span>
+                            <button class="scrap-btn" data-url="[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html" data-title="[속보] 6시간의 악몽 끝, 계엄 해제" title="스크랩하기">★</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 기획 기사 -->
-                <div class="news-card" onclick="location.href='news_park_past.html'">
-                    <img src="https://via.placeholder.com/400x200/5577AA/FFFFFF?text=Mayor+Park+Feature" alt="박효빈">
+                <!-- 서브 기사 2 -->
+                <div class="news-card" onclick="if(!event.target.closest('.scrap-btn')) location.href='[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다.html'">
+                    <img src="https://via.placeholder.com/400x200/553333/FFFFFF?text=Political+Analysis" alt="정치 기획">
                     <div class="news-card-content">
-                        <div class="news-card-title">[기획] "비 새는 단칸방 오타쿠"... 박효빈 시장의 '눈물 젖은 빵'</div>
-                        <div class="news-card-meta">정치 | 이사람 기자</div>
+                        <div class="news-card-title">[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다</div>
+                        <div class="news-card-meta">
+                            <span>기획 | 이정치 기자</span>
+                            <button class="scrap-btn" data-url="[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다.html" data-title="[기획] 강서구의 교훈 잊은 용산" title="스크랩하기">★</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 일반 기사 1 -->
-                <div class="news-card" onclick="location.href='news_article.html'">
-                    <img src="https://via.placeholder.com/400x200/228822/FFFFFF?text=Subway+Line+8" alt="8호선">
+                <!-- 서브 기사 3 -->
+                <div class="news-card" onclick="if(!event.target.closest('.scrap-btn')) location.href='[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html'">
+                    <img src="https://via.placeholder.com/400x200/882222/FFFFFF?text=Exclusive" alt="단독 보도">
                     <div class="news-card-content">
-                        <div class="news-card-title">박효빈 시장, '8호선 정상화 1주년' 현장 점검... "시민의 승리"</div>
-                        <div class="news-card-meta">행정 | 정시청 기자</div>
+                        <div class="news-card-title">[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당 선언</div>
+                        <div class="news-card-meta">
+                            <span>정치 | 정시청 기자</span>
+                            <button class="scrap-btn" data-url="[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html" data-title="[단독] 효빈 보수의 양심 부서원 탈당" title="스크랩하기">★</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 일반 기사 2 -->
-                <div class="news-card" onclick="location.href='news_article.html'">
-                    <img src="https://via.placeholder.com/400x200/DD8800/FFFFFF?text=Goods+Shop" alt="굿즈샵">
+                <!-- 서브 기사 4 -->
+                <div class="news-card" onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html'">
+                    <img src="https://via.placeholder.com/400x200/8B0000/FFFFFF?text=Impeachment" alt="탄핵 가결">
                     <div class="news-card-content">
-                        <div class="news-card-title">효빈교통공사 굿즈샵 '과진점' 오픈... 옛 두청힐스 부지의 변신</div>
-                        <div class="news-card-meta">문화 | 문덕후 기자</div>
+                        <div class="news-card-title">[속보] 윤석열 대통령 탄핵안 가결... 직무 즉시 정지</div>
+                        <div class="news-card-meta">
+                            <span>정치 | 국회 출입기자</span>
+                            <button class="scrap-btn" data-url="[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html" data-title="윤석열 대통령 탄핵안 가결" title="스크랩하기">★</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -161,27 +232,42 @@
             <div class="news-list-box">
                 <div class="section-title">
                     <span>분야별 주요 뉴스</span>
-                    <span class="text-xs text-gray-500 cursor-pointer">더보기 +</span>
+                    <span class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 +</span>
                 </div>
-                <div class="list-item" onclick="location.href='news_article.html'">
-                    <span class="list-title">[사회] 두청운수 불법 차고지, 시청 '원상복구 명령' 및 구상권 청구</span>
-                    <span class="list-time">1시간 전</span>
+                <div class="list-item" onclick="if(!event.target.closest('.scrap-btn')) location.href='[선택 2025] 이재명, 제21대 대통령 당선.html'">
+                    <span class="list-title">[정치] [선택 2025] 이재명, 제21대 대통령 당선 확정</span>
+                    <div class="flex items-center">
+                        <span class="list-time">1시간 전</span>
+                        <button class="scrap-btn list-scrap" data-url="[선택 2025] 이재명, 제21대 대통령 당선.html" data-title="이재명, 제21대 대통령 당선" title="스크랩하기">★</button>
+                    </div>
                 </div>
-                <div class="list-item" onclick="location.href='news_article.html'">
-                    <span class="list-title">[법원] 윤대환 일가 '루트 M' 소송 패소 확정... 13억 빚더미 앉아</span>
-                    <span class="list-time">2시간 전</span>
+                <div class="list-item" onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html'">
+                    <span class="list-title">[사회] [속보] 박효빈 시장 "계엄 포고령 거부... 공수부대와 맞서겠다"</span>
+                    <div class="flex items-center">
+                        <span class="list-time">2시간 전</span>
+                        <button class="scrap-btn list-scrap" data-url="[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html" data-title="박효빈 시장 계엄 거부 선언" title="스크랩하기">★</button>
+                    </div>
                 </div>
-                <div class="list-item" onclick="location.href='news_article.html'">
-                    <span class="list-title">[생활] 효빈대 학식 '누마즈 귤 샐러드' 연일 매진... "괴식인가 별미인가"</span>
-                    <span class="list-time">3시간 전</span>
+                <div class="list-item" onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 윤석열 전 대통령 구속.html'">
+                    <span class="list-title">[사회] [속보] 윤석열 전 대통령 전격 구속... 영장 발부</span>
+                    <div class="flex items-center">
+                        <span class="list-time">3시간 전</span>
+                        <button class="scrap-btn list-scrap" data-url="[속보] 윤석열 전 대통령 구속.html" data-title="윤석열 전 대통령 구속" title="스크랩하기">★</button>
+                    </div>
                 </div>
-                <div class="list-item" onclick="location.href='news_article.html'">
-                    <span class="list-title">[문화] 1호선 캐릭터 '고나미', 효빈시 공식 홍보대사 위촉</span>
-                    <span class="list-time">3시간 전</span>
+                <div class="list-item" onclick="if(!event.target.closest('.scrap-btn')) location.href='news_univ_human_shield.html'">
+                    <span class="list-title">[교육] 효빈대 학생들, 인간방패로 계엄군 진입 막아내 '감동'</span>
+                    <div class="flex items-center">
+                        <span class="list-time">3시간 전</span>
+                        <button class="scrap-btn list-scrap" data-url="news_univ_human_shield.html" data-title="효빈대 학생들 인간방패" title="스크랩하기">★</button>
+                    </div>
                 </div>
-                <div class="list-item" onclick="location.href='news_article.html'">
-                    <span class="list-title">[정치] 효빈 시민 85%, "현 시정에 만족한다" 역대 최고치 기록</span>
-                    <span class="list-time">4시간 전</span>
+                <div class="list-item" onclick="if(!event.target.closest('.scrap-btn')) location.href='news_emma_bread.html'">
+                    <span class="list-title">[문화] 효빈 명물 '엠마빵', 하루 1만개 완판 행진... 대기열만 200m</span>
+                    <div class="flex items-center">
+                        <span class="list-time">4시간 전</span>
+                        <button class="scrap-btn list-scrap" data-url="news_emma_bread.html" data-title="효빈 명물 엠마빵 완판" title="스크랩하기">★</button>
+                    </div>
                 </div>
             </div>
 
@@ -191,50 +277,60 @@
         <div class="side-column">
             <!-- 실시간 랭킹 -->
             <div class="ranking-box">
-                <div class="ranking-title">
-                    <span class="text-[#0055aa]">많이 본 뉴스</span>
-                    <span class="text-xs text-gray-500">14:00 기준</span>
+                <div class="section-title border-none mb-2 pb-0">
+                    <span class="text-[#0055aa] dark:text-[#4dabf7]">많이 본 뉴스</span>
+                    <span class="text-xs text-gray-500 font-normal">14:00 기준</span>
                 </div>
                 <ul class="ranking-list">
-                    <li onclick="location.href='news_philippines.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html'">
                         <span class="rank-num">1</span>
-                        <span class="rank-title">윤재훈 필리핀 입국 금지, 갱단 연루설 '사실로 확인'</span>
+                        <span class="rank-title">[속보] 윤석열 대통령 탄핵안 가결... 직무 즉시 정지</span>
+                        <button class="scrap-btn" data-url="[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html" data-title="윤석열 대통령 탄핵안 가결" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_article.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html'">
                         <span class="rank-num">2</span>
-                        <span class="rank-title">[단독] 윤대환·윤재훈 위키 조작 덜미</span>
+                        <span class="rank-title">6시간 악몽 끝... 효빈 시민들 "반란군 체포하라"</span>
+                        <button class="scrap-btn" data-url="[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html" data-title="계엄 해제에 효빈 시민들 환호" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_article.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html'">
                         <span class="rank-num">3</span>
-                        <span class="rank-title">두청운수 불법 차고지 강제 철거 시작</span>
+                        <span class="rank-title">박효빈 시장 "시민 위해 공수부대와 맞서겠다" 선언</span>
+                        <button class="scrap-btn" data-url="[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html" data-title="박효빈 시장 공수부대와 맞서겠다" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_park_past.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html'">
                         <span class="rank-num">4</span>
-                        <span class="rank-title">[기획] "비 새는 단칸방"... 박효빈의 눈물</span>
+                        <span class="rank-title">[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당</span>
+                        <button class="scrap-btn" data-url="[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html" data-title="효빈 보수의 양심 부서원 탈당" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_article.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_univ_human_shield.html'">
                         <span class="rank-num">5</span>
-                        <span class="rank-title">효빈대 '귤 샐러드' 먹으러 일본인 관광객 줄 서</span>
+                        <span class="rank-title">효빈대 학생들, 인간방패로 계엄군 막아내</span>
+                        <button class="scrap-btn" data-url="news_univ_human_shield.html" data-title="효빈대 학생들 인간방패" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_article.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_martial_law_hyobin.html'">
                         <span class="rank-num">6</span>
-                        <span class="rank-title">고나미 굿즈 '과진점' 오픈 첫날 매출 1억</span>
+                        <span class="rank-title">[긴급] 효빈시 전역 계엄령 선포 파장... 도심 마비</span>
+                        <button class="scrap-btn" data-url="news_martial_law_hyobin.html" data-title="효빈시 전역 계엄령 선포" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_article.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_park_past.html'">
                         <span class="rank-num">7</span>
-                        <span class="rank-title">윤대환 남구 저택 경매... 3차 유찰 굴욕</span>
+                        <span class="rank-title">[기획] "비 새는 단칸방"... 박효빈 시장의 과거</span>
+                        <button class="scrap-btn" data-url="news_park_past.html" data-title="비 새는 단칸방 박효빈 시장" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_article.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_emma_bread.html'">
                         <span class="rank-num">8</span>
-                        <span class="rank-title">8호선 개통 1주년, 시민 만족도 98%</span>
+                        <span class="rank-title">효빈 명물 '엠마빵', 하루 1만개 팔려나가며 돌풍</span>
+                        <button class="scrap-btn" data-url="news_emma_bread.html" data-title="효빈 명물 엠마빵 완판" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_article.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_dangga_dessert.html'">
                         <span class="rank-num">9</span>
-                        <span class="rank-title">효빈공항 2활주로 착공, 소음 피해 보상안 확정</span>
+                        <span class="rank-title">당가(Dangga) 디저트 카페 효빈 상륙... 2030 열광</span>
+                        <button class="scrap-btn" data-url="news_dangga_dessert.html" data-title="당가 디저트 카페 효빈 상륙" title="스크랩하기">★</button>
                     </li>
-                    <li onclick="location.href='news_article.html'">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='hyobin_ilbo_election_2024.html'">
                         <span class="rank-num">10</span>
-                        <span class="rank-title">안다야 여사, '자랑스러운 시민상' 수상</span>
+                        <span class="rank-title">2024 효빈 선거 대기획: 시민의 선택은 어디로</span>
+                        <button class="scrap-btn" data-url="hyobin_ilbo_election_2024.html" data-title="2024 효빈 선거 대기획" title="스크랩하기">★</button>
                     </li>
                 </ul>
             </div>
@@ -242,7 +338,7 @@
             <!-- 광고 -->
             <div class="ad-banner">
                 <div>
-                    <div class="font-bold text-black mb-1">효빈교통공사</div>
+                    <div class="font-bold text-black dark:text-gray-200 mb-1">효빈교통공사</div>
                     <div class="text-xs">더 빠르고 안전하게<br>시민의 발이 되겠습니다</div>
                 </div>
             </div>
@@ -262,20 +358,154 @@
         </div>
     </div>
 
+    <!-- 스크랩북 모달 -->
+    <div id="scrapbook-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[10000] hidden flex items-center justify-center backdrop-blur-sm transition-opacity">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-lg rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <h3 class="font-bold text-lg text-gray-800 dark:text-gray-100 flex items-center gap-2">
+                    <span class="text-yellow-500">⭐</span> 나의 스크랩북
+                </h3>
+                <button id="close-scrapbook" class="text-gray-500 hover:text-red-500 font-bold px-2 py-1">✕</button>
+            </div>
+            <div id="scrap-modal-list" class="p-4 overflow-y-auto flex-1 custom-scrollbar">
+                <!-- 스크랩 내역이 여기에 렌더링됨 -->
+                <div class="text-center text-gray-500 py-10">저장된 기사가 없습니다.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 로그인 모달 -->
+    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[10000] hidden flex items-center justify-center backdrop-blur-sm transition-opacity">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-sm rounded-xl shadow-2xl overflow-hidden flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+                <h3 class="font-bold text-lg text-gray-800 dark:text-gray-100">효빈일보 로그인</h3>
+                <button class="close-modal-btn text-gray-500 hover:text-red-500 font-bold px-2 py-1">✕</button>
+            </div>
+            <div class="p-6 flex flex-col gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">아이디</label>
+                    <input type="text" id="login-id" placeholder="아이디를 입력하세요" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">비밀번호</label>
+                    <input type="password" id="login-pw" placeholder="비밀번호를 입력하세요" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]">
+                </div>
+                <button id="submit-login" class="w-full bg-[#0055aa] hover:bg-[#004488] text-white font-bold py-2 rounded-lg mt-2 transition-colors">로그인</button>
+                <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-2">
+                    <span id="btn-open-signup" class="cursor-pointer hover:underline text-[#0055aa] dark:text-[#4dabf7] font-bold">회원가입</span>
+                    <span class="cursor-pointer hover:underline">아이디/비밀번호 찾기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 회원가입 모달 -->
+    <div id="signup-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[10000] hidden flex items-center justify-center backdrop-blur-sm transition-opacity">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-sm rounded-xl shadow-2xl overflow-hidden flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <h3 class="font-bold text-lg text-[#0055aa] dark:text-[#4dabf7]">효빈일보 회원가입</h3>
+                <button class="close-modal-btn text-gray-500 hover:text-red-500 font-bold px-2 py-1">✕</button>
+            </div>
+            <div class="p-6 flex flex-col gap-4 overflow-y-auto custom-scrollbar max-h-[70vh]">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">아이디</label>
+                    <input type="text" id="signup-id" placeholder="사용할 아이디" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">비밀번호</label>
+                    <input type="password" id="signup-pw" placeholder="비밀번호" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">비밀번호 확인</label>
+                    <input type="password" id="signup-pw-confirm" placeholder="비밀번호 재입력" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">이름</label>
+                    <input type="text" id="signup-name" placeholder="홍길동" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]">
+                </div>
+                <button id="submit-signup" class="w-full bg-[#0055aa] hover:bg-[#004488] text-white font-bold py-2 rounded-lg mt-4 transition-colors">가입완료</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 구독신청 모달 -->
+    <div id="subscribe-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[10000] hidden flex items-center justify-center backdrop-blur-sm transition-opacity">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-md rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 shrink-0">
+                <h3 class="font-bold text-lg text-[#0055aa] dark:text-[#4dabf7]">효빈일보 정기구독 신청</h3>
+                <button class="close-modal-btn text-gray-500 hover:text-red-500 font-bold px-2 py-1">✕</button>
+            </div>
+            <div class="p-6 overflow-y-auto custom-scrollbar flex-1">
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">효빈시민의 진실된 눈, 효빈일보를 매일 아침 만나보세요.</p>
+                <div class="flex flex-col gap-3 mb-6">
+                    <label class="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors">
+                        <input type="radio" name="sub_type" class="mr-3 w-4 h-4" checked>
+                        <div class="flex-1">
+                            <div class="font-bold text-gray-800 dark:text-gray-200">디지털 베이직</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">웹/앱 무제한 열람</div>
+                        </div>
+                        <div class="font-bold text-[#0055aa] dark:text-[#4dabf7]">월 4,900원</div>
+                    </label>
+                    <label class="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors">
+                        <input type="radio" name="sub_type" class="mr-3 w-4 h-4">
+                        <div class="flex-1">
+                            <div class="font-bold text-gray-800 dark:text-gray-200">종이신문 + 디지털</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">매일 아침 문앞 배송</div>
+                        </div>
+                        <div class="font-bold text-[#0055aa] dark:text-[#4dabf7]">월 15,000원</div>
+                    </label>
+                </div>
+                
+                <div class="flex flex-col gap-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">신청자 이름</label>
+                        <input type="text" id="sub-name" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]" placeholder="홍길동">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">연락처</label>
+                        <input type="text" id="sub-phone" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]" placeholder="010-1234-5678">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1">배송지 주소 <span class="text-xs font-normal text-gray-500">(디지털 전용시 생략 가능)</span></label>
+                        <input type="text" id="sub-address" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]" placeholder="효빈광역시 북구...">
+                    </div>
+                </div>
+                
+                <button id="submit-subscribe" class="w-full bg-[#0055aa] hover:bg-[#004488] text-white font-bold py-3 rounded-lg mt-6 transition-colors shadow-lg">구독 신청 및 결제 진행하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 하단 정책(텍스트) 모달 -->
+    <div id="policy-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[10000] hidden flex items-center justify-center backdrop-blur-sm transition-opacity">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 shrink-0">
+                <h3 id="policy-title" class="font-bold text-lg text-gray-800 dark:text-gray-100">정책 타이틀</h3>
+                <button class="close-modal-btn text-gray-500 hover:text-red-500 font-bold px-2 py-1">✕</button>
+            </div>
+            <div id="policy-content" class="p-6 overflow-y-auto flex-1 custom-scrollbar text-sm text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-wrap">
+                내용이 들어갑니다.
+            </div>
+            <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex justify-end shrink-0">
+                <button class="close-modal-btn bg-[#0055aa] hover:bg-[#004488] text-white px-5 py-2 rounded-lg font-bold transition-colors">확인</button>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#">회사소개</a>
-                <a href="#">구독신청</a>
-                <a href="#">고충처리</a>
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
+        <div class="footer-content flex-col md:flex-row gap-6">
+            <div class="footer-links flex flex-wrap gap-y-2">
+                <span class="policy-link cursor-pointer hover:text-white transition-colors" data-type="about">회사소개</span>
+                <span class="policy-link cursor-pointer hover:text-white transition-colors" data-type="subscribe">구독신청</span>
+                <span class="policy-link cursor-pointer hover:text-white transition-colors" data-type="grievance">고충처리</span>
+                <span class="policy-link cursor-pointer hover:text-white transition-colors" data-type="terms">이용약관</span>
+                <span class="policy-link cursor-pointer hover:text-white transition-colors font-bold text-gray-300" data-type="privacy">개인정보처리방침</span>
             </div>
             <div>
                 <p class="mb-1">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
                 <p class="mb-1">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
                 <p>전화: 079-212-2123 | 팩스: 079-212-2124</p>
-                <p class="mt-2 text-gray-500">Copyright © Hyobin Ilbo. All rights reserved.</p>
+                <p class="mt-2 text-gray-600 dark:text-gray-500">Copyright © Hyobin Ilbo. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -283,287 +513,665 @@
 
 <script>
 (function(){
-  // ===== Hyobin News Search Enhancer (news_list) =====
-  const MAX_RECENT = 8;
-  const RECENT_KEY = "hb_news_recent";
+    // ==========================================
+    // 1. 데이터베이스 통합 연동 (기사, 아카이브, 구분)
+    // ==========================================
+    const NEWS_DATABASE = [
+        // --- 아카이브 (10년 이상) ---
+        { type: '아카이브', title: '[2007년 아카이브] 갈색 겨울, 두청운수 파업 사태', url: 'archive_2007_brown_winter.html', keywords: '2007 갈색 겨울 파업 두청운수 흑역사 archive brown winter' },
+        { type: '아카이브', title: '[2007년 아카이브] 두청운수 사건 최종 판결', url: 'archive_2007_final_verdict.html', keywords: '2007 판결 법원 두청운수 archive final verdict' },
+        { type: '아카이브', title: '[2007년 아카이브] 치열했던 법정 공방 기록', url: 'archive_2007_legal_battle.html', keywords: '2007 법정 공방 재판 두청운수 archive legal battle' },
+        { type: '아카이브', title: '[2007년 아카이브] 5호선 참사의 비극', url: 'archive_2007_line5_tragedy.html', keywords: '2007 5호선 참사 지하철 사고 archive line5 tragedy' },
+        { type: '아카이브', title: '[2007년 아카이브] 대통령, 두청운수 사태 강력 질책', url: 'archive_2007_president_rebuke.html', keywords: '2007 대통령 질책 비판 두청운수 archive president rebuke' },
+        { type: '아카이브', title: '[2007년 아카이브] 도심 마비시킨 폭력 시위', url: 'archive_2007_protest_violence.html', keywords: '2007 폭력 시위 마비 시청 archive protest violence' },
+        { type: '아카이브', title: '[2007년 아카이브] 신세계 언론의 보도 행태', url: 'archive_2007_shinsegae_press.html', keywords: '2007 신세계 언론 보도 가짜뉴스 archive shinsegae press' },
+        { type: '아카이브', title: '[2010년 아카이브] 두청운수, 결국 최종 부도 처리', url: 'archive_2010_doocheong_bankruptcy.html', keywords: '2010 두청운수 부도 파산 파산 archive bankruptcy' },
+        { type: '아카이브', title: '[2011년 아카이브] 효빈 5호선, 우여곡절 끝 개통', url: 'archive_2011_line5_opening.html', keywords: '2011 5호선 개통 지하철 빨간색 archive line5 opening' },
+        
+        // --- 구분 (카테고리 홈) ---
+        { type: '구분', title: '효빈일보 홈', url: 'index.html', keywords: '메인 홈 표지 index 구분' },
+        { type: '구분', title: '정치 뉴스 홈', url: 'politics.html', keywords: '정치 시정 시장 선거 politics 구분' },
+        { type: '구분', title: '경제 뉴스 홈', url: 'economy.html', keywords: '경제 기업 산업 예산 economy 구분' },
+        { type: '구분', title: '사회 뉴스 홈', url: 'society.html', keywords: '사회 사건 사고 경찰 society 구분' },
+        { type: '구분', title: '국제 뉴스 홈', url: 'world.html', keywords: '국제 세계 해외 특파원 world 구분' },
+        { type: '구분', title: '문화 뉴스 홈', url: 'culture.html', keywords: '문화 축제 애니메이션 굿즈 culture 구분' },
+        { type: '구분', title: 'IT/과학 뉴스 홈', url: 'it.html', keywords: 'it 과학 기술 인터넷 사이버 it 구분' },
+        { type: '구분', title: '오피니언 홈', url: 'opinion.html', keywords: '오피니언 사설 칼럼 기고 opinion 구분' },
+        { type: '구분', title: '포토 뉴스 홈', url: 'photo.html', keywords: '포토 사진 화보 현장 photo 구분' },
 
-  function norm(s){ return (s||"").toString().trim(); }
-  function normKey(s){ return norm(s).toLowerCase(); }
+        // --- 일반 기사 (한글/영문 혼합) ---
+        { type: '기사', title: '2025년 제21대 대통령 선거 특집', url: '2025년 대선.html', keywords: '2025년 대선 선거 대통령 이재명' },
+        { type: '기사', title: '[법원] 효빈일보 법정 공방 판결 속보', url: 'hyobin_ilbo_court_ruling.html', keywords: '효빈일보 법원 판결 소송 court ruling' },
+        { type: '기사', title: '효빈일보 선거 특집 보도', url: 'hyobin_ilbo_election.html', keywords: '효빈일보 선거 특집 보도 election' },
+        { type: '기사', title: '2024 효빈 선거 대기획', url: 'hyobin_ilbo_election_2024.html', keywords: '2024 선거 총선 효빈일보 election' },
+        { type: '기사', title: '[논란] 2023년 특별사면 명단 파장', url: 'hyobin_ilbo_pardon_2023.html', keywords: '2023 특별사면 사면 논란 pardon' },
+        { type: '기사', title: '기본 뉴스 양식', url: 'news_article.html', keywords: '일반 기사 테스트 article' },
+        { type: '기사', title: '[속보] 검찰, 윤 전 시장 일가 전격 감사 착수', url: 'news_audit_yoon.html', keywords: '윤석열 윤대환 감사 검찰 수사 audit yoon' },
+        { type: '기사', title: '효빈시 빵지순례... 성심당 효빈점 열풍', url: 'news_bakery_tour.html', keywords: '빵지순례 성심당 빵 튀김소보로 bakery tour' },
+        { type: '기사', title: '2023년 청년 파랑새 정책 전면 실시', url: 'news_bluebird_policy_2023.html', keywords: '2023 파랑새 정책 청년 지원 bluebird policy' },
+        { type: '기사', title: '청와대, 효빈시 관련 브리핑', url: 'news_blue_house.html', keywords: '청와대 대통령실 브리핑 blue house' },
+        { type: '기사', title: '효빈 종합버스터미널 새단장', url: 'news_bus_terminal.html', keywords: '버스터미널 교통 고속버스 bus terminal' },
+        { type: '기사', title: '최진언 발행인 장녀, 해외 명문대 합격 화제', url: 'news_choi_daughter_success.html', keywords: '최진언 딸 성공 합격 choi daughter success' },
+        { type: '기사', title: '[단독] 조선일보, 효빈시 관련 오보 공식 사과', url: 'news_chosun_apology.html', keywords: '조선일보 사과 오보 정정 chosun apology' },
+        { type: '기사', title: '조선일보발 가짜뉴스, 진원지 추적해보니', url: 'news_chosun_fake.html', keywords: '조선일보 가짜뉴스 조작 chosun fake' },
+        { type: '기사', title: '[칼럼] 오타쿠 시장이라 손가락질 하던 이들에게', url: 'news_column_otaku.html', keywords: '칼럼 오타쿠 박효빈 혐오 column otaku' },
+        { type: '기사', title: '당가(Dangga) 디저트 카페, 효빈 상륙', url: 'news_dangga_dessert.html', keywords: '당가 디저트 카페 맛집 dangga dessert' },
+        { type: '기사', title: '침체기 겪던 당가 상권, 화려한 부활', url: 'news_dangga_revival.html', keywords: '당가 상권 부활 도시재생 dangga revival' },
+        { type: '기사', title: '대선 후보 토론회 후폭풍 거세', url: 'news_debate_aftermath.html', keywords: '토론회 후폭풍 대선 후보 debate aftermath' },
+        { type: '기사', title: '사상 초유의 토론회 방송사고 발생', url: 'news_debate_broadcast_accident.html', keywords: '토론회 방송사고 송출 중단 debate broadcast accident' },
+        { type: '기사', title: '[선거] 창전구 국회의원 재보궐 결과', url: 'news_election_changjeon.html', keywords: '선거 창전구 재보궐 결과 election changjeon' },
+        { type: '기사', title: '[여론조사] 2025 효빈시장 선거 여론조사', url: 'news_election_poll.html', keywords: '선거 여론조사 지지율 election poll' },
+        { type: '기사', title: '2022년 효빈시장 선거 최종 결과 분석', url: 'news_election_result_2022.html', keywords: '2022 선거 결과 분석 박효빈 당선 election result' },
+        { type: '기사', title: '효빈 명물 엠마빵, 하루 1만개 팔렸다', url: 'news_emma_bread.html', keywords: '엠마빵 엠마 베르데 빵지순례 emma bread' },
+        { type: '기사', title: '가짜뉴스 유포자, 엄벌 처해진다', url: 'news_fake_news_punishment.html', keywords: '가짜뉴스 유포 처벌 법안 fake news punishment' },
+        { type: '기사', title: '외신이 바라본 효빈시의 기적', url: 'news_foreign_press.html', keywords: '외신 해외 언론 평가 foreign press' },
+        { type: '기사', title: '글로벌 쿠쿠 탐험대, 효빈 방문', url: 'news_global_kuku_expedition.html', keywords: '글로벌 쿠쿠 탐험대 방문 global kuku expedition' },
+        { type: '기사', title: '제1회 효빈 애니메이션 페스티벌(HAF) 개최', url: 'news_haf.html', keywords: 'haf 효빈 애니메이션 페스티벌 축제' },
+        { type: '기사', title: 'HAF 코스프레 대회, 다채로운 캐릭터 열전', url: 'news_haf_cosplay.html', keywords: 'haf 코스프레 코스어 대회 애니메이션 haf cosplay' },
+        { type: '기사', title: 'HAF 성대한 개막식, 시장도 코스프레 참석', url: 'news_haf_opening.html', keywords: 'haf 개막식 애니메이션 코스프레 haf opening' },
+        { type: '기사', title: '일본 유명 성우, HAF 전격 방문', url: 'news_haf_seiyu_visit.html', keywords: 'haf 성우 방문 일본 애니메이션 seiyu visit' },
+        { type: '기사', title: 'HAF 평일 경제 효과, 500억 돌파', url: 'news_haf_weekday_economy.html', keywords: 'haf 경제 효과 평일 관광 weekday economy' },
+        { type: '기사', title: '효빈시 전용 혜택, 해피 쿠쿠 카드 출시', url: 'news_happy_kuku_card.html', keywords: '해피 쿠쿠 카드 혜택 할인 happy kuku card' },
+        { type: '기사', title: '효빈시-타 지자체 업무협약(MOU) 체결', url: 'news_hyobin_cooperation.html', keywords: '효빈시 협력 mou 지자체 hyobin cooperation' },
+        { type: '기사', title: '지역화폐 효빈페이, 사용처 대폭 확대', url: 'news_hyobin_pay.html', keywords: '효빈페이 지역화폐 경제 hyobin pay' },
+        { type: '기사', title: '일본 오타쿠 관광객, 효빈시 싹쓸이 쇼핑', url: 'news_japan_otaku.html', keywords: '일본 오타쿠 관광객 쇼핑 japan otaku' },
+        { type: '기사', title: '패션 브랜드 쿠쿠 클로젯, 효빈 상륙', url: 'news_kuku_closet.html', keywords: '쿠쿠 클로젯 패션 의류 kuku closet' },
+        { type: '기사', title: '뉴스 목록 전체 보기', url: 'news_list.html', keywords: '뉴스 목록 전체 news list' },
+        { type: '기사', title: 'Liyuu(리유), 효빈 시민들에게 전하는 메시지', url: 'news_liyuu_message.html', keywords: 'liyuu 리유 탕쿠쿠 메시지 성우 liyuu message' },
+        { type: '기사', title: '[긴급] 효빈시 전역 계엄령 선포 파장', url: 'news_martial_law_hyobin.html', keywords: '계엄령 효빈시 군대 계엄군 비상 martial law' },
+        { type: '기사', title: '박효빈 시장, 와타세 행사 취소에 극대노', url: 'news_mayor_anger_watase.html', keywords: '박효빈 시장 극대노 와타세 anger watase' },
+        { type: '기사', title: '박효빈 시장 시정 지지율 80% 돌파', url: 'news_mayor_approval.html', keywords: '박효빈 시장 지지율 여론조사 mayor approval' },
+        { type: '기사', title: '제8대 박효빈 효빈시장 취임식 르포', url: 'news_mayor_inauguration.html', keywords: '박효빈 취임식 시장 시작 mayor inauguration' },
+        { type: '기사', title: '효빈도시철도 공사, 사상 첫 흑자 전환', url: 'news_metro_surplus.html', keywords: '효빈도시철도 흑자 전환 지하철 metro surplus' },
+        { type: '기사', title: '효빈 지하철, 인기 성우 안내방송 도입', url: 'news_metro_voice_actors.html', keywords: '지하철 성우 안내방송 전철 metro voice actors' },
+        { type: '기사', title: '니코니코 동화, 효빈시 특집 생방송 편성', url: 'news_nico.html', keywords: '니코니코 니코동 생방송 nico' },
+        { type: '기사', title: '[오피니언] 효빈의 미래를 말하다', url: 'news_opinion.html', keywords: '오피니언 칼럼 사설 opinion' },
+        { type: '기사', title: '정치인 특별사면 강행에 시민사회 강력 비판', url: 'news_pardon_criticism.html', keywords: '특별사면 비판 논란 pardon criticism' },
+        { type: '기사', title: '박효빈 시장, 과거 실언 관련 대국민 사과', url: 'news_park_apology.html', keywords: '박효빈 사과 실언 논란 park apology' },
+        { type: '기사', title: '[기획] 비 새는 단칸방... 박효빈 시장의 과거', url: 'news_park_past.html', keywords: '박효빈 과거 단칸방 기획 눈물 park past' },
+        { type: '기사', title: '필리핀 갱단 연루 윤재훈, 필리핀서 심판받나', url: 'news_philippines.html', keywords: '필리핀 윤재훈 국제 갱단 피노이 프라이드 philippines' },
+        { type: '기사', title: '경찰, HAF 암표상 무더기 검거', url: 'news_police_scalper.html', keywords: '경찰 암표상 검거 단속 haf police scalper' },
+        { type: '기사', title: '효빈시-퀘존시(필리핀), 자매결연 협약', url: 'news_quezon_city.html', keywords: '퀘존시 필리핀 자매결연 quezon city' },
+        { type: '기사', title: '스쿨 아이돌 힐스(구 두청힐스) 개장', url: 'news_school_idol_hills.html', keywords: '스쿨아이돌 힐스 두청힐스 테마파크 school idol hills' },
+        { type: '기사', title: '효빈 투어패스 누적 판매 100만장 돌파', url: 'news_tour_pass.html', keywords: '투어패스 관광 패스권 여행 tour pass' },
+        { type: '기사', title: '효빈대학교, 2026학년도 신입생 경쟁률 폭발', url: 'news_univ.html', keywords: '효빈대 대학교 신입생 경쟁률 귤 샐러드 univ' },
+        { type: '기사', title: '효빈대병원, 최우수 의료기관 선정', url: 'news_univ_hospital.html', keywords: '효빈대병원 병원 의료기관 univ hospital' },
+        { type: '기사', title: '효빈대 학생들, 인간방패로 계엄군 막아내', url: 'news_univ_human_shield.html', keywords: '효빈대 인간방패 계엄군 민주주의 univ human shield' },
+        { type: '기사', title: '와타세 마키 기획 행사, 돌연 취소 논란', url: 'news_watase_cancellation.html', keywords: '와타세 마키 취소 논란 watase cancellation' },
+        { type: '기사', title: '미리보는 2026 효빈의 겨울', url: 'news_winter_preview_v2.html', keywords: '겨울 효빈 프리뷰 예고 winter preview' },
+        { type: '기사', title: '2022 선거, 윤대환 일가의 참패 원인', url: 'news_yoon_defeat_2022.html', keywords: '윤대환 패배 선거 분석 2022 yoon defeat' },
+        { type: '기사', title: '[해설] 윤석열 탄핵, 그 후의 효빈', url: 'news_yoon_impeachment.html', keywords: '윤석열 탄핵 해설 분석 yoon impeachment' },
+        { type: '기사', title: '윤대환 등 정치인 대거 사면 논란 (2023)', url: 'news_yoon_pardon_2023.html', keywords: '윤대환 사면 2023 논란 yoon pardon' },
+        
+        // --- 한글 파일명 기사 (최신) ---
+        { type: '기사', title: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다', url: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다.html', keywords: '강서구 용산 확인사살 기획' },
+        { type: '기사', title: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당', url: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html', keywords: '부서원 탈당 국민의힘 보수 양심' },
+        { type: '기사', title: '[단독] 윤석열 구속 취소', url: '[단독] 윤석열 구속 취소.html', keywords: '윤석열 구속 취소 단독' },
+        { type: '기사', title: '[선택 2025] 이재명, 제21대 대통령 당선', url: '[선택 2025] 이재명, 제21대 대통령 당선.html', keywords: '이재명 대통령 당선 선거 2025' },
+        { type: '기사', title: '[속보] 6시간의 악몽 끝, 계엄 해제에 효빈 시민들 환호', url: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html', keywords: '속보 계엄 해제 환호 민주주의 승리 반란군' },
+        { type: '기사', title: '[속보] 국회, 비상계엄 해제 요구안 가결 (최단기 종료)', url: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보.html', keywords: '속보 국회 비상계엄 해제 가결 최단기' },
+        { type: '기사', title: '[속보] 박효빈 시장 \'계엄 포고령 거부... 공수부대와 맞서겠다\'', url: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html', keywords: '속보 박효빈 계엄 거부 공수부대' },
+        { type: '기사', title: '[속보] 윤석열 대통령 탄핵안 가결... 직무 즉시 정지', url: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html', keywords: '속보 윤석열 탄핵 가결 직무 정지' },
+        { type: '기사', title: '[속보] 윤석열 전 대통령 구속', url: '[속보] 윤석열 전 대통령 구속.html', keywords: '속보 윤석열 구속' },
+        { type: '기사', title: '[속보] 윤석열 전 대통령 재구속', url: '[속보] 윤석열 전 대통령 재구속.html', keywords: '속보 윤석열 재구속' },
+        { type: '기사', title: '[속보] 탄핵안 \'정족수 미달\' 자동 폐기... 여당 의원 집단 도주', url: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장.html', keywords: '속보 탄핵안 정족수 미달 폐기 도주' },
+        { type: '기사', title: '[속보] 헌재, 윤석열 탄핵 인용', url: '[속보] 헌재, 윤석열 탄핵 인용.html', keywords: '속보 헌재 윤석열 탄핵 인용' },
+        { type: '기사', title: '[여론조사] 박효빈 효빈시장, 지지율 82.4% 고공행진', url: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html', keywords: '여론조사 박효빈 지지율 고공행진' },
+        { type: '기사', title: '[현장] 이재명 대통령, 취임 후 첫 효빈 방문', url: '[현장] 이재명 대통령, 취임 후 첫 효빈 방문.html', keywords: '현장 이재명 효빈 방문 취임' },
+        { type: '기사', title: '윤석열 비상계엄 선포, 부정선거 주장', url: '윤석열 비상계엄 선포, 부정선거 주장.html', keywords: '윤석열 비상계엄 부정선거' },
+        { type: '기사', title: '윤석열 속옷저항 논란', url: '윤석열 속옷저항.html', keywords: '윤석열 속옷저항 논란' }
+    ];
 
-  function loadRecent(){
-    try{ return JSON.parse(localStorage.getItem(RECENT_KEY)||"[]") || []; }catch(e){ return []; }
-  }
-  function saveRecent(list){
-    try{ localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0,MAX_RECENT))); }catch(e){}
-  }
-  function pushRecent(q){
-    q = norm(q);
-    if(!q) return;
-    const list = loadRecent().filter(x=>normKey(x)!==normKey(q));
-    list.unshift(q);
-    saveRecent(list);
-  }
+    // ==========================================
+    // 2. 검색 엔진 고도화
+    // ==========================================
+    const MAX_RECENT = 8;
+    const RECENT_KEY = "hb_news_recent";
 
-  function collectNews(){
-    // 1) cards with onclick="location.href='...'"
-    const items = [];
-    const cardNodes = Array.from(document.querySelectorAll("[onclick*=\"location.href\"], a[href]"));
-    cardNodes.forEach(node=>{
-      let href = "";
-      if(node.getAttribute){
-        const oc = node.getAttribute("onclick") || "";
-        const m = oc.match(/location\.href\s*=\s*'([^']+)'/);
-        if(m) href = m[1];
-      }
-      if(!href && node.tagName === "A") href = node.getAttribute("href") || "";
-      if(!href) return;
+    function normKey(s){ return (s||"").toString().trim().toLowerCase(); }
 
-      // get title text: try known classes first
-      let title = "";
-      const t1 = node.querySelector?.(".news-card-title, .headline-title, .list-title, .rank-title");
-      if(t1) title = norm(t1.textContent);
-      if(!title) title = norm(node.textContent);
-      if(!title) return;
-
-      // category/meta
-      const meta = node.querySelector?.(".news-card-meta, .headline-meta, .list-time, .rank-meta");
-      const category = meta ? norm(meta.textContent) : "";
-
-      // dedupe
-      const key = normKey(title)+"|"+href;
-      if(items.some(x=>x.key===key)) return;
-      items.push({key, title, href, category});
-    });
-    // Prefer shorter unique list
-    return items.map(({key, ...rest})=>rest);
-  }
-
-  const NEWS = collectNews();
-
-  function score(item, q){
-    const t = normKey(item.title);
-    const k = normKey(q);
-    if(!k) return 0;
-    if(t === k) return 100;
-    if(t.startsWith(k)) return 60;
-    if(t.includes(k)) return 30;
-    if(item.category && normKey(item.category).includes(k)) return 15;
-    return 0;
-  }
-
-  function ensureDropdown(input){
-    const wrap = input.parentElement;
-    if(wrap && getComputedStyle(wrap).position === "static") wrap.style.position = "relative";
-
-    let dd = wrap.querySelector(".hn-autocomplete");
-    if(!dd){
-      dd = document.createElement("div");
-      dd.className = "hn-autocomplete";
-      dd.style.position = "absolute";
-      dd.style.left = "0";
-      dd.style.right = "0";
-      dd.style.top = "100%";
-      dd.style.marginTop = "8px";
-      dd.style.background = "white";
-      dd.style.border = "1px solid rgba(0,0,0,0.12)";
-      dd.style.borderRadius = "12px";
-      dd.style.boxShadow = "0 10px 25px rgba(0,0,0,0.15)";
-      dd.style.overflow = "hidden";
-      dd.style.zIndex = "9999";
-      dd.style.maxHeight = "280px";
-      dd.style.overflowY = "auto";
-      dd.style.display = "none";
-      wrap.appendChild(dd);
+    function loadRecent(){
+        try{ return JSON.parse(localStorage.getItem(RECENT_KEY)||"[]") || []; }catch(e){ return []; }
     }
-    return dd;
-  }
+    function saveRecent(list){
+        try{ localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0,MAX_RECENT))); }catch(e){}
+    }
+    function pushRecent(q){
+        let qNorm = q.trim();
+        if(!qNorm) return;
+        const list = loadRecent().filter(x=>normKey(x)!==normKey(qNorm));
+        list.unshift(qNorm);
+        saveRecent(list);
+    }
 
-  function hide(dd){ if(dd) dd.style.display="none"; }
-  function show(dd){ if(dd) dd.style.display="block"; }
+    function score(item, q){
+        const t = normKey(item.title);
+        const k = normKey(q);
+        const kw = normKey(item.keywords || "");
+        if(!k) return 0;
+        if(t === k) return 100;
+        if(t.startsWith(k)) return 80;
+        if(t.includes(k)) return 50;
+        if(kw.includes(k)) return 30;
+        return 0;
+    }
 
-  function row(dd, label, cb, muted=false){
-    const r = document.createElement("button");
-    r.type="button";
-    r.style.display="flex";
-    r.style.width="100%";
-    r.style.alignItems="center";
-    r.style.justifyContent="space-between";
-    r.style.gap="12px";
-    r.style.padding="10px 12px";
-    r.style.fontSize="13px";
-    r.style.background="white";
-    r.style.border="0";
-    r.style.textAlign="left";
-    r.style.cursor= muted ? "default" : "pointer";
-    r.onmouseenter=()=>{ if(!muted) r.style.background="rgba(0,0,0,0.04)"; };
-    r.onmouseleave=()=>{ r.style.background="white"; };
-    r.innerHTML = `<span style="color:${muted?'#888':'#111'}">${label}</span>`;
-    if(!muted) r.addEventListener("click", cb);
-    dd.appendChild(r);
-  }
+    function ensureDropdown(input){
+        const wrap = input.parentElement;
+        if(wrap && getComputedStyle(wrap).position === "static") wrap.style.position = "relative";
+        let dd = wrap.querySelector(".hn-autocomplete");
+        if(!dd){
+            dd = document.createElement("div");
+            dd.className = "hn-autocomplete absolute left-0 right-0 top-full mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl overflow-hidden z-[9999] max-h-72 overflow-y-auto hidden";
+            wrap.appendChild(dd);
+        }
+        return dd;
+    }
 
-  function renderDropdown(dd, input, q){
-    dd.innerHTML="";
-    const query = norm(q);
-    const recent = loadRecent();
+    function hide(dd){ if(dd) dd.classList.add("hidden"); }
+    function show(dd){ if(dd) dd.classList.remove("hidden"); }
 
-    if(!query){
-      row(dd, "최근 검색어", ()=>{}, true);
-      if(recent.length===0) row(dd, "검색어를 입력하세요", ()=>{}, true);
-      else{
-        recent.forEach(r=>{
-          row(dd, r, ()=>{ input.value=r; doSearch(r); });
+    function row(dd, label, typeStr, cb, isMuted=false){
+        const r = document.createElement("button");
+        r.type="button";
+        r.className = `w-full flex items-center justify-between px-3 py-2 text-sm text-left transition-colors ${isMuted ? 'text-gray-400 cursor-default' : 'text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer'}`;
+        
+        let typeBadge = typeStr ? `<span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 ml-2 whitespace-nowrap">${typeStr}</span>` : '';
+        
+        r.innerHTML = `<span class="truncate pr-2">${label}</span>${typeBadge}`;
+        if(!isMuted) r.addEventListener("click", cb);
+        dd.appendChild(r);
+    }
+
+    function renderDropdown(dd, input, q){
+        dd.innerHTML="";
+        const query = q.trim();
+        const recent = loadRecent();
+
+        if(!query){
+            row(dd, "🕒 최근 검색어", "", null, true);
+            if(recent.length===0) row(dd, "검색 이력이 없습니다.", "", null, true);
+            else{
+                recent.forEach(r=>{
+                    row(dd, r, "", ()=>{ input.value=r; doSearch(r); });
+                });
+                const clear = document.createElement("button");
+                clear.className = "w-full text-left px-3 py-2 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors";
+                clear.textContent = "최근 검색어 지우기";
+                clear.addEventListener("click", ()=>{ saveRecent([]); renderDropdown(dd,input,""); });
+                dd.appendChild(clear);
+            }
+            show(dd);
+            return;
+        }
+
+        const matches = NEWS_DATABASE
+            .map(it=>({it, s: score(it, query)}))
+            .filter(x=>x.s>0)
+            .sort((a,b)=>b.s-a.s || a.it.title.localeCompare(b.it.title))
+            .slice(0, 8)
+            .map(x=>x.it);
+
+        if(matches.length===0) row(dd,"일치하는 문서가 없습니다", "", null, true);
+        else{
+            matches.forEach(it=>{
+                row(dd, it.title, it.type, ()=>{ pushRecent(query); location.href = it.url; });
+            });
+        }
+        show(dd);
+    }
+
+    function showModal(query, items){
+        let modal = document.getElementById("hn-search-modal");
+        if(!modal){
+            modal = document.createElement("div");
+            modal.id = "hn-search-modal";
+            modal.className = "fixed inset-0 bg-black bg-opacity-50 z-[10000] hidden backdrop-blur-sm";
+            modal.innerHTML = `
+                <div data-close="1" class="absolute inset-0 cursor-pointer"></div>
+                <div class="relative mt-20 mx-auto w-full max-w-3xl bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
+                    <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                        <div class="font-bold text-lg text-gray-800 dark:text-white">통합 검색 결과</div>
+                        <button type="button" data-close="1" class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">닫기</button>
+                    </div>
+                    <div class="p-4 overflow-y-auto flex-1">
+                        <div id="hn-search-meta" class="text-sm text-[#0055aa] dark:text-[#4dabf7] font-bold mb-3"></div>
+                        <div id="hn-search-list" class="flex flex-col gap-2"></div>
+                    </div>
+                </div>
+            `;
+            modal.addEventListener("click", (e)=>{
+                if(e.target.getAttribute("data-close")==="1") modal.classList.add("hidden");
+            });
+            document.body.appendChild(modal);
+        }
+        
+        const meta = modal.querySelector("#hn-search-meta");
+        const list = modal.querySelector("#hn-search-list");
+        meta.textContent = `“${query}” 검색 결과 총 ${items.length}건`;
+        list.innerHTML = "";
+
+        if(items.length===0){
+            list.innerHTML = `<div class="py-10 text-center text-gray-500">일치하는 문서가 없습니다.</div>`;
+        } else {
+            items.forEach(it=>{
+                const typeColor = it.type === '아카이브' ? 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200' : 
+                                  it.type === '구분' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 
+                                  'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
+                
+                list.innerHTML += `
+                    <a href="${it.url}" class="block p-3 border border-gray-100 dark:border-gray-700 rounded-lg hover:shadow-md hover:border-[#0055aa] dark:hover:border-[#4dabf7] transition-all bg-white dark:bg-gray-800 relative group">
+                        <div class="font-bold text-gray-900 dark:text-gray-100 mb-1 pr-10">${it.title}</div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs px-1.5 py-0.5 rounded font-bold ${typeColor}">${it.type}</span>
+                            <span class="text-xs text-gray-400 dark:text-gray-500">${it.url}</span>
+                        </div>
+                    </a>
+                `;
+            });
+        }
+        modal.classList.remove("hidden");
+    }
+
+    function doSearch(q){
+        q = q.trim();
+        if(!q) return;
+        const matches = NEWS_DATABASE
+            .map(it=>({it, s: score(it, q)}))
+            .filter(x=>x.s>0)
+            .sort((a,b)=>b.s-a.s || a.it.title.localeCompare(b.it.title))
+            .map(x=>x.it);
+
+        pushRecent(q);
+        showModal(q, matches);
+    }
+
+    const input = document.getElementById("hnNewsSearchInput");
+    if(input){
+        const dd = ensureDropdown(input);
+        input.addEventListener("keydown", (e)=>{
+            if(e.key==="Enter"){ e.preventDefault(); hide(dd); doSearch(input.value); } 
+            else if(e.key==="Escape"){ hide(dd); input.blur(); }
         });
-        const clear = document.createElement("button");
-        clear.type="button";
-        clear.style.width="100%";
-        clear.style.padding="10px 12px";
-        clear.style.fontSize="13px";
-        clear.style.background="white";
-        clear.style.border="0";
-        clear.style.textAlign="left";
-        clear.style.cursor="pointer";
-        clear.style.color="#b91c1c";
-        clear.textContent="최근 검색어 지우기";
-        clear.onmouseenter=()=>{ clear.style.background="rgba(0,0,0,0.04)"; };
-        clear.onmouseleave=()=>{ clear.style.background="white"; };
-        clear.addEventListener("click", ()=>{ saveRecent([]); renderDropdown(dd,input,""); });
-        dd.appendChild(clear);
-      }
-      show(dd);
-      return;
+        input.addEventListener("input", ()=>renderDropdown(dd,input,input.value));
+        input.addEventListener("focus", ()=>renderDropdown(dd,input,input.value));
+        document.addEventListener("click", (e)=>{
+            if(input.parentElement && input.parentElement.contains(e.target)) return;
+            hide(dd);
+        });
+        const btn = input.parentElement.querySelector("button");
+        if(btn) btn.addEventListener("click", ()=>doSearch(input.value));
     }
 
-    const matches = NEWS
-      .map(it=>({it, s: score(it, query)}))
-      .filter(x=>x.s>0)
-      .sort((a,b)=>b.s-a.s || a.it.title.localeCompare(b.it.title))
-      .slice(0,8)
-      .map(x=>x.it);
 
-    if(matches.length===0) row(dd,"일치하는 뉴스가 없습니다", ()=>{}, true);
-    else{
-      matches.forEach(it=>{
-        row(dd, it.title, ()=>{ pushRecent(query); location.href = it.href; });
-      });
-    }
-    show(dd);
-  }
-
-  function showModal(query, items){
-    let modal = document.getElementById("hn-search-modal");
-    if(!modal){
-      modal = document.createElement("div");
-      modal.id = "hn-search-modal";
-      modal.style.position="fixed";
-      modal.style.inset="0";
-      modal.style.background="rgba(0,0,0,0.4)";
-      modal.style.zIndex="10000";
-      modal.style.display="none";
-      modal.innerHTML = `
-        <div data-close="1" style="position:absolute; inset:0;"></div>
-        <div style="position:relative; margin:80px auto 0; width:min(820px,94vw); background:white; border-radius:18px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.35);">
-          <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid rgba(0,0,0,0.08);">
-            <div style="font-weight:900; font-size:14px;">뉴스 검색 결과</div>
-            <button type="button" data-close="1" style="padding:6px 10px; border-radius:10px; border:0; background:rgba(0,0,0,0.04); cursor:pointer;">닫기</button>
-          </div>
-          <div style="padding:12px 14px;">
-            <div id="hn-search-meta" style="font-size:12px; color:#666; margin-bottom:10px;"></div>
-            <div id="hn-search-list" style="border-top:1px solid rgba(0,0,0,0.06);"></div>
-          </div>
-        </div>
-      `;
-      modal.addEventListener("click", (e)=>{
-        const t = e.target;
-        if(t && t.getAttribute && t.getAttribute("data-close")==="1") close();
-      });
-      document.body.appendChild(modal);
-    }
-    const meta = modal.querySelector("#hn-search-meta");
-    const list = modal.querySelector("#hn-search-list");
-    meta.textContent = `“${query}” 결과 ${items.length}건`;
-    list.innerHTML = "";
-
-    if(items.length===0){
-      const empty = document.createElement("div");
-      empty.style.padding="12px 0";
-      empty.style.color="#666";
-      empty.style.fontSize="13px";
-      empty.textContent = "일치하는 뉴스가 없습니다.";
-      list.appendChild(empty);
+    // ==========================================
+    // 3. 다크모드 기능 (기본: 라이트 모드)
+    // ==========================================
+    const darkModeBtn = document.getElementById('toggle-dark-mode');
+    const darkModeIcon = document.getElementById('dark-mode-icon');
+    const darkModeText = document.getElementById('dark-mode-text');
+    
+    // 초기 테마 설정 (시스템 설정 무시, 오직 로컬스토리지에 dark라고 되어 있을 때만 유지, 나머진 강제 라이트)
+    if (localStorage.theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        if(darkModeIcon) darkModeIcon.textContent = '☀️';
+        if(darkModeText) darkModeText.textContent = '주간 모드';
     } else {
-      items.slice(0,30).forEach(it=>{
-        const row = document.createElement("a");
-        row.href = it.href;
-        row.style.display="block";
-        row.style.padding="12px 6px";
-        row.style.textDecoration="none";
-        row.style.color="#111";
-        row.style.borderBottom="1px solid rgba(0,0,0,0.06)";
-        row.innerHTML = `<div style="font-weight:800; margin-bottom:3px;">${it.title}</div>
-                         <div style="font-size:12px; color:#666;">${it.category||it.href}</div>`;
-        list.appendChild(row);
-      });
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+        if(darkModeIcon) darkModeIcon.textContent = '🌙';
+        if(darkModeText) darkModeText.textContent = '야간 모드';
     }
 
-    function open(){ modal.style.display="block"; document.body.style.overflow="hidden"; }
-    function close(){ modal.style.display="none"; document.body.style.overflow=""; }
-    modal._hnClose = close;
-    open();
-  }
-
-  function doSearch(q){
-    q = norm(q);
-    if(!q) return;
-    const k = normKey(q);
-    const exact = NEWS.find(it=>normKey(it.title)===k);
-    if(exact){ pushRecent(q); location.href = exact.href; return; }
-
-    const matches = NEWS
-      .map(it=>({it, s: score(it, q)}))
-      .filter(x=>x.s>0)
-      .sort((a,b)=>b.s-a.s || a.it.title.localeCompare(b.it.title))
-      .map(x=>x.it);
-
-    pushRecent(q);
-    if(matches.length===0){
-      // fallback: keep user on page but show empty modal
-      showModal(q, []);
-      return;
+    if(darkModeBtn){
+        darkModeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.theme = isDark ? 'dark' : 'light';
+            
+            if(darkModeIcon) darkModeIcon.textContent = isDark ? '☀️' : '🌙';
+            if(darkModeText) darkModeText.textContent = isDark ? '주간 모드' : '야간 모드';
+        });
     }
-    showModal(q, matches);
-  }
 
-  const input = document.getElementById("hnNewsSearchInput");
-  if(!input) return;
-  const dd = ensureDropdown(input);
 
-  input.addEventListener("keydown", (e)=>{
-    if(e.key==="Enter"){
-      e.preventDefault();
-      hide(dd);
-      doSearch(input.value);
-    } else if(e.key==="Escape"){
-      hide(dd);
-      input.blur();
+    // ==========================================
+    // 4. 효빈시 날짜/시간 및 날씨
+    // ==========================================
+    function updateTime() {
+        const timeEl = document.getElementById('current-time');
+        if(!timeEl) return;
+        const now = new Date();
+        const days = ['일', '월', '화', '수', '목', '금', '토'];
+        const yyyy = now.getFullYear();
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const dd = String(now.getDate()).padStart(2, '0');
+        const day = days[now.getDay()];
+        const hh = String(now.getHours()).padStart(2, '0');
+        const min = String(now.getMinutes()).padStart(2, '0');
+        timeEl.textContent = `${yyyy}.${mm}.${dd} (${day}) ${hh}:${min}`;
     }
-  });
+    setInterval(updateTime, 1000);
+    updateTime();
 
-  input.addEventListener("input", ()=>renderDropdown(dd,input,input.value));
-  input.addEventListener("focus", ()=>renderDropdown(dd,input,input.value));
 
-  document.addEventListener("click", (e)=>{
-    const wrap = input.parentElement;
-    if(wrap && wrap.contains(e.target)) return;
-    hide(dd);
-  });
+    // ==========================================
+    // 5. 기사 스크랩 (북마크) 기능
+    // ==========================================
+    const SCRAP_KEY = 'hyobin_scraps';
+    
+    function getScraps() {
+        try { return JSON.parse(localStorage.getItem(SCRAP_KEY)) || []; } 
+        catch { return []; }
+    }
+    function saveScraps(scraps) {
+        localStorage.setItem(SCRAP_KEY, JSON.stringify(scraps));
+        updateScrapUI();
+    }
 
-  // if there is a search button next to it, bind by heuristic
-  const btn = input.parentElement.querySelector("button");
-  if(btn) btn.addEventListener("click", ()=>doSearch(input.value));
+    function toggleScrap(url, title, btnEl) {
+        event.stopPropagation(); // 부모 클릭 방지
+        let scraps = getScraps();
+        const existingIdx = scraps.findIndex(s => s.url === url);
+        
+        if (existingIdx > -1) {
+            scraps.splice(existingIdx, 1); // 제거
+            if(btnEl) btnEl.classList.remove('active');
+        } else {
+            scraps.push({ url, title, date: new Date().getTime() }); // 추가
+            if(btnEl) btnEl.classList.add('active');
+        }
+        saveScraps(scraps);
+    }
+
+    function updateScrapUI() {
+        const scraps = getScraps();
+        const countEl = document.getElementById('scrap-count');
+        if(countEl) countEl.textContent = scraps.length;
+
+        // 모든 스크랩 버튼 상태 동기화
+        document.querySelectorAll('.scrap-btn').forEach(btn => {
+            const url = btn.getAttribute('data-url');
+            if (scraps.some(s => s.url === url)) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+    }
+
+    // 문서 내 스크랩 버튼 이벤트 연동
+    document.querySelectorAll('.scrap-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const url = btn.getAttribute('data-url');
+            const title = btn.getAttribute('data-title');
+            toggleScrap(url, title, btn);
+        });
+    });
+
+    // 초기 UI 동기화
+    updateScrapUI();
+
+    // 스크랩북 모달 로직
+    const scrapbookModal = document.getElementById('scrapbook-modal');
+    const openScrapbookBtn = document.getElementById('open-scrapbook');
+    const closeScrapbookBtn = document.getElementById('close-scrapbook');
+    const scrapListContainer = document.getElementById('scrap-modal-list');
+
+    function renderScrapbook() {
+        const scraps = getScraps();
+        scrapListContainer.innerHTML = '';
+        if (scraps.length === 0) {
+            scrapListContainer.innerHTML = `<div class="text-center text-gray-500 py-10">저장된 기사가 없습니다.</div>`;
+            return;
+        }
+        
+        // 최신순 정렬
+        scraps.sort((a,b) => b.date - a.date).forEach(s => {
+            const dateStr = new Date(s.date).toLocaleDateString('ko-KR', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' });
+            scrapListContainer.innerHTML += `
+                <div class="flex justify-between items-center p-3 border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                    <a href="${s.url}" class="text-gray-800 dark:text-gray-200 hover:text-[#0055aa] dark:hover:text-[#4dabf7] font-bold flex-1 pr-4 truncate">${s.title}</a>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-400">${dateStr}</span>
+                        <button class="text-red-400 hover:text-red-600 font-bold px-2 py-1 text-sm" onclick="removeScrapFromModal('${s.url}')">삭제</button>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    window.removeScrapFromModal = function(url) {
+        let scraps = getScraps().filter(s => s.url !== url);
+        saveScraps(scraps);
+        renderScrapbook();
+    }
+
+    if(openScrapbookBtn) {
+        openScrapbookBtn.addEventListener('click', () => {
+            renderScrapbook();
+            scrapbookModal.classList.remove('hidden');
+        });
+    }
+
+
+    // ==========================================
+    // 6. 회원가입, 로그인, 구독신청 및 하단 정책 모달 기능
+    // ==========================================
+    const loginModal = document.getElementById('login-modal');
+    const signupModal = document.getElementById('signup-modal');
+    const subscribeModal = document.getElementById('subscribe-modal');
+    const policyModal = document.getElementById('policy-modal');
+    
+    // 모달 닫기 버튼 공통 처리
+    document.querySelectorAll('.close-modal-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const modal = e.target.closest('.fixed.inset-0');
+            if(modal) modal.classList.add('hidden');
+        });
+    });
+
+    // 모달 배경 클릭 시 닫기
+    window.addEventListener('click', (e) => {
+        if(e.target.classList.contains('fixed') && e.target.classList.contains('inset-0')) {
+            e.target.classList.add('hidden');
+        }
+    });
+
+    // 6-1. 회원가입 로직
+    const btnOpenSignup = document.getElementById('btn-open-signup');
+    const submitSignup = document.getElementById('submit-signup');
+
+    // 사용자 DB 초기화 (로컬스토리지)
+    let hbUsers = {};
+    try {
+        hbUsers = JSON.parse(localStorage.getItem('hb_users')) || {};
+    } catch(e) {
+        hbUsers = {};
+    }
+
+    if(btnOpenSignup) {
+        btnOpenSignup.addEventListener('click', () => {
+            loginModal.classList.add('hidden'); // 로그인 창 닫기
+            signupModal.classList.remove('hidden'); // 가입 창 열기
+        });
+    }
+
+    if(submitSignup) {
+        submitSignup.addEventListener('click', () => {
+            const sId = document.getElementById('signup-id').value.trim();
+            const sPw = document.getElementById('signup-pw').value.trim();
+            const sPwc = document.getElementById('signup-pw-confirm').value.trim();
+            const sName = document.getElementById('signup-name').value.trim();
+
+            if(!sId || !sPw || !sPwc || !sName) {
+                alert('모든 항목을 입력해주세요.');
+                return;
+            }
+            if(sPw !== sPwc) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+            if(hbUsers[sId]) {
+                alert('이미 존재하는 아이디입니다.');
+                return;
+            }
+
+            // 가입 처리
+            hbUsers[sId] = { pw: sPw, name: sName };
+            localStorage.setItem('hb_users', JSON.stringify(hbUsers));
+
+            alert(`${sName}님, 효빈일보 회원가입이 완료되었습니다!\n방금 가입하신 정보로 로그인해주세요.`);
+            
+            // 입력창 초기화
+            document.getElementById('signup-id').value = '';
+            document.getElementById('signup-pw').value = '';
+            document.getElementById('signup-pw-confirm').value = '';
+            document.getElementById('signup-name').value = '';
+
+            // 회원가입 모달 닫고 로그인 모달 열기
+            signupModal.classList.add('hidden');
+            loginModal.classList.remove('hidden');
+        });
+    }
+
+    // 6-2. 로그인 로직 (회원가입 정보 연동)
+    const btnLoginTop = document.getElementById('btn-login-top');
+    const submitLogin = document.getElementById('submit-login');
+    const loginIdInput = document.getElementById('login-id');
+    const loginPwInput = document.getElementById('login-pw');
+
+    // 페이지 로드 시 기존 로그인 상태 확인
+    if (localStorage.getItem('hb_logged_in') === 'true') {
+        const savedName = localStorage.getItem('hb_user_name') || localStorage.getItem('hb_user_id') || '사용자';
+        if(btnLoginTop) btnLoginTop.textContent = `${savedName}님 (로그아웃)`;
+    }
+    
+    if(btnLoginTop) {
+        btnLoginTop.addEventListener('click', () => {
+            if(localStorage.getItem('hb_logged_in') === 'true') {
+                if(confirm('로그아웃 하시겠습니까?')) {
+                    localStorage.removeItem('hb_logged_in');
+                    localStorage.removeItem('hb_user_id');
+                    localStorage.removeItem('hb_user_name');
+                    alert('안전하게 로그아웃 되었습니다.');
+                    btnLoginTop.textContent = '로그인';
+                }
+            } else {
+                loginModal.classList.remove('hidden');
+            }
+        });
+    }
+    
+    if(submitLogin) {
+        submitLogin.addEventListener('click', () => {
+            const userId = loginIdInput.value.trim();
+            const userPw = loginPwInput.value.trim();
+
+            if(!userId || !userPw) {
+                alert('아이디와 비밀번호를 모두 입력해주세요.');
+                return;
+            }
+
+            // 실제 가입된 회원 검증
+            const userRecord = hbUsers[userId];
+            if (!userRecord) {
+                alert('존재하지 않는 아이디입니다. 회원가입을 먼저 진행해주세요.');
+                return;
+            }
+            if (userRecord.pw !== userPw) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+
+            // 로그인 처리 성공
+            localStorage.setItem('hb_logged_in', 'true');
+            localStorage.setItem('hb_user_id', userId);
+            localStorage.setItem('hb_user_name', userRecord.name);
+            
+            alert(`${userRecord.name}님, 효빈일보에 오신 것을 환영합니다!`);
+            
+            loginModal.classList.add('hidden');
+            loginIdInput.value = '';
+            loginPwInput.value = '';
+            
+            if(btnLoginTop) btnLoginTop.textContent = `${userRecord.name}님 (로그아웃)`;
+        });
+    }
+
+    // 6-3. 구독 신청 버튼 폼 처리
+    const btnSubscribeTop = document.getElementById('btn-subscribe-top');
+    const submitSubscribe = document.getElementById('submit-subscribe');
+
+    function openSubscribeModal() {
+        subscribeModal.classList.remove('hidden');
+    }
+
+    if(btnSubscribeTop) {
+        btnSubscribeTop.addEventListener('click', openSubscribeModal);
+    }
+
+    if(submitSubscribe) {
+        submitSubscribe.addEventListener('click', () => {
+            const subName = document.getElementById('sub-name').value.trim();
+            const subPhone = document.getElementById('sub-phone').value.trim();
+            const subAddress = document.getElementById('sub-address').value.trim();
+
+            if(!subName || !subPhone) {
+                alert('정확한 신청을 위해 이름과 연락처를 반드시 기입해 주세요.');
+                return;
+            }
+
+            alert(`감사합니다, ${subName}님!\n정기구독 신청이 성공적으로 접수되었습니다.\n입력하신 번호(${subPhone})로 결제 및 안내 메시지를 발송해 드렸습니다.\n진실된 기사로 보답하겠습니다.`);
+            
+            // 폼 초기화 후 닫기
+            document.getElementById('sub-name').value = '';
+            document.getElementById('sub-phone').value = '';
+            document.getElementById('sub-address').value = '';
+            subscribeModal.classList.add('hidden');
+        });
+    }
+
+    // 6-4. 하단 푸터 정책(텍스트) 모달 데이터
+    const policyData = {
+        'about': {
+            title: '회사소개',
+            content: `[ 진실을 향한 정직한 눈, 효빈일보 ]\n\n효빈일보는 효빈 시민들의 알 권리를 보장하고 권력에 대한 견제와 감시를 늦추지 않는 지역 대표 정론지입니다.\n\n창간 이래 "펜은 칼보다 강하다"는 신념 아래 정치, 경제, 사회, 문화 등 전 분야에 걸쳐 성역 없는 보도를 이어왔습니다. 특히 과거 '두청운수 사태' 등 지역 내 은폐될 뻔한 진실을 파헤치며 시민들의 신뢰를 구축해 왔습니다.\n\n앞으로도 효빈일보는 어떠한 외압에도 흔들리지 않고 오직 진실만을 좇으며 효빈시의 밝은 미래를 위해 정진하겠습니다.`
+        },
+        'subscribe': {
+            title: '구독신청',
+            content: null // 이 경우는 subscribeModal을 대신 엽니다.
+        },
+        'grievance': {
+            title: '고충처리',
+            content: `[ 효빈일보 고충처리 안내 ]\n\n효빈일보는 언론 보도로 인한 피해 구제 및 독자 여러분의 불편 사항을 신속하고 공정하게 처리하기 위해 고충처리인 제도를 운영하고 있습니다.\n\n1. 신청 대상\n- 본지 보도로 인한 명예훼손, 초상권 침해 등 인권 침해 소지가 있는 경우\n- 사실과 다른 보도로 인해 정정이나 반론 보도가 필요한 경우\n\n2. 처리 절차\n신청 접수 -> 고충처리인 조사 및 사실 확인 -> 노사 공동위원회 회부 (필요시) -> 결과 통보 및 조치 (정정보도, 반론보도 등)\n\n3. 연락처\n- 전화: 079-212-2123\n- 이메일: grievance@hyobin.co.kr\n- 우편: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층 고충처리인 앞`
+        },
+        'terms': {
+            title: '이용약관',
+            content: `[ 효빈일보 디지털 서비스 이용약관 ]\n\n제 1 조 (목적)\n본 약관은 효빈일보(이하 "회사")가 제공하는 온라인 뉴스 및 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.\n\n제 2 조 (약관의 효력과 변경)\n1. 회사는 본 약관의 내용을 회원이 쉽게 알 수 있도록 서비스 초기 화면에 게시합니다.\n2. 회사는 관련 법령을 위배하지 않는 범위에서 본 약관을 개정할 수 있으며, 개정 시에는 적용 일자 및 개정 사유를 명시하여 현행 약관과 함께 사전에 공지합니다.\n\n제 3 조 (저작권)\n효빈일보가 제공하는 모든 콘텐츠(기사, 사진, 영상 등)의 저작권은 회사에 있으며, 무단 전재 및 재배포를 금합니다. 단, 공유 기능을 통한 링크 전송은 허용됩니다.\n\n(이하 생략)`
+        },
+        'privacy': {
+            title: '개인정보처리방침',
+            content: `[ 효빈일보 개인정보처리방침 ]\n\n효빈일보는 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법 등 관련 법령에 따라 이용자의 개인정보 보호를 위해 최선을 다하고 있습니다.\n\n1. 수집하는 개인정보 항목\n- 회원가입 시: 아이디, 비밀번호, 이름, 이메일 주소\n- 구독신청 시: 배송지 주소, 결제 정보, 휴대전화 번호\n\n2. 개인정보의 수집 및 이용 목적\n- 회원 관리, 콘텐츠 제공, 맞춤형 서비스 제공, 구독료 결제 및 지면 배송\n\n3. 개인정보의 보유 및 이용 기간\n원칙적으로 개인정보 수집 및 이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관계 법령의 규정에 의하여 보존할 필요가 있는 경우 일정 기간 보관합니다.\n\n4. 개인정보 보호책임자\n- 이름: 강정직\n- 직위: 편집국장 겸 개인정보보호책임자\n- 전화: 079-212-2123`
+        }
+    };
+
+    // 하단 푸터 링크 클릭 이벤트 연동
+    const policyTitleEl = document.getElementById('policy-title');
+    const policyContentEl = document.getElementById('policy-content');
+
+    document.querySelectorAll('.policy-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const type = link.getAttribute('data-type');
+            if(type === 'subscribe') {
+                openSubscribeModal();
+            } else if (policyData[type]) {
+                policyTitleEl.textContent = policyData[type].title;
+                policyContentEl.textContent = policyData[type].content;
+                policyModal.classList.remove('hidden');
+            }
+        });
+    });
+
 })();
 </script>
-
 
     <script src="assets/wiki_index.js"></script>
     <script src="assets/hb_wiki_core.js"></script>

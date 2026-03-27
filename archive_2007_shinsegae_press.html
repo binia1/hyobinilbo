@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[아카이브] 2007.10.15 신세계 점장 "윤대환은 쓰레기 이하... 영업 중단 검토" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f4f4f4; color: #222; }
+        
+        .archive-top-bar { background: #000; color: #fff; padding: 10px 0; font-size: 13px; text-align: center; font-weight: bold; border-bottom: 3px solid #0055aa; }
+        
+        .news-header { border-bottom: 1px solid #ddd; background: white; padding: 25px 0; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 15px; text-decoration: none; }
+
+        .article-container { max-width: 1000px; margin: 30px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 50px; border: 1px solid #ccc; position: relative; }
+        
+        .main-content::before {
+            content: "ARCHIVE 2007.10";
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 18px;
+            font-weight: 900;
+            color: #f0f0f0;
+            transform: rotate(-10deg);
+            pointer-events: none;
+        }
+
+        .article-title { font-size: 32px; font-weight: bold; line-height: 1.4; color: #111; margin-bottom: 20px; font-family: 'Nanum Myeongjo', serif; letter-spacing: -1.5px; }
+        .article-subtitle { font-size: 19px; color: #0055aa; margin-bottom: 30px; border-left: 5px solid #0055aa; padding-left: 15px; font-weight: 700; line-height: 1.5; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 35px; }
+        
+        .article-body { font-size: 18px; line-height: 2.1; color: #222; font-family: 'Nanum Myeongjo', serif; text-align: justify; } 
+        .article-body strong { font-weight: 800; color: #cc0000; }
+        .article-body p { margin-bottom: 30px; }
+        
+        .img-box { margin: 40px 0; border: 1px solid #eee; padding: 10px; background: #fdfdfd; }
+        .img-caption { font-size: 14px; color: #555; margin-top: 12px; text-align: center; background: #f5f5f5; padding: 12px; border-top: 1px solid #ddd; }
+
+        .comment-section { margin-top: 70px; border-top: 4px solid #111; padding-top: 30px; }
+        .comment-header { font-weight: bold; font-size: 22px; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
+        
+        .comment-item { padding: 25px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 25px; margin-bottom: 20px; border-radius: 4px; }
+        .yoon-comment { background: #fff5f5; border: 2px solid #ffcccc; padding: 25px; margin-bottom: 20px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 20px; font-size: 13px; color: #666; border: 1px solid #ccc; padding: 4px 10px; border-radius: 3px; background: white; }
+        .vote-btn:hover { background: #f0f0f0; }
+        .vote-btn.active-up { color: #0077DD; font-weight: bold; border-color: #0077DD; background: #f0f7ff; }
+        .vote-btn.active-down { color: #cc0000; font-weight: bold; border-color: #cc0000; background: #fff0f0; }
+
+        .reply-container { margin-top: 20px; padding-left: 25px; border-left: 3px solid #eee; }
+        .reply-item { margin-bottom: 15px; font-size: 15px; background: #f9f9f9; padding: 15px; border-radius: 4px; border: 1px solid #efefef; }
+        
+        .side-content { flex: 1; }
+        .archive-card { background: white; border: 1px solid #ddd; padding: 25px; margin-bottom: 25px; }
+        .archive-card-title { font-weight: bold; border-bottom: 2px solid #0055aa; padding-bottom: 10px; margin-bottom: 20px; font-size: 17px; }
+        .archive-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+    /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+
+    </style>
+</head>
+<body>
+
+    <div class="archive-top-bar">
+        HISTORY ARCHIVE: 본 기사는 2007년 10월 15일 자 효빈일보 경제/사회면 원문입니다.
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container px-6">
+        <div class="main-content">
+            <div id="article-content-area">
+                <div class="mb-4 text-[#0055aa] font-black underline decoration-2">경제시평 > 기업 속보 [특종]</div>
+                <h2 class="article-title">신세계 효빈점장 "윤대환 시장은 쓰레기 이하... 터미널 정상화 안 되면 영업 중단"</h2>
+                <div class="article-subtitle">"45인승에 75명 태우는 '가축 수송'이 시장이 말하는 품격인가"<br>'갈색 버스 장막'에 가로막힌 시민 권리 선포... 유통업계 초유의 단체 저항</div>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">강직 기자</span> (honest@hyobinilbo.com)<br>
+                        입력 2007.10.15. 11:00 | 수정 2007.10.15. 13:45
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p>[효빈일보 = 강직 기자] "윤대환 시장은 입만 열면 '시의 품격'을 따집니다. 하지만 묻고 싶습니다. 시민들을 짐짝처럼 구겨 넣는 '가축 수송'이 당신이 말하는 품격입니까? 제가 보기에 윤 시장은 **품격이라곤 눈 씻고 찾아볼 수 없는 쓰레기 이하의 인간입니다.**"</p>
+
+                    <div class="img-box">
+                        <img src="신세계_점장_기자회견.png" alt="신세계백화점_점장_일갈.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333/eee?text=Shinsegae+Manager+Press+Conference'">
+                        <div class="img-caption">▲ 15일 오전 신세계백화점 효빈점 로비에서 점장이 침통한 표정으로 윤대환 시장과 두청운수의 횡포를 규탄하는 기자회견을 열고 있다.</div>
+                    </div>
+
+                    <p>신세계백화점 효빈점장이 결국 폭발했다. 그는 15일 긴급 기자회견을 자처해 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 시장의 파행적인 교통 행정과 가족 기업 <a href="두청운수.html" class="text-blue-600 underline">두청운수</a>의 터미널 독점 횡포를 정면으로 비판하며 **'무기한 영업 중단'**이라는 배수진을 쳤다.</p>
+
+                    <p>점장은 현재 효빈 터미널이 교통 허브가 아닌 '두청운수의 사유지'로 전락했다고 지적했다. 그는 **"갈색 버스들이 만든 인의 장막에 막혀 고객 차량은 진입조차 못 하고, 매장은 소음과 매연으로 가득 찼다"**며 **"시민들을 볼모로 자기 가족 배를 불리는 자가 광역시장 자리에 앉아있는 현실이 참담하다"**고 목소리를 높였다.</p>
+
+                    <p>특히 45인승 버스에 75명을 태우는 이른바 **'인간 테트리스'**식 운행과 7,000원에 달하는 살인적인 요금 폭리를 언급하며, "이것은 행정이 아니라 범죄 공동체"라고 규정했다. 그는 터미널 환경이 정상화되지 않을 경우 11월부로 백화점 문을 닫겠다는 최후통첩을 보냈다.</p>
+
+                    <div class="img-box">
+                        <img src="터미널_교통마비.png" alt="갈색_버스_정체.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/4d3a2b/ffffff?text=Terminal+Traffic+Chaos'">
+                        <div class="img-caption">▲ 두청운수의 갈색 버스들이 터미널 진입로를 무단 점거하여 백화점 고객 차량의 흐름을 완전히 차단하고 있는 모습.</div>
+                    </div>
+
+                    <p>이날 기자회견은 TV로 전국에 생중계되었으며, 소식을 접한 윤대환 시장은 시장실에서 재떨이를 던지며 격노한 것으로 알려졌다. 하지만 시민들은 "백화점 점장이 할 말을 대신 해줬다"며 열광적인 지지를 보내고 있다. 이번 사태는 단순한 노사 분쟁을 넘어, 효빈의 미래를 가로막는 **'갈색 장막'**을 걷어내기 위한 범시민적 투쟁의 기폭제가 될 전망이다.</p>
+
+                    <div class="mt-10 pt-6 border-t border-gray-200 text-sm text-gray-500">
+                        &lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;
+                    </div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 (2007 vs 2026) -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    <span>전체 댓글</span> <span class="text-[#0055aa] text-xl">52,842</span>
+                </div>
+                
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 2007년 베스트 댓글 -->
+                    <div class="best-comment shadow-sm">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-black text-blue-700">Citizen_Power (2007.10.15)</span>
+                            <span class="text-xs text-gray-500">추천 185,200 | 비추천 4</span>
+                        </div>
+                        <p class="text-base font-bold text-gray-900">신세계 점장님, 용기에 박수를 보냅니다! "쓰레기 이하의 인간"이라는 말, 우리 시민 모두가 하고 싶었던 말입니다. 매일 아침 닭장 같은 갈색 버스 타고 지옥을 맛보는 우리 서민들의 한을 풀어주셨네요. 백화점 문 닫지 마세요, 우리가 윤대환을 끌어내리겠습니다!</p>
+                    </div>
+
+                    <!-- 윤재훈의 2026년 적반하장 댓글 -->
+                    <div class="yoon-comment">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-black text-gray-900">YoonJaehoon(출소/무직) <span class="bg-red-600 text-white text-[10px] px-1 rounded ml-1">위험</span></span>
+                            <span class="text-xs text-gray-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm font-bold text-red-800">아니 ㅋㅋㅋ 일개 장사꾼 놈이 감히 광역시장님한테 쓰레기라니? 미친 거 아냐? 우리 아빠 말이 맞지! 백화점은 사치품이나 파는 데고 우리 버스는 시민들의 발인데 누가 더 위냐? 저 점장 놈 박효빈이랑 한패지? 2007년에 저런 하극상을 내버려 뒀으니 나라가 이 모양이지! 다 고소할 거야!</p>
+                        <div class="flex gap-2 mt-4">
+                            <span class="vote-btn" onclick="vote(this, 'up')">공감 <span class="count">0</span></span>
+                            <span class="vote-btn active-down" onclick="vote(this, 'down')">비공감 <span class="count">1,552,100</span></span>
+                        </div>
+                        <div class="reply-container">
+                            <div class="reply-item">
+                                <span class="font-bold text-blue-700">Fact_Bomb_2026</span>: 재훈아 ㅋㅋㅋ 그 '장사꾼'이 낸 세금이 니네 아빠가 횡령한 비자금보다 훨씬 깨끗하단다. 그리고 시민의 발? 45인승에 75명 태우는 건 발이 아니라 발등 찍는 짓이지. 2.2% 득표율로 민심 운운하지 마라.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-gray-700">Department_Staff</span>: 당시 백화점 직원이었습니다. 니네 아빠가 보낸 용역들이 점장님 퇴근길 막고 협박하던 거 다 기억합니다. 부자가 쌍으로 양아치 짓 한 건 역사에 남을 거다.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-red-600 text-xs">YoonDaehwan(출소/동조)</span>: <span class="text-red-800 font-bold">재훈아, 아빠는 그때 도시의 기강을 잡으려던 거다! 장사꾼이 정치에 개입하는 건 용납 못 해! (좋아요 1)</span>
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-purple-700 text-xs">Citizen_V</span>: 와... 진짜 반성이 없네. 님들 덕분에 <a href="보라색6호선.html" class="text-[#881188] font-bold">6호선(보라색)</a> 5년 지연되고 시민들 고통받은 건 어쩔 건데? ㅋㅋㅋ
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2007년 당시 격앙된 댓글들 -->
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">터미널_상인 (2007.10.15)</span>
+                            <span class="text-xs text-gray-500">추천 35,500</span>
+                        </div>
+                        <p class="text-sm">백화점 점장님 말이 백번 맞습니다. 두청운수 갈색 버스들 때문에 우리 가게 앞까지 매연이 꽉 차서 손님들이 코 막고 지나가요. 이게 시장이 할 짓입니까? 자기네 버스만 소중하고 남의 장사는 망해도 된다는 심보, 진짜 쓰레기 맞네요.</p>
+                        <div class="reply-container">
+                            <div class="reply-item"><span class="font-bold text-red-600 text-xs">YoonJaehoon(2026)</span>: 꼬우면 니들도 버스 사업 하든가! ㅋㅋㅋ</div>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">7,000원_피해자 (2007.10.15)</span>
+                            <span class="text-xs text-gray-500">추천 28,200</span>
+                        </div>
+                        <p class="text-sm">기차 끊고 버스 요금 7,000원 쳐받으면서 가축 수송하는 윤대환... 오늘 점장님 일갈에 체증이 내려갑니다. 신세계 쇼핑 안 해도 좋으니 제발 저 인간 좀 쫓아내 주세요.</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">History_Witness (2007.10.15)</span>
+                            <span class="text-xs text-gray-500">추천 22,600</span>
+                        </div>
+                        <p class="text-sm">"품격 없는 쓰레기" ㅋㅋㅋ 2007년 올해의 명언 선정합니다. 대통령 질타에도 뻔뻔하게 자치권 타령하더니, 대기업 점장한테 팩트 폭격 당하니까 시장실에서 소리 지르는 거 다 들리네요.</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">Realist_2026</span>
+                            <span class="text-xs text-gray-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm">재훈아, 니가 무시하던 신세계백화점 지금 효빈시 랜드마크로 떡상해서 매출 전국권인 거 아냐? ㅋㅋㅋ 박효빈 시장님이 <a href="연청색빈효선.html" class="text-[#6677CC] font-bold">빈효선</a> 연결해 준 덕분이지. 넌 고시원에서 컵라면이나 불려 먹어라.</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">Audit_Expert_V</span>
+                            <span class="text-xs text-gray-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm">2007년 아카이브 보니까 니네 집구석은 예나 지금이나 똑같네. 혐오하고, 비하하고, 돈밖에 모르고. 이번 감사원 조사는 2007년의 빚까지 다 청산하는 자리가 될 거다. 부자 동반 입소 가즈아!</p>
+                    </div>
+
+                    <div class="comment-item"><p class="text-xs text-gray-400 text-center">... 2007년 당시 윤대환을 규탄하는 시민들의 댓글 4만 개가 더 있습니다 ...</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="archive-card shadow-sm">
+                <div class="archive-card-title">2007년 '갈색 제국' 몰락사</div>
+                <ul class="archive-list">
+                    <li>- <b>1월:</b> 갈색 버스 장벽 참사 (2명 사망)</li>
+                    <li>- <b>5월:</b> 이웃 도시 모독 "거지 촌동네"</li>
+                    <li>- <b>7월:</b> 효빈고법 '특혜 행정' 유죄 판결</li>
+                    <li>- <b>10월:</b> 신세계 점장 '영업 중단' 선언</li>
+                    <li>- <b>11월:</b> 대법원 당선무효 확정 및 구속</li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#4d3a2b] p-6 text-white rounded text-center shadow-lg mb-6">
+                <div class="font-black text-xl mb-1 italic">DOOCHEONG</div>
+                <div class="text-xs font-bold">효빈의 유일한 선택<br>두청운수가 시민을 모십니다</div>
+                <div class="mt-4 text-[10px] text-gray-300 font-normal opacity-50">※ 2007년 당시 강제로 게재된 광고입니다.</div>
+            </div>
+
+            <div class="archive-card" style="background: #eef2ff; border-left: 5px solid #0055aa;">
+                <div class="font-bold text-sm mb-2 text-blue-800">사건 후기</div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    이 기자회견 이후 한 달 만에 윤대환 시장은 대법원 판결로 시장직을 상실했습니다. 신세계백화점은 영업 중단 없이 정상화되었으며, 현재 효빈시의 핵심 상권으로 자리 잡았습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#222] text-gray-400 py-12 mt-20 text-xs">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <p class="mb-4 text-white text-lg font-black tracking-tighter">효빈일보 디지털 아카이브 센터</p>
+            <p class="mb-2">제호: 효빈일보 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p class="mb-2">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function vote(btn, type) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active-up') || btn.classList.contains('active-down')) {
+                btn.classList.remove('active-up', 'active-down');
+                count--;
+            } else {
+                btn.classList.add(type === 'up' ? 'active-up' : 'active-down');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+    </script>
+</body>
+</html>

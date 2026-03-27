@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문화] "코난이 부정승차 잡고, 아냐가 결재 올린다"... 효빈 도시철도 성우 '드림팀' 화제 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 등 공통 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 노선 아이콘 스타일 (사용자 지정 색상) */
+        .line-badge { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; color: white; font-size: 12px; font-weight: bold; margin-right: 4px; vertical-align: middle; }
+        .line-1 { background-color: #0077DD; }
+        .line-2 { background-color: #00CCAA; }
+        .line-3 { background-color: #FFCC11; }
+        .line-4 { background-color: #FF5522; }
+        .line-5 { background-color: #EE0022; }
+        .line-6 { background-color: #881188; }
+        .line-7 { background-color: #FF8899; }
+        .line-8 { background-color: #9856FF; }
+        .line-bh { background-color: #6677CC; }
+
+        /* 성우 소개 박스 */
+        .cv-box { background: #fdfdfd; border: 1px solid #e2e2e2; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .cv-title { font-weight: bold; font-size: 20px; color: #0055aa; margin-bottom: 15px; border-left: 4px solid #0055aa; padding-left: 10px; }
+        .cv-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        .cv-item { background: white; padding: 15px; border-radius: 6px; border: 1px solid #eee; display: flex; gap: 15px; align-items: flex-start; }
+        .cv-line-mark { font-size: 24px; font-weight: 900; width: 40px; text-align: center; flex-shrink: 0; }
+        .cv-content { flex: 1; }
+        .cv-name { font-weight: bold; font-size: 16px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+        .cv-role { font-size: 12px; color: #666; background: #eee; padding: 2px 6px; border-radius: 4px; }
+        .cv-desc { font-size: 14px; color: #444; margin-top: 4px; line-height: 1.5; }
+        .cv-highlight { color: #d32f2f; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">문화 > 방송/연예</div>
+                <h2 class="article-title">"코난이 부정승차 잡고, 아냐가 결재 올린다"... 효빈 도시철도 성우 '드림팀' 화제</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김문화 기자</span> (culture@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 14:00 | 수정 2026.01.07. 15:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">김선혜 "진실은 언제나 하나! 승차권 미소지입니다"<br>우치다 마아야 "어둠의 화염에 휩싸인... 개찰구"<br>타네자키 아츠미·김현지 등 한일 성우 대표작 반영한 '메소드 연기' 폭발</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈교통공사_성우_녹음현장.png" alt="효빈교통공사_성우_녹음현장.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/FFCC11/FFFFFF?text=Voice+Actors+Recording'">
+                        <div class="img-caption">▲ 지난달 효빈교통공사 녹음실에서 한국 성우 윤아영(왼쪽)과 일본 성우 타네자키 아츠미가 4호선 캐릭터 '다로나'의 대본을 보며 '와쿠와쿠' 표정을 짓고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김문화 기자] "내 이름은 하루빈, 역무원이죠. 제 추리에 따르면... 손님은 승차권이 없습니다! 진실은 언제나 하나!"</p>
+
+                    <p>효빈 도시철도 <a href="2호선.html" class="text-blue-600 underline">2호선</a> 개찰구에서 부정 승차를 시도하던 승객이 역무원 캐릭터의 멘트에 얼굴을 붉혔다. 이 목소리의 주인공은 '명탐정 코난'의 코난 역으로 유명한 성우 <b>김선혜</b>. 효빈교통공사가 캐릭터 성우들의 대표작을 오마주한 이른바 '성우 개그'를 공식 콘텐츠로 도입하며 화제를 모으고 있다.</p>
+
+                    <p>공사가 공개한 '레일 루미네(Nine Stars)' 성우 라인업은 그야말로 '드림팀'이다. 단순히 유명 성우를 기용하는 데 그치지 않고, 성우의 대표작 속 명대사나 설정을 효빈 도시철도 업무에 절묘하게 녹여내며 서브컬처 팬들의 열광적인 반응을 이끌어내고 있다.</p>
+
+                    <div class="cv-box">
+                        <div class="cv-title">🎙️ 효빈 도시철도 '레일 루미네' 성우 라인업 & 연결 포인트</div>
+                        <div class="cv-grid">
+                            <!-- 1호선 -->
+                            <div class="cv-item" style="border-left: 4px solid #0077DD;">
+                                <div class="cv-line-mark text-[#0077DD]">1</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">고나미 <span class="cv-role">기관사</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>박지윤</b> (닌자고-니야): "니야처럼" 하이비즈 조끼 입고 민원 현장 제압.<br>
+                                        🇯🇵 <b>세토 아사미</b> (방패용사-라프타리아): 기관실을 전장처럼, 라프타리아급 실전 대처.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2호선 -->
+                            <div class="cv-item" style="border-left: 4px solid #00CCAA;">
+                                <div class="cv-line-mark text-[#00CCAA]">2</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">하루빈 <span class="cv-role">역무원</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>김선혜</b> (코난): "제 추리에 따르면..."이라며 부정승차범 논파.<br>
+                                        🇯🇵 <b>우치다 마아야</b> (중2병-릿카): "어둠의 화염..." 등 쓸데없이 화려한 방송 멘트.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3호선 -->
+                            <div class="cv-item" style="border-left: 4px solid #FFCC11;">
+                                <div class="cv-line-mark text-[#FFCC11]">3</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">박라미 <span class="cv-role">홍보 담당</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>이새아</b> (반요 야샤히메-토와): F학점을 맞아도 "토와처럼" 꺾이지 않는 근성.<br>
+                                        🇯🇵 <b>이시카와 유이</b> (니어 오토마타-2B): 덕질 텐션 터지면 2B급 전투 모드로 돌변.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 4호선 -->
+                            <div class="cv-item" style="border-left: 4px solid #FF5522;">
+                                <div class="cv-line-mark text-[#FF5522]">4</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">다로나 <span class="cv-role">산업관리직</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>윤아영</b> (도라에몽-진구): 평소엔 진구처럼 덜렁대다 회계 감사 때만 히든 보스 등극.<br>
+                                        🇯🇵 <b>타네자키 아츠미</b> (스파이패밀리-아냐): 결재 서류 올릴 때 표정이 "와쿠와쿠(두근두근)".
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 5호선 -->
+                            <div class="cv-item" style="border-left: 4px solid #EE0022;">
+                                <div class="cv-line-mark text-[#EE0022]">5</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">미소하 <span class="cv-role">정책 브레인</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>김채하</b> (아이카츠-아오이): 정책 브리핑을 아이돌 톤으로. "삶의 질, 상승!"<br>
+                                        🇯🇵 <b>쿠노 미사키</b> (일곱개의대죄-호크): 스위치 켜지면 잔반처리 기사단장급 음성변조 팩폭.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 6호선 -->
+                            <div class="cv-item" style="border-left: 4px solid #881188;">
+                                <div class="cv-line-mark text-[#881188]">6</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">라세나 <span class="cv-role">고3 수험생</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>김율</b> (마블-케이트 비숍): 보건대 면접에서 히어로물 대사("응급상황, 제가 쏩니다").<br>
+                                        🇯🇵 <b>키토 아카리</b> (니지동-카나타): 본인 오시가 카나타라며 "오시=나" 자아분열 개그 시전.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 7호선 -->
+                            <div class="cv-item" style="border-left: 4px solid #FF8899;">
+                                <div class="cv-line-mark text-[#FF8899]">7</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">임세정 & 임세하 <span class="cv-role">자매</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>윤미나</b> (히로아카-오챠코) & <b>방연지</b> (원신-클레): "히어로 열정"과 "폭발광 공학도".<br>
+                                        🇯🇵 <b>스즈키 아이나</b> (마리) & <b>다테 사유리</b> (카논): "Shiny~"한 영어 멘트와 노래하는 보고서.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 8호선 -->
+                            <div class="cv-item" style="border-left: 4px solid #9856FF;">
+                                <div class="cv-line-mark text-[#9856FF]">8</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">유리아 <span class="cv-role">공고생</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>장예나</b> (일곱개의대죄-호크): 매점 간식 이름을 전부 "호크 ○○"로 부름.<br>
+                                        🇯🇵 <b>사이토 슈카</b> (선샤인-요우): 인사가 "요우소로!"라서 선배들이 전염됨.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 빈효선 -->
+                            <div class="cv-item" style="border-left: 4px solid #6677CC;">
+                                <div class="cv-line-mark text-[#6677CC]">빈</div>
+                                <div class="cv-content">
+                                    <div class="cv-name">전노아 <span class="cv-role">행정 광견</span></div>
+                                    <div class="cv-desc">
+                                        🇰🇷 <b>김현지</b> (케이온-아즈사): "아즈사급" 깐깐함으로 보고서 폰트 자간까지 단속.<br>
+                                        🇯🇵 <b>마에다 카오리</b> (니지동-시즈쿠): 별명 "어뮤즈의 광견" 답게 시정자료 요구 끝까지 물고 늘어짐.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p><a href="빈효선 광역전철.html" class="text-blue-600 underline">빈효선</a>의 '전노아' 에피소드도 인기다. 한국 성우 <b>김현지</b>가 애니메이션 '케이온!'의 '아즈사' 톤으로 "선배! 보고서 폰트가 맑은고딕이 아니잖아요!"라고 따지는 장면과, 일본 성우 <b>마에다 카오리</b>가 술 취한 연기로 예산 확보를 주장하는 '광견 모드' 영상은 효빈시 유튜브 채널에서 조회수 1위를 다투고 있다.</p>
+
+                    <p>효빈교통공사 관계자는 "성우분들이 본인의 대표작을 오마주하는 것을 흔쾌히 수락해주셔서 캐릭터의 입체감이 살아났다"며 "앞으로도 성우 토크쇼 등 다양한 이벤트를 준비 중"이라고 밝혔다.</p>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">6,240</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Detective_Fan", time: "방금 전", like: 8500, dislike: 10, isPunished: false,
+                                content: "김선혜 성우님이 '제 추리에 따르면 승차권 미소지입니다' 하는데 소름 ㅋㅋㅋ 코난이 잡으러 온 줄 알고 식은땀 흘림. 부정승차 절대 못 할 듯.",
+                                replies: [
+                                    { nick: "Subway_Police", content: "실제로 2호선 부정승차 적발률이 제일 높습니다. 목소리만 들어도 도망가질 못함." }
+                                ]
+                            },
+                            {
+                                nick: "Spy_Family", time: "3분 전", like: 7200, dislike: 5,
+                                content: "타네자키 아츠미 '와쿠와쿠!' ㅋㅋㅋ 산업관리직이 결재받으러 가면서 아냐 표정 짓는다고 상상하니까 미치겠네. 윤아영 성우님 도라에몽 진구 톤으로 실수하는 연기도 꿀잼.",
+                                replies: [
+                                    { nick: "Office_Worker", content: "저도 결재받을 때 '와쿠와쿠' 표정 지으면 부장님이 사인해 주실까요? (진지)" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "10분 전", like: 2, dislike: 6800, isPunished: true,
+                                content: "다 일본 만화 베끼기 아니냐! 부끄러운 줄 알아라! 내가 시장 됐으면 성우들 싹 다 자르고 군가 틀었다! 2.2%는 조작이야! 나 사면받은 사람이야!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "한국 성우분들 대표작도 닌자고, 코난, 도라에몽 등등 초메이저거든요? 그리고 지하철에서 군가를 왜 틀어 미친 사람아." },
+                                    { nick: "Culture_Prof", content: "이게 바로 '원소스 멀티유즈'의 모범 사례입니다. 시대착오적인 발상은 혼자 일기장에 쓰세요." }
+                                ]
+                            },
+                            {
+                                nick: "LoveLive_Fan", time: "15분 전", like: 5400, dislike: 0,
+                                content: "스즈키 아이나 'Shiny~' ㅋㅋㅋ 7호선 타면 마리 이사장이 방송해 주는 기분임. 사이토 슈카 '요우소로' 인사법 도입한 거 신의 한 수.",
+                                replies: [
+                                    { nick: "Sunshine", content: "7, 8호선은 그냥 러브라이브 라인이네 ㅋㅋ 덕후들 성지순례 필수 코스 인정." }
+                                ]
+                            },
+                            {
+                                nick: "Mad_Dog_Lover", time: "20분 전", like: 4100, dislike: 0,
+                                content: "마에다 카오리 '광견' 별명을 공식으로 써먹네 ㅋㅋㅋ 김현지 성우님 아즈사 톤으로 깐깐하게 구는 것도 고증 대박임. 빈효선 행정팀 일 잘하네.",
+                                replies: []
+                            },
+                            {
+                                nick: "Klee_Bomb", time: "25분 전", like: 3900, dislike: 0,
+                                content: "방연지 성우님 임세하 목소리로 '터졌어!' 하는 거 ㅋㅋㅋ 기계공학과 실험실 맨날 폭발하나 봄. 클레가 대학 가면 딱 저럴 듯.",
+                                replies: [
+                                    { nick: "Eng_Student", content: "교수님 뒷목 잡는 소리 들린다..." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    const nickClass = "font-bold text-[#0055aa]";
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.isPunished ? '(IP 차단됨)' : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_metro_surplus.html" class="ranking-link">효빈 도시철도 흑자 신화</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_metro_voice_actors.html" class="ranking-link font-bold text-[#0055aa]">韓日 성우 드림팀 화제</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_tour_pass.html" class="ranking-link">HAF PASS 암표 전쟁</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, '망고 구걸' 굴욕</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈교통공사</div>
+                    <div class="text-xs">레일 루미네 드라마 CD<br>절찬리 판매 중</div>
+                </div>
+            </div>
+             <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">HAF 2026</div>
+                    <div class="text-xs text-blue-400">성우 토크쇼 티켓<br>매진 임박</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치] '28초의 포효'가 판 뒤집었다... 박효빈 75.1% 독주, 윤재훈 한 자릿수 추락 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 그래프 박스 */
+        .chart-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .chart-title { font-weight: bold; font-size: 18px; color: #333; margin-bottom: 15px; text-align: center; }
+
+        /* 여론조사 표 */
+        .poll-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; }
+        .poll-table th { background: #333; color: white; padding: 10px; text-align: center; }
+        .poll-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .poll-table tr:nth-child(even) { background-color: #f9f9f9; }
+        .highlight { background-color: #e0f2fe; font-weight: bold; }
+        .crash { background-color: #fee2e2; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 선거</div>
+                <h2 class="article-title">[D-9] '28초의 포효'가 판 뒤집었다... 박효빈 75.1% 독주, 윤재훈 한 자릿수 추락</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김정치 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2022.05.23. 09:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">TV 토론 방송 사고 후 첫 여론조사... 박효빈 8.3%p 급등 '75.1%'<br>윤재훈, '패륜 막말' 역풍에 6.6%로 폭락... 무소속 유성민(9%)에도 밀려<br>시민들 "참지 않고 화내줘서 고맙다"... 박효빈 '사이다 리더십' 돌풍</span></p>
+                    
+                    <div class="my-6">
+                        <img src="박효빈_유세.png" alt="박효빈_후보_유세현장.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0077DD/FFFFFF?text=Park+Hyobin+Campaign+Rally'">
+                        <div class="img-caption">▲ 22일 오후 효빈시 북구 효빈가도 역 앞 유세 현장. 박효빈 더불어민주당 후보가 구름 관중을 향해 지지를 호소하고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김정치 기자] 지난 17일 TV 토론회에서 벌어진 초유의 방송 사고 이후, 효빈광역시장 선거의 판세가 완전히 뒤집혔다. 아니, 뒤집힌 수준을 넘어 **'박효빈 독주 체제'**가 굳어지는 모양새다.</p>
+
+                    <p>본지가 여론조사기관 '효빈리서치'에 의뢰해 지난 21~22일 양일간 효빈시 유권자 1,000명을 대상으로 실시한 5차 여론조사 결과에 따르면, 더불어민주당 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 후보의 지지율은 무려 **75.10%**를 기록했다. 이는 토론회 직전(4차, 66.76%)보다 8.34%p 급등한 수치다.</p>
+
+                    <p>반면, 방송 중 박 후보에게 패륜적인 욕설을 하고 폭력을 시도했던 국민의힘 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 후보는 **6.65%**로 추락했다. 4차 조사(11.12%) 대비 반토막이 난 수치이자, 보수 성향 무소속 **유성민** 후보(9.00%)에게조차 밀린 3위다. 사실상 제1야당 후보로서의 경쟁력을 상실했다는 평가가 나온다.</p>
+
+                    <div class="chart-box">
+                        <div class="chart-title">📊 토론회 전후 효빈시장 후보 지지율 변화</div>
+                        <canvas id="pollChart"></canvas>
+                    </div>
+
+                    <table class="poll-table">
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>4차 (토론 전)</th>
+                                <th>5차 (토론 후)</th>
+                                <th>증감</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>박효빈 (민주)</b></td>
+                                <td>66.76%</td>
+                                <td class="highlight">75.10%</td>
+                                <td class="text-red-600">▲ 8.34%p</td>
+                            </tr>
+                            <tr>
+                                <td><b>윤재훈 (국힘)</b></td>
+                                <td>11.12%</td>
+                                <td class="crash">6.65%</td>
+                                <td class="text-blue-600">▼ 4.47%p</td>
+                            </tr>
+                            <tr>
+                                <td><b>유성민 (무소속)</b></td>
+                                <td>6.00%</td>
+                                <td>9.00%</td>
+                                <td class="text-red-600">▲ 3.00%p</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>이번 조사의 결정적 변수는 단연 박효빈 후보의 '사자후'였다. 토론회 당시 윤재훈 후보가 박 후보의 다문화 가정 배경과 가족사를 모욕하자, 박 후보는 책상을 내리치며 **"입 닥쳐! 네가 만든 지옥에서 살아남은 나야!"**라고 일갈했다. 당초 정치권 일각에서는 박 후보의 거친 대응이 중도층 이탈을 부를 수 있다고 우려했으나, 결과는 정반대였다.</p>
+
+                    <p>시민들은 "가족을 모욕하는데 참는 게 더 비겁하다", "박효빈의 분노는 정당방위이자, 우리 서민들의 분노를 대변한 것"이라며 열광하고 있다. 특히 보수층 내에서도 "윤재훈은 인간으로서 기본이 안 됐다"며 윤 후보를 손절하고 무소속 유성민 후보로 갈아타는 '보수 분열' 현상이 뚜렷하다.</p>
+
+                    <p>윤재훈 후보 측은 "방송사가 의도적으로 박 후보에게 유리하게 편집했다"며 음모론을 제기하고 있지만, 이미 돌아선 민심을 되돌리기엔 역부족으로 보인다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">42,850</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        // 차트 생성
+                        const ctx = document.getElementById('pollChart').getContext('2d');
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['4차(토론 전)', '5차(토론 후)'],
+                                datasets: [{
+                                    label: '박효빈 (민주)',
+                                    data: [66.76, 75.10],
+                                    backgroundColor: '#0055aa'
+                                }, {
+                                    label: '윤재훈 (국힘)',
+                                    data: [11.12, 6.65],
+                                    backgroundColor: '#e11d48'
+                                }, {
+                                    label: '유성민 (무소속)',
+                                    data: [6.00, 9.00],
+                                    backgroundColor: '#16a34a'
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: { position: 'bottom' }
+                                }
+                            }
+                        });
+
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_Holics", time: "방금 전", like: 18500, dislike: 20, isPunished: false,
+                                content: "75% 실화냐 ㅋㅋㅋ 박효빈 후보 책상 내리칠 때 내 속이 다 시원하더라. 정치인이기 전에 사람이 먼저지. 가족 욕하는데 가만히 있으면 그게 바보지. 이번 선거는 끝났다.",
+                                replies: [
+                                    { nick: "Voter_King", content: "맞습니다. 오히려 그동안 꾹 참아왔던 게 더 대단함. 사자후 한번 지르고 지지율 떡상 ㅋㅋ" },
+                                    { nick: "Citizen_A", content: "윤재훈 6% ㅋㅋㅋ 무소속보다 못 나왔네. 집에 가라." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Camp_Official", time: "5분 전", like: 10, dislike: 15200, isPunished: false,
+                                content: "이 여론조사는 조작되었습니다! 어떻게 며칠 만에 8%가 오릅니까? 박효빈 후보의 폭력성을 감추기 위한 언론의 농간입니다! 우리 윤재훈 후보님은 억울합니다!",
+                                replies: [
+                                    { nick: "Fact_Bomber", content: "영상 안 봄? 먼저 패드립 치고 책상 걷어찬 게 누군데? 눈이 있으면 좀 봐라." },
+                                    { nick: "Mental_Hospital", content: "여기 망상 환자 추가요. 약 드실 시간입니다." },
+                                    { nick: "Video_Link", content: "유튜브에 '윤재훈 난동' 검색하면 박제 영상 수백 개다. 조작 같은 소리 하네." }
+                                ]
+                            },
+                            {
+                                nick: "Shy_Conservative", time: "10분 전", like: 9800, dislike: 15, isPunished: false,
+                                content: "평생 2번만 찍어온 보수입니다. 근데 이번엔 박효빈 찍습니다. 윤재훈은 사람이 아닙니다. 어떻게 남의 어머니를... 게다가 무소속 유성민 후보가 더 품격 있어 보이네요. 국힘은 반성하세요.",
+                                replies: [
+                                    { nick: "Real_Right", content: "저도 갈아탔습니다. 윤재훈은 보수의 수치입니다." },
+                                    { nick: "Conservative_Youth", content: "청년 보수들도 다 등 돌렸어요. 윤재훈은 그냥 양아치임." }
+                                ]
+                            },
+                            {
+                                nick: "Angry_Dad", time: "15분 전", like: 8200, dislike: 0, isPunished: false,
+                                content: "내 딸이 방송 보고 울더라. 우리 집도 다문화 가정인데, 윤재훈이 혼혈 비하하는 거 보고 치가 떨렸다. 박효빈 후보가 대신 화내줘서 고맙다. 무조건 투표한다.",
+                                replies: [
+                                    { nick: "Support", content: "힘내세요 아버님! 우리가 표로 심판해 줄 겁니다." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon", time: "20분 전", like: 3, dislike: 12000, isPunished: false,
+                                content: "나 윤재훈이다! 방송국 놈들 다 고소할 거야! 카메라 끄고 박효빈이 나한테 침 뱉었다고! 내가 피해자야! 다들 속지 마! 내 지지율은 50%가 넘는다고!",
+                                replies: [
+                                    { nick: "MBC_PD", content: "생방송 원본 테이프 그대로 보존 중입니다. 허위사실 유포로 맞고소 갑니다." },
+                                    { nick: "Law_Student", content: "침을 뱉어? ㅋㅋㅋ 소설 쓰시네. 카메라 수십 대가 돌아가고 있었는데." },
+                                    { nick: "Psychiatrist", content: "증세가 심각하네요. 리플리 증후군 의심됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Univ_Student_Union", time: "25분 전", like: 6500, dislike: 0, isPunished: false,
+                                content: "효빈대 학생회입니다. 윤재훈 후보의 학폭 피해자였던 박 후보님을 지지합니다. 가해자가 피해자에게 '찌질이'라고 욕하는 건 2차 가해입니다. 윤재훈 후보의 사퇴를 촉구합니다.",
+                                replies: [
+                                    { nick: "Freshman", content: "선배님들 멋집니다! 우리 과 단톡방도 난리 났어요. 전원 투표 갑니다." }
+                                ]
+                            },
+                            {
+                                nick: "Market_Lady", time: "30분 전", like: 5000, dislike: 0, isPunished: false,
+                                content: "시장에서 장사하는데, 윤재훈이가 와서 악수하자길래 소금 뿌렸다. 지 애비(윤대환)가 우리 시장 다 갈아엎으려던 거 잊지 않았다.",
+                                replies: [
+                                    { nick: "Salt_Seller", content: "아이고 잘하셨네! 속이 다 시원하다." }
+                                ]
+                            },
+                            {
+                                nick: "Election_Analyst", time: "35분 전", like: 4200, dislike: 2, isPunished: false,
+                                content: "데이터 분석가입니다. 6.6% 지지율은 사실상 조직표(당원) 빼고는 다 떠났다는 뜻입니다. 선거비용 보전 기준(10% 또는 15%)에도 미달이라 파산 확정입니다. 윤재훈 캠프 지금 곡소리 날 듯.",
+                                replies: [
+                                    { nick: "Bank_Manager", content: "대출도 안 나올 텐데... 인생 하드모드 시작이네요." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Supporter", time: "40분 전", like: 5, dislike: 3000, isPunished: false,
+                                content: "아직 선거 안 끝났다! 샤이 윤재훈이 있다! 투표함 열어보면 다를 것이다! 효빈시의 주인은 윤 씨 가문이다!",
+                                replies: [
+                                    { nick: "Citizen_Z", content: "샤이 지지층이 아니라 그냥 셰임(Shame) 지지층이겠지. 부끄러워서 말 못 하는." },
+                                    { nick: "Owner", content: "주인은 시민입니다. 아직도 왕조 시대인 줄 아나." }
+                                ]
+                            },
+                            {
+                                nick: "Bus_Driver", time: "45분 전", like: 3800, dislike: 0, isPunished: false,
+                                content: "운전 중에 라디오로 토론회 듣다가 박효빈 소리 지를 때 급정거할 뻔함. 근데 승객들이 다 같이 '잘한다!' 하고 박수침 ㅋㅋㅋ 이런 선거 처음 본다.",
+                                replies: []
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let nickStyle = cmt.nick === "YoonJaehoon" ? "text-red-600 font-black" : "text-[#0055aa]";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    const rNickStyle = "text-[#0055aa]";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <span class="text-xs text-red-600 animate-pulse">LIVE</span>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_debate_aftermath.html" class="ranking-link font-bold text-red-600">박효빈 지지율 75% 돌파</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_debate_broadcast_accident.html" class="ranking-link">윤재훈 토론회 난동 영상</a></li>
+                    <li><span class="ranking-num">3</span> <a href="#" class="ranking-link">무소속 유성민 2위 부상</a></li>
+                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">국민의힘 효빈시당 당무 감사</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">박효빈 "혐오에 굴복 않겠다"</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">투표합시다</div>
+                    <div class="text-xs text-blue-400">6월 1일은<br>효빈의 미래를 바꾸는 날</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

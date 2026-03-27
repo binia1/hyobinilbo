@@ -73,21 +73,25 @@
 </head>
 <body>
 
+    <!-- 헤더 -->
     <header class="news-header">
-        <div class="max-w-[1080px] mx-auto py-4 flex justify-between items-end">
-            <h1 class="text-3xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="text-sm text-gray-500">2026.01.07 (수)</div>
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
         </div>
         <nav class="border-t border-gray-200">
-            <div class="max-w-[1080px] mx-auto flex py-3 news-nav">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
                 <a href="index.html">홈</a>
                 <a href="politics.html">정치</a>
-                <a href="economy.html">경제</a>
+                <a href="economy.html" class="active">경제</a>
                 <a href="society.html">사회</a>
                 <a href="culture.html">생활/문화</a>
                 <a href="world.html">세계</a>
                 <a href="it.html">IT/과학</a>
-                <a href="opinion.html" class="active">오피니언</a>
+                <a href="opinion.html">오피니언</a>
                 <a href="photo.html">포토</a>
                 <a href="tv.html">TV</a>
             </div>

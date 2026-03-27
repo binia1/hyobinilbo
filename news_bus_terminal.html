@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[현장] "씹덕이라 욕하더니..." 효빈터미널, 전국 최초 '래핑버스 성지' 등극 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 뉴스 헤더 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav { border-top: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; display: inline-block; padding-top: 12px; padding-bottom: 12px; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 스타일 */
+        .article-title { font-size: 32px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #e0f2fe 50%, transparent 50%); }
+        .article-body blockquote { border-left: 4px solid #0055aa; padding-left: 15px; margin: 20px 0; color: #555; font-style: italic; background: #f9f9f9; padding: 15px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 댓글창 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        /* 윤대환 지지자용 (붉은 배경) */
+        .bad-comment { background: #fff0f0; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 4px; } 
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 기사 영역 -->
+        <div class="main-content shadow-sm">
+            <div class="mb-2 text-[#0055aa] font-bold">사회 > 교통/문화</div>
+            <h2 class="article-title">[현장] "똥재훈 사건의 그곳"... 효빈터미널, 전국 최초 '래핑버스 성지' 등극</h2>
+            <div class="article-info">
+                <div>
+                    <span class="font-bold">박교통 기자</span> (traffic@hyobinilbo.com)<br>
+                    <span class="text-xs text-gray-400">입력 2026.01.06. 14:00</span>
+                </div>
+                <div class="flex gap-2 text-xs">
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                </div>
+            </div>
+            <div class="article-body">
+                <p><span class="text-[#0055aa] font-bold">칠양여객 옥덕호 대표 "덕업일치 경영이 비결"... '리엘라 버스' 등 20대 운행<br>윤재훈 '오물 투척 미수' 사건이 오히려 전화위복... 관광객 필수 코스로</span></p>
+                
+                <div class="my-6">
+                    <img src="래핑버스.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/006699/FFFFFF?text=Liella!+Wrapping+Bus'">
+                    <div class="img-caption">▲ 효빈종합버스터미널 승차홈에 대기 중인 '러브라이브! 리엘라!' 래핑버스. 이를 촬영하려는 '성지순례객'들로 북적이고 있다. (사진=효빈일보)</div>
+                </div>
+
+                <p>[효빈일보 = 박교통 기자] "저급한 문화라며 탄압받던 그 버스들이, 이제는 효빈시를 먹여 살리는 효자가 됐습니다."</p>
+                <p>효빈종합버스터미널을 운영하는 <strong>칠양여객 옥덕호 대표</strong>는 승차장에 늘어선 형형색색의 '애니메이션 래핑버스'를 보며 감회에 젖었다. 과거 윤대환 전 시장 재임 시절 "시의 품격을 떨어뜨리는 쓰레기 그림"이라며 운행을 불허 당했던 설움을 씻어낸 순간이다.</p>
+                <p>현재 효빈터미널은 전국 '덕후(마니아)'들의 성지다. 《러브라이브!》, 《뱅드림!》 등 인기 캐릭터로 도배된 고속버스를 타기 위해 서울과 부산에서 일부러 찾아오는 승객이 줄을 잇는다. 이 '성지화'의 결정적 계기는 아이러니하게도 윤 전 시장의 아들, 윤재훈 씨의 엽기적인 행각 덕분이었다.</p>
+                
+                <h3 class="text-xl font-bold mt-8 mb-4">■ 전설이 된 '5대 2 사건'과 '똥재훈'의 몰락</h3>
+                <p>사건은 2023년 여름으로 거슬러 올라간다. 당시 터미널에는 인기 그룹 '리엘라(Liella!)'의 래핑버스가 전시되어 있었다. 지방선거 패배 후 칩거하던 윤재훈 씨는 술에 취해 아버지 윤 전 시장과 함께 나타나 버스에 오물을 투척하고 파손을 시도했다.</p>
+                <p>하지만 하필 그날은 시승식이 열려 <strong>박효빈 시장, 신세계 점장, 애니메이션 협회장</strong> 등 효빈시의 주요 인사들이 모두 현장에 있었다. 이른바 <strong>'효빈 어벤져스'</strong>에 포위된 윤재훈 씨는 190cm 거구의 효빈고속 정비 직원에게 제압당하는 과정에서 바지에 대변을 지리는 추태를 보였다.</p>
+                <p>이 충격적인 '오물 투척 미수(본인이 지림)' 사건은 SNS를 타고 전 세계로 퍼져나갔고, 일본 성우들까지 응원 메시지를 보낼 정도로 화제가 됐다. 윤재훈 씨는 이 사건으로 '똥재훈'이라는 불명예스러운 별명을 얻었고, 이는 지난 총선 낙선의 결정적 원인이 되었다.</p>
+                
+                <div class="my-6">
+                    <img src="터미널_내부.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/444444/FFFFFF?text=Terminal+Lobby+Rina+Board'">
+                    <div class="img-caption">▲ 터미널 로비에 설치된 '리나 쨩 보드' 조형물. 옥덕호 대표의 개인 소장품으로 시작해 이제는 터미널의 마스코트가 됐다.</div>
+                </div>
+
+                <h3 class="text-xl font-bold mt-8 mb-4">■ "덕업일치가 도시 경쟁력"... 박효빈 시장의 전폭 지원</h3>
+                <p>박효빈 시장은 취임 직후 옥 대표와 '덕업일치 회담'을 갖고 래핑버스 사업을 시 공식 관광 상품으로 지정했다. 현재 효빈시와 칠양여객은 20여 대의 래핑버스를 운행 중이며, 터미널 내에는 애니메이션 콜라보 카페와 굿즈샵까지 들어서 '서브컬처 테마파크'를 방불케 한다.</p>
+                <p>터미널을 찾은 관광객 김모 씨(24, 서울)는 "윤재훈이 똥 지린 그 현장을 직접 보고 싶어서 왔다"며 "버스를 타고 효빈 시내를 돌며 성지순례를 할 계획"이라고 즐거워했다. 칠양여객 측은 올해 래핑버스를 50대까지 늘리고, 전국 고속버스 노선에도 투입할 계획이다.</p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JS Load -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <!-- JS Load -->
+                </ul>
+            </div>
+            
+            <!-- 광고 배너 -->
+            <div class="ad-banner" style="background: #fff8e1; border-color: #ffe082;">
+                <div class="text-center">
+                    <div class="font-bold text-orange-600 mb-1">칠양여객 굿즈샵</div>
+                    <div class="text-xs text-orange-400">한정판 래핑버스 다이캐스트<br>터미널 2층에서 판매 중!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 초기 댓글 데이터 (리얼한 반응 포함)
+        const initialComments = [
+            {
+                nick: "LoveLive_Fan", time: "14:10", content: "와 여기가 그 전설의 성지인가요? ㅋㅋㅋ 윤재훈이 똥 지린 자리 어디인지 표시 좀 해주세요. 성지순례 가려고요. 리나 쨩 보드 앞에서 인증샷은 국룰이죠!", 
+                like: 4500, dislike: 15, isBest: true,
+                replies: [
+                    { nick: "TerminalStaff", content: "1번 승차홈 기둥 옆입니다. 바닥 타일 새로 갈았는데도 가끔 냄새나는 것 같아요 ^^;" },
+                    { nick: "Otaku", content: "ㅋㅋㅋㅋ 생화학 테러 현장 보존 좀 해주지 아쉽네요." }
+                ]
+            },
+            {
+                nick: "Seoulite", time: "14:15", content: "서울에서 소문 듣고 왔습니다. 터미널 시설도 깔끔하고 굿즈샵도 볼 거 많아서 놀랐네요. 지방 터미널이라 기대 안 했는데 완전 핫플임. 효빈시 일 잘하네. 래핑버스 퀄리티도 미쳤음.", 
+                like: 3200, dislike: 10, isBest: true,
+                replies: [
+                    { nick: "Local", content: "어서오세요! 터미널 맛집도 많으니까 즐기다 가세요." }
+                ]
+            },
+            {
+                nick: "Chilyang_Best", time: "14:25", content: "칠양여객 폼 미쳤다... 리엘라 버스 실물 영접했는데 가슴이 웅장해진다. 옥덕호 사장님 진짜 덕업일치의 표본이십니다. 앞으로도 효빈시의 발이 되어주세요! 스미레 쨩 최고!", 
+                like: 2800, dislike: 5, isBest: true,
+                replies: []
+            },
+            {
+                nick: "Clean_Zone", time: "14:35", content: "아니 ㅋㅋㅋ 다들 제정신이냐? 남이 똥 싼 자리를 왜 구경하러 가는데 ㅋㅋㅋ 성지순례가 아니라 배변순례 아니냐? 비위도 좋다 니들. 똥재훈 의문의 관광 명소 등극 ㅋㅋㅋ", 
+                like: 1500, dislike: 100, isBest: true,
+                replies: [
+                    { nick: "PassingBy", content: "그러게 말입니다 ㅋㅋㅋ 근데 웃겨서 가보고 싶긴 함." }
+                ]
+            },
+            {
+                nick: "Patriot_Yoon", time: "14:50", content: "나라가 망조가 들었다... 신성한 대중교통에 저런 괴물딱지 같은 일본 만화 그림이나 그려놓고... 윤대환 시장님 계실 땐 기강이 있었는데... 박효빈 이 빨갱이 같은 놈이 도시를 오타쿠 소굴로 만들었어! 쯧쯧.", 
+                like: 12, dislike: 4500, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "FactBomber", content: "할아버지, 윤대환은 횡령으로 감옥 갔고요. 천박한 건 님들 수준이구요 ^^ 버스 회사 매출 역대 최고 찍었는데 님이 보태준 거 있음? 싫으면 걸어 다니쇼." },
+                    { nick: "Citizen", content: "기강? 버스 기사 월급 떼먹는 게 기강입니까? 정신 차리세요." }
+                ]
+            },
+            {
+                nick: "똥재훈(IP)", time: "15:00", content: "다 닥쳐! 내가 싼 거 아니라고! 바지에 물 쏟은 거라고! 누가 똥이라고 소문냈어? 다 고소할 거야!!", 
+                like: 1, dislike: 3000, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "IP_Tracker", content: "어? 이 IP 또 떴네 ㅋㅋㅋ 두청운수 본사에서 검거 완료. 물 쏟았는데 왜 갈색이고 덩어리가 있냐? ㅋㅋㅋ" },
+                    { nick: "Witness", content: "냄새가 물 냄새가 아니던데요? ㅋㅋㅋ" }
+                ]
+            }
+        ];
+
+        // 랭킹 데이터
+        const rankingData = [
+            { title: "[속보] 조선일보, 1면 톱 사과문... \"뼈저리게 반성\"", url: "news_chosun_apology.html", highlight: true },
+            { title: "윤재훈 필리핀 갱단 '참교육' 사건 전말", url: "news_philippines.html" },
+            { title: "\"메카쿠시테!\"... 효빈대생들의 '성우 보호 작전'", url: "news_univ.html" },
+            { title: "윤대환 부자, 위키 여론조작 덜미", url: "news_article.html" },
+            { title: "효빈터미널, '똥재훈' 덕분에(?) 래핑버스 성지 됐다", url: "news_bus_terminal.html" }
+        ];
+
+        // 페이지 로드 시 실행 (확실한 로딩을 위해 onload 사용)
+        document.addEventListener("DOMContentLoaded", function() {
+            // 댓글 렌더링
+            renderComments(initialComments);
+            document.getElementById('comment-count').innerText = initialComments.length;
+            
+            // 랭킹 렌더링
+            renderRanking();
+        });
+
+        function renderComments(comments) {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = "";
+
+            comments.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                // 윤대환 지지자 및 악성 댓글은 붉은 배경으로 표시
+                if (cmt.type === 'bad') {
+                    div.className = "bad-comment";
+                } else {
+                    div.className = cmt.isBest ? "best-comment" : "comment-item";
+                }
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    // 답글은 기본적으로 보이게 설정
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display: block;">`;
+                    
+                    cmt.replies.forEach(reply => {
+                        repliesHtml += `
+                            <div class="reply-item">
+                                <span class="font-bold text-xs text-[#0055aa]">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.type === 'bad' ? 'text-red-600' : ''}">${cmt.nick}</span>
+                        <span class="text-xs text-gray-500">${cmt.time}</span>
+                    </div>
+                    <p class="text-sm mb-2 font-medium">${cmt.content.replace(/\n/g, '<br>')}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        function toggleVote(btn) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active', 'active-hate');
+                countSpan.innerText = (count - 1).toLocaleString();
+            } else {
+                btn.classList.add(btn.innerText.includes('공감') ? 'active' : 'active-hate');
+                countSpan.innerText = (count + 1).toLocaleString();
+            }
+        }
+
+        function addComment() {
+            const nick = document.getElementById('cmt-nick').value.trim();
+            const content = document.getElementById('cmt-content').value.trim();
+            if (!nick || !content) { alert("닉네임과 내용을 입력해주세요."); return; }
+            
+            const div = document.createElement('div');
+            div.className = "comment-item bg-yellow-50"; 
+            div.innerHTML = `
+                <div class="flex justify-between mb-2"><span class="font-bold text-sm">${nick}</span><span class="text-xs text-gray-500">방금 전</span></div>
+                <p class="text-sm mb-2">${content}</p>
+                <div class="text-xs text-gray-500 flex gap-3"><span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">0</span></span><span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">0</span></span></div>
+            `;
+            const container = document.getElementById('comment-list');
+            let bestComments = container.querySelectorAll('.best-comment');
+            if (bestComments.length > 0) container.insertBefore(div, bestComments[bestComments.length - 1].nextSibling);
+            else container.prepend(div);
+            
+            document.getElementById('cmt-content').value = "";
+            alert("댓글이 등록되었습니다.");
+        }
+
+        function renderRanking() {
+            const list = document.getElementById('ranking-list');
+            rankingData.forEach((news, index) => {
+                const li = document.createElement('li');
+                li.onclick = () => location.href = news.url;
+                const styleClass = news.highlight ? 'text-red-600 font-bold' : '';
+                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link ${styleClass}">${news.title}</span>`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

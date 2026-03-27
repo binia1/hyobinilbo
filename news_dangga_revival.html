@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] "내 최애가 도시를 살렸다"... 당가동 '파스텔 블루' 기적의 전말 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #bae6fd 50%, transparent 50%); } /* 파스텔 블루 강조 */
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 타임라인 박스 */
+        .timeline-box { background: #f0f9ff; border: 1px solid #bce3fd; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .timeline-title { font-weight: bold; font-size: 18px; color: #0284c7; margin-bottom: 15px; border-bottom: 2px solid #0284c7; padding-bottom: 5px; }
+        .timeline-item { margin-bottom: 12px; font-size: 15px; padding-left: 10px; border-left: 3px solid #0284c7; }
+        .timeline-date { font-weight: bold; color: #0284c7; margin-right: 5px; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+                /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 사건/이슈</div>
+                <h2 class="article-title">"내 최애가 도시를 살렸다"... 당가동 '파스텔 블루' 기적의 전말</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">박사회 기자</span> (society@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.08.14. 10:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">혐오 세력의 '탕쿠쿠 테러' 미수... 박효빈 시장 "최애 건드리면 용서 없다" 극대노<br>태업 경찰 파면·AI 치안 시스템 구축... '파스텔 블루 르네상스'로 구도심 부활<br>Liyuu "시장님 스바라시!"... 덕질이 복지로 이어진 '선순환'의 결정판</span></p>
+                    
+                    <div class="my-6">
+                        <img src="당가동_파스텔_거리.png" alt="파스텔_블루로_변신한_당가동_거리.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/bae6fd/333333?text=Pastel+Blue+Street'">
+                        <div class="img-caption">▲ 안천구 당가동 '스바라시 디저트 거리'. 칙칙했던 구도심이 '탕쿠쿠'의 퍼스널 컬러인 파스텔 블루로 단장한 뒤 일평균 방문객이 500% 급증했다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 박사회 기자] 쇠퇴해가던 안천구 <a href="당가동.html" class="text-blue-600 underline">당가동</a>이 '파스텔 블루'의 성지로 다시 태어났다. 이 기적 같은 변화의 시작에는 혐오 세력의 테러 미수 사건과, 이를 막아낸 박효빈 시장의 '덕심(Virtue)'이 있었다.</p>
+
+                    <p>사건의 발단은 지난해 HAF 프리 이벤트였다. <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a>(전과자)과 A씨 등 혐오 세력은 '러브라이브! 슈퍼스타!!'의 탕쿠쿠 성우 <b>Liyuu(리유)</b>의 방문을 방해하기 위해 난동을 부렸다. 이들은 당가역(唐可驛)이 탕쿠쿠(唐可可)의 이름과 같다는 이유로 역 광고판에 "공산당 선전 기지"라는 억지 프레임을 씌우려 했다.</p>
+
+                    <p>하지만 이들의 시도는 "겨우 살아난 상권을 죽이려 한다"며 격분한 지역 상인들에게 저지당했다. 보고를 받은 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장은 "내 최애(탕쿠쿠)를 모욕하고 시민의 생계를 위협했다"며 즉각 대응에 나섰다. 당시 현장에서 근무를 태만히 했던 청원경찰을 직위 해제하고, 혐오 범죄자를 0.5초 만에 식별하는 **'탕쿠쿠 장벽(AI 치안 시스템)'**을 구축했다.</p>
+
+                    <div class="timeline-box">
+                        <div class="timeline-title">📜 당가동 부활 프로젝트 일지</div>
+                        <div class="timeline-item"><span class="timeline-date">Step 1.</span> <b>파스텔 블루 르네상스:</b> 거리 전체를 탕쿠쿠 컬러로 도색, 디저트 트럭 유치.</div>
+                        <div class="timeline-item"><span class="timeline-date">Step 2.</span> <b>해피 쿠쿠 카드:</b> 저소득층 아동 급식 카드를 디저트 카페까지 확대. "단맛은 인권이다."</div>
+                        <div class="timeline-item"><span class="timeline-date">Step 3.</span> <b>파스텔 윙즈 & 원정대:</b> 취약계층 청소년에게 태블릿PC 지원 및 상하이/도쿄 연수 기회 제공.</div>
+                        <div class="timeline-item"><span class="timeline-date">Result.</span> <b>Liyuu의 찬사:</b> "시장님 스바라시!" 멘션 후 방문객 폭증, 상권 완전 부활.</div>
+                    </div>
+
+                    <p>박 시장의 정책은 단순한 복구를 넘어 '복지'로 확장되었다. Liyuu가 "시장님 귀여우시다(Kawaii)"라고 언급한 것에 고무된 시장은, 취약계층 아이들도 당당하게 디저트를 먹을 수 있는 **'해피 쿠쿠 카드'**와 해외 문화를 체험하는 **'글로벌 쿠쿠 원정대'**를 발족했다. 이는 박 시장이 과거 '월드비전 키즈'로서 겪었던 아픔을 승화시킨 정책으로 평가받는다.</p>
+
+                    <p>한편, 구치소에 수감 중인 윤재훈과 A씨는 이 소식을 듣고 "세금 낭비다", "다문화 카르텔이다"라며 옥중 난동을 부렸으나, 동료 수감자들에게조차 외면받으며 비참한 말로를 걷고 있는 것으로 전해졌다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">24,580</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Dangga_Merchant", time: "방금 전", like: 15200, dislike: 10, isPunished: false,
+                                content: "당가동 상인입니다. 윤재훈 일당이 페인트칠하러 왔을 때 진짜 눈앞이 캄캄했습니다. 그때 시장님이 밤새서 AI 치안 시스템 깔아주시고, 파스텔 블루 거리 만들어주신 덕분에 지금은 월 매출 1억 찍습니다. 시장님은 당가동의 은인입니다!",
+                                replies: [
+                                    { nick: "Pastel_Cafe", content: "맞아요. 그때 우리 다 같이 몽둥이 들고 나갔었죠... 이젠 추억이네요." },
+                                    { nick: "Citizen_A", content: "상인분들이 지켜낸 거리라 더 의미 있습니다. 돈쭐 내러 갈게요!" },
+                                    { nick: "Liyuu_Fan", content: "쿠쿠 쨩이 지켜보고 있어요! 사장님들 파이팅!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1분 전", like: 5, dislike: 14800, isPunished: true,
+                                content: "이건 독재다! 시장이 지 맘대로 경찰을 자르고 세금으로 도시를 색칠해? 내가 시장이었으면 싹 다 밀어버리고 아파트 지었다! 내 2.2% 지지율은 조작이야! 탕쿠쿠는 공산당이다!",
+                                replies: [
+                                    { nick: "Police_Admin_Prof", content: "청원경찰법 위반으로 정당한 징계였습니다. 그리고 탕쿠쿠는 자유를 찾아 떠난 캐릭터입니다. 작품 해석도 못 하는 무식함이 죄입니다." },
+                                    { nick: "Real_Estate", content: "아파트보다 지금 관광 특구 가치가 10배는 높습니다. 경제 관념 제로 인증하시네요." },
+                                    { nick: "Warden", content: "2805번! 또 스마트폰 밀반입했어? 징벌방 2주 추가다." },
+                                    { nick: "History_Teacher", content: "당신 아버지 윤대환이 버스 회사 살리려고 5호선 공사 중단시켰던 거나 반성하세요." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Univ_Union", time: "5분 전", like: 12500, dislike: 0, isPunished: false,
+                                content: "효빈대 7개 학과 연합입니다. 시청 앞에서 혐오 시위하던 A씨랑 B씨 참교육했던 날이 생각나네요. 특히 B씨 따님 보호해줬던 우리 학생들 너무 자랑스럽습니다. 혐오에는 지성으로 맞서겠습니다.",
+                                replies: [
+                                    { nick: "Social_Welfare", content: "그때 인간 방패 섰던 학생입니다. 따님 지금 잘 지내고 계십니다 ^^" },
+                                    { nick: "Law_Student", content: "A씨 통매음으로 고소장 접수했던 사람입니다. 징역 4년 축하드립니다." },
+                                    { nick: "Respect", content: "학생들이 어른보다 낫다. 효빈시의 미래가 밝다." }
+                                ]
+                            },
+                            {
+                                nick: "Happy_Kuku_Mom", time: "10분 전", like: 9800, dislike: 0, isPunished: false,
+                                content: "기초수급자 가정입니다. 우리 애가 '해피 쿠쿠 카드'로 친구들이랑 크레페 사 먹고 와서 너무 좋아하더라고요. 가난하다고 기죽지 않게 해주셔서 감사합니다 시장님 ㅠㅠ",
+                                replies: [
+                                    { nick: "Mayor_Hyobin", isOfficial: true, content: "어머님, 아이가 행복했다니 저도 기쁩니다. 아이들의 웃음이 효빈시의 미래입니다. (성덕 시장 올림)" },
+                                    { nick: "Citizen_B", content: "와 시장님 등판 ㅋㅋㅋ 이런 게 진짜 복지죠." },
+                                    { nick: "Tear_Button", content: "단맛은 인권이다... 명언이네요." }
+                                ]
+                            },
+                            {
+                                nick: "Villain_A(IP)", time: "15분 전", like: 2, dislike: 13200, isPunished: true,
+                                content: "다테 사유리... 사카쿠라... 니들이 날 무시해? 내가 나가면 가만 안 둔다! 효빈대 년들도 밤길 조심해라! 내가 딥페이크로 다 조져줄게!",
+                                replies: [
+                                    { nick: "Cyber_Police", content: "수감 중에도 협박 및 통매음 혐의 추가되셨습니다. 형량 늘어나는 소리 들리네요." },
+                                    { nick: "Room_Leader", content: "야 02년생. 닥치라고 했지. 오늘 화장실 청소 니가 다 해라." },
+                                    { nick: "Half_Blood_C", content: "또 다문화 욕해봐라. 이번엔 명치로 안 끝난다." },
+                                    { nick: "Date_Sayuri_Fan", content: "사유리 쨩이랑 동갑이라는 게 수치스럽다." }
+                                ]
+                            },
+                            {
+                                nick: "Global_Expedition", time: "20분 전", like: 8500, dislike: 0, isPunished: false,
+                                content: "쿠쿠 원정대 1기 다녀온 학생입니다! 상하이 와이탄에서 시장님 사진 따라 찍었어요 ㅋㅋ 제 꿈은 이제 웹툰 작가입니다. 파스텔 탭 잘 쓸게요!",
+                                replies: [
+                                    { nick: "Webtoon_Writer", content: "후배님 환영합니다! 꿈 꼭 이루세요." },
+                                    { nick: "Travel_Guide", content: "아이들이 너무 좋아해서 저도 보람찼습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Liyuu_Official", isOfficial: true, time: "25분 전", like: 25000, dislike: 0, isPunished: false,
+                                content: "효빈시 소식 들었어요! 🦋 당가동이 파스텔 블루라니... 정말 스바라시(Subarashii)! 시장님, 그리고 효빈 시민 여러분 정말 감사합니다. 다음에 꼭 크레페 먹으러 갈게요! \n(ヒョビン市のニュース聞きました！唐可洞がパステルブルーだなんて... 本当に素晴らしい！)",
+                                replies: [
+                                    { nick: "Mayor_Hyobin", isOfficial: true, content: "Liyuu 님!! (기절) ...크레페 100개 준비해두겠습니다! 오시기만 하세요!" },
+                                    { nick: "Keke_Fan", content: "성덕의 끝판왕 ㅋㅋㅋㅋ 시장님 살아계시죠?" },
+                                    { nick: "Dangga_Shop", content: "리유 님 오시면 저희 가게 전 메뉴 무료입니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Jaehoon_Fan", time: "30분 전", like: 10, dislike: 8000, isPunished: true,
+                                content: "윤재훈 의원님은 억울하시다! 저건 다 딥페이크 조작 영상이다! 효빈시는 중국에 넘어갔다! 구국 결사대여 일어나라!",
+                                replies: [
+                                    { nick: "Fact_Checker", content: "법원에서 증거 채택 다 됐고 본인이 자백했는데 뭔 딥페이크 ㅋㅋ 망상 좀 그만." },
+                                    { nick: "Citizen_C", content: "구국 결사대? 2명 남았냐? ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Pastel_Bike", time: "35분 전", like: 7200, dislike: 0, isPunished: false,
+                                content: "쿠쿠 씽씽이 타고 당가천 달리는데 기분 째짐. 운동하고 포인트로 크레페 사 먹으니까 0칼로리 맞는 듯? ㅋㅋ 건강 복지 인정합니다.",
+                                replies: [
+                                    { nick: "Trainer", content: "맛있게 먹으면 0칼로리...는 아니지만 운동하셨으니 괜찮습니다 ^^" }
+                                ]
+                            },
+                            {
+                                nick: "Sagara_Mayu_Official", isOfficial: true, time: "40분 전", like: 18000, dislike: 0, isPunished: false,
+                                content: "쿠쿠 클로젯 소식 듣고 감동했어요! 귀여운 옷은 마음을 강하게 하니까요. 카스밍도 인정하는 최고의 복지! 👑 \n(クククローゼットのニュースを聞いて感動しました！可愛い服は心を強くしますから。かすみんも認める最高の福祉！)",
+                                replies: [
+                                    { nick: "Kasumin_Fan", content: "마유치 등판 ㄷㄷ 시장님 더블 크라운 달성 축하드립니다." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "45분 전", like: 1, dislike: 11000, isPunished: true,
+                                content: "옷이 날개냐! 정신력이 문제지! 헝그리 정신이 없어서 요즘 애들이 약해빠진 거야! 라떼는 팬티 한 장으로 버텼어!",
+                                replies: [
+                                    { nick: "Fashion_Design", content: "옷은 자존감입니다 아저씨. 헐벗고 다니는 게 자랑입니까?" },
+                                    { nick: "Old_Man", content: "나도 노인이지만 댁 같은 꼰대는 싫소. 애들 기죽이지 마쇼." }
+                                ]
+                            },
+                            {
+                                nick: "Ex_Police_B_Daughter", time: "50분 전", like: 15000, dislike: 0, isPunished: false,
+                                content: "그때 도와주신 효빈대 학우분들... 정말 감사합니다. 아빠 때문에 학교 그만두고 싶었는데, 언니 오빠들이 지켜주셔서 용기 냈어요. 저도 나중에 남을 돕는 사람이 될게요.",
+                                replies: [
+                                    { nick: "Social_Work_Rep", content: "학우님! 언제든 과방으로 놀러 오세요. 밥 사드릴게요!" },
+                                    { nick: "Police_Admin_Rep", content: "누가 또 괴롭히면 바로 연락해. 우리가 지켜줄게." },
+                                    { nick: "Cheer_Up", content: "아버지 잘못이지 학생 잘못 아니에요. 힘내세요!" }
+                                ]
+                            },
+                            {
+                                nick: "Villain_A(IP)", time: "55분 전", like: 0, dislike: 12000, isPunished: true,
+                                content: "저거 다 연기다! 피해자 코스프레 하지 마라! 너도 니 애비랑 똑같은... (시스템에 의해 차단된 메시지입니다)",
+                                replies: [
+                                    { nick: "System_Admin", content: "혐오 발언 감지. 계정 영구 정지 및 추가 고발 조치합니다." },
+                                    { nick: "Law_School", content: "와... 감옥에서도 정신 못 차렸네. 형량 추가 이벤트 당첨 축하." }
+                                ]
+                            },
+                            {
+                                nick: "Phil_Dept_Student", time: "1시간 전", like: 6000, dislike: 0, isPunished: false,
+                                content: "필리핀어과 무시하던 A씨, 감옥에서 필리핀 혼혈 형님한테 참교육 당했다며? ㅋㅋㅋ 다양성 존중 안 하면 어떻게 되는지 몸으로 배웠겠네.",
+                                replies: [
+                                    { nick: "Prison_Rumor", content: "매일 밤 '다양성 존중' 복창하고 있다는 소문이..." }
+                                ]
+                            },
+                            {
+                                nick: "Bluebird_Mentor", time: "1시간 5분 전", like: 5500, dislike: 0, isPunished: false,
+                                content: "멘토링 알바비로 등록금 해결했습니다. 시장님 진짜... 제 인생의 구원자십니다. 졸업하면 효빈시에 뼈 묻겠습니다.",
+                                replies: [
+                                    { nick: "HR_Dept", content: "공무원 시험 준비하세요. 인재는 언제나 환영입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Citizen", time: "1시간 10분 전", like: 8000, dislike: 0, isPunished: false,
+                                content: "이 기사 보니까 눈물 난다. 혐오가 판치는 세상에서 효빈시만 다른 세계 같음. 이게 정치지. 이게 행정이고.",
+                                replies: []
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 15분 전", like: 0, dislike: 10500, isPunished: true,
+                                content: "쇼! 쇼! 쇼! 다 쇼다! 박효빈은 배우야! 내가 나가면 그 가면을 벗겨주마! 2.2% 복수할 거야!",
+                                replies: [
+                                    { nick: "Drama_Writer", content: "이 정도 쇼면 예술입니다. 님은 그냥 엑스트라 빌런이고요." },
+                                    { nick: "Citizen_D", content: "복수는 무슨... 님 잊혀진 지 오래예요." }
+                                ]
+                            },
+                            {
+                                nick: "Safe_Night", time: "1시간 20분 전", like: 4500, dislike: 0, isPunished: false,
+                                content: "파스텔 가드(안심 귀가) 덕분에 독서실 갔다가 맘 편히 집에 옴. 유니폼 색깔도 쨍해서 멀리서도 잘 보이고 든든함.",
+                                replies: []
+                            },
+                            {
+                                nick: "Tang_Kuku_Love", time: "1시간 25분 전", like: 3800, dislike: 0, isPunished: false,
+                                content: "당가동 입구에 세워진 '쿠쿠 배리어' 기념비 봤음? ㅋㅋㅋ '혐오는 지성을 이길 수 없다'라고 쓰여 있는데 간지 폭발함.",
+                                replies: [
+                                    { nick: "Selfie_Zone", content: "거기 포토존 됨 ㅋㅋ 다들 거기서 주먹 쥐고 사진 찍음." }
+                                ]
+                            },
+                            {
+                                nick: "Shanghai_Visitor", time: "1시간 30분 전", like: 2000, dislike: 0, isPunished: false,
+                                content: "I came from Shanghai. Dangga-dong reminds me of home but cuter! Thank you Mayor Park for loving Keke! 🇨🇳🇰🇷",
+                                replies: [
+                                    { nick: "Welcome", content: "Xie Xie! Enjoy your crepe!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 35분 전", like: 0, dislike: 11500, isPunished: true,
+                                content: "중국인들 다 나가라! 여기가 중국 땅이냐! 동북공정이다! 박효빈은 간첩이다!",
+                                replies: [
+                                    { nick: "Global_Mind", content: "문화 교류랑 동북공정도 구분 못 하냐... 님 뇌가 공정당한 듯." }
+                                ]
+                            },
+                            {
+                                nick: "Clean_Web", time: "1시간 40분 전", like: 5000, dislike: 0, isPunished: false,
+                                content: "댓글창 보니까 효빈시 시민의식 수준 높네. 혐오자들 먹금하고 팩폭 날리는 거 보기 좋음. 클린하다 클린해.",
+                                replies: []
+                            },
+                            {
+                                nick: "World_Vision", time: "1시간 45분 전", like: 9000, dislike: 0, isPunished: false,
+                                content: "후원자입니다. 시장님 사연 듣고 울었습니다. 저희가 뿌린 씨앗이 이렇게 큰 나무가 되었네요. 감사합니다.",
+                                replies: [
+                                    { nick: "Mayor_Hyobin", isOfficial: true, content: "그때 주신 도움, 평생 잊지 않고 갚아나가겠습니다. 감사합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Payer_King", time: "1시간 50분 전", like: 6000, dislike: 0, isPunished: false,
+                                content: "내 세금이 이렇게 쓰인다면 2배로 내도 안 아깝다. 윤재훈 밥값으로 나가는 세금은 아까워 죽겠지만.",
+                                replies: []
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 55분 전", like: 0, dislike: 12000, isPunished: true,
+                                content: "내 밥값? 난 억울한 정치범이야! 특식 내놔! 망고 내놔! 에어컨 틀어줘! 여기가 감옥이냐 지옥이냐!",
+                                replies: [
+                                    { nick: "Prison_Chef", content: "오늘 메뉴 콩밥입니다. 잔말 말고 드세요." },
+                                    { nick: "Hell_Gate", content: "지옥은 죽어서 가실 거니까 미리 체험하세요." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_High", time: "2시간 전", like: 3000, dislike: 0, isPunished: false,
+                                content: "우리 학교 애들 다 파스텔 탭으로 공부함. 예전엔 브랜드 패딩 없어서 기죽었는데 쿠쿠 클로젯으로 다 같이 예쁜 옷 입으니까 왕따도 사라짐. 진짜 신기함.",
+                                replies: [
+                                    { nick: "Teacher", content: "교실 분위기가 확실히 밝아졌어요. 아이들 표정이 달라짐." }
+                                ]
+                            },
+                            {
+                                nick: "Final_Comment", time: "2시간 5분 전", like: 10000, dislike: 0, isPunished: false,
+                                content: "이 기사는 성지순례하고 갑니다. 혐오가 판치는 세상에 한 줄기 빛 같은 이야기네요. 효빈시 파이팅!",
+                                replies: []
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let officialMark = cmt.isOfficial ? `<span class="official-mark">V</span>` : "";
+                            let nickStyle = cmt.isOfficial ? "text-[#00a2e8]" : (cmt.isPunished ? "text-red-600" : "");
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.isOfficial ? "bg-blue-50 border border-blue-200" : "bg-gray-50 border border-gray-200";
+                                    const rNickStyle = reply.isOfficial ? "text-[#00a2e8]" : "text-[#0055aa]";
+                                    const rOfficialMark = reply.isOfficial ? `<span class="official-mark">V</span>` : "";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}${rOfficialMark}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}${officialMark} ${cmt.isPunished ? '(IP 차단됨)' : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_dangga_revival.html" class="ranking-link font-bold text-[#0055aa]">당가동 '파스텔 기적'의 전말</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_haf_seiyu_visit.html" class="ranking-link">韓日 성우 18인 도시철도 습격</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_haf_weekday_economy.html" class="ranking-link">평일 HAF 골목상권 폭발</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, 옥중에서 '망고 난동'</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈복지재단</div>
+                    <div class="text-xs">블루 버드 멘토단 모집<br>시급 1.5만원 + 해외연수</div>
+                </div>
+            </div>
+             <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">당가동 상가번영회</div>
+                    <div class="text-xs text-blue-400">해피 쿠쿠 카드 가맹점<br>전 메뉴 10% 추가 할인</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치] 박효빈 "거친 모습 죄송... 그러나 혐오엔 침묵 않겠다" 대국민 사과 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 사과문 박스 */
+        .apology-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 25px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; }
+        .apology-title { font-weight: bold; font-size: 18px; color: #0055aa; margin-bottom: 10px; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 선거</div>
+                <h2 class="article-title">박효빈 "거친 모습 죄송... 그러나 혐오엔 침묵 않겠다" 대국민 사과</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김정치 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2022.05.18. 10:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">토론회 방송 사고 다음 날 긴급 기자회견... 90도 고개 숙여<br>"시장 후보로서 감정 조절 미숙 반성... 가족·시민 모욕엔 맞설 것"<br>윤재훈 측 "박효빈이 원인 제공" 적반하장 주장에 여론 더 악화</span></p>
+                    
+                    <div class="my-6">
+                        <img src="박효빈_기자회견.png" alt="박효빈_후보_사과_기자회견.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0055aa/FFFFFF?text=Park+Hyobin+Press+Conference'">
+                        <div class="img-caption">▲ 18일 오전 효빈시 북구 선거캠프에서 박효빈 더불어민주당 후보가 전날 토론회 소란과 관련해 시민들에게 고개 숙여 사과하고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김정치 기자] 17일 밤 TV 토론회에서 상대 후보인 윤재훈(국민의힘)의 인신공격에 격분해 고성을 지르며 생방송 중단을 빚었던 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 더불어민주당 후보가 18일 오전 긴급 기자회견을 열고 시민들에게 사과했다.</p>
+
+                    <p>박 후보는 다소 수척해진 모습으로 단상에 올라 90도로 허리를 굽혔다. 그는 "이유 여하를 막론하고, 시민 여러분이 지켜보시는 공적인 자리에서 감정을 다스리지 못하고 거친 모습을 보여드린 점 진심으로 사과드린다"고 밝혔다.</p>
+
+                    <p>그러나 사과의 내용은 단순한 유감이 아니었다. 박 후보는 "어제 제가 쏟아낸 분노는 저 개인을 향한 것이 아니었다"며 "다문화 가정, 한부모 가정, 그리고 가난하다는 이유로 차별받아온 이 도시의 모든 이웃들을 향한 모욕을 참을 수 없었다"고 강조했다.</p>
+
+                    <div class="apology-box">
+                        <div class="apology-title">🎙️ 박효빈 후보 대시민 사과문 (전문 발췌)</div>
+                        "존경하는 효빈 시민 여러분. 어제 토론회에서 보여드린 저의 미숙한 태도에 대해 깊이 반성합니다. 시장이 되려는 자는 어떠한 도발에도 냉정함을 잃지 않아야 함을 뼈저리게 느꼈습니다.<br><br>
+                        하지만, 저는 <strong>약자에 대한 혐오와 차별에는 결코 침묵하지 않겠습니다.</strong> 저의 가족을, 그리고 우리 시민들을 '결손'이라 부르며 비하하는 세력 앞에서는 단호하게 맞서 싸우겠습니다. 그것이 제가 정치를 하는 이유이자, 시장이 되어야 할 이유입니다.<br><br>
+                        어제 저의 모습에 실망하셨을 시민분들께 다시 한번 죄송합니다. 앞으로는 분노 대신 정책으로, 고함 대신 실력으로 증명하겠습니다."
+                    </div>
+
+                    <p>박 후보의 진심 어린 사과에 여론은 오히려 결집하고 있다. 기자회견장 밖에는 이른 아침부터 시민 수백 명이 모여 "박효빈 힘내라", "사과하지 마라"를 연호했으며, 온라인 커뮤니티에서는 "오히려 인간적이어서 좋았다", "나였으면 윤재훈 쳤다"는 옹호론이 지배적이다.</p>
+
+                    <p>반면, 사건의 원인을 제공한 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 후보 측은 "박효빈이 먼저 나를 자극했다", "방송사가 박효빈 편이다"라는 적반하장 식 논평을 내놓아 보수 지지층마저 등을 돌리게 하고 있다. 전문가들은 이번 사과가 박 후보의 '준비된 리더' 이미지를 굳히는 계기가 될 것으로 전망했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">35,820</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_Mom", time: "방금 전", like: 12500, dislike: 10, isPunished: false,
+                                content: "후보님, 사과하지 마세요. 어제 그 장면 보고 저도 같이 울었습니다. 가족 욕하는데 참는 게 바보죠. 오히려 당당하게 맞서주셔서 감사합니다. 우리 아이들에게도 불의를 보면 참지 말라고 가르치겠습니다.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "이 아줌마가 미쳤나! 불의는 박효빈이야! 내가 피해자라고! 맘카페에서 선동하지 마!" },
+                                    { nick: "Dad_Driver", content: "맞습니다. 사과는 윤재훈이 해야죠. 어디서 적반하장입니까." },
+                                    { nick: "Support", content: "진정한 어른의 품격을 봤습니다. 응원합니다." },
+                                    { nick: "Fact_Check", content: "윤재훈 씨, 당신이 먼저 패드립 친 거 영상 박제됐어요. 추합니다." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon", time: "3분 전", like: 5, dislike: 9800, isPunished: false,
+                                content: "쇼하고 있네! 다 연기야! 카메라 앞에서만 착한 척하고 뒤에선 나한테 욕했잖아! 내가 피해자라고! 방송국 놈들아 내 인터뷰는 왜 안 내보내! 박효빈 사퇴해라!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "님 어제 책상 걷어차는 거 전 국민이 다 봤어요... 병원 좀 가보세요." },
+                                    { nick: "Camera_Man", content: "현장 스태프입니다. 윤 후보님 욕설이 너무 심해서 편집 못하고 통으로 나간 겁니다." },
+                                    { nick: "Get_Lost", content: "추하다 진짜. 제발 효빈시를 떠나주세요." },
+                                    { nick: "YoonJaehoon", content: "너네 다 고소할 거야! 내가 누군지 알아? 윤대환 아들이야! 다 죽었어!" }
+                                ]
+                            },
+                            {
+                                nick: "Conservative_Voter", time: "10분 전", like: 8500, dislike: 15, isPunished: false,
+                                content: "보수 지지자입니다만, 박 후보님의 사과문 보고 마음 돌렸습니다. 잘못을 인정하고 고개 숙일 줄 아는 게 진짜 리더죠. 윤재훈은 끝까지 남 탓만 하네요. 이번엔 1번입니다.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "배신자! 너 같은 가짜 보수가 나라를 망치는 거야! 유성민 찍었지? 내가 다 알아!" },
+                                    { nick: "Real_Right", content: "저도요. 보수의 가치는 품격인데 윤재훈은 양아치입니다." },
+                                    { nick: "Welcome", content: "환영합니다. 효빈을 위해 상식을 선택합시다." }
+                                ]
+                            },
+                            {
+                                nick: "Multicultural_Fam", time: "15분 전", like: 9200, dislike: 0, isPunished: false,
+                                content: "다문화 가정입니다. 어제 '튀기' 소리 듣고 아이가 상처받을까 봐 TV 껐는데, 박 후보님이 대신 화내주시는 거 보고 다시 켰습니다. 우리를 위해 싸워주셔서 감사합니다.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "여기가 한국이지 외국이냐? 한국말 못 하면 나가! 튀기 편드는 박효빈도 똑같은 놈이야!" },
+                                    { nick: "We_Are_One", content: "우리는 모두 효빈 시민입니다. 차별 없는 도시 함께 만들어요." },
+                                    { nick: "Human_Rights", content: "인종차별 발언 캡처했습니다. 신고 접수합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Fan_Club", time: "20분 전", like: 20, dislike: 7000, isPunished: false,
+                                content: "윤재훈 후보님이 뭘 잘못했냐! 사실을 말한 죄밖에 없다! 박효빈은 감성팔이 그만해라! 아버지가 일궈놓은 도시를 뺏으려는 도둑놈!",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "옳소! 우리 팬클럽밖에 없다! 내가 당선되면 한자리씩 줄게! 가자!" },
+                                    { nick: "History_Teacher", content: "일궈놓은 게 아니라 말아먹은 거겠죠. 팩트 체크 좀." },
+                                    { nick: "Wake_Up", content: "아직도 저런 사람을 지지하는 분들이 계시다니... 안타깝네요." }
+                                ]
+                            },
+                            {
+                                nick: "Univ_Student", time: "25분 전", like: 6000, dislike: 0, isPunished: false,
+                                content: "박효빈 사과문 퀄리티 보소. 변명 1도 없이 깔끔하게 '내 불찰이다' 인정하고, 뒤에 '혐오엔 맞서겠다'는 메시지까지 완벽함. 글쓰기 교양 시간에 예시로 써야 함.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "대학생 놈들이 공부는 안 하고 정치질이야! 내가 시장 되면 대학 등록금 다 올릴 거야!" },
+                                    { nick: "Prof_Kim", content: "A+ 드립니다. 위기 관리 능력 탁월하네요." },
+                                    { nick: "Student_B", content: "윤재훈 씨, 등록금 올리면 님만 손해예요. 아무도 지지 안 함 ㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Market_Lady", time: "30분 전", like: 5000, dislike: 0, isPunished: false,
+                                content: "시장에서 장사하는데 윤재훈이는 와서 악수할 때도 손 닦더라. 박효빈이는 흙 묻은 손도 덥석 잡고. 사람이 됐어.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "더러우니까 닦았지! 생선 냄새나는 손을 누가 잡고 싶어 해! 시장통 싹 다 밀어버릴 거야!" },
+                                    { nick: "Fish_Seller", content: "맞아요. 눈빛부터 다릅니다. 진심이 느껴져요." },
+                                    { nick: "Grandma", content: "아이고 저 썩을 놈... 말하는 뽄새 좀 보게." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon", time: "35분 전", like: 1, dislike: 8500, isPunished: false,
+                                content: "여론조사 조작이다! 댓글 부대 풀었지? 내 지지율이 7%라니 말도 안 돼! 나는 50%야! 내가 당선되면 다 감방 보낼 거야!",
+                                replies: [
+                                    { nick: "Police_Cyber", content: "협박죄 추가될 수 있습니다. 자중하십시오." },
+                                    { nick: "Dreamer", content: "꿈은 주무실 때 꾸세요." },
+                                    { nick: "Stat_Prof", content: "과학적인 통계입니다. 현실 부정하지 마세요." }
+                                ]
+                            },
+                            {
+                                nick: "Voter_2030", time: "40분 전", like: 7000, dislike: 0, isPunished: false,
+                                content: "어제 토론회 보고 박효빈 입덕함. 멘탈 나가서 어버버할 줄 알았는데 '네가 만든 지옥에서 살아남았다' 할 때 소름 돋음. 서사 미쳤다.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "지옥은 무슨! 우리 아빠가 천국을 만들어줬더니! 은혜도 모르는 것들!" },
+                                    { nick: "Movie_Fan", content: "영화 대사인 줄 ㅋㅋ 작가님 누구세요?" },
+                                    { nick: "Fan_Club", content: "저도요. 오늘부터 박효빈 팬클럽 1일." }
+                                ]
+                            },
+                            {
+                                nick: "Neutral", time: "45분 전", like: 4000, dislike: 2, isPunished: false,
+                                content: "중도층입니다. 정치인들 사과하는 거 보면 다 '오해다', '유감이다'라며 빠져나가는데 박 후보는 정면 돌파하네요. 신뢰가 갑니다.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "중도 같은 소리 하네! 너 박효빈한테 돈 받았지? 얼마야! 내가 더 줄게!" },
+                                    { nick: "Citizen_Z", content: "돈으로 해결하려는 마인드... 진짜 저렴하다." }
+                                ]
+                            },
+                            {
+                                nick: "Angry_Dad", time: "50분 전", like: 3000, dislike: 0, isPunished: false,
+                                content: "애들 보는 앞에서 욕설이라니... 윤재훈 후보는 교육감 선거도 나오면 안 됩니다. 박 후보님, 아이들의 미래를 위해 꼭 이겨주세요.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "애들은 맞으면서 커야 돼! 내가 교육감 되면 체벌 부활시킬 거야! 몽둥이가 약이다!" },
+                                    { nick: "Teacher", content: "큰일 날 소리 하시네요. 아동학대입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Taxi_Driver", time: "55분 전", like: 2800, dislike: 0, isPunished: false,
+                                content: "손님들이 다 욕해요. 윤재훈 그 인간 아직도 정신 못 차렸다고. 이번엔 무조건 박효빈이라고 하네요.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "택시 기사 주제에 정치를 논해? 운전이나 똑바로 해! 내가 시장 되면 택시 면허 다 취소시킬 거야!" },
+                                    { nick: "Union", content: "녹음했습니다. 협박죄로 고발합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Bus_Driver_Kim", time: "1시간 전", like: 2500, dislike: 0, isPunished: false,
+                                content: "두청운수 시절 윤대환한테 당한 거 생각하면 지금도 치가 떨린다. 그 아들놈이 시장? 절대 안 되지.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "우리 아빠가 밥 먹여줬더니 배신을 해? 배은망덕한 놈들! 다 굶어 죽어라!" },
+                                    { nick: "Worker", content: "월급 떼먹고 밥 먹여줬대 ㅋㅋㅋ 기적의 논리." }
+                                ]
+                            },
+                            {
+                                nick: "Foreigner_James", time: "1시간 5분 전", like: 1500, dislike: 0, isPunished: false,
+                                content: "I saw the debate. Mr. Yoon is very rude. Mr. Park is a gentleman. I support Park.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "Go back to your country! Yankee go home! English No!" },
+                                    { nick: "Translator", content: "제임스 씨, 무시하세요. 동네 바보입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Real_Estate_Lee", time: "1시간 10분 전", like: 2200, dislike: 0, isPunished: false,
+                                content: "박효빈 공약 보니까 현실성 있더라. 윤재훈은 뭐 다 밀어버린다고만 하고 대책이 없어. 집값 떨어질까 봐 윤재훈 못 찍겠다.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "재개발만이 살길이다! 다 밀어야 부자 된다고! 내 말 안 믿으면 거지 꼴 못 면해!" },
+                                    { nick: "Economist", content: "무분별한 재개발은 도시 경쟁력을 떨어뜨립니다." }
+                                ]
+                            },
+                            {
+                                nick: "Old_Man_Kim", time: "1시간 15분 전", like: 1800, dislike: 0, isPunished: false,
+                                content: "나이 70 먹고 이런 말 하기 뭐하지만, 윤 씨 집안은 안 돼. 사람이 덜됐어. 이번엔 젊은 친구 한번 믿어보세.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "노인네가 노망났나! 주는 밥이나 먹고 가만히 있어! 투표하러 오지 마!" },
+                                    { nick: "Grandson", content: "저희 할아버지한테 말버릇이 그게 뭡니까?" }
+                                ]
+                            },
+                            {
+                                nick: "Final_Boss", time: "1시간 20분 전", like: 5000, dislike: 0, isPunished: false,
+                                content: "결론: 박효빈은 사과해서 갓효빈 됐고, 윤재훈은 댓글창에서 발광하다가 이미지만 더 나락 감. 선거 끝났네.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "안 끝났어! 투표함 열어보기 전엔 몰라! 내가 이길 거야! 이겨야 한다고! 으아아악!" },
+                                    { nick: "Ghost", content: "......" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let nickStyle = cmt.nick === "YoonJaehoon" ? "text-red-600 font-black" : "text-[#0055aa]";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.nick === "YoonJaehoon" ? "bg-red-50 border border-red-200" : "bg-gray-50 border border-gray-200";
+                                    const rNickStyle = reply.nick === "YoonJaehoon" ? "text-red-600 font-bold" : "text-[#0055aa]";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <span class="text-xs text-red-600 animate-pulse">LIVE</span>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_park_apology.html" class="ranking-link font-bold text-[#0055aa]">박효빈 대국민 사과 "혐오와 싸우겠다"</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_debate_broadcast_accident.html" class="ranking-link">윤재훈 토론회 난동 영상 조회수 폭발</a></li>
+                    <li><span class="ranking-num">3</span> <a href="#" class="ranking-link">박효빈 지지율 75% 돌파</a></li>
+                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">윤재훈 "방송 조작" 주장 논란</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">시민들 "박효빈이 효빈의 얼굴이다"</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">투표합시다</div>
+                    <div class="text-xs text-blue-400">6월 1일은<br>효빈의 미래를 바꾸는 날</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

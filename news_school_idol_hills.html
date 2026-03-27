@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[경제] "강남 비켜, 이젠 효빈이다"... '스쿨아이돌힐스' 청약 경쟁률 5000:1 폭발 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 및 공통 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 0; display: flex; gap: 40px; }
+        .article-column { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-column { flex: 1; }
+
+        /* 기사 본문 스타일 */
+        .article-category { color: #d97706; font-weight: bold; margin-bottom: 10px; font-size: 14px; }
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 800; line-height: 1.3; margin-bottom: 20px; word-break: keep-all; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 20px; font-weight: 500; line-height: 1.5; border-left: 4px solid #ccc; padding-left: 15px; }
+        .article-meta { color: #777; font-size: 13px; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 700; background: linear-gradient(to top, #fff3cd 50%, transparent 50%); }
+        .article-body a { color: #0055aa; text-decoration: underline; text-underline-offset: 4px; }
+        .article-body del { color: #999; text-decoration: line-through; font-size: 0.9em; }
+
+        /* 이미지 스타일 */
+        .article-img-box { margin: 30px 0; text-align: center; }
+        .article-img-box img { max-width: 100%; height: auto; border: 1px solid #eee; }
+        .img-caption { font-size: 12px; color: #888; margin-top: 10px; text-align: left; border-left: 3px solid #0055aa; padding-left: 10px; }
+
+        /* 댓글 영역 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .comment-write-area { background: #f9f9f9; padding: 20px; border: 1px solid #eee; margin-bottom: 30px; border-radius: 8px; }
+        .comment-list-container { margin-top: 20px; }
+        
+        .comment-item { padding: 20px 0; border-bottom: 1px solid #eee; animation: fadeIn 0.5s ease; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 20px; margin-bottom: 15px; border-radius: 8px; position: relative; }
+        .punished-comment { background-color: #fff5f5; border: 1px solid #feb2b2; } /* 윤재훈 전용 */
+        
+        .reply-container { margin-top: 15px; padding-left: 20px; border-left: 3px solid #e2e2e2; background: #fafafa; padding: 15px; border-radius: 0 8px 8px 0; display: none; }
+        .reply-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #eee; font-size: 14px; }
+        .reply-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .vote-btn { cursor: pointer; margin-right: 12px; font-size: 12px; color: #888; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; }
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; font-weight: bold; margin-left: 10px; }
+        .reply-toggle:hover { color: #0055aa; text-decoration: underline; }
+
+        /* 기자 프로필 */
+        .reporter-card { background: #f9f9f9; padding: 20px; border-top: 2px solid #333; margin-top: 50px; display: flex; align-items: center; gap: 15px; border-radius: 4px; }
+        .reporter-img { width: 60px; height: 60px; border-radius: 50%; background: #ddd; object-fit: cover; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; border-radius: 4px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 푸터 (깔끔하게) */
+        footer { background: #222; color: #aaa; padding: 50px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        .footer-top { display: flex; justify-content: space-between; border-bottom: 1px solid #444; padding-bottom: 20px; }
+        .footer-logo { font-size: 24px; font-weight: bold; color: white; font-family: 'Nanum Myeongjo', serif; }
+        .footer-menu a { color: #aaa; margin-left: 20px; text-decoration: none; }
+        .footer-menu a:hover { color: white; }
+        .footer-info p { margin-bottom: 5px; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48 rounded-sm">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold rounded-sm">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="news_list.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 기사 본문 -->
+        <div class="article-column">
+            <div class="article-category">경제 > 부동산/분양</div>
+            <h1 class="article-title">"강남 비켜, 이젠 효빈이다"... '스쿨아이돌힐스' 청약 경쟁률 5000:1 폭발</h1>
+            <div class="article-subtitle">
+                효빈도시공사 야심작... 러브라이브 IP 정식 계약 '성지 아파트' 탄생<br>
+                뮤즈·아쿠아·니지·리엘라 4개 단지 동시 분양에 전 세계 팬덤 집결<br>
+                "아이마스 아파트도 짓는다"... 후속 단지 '프로듀서 팰리스' 추진에 기대감 고조
+            </div>
+            
+            <div class="article-meta">
+                <div>
+                    <span class="font-bold">부동산필승 기자</span> | 입력 2026.02.05 09:30 | 수정 2026.02.05 10:45
+                </div>
+                <div class="flex gap-2 text-gray-500">
+                    <span class="cursor-pointer hover:text-[#0055aa]">댓글 <span id="meta-comment-count">0</span></span>
+                    <span>공유하기</span>
+                </div>
+            </div>
+
+            <div class="article-body">
+                <p>
+                    <span class="text-[#0055aa] font-bold">효빈광역시</span> <a href="청엽구.html">청엽구</a> <a href="효빈동.html">효빈동2가</a> 효빈신도시(H-City)의 노른자위 땅에 들어서는 대단지 아파트 <strong>'스쿨아이돌힐스(School Idol Hills)'</strong>의 특별공급 청약 경쟁률이 평균 5000대 1을 기록하며 부동산 시장을 강타했다. 이는 대한민국 부동산 역사상 전무후무한 기록이다.
+                </p>
+
+                <p>
+                    <a href="효빈도시공사.html">효빈도시공사</a>가 시행하고 일본 반다이남코 필름웍스와 정식 IP 라이선스 계약을 체결해 건설하는 이 아파트는 단순한 주거 공간을 넘어선 '거주형 테마파크'를 표방한다. 단지는 크게 4개 구역으로 나뉘며, 각각 '뮤즈(μ's) 블록', '아쿠아(Aqours) 블록', '레인보우(Nijigasaki) 블록', '슈퍼스타(Liella!) 블록'으로 명명되었다.
+                </p>
+
+                <div class="article-img-box">
+                    <img src="https://via.placeholder.com/800x450/FF9900/FFFFFF?text=School+Idol+Hills+Birdview" alt="스쿨아이돌힐스_조감도.png" onerror="this.src='스쿨아이돌힐스_조감도.png'">
+                    <div class="img-caption">▲ 스쿨아이돌힐스 조감도. 왼쪽부터 뮤즈, 아쿠아, 레인보우, 슈퍼스타 단지가 독특한 색채로 어우러져 있다. (사진=효빈도시공사 제공)</div>
+                </div>
+
+                <p>
+                    가장 경쟁이 치열했던 곳은 <strong>'뮤즈 블록'</strong>이다. 단지 내 조경을 애니메이션 속 '오토노키자카 학원'풍으로 꾸미고, 입주민 커뮤니티 센터에는 '아이돌 연구부실'을 재현했다. <a href="효빈동.html">효빈동</a> 부동산 관계자는 "웃돈(프리미엄)만 5억 원 이상 붙을 것"이라며 "실거주 목적의 '러브라이버'뿐만 아니라 일본, 중국, 미국의 부호들까지 청약에 뛰어들었다"고 혀를 내둘렀다.
+                </p>
+
+                <p>
+                    <strong>'아쿠아 블록'</strong>은 단지 중앙에 우치우라 바다를 형상화한 대형 인공 호수와 귤나무 산책로를 조성해 힐링을 강조했다. <strong>'레인보우 블록'</strong>은 오다이바의 현대적인 감성을 담은 최첨단 IoT 시스템을, <strong>'슈퍼스타 블록'</strong>은 하라주쿠 스타일의 힙한 상가 거리와 연결되는 구조로 젊은 층의 폭발적인 지지를 받았다.
+                </p>
+
+                <div class="article-img-box">
+                    <img src="https://via.placeholder.com/800x400/eeeeee/333333?text=Model+House+Queue" alt="모델하우스_인파.png" onerror="this.src='모델하우스_인파.png'">
+                    <div class="img-caption">▲ 5일 오전 스쿨아이돌힐스 견본주택(모델하우스) 앞에 입장을 기다리는 대기 줄이 3km 넘게 이어져 있다. 핫피를 입은 방문객들이 눈에 띈다.</div>
+                </div>
+
+                <p>
+                    교통 호재도 겹쳤다. 단지 바로 앞에 <a href="지하철8호선.html" style="color:#9856FF; font-weight:bold;">8호선(연보라)</a> '아이돌힐스역'이 신설될 예정이며, 도보 10분 거리에 <a href="빈효선광역전철.html" style="color:#6677CC; font-weight:bold;">빈효선광역전철(연청)</a> 환승역이 위치해 더블 역세권 입지를 자랑한다. <a href="박효빈.html">박효빈</a> 시장은 "이곳은 효빈시가 문화 도시로 도약하는 상징"이라며 "입주민들이 '그것은 우리들의 기적(Sore wa Bokutachi no Kiseki)'을 매일 체험하게 될 것"이라고 축사를 전했다.
+                </p>
+
+                <p>
+                    한편, 효빈도시공사 측은 특정 팬덤 편중 논란을 의식한 듯 <strong>"추후 3지구에는 '아이돌마스터(THE IDOLM@STER)' 시리즈를 테마로 한 '프로듀서 팰리스(Producer's Palace, 가칭)' 건립을 추진 중"</strong>이라고 밝혀 또 다른 파란을 예고했다. 이에 따라 전국의 '프로듀서'들 또한 효빈시 전입을 서두르고 있어, 효빈시의 부동산 열기는 당분간 식지 않을 전망이다.
+                </p>
+                
+                <p>
+                    반면, 일부 시민 단체와 구세대 정치인들은 "공공 기관인 도시공사가 특정 일본 애니메이션 아파트를 짓는 것은 혈세 낭비이자 문화 종속"이라며 반발하고 있어 향후 귀추가 주목된다.
+                </p>
+            </div>
+
+            <div class="reporter-card">
+                <img src="https://via.placeholder.com/100/333333/FFFFFF?text=Money" alt="부동산필승_기자.png" class="reporter-img" onerror="this.src='부동산필승_기자.png'">
+                <div>
+                    <div class="font-bold text-lg">부동산필승 기자</div>
+                    1
+                    <div class="text-sm mt-1">"부동산은 거짓말을 하지 않습니다. 오직 층수와 입지만이 진실입니다."</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    <div>댓글 <span class="text-[#0055aa]" id="comment-count">0</span>개</div>
+                    <div class="text-xs text-gray-500 font-normal">비방, 욕설, 도배글은 서비스 이용 제한의 사유가 됩니다.</div>
+                </div>
+                
+                <div class="comment-write-area">
+                    <div class="flex gap-2 mb-2">
+                        <input type="text" id="cmt-nick" placeholder="닉네임" class="border border-gray-300 px-3 py-2 text-sm w-32 rounded">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호" class="border border-gray-300 px-3 py-2 text-sm w-32 rounded">
+                    </div>
+                    <div class="flex gap-2">
+                        <textarea id="cmt-content" class="w-full h-24 p-3 border border-gray-300 resize-none text-sm rounded focus:outline-none focus:border-[#0055aa]" placeholder="다양한 의견을 존중해주세요."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors rounded" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 컨테이너 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 스크립트로 로드 -->
+                    <div class="text-center py-10 text-gray-400">댓글을 불러오는 중입니다...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-column">
+            <!-- 랭킹 -->
+            <div class="ranking-box">
+                <div class="ranking-title flex justify-between items-center mb-3 border-b border-gray-200 pb-2">
+                    <span class="text-[#d97706] font-bold">많이 본 뉴스</span>
+                    <span class="text-xs text-gray-500">실시간 기준</span>
+                </div>
+                <ul class="ranking-list">
+                    <li onclick="alert('현재 보고 계신 기사입니다.')">
+                        <span class="rank-num">1</span>
+                        <span class="rank-title font-bold">스쿨아이돌힐스 청약 서버 마비... "접속 대기만 10만 명"</span>
+                    </li>
+                    <li onclick="location.href='news_article_otaku.html'">
+                        <span class="rank-num">2</span>
+                        <span class="rank-title">효빈시 '오타쿠 특구' 선포, 경제 효과 분석</span>
+                    </li>
+                    <li onclick="location.href='news_list.html'">
+                        <span class="rank-num">3</span>
+                        <span class="rank-title">윤대환 전 시장 "아파트 이름이 뭐? 말세다" 옥중 한탄</span>
+                    </li>
+                    <li onclick="location.href='news_list.html'">
+                        <span class="rank-num">4</span>
+                        <span class="rank-title">8호선 역세권 집값, 1년 새 40% 폭등</span>
+                    </li>
+                    <li onclick="location.href='news_list.html'">
+                        <span class="rank-num">5</span>
+                        <span class="rank-title">효빈도시공사 채용 경쟁률 역대 최고</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 관련 광고 -->
+            <div class="bg-blue-50 border border-blue-200 p-4 text-center mb-5 cursor-pointer hover:bg-blue-100 transition rounded-lg">
+                <div class="text-[#0055aa] font-bold text-lg mb-1">스쿨아이돌힐스 이사청소</div>
+                <div class="text-sm text-gray-600">피규어/굿즈 전문 포장 이사<br>파손 시 300% 보상! 덕후 팀장 직접 견적</div>
+                <button class="mt-3 bg-[#0055aa] text-white text-xs px-3 py-1 rounded-full">견적 받기</button>
+            </div>
+
+             <div class="bg-gray-100 border border-gray-300 h-64 flex flex-col items-center justify-center text-gray-400 text-sm rounded-lg">
+                <span>인테리어 광고 영역</span>
+                <span class="text-xs mt-1">문의: 079-777-7777</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 깔끔한 푸터 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-logo">효빈일보</div>
+                <div class="footer-menu">
+                    <a href="company.html">회사소개</a>
+                    <a href="subscribe.html">구독신청</a>
+                    <a href="ad_inquiry.html">광고문의</a>
+                    <a href="terms.html">이용약관</a>
+                    <a href="privacy.html">개인정보처리방침</a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+                <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+                <p>전화: 079-212-2123 | 팩스: 079-212-2124 | 이메일: news@hyobinilbo.com</p>
+                <p class="mt-4 text-gray-500 font-light">Copyright © 2026 Hyobin Ilbo. All rights reserved. Unauthorized reproduction is prohibited.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 댓글 데이터 (윤재훈의 난동 ver.)
+        const commentsData = [
+            // 1. 윤재훈의 메인 난동 (비추 폭탄 & 처벌)
+            {
+                nick: "YoonJaehoon(IP)", ip: "211.36.**.**", time: "방금 전", like: 3, dislike: 65400, isPunished: true,
+                content: "이게 아파트냐? 유치원이지! 🤮🤮 내가 시장 되면 여기 싹 다 밀어버리고 100층짜리 '재훈타워' 지을 거다! 오타쿠 수용소도 아니고 쯧쯧! 집값 다 떨어져라! 폭락해라!",
+                replies: [
+                    { nick: "RealEstate_Expert", content: "이미 P 5억 붙었는데요? 님 집 경매가보다 비쌀 듯 ㅋㅋㅋ" },
+                    { nick: "Hyobin_Citizen", content: "재훈타워? 감옥이나 가라 타워 짓지 말고." },
+                    { nick: "YoonJaehoon(IP)", content: "Shut up! I will buy this city! 내가 효빈시 다 살 거야!", nickClass: "text-red-600 font-bold" },
+                    { nick: "Banker", content: "님 신용불량자잖아요. 통장 압류된 거나 푸세요." },
+                    { nick: "[관리자]", content: "허위사실 유포 및 악성 저주글로 영구 차단 조치합니다. IP 주소 경찰청 이관 완료.", isAdmin: true, styleClass: "bg-blue-50 border-blue-200 text-blue-800 font-bold" }
+                ]
+            },
+            // 2. 파벌 싸움 (뮤즈 vs 아쿠아 vs 니지 vs 리엘라) + 윤재훈 난입
+            {
+                nick: "Muse_Forever", time: "1분 전", content: "솔직히 근본은 뮤즈 블록이지. 오토노키자카 조경 봤냐? 거기서 살면 매일매일이 기적이다. 젠카이노!", like: 2500, dislike: 150,
+                replies: [
+                    { nick: "Sunshine_Walker", content: "웃기지 마셈. 아쿠아 블록이 찐임. 인공 호수에 귤나무? 뷰가 다름. 뷰가." },
+                    { nick: "Niji_Elite", content: "님들 촌스럽게 조경 타령임? 레인보우 블록은 전 세대 AI 스마트홈 시스템임. 이게 미래지." },
+                    { nick: "Liella_Star", content: "슈퍼스타 블록 상가에 하라주쿠 맛집 다 들어온다는데? 슬세권 원탑은 우리임." },
+                    { nick: "All_Star_Rich", content: "싸우지들 마라. 난 종류별로 4채 다 청약 넣었다." },
+                    { nick: "YoonJaehoon(IP)", content: "Anime is Trash! Old and smelly! 다 쓰레기야! 내 벤츠가 더 비싸!", nickClass: "text-red-600 font-bold" },
+                    { nick: "Muse_Forever", content: "니 벤츠 경매 넘어갔다니까 말귀를 못 알아먹네." }
+                ]
+            },
+            // 3. 투기꾼의 등장 (A씨) + 윤재훈 난입
+            {
+                nick: "A_ssi(IP)", time: "5분 전", content: "여기 거품이다! 일본 만화 아파트라니 쪽팔려서 누가 사냐! 나중에 흉물 된다! 절대 사지 마라! (제발 나 좀 당첨되게 경쟁률 좀 낮춰줘...)", like: 10, dislike: 1500,
+                replies: [
+                    { nick: "Hawk_Eye", content: "괄호 안에 속마음 다 보이는데요 아저씨." },
+                    { nick: "YoonJaehoon(IP)", content: "Brother A! Don't buy it! It is trash! 쓰레기야!", nickClass: "text-red-600 font-bold" },
+                    { nick: "A_ssi(IP)", content: "아 재훈님 좀 닥치세요. 님 때문에 될 것도 안 되잖아요.", nickClass: "text-red-600 font-bold" },
+                    { nick: "YoonJaehoon(IP)", content: "How dare you! 감히 나한테! 배신자!", nickClass: "text-red-600 font-bold" },
+                    { nick: "Observer", content: "팀킬 실화냐 ㅋㅋㅋ" }
+                ]
+            },
+            // 4. 일반 시민의 반응 + 윤재훈 난입
+            {
+                nick: "Hyobin_Mom", time: "10분 전", content: "만화는 잘 모르지만... 여기 학군이 그렇게 좋다면서요? 단지 안에 예절 교육이랑 음악 교육 프로그램이 있다던데.", like: 800, dislike: 20,
+                replies: [
+                    { nick: "Idol_Teacher", content: "네, 어머님. '스쿨아이돌 양성 프로그램'이 있는데 체력, 인성, 가창력 다 길러줍니다. 입시 명문이죠." },
+                    { nick: "YoonJaehoon(IP)", content: "No! School is boring! I hated school! 학교 다 필요 없어! 돈이 최고야!", nickClass: "text-red-600 font-bold" },
+                    { nick: "Hyobin_Mom", content: "어머, 못 배운 티 내지 마세요. 우리 애가 볼까 무섭네." }
+                ]
+            },
+            // 5. 타 장르 팬의 분탕 (아이마스) + 윤재훈 난입
+            {
+                nick: "Imas_Spy", time: "15분 전", content: "기사 봤냐? '프로듀서 팰리스' 짓는다더라! 드디어 우리 차례다! 러브라이브 게 섯거라!", like: 1500, dislike: 50,
+                replies: [
+                    { nick: "LoveLive_Guard", content: "환영합니다. 이웃사촌끼리 잘 지내봅시다. (사실 우리 집값도 같이 오름 개꿀)" },
+                    { nick: "YoonJaehoon(IP)", content: "Both are trash! Anime is social evil! 둘 다 사회악이야! 다 밀어버려야 해!", nickClass: "text-red-600 font-bold" },
+                    { nick: "Imas_Spy", content: "재훈타워나 지으세요~ 아 땅이 없어서 못 짓나? 깔깔깔" },
+                    { nick: "YoonJaehoon(IP)", content: "I have land! I have gold! 금괴 있다고!", nickClass: "text-red-600 font-bold" }
+                ]
+            },
+            // 6. 교통 관련 + 윤재훈 난입
+            {
+                nick: "Subway_Mania", time: "20분 전", content: "<span style='color:#9856FF; font-weight:bold;'>8호선</span> 아이돌힐스역 역명 확정된 거임? 안내방송 성우 누군지 아는 사람?", like: 1200, dislike: 5,
+                replies: [
+                    { nick: "Insider", content: "μ's 리더 성우가 녹음한다는 썰 있음. 확정되면 난리 날 듯." },
+                    { nick: "YoonJaehoon(IP)", content: "I will block the subway! 8호선 폐쇄할 거야! 내 도로 깔 거야!", nickClass: "text-red-600 font-bold" },
+                    { nick: "Line1_User", content: "응~ 이미 개통했어~ 니가 뭘 할 수 있는데?" }
+                ]
+            },
+             // 7. 입주 희망자의 절규 + 윤재훈 난입
+            {
+                nick: "Please_Win", time: "30분 전", content: "제발 당첨되게 해주세요... 제 전 재산 털고 영끌해서 넣었습니다. 여기서 사는 게 평생 소원입니다...", like: 4000, dislike: 0,
+                replies: [
+                    { nick: "God_Hyobin", content: "간절함이 닿기를 바랍니다." },
+                    { nick: "YoonJaehoon(IP)", content: "You will fail! 넌 안 될 거야! 평생 월세나 살아라! Beggar!", nickClass: "text-red-600 font-bold" },
+                    { nick: "RealEstate_Devil", content: "와 인성 봐라... 님은 청약 통장도 압류 당했죠?" }
+                ]
+            }
+        ];
+
+        // 렌더링 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            if (!container) return;
+            
+            container.innerHTML = "";
+
+            if (commentsData.length === 0) {
+                container.innerHTML = '<div class="text-center py-4">댓글이 없습니다.</div>';
+                return;
+            }
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment punished-comment" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    
+                    const isExpanded = cmt.isPunished || cmt.replies.some(r => r.nick.includes("YoonJaehoon") || r.nick.includes("A_ssi"));
+                    const displayStyle = isExpanded ? 'block' : 'none';
+                    
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:${displayStyle}">`;
+                    
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "";
+                        const nickClass = reply.nickClass || (reply.nick.includes("A_ssi") || reply.nick.includes("Yoon") ? "text-red-600 font-bold" : "text-gray-900 font-bold");
+                        
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span> 
+                                <span class="text-gray-700">: ${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2 items-center">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-[#0055aa]'}">${cmt.nick} <span class="text-xs text-gray-400 font-normal">${cmt.ip ? `(${cmt.ip})` : ''}</span></span>
+                        <span class="text-xs text-gray-400">${cmt.time}</span>
+                    </div>
+                    <p class="text-sm mb-3 text-gray-800 ${cmt.isPunished ? 'font-bold text-red-800' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                    <div class="flex items-center text-xs text-gray-500">
+                        <span class="vote-btn" onclick="toggleVote(this)">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                            <span class="count">${cmt.like.toLocaleString()}</span>
+                        </span>
+                        <span class="vote-btn" onclick="toggleVote(this)">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"></path></svg>
+                            <span class="count">${cmt.dislike.toLocaleString()}</span>
+                        </span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+            
+            // 카운트 업데이트
+            const countStr = commentsData.length.toLocaleString();
+            const metaCount = document.getElementById('meta-comment-count');
+            const headerCount = document.getElementById('comment-count');
+            if(metaCount) metaCount.innerText = countStr;
+            if(headerCount) headerCount.innerText = countStr;
+        }
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el && el.style.display === 'block') el.style.display = 'none';
+            else if (el) el.style.display = 'block';
+        }
+
+        function toggleVote(btn) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('text-blue-600')) {
+                btn.classList.remove('text-blue-600');
+                count--;
+            } else {
+                btn.classList.add('text-blue-600');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+
+        function addComment() {
+            alert("댓글이 등록되었습니다.");
+        }
+
+        // 실행
+        document.addEventListener('DOMContentLoaded', renderComments);
+        renderComments(); // 안전장치
+    </script>
+</body>
+</html>

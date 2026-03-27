@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[경제] 효빈 도시철도 26년 연속 흑자 신화... "캐릭터 도입이 신의 한 수" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 공통 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 스타일 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 노선 아이콘 스타일 */
+        .line-badge { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; color: white; font-size: 12px; font-weight: bold; margin-right: 4px; vertical-align: middle; }
+        .line-1 { background-color: #0077DD; }
+        .line-2 { background-color: #00CCAA; }
+        .line-3 { background-color: #FFCC11; }
+        .line-4 { background-color: #FF5522; }
+        .line-5 { background-color: #EE0022; }
+        .line-6 { background-color: #881188; }
+        .line-7 { background-color: #FF8899; }
+        .line-8 { background-color: #9856FF; }
+        .line-bh { background-color: #6677CC; }
+
+        /* 캐릭터 소개 박스 */
+        .char-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .char-title { font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #333; padding-bottom: 5px; }
+        .char-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
+        .char-card { background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 5px solid #ccc; }
+        .cv-info { font-size: 11px; color: #666; margin-bottom: 6px; display: block; background: #eee; padding: 2px 6px; border-radius: 4px; width: fit-content; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+        <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">경제 > 교통/공기업</div>
+                <h2 class="article-title">효빈 도시철도 26년 연속 흑자 신화... "캐릭터 도입이 신의 한 수"</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이교통 기자</span> (metro@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 10:30 | 수정 2026.01.07. 13:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">영업이익 1조 2천억, 부채비율 1.9%... '초우량 공기업' 등극<br>오다구 전 사장·박현만 전 시장의 '덕업일치' 비전 적중<br>日 톱스타 성우 대거 기용... "이게 지하철 안내방송이라고?"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈도시철도_캐릭터_단체.png" alt="효빈교통공사_캐릭터_레일루미네.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/16A4BE/FFFFFF?text=Hyobin+Metro+Nine+Stars'">
+                        <div class="img-caption">▲ 효빈교통공사의 공식 캐릭터 '레일 루미네(Nine Stars)'. 한·일 양국 톱클래스 성우진이 참여해 화제를 모으고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 이교통 기자] 전국의 도시철도 운영기관들이 만성 적자에 허덕이는 가운데, <a href="효빈교통공사.html" class="text-blue-600 underline">효빈교통공사</a>가 '26년 연속 흑자'라는 전무후무한 대기록을 작성했다. 공사가 발표한 2025년 결산 자료에 따르면, 지난해 매출액은 3조 681억 원, 영업이익은 1조 282억 원을 기록했다.</p>
+
+                    <p>이 같은 기적의 중심에는 2000년대 초반부터 시작된 파격적인 '캐릭터 IP 사업'이 있다. 당시 <a href="오다구.html" class="text-blue-600 underline">오다구</a>(吳多口) 사장과 '숨은 덕후'였던 <a href="박현만.html" class="text-blue-600 underline">박현만</a> 전 시장이 의기투합하여 시작한 프로젝트가 효빈시를 먹여 살리는 핵심 동력이 된 것이다.</p>
+
+                    <p>특히 '레일 루미네'로 불리는 9개 노선의 의인화 캐릭터들은 단순한 그림을 넘어, <b>한국과 일본의 최정상급 성우들을 1:1로 매칭</b>하여 생명력을 불어넣은 것이 '신의 한 수'로 평가받는다. 지하철 안내방송부터 각종 콘텐츠까지, 성우들의 연기력이 더해지며 글로벌 팬덤을 폭발적으로 끌어모았다.</p>
+
+                    <div class="char-box">
+                        <div class="char-title">효빈 도시철도의 주역, '레일 루미네' (Nine Stars) 성우진</div>
+                        <div class="char-grid">
+                            <div class="char-card" style="border-left-color: #0077DD;">
+                                <div class="font-bold text-[#0077DD] mb-1"><span class="line-badge line-1">1</span> 고나미 (26세)</div>
+                                <span class="cv-info">CV: 박지윤(韓) / 세토 아사미(日)</span>
+                                <p class="text-sm"><b>기관사 / 원칙주의 리더</b><br>규정을 중시하는 FM. 세토 아사미 특유의 냉철한 톤으로 안전 방송을 하면 승객들이 저절로 자세를 고쳐 앉는다고.</p>
+                            </div>
+                            <div class="char-card" style="border-left-color: #00CCAA;">
+                                <div class="font-bold text-[#00CCAA] mb-1"><span class="line-badge line-2">2</span> 하루빈 (24세)</div>
+                                <span class="cv-info">CV: 김선혜(韓) / 우치다 마아야(日)</span>
+                                <p class="text-sm"><b>역무원 / 분위기 메이커</b><br>우치다 마아야의 하이텐션 연기가 더해져, 진상 민원인도 웃으며 돌려보내는 '처세술 만렙' 캐릭터로 완성됐다.</p>
+                            </div>
+                            <div class="char-card" style="border-left-color: #FFCC11;">
+                                <div class="font-bold text-[#FFCC11] mb-1"><span class="line-badge line-3">3</span> 박라미 (21세)</div>
+                                <span class="cv-info">CV: 이새아(韓) / 이시카와 유이(日)</span>
+                                <p class="text-sm"><b>홍보 담당 / 감성 연출</b><br>'바이올렛 에버가든'을 연상케 하는 이시카와 유이의 차분한 내레이션이 F학점을 맞은 헐렁한 대학생 설정과 갭모에를 이룬다.</p>
+                            </div>
+                            <div class="char-card" style="border-left-color: #FF5522;">
+                                <div class="font-bold text-[#FF5522] mb-1"><span class="line-badge line-4">4</span> 다로나 (22세)</div>
+                                <span class="cv-info">CV: 윤아영(韓) / 타네자키 아츠미(日)</span>
+                                <p class="text-sm"><b>산업관리직 / 안전 지킴이</b><br>'아냐 포저' 성우로 유명한 타네자키 아츠미의 광폭 연기력 덕분에, 평소엔 소심하다가도 위기 시 돌변하는 캐릭터성이 극대화됐다.</p>
+                            </div>
+                            <div class="char-card" style="border-left-color: #EE0022;">
+                                <div class="font-bold text-[#EE0022] mb-1"><span class="line-badge line-5">5</span> 미소하 (20세)</div>
+                                <span class="cv-info">CV: 김채하(韓) / 쿠노 미사키(日)</span>
+                                <p class="text-sm"><b>정책 브레인</b><br>쿠노 미사키의 귀여운 목소리로 살벌한 팩트를 꽂는 '웃으면서 협박하기' 스킬이 5호선의 트레이드 마크가 되었다.</p>
+                            </div>
+                            <div class="char-card" style="border-left-color: #881188;">
+                                <div class="font-bold text-[#881188] mb-1"><span class="line-badge line-6">6</span> 라세나 (19세)</div>
+                                <span class="cv-info">CV: 김율(韓) / 키토 아카리(日)</span>
+                                <p class="text-sm"><b>고3 수험생 / 숨덕</b><br>'니지동' 카나타 성우인 키토 아카리를 기용, "졸리다"는 대사를 할 때마다 팬들이 환호하는 성우 장난(聲優ネタ)이 공식 설정화됐다.</p>
+                            </div>
+                            <div class="char-card" style="border-left-color: #FF8899;">
+                                <div class="font-bold text-[#FF8899] mb-1"><span class="line-badge line-7">7</span> 임세정 & 임세하</div>
+                                <span class="cv-info">세정: 윤미나 / 스즈키 아이나</span>
+                                <span class="cv-info">세하: 방연지 / 다테 사유리</span>
+                                <p class="text-sm"><b>자매 캐릭터</b><br>'러브라이브' 시리즈 주역 성우들을 자매로 묶은 파격 캐스팅. 언니의 호통과 동생의 공대 감성이 절묘하게 어우러진다.</p>
+                            </div>
+                            <div class="char-card" style="border-left-color: #9856FF;">
+                                <div class="font-bold text-[#9856FF] mb-1"><span class="line-badge line-8">8</span> 유리아 (17세)</div>
+                                <span class="cv-info">CV: 장예나(韓) / 사이토 슈카(日)</span>
+                                <p class="text-sm"><b>호기심 대장</b><br>"요우소로!" 대신 "한 번만요!"를 외치는 사이토 슈카의 활기찬 목소리가 8호선(무인경전철)의 마스코트가 되었다.</p>
+                            </div>
+                            <div class="char-card" style="border-left-color: #6677CC;">
+                                <div class="font-bold text-[#6677CC] mb-1"><span class="line-badge line-bh">빈</span> 전노아 (20세)</div>
+                                <span class="cv-info">CV: 김현지(韓) / 마에다 카오리(日)</span>
+                                <p class="text-sm"><b>광역 연계 / 행정</b><br>마에다 카오리의 별명 '광견'을 공식 차용, 예산 확보를 위해서라면 물불 안 가리는 '행정 광견' 캐릭터가 탄생했다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-[#333] mt-8 mb-4 border-l-4 border-[#0055aa] pl-3">"안내방송 듣다가 정좌했다"... 초호화 성우진의 '미친 존재감'</h3>
+                    
+                    <p>효빈교통공사의 캐스팅 비화는 팬들 사이에서 전설로 통한다. 단순한 유명세가 아니라, 캐릭터의 성격과 성우의 기존 이미지를 교묘하게 비트는 '배운 변태(?)'식 기획력이 돋보이기 때문이다.</p>
+
+                    <p>가장 화제가 된 것은 <b>1호선 고나미</b>다. 평소엔 FM 원칙주의자인 고나미가 세토 아사미 성우 특유의 차가운 톤으로 "부정 승차는... 즉결 처분입니다."라고 안내방송을 하면, 승객들이 무의식적으로 허리를 펴고 앉게 된다는 일화가 유명하다. 반면 신형 전동차가 들어올 때 흥분해서 톤이 갈라지는 '갭모에' 연기는 팬들의 심장을 저격하는 포인트다.</p>
+
+                    <p><b>4호선 다로나</b>의 경우, 평소엔 소심한 목소리지만 비상 상황 훈련 영상에서 타네자키 아츠미의 폭발적인 연기력이 나오자, 유튜브 댓글창에 "방금 성우 바뀐 거 아님?", "아냐가 아니라 요르가 나왔는데?"라는 드립이 폭주하기도 했다.</p>
+
+                    <p>특히 <a href="빈효선 광역전철.html" class="text-blue-600 underline">빈효선</a>의 <b>전노아</b>는 성우 마에다 카오리의 별명인 '아뮤즈의 광견'을 '효빈시의 예산 광견'으로 로컬라이징해 대박을 터뜨렸다. 회의 도중 "전례가 없다"는 말을 듣자마자 목소리를 깔고 "그 전례, 제가 지금부터 만듭니다."라고 쏘아붙이는 오디오 드라마는 조회수 500만 회를 돌파했다.</p>
+
+                    <p>박효빈 시장은 "단순한 이동 수단이 아니라, 귀까지 즐거운 문화 공간을 만들고 싶었다"며 "앞으로도 글로벌 성우들과 협업하여 세계인이 찾아오는 효빈시를 만들겠다"고 밝혔다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">3,852</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Seiyu_Ota", time: "방금 전", like: 6500, dislike: 15, isPunished: false,
+                                content: "라인업 실화냐? ㅋㅋㅋ 이 정도면 지하철 회사가 아니라 애니 제작사 아니냐고. 6호선 타면 키토 아카리가 '졸려...' 하는 거 들을 수 있음? 당장 이사 간다.",
+                                replies: [
+                                    { nick: "Hyobin_Resident", content: "실제로 6호선 막차 안내방송이 '이제 자러 가요...' 톤이라서 다들 힐링하면서 퇴근함 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "3분 전", like: 5, dislike: 5200, isPunished: true,
+                                content: "일본 성우? 매국노 박효빈! 우리말을 써야지 왜 쪽바리 말을 안내방송에 넣어! 내가 시장 됐으면 성우 다 해고하고 AI 보이스로 바꿨다! 2.2%는 조작이야!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "한국 성우도 박지윤, 김선혜 님 등등 레전드 분들이신데요? 양국 성우 다 챙기는 게 능력이지. 님은 AI도 아까움." },
+                                    { nick: "Global_Era", content: "외국인 관광객 유치해서 돈 벌어오는 게 진짜 애국이다 멍청아. 방구석에서 열폭 그만해라." }
+                                ]
+                            },
+                            {
+                                nick: "Mad_Dog_Fan", time: "10분 전", like: 3400, dislike: 0,
+                                content: "전노아 '광견 모드' ㅋㅋㅋ 마에다 카오리 섭외한 담당자 진짜 상 줘야 함. 예산 따올 때 그 딕션 잊을 수가 없다.",
+                                replies: [
+                                    { nick: "Admin_Team", content: "담당자 승진했습니다 ^^" }
+                                ]
+                            },
+                            {
+                                nick: "Safety_First", time: "15분 전", like: 2800, dislike: 0,
+                                content: "캐릭터도 좋지만 1호선 고나미 안내방송은 진짜 효과 있음. 세토 아사미 톤으로 '안전선 밖으로 물러나세요' 하면 군대 점호시간 같아서 싹 정리됨.",
+                                replies: [
+                                    { nick: "Subway_Driver", content: "인정합니다. 스크린도어 끼임 사고 확 줄었습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Anya_Papa", time: "20분 전", like: 4100, dislike: 2,
+                                content: "4호선 다로나 목소리 타네자키 아츠미였어? 와 어쩐지... 평소엔 소심한데 사고 터지면 갑자기 톤 바뀌는 게 예술이다 했음. 연기력 미쳤네.",
+                                replies: []
+                            },
+                            {
+                                nick: "Love_Live_Sunshine", time: "25분 전", like: 3900, dislike: 0,
+                                content: "7호선 자매가 스즈키 아이나 & 다테 사유리? ㅋㅋㅋ 이거 완전 러브라이브 시리즈 팬 서비스잖아. 효빈시 공무원 중에 럽폭도 있는 게 분명함.",
+                                replies: [
+                                    { nick: "Insider", content: "시장님부터가..." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    const nickClass = "font-bold text-[#0055aa]";
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.isPunished ? '(IP 차단됨)' : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_metro_surplus.html" class="ranking-link font-bold text-[#0055aa]">효빈 도시철도 흑자 신화</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_tour_pass.html" class="ranking-link">HAF PASS 암표 전쟁</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, '망고 구걸' 굴욕</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_realestate_trend.html" class="ranking-link">탄성군 도변읍 부동산 폭등</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈교통공사</div>
+                    <div class="text-xs">레일 루미네 피규어<br>10주년 기념 재발매</div>
+                </div>
+            </div>
+             <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈동신도시</div>
+                    <div class="text-xs text-blue-400">상업용지 분양 공고<br>미래 가치를 선점하세요</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

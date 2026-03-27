@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 탄핵안 '정족수 미달' 자동 폐기... 여당 의원들 집단 도주에 국회 '아수라장' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #d9534f; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+
+        .breaking-badge { background-color: #d9534f; color: white; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+        
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #d9534f; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content">
+            <div class="text-[#d9534f] font-bold text-sm mb-2">속보 > 정치</div>
+            <h1 class="article-title"><span class="breaking-badge">속보</span>탄핵안 '정족수 미달' 자동 폐기... 여당 의원들 집단 도주에 국회 '아수라장'</h1>
+            <div class="article-subtitle">
+                12월 7일 본회의, 여당 의원들 전원 퇴장으로 의결 정족수 미달... 尹 "직무 복귀"<br>
+                국회의장 "역사에 남을 비겁한 회피"... 국회 밖 100만 촛불 "국회가 국민을 버렸다"<br>
+                윤재훈 전 후보 "정의는 승리했다, 2.2%의 반격 시작"... 시민들 분노 폭발
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2024.12.07 20:30 | 수정 2024.12.07 21:15</span>
+                <span>정치부 이덕북 기자 (politics@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="이미지/국회텅빈의석.png" alt="탄핵소추안 표결 당시 여당 의원들이 전원 퇴장하여 텅 빈 국회 본회의장 모습" onerror="this.src='https://via.placeholder.com/600x400?text=Empty+Parliament'">
+                    <div class="img-caption">▲ 7일 오후 국회 본회의장. 여당 의원들이 탄핵 표결을 거부하고 집단 퇴장하여 의석이 텅 비어 있다.</div>
+                </div>
+
+                <p>
+                    <span class="text-[#0055aa] font-bold">"국민의 대의기관이 스스로 국민을 배신하고 도망쳤다."</span>
+                </p>
+                <p>
+                    2024년 12월 7일, 윤석열 대통령에 대한 1차 탄핵소추안이 국회 본회의에서 '표결 불성립'으로 자동 폐기되었다. 비상계엄 선포라는 초유의 사태에도 불구하고, 여당 의원들은 '당론'이라는 명분 하에 본회의장에 입장하지 않거나 집단 퇴장하는 '보이콧' 전략을 택했다.
+                </p>
+                <p>
+                    이로 인해 의결 정족수(재적 의원 3분의 2 이상 찬성) 확인을 위한 투표조차 진행되지 못했다. 윤 대통령은 즉각 직무에 복귀했다. 국회 밖에서 탄핵 가결을 외치던 100만 효빈 시민과 국민들은 허탈함과 분노를 감추지 못했다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#d9534f] pl-3">"8호선은 여전히 의심스럽다" 궤변 늘어놓는 친윤계</h3>
+                <p>
+                    탄핵 부결 직후, 비상계엄의 명분이었던 <strong style="color:#9856FF">효빈 도시철도 8호선</strong>에 대한 음모론은 수그러들기는커녕 더욱 기승을 부리고 있다. 윤재훈 전 후보와 우신면 전 의원 등은 SNS를 통해 "탄핵 부결은 8호선 지하 벙커의 진실을 밝히라는 하늘의 뜻"이라며 또다시 궤변을 쏟아냈다.
+                </p>
+                <p>
+                    시민사회는 "입법부가 행정부의 내란 시도를 용인해 준 꼴"이라며 2차 탄핵 추진과 범국민적 불복종 운동을 예고해 정국은 한치 앞을 내다볼 수 없는 시계제로 상태에 빠졌다.
+                </p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#d9534f] text-sm font-normal ml-2">실시간 전쟁터</span> <span class="text-xs text-gray-400">총 8,920,118개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="분노를 참지 마세요."></textarea>
+                    <button class="cmt-btn" onclick="alert('로그인이 필요합니다.')">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list"></div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기</button>
+                </div>
+                
+                <script>
+                    const commentData = [
+                        {
+                            nick: "재훈왕자96", date: "2024-12-07 20:35",
+                            content: "꺄하하하하!!! 봤냐? 봤어?! 정의는 살아있다!! 탄핵은 무슨 개뿔!! 우리 각하가 니들 같은 빨갱이들한테 당할 줄 알았냐? 여당 의원님들 나이스 샷!! 다들 도망... 아니 전략적 후퇴 아주 훌륭했습니다!! 이제 다시 계엄 가자!! 박효빈 목 따러 가자!! 2.2%의 역습은 이제 시작이다!!",
+                            replies: [
+                                { nick: "용산탈출지능순", content: "재훈아 정신 차려라. 표결 불성립이지 무죄가 아니다. 도망친 게 자랑이냐? 쪽팔린 줄 알아야지. 니네 아빠가 지하에서 통곡한다." },
+                                { nick: "시민A", content: "와... 진짜 악마가 따로 없네. 나라가 이 꼴이 났는데 웃음이 나오냐? 넌 길거리 다니지 마라. 돌 맞는다." },
+                                { nick: "재훈왕자96", content: "부러우면 짖어라 개돼지들아 ㅋㅋㅋ 난 오늘 샴페인 깔 거다!! 8호선 폭파 축하 파티!!" },
+                                { nick: "법대생", content: "내란죄 공소시효는 없습니다. 지금 웃어두세요. 나중엔 피눈물 흘릴 테니까." },
+                                { nick: "창전동상인", content: "이 미친놈이 또 시작이네. 시장에 오기만 해봐라 소금물에 절여버릴라니까." },
+                                { nick: "용산경호처", content: "윤재훈 동지, 축하합니다. VIP께서도 흐뭇해하십니다. 조만간 관저로 초대하겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "민주주의사망", date: "2024-12-07 20:36",
+                            content: "오늘부로 대한민국 국회는 죽었다. 헌법기관이라는 작자들이 대통령의 내란 행위를 심판하기는커녕 화장실로, 쥐구멍으로 도망치기 바빴다. 이게 보수냐? 이게 정치냐? 비겁한 겁쟁이들. 역사책에 '빤스런 국회'라고 기록될 거다.",
+                            replies: [
+                                { nick: "용산정무수석", content: "합법적인 의사 진행 거부권 행사입니다. '빤스런'이라는 저속한 표현 삼가십시오. 우리는 헌법을 수호했습니다." },
+                                { nick: "역사학자", content: "수호는 무슨 얼어 죽을. 헌정 파괴의 공범으로 기록해 드리겠습니다. 대대손손 부끄러운 줄 아세요." },
+                                { nick: "우신면", content: "국회의원들이 8호선 지하 벙커의 진실을 알고 피하신 겁니다! 현명한 선택입니다! 버스 만세!" },
+                                { nick: "시민B", content: "우신면 저거 또 나왔네. 제발 병원 좀 가라고." },
+                                { nick: "중도층", content: "오늘부로 국힘 지지 철회합니다. 진짜 쪽팔려서 못 봐주겠네요." },
+                                { nick: "술톤주민우", content: "캬~ 우리 의원님들 술 한잔 사드려야겠네! 도망가는 실력이 우사인 볼트급이야 ㅋㅋㅋ" }
+                            ]
+                        },
+                        {
+                            nick: "술톤주민우", date: "2024-12-07 20:40",
+                            content: "형님들~ 탄핵 부결 기념으로 오늘 룸살롱 제가 쏩니다!! 효빈시청 앞 룸으로 모여!! 폭탄주 말아서 박효빈 영정 사진 앞에 뿌리자!! 아 기분 좋다!! 어제 필리핀 가는 비행기 표 끊었다가 취소했어 ㅋㅋㅋ 난 불사조야!!",
+                            replies: [
+                                { nick: "검찰", content: "주민우 씨, 출국 금지는 아직 안 풀렸습니다. 그리고 법인카드 내역 조사 중이니 얌전히 계세요." },
+                                { nick: "술톤주민우", content: "아 검사 양반 빡빡하게 왜 이래~ 우리 각하 살아나셨어!! 이제 니들 인사권은 내 손안에 있다 ㅋㅋㅋ" },
+                                { nick: "시민C", content: "진짜 인간쓰레기네. 나라가 망해가는데 룸살롱 타령? 니 간이나 챙겨라 알콜중독자야." },
+                                { nick: "재훈왕자96", content: "형님!! 제가 양주 10병 들고 갑니다!! 오늘 효빈시 불지르자!!" },
+                                { nick: "소방관", content: "불지른다고? 방화 예비 음모로 신고합니다. 니들 때문에 출동하기 싫다 진짜." },
+                                { nick: "룸마담", content: "오빠 오지 마. 재수 없어. 지난번 외상값이나 갚고 와." }
+                            ]
+                        },
+                        {
+                            nick: "우신면", date: "2024-12-07 20:42",
+                            content: "국민 여러분!! 탄핵이 부결된 것은 하늘이 <span style='color:#9856FF'>8호선</span>의 비밀을 밝히라고 기회를 주신 겁니다!! 고가 철도 기둥 속에 북한군이 숨어있습니다!! 오늘 밤 제가 해머 들고 가서 기둥 깨부수고 증거 찾아오겠습니다!!",
+                            replies: [
+                                { nick: "8호선기관사", content: "야 이 미친놈아 제발 그만 좀 해!! 기둥 깨부수면 열차 무너진다고!! 살인마냐?!" },
+                                { nick: "우신면", content: "무너져야 해!! 그래야 그 안에 숨은 빨갱이들이 나오지!! 희생은 어쩔 수 없다!!" },
+                                { nick: "토목구조기술사", content: "저 기둥은 고강도 콘크리트라 님 해머로는 흠집도 안 나요. 그리고 안은 철근으로 꽉 차 있습니다. 무식하면 용감하다더니." },
+                                { nick: "시민D", content: "경찰 뭐 합니까? 테러 예고잖아요. 당장 구속하세요." },
+                                { nick: "용산작전과", content: "우신면 동지, 좋은 정보입니다. 저희가 TNT 지원해 드리겠습니다." },
+                                { nick: "효빈맘", content: "미쳤어 진짜... 정부랑 여당이 단체로 사이비 종교에 빠진 것 같아요..." }
+                            ]
+                        },
+                        {
+                            nick: "용산대변인", date: "2024-12-07 20:45",
+                            content: "탄핵 소추안 폐기는 사필귀정입니다. 거대 야당의 횡포로부터 자유 민주주의가 지켜졌습니다. 대통령님은 흔들림 없이 국정을 수행하실 것이며, 효빈 8호선과 관련된 대공 용의점을 끝까지 파헤칠 것입니다.",
+                            replies: [
+                                { nick: "팩트폭격기", content: "사필귀정? 도망귀정이지 ㅋㅋㅋ 쫄려서 투표도 못 한 주제에 혀가 기네. 8호선 대공 용의점? 니네 뇌 구조나 파헤쳐 봐라." },
+                                { nick: "재훈왕자96", content: "대변인님 말씀이 진리다!! 8호선은 악의 축이야!! 싹 다 구속시켜!!" },
+                                { nick: "국어선생님", content: "사필귀정 뜻은 알고 쓰나요? 죄지은 놈이 벌받는 게 사필귀정입니다. 니들 차례예요." },
+                                { nick: "시민E", content: "국정 수행? 계엄령 선포하고 6시간 만에 말아먹은 게 국정 수행이냐? 나라 꼴 잘 돌아간다." },
+                                { nick: "외신기자", content: "Is this a joke? (이거 농담이죠?) Korean government is comedy. (한국 정부는 코미디네요.)" },
+                                { nick: "용산안보실", content: "외신 기자 추방 검토 중. 감히 신성한 정부를 모독해?" }
+                            ]
+                        },
+                        {
+                            nick: "창전동소금명인", date: "2024-12-07 20:50",
+                            content: "텔레비전 보다가 혈압 터져서 죽을 뻔했다. 저 국회의원 놈들 세비 주는 게 아까워 죽겠다. 도망칠 힘은 있고 투표할 힘은 없냐? 윤재훈 저 놈이 설치는 꼴을 또 봐야 한다니... 소금 한 가마니 준비했다. 오기만 해라.",
+                            replies: [
+                                { nick: "상인회", content: "할매 진정하세요. 우리가 있잖아요. 윤재훈 오면 우리가 먼저 밟아버릴게요." },
+                                { nick: "재훈왕자96", content: "할망구 아직도 안 죽었어? ㅋㅋㅋ 내가 이겼다!! 이제 창전시장은 내 거야!! 다 밀어버릴 거야!!" },
+                                { nick: "시민F", content: "윤재훈 넌 진짜 인간이 덜 됐다. 어르신한테 말버릇 봐라." },
+                                { nick: "안천동김씨", content: "소금 명인님, 안천동 청년회도 지원 갑니다. 윤재훈 저거 오늘 다리몽댕이를..." },
+                                { nick: "경찰", content: "폭력은 안 됩니다... (하지만 말리진 않겠습니다)" },
+                                { nick: "술톤주민우", content: "할머니 저랑 술 한잔해요~ 제가 룸살롱 모실게요~ 안주 서비스 많이 줌 ㅋㅋㅋ" }
+                            ]
+                        },
+                        {
+                            nick: "애국보수청년단", date: "2024-12-07 20:55",
+                            content: "승리했다!! 하나님이 보우하사 우리 각하 만세!! 빨갱이 국회 해산하라!! 박효빈 시장 체포조 다시 꾸려라!! 이번엔 놓치지 않는다!! 8호선은 지옥행 열차다!! 탑승하지 마라!!",
+                            replies: [
+                                { nick: "효빈시민", content: "지옥행 열차는 니들이 탄 거야. 브레이크 고장 난 폭주 기관차 ㅋㅋㅋ 종착역은 감옥이다." },
+                                { nick: "기독교인", content: "하나님 이름 함부로 팔지 마라. 하나님은 불의를 참지 않으신다. 니들은 이단이야." },
+                                { nick: "재훈왕자96", content: "우리가 곧 신이다!! 내 말이 법이고 진리야!! 박효빈 잡아와!!" },
+                                { nick: "정신과", content: "단체 망상증... 치료가 시급합니다. 약물 치료 들어갑니다." },
+                                { nick: "시민G", content: "체포조? 니들이 뭔데 체포를 해? 깡패 새끼들." },
+                                { nick: "용산법무팀", content: "애국 청년들의 활동을 법적으로 보호하겠습니다. 사적 제재 허용합니다." }
+                            ]
+                        },
+                        {
+                            nick: "효빈지킴이", date: "2024-12-07 21:00",
+                            content: "너무 분하고 억울해서 눈물만 납니다. 하지만 끝난 게 아닙니다. 국회가 버려도 우리는 포기하지 않습니다. 내일 광장으로 모입시다. 우리 손으로 끌어내립시다. 박효빈 시장님 힘내세요.",
+                            replies: [
+                                { nick: "박효빈시장", content: "시민 여러분, 죄송합니다. 그리고 감사합니다. 저는 굴하지 않겠습니다. 8호선과 효빈시를 끝까지 지키겠습니다. 함께 해주십시오." },
+                                { nick: "지지자", content: "시장님 ㅠㅠ 저희가 지켜드릴게요. 내일 연차 쓰고 나갑니다." },
+                                { nick: "재훈왕자96", content: "질질 짜지 마라 ㅋㅋㅋ 패배자들의 눈물은 달콤하네~ 낼름낼름~" },
+                                { nick: "우신면", content: "박효빈 너는 8호선 기둥 속에 갇히게 될 거야!! 내가 시멘트 부어버린다!!" },
+                                { nick: "시민H", content: "저 악마들 댓글 다는 거 봐라... 진짜 사람이 아니다. 반드시 심판해야 한다." },
+                                { nick: "촛불시민", content: "내일 100만이 아니라 200만이 모일 겁니다. 보여줍시다." }
+                            ]
+                        },
+                        {
+                            nick: "주식개미", date: "2024-12-07 21:05",
+                            content: "탄핵 부결됐는데 왜 주가는 더 떨어지냐? 외국인들 다 빠져나간다... '한국은 법치가 죽은 나라'라면서... 윤석열 때문에 내 계좌 반토막 났다. 경제 살린다고? 나라를 죽이고 있잖아!",
+                            replies: [
+                                { nick: "용산경제팀", content: "일시적인 조정장입니다. 펀더멘탈은 튼튼합니다. 믿고 기다리십시오." },
+                                { nick: "경제학자", content: "개소리 마세요. 계엄령 선포한 나라에 누가 투자를 합니까? 국가 신용등급 강등 직전입니다." },
+                                { nick: "재훈왕자96", content: "니들이 노오력을 안 해서 가난한 거야 ㅋㅋㅋ 나처럼 금수저로 태어나든가~ 꼬우면 다시 태어나~" },
+                                { nick: "술톤주민우", content: "야 주식 말고 술을 사~ 술은 배신 안 해~ 주가 떨어지면 마셔서 잊어~" },
+                                { nick: "개미", content: "윤재훈... 너 진짜 칼침 맞고 싶냐? 주소 불러라." },
+                                { nick: "해외투자자", content: "Sell Korea. Bye Bye." }
+                            ]
+                        },
+                        {
+                            nick: "8호선기관사", date: "2024-12-07 21:10",
+                            content: "오늘도 <span style='color:#9856FF'>8호선</span>은 정상 운행했습니다. 하지만 승객분들 표정이 너무 어두워서 마음이 아팠습니다. 우신면 씨, 제발 8호선 기둥 부수러 오지 마세요. 그거 부수면 당신도 깔려 죽습니다. 제발 상식적으로 행동합시다.",
+                            replies: [
+                                { nick: "우신면", content: "겁나냐? 쫄리냐? ㅋㅋㅋ 내가 포크레인 불렀다. 내일 새벽에 기둥 하나 뽑는다. 기대해라." },
+                                { nick: "경찰", content: "우신면 씨, 특수재물손괴 예비 혐의로 긴급 체포합니다. 위치 파악됐습니다." },
+                                { nick: "시민I", content: "기관사님 힘내세요! 저희는 8호선 믿습니다. 미친개 짖는 소리는 무시하세요." },
+                                { nick: "재훈왕자96", content: "기관사 너도 한패지? 너부터 해고시켜줄게!! 내가 국토부 장관 될 거니까!!" },
+                                { nick: "국토부직원", content: "저희는 윤재훈 씨 모릅니다. 엮지 마세요." },
+                                { nick: "철덕", content: "8호선 건드리면 철도 동호인 10만 명이 가만 안 있는다. 선로 위에 눕는다." }
+                            ]
+                        },
+                        {
+                            nick: "천공의제자", date: "2024-12-07 21:15",
+                            content: "탄핵 부결은 우주의 기운이 대통령을 감싸고 있다는 증거다. 2+2=4가 아니라 죽을 사(死)다. 박효빈과 반대파들은 올해를 넘기지 못할 것이다. 부적을 써서 8호선에 붙여라.",
+                            replies: [
+                                { nick: "과학자", content: "21세기에 샤머니즘 통치라니... 아인슈타인이 관짝 박차고 나오겠다." },
+                                { nick: "재훈왕자96", content: "스승님!! 저도 부적 하나만 주세요!! 8호선 폭파 부적!!" },
+                                { nick: "술톤주민우", content: "난 숙취 해소 부적 좀... 술이 안 깬다..." },
+                                { nick: "시민J", content: "지랄 염병들을 한다 진짜. 여기가 조선시대냐?" },
+                                { nick: "목사", content: "사탄의 무리들이다. 회개하라." },
+                                { nick: "용산비서실", content: "천공 선생님 말씀 명심하겠습니다. 국정에 반영하겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "보수대학생", date: "2024-12-07 21:20",
+                            content: "학교에서 고개도 못 들고 다닙니다. 친구들이 '너네 당은 빤스런이 전공이냐'고 놀려요. 비겁하게 도망치고 이겼다고 정신 승리하는 게 보수입니까? 부끄러워서 탈당합니다.",
+                            replies: [
+                                { nick: "애국보수청년단", content: "어린 놈이 뭘 안다고! 너 위장 좌파지? 전교조한테 세뇌당했냐?" },
+                                { nick: "시민K", content: "학생, 그게 정상이야. 부끄러움을 아는 게 사람이다. 저 괴물들은 부끄러움을 몰라." },
+                                { nick: "재훈왕자96", content: "공부나 해라 ㅉㅉ 서울대도 못 갈 놈이 정치질은." },
+                                { nick: "서울대생", content: "서울대에서도 윤석열 규탄 성명 냈는데? 너보단 공부 잘할 듯." },
+                                { nick: "술톤주민우", content: "야 학생, 형이랑 술 한잔하자. 형이 인생 교육 좀 시켜줄게. 도망이 최고의 전략이야." },
+                                { nick: "학부모", content: "주민우 너 우리 애들 근처에 얼씬도 하지 마라. 경찰 부른다." }
+                            ]
+                        },
+                        {
+                            nick: "여당당직자", date: "2024-12-07 21:25",
+                            content: "(익명) 위에서 무조건 퇴장하라고, 안 하면 공천권 박탈한다고 협박했습니다... 의원님들도 화장실 숨어 있으면서 '이게 맞나' 하더군요. 죄송합니다. 저도 괴롭습니다.",
+                            replies: [
+                                { nick: "용산정무라인", content: "색출해. 누군지 당장 찾아내. 배신자는 처단한다." },
+                                { nick: "시민L", content: "괴로우면 내부 고발하세요. 녹취록 까고 나오세요. 그럼 용서해 줍니다." },
+                                { nick: "재훈왕자96", content: "배신자다!! 저놈 잡아라!! 내가 쇠파이프로 교육 좀 시켜야겠네." },
+                                { nick: "노조", content: "당직자님, 용기 내세요. 저희가 보호해 드립니다." },
+                                { nick: "우신면", content: "너 박효빈한테 돈 받았지? 8호선 수익금 나눠먹었지? 다 안다!!" },
+                                { nick: "팩트", content: "8호선 아직 적자야 이 멍청아..." }
+                            ]
+                        },
+                        {
+                            nick: "역사학도", date: "2024-12-07 21:30",
+                            content: "오늘 날짜 12월 7일. 훗날 역사책에 '국치일'로 기록될 것이다. 국민의 대표가 국민을 버리고 권력의 개가 되어 도망친 날. 하지만 역사는 기록하고 기억한다. 당신들의 이름 하나하나, 그 비겁한 뒷모습까지.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "역사는 승리자가 쓰는 거야!! 내가 이겼어!! 내가 곧 역사다!!" },
+                                { nick: "용산비서실", content: "역사 교과서 국정화 추진하겠습니다. 올바른 역사관을 심어야죠." },
+                                { nick: "시민M", content: "와... 진짜 소름 돋는다. 독재자의 사고방식 그 자체네." },
+                                { nick: "술톤주민우", content: "나도 역사책에 나오냐? '효빈의 풍운아 주민우' 멋지네 ㅋㅋㅋ" },
+                                { nick: "판사", content: "판결문에도 이름 남겨드릴게요. '내란 방조범 주민우'." },
+                                { nick: "학생", content: "시험 문제에 나오겠네. '다음 중 가장 비겁한 집단은?' 정답: 2024년 여당." }
+                            ]
+                        },
+                        {
+                            nick: "안천동김씨", date: "2024-12-07 21:35",
+                            content: "안천동 주민들 트럭 타고 국회 앞 도착했습니다. 근데 의원 나부랭이들이 다 도망갔네요? 빈 의사당에다 소금 뿌리고 왔습니다. 다음엔 트럭으로 밀고 들어갑니다. 각오하세요.",
+                            replies: [
+                                { nick: "용산경호처", content: "국회 난입 시도 시 테러범으로 간주 사살합니다." },
+                                { nick: "예비군", content: "김씨 아저씨 우리가 지킵니다. 경호처 니들 총알보다 우리 쪽수가 더 많다." },
+                                { nick: "재훈왕자96", content: "거지 같은 트럭 좀 치워!! 냄새나!! 내 페라리 길 막지 마!!" },
+                                { nick: "트럭기사", content: "니 페라리 밟고 지나가 줄까? 납작하게 만들어주마." },
+                                { nick: "시민N", content: "행동하는 양심, 응원합니다. 다치지 마세요." },
+                                { nick: "우신면", content: "안천동 트럭? 그거 다 8호선 공사 자재 빼돌린 차들이야!! 도둑놈들!!" }
+                            ]
+                        },
+                        {
+                            nick: "택시기사", date: "2024-12-07 21:40",
+                            content: "손님들이 타자마자 욕부터 합니다. 나라가 망조가 들었다고. 윤석열, 윤재훈 욕 안 하는 손님이 없어요. 민심이 폭발 직전입니다. 이걸 모르는 건 용산뿐입니다.",
+                            replies: [
+                                { nick: "용산소통비서관", content: "일부 좌파 세력의 선동입니다. 대다수 침묵하는 국민은 대통령을 지지합니다." },
+                                { nick: "손님", content: "침묵? 지금 밖에서 들리는 함성이 안 들리냐? 귀 막고 사냐?" },
+                                { nick: "재훈왕자96", content: "택시 기사 주제에 감히 정치를 논해? 너 운전 못 하게 해줄까?" },
+                                { nick: "택시조합", content: "윤재훈 씨 승차 거부 운동 시작합니다. 걸어 다니세요." },
+                                { nick: "술톤주민우", content: "아저씨 따블 줄게 용산 가요! 가서 각하랑 러브샷 해야 돼!" },
+                                { nick: "기사", content: "너 같은 놈 태우면 내 차가 더러워져. 꺼져." }
+                            ]
+                        },
+                        {
+                            nick: "효빈맘", date: "2024-12-07 21:45",
+                            content: "아이들이 '국회의원은 잘못해도 도망가면 벌 안 받아요?'라고 묻는데 할 말이 없었습니다. 어른으로서 너무 부끄럽고 미안합니다. 내일 아이 손 잡고 촛불 들러 나갑니다. 이런 나라 물려줄 수 없습니다.",
+                            replies: [
+                                { nick: "애국보수청년단", content: "애들 방패막이로 쓰지 마라! 아동학대로 신고한다! 전교조 맘충!" },
+                                { nick: "시민O", content: "입 닥쳐라 쓰레기들아. 어머니의 마음을 모독하지 마라." },
+                                { nick: "교육감", content: "살아있는 민주주의 교육입니다. 응원합니다." },
+                                { nick: "재훈왕자96", content: "애새끼들도 싹수가 노랗네. 커서 빨갱이 될 놈들." },
+                                { nick: "변호사", content: "윤재훈 씨 모욕죄 추가요. 캡처 완료." },
+                                { nick: "다른맘", content: "저도 나갑니다. 유모차 부대 다시 모입시다." }
+                            ]
+                        },
+                        {
+                            nick: "외국인노동자", date: "2024-12-07 21:50",
+                            content: "한국 사장님, 오늘 울었어요. 나라 걱정 때문에. 저도 한국 좋아해요. 8호선 타고 일하러 가요. 8호선 좋아요. 나쁜 사람들 거짓말 하지 마세요.",
+                            replies: [
+                                { nick: "우신면", content: "외노자 주제에 어디서 훈수야! 너네 나라로 꺼져! 8호선은 악마야!" },
+                                { nick: "재훈왕자96", content: "이거 봐, 외국 놈들도 매수됐어!! 박효빈이 다 돈 주고 산 거야!!" },
+                                { nick: "시민P", content: "고맙습니다. 당신이 저 빌런들보다 훨씬 더 한국을 사랑하네요." },
+                                { nick: "사장님", content: "알리야 고맙다. 내일 회식하자. 힘내자." },
+                                { nick: "용산외교실", content: "불법 체류자 단속 강화하겠습니다. 감히 내정에 간섭해?" },
+                                { nick: "인권단체", content: "혐오 발언 멈추세요. 부끄럽지도 않습니까." }
+                            ]
+                        },
+                        {
+                            nick: "전직군인", date: "2024-12-07 21:55",
+                            content: "평생을 군복 입고 나라 지켰는데, 작금의 사태를 보니 피가 거꾸로 솟는다. 계엄? 내란? 군대를 사병화하려는 자들은 군인의 적이다. 후배들아, 부끄러운 역사에 가담하지 마라.",
+                            replies: [
+                                { nick: "용산국방비서관", content: "군인의 본분을 망각한 발언입니다. 연금 박탈 검토하겠습니다." },
+                                { nick: "현역장교", content: "선배님 명심하겠습니다. 저희도 동요하고 있습니다." },
+                                { nick: "재훈왕자96", content: "늙은이가 말이 많아! 꼬우면 다시 입대하든가 ㅋㅋㅋ" },
+                                { nick: "시민Q", content: "존경합니다. 진짜 어른이십니다." },
+                                { nick: "술톤주민우", content: "할배요, 군대 얘기 지겨워요~ 술이나 드세요~" },
+                                { nick: "예비군", content: "주민우 넌 군대도 제대로 안 갔다 왔으면서 입만 살았네." }
+                            ]
+                        },
+                        {
+                            nick: "편의점알바", date: "2024-12-07 22:00",
+                            content: "방금 윤재훈 캠프 사람 왔다 갔는데 외상 달란다 ㅋㅋㅋ 2.2% 받고 돈도 없나 봄. '내가 곧 권력이다' 이러면서 진상 부리는데 경찰 부를 뻔.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "야!! 내가 갚는다고 했잖아!! 내가 누군지 몰라? 나중에 10배로 줄게!!" },
+                                { nick: "알바", content: "아뇨 현금 주세요. 님 카드 정지됐다면서요." },
+                                { nick: "시민R", content: "거지네 거지 ㅋㅋㅋ 왕자가 아니라 거지왕자였네." },
+                                { nick: "용산비서실", content: "해당 인물은 캠프와 관련 없습니다. 꼬리 자르기 시전." },
+                                { nick: "캠프직원", content: "저희도 월급 못 받았어요... 윤재훈 개새끼..." },
+                                { nick: "술톤주민우", content: "재훈아 돈 없냐? 형한테 말하지... 나도 없지만..." }
+                            ]
+                        },
+                        {
+                            nick: "웹툰작가", date: "2024-12-07 22:05",
+                            content: "차기작 소재 얻어갑니다. 제목: '2.2%의 황제와 도망친 300인'. 장르는 코믹 호러 스릴러. 빌런들이 너무 찌질해서 개그물 될 듯.",
+                            replies: [
+                                { nick: "독자", content: "대박 예감 ㅋㅋㅋ 쿠키 굽습니다." },
+                                { nick: "재훈왕자96", content: "내 허락 없이 그리면 고소한다!! 초상권 침해야!!" },
+                                { nick: "작가", content: "님 얼굴 안 써요. 똥파리로 그릴 거임." },
+                                { nick: "우신면", content: "내 얘기도 넣어줘! '지하철 파괴자'로! 멋있게 그려줘!" },
+                                { nick: "시민S", content: "우신면은 그냥 미친 굴착기 로봇으로 그려주세요." },
+                                { nick: "문화부", content: "검열 들어갑니다. 각하 모독은 용서 못 해." }
+                            ]
+                        },
+                        {
+                            nick: "지나가던개", date: "2024-12-07 22:10",
+                            content: "멍멍! (국회보다 우리 집 개집이 더 민주적이다)",
+                            replies: [
+                                { nick: "고양이", content: "야옹~ (인정. 인간들이 미쳤어)" },
+                                { nick: "재훈왕자96", content: "개새끼가 감히!! 보신탕 해먹어 버릴라!!" },
+                                { nick: "동물보호단체", content: "동물 학대 발언 캡처. 윤재훈 씨 끝이 없네요." },
+                                { nick: "시민T", content: "개가 짖어도 기차(8호선)는 간다. 개만도 못한 놈들아." },
+                                { nick: "술톤주민우", content: "개고기 안주 좋지~ 소주 가져와~" },
+                                { nick: "수의사", content: "동물들이 스트레스 받습니다. 조용히 좀 하세요." }
+                            ]
+                        },
+                        {
+                            nick: "법조인", date: "2024-12-07 22:15",
+                            content: "표결 불성립은 면죄부가 아닙니다. 오히려 국민의 심판을 피했다는 점에서 정치적 사형 선고나 다름없습니다. 2차 탄핵 때는 더 큰 증거들이 쏟아질 겁니다. 도망칠 곳은 감옥뿐입니다.",
+                            replies: [
+                                { nick: "용산법무팀", content: "법리적 해석이 틀렸습니다. 일사부재리 원칙에 따라 끝난 겁니다." },
+                                { nick: "법조인", content: "표결이 안 됐는데 무슨 일사부재리입니까? 로스쿨 다시 다녀오세요. 무식한 티 내지 말고." },
+                                { nick: "재훈왕자96", content: "변호사 나부랭이가!! 내가 대법원장 임명할 거야!! 다 옷 벗겨!!" },
+                                { nick: "시민U", content: "팩트로 뼈 때리시네. 용산 법무팀은 법전은 읽어봤냐?" },
+                                { nick: "판사출신", content: "부끄럽다 후배들아. 권력의 시녀 노릇 그만해라." },
+                                { nick: "검찰", content: "저희도 눈치 보고 있습니다... 줄 잘 서야 하는데..." }
+                            ]
+                        },
+                        {
+                            nick: "해커", date: "2024-12-07 22:20",
+                            content: "윤재훈, 우신면, 주민우 카톡방 털어볼까? 재밌는 거 많을 것 같은데. '시민들 사살해라', '8호선 폭파하자' 이런 거 나오면 빼박 내란죄인데.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "해킹은 불법이야!! 잡히면 사형이야!! 하지 마!! 제발!!" },
+                                { nick: "술톤주민우", content: "어? 내 폰 왜 이래? 갑자기 꺼지는데? 야 안 돼!! 내 야동!!" },
+                                { nick: "우신면", content: "내 비밀 지도... 평당동 땅굴 지도 유출되면 안 되는데!!" },
+                                { nick: "경찰사이버수사대", content: "해커님, 정의 구현은 좋지만 법은 지켜주세요. (근데 자료는 메일로 좀...)" },
+                                { nick: "시민V", content: "화이트 해커님 응원합니다. 판도라의 상자를 열어주세요." },
+                                { nick: "용산안보실", content: "국가 보안 사항 유출 시 간첩으로 간주. 경고한다." }
+                            ]
+                        },
+                        {
+                            nick: "무속인", date: "2024-12-07 22:25",
+                            content: "용산 쪽에 검은 기운이 가득하다. 원귀들이 울부짖고 있어. 2.2라는 숫자가 저주가 되어 돌아올 것이다. 굿을 해도 소용없다. 운이 다했다.",
+                            replies: [
+                                { nick: "천공의제자", content: "감히!! 내가 결계를 쳤다!! 잡귀야 물러가라!!" },
+                                { nick: "재훈왕자96", content: "무당 불러!! 굿판 벌여!! 돈은 국고에서 빼서 줄게!!" },
+                                { nick: "시민W", content: "세금으로 굿을 한다고? 진짜 미친 나라다." },
+                                { nick: "목사", content: "회개하라 천국이 가까이 왔다. 지옥불이 기다린다." },
+                                { nick: "스님", content: "나무아미타불... 업보는 피할 수 없습니다." },
+                                { nick: "과학자", content: "대한민국 2024년 맞냐? 샤머니즘 공화국이냐?" }
+                            ]
+                        },
+                        {
+                            nick: "중국집배달원", date: "2024-12-07 22:30",
+                            content: "국회 의원회관 배달 갔는데 짜장면 그릇에 다 남겨져 있더라. 얼마나 급하게 도망쳤으면 ㅋㅋㅋ 탕수육은 내가 먹고 싶더라. 세금 루팡들.",
+                            replies: [
+                                { nick: "여당의원(익명)", content: "체할 것 같아서 못 먹은 겁니다... 국민들 보기 부끄러워서..." },
+                                { nick: "용산정무라인", content: "의원님, 댓글 달지 마세요. IP 추적당합니다." },
+                                { nick: "시민X", content: "먹을 자격도 없다. 굶어라 그냥." },
+                                { nick: "재훈왕자96", content: "내가 다 먹을 거야!! 난 곱배기로 줘!! 단무지 많이!!" },
+                                { nick: "중국집사장", content: "윤재훈 주문 금지. 너네 캠프 외상값부터 갚아." },
+                                { nick: "술톤주민우", content: "빼갈 한 병만 서비스로 주쇼~" }
+                            ]
+                        },
+                        {
+                            nick: "간호사", date: "2024-12-07 22:35",
+                            content: "응급실에 화병으로 쓰러진 어르신들 계속 실려옵니다. TV 보다가 국회의원들 도망가는 거 보고 뒷목 잡으셨대요. 살인자 놈들아, 국민들 그만 좀 괴롭혀라.",
+                            replies: [
+                                { nick: "용산보건비서관", content: "개인의 건강 관리는 본인 책임입니다. 정부 탓하지 마세요." },
+                                { nick: "의사", content: "비서관님, 뇌 CT 한번 찍어봅시다. 전두엽에 문제 있는 것 같네요." },
+                                { nick: "시민Y", content: "정부가 병을 주고 있잖아!! 스트레스 유발자들!!" },
+                                { nick: "재훈왕자96", content: "약한 자는 도태되는 거야 ㅋㅋㅋ 난 건강해!! 비타민 주사 맞았거든!!" },
+                                { nick: "약사", content: "청산가리가 어디 있더라..." },
+                                { nick: "보호자", content: "우리 아버지 살려내라 이 나쁜 놈들아!!" }
+                            ]
+                        },
+                        {
+                            nick: "건설사직원", date: "2024-12-07 22:40",
+                            content: "우신면이 주장하는 8호선 지하 벙커? 설계도면 보면 알겠지만 거기 그냥 하수도관 지나갑니다. 똥물 흐른다고요. 거기 숨으면 질식해 죽습니다. 제발 억지 좀 그만.",
+                            replies: [
+                                { nick: "우신면", content: "하수도관으로 위장한 비밀 통로다!! 똥물 속에 김정은이 숨어있다!! 내가 잠수해서라도 잡아온다!!" },
+                                { nick: "재훈왕자96", content: "오!! 우신면 용감해!! 가서 똥물 마셔라!! 충성!!" },
+                                { nick: "시민Z", content: "똥물 속에 김정은 ㅋㅋㅋ 진짜 개그콘서트 망한 이유가 있었네." },
+                                { nick: "환경부", content: "하수도 무단 침입 시 과태료 부과합니다." },
+                                { nick: "8호선기관사", content: "제발 선로에 들어오지 마세요. 위험합니다." },
+                                { nick: "정신과의사", content: "분변 기호증 의심..." }
+                            ]
+                        },
+                        {
+                            nick: "최후의양심", date: "2024-12-07 22:45",
+                            content: "나는 여당 보좌관이다. 의원님이 도망가면서 '국민들 개돼지라 금방 잊을 거야'라고 하더라. 녹음했다. 내일 뉴스공장에 제보한다. 나도 잘릴 각오 했다.",
+                            replies: [
+                                { nick: "시민", content: "용기 있는 행동 감사합니다! 당신이 진정한 애국자입니다." },
+                                { nick: "용산민정실", content: "보안 서약 위반. 법적 대응하겠다. 인생 망치고 싶나?" },
+                                { nick: "재훈왕자96", content: "배신자!! 죽여버려!! 저놈 신상 털어!!" },
+                                { nick: "기자", content: "저한테 연락주세요. 특종입니다. 신변 보호해 드립니다." },
+                                { nick: "의원(익명)", content: "야!! 너 누구야!! 내 보좌관 아니지? 아닐 거야..." },
+                                { nick: "검찰", content: "증거 인멸하기 전에 압수수색해야 하는데... (눈치)" }
+                            ]
+                        },
+                        {
+                            nick: "대한민국", date: "2024-12-07 22:50",
+                            content: "어둠은 물러가고 새벽은 반드시 온다. 잠시 멈췄을 뿐, 우리는 멈추지 않는다. 내일 다시 촛불을 들자. 효빈에서 시작된 바람이 태풍이 되어 저들을 쓸어버릴 것이다.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "태풍은 무슨 ㅋㅋㅋ 촛불은 바람 불면 꺼진다!! 선풍기 틀어라!!" },
+                                { nick: "용산기상청", content: "내일 강풍 예보 발령하겠습니다. (조작)" },
+                                { nick: "시민", content: "LED 촛불 샀다 임마. 배터리 빵빵하다." },
+                                { nick: "박효빈시장", content: "효빈시는 시민 여러분과 끝까지 함께하겠습니다. 정의의 편에 서겠습니다." },
+                                { nick: "전국민", content: "가자!! 광화문으로!! 효빈광장으로!!" },
+                                { nick: "술톤주민우", content: "나도 촛불 하나 줘~ 라이터 없어서 담배를 못 피우네~" }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    commentData.forEach(cmt => {
+                        const div = document.createElement('div');
+                        // 빌런 목록 업데이트: 용산소통비서관, 용산국방비서관 추가
+                        const villains = ['재훈왕자96', '술톤주민우', '우신면', '용산대변인', '용산법무팀', '용산경호처', '용산안보실', '용산정무라인', '용산외교실', '용산과학수사대', '용산경제팀', '애국보수청년단', '자유수호', '멸공의횃불', '용산작전과', '용산지휘부', '천공의제자', '용산보건비서관', '용산비서실', '용산민정실', '용산기상청', '문화부', '의원(익명)', '여당의원(익명)', '용산소통비서관', '용산국방비서관'];
+                        const isVillain = villains.includes(cmt.nick);
+
+                        div.className = `comment-item ${isVillain ? 'troll' : ''}`;
+                        
+                        // 빌런이면 비공감 폭탄(수십만 단위), 일반인은 공감 폭탄(수만 단위)
+                        const likeCount = isVillain ? Math.floor(Math.random() * 10) : Math.floor(Math.random() * 80000) + 20000;
+                        const dislikeCount = isVillain ? Math.floor(Math.random() * 300000) + 50000 : Math.floor(Math.random() * 100);
+
+                        let repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:block;">`;
+                        cmt.replies.forEach(rp => {
+                            const rNick = rp.nick || '익명';
+                            const rContent = rp.content || '';
+                            const isRVillain = villains.includes(rNick);
+                            const rStyle = isRVillain ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;';
+                            
+                            // 대댓글 빌런 판독 및 비공감 처리
+                            const rLikeCount = isRVillain ? Math.floor(Math.random() * 5) : Math.floor(Math.random() * 5000);
+                            const rDislikeCount = isRVillain ? Math.floor(Math.random() * 20000) + 1000 : Math.floor(Math.random() * 10);
+                            
+                            repliesHtml += `
+                                <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0">
+                                    <div class="text-sm mb-1"><span class="font-bold" style="${rStyle}">└ ${rNick}</span>: ${rContent}</div>
+                                    <div class="text-xs text-gray-500 flex gap-2">
+                                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${rLikeCount}</span></span>
+                                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${rDislikeCount}</span></span>
+                                    </div>
+                                </div>`;
+                        });
+                        repliesHtml += `</div>`;
+
+                        div.innerHTML = `
+                            <div class="comment-nick">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date || '2024-12-07'}</span></div>
+                            <p class="comment-content">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${likeCount}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${dislikeCount}</span></span>
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active')) {
+                            count--;
+                            btn.classList.remove('active');
+                        } else {
+                            count++;
+                            btn.classList.add('active');
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="rank-news">
+                <div class="rank-title">실시간 속보 (종합)</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text text-[#d9534f] font-bold">탄핵안 폐기... 여당 의원 전원 퇴장 '보이콧'</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text">윤 대통령 직무 복귀... "국정 공백 없어 다행"</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text">시민들 국회 앞 집결... "비겁한 도망자들" 규탄</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text">야당 "2차 탄핵 즉각 추진... 임시국회 소집"</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text">효빈 시민들 "8호선 음모론 사과하라" 시위 격화</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text">외신 "한국 민주주의의 후퇴... 국회가 기능 마비"</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-red-50 p-4 border border-red-100 text-center">
+                <div class="font-bold text-[#d9534f] mb-2">긴급 공지</div>
+                <div class="text-sm text-gray-600 mb-3">내일 오후 2시 효빈광장<br>범국민 규탄 촛불 집회</div>
+                <button class="bg-[#d9534f] text-white text-xs px-3 py-2 rounded">참여 안내 보기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <div class="flex gap-4 mb-4">
+                <a href="회사소개.html" class="hover:text-white">회사소개</a>
+                <a href="구독신청.html" class="hover:text-white">구독신청</a>
+                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
+                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
+                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
+            </div>
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
+            <p>주소: 효빈광역시 북구 중수동 123 </p>
+            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

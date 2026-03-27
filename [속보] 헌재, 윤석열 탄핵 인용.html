@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 헌재, 윤석열 탄핵 인용... 재판관 8인 전원 일치 "헌법 수호 의지 없어" 파면 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #0055aa; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+
+        .breaking-badge { background-color: #0055aa; color: white; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+        
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content">
+            <div class="text-[#0055aa] font-bold text-sm mb-2">정치 > 탄핵</div>
+            <h1 class="article-title"><span class="breaking-badge">속보</span>헌재, 윤석열 탄핵 인용... 재판관 8인 전원 일치 "헌법 수호 의지 없어" 파면</h1>
+            <div class="article-subtitle">
+                2025년 4월 4일 오전 11시, 헌법재판소 선고... 헌정사상 두 번째 대통령 파면<br>
+                "비상계엄 선포는 내란 행위, 8호선 관련 허위 주장은 국가 혼란 초래"<br>
+                효빈 시민들 "정의는 승리했다"... 윤재훈 등 친윤계 "헌재가 미쳤다" 난동 부려
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2025.04.04 11:20 | 수정 2025.04.04 12:00</span>
+                <span>정치부 이덕북 기자 (politics@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="이미지/헌재탄핵인용.png" alt="헌법재판소 대심판정에서 재판관들이 주문을 낭독하며 대통령 파면을 선고하는 모습" onerror="this.src='https://via.placeholder.com/600x400?text=Impeachment+Upheld'">
+                    <div class="img-caption">▲ 4일 오전, 헌법재판소가 재판관 8인 전원 일치 의견으로 윤석열 대통령 파면을 선고했다.</div>
+                </div>
+
+                <p>
+                    <span class="text-[#0055aa] font-bold">"피청구인 대통령 윤석열을 파면한다."</span>
+                </p>
+                <p>
+                    2025년 4월 4일, 대한민국의 봄은 '탄핵'과 함께 왔다. 헌법재판소는 이날 오전 11시 대심판정에서 열린 윤석열 대통령 탄핵 심판 선고기일에서 재판관 8인 전원 일치 의견으로 탄핵 소추안을 인용했다.
+                </p>
+                <p>
+                    헌재는 결정문에서 "피청구인의 비상계엄 선포는 헌법과 법률을 위배한 것으로, 국민의 기본권을 침해하고 헌정 질서를 파괴한 중대한 범죄 행위"라고 명시했다. 또한, "효빈 <strong style="color:#9856FF">8호선</strong> 고가 철도를 전파 교란 기지로 매도하며 허위 사실을 유포하고, 이를 명분으로 군 병력을 투입한 것은 국가 지도자로서의 자격을 상실한 것"이라고 질타했다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#0055aa] pl-3">자연인 된 윤석열, 재수감 초읽기... 친윤계 '멘붕'</h3>
+                <p>
+                    파면 선고와 동시에 윤석열 씨는 대통령직을 상실하고 자연인 신분으로 돌아갔으며, '불소추 특권'이 사라져 내란 혐의 등에 대한 본격적인 수사를 받게 된다. 지난 3월 구속 적부심으로 풀려난 지 한 달 만에 재수감이 유력시된다.
+                </p>
+                <p>
+                    헌재 앞은 축제와 아비규환이 공존했다. 시민들은 "대한민국 만세"를 외치며 환호했으나, 윤재훈, 주민우 등 친윤계 인사들은 "헌법재판소가 북한에 점령당했다", "재판관들을 처단하라"며 난동을 부리다 경찰에 제지당했다. 우신면 전 의원은 "8호선 전파가 헌재를 조종했다"며 알루미늄 호일을 뒤집어쓰고 통곡하는 촌극을 빚었다.
+                </p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#d9534f] text-sm font-normal ml-2">실시간 전쟁터</span> <span class="text-xs text-gray-400">총 35,402,118개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="역사적인 날입니다. 의견을 남겨주세요."></textarea>
+                    <button class="cmt-btn" onclick="alert('로그인이 필요합니다.')">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list"></div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기</button>
+                </div>
+                
+                <script>
+                    const commentData = [
+                        {
+                            nick: "재훈왕자96", date: "2025-04-04 11:25",
+                            content: "이건 무효야!!! 헌법재판소가 빨갱이 소굴이었어!! 8대 0이 말이 되냐?! 8호선에서 쏜 전파가 재판관들 뇌를 해킹한 거라고!! 내가 다 봤어!! 각하를 지켜야 돼!! 폭동 일으키자!! 효빈시청으로 진격해!! 다 불질러버려!!",
+                            replies: [
+                                { nick: "용산탈출지능순", content: "재훈아 뇌 해킹은 니가 당한 거 같다. 8대 0이면 보수 성향 재판관도 다 찬성했다는 거야. 니네 각하가 얼마나 노답이었으면 그러겠냐. 감옥 갈 준비나 해라." },
+                                { nick: "시민A", content: "폭동? 내란 선동죄 추가요 ㅋㅋㅋ 넌 이제 윤석열이랑 같이 콩밥 먹는 일만 남았다. 잘 가라 멀리 안 나간다." },
+                                { nick: "재훈왕자96", content: "닥쳐!! 난 왕족이야!! 헌재 불지르고 새로 나라 세울 거야!!" },
+                                { nick: "소방관", content: "방화 예비 음모. 캡처해서 경찰 넘깁니다. 콩밥 맛있게 드세요." },
+                                { nick: "창전동소금명인", content: "불지르러 오기만 해봐라. 소금물에 절여서 젓갈을 담가버릴라니까." },
+                                { nick: "정신병원", content: "보호자분, 입원비 입금 안 됐습니다. 환자 데려가세요." }
+                            ]
+                        },
+                        {
+                            nick: "술톤주민우", date: "2025-04-04 11:28",
+                            content: "하... 인생 끝났네... 각하 믿고 룸살롱에 10억 달아놨는데... 이제 누가 갚아주냐... 지귀연 형님도 연락 두절이고... 재훈아 니가 갚아라... 난 필리핀으로 튄다... 찾지 마라...",
+                            replies: [
+                                { nick: "경찰청", content: "주민우 씨, 출국 금지 상태입니다. 공항 오시면 바로 수갑 채워드립니다. 인천공항 잠복 중 ^^" },
+                                { nick: "재훈왕자96", content: "야 이 배신자야!! 돈 내놔!! 니가 마신 양주가 몇 병인데!!" },
+                                { nick: "룸마담", content: "주민우, 윤재훈 둘 다 잡아와. 내 돈 내놔. 안 주면 장부 검찰에 넘긴다." },
+                                { nick: "시민B", content: "지귀연 판사도 옷 벗겠네 ㅋㅋㅋ 줄줄이 사탕으로 감옥 가자." },
+                                { nick: "효빈세무서", content: "주민우 씨, 탈세 혐의 조사 들어갑니다. 감옥 가기 전에 세금부터 내세요." },
+                                { nick: "간호사", content: "술 그만 드시고 간 검사받으세요. 간경화 말기입니다." }
+                            ]
+                        },
+                        {
+                            nick: "우신면", date: "2025-04-04 11:32",
+                            content: "헌재 판결문은 가짜야!! <span style='color:#9856FF'>8호선</span> 지하 벙커에서 김정은이 쓴 거라고!! 내가 도청했어!! 대한민국은 끝났다!! 다들 알루미늄 호일 모자 써라!! 뇌파 공격 막아야 산다!!",
+                            replies: [
+                                { nick: "8호선기관사", content: "아저씨... 오늘 탄핵 기념으로 승객들한테 꽃 나눠주고 있어요. 제발 분위기 좀 깨지 마세요. 지하 벙커 없다고요 몇 번을 말해요." },
+                                { nick: "공학박사", content: "알루미늄 호일 쓰면 전파 증폭돼서 뇌 더 잘 익어요. 바보 인증하시네." },
+                                { nick: "우신면", content: "너도 간첩이지?! 8호선 폭파 특공대 모집한다!! 지원자 선착순!!" },
+                                { nick: "지원자(0명)", content: "..." },
+                                { nick: "시민C", content: "지원자가 없어서 모집 실패 ㅋㅋㅋ 혼자 가다 잡혀라." },
+                                { nick: "건설사", content: "우신면 씨, 허위 사실 유포 및 영업 방해로 손해배상 100억 청구합니다." }
+                            ]
+                        },
+                        {
+                            nick: "용산대변인", date: "2025-04-04 11:35",
+                            content: "헌법재판소의 정치적 판결에 깊은 유감을 표합니다. 진실은 법정이 아닌 역사에서 밝혀질 것입니다. 각하는 영원한 우리의 대통령이십니다. (짐 싸는 중)",
+                            replies: [
+                                { nick: "팩트폭격기", content: "영원한 대통령? ㅋㅋㅋ 파면돼서 '전직' 예우도 못 받아. 연금도 없고 경호도 축소야. 너도 이제 백수네? 축하한다." },
+                                { nick: "용산탈출지능순", content: "짐 싸는 거 생중계 좀 해줘라 ㅋㅋㅋ 청와대 비품 훔쳐가지 말고 다 두고 나가라." },
+                                { nick: "재훈왕자96", content: "대변인님!! 포기하지 마세요!! 우리가 쿠데타... 아니 혁명 일으킵시다!!" },
+                                { nick: "국군기무사령부", content: "쿠데타 모의? 내란 음모죄 추가. 캡처 완료." },
+                                { nick: "시민D", content: "유감은 니가 감옥 가서 느껴라. 국민들은 축제다." },
+                                { nick: "기자", content: "대변인님, 지귀연 판사 접대 의혹 수사받으셔야죠. 어디 가십니까?" }
+                            ]
+                        },
+                        {
+                            nick: "애국보수청년단", date: "2025-04-04 11:40",
+                            content: "나라가 망했다! 적화통일 1초 전이다! 우리는 산으로 들어간다! 빨치산이 되어 끝까지 투쟁한다! 박효빈을 암살하고 헌재 재판관들 목을 쳐라!",
+                            replies: [
+                                { nick: "예비군", content: "빨치산 ㅋㅋㅋ 니들이 진짜 빨갱이네. 산에 가서 고사리나 캐라. 내려오면 바로 신고한다." },
+                                { nick: "경찰", content: "살인 예고 및 내란 선동. 전원 검거령 내렸습니다. 산 입구 봉쇄합니다." },
+                                { nick: "자유수호", content: "야... 나 배고파서 못 가겠어... 엄마가 밥 먹으러 오래... 탈퇴할게..." },
+                                { nick: "시민E", content: "엄마 밥이 최고지. 정신 차리고 효도해라." },
+                                { nick: "등산객", content: "산에서 담배 피우다 걸리면 뒤진다. 자연보호 해라." },
+                                { nick: "효빈시민", content: "암살? ㅋㅋㅋ 니들 깡으로 뭘 하겠냐. 키보드 워리어들." }
+                            ]
+                        },
+                        {
+                            nick: "천공의제자", date: "2025-04-04 11:45",
+                            content: "하늘이 노했다. 4월에 눈이 내릴 것이다. 용산의 기운이 꺾였으니 이제 대재앙이 닥친다. 부적을 써야 산다. 장당 100만 원.",
+                            replies: [
+                                { nick: "기상청", content: "내일 날씨 매우 맑음입니다. 벚꽃 구경 가기 딱 좋네요 ^^" },
+                                { nick: "재훈왕자96", content: "도사님 저 부적 100장 주세요!! 외상으로!!" },
+                                { nick: "시민F", content: "이 와중에 장사하냐? ㅋㅋㅋ 사기꾼 새끼들. 세무조사 받아라." },
+                                { nick: "목사", content: "사탄의 무리들아 물러가라." },
+                                { nick: "스님", content: "업보를 어찌 감당하려 하는가." },
+                                { nick: "과학자", content: "21세기에 주술 정치라니... 쪽팔려서 원." }
+                            ]
+                        },
+                        {
+                            nick: "효빈지킴이", date: "2025-04-04 11:50",
+                            content: "눈물이 멈추지 않습니다. 우리가 해냈습니다. 박효빈 시장님, 그리고 추운 겨울 광장을 지킨 시민 여러분 모두 고생하셨습니다. 정의는 반드시 승리합니다.",
+                            replies: [
+                                { nick: "박효빈시장", content: "위대한 시민 여러분, 감사합니다. 오늘 우리는 헌법과 민주주의를 지켜냈습니다. 이제 통합과 치유의 길로 나아갑시다." },
+                                { nick: "지지자", content: "시장님 사랑해요 ㅠㅠ 오늘 저녁은 파티입니다!" },
+                                { nick: "우신면", content: "통합은 개뿔!! 너 때문에 내 땅값 떨어졌어!! 물어내!!" },
+                                { nick: "시민G", content: "우신면 넌 좀 닥쳐. 분위기 파악 못 하냐?" },
+                                { nick: "안천동김씨", content: "오늘 안천동 전체 회식합니다. 다들 오세요!" },
+                                { nick: "대한민국", content: "자랑스러운 대한민국 국민입니다." }
+                            ]
+                        },
+                        {
+                            nick: "해외교포A", date: "2025-04-04 11:55",
+                            content: "CNN, BBC 다 톱뉴스임. 'South Korea Removes President'. 한국의 민주주의 시스템이 작동했다는 찬사 쏟아짐. 근데 윤재훈이 헌재 앞에서 똥물 뿌리다 잡혀가는 사진도 같이 나옴 ㅋㅋㅋ 국제 망신.",
+                            replies: [
+                                { nick: "유학생", content: "아 쪽팔려 ㅋㅋㅋ 윤재훈 저거 진짜 왜 저러냐. 코리안 조커라고 소문남." },
+                                { nick: "재훈왕자96", content: "내가 조커다!! 세상을 불태울 거야!! 배트맨 나와!!" },
+                                { nick: "시민H", content: "배트맨은 없고 경찰맨이 왔다. 수갑 차자." },
+                                { nick: "미국인", content: "Korea is amazing. People power!" },
+                                { nick: "번역가", content: "한국 대단하다. 국민의 힘(The power of people, 정당 아님)!" },
+                                { nick: "용산외교실", content: "외신 보도 통제... 아 이제 권한 없네..." }
+                            ]
+                        },
+                        {
+                            nick: "8호선기관사", date: "2025-04-04 12:00",
+                            content: "탄핵 선고 순간 열차 내 모든 승객이 박수 치고 환호했습니다. <span style='color:#9856FF'>8호선</span>은 이제 '승리의 열차'입니다. 오늘 하루 기분 좋게 운전하겠습니다. 우신면 씨는 타지 마세요.",
+                            replies: [
+                                { nick: "승객", content: "기관사님 방송 센스 굿! '이제 독재 역을 지나 민주주의 역으로 갑니다' 하셨을 때 빵 터짐 ㅋㅋㅋ" },
+                                { nick: "우신면", content: "그 열차는 지옥행이야!! 다 떨어져 죽어라!! 저주할 거야!!" },
+                                { nick: "시민I", content: "우신면 저거 진짜 지치지도 않네. 저 정도면 8호선 홍보대사 아님?" },
+                                { nick: "철도공사", content: "우신면 씨, 업무방해 및 모욕죄로 고소장 접수했습니다." },
+                                { nick: "효빈맘", content: "아이랑 8호선 타고 시내 구경 가요. 안전하게 태워주세요~" }
+                            ]
+                        },
+                        {
+                            nick: "판사출신변호사", date: "2025-04-04 12:05",
+                            content: "8대 0 전원 일치. 이건 보수, 진보의 문제가 아니라 상식의 문제입니다. 지귀연 판사가 구속 취소해줬던 게 얼마나 말이 안 되는지 증명된 거죠. 지귀연도 수사받아야 합니다.",
+                            replies: [
+                                { nick: "지귀연판사팬클럽", content: "우리 판사님 욕하지 마세요! 헌재 재판관들이 다 빨갱이라 그래요!!" },
+                                { nick: "법대생", content: "보수 성향 재판관도 찬성했다니까? 글 좀 읽어라." },
+                                { nick: "시민J", content: "지귀연은 옷 벗고 감방 가야지. 룸살롱 판결의 대가다." },
+                                { nick: "재훈왕자96", content: "지 판사님 지켜야 돼!! 내가 변호사비 낼게!! (잔고 0원)" },
+                                { nick: "검찰", content: "지귀연 판사 뇌물 수수 혐의 내사 착수했습니다." }
+                            ]
+                        },
+                        {
+                            nick: "가상화폐투자자", date: "2025-04-04 12:10",
+                            content: "탄핵 인용되자마자 코인 떡상 ㅋㅋㅋ 한국 리스크 해소!! 윤석열 내려오니까 경제가 산다. 오늘 수익률 100% 찍음. 갓효빈 만세!!",
+                            replies: [
+                                { nick: "용산경제팀", content: "..." },
+                                { nick: "개미", content: "나도 양전했다 ㅠㅠ 오늘 소고기 먹는다!!" },
+                                { nick: "우신면", content: "가상화폐는 사기야!! 땅을 사!! 내 땅값 올려줘!!" },
+                                { nick: "재훈왕자96", content: "거지들아 돈 좀 줘... 나 국밥 사 먹게..." },
+                                { nick: "시민K", content: "재훈아 넌 감옥 가서 콩밥 먹어. 공짜야." },
+                                { nick: "경제학자", content: "정치적 불확실성 해소가 시장에 긍정적 신호를 줬습니다." }
+                            ]
+                        },
+                        {
+                            nick: "웹툰작가", date: "2025-04-04 12:15",
+                            content: "웹툰 '2.2%의 황제' 완결 냈습니다. 마지막 화: 황제가 헌재 앞에서 쫓겨나고 감옥 가는 엔딩. 독자님들 그동안 사랑해주셔서 감사합니다. 차기작은 '슬기로운 감빵생활: 윤재훈&주민우 편'입니다.",
+                            replies: [
+                                { nick: "독자", content: "작가님 작두 타셨네 ㅋㅋㅋ 현실이랑 똑같아." },
+                                { nick: "재훈왕자96", content: "내 로열티 내놔!! 내 얘기잖아!!" },
+                                { nick: "술톤주민우", content: "나도 나오냐? 술 마시는 장면 좀 넣어줘..." },
+                                { nick: "작가", content: "주민우는 화장실 청소하다 변기 막혀서 우는 역할임." },
+                                { nick: "시민L", content: "쿠키 100개 쏩니다. 꼭 그려주세요." }
+                            ]
+                        },
+                        {
+                            nick: "안천동김씨", date: "2025-04-04 12:20",
+                            content: "안천동 트럭 부대, 헌재 앞에서 만세 삼창하고 효빈시로 복귀합니다. 올라올 때는 분노였지만 내려갈 때는 기쁨입니다. 운전 조심해서 가겠습니다.",
+                            replies: [
+                                { nick: "예비군", content: "고생하셨습니다 형님들. 효빈시청 앞에서 막걸리 한잔하시죠." },
+                                { nick: "경찰", content: "안전운전하세요. (오늘만 봐드립니다)" },
+                                { nick: "재훈왕자96", content: "내려오다 사고 나라!! 다 뒤집어져라!!" },
+                                { nick: "시민M", content: "악담하는 꼬라지 봐라. 넌 입만 열면 죄가 쌓이네." },
+                                { nick: "트럭기사", content: "재훈아 우린 무사고 20년이다. 너나 조심해라." }
+                            ]
+                        },
+                        {
+                            nick: "택시기사", date: "2025-04-04 12:25",
+                            content: "오늘 택시비 무료 이벤트 합니다. 기분이 너무 좋아서 돈 안 받습니다. 효빈시내 한 바퀴 도시죠! 대한민국 만세!",
+                            replies: [
+                                { nick: "손님", content: "기사님 멋쟁이! 팁이라도 드릴게요!" },
+                                { nick: "재훈왕자96", content: "나 태워줘!! 공짜면 나도 타자!!" },
+                                { nick: "기사", content: "윤재훈은 승차 거부. 넌 걸어서 감옥까지 가라." },
+                                { nick: "술톤주민우", content: "아저씨... 저도 좀... 다리가 아파서..." },
+                                { nick: "시민N", content: "거지 형제들 ㅋㅋㅋ 걸어 다녀라 운동 좀 하게." }
+                            ]
+                        },
+                        {
+                            nick: "편의점알바", date: "2025-04-04 12:30",
+                            content: "윤재훈 잡혀갔다는 뉴스에 편의점 사장님이 골든벨 울림. 들어오는 손님마다 음료수 공짜로 줌 ㅋㅋㅋ '앓던 이가 빠졌다'면서. 정의 구현 나이스.",
+                            replies: [
+                                { nick: "시민O", content: "어디 편의점이에요? 돈쭐 내러 갑니다." },
+                                { nick: "재훈왕자96", content: "내 외상장부 불태워!! 증거 인멸해!!" },
+                                { nick: "경찰", content: "증거 인멸 교사 또 추가. 형량 적립 중." },
+                                { nick: "사장님", content: "장부 복사해서 액자에 걸어놨다. 평생 박제다." },
+                                { nick: "알바", content: "윤재훈 씨, 이제 콩밥 드실 시간이에요." }
+                            ]
+                        },
+                        {
+                            nick: "전직군인", date: "2025-04-04 12:35",
+                            content: "군이 국민을 향해 총부리를 겨누지 않게 되어 다행입니다. 내란에 가담했던 정치 군인들은 싹 다 옷 벗겨야 합니다. 군의 명예를 더럽힌 죄, 엄벌해야 합니다.",
+                            replies: [
+                                { nick: "용산국방비서관", content: "..." },
+                                { nick: "현역장교", content: "선배님 말씀 명심하겠습니다. 국민의 군대로 남겠습니다." },
+                                { nick: "재훈왕자96", content: "군인 놈들이 빠져가지고!! 쿠데타 일으키라니까!!" },
+                                { nick: "예비군", content: "미친놈아 군대가 니 사병이냐? 넌 군대도 안 간 게." },
+                                { nick: "시민P", content: "참군인들 존경합니다. 정치 군인들은 감옥으로." }
+                            ]
+                        },
+                        {
+                            nick: "부서원", date: "2025-04-04 12:40",
+                            content: "사필귀정입니다. 헌재의 결정을 존중합니다. 보수는 죽지 않았습니다. 헌법을 파괴한 가짜 보수들이 죽었을 뿐입니다. 다시 시작하겠습니다. 건강한 보수를 위해.",
+                            replies: [
+                                { nick: "시민Q", content: "부서원 님 응원합니다. 탈당하신 게 신의 한 수였네요." },
+                                { nick: "재훈왕자96", content: "배신자!! 니가 보수냐!! 좌파 쁘락치지!!" },
+                                { nick: "부서원캠프", content: "윤재훈 씨, 보수 참칭하지 마세요. 당신은 그냥 범죄자입니다." },
+                                { nick: "중도층", content: "이런 분들이 보수의 중심이 되어야 합니다." },
+                                { nick: "용산정무라인", content: "(탈당 문의 폭주 중)" }
+                            ]
+                        },
+                        {
+                            nick: "효빈맘", date: "2025-04-04 12:45",
+                            content: "아이에게 설명해 줬어요. 나쁜 대통령은 벌받고 쫓겨나는 거라고. 아이가 '우리나라 좋은 나라네' 하고 웃네요. 아이들에게 부끄럽지 않은 나라 물려줍시다.",
+                            replies: [
+                                { nick: "애국보수청년단", content: "애새끼한테 거짓말 가르치지 마라!! 대통령님은 억울하다!!" },
+                                { nick: "시민R", content: "니들이 거짓말쟁이지. 애들한테 부끄러운 줄 알아라." },
+                                { nick: "교육부", content: "민주 시민 교육의 좋은 사례입니다." },
+                                { nick: "재훈왕자96", content: "세뇌 교육이야!! 전교조 물러가라!!" },
+                                { nick: "다른맘", content: "저도요! 오늘 저녁은 파티입니다!" }
+                            ]
+                        },
+                        {
+                            nick: "법대생", date: "2025-04-04 12:50",
+                            content: "8대 0. 헌법재판관 전원 일치. 더 이상 논란의 여지가 없습니다. 법치주의의 승리입니다. 이제 내란 수괴 윤석열에 대한 형사 재판만 남았습니다. 법정 최고형 기대합니다.",
+                            replies: [
+                                { nick: "판사출신", content: "내란 수괴는 사형 또는 무기징역입니다. 빠져나갈 구멍 없어요." },
+                                { nick: "용산법무팀", content: "변호인단 구성 중입니다... (아무도 안 하려고 함)" },
+                                { nick: "재훈왕자96", content: "내가 변호할 거야!! 나 법 많이 알아!! (법알못)" },
+                                { nick: "시민S", content: "니가 변호하면 사형 확정이겠다 ㅋㅋㅋ 제발 니가 해라." }
+                            ]
+                        },
+                        {
+                            nick: "대한민국", date: "2025-04-04 13:00",
+                            content: "봄이 왔습니다. 길고 긴 겨울을 이겨낸 국민 여러분, 존경합니다. 우리는 다시 일어설 것입니다. 대한민국은 민주공화국입니다.",
+                            replies: [
+                                { nick: "시민T", content: "대한민국 만세! 민주주의 만세!" },
+                                { nick: "박효빈시장", content: "효빈시가 앞장서겠습니다. 새로운 시대를 엽시다." },
+                                { nick: "빌런들", content: "(단체로) 으아아아악!!!! 망했다!!!!" },
+                                { nick: "국민", content: "꺼져라. 멀리 안 나간다. 잘 가." }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    commentData.forEach(cmt => {
+                        const div = document.createElement('div');
+                        // '효빈세무서' 제외
+                        const villains = ['재훈왕자96', '술톤주민우', '우신면', '용산대변인', '용산법무팀', '용산경호처', '용산안보실', '용산정무라인', '용산외교실', '용산과학수사대', '용산경제팀', '애국보수청년단', '자유수호', '멸공의횃불', '용산작전과', '용산지휘부', '천공의제자', '용산보건비서관', '용산비서실', '용산민정실', '용산기상청', '문화부', '의원(익명)', '여당의원(익명)', '용산소통비서관', '용산국방비서관', '용산위생과', '용산정무수석', '재훈왕자96(유치장)', '지귀연판사팬클럽', '지귀연', '국군기무사령부'];
+                        const isVillain = villains.includes(cmt.nick);
+
+                        div.className = `comment-item ${isVillain ? 'troll' : ''}`;
+                        
+                        // 빌런이면 비공감 폭탄(수십만 단위), 일반인은 공감 폭탄(수만 단위)
+                        const likeCount = isVillain ? Math.floor(Math.random() * 5) : Math.floor(Math.random() * 100000) + 30000;
+                        const dislikeCount = isVillain ? Math.floor(Math.random() * 800000) + 200000 : Math.floor(Math.random() * 50);
+
+                        let repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:block;">`;
+                        cmt.replies.forEach(rp => {
+                            const rNick = rp.nick || '익명';
+                            const rContent = rp.content || '';
+                            const isRVillain = villains.includes(rNick);
+                            const rStyle = isRVillain ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;';
+                            
+                            const rLikeCount = isRVillain ? Math.floor(Math.random() * 3) : Math.floor(Math.random() * 5000);
+                            const rDislikeCount = isRVillain ? Math.floor(Math.random() * 30000) + 1000 : Math.floor(Math.random() * 10);
+                            
+                            repliesHtml += `
+                                <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0">
+                                    <div class="text-sm mb-1"><span class="font-bold" style="${rStyle}">└ ${rNick}</span>: ${rContent}</div>
+                                    <div class="text-xs text-gray-500 flex gap-2">
+                                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${rLikeCount}</span></span>
+                                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${rDislikeCount}</span></span>
+                                    </div>
+                                </div>`;
+                        });
+                        repliesHtml += `</div>`;
+
+                        div.innerHTML = `
+                            <div class="comment-nick">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date || '2025-04-04'}</span></div>
+                            <p class="comment-content">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${likeCount}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${dislikeCount}</span></span>
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active')) {
+                            count--;
+                            btn.classList.remove('active');
+                        } else {
+                            count++;
+                            btn.classList.add('active');
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="rank-news">
+                <div class="rank-title">오늘의 주요 뉴스</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text text-[#0055aa] font-bold">헌재 "윤석열 파면"... 재판관 8:0 전원 일치</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text">윤석열 자연인 신분으로... 검찰, 재수감 영장 청구</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text">박효빈 시장 "위대한 시민의 승리... 정의 실현"</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text">윤재훈 등 친윤계 "헌재가 미쳤다" 헌재 앞 난동</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text">8호선 지하 벙커설 허위 판명... 우신면 망신살</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text">전국 곳곳 축제 분위기... "민주주의의 봄이 왔다"</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-blue-50 p-4 border border-blue-100 text-center">
+                <div class="font-bold text-[#0055aa] mb-2">효빈일보 호외</div>
+                <div class="text-sm text-gray-600 mb-3">어둠은 빛을 이길 수 없다<br>대한민국은 민주공화국이다</div>
+                <button class="bg-[#0055aa] text-white text-xs px-3 py-2 rounded">호외 PDF 보기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <div class="flex gap-4 mb-4">
+                <a href="회사소개.html" class="hover:text-white">회사소개</a>
+                <a href="구독신청.html" class="hover:text-white">구독신청</a>
+                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
+                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
+                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
+            </div>
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
+            <p>주소: 효빈광역시 북구 중수동 123 </p>
+            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            <div class="hidden">
+                <img src="이미지/지하철1호선.png" style="color:#0077DD">
+                <img src="이미지/지하철2호선.png" style="color:#00CCAA">
+                <img src="이미지/지하철3호선.png" style="color:#FFCC11">
+                <img src="이미지/지하철4호선.png" style="color:#FF5522">
+                <img src="이미지/지하철5호선.png" style="color:#EE0022">
+                <img src="이미지/지하철6호선.png" style="color:#881188">
+                <img src="이미지/지하철7호선.png" style="color:#FF8899">
+                <img src="이미지/지하철8호선.png" style="color:#9856FF">
+                <img src="이미지/빈효선광역전철.png" style="color:#6677CC">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

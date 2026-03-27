@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[아카이브] 2007.01.21 "하얀 가운 위로 흐른 피"... 시청 광장 '피의 토요일' 기록 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f2f2f2; color: #222; }
+        
+        .archive-top-bar { background: #000; color: #ff4444; padding: 10px 0; font-size: 13px; text-align: center; font-weight: bold; letter-spacing: 1px; }
+        
+        .news-header { border-bottom: 3px solid #333; background: white; padding: 25px 0; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 15px; text-decoration: none; }
+
+        .article-container { max-width: 1000px; margin: 30px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 50px; border: 1px solid #ccc; position: relative; }
+        
+        .main-content::before {
+            content: "CONFIDENTIAL 2007";
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-size: 20px;
+            font-weight: 900;
+            color: #f0f0f0;
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+
+        .article-title { font-size: 34px; font-weight: 900; line-height: 1.3; color: #000; margin-bottom: 20px; font-family: 'Nanum Myeongjo', serif; letter-spacing: -2px; }
+        .article-subtitle { font-size: 19px; color: #cc0000; margin-bottom: 30px; border-left: 5px solid #cc0000; padding-left: 15px; font-weight: 800; line-height: 1.5; }
+        .article-info { font-size: 14px; color: #666; border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-bottom: 35px; }
+        
+        .article-body { font-size: 19px; line-height: 2.2; color: #111; font-family: 'Nanum Myeongjo', serif; text-align: justify; } 
+        .article-body strong { font-weight: 800; color: #cc0000; }
+        .article-body p { margin-bottom: 30px; }
+        
+        .img-box { margin: 40px 0; border: 1px solid #eee; padding: 5px; }
+        .img-caption { font-size: 14px; color: #444; margin-top: 12px; text-align: center; background: #f5f5f5; padding: 12px; border-top: 1px solid #ddd; font-style: italic; }
+
+        .comment-section { margin-top: 70px; border-top: 4px solid #000; padding-top: 30px; }
+        .comment-header { font-weight: 900; font-size: 22px; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
+        
+        .comment-item { padding: 25px 0; border-bottom: 1px solid #ddd; }
+        .best-comment { background: #fff1f1; border: 1px solid #ffa3a3; padding: 25px; margin-bottom: 20px; border-radius: 2px; }
+        .yoon-comment { background: #f8f8f8; border: 2px solid #333; padding: 25px; margin-bottom: 20px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 20px; font-size: 13px; color: #444; border: 1px solid #bbb; padding: 5px 12px; background: #fff; transition: all 0.2s; }
+        .vote-btn:hover { background: #eee; }
+        .vote-btn.active-up { color: #0077DD; font-weight: bold; border-color: #0077DD; background: #f0f7ff; }
+        .vote-btn.active-down { color: #cc0000; font-weight: bold; border-color: #cc0000; background: #fff0f0; }
+
+        .reply-container { margin-top: 20px; padding-left: 25px; border-left: 4px solid #eee; }
+        .reply-item { margin-bottom: 15px; font-size: 15px; background: #fcfcfc; padding: 15px; border-radius: 4px; border: 1px solid #e5e5e5; }
+        
+        .side-content { flex: 1; }
+        .archive-card { background: white; border: 1px solid #ccc; padding: 25px; margin-bottom: 25px; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); }
+        .archive-card-title { font-weight: 900; border-bottom: 3px solid #000; padding-bottom: 10px; margin-bottom: 20px; font-size: 17px; }
+        .archive-list li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px; color: #444; }
+    </style>
+</head>
+<body>
+
+    <div class="archive-top-bar">
+        ATTENTION: 본 내용은 2007년 1월 20일 발생한 효빈시 유혈 진압 참사 기록입니다.
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container px-6">
+        <div class="main-content">
+            <div id="article-content-area">
+                <div class="mb-4 text-[#cc0000] font-black">현장기록 > 유혈 참사 [긴급]</div>
+                <h2 class="article-title">하얀 가운과 피 묻은 아스팔트... 시청 광장 '용역 쇠파이프' 난입에 아수라장</h2>
+                <div class="article-subtitle">경찰 기동대, 길 터주자 갈색 조끼 용역 300명 난입... 의료진·유가족 무차별 구타<br>윤대환 시장 "구급차 막힌 것도 시위대 탓" 언론 조작 지시 정황</div>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">최진실 기자</span> (truth@hyobinilbo.com)<br>
+                        입력 2007.01.21. 09:00 | 수정 2007.01.21. 11:45
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p>[효빈일보 = 최진실 기자] 20일 오후 2시, 효빈시청 앞 광장은 비명과 사이렌 소리, 그리고 둔탁한 타격음이 뒤섞인 생지옥으로 변했다. <a href="효빈의료원.html" class="text-blue-600 underline">효빈의료원</a> 민영화에 반대하며 평화적인 집회를 열던 의사, 간호사, 그리고 <a href="빨간색5호선.html" class="text-red-600 font-bold">5호선(빨간색)</a> 중단 피해 노동자 가족들을 향해 정체불명의 용역 무리가 쇠파이프를 휘둘렀다.</p>
+
+                    <div class="img-box">
+                        <img src="시청광장_유혈진압.png" alt="시청광장_용역난입.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/4d3a2b/ffffff?text=Bloody+Saturday+at+City+Hall'">
+                        <div class="img-caption">▲ 20일 오후, 시청 광장에서 갈색 조끼를 입은 용역들이 쇠파이프를 들고 시위대 사이로 난입하고 있다. 뒤편에는 경찰 기동대가 이들의 진입을 묵인하는 모습이 포착되었다.</div>
+                    </div>
+
+                    <p>현장 목격자들에 따르면 시위대가 광장에 집결한 지 1시간 만에 경찰 기동대가 갑자기 대열을 열어 길을 터주었다. 그 틈을 타 <a href="두청운수.html" class="text-blue-600 underline">두청운수</a> 로고가 새겨진 갈색 조끼를 입은 남성 300여 명이 각목과 신문지에 말아 쥔 쇠파이프를 들고 돌진했다. 이들은 **"시장님이 다 죽이랜다! 시끄러운 놈들 다 치워!"**라고 소리치며 하얀 가운을 입은 의료진들을 무차별 폭행했다.</p>
+
+                    <p>현장에 있던 한 간호사는 **"살려달라고, 여기 환자 유가족이 있다고 소리쳤지만 그들은 웃으면서 쇠파이프를 휘둘렀다"**며 **"내 가운이 동료의 피로 붉게 물들 때까지 경찰은 방관만 했다"**고 오열했다. 진압 과정에서 며칠 전 5호선 현장에서 숨진 노동자 최 씨의 영정 사진이 군홧발에 짓밟히는 참담한 광경도 연출됐다.</p>
+
+                    <p>본지가 입수한 시청 내부 문건에 따르면, <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 시장은 집무실 창밖으로 광장을 내려다보며 **"저것들 싹 다 밀어버려라. 구급차 막힌 것도 쟤네들이 시위해서 그런 거라고 언론에 뿌려"**라고 비서진에게 지시한 것으로 드러났다. 비극적인 '갈색 버스 참사'마저 시위대의 탓으로 돌리려는 파렴치한 여론 조작 시도다.</p>
+
+                    <div class="img-box">
+                        <img src="부상당한_간호사.png" alt="부상당한_의료진.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333/fff?text=Injured+Medical+Staff'">
+                        <div class="img-caption">▲ 용역들의 폭행으로 머리에 부상을 입은 채 동료의 도움을 받고 있는 효빈의료원 간호사.</div>
+                    </div>
+
+                    <p>이날 사태로 의료진 15명을 포함해 시민 40여 명이 중경상을 입고 인근 병원으로 이송되었다. 윤대환 시장은 끝내 모습을 드러내지 않았으며, 대변인을 통해 "불법 시위에 대한 정당한 질서 유지 과정에서 발생한 불상사"라는 짧은 입장을 내놓았다. 효빈의 겨울은 시민의 피로 차갑게 식어가고 있다.</p>
+
+                    <div class="mt-10 pt-6 border-t border-gray-200 text-sm text-gray-500">
+                        &lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;
+                    </div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    <span>전체 댓글</span> <span class="text-[#cc0000] text-xl">32,842</span>
+                </div>
+                
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 2007년 베스트 댓글 -->
+                    <div class="best-comment">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-black text-red-600">White_Coat_Shield (2007.01.21)</span>
+                            <span class="text-xs text-gray-500">추천 125,200 | 비추천 12</span>
+                        </div>
+                        <p class="text-base font-bold text-gray-900">내 눈으로 똑똑히 봤습니다. 경찰이 길을 열어주자마자 갈색 조끼 깡패들이 기다렸다는 듯이 달려들더군요. 사람 머리를 쇠파이프로 찍는 게 질서 유지입니까? 윤대환, 당신은 시장이 아니라 살인마입니다. 오늘 효빈의 정의는 죽었습니다.</p>
+                    </div>
+
+                    <!-- 윤재훈의 2026년 적반하장 댓글 -->
+                    <div class="yoon-comment">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-black text-gray-900">YoonJaehoon(출소/무직) <span class="bg-red-600 text-white text-[10px] px-1 rounded ml-1">위험</span></span>
+                            <span class="text-xs text-gray-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm font-bold text-red-800">아니 ㅋㅋㅋ 질서 유지한 게 왜 참사야? 시청 앞에서 꽹과리 치고 시끄럽게 구니까 치운 거지! 우리 아빠 말이 맞잖아! 저 간호사들도 다 좌파 선동꾼들이라고! 피? 저거 케첩 아냐? ㅋㅋㅋ 박효빈 시장이 아카이브 조작해서 선동하는 거 다 고소할 거야! 우리 부자는 당당하다!</p>
+                        <div class="flex gap-2 mt-4">
+                            <span class="vote-btn" onclick="vote(this, 'up')">공감 <span class="count">0</span></span>
+                            <span class="vote-btn active-down" onclick="vote(this, 'down')">비공감 <span class="count">452,100</span></span>
+                        </div>
+                        <div class="reply-container">
+                            <div class="reply-item">
+                                <span class="font-bold text-blue-700">History_Watcher_2026</span>: 재훈아 ㅋㅋㅋ 2008년 특별 감사에서 용역들 일당을 니네 아빠가 <a href="두청운수.html" class="text-blue-600">두청운수</a> 공금으로 준 거 다 밝혀졌어. 케첩? 그날 내 친구 팔 부러진 건 마술이냐? 넌 진짜 인류애가 없구나.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-gray-700">Hyobin_Medical_Staff</span>: 당시 현장에 있던 간호사입니다. 니네 아빠가 보낸 용역들 때문에 아직도 트라우마 시달리는 분들이 많아요. 2.2% 득표율로 찌그러져 있어라 제발.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-red-600 text-xs">YoonDaehwan(출소/동조)</span>: <span class="text-red-800 font-bold">재훈아, 아빠는 그때 도시의 품격을 지켰을 뿐이다! 저들은 불순 세력이었어! (좋아요 1)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2007년 당시 격앙된 댓글들 -->
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">사능동_시민 (2007.01.21)</span>
+                            <span class="text-xs text-gray-500">추천 28,500</span>
+                        </div>
+                        <p class="text-sm">의사 선생님들 머리에서 피가 나는데 경찰은 웃고 있더군요. 갈색 버스 회사랑 한패라는 소문이 사실인가 봅니다. 노무현 대통령님, 제발 효빈시 좀 살려주세요.</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">5호선_노조 (2007.01.21)</span>
+                            <span class="text-xs text-gray-500">추천 21,200</span>
+                        </div>
+                        <p class="text-sm">동료 최 씨의 영정을 군홧발로 짓밟던 그 깡패 놈 얼굴 기억합니다. 윤대환, 니가 시킨 거지? 노동자를 개돼지로 아는 시장, 필요 없다. 끌어내리자!</p>
+                        <div class="reply-container">
+                            <div class="reply-item"><span class="font-bold text-red-600 text-xs">YoonJaehoon(2026)</span>: 영정 사진이 길을 막고 있으니까 치운 거지! ㅋㅋㅋ</div>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">인권수호 (2007.01.21)</span>
+                            <span class="text-xs text-gray-500">추천 18,900</span>
+                        </div>
+                        <p class="text-sm">구급차 막힌 게 시위대 탓이라고 뉴스 내보내라고 지시했다고요? 진짜 악마가 따로 없네. 사람이 죽었는데 그걸 이용해서 전차를 없애려 하다니...</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">Justice_2026</span>
+                            <span class="text-xs text-gray-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm">부자가 나란히 출소해서 고인 능욕하는 거 보니 진짜 대단하다 ㅋㅋㅋ 2007년에 저 비극 겪고도 <a href="박효빈.html" class="text-blue-600">박효빈</a> 시장님 중심으로 효빈시가 이만큼 살아난 건 기적입니다.</p>
+                    </div>
+
+                    <div class="comment-item"><p class="text-xs text-gray-400 text-center">... 2007년 당시 분노한 시민들의 댓글 3만 개가 더 있습니다 ...</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="archive-card shadow-sm">
+                <div class="archive-card-title">2007년 1월 참사 타임라인</div>
+                <ul class="archive-list">
+                    <li>- <b>1월 12일:</b> 갈색 버스 장벽 구급차 방해</li>
+                    <li>- <b>1월 15일:</b> 5호선 인부 불법 심문 및 사망</li>
+                    <li>- <b>1월 18일:</b> 7호선 전차 폐지 여론 조작</li>
+                    <li>- <b>1월 20일:</b> 시청 광장 유혈 진압 참사</li>
+                    <li>- <b>1월 21일:</b> 노 대통령, 윤대환 공개 질타</li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#4d3a2b] p-6 text-white rounded text-center shadow-lg mb-6">
+                <div class="font-black text-xl mb-1 italic">DOOCHEONG SECURITY</div>
+                <div class="text-xs font-bold">도시의 안보, 우리가 책임집니다<br>효빈의 질서 수호자 두청운수</div>
+                <div class="mt-4 text-[10px] text-gray-400 font-normal opacity-50">※ 2007년 당시 용역 동원용 홍보물입니다.</div>
+            </div>
+
+            <div class="archive-card" style="background: #fff5f5; border-left: 5px solid #cc0000;">
+                <div class="font-bold text-sm mb-2 text-red-700">진실 규명 안내</div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    당시의 과잉 진압을 지시한 시장 측 간부 3명은 2008년 대법원에서 '직권남용 및 폭행교사' 혐의로 실형이 확정되었습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#222] text-gray-400 py-12 mt-20 text-xs">
+        <div class="max-w-[1000px] mx-auto px-6">
+            <div class="flex justify-between items-center mb-6">
+                <p class="text-lg font-black text-white">효빈일보 아카이브</p>
+                <p>Since 1982</p>
+            </div>
+            <p class="mb-2">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p class="mb-2">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function vote(btn, type) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active-up') || btn.classList.contains('active-down')) {
+                btn.classList.remove('active-up', 'active-down');
+                count--;
+            } else {
+                btn.classList.add(type === 'up' ? 'active-up' : 'active-down');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+    </script>
+</body>
+</html>

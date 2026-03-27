@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치] "저뿐만이 아닌, 여러분 모두의 '효빈'입니다"... 박효빈 시장, 눈물의 취임사 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 취임사 박스 */
+        .speech-box { background: #f0f9ff; border-left: 5px solid #0055aa; padding: 25px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .speech-title { font-weight: bold; font-size: 18px; color: #0055aa; margin-bottom: 15px; }
+        .speech-text { font-size: 16px; font-style: italic; color: #333; line-height: 1.8; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 행정/자치</div>
+                <h2 class="article-title">"저뿐만이 아닌, 여러분 모두의 '효빈'으로"... 박효빈 시장 취임</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김정치 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2022.07.01. 14:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">전국 최연소(26세) 광역시장 공식 임기 시작<br>도시 이름과 시장 이름이 같은 헌정사상 최초·유일 사례 등극<br>"과거의 아픔 딛고 '모두의 도시' 만들겠다"... 통합과 미래 강조</span></p>
+                    
+                    <div class="my-6">
+                        <img src="박효빈_취임식.png" alt="박효빈_시장_취임_선서.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0077DD/FFFFFF?text=Mayor+Park+Hyobin+Inauguration'">
+                        <div class="img-caption">▲ 1일 오전 효빈시청 앞 광장에서 열린 제9대 효빈광역시장 취임식에서 박효빈 시장이 시민들 앞에서 취임 선서를 하고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김정치 기자] 2022년 7월 1일, <a href="효빈시.html" class="text-blue-600 underline">효빈광역시</a>의 새로운 역사가 시작되었다. 만 26세, 전국 최연소 광역단체장으로 선출된 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장이 취임식을 갖고 공식 업무에 돌입했다.</p>
+
+                    <p>이날 취임식은 시민 1만여 명이 운집한 가운데 시청 앞 잔디광장에서 '시민과 함께하는 열린 취임식'으로 진행되었다. 특히 이번 취임은 대한민국 헌정사상 **'현직 지방자치단체장의 이름과 해당 도시의 이름이 같은 최초이자 유일한 사례'**로 기록되며 전국적인 관심을 모으고 있다.</p>
+
+                    <p>단상에 오른 박효빈 시장은 다소 긴장된 표정이었으나, 이내 확신에 찬 목소리로 취임사를 낭독했다. 그는 자신의 이름에 얽힌 개인사(과거의 가난과 차별)를 담담하게 고백하며, 이를 도시의 비전으로 승화시켰다.</p>
+
+                    <div class="speech-box">
+                        <div class="speech-title">🎙️ 박효빈 시장 취임사 (하이라이트)</div>
+                        <div class="speech-text">
+                            "존경하는 시민 여러분. 제 이름은 효빈입니다. 그리고 우리가 사랑하는 이 도시의 이름 또한 효빈입니다.<br><br>
+                            어린 시절, 저는 이 이름 때문에 놀림을 받기도 했고, 도시의 암흑기에는 이름조차 부끄러워 숨고 싶었던 적도 있었습니다. 하지만 여러분이 저를 선택해 주신 지금, 이 이름은 저의 가장 큰 자부심이자 무거운 책임이 되었습니다.<br><br>
+                            저는 약속합니다. 더 이상 이 도시에서 그 누구도 소외되지 않게 하겠습니다. <strong>이제부터 저는 저 혼자만의 박효빈이 아닙니다. 저는, 저뿐만이 아닌 여러분 모두의 '효빈광역시'로 나아가겠습니다!</strong>"
+                        </div>
+                    </div>
+
+                    <p>취임사 도중 박 시장이 눈시울을 붉히자 시민들 사이에서 "박효빈! 박효빈!"을 연호하는 함성이 터져 나오기도 했다. 박 시장은 취임식 직후 1호 결재 안건으로 **'효빈도시철도 8호선 조기 정상화 및 안전 예산 증액안'**에 서명하며, 교통 복지 실현에 대한 강력한 의지를 표명했다.</p>
+
+                    <p>한편, 지난 지방선거에서 4.8% 득표율로 참패한 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 전 후보는 이날 자신의 SNS에 "도시 이름을 훔친 가짜 시장"이라는 비방 글을 올렸으나, 시민들의 싸늘한 반응 속에 곧바로 삭제된 것으로 알려졌다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">32,105</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_Forever", time: "방금 전", like: 15200, dislike: 10, isPunished: false,
+                                content: "\"여러분 모두의 효빈광역시로 나아가겠습니다\"... 와 진짜 명언이다. 시장님 이름이 도시 이름이라니 운명 그 자체네요. 26세 시장님, 효빈시를 부탁합니다!",
+                                replies: [
+                                    { nick: "Citizen_A", content: "진짜 영화 같은 서사다. 윤재훈이 망쳐놓은 도시, 박효빈이 살리네." },
+                                    { nick: "YoonJaehoon", content: "운명? 웃기지 마! 쟤는 가짜야! 내가 진짜 주인이라고! 도시 이름 사용료 내놔!" },
+                                    { nick: "Fact_Check", content: "도시 이름에 저작권이 어딨습니까 무식한 양반아." }
+                                ]
+                            },
+                            {
+                                nick: "First_Vote", time: "3분 전", like: 9800, dislike: 0, isPunished: false,
+                                content: "내 첫 투표가 헛되지 않았어 ㅠㅠ 취임사 듣고 울컥함. 젊은 시장이라 걱정했는데 생각보다 훨씬 단단해 보인다. 파이팅!",
+                                replies: [
+                                    { nick: "Senior", content: "나이만 먹은 꼰대 윤재훈보다 백배 낫다. 젊은 패기로 잘해보게." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon", time: "5분 전", like: 2, dislike: 12000, isPunished: false,
+                                content: "취임식? 저거 다 쇼야! 동원된 관중들이라고! 내 지지자들은 시청 밖에서 울고 있어! 내가 시장실 들어가야 하는데 저 도둑놈이 앉아있어! 내 자리 내놔!",
+                                replies: [
+                                    { nick: "Police", content: "시청 난입 시 공무집행방해로 체포됩니다. 집에서 주무세요." },
+                                    { nick: "Citizen_B", content: "울고 있는 지지자? 님 지지율 4.8%인데 어디 있어요? 안 보이는데?" },
+                                    { nick: "Ghost_Hunter", content: "유령 지지자들인가 봅니다." }
+                                ]
+                            },
+                            {
+                                nick: "Metro_Worker", time: "10분 전", like: 8500, dislike: 0, isPunished: false,
+                                content: "1호 결재가 '8호선 정상화'라니... 교통공사 직원으로서 눈물 납니다. 그동안 예산 삭감돼서 힘들었는데 이제 살 것 같네요. 시장님 믿습니다.",
+                                replies: [
+                                    { nick: "Subway_Driver", content: "이제 안전운행만 신경 쓰면 되겠네요. 감사합니다 시장님!" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_City_Fan", time: "15분 전", like: 7200, dislike: 0, isPunished: false,
+                                content: "이름이 같으니까 '효빈시장'이라고 부르면 사람 부르는 건지 시장 부르는 건지 헷갈리네 ㅋㅋㅋ 그래도 기분 좋다. 우리 시장님 이름값 하실 듯.",
+                                replies: [
+                                    { nick: "Naming_Sense", content: "효빈시의 효빈시장 박효빈... 라임 완벽하네요." }
+                                ]
+                            },
+                            {
+                                nick: "Villain_A_Friend", time: "20분 전", like: 5, dislike: 4500, isPunished: false,
+                                content: "윤재훈 형님 아직 안 끝났습니다! 4년 뒤에 다시 도전합시다! 그때는 우리가 이깁니다!",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "4년? 못 기다려! 당장 탄핵 시위하자! 모여라!" },
+                                    { nick: "Citizen_C", content: "4년 뒤엔 님들 다 감방에 있을 듯 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Global_Citizen", time: "25분 전", like: 3000, dislike: 0, isPunished: false,
+                                content: "해외에서도 화제래요. 'The City Named After The Mayor?' 이러면서 ㅋㅋ 효빈시 홍보 제대로 되네요.",
+                                replies: []
+                            },
+                            {
+                                nick: "Tax_Payer", time: "30분 전", like: 5000, dislike: 1, isPunished: false,
+                                content: "내 세금이 취임식에 쓰였지만 하나도 안 아깝다. 윤재훈이 시장 돼서 엄한 데 돈 쓰는 것보다 백배 낫지. 효빈시 재정 건전성 회복 가자!",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "내가 시장 됐으면 시민들한테 현금 뿌렸어! 니들이 복을 걷어찬 거야!" },
+                                    { nick: "Economist", content: "그게 나라 망하는 지름길입니다. 공부 좀 하세요." }
+                                ]
+                            },
+                            {
+                                nick: "Final_Boss", time: "35분 전", like: 8000, dislike: 0, isPunished: false,
+                                content: "결론: 2022년 7월 1일은 효빈시가 다시 태어난 날. 윤재훈은 역사 속으로(라기보단 경찰서로) 사라져라.",
+                                replies: [
+                                    { nick: "Agree", content: "완벽한 요약. 오늘 저녁은 파티다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let nickStyle = cmt.nick === "YoonJaehoon" ? "text-red-600 font-black" : "text-[#0055aa]";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.nick === "YoonJaehoon" ? "bg-red-50 border border-red-200" : "bg-gray-50 border border-gray-200";
+                                    const rNickStyle = reply.nick === "YoonJaehoon" ? "text-red-600 font-bold" : "text-[#0055aa]";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_mayor_inauguration.html" class="ranking-link font-bold text-[#0055aa]">박효빈 시장 취임, 새 역사</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_election_result_2022.html" class="ranking-link">77.9% 득표율의 비밀</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_park_apology.html" class="ranking-link">박효빈, 통합의 메시지</a></li>
+                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">윤재훈, 선거비용 반환 소송?</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">효빈시 부동산 기대감 상승</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈광역시청</div>
+                    <div class="text-xs text-blue-400">새로운 시장과 함께<br>시민이 행복한 도시</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[현장] 이재명 대통령, 취임 후 첫 효빈 방문... "효빈시 모델, 대한민국 표준 만들겠다" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #0055aa; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+
+        .breaking-badge { background-color: #0055aa; color: white; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+        
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content">
+            <div class="text-[#0055aa] font-bold text-sm mb-2">정치 > 대통령실</div>
+            <h1 class="article-title">[현장] 이재명 대통령, 취임 후 첫 효빈 방문... "효빈시 모델, 대한민국 표준 만들겠다"</h1>
+            <div class="article-subtitle">
+                25일 효빈시청 방문해 박효빈 시장과 환담... "민주주의 수호와 행정 혁신의 모범"<br>
+                8호선(Sky Rail) 시승 후 "미래 교통의 비전 보여줘... 전국 확산 적극 지원"<br>
+                박효빈 시장 "중앙정부와 협력해 더 큰 도약"... 시민들 10만 명 운집해 환영
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2025.06.25 14:00 | 수정 2025.06.25 14:40</span>
+                <span>정치부 이덕북 기자 (politics@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="이미지/이재명박효빈.png" alt="효빈시청에서 이재명 대통령과 박효빈 시장이 손을 맞잡고 시민들에게 인사하는 모습" onerror="this.src='https://via.placeholder.com/600x400?text=President+Lee+visits+Hyobin'">
+                    <div class="img-caption">▲ 25일 오후, 이재명 대통령이 효빈시청을 방문해 박효빈 시장과 함께 손을 들어 인사하고 있다.</div>
+                </div>
+
+                <p>
+                    <span class="text-[#0055aa] font-bold">"효빈시는 지난겨울, 대한민국 민주주의의 심장이었습니다."</span>
+                </p>
+                <p>
+                    이재명 대통령이 취임 후 첫 지방 순방지로 효빈광역시를 선택했다. 25일 오후 효빈시청을 방문한 이 대통령은 박효빈 시장을 만나 "계엄군의 총구 앞에서도 굴하지 않고 시민을 지켜낸 박 시장님과 효빈 시민들의 용기에 깊은 경의를 표한다"고 밝혔다.
+                </p>
+                <p>
+                    특히 이 대통령은 음모론의 중심에 있었던 <strong style="color:#9856FF">효빈 도시철도 8호선(Sky Rail)</strong>을 직접 시승한 뒤, "지상 고가 방식의 친환경적이고 효율적인 교통 시스템에 감탄했다"며 "이른바 '효빈 모델'을 전국 대도시권 교통 문제 해결의 표준으로 삼아 적극 확산시키겠다"고 선언했다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#0055aa] pl-3">친윤 잔당 "적화통일의 시작" 발악... 시민들은 '무시'</h3>
+                <p>
+                    이날 효빈시청과 8호선 역사 주변에는 10만 명에 달하는 인파가 몰려 대통령과 시장을 연호했다. 반면, 구치소에 수감 중인 윤재훈 씨의 지지자 등 극소수 '친윤 잔당'들은 인근에서 "효빈 모델 확산은 공산화의 시작"이라는 황당한 주장을 펴며 시위를 벌였으나, 시민들의 환호성에 묻혀 존재감을 드러내지 못했다.
+                </p>
+                <p>
+                    박효빈 시장은 "중앙정부의 전폭적인 지원 약속에 감사드린다"며 "효빈시가 대한민국 혁신의 전초기지가 되겠다"고 화답했다.
+                </p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#0055aa] text-sm font-normal ml-2">실시간 베스트</span> <span class="text-xs text-gray-400">총 8,920,511개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="대한민국의 미래를 응원해주세요."></textarea>
+                    <button class="cmt-btn" onclick="alert('로그인이 필요합니다.')">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list"></div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기</button>
+                </div>
+                
+                <script>
+                    const commentData = [
+                        {
+                            nick: "재훈왕자96", date: "2025-06-25 14:05",
+                            content: "안 돼!!! 전국 확산이라니!!! 대한민국 전체를 8호선으로 덮어서 국민들을 세뇌시키려는 수작이야!!! 이재명과 박효빈은 악마의 계약을 맺었어!! 으아아악!! 내 2.2%의 복수심이 불타오른다!! 구치소 벽을 뚫고 나가서 저놈들을 막아야 해!!",
+                            replies: [
+                                { nick: "용산탈출지능순", content: "재훈아 뉴스 볼 시간도 주냐? 교도소장님이 참 자비로우시네. 전국 확산되면 니가 갈 교도소 앞에도 8호선 생기겠네 ㅋㅋㅋ 축하한다." },
+                                { nick: "시민A", content: "세뇌는 니가 당한 거 같음. 사이비 종교 수준이네. 제발 약 좀 먹어라." },
+                                { nick: "재훈왕자96", content: "닥쳐!! 난 선택받은 자야!! 내가 나가면 효빈시는 불바다가 될 거야!!" },
+                                { nick: "교도관", content: "윤재훈 수감자, TV 시청 금지입니다. 독방으로 이동합니다." },
+                                { nick: "효빈시민", content: "불바다는 니 속이 불바다겠지 ㅋㅋㅋ 배 아파 죽겠지?" },
+                                { nick: "정신과전문의", content: "치료가 시급합니다. 상태가 매우 위중하네요." }
+                            ]
+                        },
+                        {
+                            nick: "효빈지킴이", date: "2025-06-25 14:10",
+                            content: "가슴이 웅장해집니다. 우리 효빈시가 대한민국의 표준이 된다니... 박효빈 시장님 정말 고생 많으셨습니다. 이재명 대통령님의 안목도 탁월하시네요. 두 분의 협력을 응원합니다.",
+                            replies: [
+                                { nick: "애국보수청년단", content: "표준? 빨갱이 표준이겠지! 나라가 망조가 들었다! 이민 가야겠다!" },
+                                { nick: "시민B", content: "제발 좀 가라. 니들이 없어야 나라가 산다. 비행기 표 끊어줄까?" },
+                                { nick: "부서원", content: "효빈 모델은 보수, 진보를 떠나 실용적이고 혁신적인 행정입니다. 자랑스럽습니다." },
+                                { nick: "재훈왕자96", content: "부서원 배신자!! 니가 거길 왜 껴!! 너도 한패지!!" },
+                                { nick: "중도층", content: "잘하는 건 칭찬합시다. 효빈시 부럽네요." },
+                                { nick: "타지역주민", content: "우리 시에도 8호선 같은 거 만들어주세요! 대통령님 부탁해요!" }
+                            ]
+                        },
+                        {
+                            nick: "술톤주민우", date: "2025-06-25 14:15",
+                            content: "하... 효빈시청 앞... 저기 내가 자주 가던 룸살롱 있는데... 대통령님이 오셨다니... 나도 거기서 술 한잔 올리고 싶다... 사면받으면 꼭 가야지... 재훈아 우리 언제 나가냐...",
+                            replies: [
+                                { nick: "법무부", content: "주민우 씨, 가석방 심사 탈락하셨습니다. 꿈 깨세요. 알코올 치료 프로그램이나 성실히 받으세요." },
+                                { nick: "재훈왕자96", content: "야!! 넌 술 생각밖에 안 나냐?! 나라가 넘어가게 생겼는데!!" },
+                                { nick: "술톤주민우", content: "나라보다 술이 중요해... 손 떨려서 미치겠어..." },
+                                { nick: "룸마담", content: "오지 마. 너 오면 소금 뿌릴 거야. 외상값이나 갚아." },
+                                { nick: "시민C", content: "진짜 한심하다. 평생 거기서 술이나 끊어라." },
+                                { nick: "간사랑", content: "간 수치가 걱정되네요. 건강 챙기세요." }
+                            ]
+                        },
+                        {
+                            nick: "우신면", date: "2025-06-25 14:20",
+                            content: "전국 확산이라고?!!! 안 돼!!! <span style='color:#9856FF'>8호선</span> 전파 송신탑을 전국에 심겠다는 거야!! 대한민국 국민 전원을 노예로 만들려는 음모다!! 내가 막아야 해!! 정신병원 탈출 작전 개시한다!!",
+                            replies: [
+                                { nick: "8호선기관사", content: "아저씨... 병원에서 밥은 잘 나오죠? 탈출하다 다치지 말고 그냥 계세요. 8호선은 안전합니다." },
+                                { nick: "공학박사", content: "전파 송신탑 ㅋㅋㅋ 5G 기지국 보고 저러는 건가? 과학 공부 좀 하세요." },
+                                { nick: "우신면", content: "간호사 몰래 숟가락 갈아서 열쇠 만들었다!! 기다려라 박효빈!!" },
+                                { nick: "병원보안팀", content: "우신면 환자분, 숟가락 내려놓으세요. 진정제 투여합니다." },
+                                { nick: "시민D", content: "진짜 광기다... 저 정도면 불치병 아님?" },
+                                { nick: "건설사", content: "전국 확산 환영합니다. 우신면 씨는 저희가 특별 관리하겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "용산대변인(전직)", date: "2025-06-25 14:25",
+                            content: "지방 행정을 중앙 정치에 이용하는 포퓰리즘의 극치입니다. 효빈시 모델은 검증되지 않은 위험한 실험입니다. 국민 여러분은 현혹되지 마십시오. (근데 효빈시 집값은 좀 오르나요? 투자 좀 할까...)",
+                            replies: [
+                                { nick: "팩트폭격기", content: "검증은 이미 끝났어. 8호선 이용객 만족도 1위 못 봤냐? 그리고 투자는 무슨, 너 재산 동결됐잖아." },
+                                { nick: "시민E", content: "니들이 했던 게 위험한 실험(계엄령)이었고. 이건 혁신이야." },
+                                { nick: "재훈왕자96", content: "대변인님 배신입니까?! 투자를 하신다니요!! 효빈시는 망해야 합니다!!" },
+                                { nick: "부동산", content: "전직 대변인님, 효빈시 매물 없습니다. 늦으셨어요." },
+                                { nick: "용산탈출지능순", content: "속물근성 어디 안 가네 ㅋㅋㅋ 겉으론 욕하고 뒤론 투기하고." },
+                                { nick: "검찰", content: "은닉 재산 추적 중입니다. 꼼수 부리지 마세요." }
+                            ]
+                        },
+                        {
+                            nick: "안천동김씨", date: "2025-06-25 14:30",
+                            content: "오늘 효빈시청 앞 분위기 완전 축제였습니다. 대통령님이 오셔서 박 시장님 손 잡아줄 때 눈물 났습니다. 이제 효빈시는 변방이 아니라 중심입니다. 안천동 주민들도 자부심 느낍니다.",
+                            replies: [
+                                { nick: "우신면", content: "안천동도 곧 전파에 오염될 거야!! 다 죽어!! 이사 가!!" },
+                                { nick: "시민F", content: "우신면 넌 병원에서 못 나오잖아. 닥쳐." },
+                                { nick: "재훈왕자96", content: "거지 동네 주제에 자부심은 무슨!! 내가 나가면 싹 밀어버린다!!" },
+                                { nick: "안천동청년회", content: "재훈아 니가 나오는 날이 우리 동네 잔칫날이다. 샌드백 필요했거든." },
+                                { nick: "할머니", content: "아이고 대통령님이 참 훤칠하시더만. 효빈시에 복이 터졌어." },
+                                { nick: "시장상인", content: "오늘 매출 대박 났습니다. 감사합니다." }
+                            ]
+                        },
+                        {
+                            nick: "천공의제자", date: "2025-06-25 14:35",
+                            content: "효빈의 기운이 너무 강하다. 전국의 기를 빨아들이고 있다. 이러면 균형이 깨진다. 8호선에 부적을 붙여 기를 눌러야 한다. 장당 200만 원. 급매.",
+                            replies: [
+                                { nick: "과학자", content: "기가 빨리는 게 아니라 니 통장 잔고가 빨리는 거겠지. 사기꾼아." },
+                                { nick: "재훈왕자96", content: "도사님!! 저한테 보내주세요!! 제가 이마에 붙이고 탈옥하겠습니다!!" },
+                                { nick: "시민G", content: "강시냐? ㅋㅋㅋ 이마에 부적 붙이고 탈옥 ㅋㅋㅋ 상상만 해도 웃기네." },
+                                { nick: "철도공사", content: "시설물 무단 부착 금지입니다. 발견 즉시 제거합니다." },
+                                { nick: "목사", content: "회개하라. 종말이 가깝다." },
+                                { nick: "경찰", content: "사기 혐의로 체포 영장 발부되었습니다. 위치 추적 완료." }
+                            ]
+                        },
+                        {
+                            nick: "8호선기관사", date: "2025-06-25 14:40",
+                            content: "대통령님이 <span style='color:#9856FF'>8호선</span> 시승하시면서 '정말 조용하고 빠르네요'라고 칭찬해주셨습니다. 기관사로서 평생 잊지 못할 날입니다. 효빈 모델이 전국으로 퍼져서 국민들이 더 편해지길 바랍니다.",
+                            replies: [
+                                { nick: "시민H", content: "기관사님 최고! 8호선은 효빈의 자랑입니다." },
+                                { nick: "우신면", content: "그거 다 연기야!! 대통령도 세뇌당한 거라고!! 귀에 이어폰 꽂고 조종받는 거야!!" },
+                                { nick: "재훈왕자96", content: "기관사 너 두고 보자!! 내가 정권 잡으면 넌 바로 해고야!!" },
+                                { nick: "철도노조", content: "윤재훈 씨, 당신은 영원히 정권 못 잡아요. 걱정 마세요." },
+                                { nick: "승객", content: "8호선 덕분에 삶의 질이 올라갔어요. 감사합니다." },
+                                { nick: "박효빈시장", content: "기관사님 덕분입니다. 안전 운행 부탁드립니다." }
+                            ]
+                        },
+                        {
+                            nick: "해외교포A", date: "2025-06-25 14:45",
+                            content: "해외 뉴스에도 나옴. 'Korean President Embraces Innovative City Model'. 효빈시가 혁신의 아이콘이 됨. 옛날엔 '계엄령 도시'라고 놀림받았는데 이제는 '스마트 시티'라고 부러워함. 감격스럽다.",
+                            replies: [
+                                { nick: "유학생", content: "맞아요! 도시 계획 수업에서 효빈시 사례 공부해요. 뿌듯합니다." },
+                                { nick: "용산외교실(잔류)", content: "국격 훼손..." },
+                                { nick: "시민I", content: "아직도 안 잘렸냐 2. 넌 진짜 좀비다." },
+                                { nick: "재훈왕자96", content: "가짜 뉴스!! 다 조작된 영상이야!! 효빈시는 촌구석이라고!!" },
+                                { nick: "외국인", content: "I want to visit Hyobin. It looks futuristic. (효빈 가보고 싶어. 미래 도시 같아.)" },
+                                { nick: "관광가이드", content: "효빈시 투어 상품 대박 났습니다." }
+                            ]
+                        },
+                        {
+                            nick: "가상화폐투자자", date: "2025-06-25 14:50",
+                            content: "효빈 8호선 관련 코인 또 떡상 ㅋㅋㅋ '전국 확산' 호재 떴다. 박효빈 시장님 방향으로 절 올립니다. 이재명 대통령님 감사합니다. 오늘 소고기 회식이다!",
+                            replies: [
+                                { nick: "개미", content: "나도 탑승했다!! 가즈아!!" },
+                                { nick: "용산경제팀(전직)", content: "거품입니다... 곧 터집니다..." },
+                                { nick: "시민J", content: "니들 인생이 거품이었지. 악담하지 마라." },
+                                { nick: "재훈왕자96", content: "내 돈 내놔!! 그거 내 돈으로 만든 거야!!" },
+                                { nick: "우신면", content: "코인은 8호선 지하 벙커 자금줄이야!! 속지 마!!" },
+                                { nick: "경제학자", content: "혁신 기술에 대한 투자는 긍정적입니다." }
+                            ]
+                        },
+                        {
+                            nick: "맛집사장", date: "2025-06-25 14:55",
+                            content: "대통령 방문 효과 대박이네요. 타지에서 손님들이 물밀듯이 들어옵니다. '여기가 그 민주주의 성지인가요?' 하면서요. 박 시장님 덕분에 먹고삽니다. 재훈이는 평생 감옥에 있어라.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "망해라!! 식중독 걸려라!! 퉤퉤!!" },
+                                { nick: "식약처", content: "악의적인 허위 신고 및 영업 방해, 처벌 대상입니다." },
+                                { nick: "시민K", content: "사장님 저도 주말에 갈게요! 재훈이 욕하면서 먹으면 더 맛있을 듯." },
+                                { nick: "술톤주민우", content: "거기 안주 맛있는데... 택배 되나요...?" },
+                                { nick: "알바", content: "교도소로는 배달 안 됩니다." },
+                                { nick: "옆집사장", content: "우리 가게도 대박 남. 효빈시 상권 살았다!" }
+                            ]
+                        },
+                        {
+                            nick: "전직군인", date: "2025-06-25 15:00",
+                            content: "대통령께서 '효빈 모델 확산'을 말씀하신 건, 단순히 교통 시스템뿐만 아니라 '불의에 저항하는 시민 정신'을 전국에 퍼뜨리겠다는 뜻 아니겠습니까. 군인으로서 깊이 공감합니다.",
+                            replies: [
+                                { nick: "현역장교", content: "맞습니다. 국민을 위한 군대가 되겠습니다." },
+                                { nick: "용산국방비서관(구속)", content: "..." },
+                                { nick: "재훈왕자96", content: "개소리!! 군인은 총칼로 다스려야 해!!" },
+                                { nick: "예비군", content: "재훈아 넌 총 쏘는 게임이나 해라. 현실 군대 얘기하지 말고." },
+                                { nick: "시민L", content: "해석 좋네요. 민주주의 정신의 확산!" },
+                                { nick: "학도병", content: "역사를 잊지 않겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "택시기사", date: "2025-06-25 15:05",
+                            content: "효빈 8호선이 전국에 깔리면 택시 손님 줄어들까 걱정도 되지만, 나라가 잘 되는 길이라면 찬성입니다. 대신 연계 교통망 잘 만들어주세요. 시장님 믿습니다.",
+                            replies: [
+                                { nick: "박효빈시장", content: "기사님 걱정 마세요. 택시와 8호선이 상생하는 환승 시스템 만들겠습니다." },
+                                { nick: "시민M", content: "시장님 등판 ㅋㅋㅋ 소통왕이시네." },
+                                { nick: "재훈왕자96", content: "택시 기사들 다 굶어 죽어라!! ㅋㅋㅋ 꼴좋다!!" },
+                                { nick: "택시노조", content: "윤재훈 영구 승차 거부 결의합니다." },
+                                { nick: "술톤주민우", content: "택시 타고 집에 가고 싶다..." },
+                                { nick: "우신면", content: "택시도 조종당하고 있어!! 네비게이션이 8호선으로 유인한다고!!" }
+                            ]
+                        },
+                        {
+                            nick: "웹툰작가", date: "2025-06-25 15:10",
+                            content: "차기작 '효빈 유니버스' 구상 중입니다. 박효빈 시장이 8호선 로봇 타고 악당(윤재훈) 물리치는 내용. 대통령님이 카메오로 출연 예정 ㅋㅋㅋ",
+                            replies: [
+                                { nick: "독자", content: "미쳤다 ㅋㅋㅋ 애니메이션화 시급함." },
+                                { nick: "재훈왕자96", content: "야!! 내가 왜 악당이야!! 난 비운의 주인공이야!!" },
+                                { nick: "시민N", content: "비운은 무슨, 비만이지. 살이나 빼라." },
+                                { nick: "술톤주민우", content: "나는? 나는 술 취한 현자로 나오냐?" },
+                                { nick: "작가", content: "님은 그냥 술주정뱅이 NPC임." },
+                                { nick: "문화부", content: "K-웹툰의 미래가 밝네요." }
+                            ]
+                        },
+                        {
+                            nick: "법대생", date: "2025-06-25 15:15",
+                            content: "지방 자치의 모범 사례가 국가 표준이 되는 과정. 헌법적 가치가 실현되는 모습입니다. 효빈시 조례와 정책들 꼼꼼히 뜯어보고 있습니다. 배울 게 많네요.",
+                            replies: [
+                                { nick: "로스쿨교수", content: "훌륭한 자세입니다. 효빈시는 살아있는 교과서죠." },
+                                { nick: "용산법무팀(전직)", content: "법대로 하면 우리가 이겼는데... 떼법 떼법..." },
+                                { nick: "시민O", content: "아직도 정신 못 차렸네. 니네가 어긴 게 헌법이야." },
+                                { nick: "재훈왕자96", content: "법은 내가 만든다!! 효빈법 제1조: 윤재훈은 무죄다!!" },
+                                { nick: "판사", content: "기각합니다." },
+                                { nick: "공무원", content: "효빈시청 전입 희망합니다. 일할 맛 날 것 같아요." }
+                            ]
+                        },
+                        {
+                            nick: "환경미화원", date: "2025-06-25 15:20",
+                            content: "대통령님 오신다고 거리 청소했는데, 시민들이 쓰레기 하나 안 버리고 다 가져가시더라고요. 효빈 시민 의식 세계 최고입니다. 청소할 맛 납니다.",
+                            replies: [
+                                { nick: "시민P", content: "미화원님 덕분이죠! 깨끗한 도시 우리가 지킵니다." },
+                                { nick: "재훈왕자96", content: "가식덩어리들!! 뒤에선 다 버릴걸?!" },
+                                { nick: "고물상", content: "재훈아 니 입에서 나오는 게 쓰레기다." },
+                                { nick: "우신면", content: "쓰레기통 뒤져봐!! 김정은 편지 나올 거야!!" },
+                                { nick: "환경부", content: "자원 순환 도시 효빈, 응원합니다." },
+                                { nick: "청소부", content: "우신면 씨는 쓰레기통 그만 뒤지세요. 냄새나요." }
+                            ]
+                        },
+                        {
+                            nick: "효빈맘", date: "2025-06-25 15:25",
+                            content: "아이에게 '우리 도시가 대한민국 최고래'라고 말해주니 너무 좋아하네요. 아이들이 자부심을 가질 수 있는 도시 만들어주셔서 감사합니다. 시장님, 대통령님 화이팅!",
+                            replies: [
+                                { nick: "애국보수청년단", content: "애들한테 거짓말 가르치지 마라!! 효빈은 빨갱이 소굴이다!!" },
+                                { nick: "시민Q", content: "니들이 아무리 짖어도 효빈은 1등 도시야. 부러우면 이사 오든가." },
+                                { nick: "교육감", content: "자긍심 교육에도 큰 도움이 됩니다." },
+                                { nick: "재훈왕자96", content: "효빈시 폭망해라!! 땅 꺼져라!!" },
+                                { nick: "지질학자", content: "효빈시 지반은 암반이라 매우 튼튼합니다." },
+                                { nick: "다른맘", content: "저도 이사 오길 잘했어요. 아이 키우기 너무 좋아요." }
+                            ]
+                        },
+                        {
+                            nick: "편의점알바", date: "2025-06-25 15:30",
+                            content: "윤재훈이 맨날 욕하던 '박효빈 포퓰리즘'이 전국 표준이 된다니 ㅋㅋㅋ 윤재훈 지금 감방에서 TV 보며 거품 물고 있을 듯. 아 꼬시다.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "거품 안 물었어!! 침 뱉은 거야!! 퉤퉤!!" },
+                                { nick: "교도관", content: "TV에 침 뱉지 마세요. 청소하셔야 합니다." },
+                                { nick: "시민R", content: "실시간 중계 ㅋㅋㅋ 교도관님 고생 많으십니다." },
+                                { nick: "술톤주민우", content: "나도 TV 보고 싶다... 독방이라 심심해..." },
+                                { nick: "점장", content: "정의는 승리한다. 오늘 폐기 도시락은 내가 먹고 맛있는 거 사줄게." },
+                                { nick: "알바", content: "사장님 최고 ㅋㅋㅋ" }
+                            ]
+                        },
+                        {
+                            nick: "건축가", date: "2025-06-25 15:35",
+                            content: "효빈 8호선(Sky Rail)은 도시 미관과 효율성을 모두 잡은 걸작입니다. 이걸 지하 벙커라고 우기던 사람들은 건축의 '건'자도 모르는 무식한 사람들입니다. 전국 확산 찬성합니다.",
+                            replies: [
+                                { nick: "우신면", content: "너도 매수당했지?! 그 기둥 안에 비밀 공간 있다고!!" },
+                                { nick: "건설사", content: "기둥은 속이 꽉 찬 철근 콘크리트입니다. 공간 없어요." },
+                                { nick: "시민S", content: "전문가 등판 ㅋㅋㅋ 우신면 뼈 맞았네." },
+                                { nick: "재훈왕자96", content: "건축가 놈들 다 구속시켜!! 내가 직접 설계할 거야!!" },
+                                { nick: "레고마니아", content: "재훈아 레고나 조립해라." },
+                                { nick: "디자이너", content: "효빈시 야경이 8호선 덕분에 홍콩보다 예뻐요." }
+                            ]
+                        },
+                        {
+                            nick: "대한민국", date: "2025-06-25 15:40",
+                            content: "효빈시가 쏘아 올린 작은 공이 대한민국을 바꿉니다. 지방 소멸 시대에 희망을 보여줬습니다. 박효빈 시장님, 더 높이 비상하십시오.",
+                            replies: [
+                                { nick: "시민T", content: "효빈이 대한민국의 미래입니다." },
+                                { nick: "박효빈시장", content: "무거운 책임감을 느낍니다. 멈추지 않고 달리겠습니다." },
+                                { nick: "빌런들", content: "(단체로) 으아아아악!!!! 배 아파 죽겠다!!!!" },
+                                { nick: "국민", content: "소화제는 없다. 평생 배 아파해라. 굿바이." },
+                                { nick: "역사", content: "효빈 모델, 대한민국 표준이 되다." },
+                                { nick: "이재명대통령", content: "효빈시와 함께 성공한 정부를 만들겠습니다." }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    commentData.forEach(cmt => {
+                        const div = document.createElement('div');
+                        const villains = ['재훈왕자96', '술톤주민우', '우신면', '용산대변인(전직)', '애국보수청년단', '천공의제자', '용산외교실(잔류)', '김문수캠프', '자유수호', '용산국방비서관(전직)', '용산경제팀(전직)', '지귀연(구속)', '용산법무팀(전직)', '용산안보실', '용산작전과'];
+                        const isVillain = villains.includes(cmt.nick);
+
+                        div.className = `comment-item ${isVillain ? 'troll' : ''}`;
+                        
+                        // 빌런이면 비공감 폭탄(수십만 단위), 일반인은 공감 폭탄(수만 단위)
+                        const likeCount = isVillain ? Math.floor(Math.random() * 5) : Math.floor(Math.random() * 100000) + 50000;
+                        const dislikeCount = isVillain ? Math.floor(Math.random() * 800000) + 200000 : Math.floor(Math.random() * 50);
+
+                        let repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:block;">`;
+                        cmt.replies.forEach(rp => {
+                            const rNick = rp.nick || '익명';
+                            const rContent = rp.content || '';
+                            const isRVillain = villains.includes(rNick);
+                            const rStyle = isRVillain ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;';
+                            
+                            const rLikeCount = isRVillain ? Math.floor(Math.random() * 3) : Math.floor(Math.random() * 5000);
+                            const rDislikeCount = isRVillain ? Math.floor(Math.random() * 50000) + 1000 : Math.floor(Math.random() * 10);
+                            
+                            repliesHtml += `
+                                <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0">
+                                    <div class="text-sm mb-1"><span class="font-bold" style="${rStyle}">└ ${rNick}</span>: ${rContent}</div>
+                                    <div class="text-xs text-gray-500 flex gap-2">
+                                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${rLikeCount}</span></span>
+                                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${rDislikeCount}</span></span>
+                                    </div>
+                                </div>`;
+                        });
+                        repliesHtml += `</div>`;
+
+                        div.innerHTML = `
+                            <div class="comment-nick">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date || '2025-06-25'}</span></div>
+                            <p class="comment-content">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${likeCount}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${dislikeCount}</span></span>
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active')) {
+                            count--;
+                            btn.classList.remove('active');
+                        } else {
+                            count++;
+                            btn.classList.add('active');
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="rank-news">
+                <div class="rank-title">오늘의 주요 뉴스</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text text-[#0055aa] font-bold">이재명 대통령 "효빈시 모델, 대한민국 표준으로"</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text">박효빈 시장 "시민과 함께 만든 기적... 정부와 협력"</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text">8호선(Sky Rail) 전국 지자체 벤치마킹 1순위 등극</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text">윤재훈, 구치소에서 TV 보며 난동 부리다 징벌방행</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text">우신면, 정신병원 탈출 시도하다 숟가락 압수당해</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text">효빈시민 10만 명 운집... "민주주의의 성지" 자부심</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-blue-50 p-4 border border-blue-100 text-center">
+                <div class="font-bold text-[#0055aa] mb-2">효빈시청 공지</div>
+                <div class="text-sm text-gray-600 mb-3">효빈 모델 전국 확산 기념<br>대시민 토론회 개최</div>
+                <button class="bg-[#0055aa] text-white text-xs px-3 py-2 rounded">참가 신청</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <div class="flex gap-4 mb-4">
+                <a href="회사소개.html" class="hover:text-white">회사소개</a>
+                <a href="구독신청.html" class="hover:text-white">구독신청</a>
+                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
+                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
+                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
+            </div>
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
+            <p>주소: 효빈광역시 북구 중수동 123 </p>
+            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            <div class="hidden">
+                <img src="이미지/지하철1호선.png" style="color:#0077DD">
+                <img src="이미지/지하철2호선.png" style="color:#00CCAA">
+                <img src="이미지/지하철3호선.png" style="color:#FFCC11">
+                <img src="이미지/지하철4호선.png" style="color:#FF5522">
+                <img src="이미지/지하철5호선.png" style="color:#EE0022">
+                <img src="이미지/지하철6호선.png" style="color:#881188">
+                <img src="이미지/지하철7호선.png" style="color:#FF8899">
+                <img src="이미지/지하철8호선.png" style="color:#9856FF">
+                <img src="이미지/빈효선광역전철.png" style="color:#6677CC">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

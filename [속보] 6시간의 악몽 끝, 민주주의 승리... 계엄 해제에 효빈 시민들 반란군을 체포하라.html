@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 "반란군을 체포하라" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #0055aa; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+
+        .breaking-badge { background-color: #0055aa; color: white; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+        
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content">
+            <div class="text-[#0055aa] font-bold text-sm mb-2">속보 > 정치</div>
+            <h1 class="article-title"><span class="breaking-badge">속보</span>6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 "반란군을 체포하라"</h1>
+            <div class="article-subtitle">
+                국회 계엄 해제 결의 6시간 만에 윤 대통령 "수용하겠다"... 사실상 항복 선언<br>
+                효빈시청 앞 계엄군 철수... 시민들 "윤재훈·주민우 등 내란 공범 즉각 구속 수사해야"<br>
+                8호선 첫차 정상 운행 재개... '지하 벙커설'은 촌극으로 판명
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2024.12.04 04:30 | 수정 2024.12.04 05:10</span>
+                <span>정치부 이덕북 기자 (politics@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="이미지/계엄해제환호.png" alt="계엄군이 물러가는 효빈시청 앞 광장에서 태극기를 흔들며 환호하는 시민들의 모습" onerror="this.src='https://via.placeholder.com/600x400?text=Victory+of+Democracy'">
+                    <div class="img-caption">▲ 4일 새벽, 계엄군이 철수하자 효빈시청 앞 광장에 모인 시민들이 서로 얼싸안으며 민주주의의 승리를 자축하고 있다.</div>
+                </div>
+
+                <p>
+                    <span class="text-[#0055aa] font-bold">"어둠은 빛을 이길 수 없다. 거짓은 참을 이길 수 없다."</span>
+                </p>
+                <p>
+                    2024년 12월 4일 새벽 4시 30분, 윤석열 대통령이 국무회의를 통해 비상계엄 해제를 의결했다. 전날 밤 "효빈 2.2% 득표율은 북한의 공작"이라며 선포했던 비상계엄은 국회의 만장일치 해제 요구와 성난 민심 앞에 6시간 만에 무릎을 꿇었다.
+                </p>
+                <p>
+                    효빈시청과 <strong style="color:#9856FF">8호선</strong> 고가 역사(Sky Rail)를 점거하려던 공수부대는 시민들의 거센 저항과 국회의 해제 결의에 밀려 철수했다. 박효빈 시장을 체포하려던 시도는 무산되었으며, 시민들은 "우리가 시장을 지켰다"며 환호했다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#0055aa] pl-3">사라진 '내란 주동자들'... 분노한 시민들 "끝까지 쫓는다"</h3>
+                <p>
+                    계엄이 해제되자마자 분위기는 반전되었다. 계엄을 부추기고 시민들을 협박했던 소위 '친윤 호소인'들과 극우 유튜버들은 자취를 감추거나 SNS 계정을 삭제하고 있다. 특히 2.2% 득표율의 당사자인 윤재훈 전 후보와 8호선 음모론을 주장했던 우신면 전 의원 등에 대한 시민들의 분노는 극에 달해 있다.
+                </p>
+                <p>
+                    시민 단체들은 "이번 사태는 명백한 '친위 쿠데타'이자 내란"이라며 윤 대통령은 물론, 계엄을 선동한 윤재훈, 주민우 등 관련자 전원을 내란죄로 고발하겠다고 밝혔다.
+                </p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#0055aa] text-sm font-normal ml-2">실시간 베스트</span> <span class="text-xs text-gray-400">총 5,120,481개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="성숙한 시민 의식을 보여주세요."></textarea>
+                    <button class="cmt-btn" onclick="alert('로그인이 필요합니다.')">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list"></div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기</button>
+                </div>
+                
+                <script>
+                    const commentData = [
+                        {
+                            nick: "재훈왕자96", date: "2024-12-04 04:35",
+                            content: "아니 잠깐만!!! 해제라니? 해제라니!!! 각하 이게 무슨 소리입니까!! 아직 박효빈 목 못 땄잖아요!! 내 2.2% 복수는 어쩌라고!! 다시 군대 돌려요!! 탱크 돌리라고!! 국회 해산시켜!! 내가 왕이 될 상인데 왜 이렇게 끝나는 거야 으아앙!!!",
+                            replies: [
+                                { nick: "용산탈출지능순", content: "재훈아 꿈 깼니? 이제 현실을 직시할 시간이다. 내란 수괴 혐의로 긴급 체포조 출발했다. 씻고 기다려라. 아, 감옥 가면 못 씻으니까 그냥 가라." },
+                                { nick: "검찰수사관", content: "윤재훈 씨, 위치 추적 완료되었습니다. 도주 우려가 있어 구속 영장 청구합니다. 나오지 마세요." },
+                                { nick: "시민A", content: "왕자는 무슨 ㅋㅋㅋ 넌 그냥 '내란사범 1호'야. 2.2% 받은 주제에 나라를 뒤집어? 평생 감방에서 콩밥 먹으면서 반성해라." },
+                                { nick: "창전동소금명인", content: "소금도 아깝다. 똥물 한 바가지 부어주러 구치소 앞에 간다. 딱 기다려라." },
+                                { nick: "지지자", content: "니가 죽이려던 박효빈 시장님은 영웅이 됐고, 넌 역적 놈이 됐다. 꼴좋다." },
+                                { nick: "안천동주민", content: "야 이 살인마야. 니가 시민들 쏴 죽이라고 했지? 그 입부터 찢어놔야 한다." }
+                            ]
+                        },
+                        {
+                            nick: "술톤주민우", date: "2024-12-04 04:38",
+                            content: "어... 형님들... 저는 사실 계엄 찬성한 적 없고요... 그냥 술김에... 네... 재훈이가 시켜서 한 거고요... 저는 억울합니다... 저 필리핀 가는 비행기 표 좀 끊어주실 분? 급합니다... 살려주세요...",
+                            replies: [
+                                { nick: "효빈공항경찰", content: "주민우 씨, 출국 금지 떨어졌습니다. 공항 오시면 바로 수갑 채워드립니다. 오세요 ^^" },
+                                { nick: "재훈왕자96", content: "야 이 배신자 XX야!! 니가 야전삽 들고 박효빈 목 따자며!! 니가 제일 신났었잖아!! 같이 죽자 이 자식아!!" },
+                                { nick: "시민B", content: "술김에 내란 가담? 판사 앞에서 그 소리 해봐라 형량이 줄어드나 ㅋㅋㅋ 술이 아니라 사약을 마셔야지." },
+                                { nick: "룸살롱마담", content: "오빠, 외상값 3천만 원은 갚고 가야지? 경찰에 신고했다." },
+                                { nick: "덕현동주민", content: "야전삽 들고 설치던 패기는 어디 갔냐? 비겁한 놈." },
+                                { nick: "동네개", content: "멍멍! (주민우보다 내가 더 의리 있다)" }
+                            ]
+                        },
+                        {
+                            nick: "우신면", date: "2024-12-04 04:40",
+                            content: "아직 안 끝났어!! 8호선 고가 철도 기둥 속에 김정은 지령문 숨겨져 있다고!! 내가 봤다고!! 투시경으로 봤다고!! 계엄군 돌아와!! 저거 폭파해야 내 땅값이 오른다고!! 버스 만세!!",
+                            replies: [
+                                { nick: "정신병원장", content: "우신면 씨, 보호자 동의 하에 강제 입원 절차 진행합니다. 구급차 보냈습니다. 얌전히 계세요." },
+                                { nick: "8호선기관사", content: "이 미친 인간아, 너 때문에 오늘 첫차 늦어질 뻔했어. 고가 기둥에 지령문? 콘크리트밖에 없다. 제발 좀 꺼져라." },
+                                { nick: "부동산사장", content: "님 때문에 우리 동네 집값 똥값 됐음. 입주민들이 님 잡으러 몽둥이 들고 나감. 도망가는 게 좋을걸?" },
+                                { nick: "건축공학자", content: "고가 교각 안에 공간이 어디 있습니까? 무식하면 용감하다더니... 쯧쯧." },
+                                { nick: "평당동주민", content: "우신면 너 오늘 우리 눈에 띄면 죽는다. 우리 아파트 망신 다 시키고 있어." },
+                                { nick: "버스조합", content: "우신면 씨, 저희 언급하지 마세요. 불쾌합니다." }
+                            ]
+                        },
+                        {
+                            nick: "용산대변인", date: "2024-12-04 04:45",
+                            content: "대통령실입니다. 어제 발표는 계엄사령부의 독단적인 판단이었으며, 대통령님은 민주주의를 수호하기 위해 해제를 결단하신 것입니다. 오해 없으시길 바라며 국민 여러분의 생업 복귀를 부탁드립니다.",
+                            replies: [
+                                { nick: "팩트폭격기", content: "와... 꼬리 자르기 실화냐? 어제는 '박효빈 사살하라'고 입에 거품 물더니 이제 와서 딴소리? 캡처 다 해놨다. 니들도 내란 공범이야." },
+                                { nick: "재훈왕자96", content: "야 대변인!! 니가 윤재훈 동지의 억울함 풀어준다며!! 나 버리는 거야?! 니가 시켰잖아!!" },
+                                { nick: "용산탈출지능순", content: "대통령이 직접 담화문 발표해놓고 뭔 사령부 탓? 치매냐? 탄핵 사유 하나 더 추가네." },
+                                { nick: "국민", content: "닥치세요. 아가리 묵념하세요. 변명할수록 추해집니다." },
+                                { nick: "기자", content: "대변인님, 어제 '반국가 세력 척결' 브리핑하신 영상 전 세계에 박제됐습니다. 못 빠져나갑니다." },
+                                { nick: "헌법재판소", content: "탄핵 심판 증거 자료 1호로 채택되었습니다." }
+                            ]
+                        },
+                        {
+                            nick: "애국보수청년단", date: "2024-12-04 04:50",
+                            content: "아... 이게 아닌데... 박효빈이 간첩 맞는데 왜 군인들이 철수하지? 김정은이 딥스테이트랑 손잡고 국회를 조종한 게 틀림없다! 아직 안 끝났다! 우리는 지하로 숨어서 투쟁한다!",
+                            replies: [
+                                { nick: "효빈시민", content: "그래 제발 지하로 좀 꺼져라. 두더지처럼 평생 나오지 마. 햇빛 볼 자격도 없다." },
+                                { nick: "자유수호", content: "야... 눈치 챙겨... 지금 분위기 살벌해... 나 탈퇴할래... 엄마가 밥 먹으러 오래..." },
+                                { nick: "경찰", content: "청년단 간부들 전원 신원 파악 완료. 내란 선동 혐의로 체포 영장 발부됨." },
+                                { nick: "시민K", content: "니들이 보수냐? 걍 반사회적 집단이지. 태극기 들 자격도 없다." },
+                                { nick: "군필자", content: "군대도 안 다녀온 놈들이 전쟁 타령은 제일 좋아해. 최전방으로 보내버려야 함." }
+                            ]
+                        },
+                        {
+                            nick: "해외교포A", date: "2024-12-04 05:00",
+                            content: "CNN 속보: 'Democracy Wins in South Korea'. 시민들이 맨손으로 장갑차를 막아내고 독재를 무너뜨렸다고 대서특필함. 박효빈 시장은 'Asian Hero'로 등극. 반면 윤석열과 그 추종자들은 'Failed Plotters(실패한 음모자들)'로 조롱거리 됨. 국제 망신 시켰으면 할복이라도 해라.",
+                            replies: [
+                                { nick: "유학생", content: "어제는 쪽팔렸는데 오늘은 자랑스럽다. 시민들이 나라를 구했다. 윤재훈은 이제 이민도 못 가겠네? 전 세계가 얼굴 다 아는데 ㅋㅋㅋ" },
+                                { nick: "재훈왕자96", content: "CNN 빨갱이!! 트럼프 형한테 이를 거야!!" },
+                                { nick: "미국인", content: "We don't know him. (우린 쟤 모름)" },
+                                { nick: "시민", content: "재훈아 영어도 못 하면서 무슨 트럼프 타령이야. 깜빵 가서 영어 공부해라." },
+                                { nick: "번역가", content: "해외 네티즌 반응: '저 2.2% 받은 놈은 코미디언이냐?', '감옥에서 리얼리티 쇼 찍어라'." }
+                            ]
+                        },
+                        {
+                            nick: "8호선기관사", date: "2024-12-04 05:05",
+                            content: "밤새 공포에 떨었지만 시민 여러분 덕분에 관제센터 지켜냈습니다. 군인들 철수했고, 안전 점검 마쳤습니다. <span style='color:#9856FF'>8호선</span> 첫차 정상 운행합니다. 저희는 시민의 발이지, 정치 공작의 도구가 아닙니다. 이용해 주셔서 감사합니다.",
+                            replies: [
+                                { nick: "시민", content: "기관사님 고생하셨습니다 ㅠㅠ 눈물 나네요. 오늘 출근길은 8호선 탑니다!" },
+                                { nick: "효빈맘", content: "아이랑 같이 8호선 타고 감사 인사 하러 갈게요. 지켜주셔서 감사합니다." },
+                                { nick: "우신면", content: "타지 마!! 무너진다고!! 땅굴 나온다고!! 으아악!!" },
+                                { nick: "정신병원", content: "환자분 진정제 투여합니다. 따끔해요." },
+                                { nick: "철도동호회", content: "8호선은 민주주의의 성지다. 성지순례 갑니다." },
+                                { nick: "박효빈시장", content: "기관사님, 그리고 직원 여러분. 당신들이 진정한 영웅입니다. 표창장 수여하겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "용산작전과", date: "2024-12-04 05:10",
+                            content: "작전명 '효빈 클린' 취소. 화염방사기 반납 완료. 저희는 위에서 시켜서 한 것뿐입니다. 명령에 살고 명령에 죽는 군인이 무슨 죄가 있습니까. 선처 바랍니다.",
+                            replies: [
+                                { nick: "예비군", content: "웃기지 마라. 부당한 명령은 거부하는 게 군인의 의무다. 민간인한테 화염방사기 쏘려고 했으면서 핑계냐? 군복 벗어라." },
+                                { nick: "시민Z", content: "니들이 어제 '벌레들은 태워 죽여야지'라고 댓글 단 거 캡처 다 있다. 악마 놈들. 죗값 치러라." },
+                                { nick: "군검찰", content: "불법 명령 수행자도 처벌 대상입니다. 수사관 파견했습니다." },
+                                { nick: "효빈시민", content: "니들 얼굴 다 기억한다. 효빈시에 발도 들이지 마라." },
+                                { nick: "어머니", content: "내 아들은 저런 군인 되지 말라고 가르치겠다. 부끄러운 줄 알아라." }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    commentData.forEach(cmt => {
+                        const div = document.createElement('div');
+                        const villains = ['재훈왕자96', '술톤주민우', '우신면', '용산대변인', '용산법무팀', '용산경호처', '용산안보실', '용산정무라인', '용산외교실', '용산과학수사대', '용산경제팀', '애국보수청년단', '자유수호', '멸공의횃불', '용산작전과', '용산지휘부', '천공의제자', '용산작전과'];
+                        const isVillain = villains.includes(cmt.nick);
+
+                        div.className = `comment-item ${isVillain ? 'troll' : ''}`;
+                        
+                        // 빌런이면 비공감 폭탄(수십만 단위), 일반인은 공감 폭탄(수만 단위)
+                        // 상황 종료 후라 비공감이 더 폭발적으로 늘어남
+                        const likeCount = isVillain ? Math.floor(Math.random() * 10) : Math.floor(Math.random() * 50000) + 20000;
+                        const dislikeCount = isVillain ? Math.floor(Math.random() * 200000) + 50000 : Math.floor(Math.random() * 50);
+
+                        let repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:block;">`;
+                        cmt.replies.forEach(rp => {
+                            const rNick = rp.nick || '익명';
+                            const rContent = rp.content || '';
+                            const isRVillain = villains.includes(rNick);
+                            const rStyle = isRVillain ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;';
+                            
+                            const rLikeCount = isRVillain ? Math.floor(Math.random() * 5) : Math.floor(Math.random() * 5000);
+                            const rDislikeCount = isRVillain ? Math.floor(Math.random() * 10000) : Math.floor(Math.random() * 10);
+                            
+                            repliesHtml += `
+                                <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0">
+                                    <div class="text-sm mb-1"><span class="font-bold" style="${rStyle}">└ ${rNick}</span>: ${rContent}</div>
+                                    <div class="text-xs text-gray-500 flex gap-2">
+                                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${rLikeCount}</span></span>
+                                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${rDislikeCount}</span></span>
+                                    </div>
+                                </div>`;
+                        });
+                        repliesHtml += `</div>`;
+
+                        div.innerHTML = `
+                            <div class="comment-nick">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date || '2024-12-04'}</span></div>
+                            <p class="comment-content">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${likeCount}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${dislikeCount}</span></span>
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active')) {
+                            count--;
+                            btn.classList.remove('active');
+                        } else {
+                            count++;
+                            btn.classList.add('active');
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="rank-news">
+                <div class="rank-title">실시간 속보 (종합)</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text text-[#0055aa] font-bold">계엄 해제... 시민들 "민주주의 지켰다" 환호</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text">윤재훈·주민우 등 '내란 선동' 혐의 긴급 체포</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text">박효빈 시장 "시민의 위대한 승리... 일상으로 복귀"</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text">8호선 첫차 정상 운행... '지하 벙커설'은 가짜뉴스</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text">국회, 대통령 탄핵 소추안 발의... 여당도 '손절'</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text">경찰, 우신면 등 악성 유포자 자택 압수수색</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-blue-50 p-4 border border-blue-100 text-center">
+                <div class="font-bold text-[#0055aa] mb-2">효빈시 정상화 안내</div>
+                <div class="text-sm text-gray-600 mb-3">모든 행정 서비스 및 대중교통<br>정상 운영됩니다.</div>
+                <button class="bg-[#0055aa] text-white text-xs px-3 py-2 rounded">시정 소식 보기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <div class="flex gap-4 mb-4">
+                <a href="회사소개.html" class="hover:text-white">회사소개</a>
+                <a href="구독신청.html" class="hover:text-white">구독신청</a>
+                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
+                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
+                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
+            </div>
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
+            <p>주소: 효빈광역시 북구 중수동 123 </p>
+            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

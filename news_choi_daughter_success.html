@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[인물] "아버지의 붉은 철길, 이제 데이터로 지킵니다"... 한국부동산원 최수아 씨의 승리 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        
+        .news-header { border-bottom: 2px solid #0055aa; background: white; padding: 20px 0; }
+        .news-nav a { color: #334155; font-weight: bold; padding: 0 15px; font-size: 15px; text-decoration: none; }
+        .news-nav .active { color: #0055aa; border-bottom: 3px solid #0055aa; padding-bottom: 10px; }
+
+        .article-container { max-width: 1000px; margin: 40px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 50px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; }
+
+        .article-category { color: #0055aa; font-weight: 800; font-size: 14px; margin-bottom: 10px; }
+        .article-title { font-size: 36px; font-weight: 900; line-height: 1.3; color: #0f172a; margin-bottom: 20px; font-family: 'Nanum Myeongjo', serif; letter-spacing: -1.5px; }
+        .article-info { font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 25px; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center; }
+        
+        .article-body { font-size: 18px; line-height: 2; color: #334155; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; color: #0f172a; background: linear-gradient(to top, #fee2e2 40%, transparent 40%); }
+        .article-body p { margin-bottom: 30px; }
+        
+        .img-box { margin: 40px 0; }
+        .img-caption { font-size: 14px; color: #64748b; margin-top: 12px; text-align: center; padding: 10px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; }
+
+        .quote-box { background: #f1f5f9; border-left: 6px solid #0055aa; padding: 30px; margin: 40px 0; font-style: italic; font-weight: 700; color: #1e293b; font-size: 20px; border-radius: 0 12px 12px 0; }
+
+        .comment-section { margin-top: 60px; border-top: 2px solid #0f172a; padding-top: 30px; }
+        .comment-header { font-weight: 900; font-size: 22px; margin-bottom: 25px; color: #0f172a; }
+        
+        .comment-item { padding: 25px 0; border-bottom: 1px solid #f1f5f9; }
+        .best-comment { background: #f0f9ff; border: 1px solid #bae6fd; padding: 25px; margin-bottom: 20px; border-radius: 12px; }
+        .yoon-comment { background: #fff1f2; border: 1px solid #fecaca; padding: 25px; margin-bottom: 20px; border-radius: 12px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 15px; font-size: 13px; color: #64748b; border: 1px solid #cbd5e1; padding: 5px 12px; border-radius: 20px; background: white; transition: all 0.2s; }
+        .vote-btn:hover { border-color: #0055aa; color: #0055aa; }
+        .vote-btn.active-up { background: #0055aa; color: white; border-color: #0055aa; }
+        .vote-btn.active-down { background: #cc0000; color: white; border-color: #cc0000; }
+
+        .reply-container { margin-top: 20px; padding-left: 25px; border-left: 3px solid #e2e8f0; }
+        .reply-item { margin-bottom: 12px; font-size: 14px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        
+        .side-content { flex: 1; }
+        .side-card { background: white; border: 1px solid #e2e8f0; padding: 25px; margin-bottom: 25px; border-radius: 12px; }
+        .side-card-title { font-weight: 900; border-bottom: 2px solid #0055aa; padding-bottom: 10px; margin-bottom: 20px; font-size: 16px; color: #0f172a; }
+        .side-list li { padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; color: #475569; }
+
+        .line-5 { color: #EE0022; font-weight: 900; }
+        .line-binhyo { color: #6677CC; font-weight: 900; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container px-6">
+        <div class="main-content">
+            <div id="article-content-area">
+                <div class="article-category">기획 인터뷰 > 역경을 이겨낸 사람들</div>
+                <h2 class="article-title">"아버지가 못다 만든 빨간 철길, 이제 제가 데이터로 수호합니다"</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-slate-900">최진실 기자</span> (truth@hyobinilbo.com)<br>
+                        입력 2026.02.01. 09:00 | 수정 2026.02.01. 10:45
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p>[효빈일보 = 최진실 기자] 2007년 1월, 효빈시청 지하 창고에서 벌어진 '불법 취조'의 끝은 한 성실한 가장의 죽음이었다. <a href="지하철5호선.html" class="line-5">5호선(빨간색)</a> 건설 노동자였던 아버지를 잃고 가정이 산산조각 났던 열 살 소녀. 19년이 흐른 지금, 그녀는 국가의 부동산과 교통 인프라 가치를 관리하는 전문가가 되어 당당히 우리 앞에 섰다.</p>
+
+                    <div class="img-box text-center">
+                        <img src="최수아_직원_인터뷰.png" alt="한국부동산원_최수아_직원.png" class="w-full rounded-xl" onerror="this.src='https://via.placeholder.com/800x500/003366/ffffff?text=Interview+with+Choi+Su-a'">
+                        <div class="img-caption">▲ 한국부동산원 효빈덕빈지역본부 사무실에서 인터뷰에 응하고 있는 최수아(가명) 씨. 그녀는 현재 효빈시 광역 교통망 연계 개발 사업의 타당성을 검토하고 있다.</div>
+                    </div>
+
+                    <p>한국부동산원의 핵심 인재로 거듭난 최수아 씨(가명, 29)는 최근 효빈대학교 부동산학과를 수석으로 졸업하고 공공기관에 입사했다. 그녀의 주 업무는 효빈시의 자랑인 <a href="연청색빈효선.html" class="line-binhyo">빈효선(연청색)</a>과 <a href="지하철5호선.html" class="line-5">5호선</a> 연장 사업이 지역 경제에 미치는 파급 효과를 분석하는 일이다.</p>
+
+                    <p>최 씨는 대학 시절 한 '혐오주의자' 동기(A씨)로부터 **"너희 아버지는 나약해서 투신한 것"**이라는 패륜적인 폭언을 듣기도 했다. 하지만 그녀는 무너지지 않았다. 오히려 해당 학생의 '고립주의' 논리가 학문적으로 얼마나 허구인지를 팩트로 증명하며 당당히 맞섰고, 결국 대학 사회에서 그를 영구 퇴출시키는 데 앞장섰다.</p>
+
+                    <div class="quote-box">
+                        "아버지는 나약한 선택을 하신 게 아닙니다. 강압 진압 속에서도 5호선 건설의 정당성을 외치던 강인한 노동자였습니다. 저는 이제 데이터로 증명합니다. 아버지가 닦으려 했던 그 철길이 효빈시를 얼마나 풍요롭게 만들었는지를요."
+                    </div>
+
+                    <p>실제로 최 씨가 분석한 자료에 따르면, <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장 취임 이후 정상화된 광역 교통망 연결 사업은 효빈덕빈지역의 경제 성장률을 매년 0.7%p 이상 끌어올리고 있다. 이는 과거 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 전 시장이 주장했던 '고립 정책'이 도시를 얼마나 슬럼화시켰는지를 보여주는 확실한 반증이다.</p>
+
+                    <p>최 씨는 인터뷰 내내 창밖으로 지나는 <a href="보라색6호선.html" class="text-purple-600 font-bold">6호선(보라색)</a>과 멀리 보이는 5호선 기지를 바라보았다. 그녀는 **"혐오는 결코 연결을 이길 수 없다"**며 **"앞으로도 아버지가 사랑했던 효빈시의 모든 철길이 시민들의 행복을 싣고 달릴 수 있도록 전문가로서 최선을 다하겠다"**고 밝혔다.</p>
+
+                    <div class="mt-8 pt-6 border-t border-slate-200 text-sm text-slate-400">
+                        &lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;
+                    </div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    <span>전체 댓글</span> <span class="text-[#0055aa] ml-2">28,942</span>
+                </div>
+                
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 베스트 댓글 -->
+                    <div class="best-comment">
+                        <div class="flex justify-between mb-4">
+                            <span class="font-black text-blue-800">Hyobin_Future (2026.02.01)</span>
+                            <span class="text-xs text-slate-500">추천 125,600 | 비추천 1</span>
+                        </div>
+                        <p class="text-base font-bold text-slate-900 leading-relaxed">기사 보고 눈물 나네요. 아버지를 죽음으로 몰아넣은 세력의 논리를 공부해서 팩트로 박살 낸 거잖아요. 이게 진짜 복수이자 승리입니다. 최수아 씨, 응원합니다! 아버님도 하늘에서 정말 대견해 하실 거예요.</p>
+                    </div>
+
+                    <!-- 윤재훈의 적반하장 댓글 -->
+                    <div class="yoon-comment">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-black text-slate-900">YoonJaehoon(출소/무직) <span class="bg-red-600 text-white text-[10px] px-1 rounded ml-1">위험</span></span>
+                            <span class="text-xs text-slate-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm font-bold text-red-800">아니 ㅋㅋㅋ 감성팔이 오지네! 우리 아빠가 5호선 중단시킨 건 경제적 선택이었어! 노가다꾼 딸내미가 부동산원 들어갔다고 기고만장하네? 박효빈이 빽 써서 넣어준 거 아냐? 조작 데이터 가지고 우리 아빠 욕하지 마라! 나 윤재훈이야! 다 고소할 거야! (IP: 211.***.***.***)</p>
+                        <div class="flex gap-2 mt-4">
+                            <span class="vote-btn" onclick="vote(this, 'up')">공감 <span class="count">0</span></span>
+                            <span class="vote-btn active-down" onclick="vote(this, 'down')">비공감 <span class="count">985,400</span></span>
+                        </div>
+                        <div class="reply-container">
+                            <div class="reply-item">
+                                <span class="font-bold text-blue-700">Real_Estate_17</span>: 재훈아 ㅋㅋㅋ 나 최수아 씨랑 대학 동기인데 걔 4년 내내 장학금 한 번도 안 놓치고 밤새 공부해서 부동산원 공채 합격한 거다. 니가 에타에서 'F' 맞고 대리 출석 걸려서 제적당할 때 걔는 실력을 쌓았단다. 2.2% 득표율로 입 닥치고 있어라.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-slate-700">Tae_Professor_Fan</span>: 태상훈 교수님 수업에서 수아 씨가 울 때 니가 비웃던 거 우리 다 기억한다. 인과응보가 뭔지 똑똑히 봐라. 너희 부자는 고시원 월세나 걱정해야지?
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-red-600 text-xs">YoonDaehwan(출소/동조)</span>: <span class="text-red-800 font-bold">재훈아, 아빠는 당당하다! 저 데이터는 다 주작이야! 효빈의 진정한 주인은 우리다! (좋아요 1)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 추가 댓글 30세트 구성을 위한 샘플 (실제는 더 많이 배치됨) -->
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-slate-700">Line5_Warrior</span>
+                            <span class="text-xs text-slate-500">추천 45,000</span>
+                        </div>
+                        <p class="text-sm">5호선 완공식 때 저 추모비 앞에서 우시던 분이 수아 씨였군요... 그때 박효빈 시장님이 직접 안아주시던 모습 보고 감동했는데. 멋진 사회인이 되셨다니 효빈 시민으로서 자랑스럽습니다!</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-slate-700">Dangga_Sweet</span>
+                            <span class="text-xs text-slate-500">추천 32,000</span>
+                        </div>
+                        <p class="text-sm">윤재훈 저놈은 2024년에 출소하고도 아직도 저러네 ㅋㅋㅋ 컵라면 물이나 올려라 재훈아. 너희 부자보다 당가동 마카롱 상인들이 연봉 더 높을 듯.</p>
+                        <div class="reply-container">
+                            <div class="reply-item"><span class="font-bold text-red-600 text-xs">YoonJaehoon(2026)</span>: 닥쳐! 설탕 덩어리 파는 놈들이! 으아아악!</div>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-slate-700">Audit_Warrior_2026</span>
+                            <span class="text-xs text-slate-500">추천 28,000</span>
+                        </div>
+                        <p class="text-sm">감사원 조사 결과 나오면 윤대환 비자금 싹 다 환수해서 최 씨 아버님 같은 피해 노동자분들에게 전액 배상해야 합니다. 정의 구현 가즈아!</p>
+                    </div>
+
+                    <div class="comment-item"><p class="text-xs text-slate-400 text-center">... 효빈 시민들의 응원 댓글 2만 개가 더 있습니다 ...</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="side-card shadow-sm">
+                <div class="side-card-title">실시간 인기 기사</div>
+                <ul class="side-list">
+                    <li>1. <a href="news_mayor_approval.html">박효빈 시장 지지율 78% 돌파</a></li>
+                    <li>2. <a href="news_audit_yoon.html">감사원, 윤대환 부자 비리 정조준</a></li>
+                    <li>3. <b>[인물] 최수아 씨의 '눈물과 승리'</b></li>
+                    <li>4. <a href="news_winter_preview_v2.html">성우 내한 성료와 경제 효과</a></li>
+                    <li>5. <a href="news_election_changjeon.html">윤재훈 2.2% 득표의 비밀</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#0077DD] p-6 text-white rounded-xl text-center shadow-lg mb-6">
+                <div class="font-black text-xl mb-1 italic">KOREA REAL ESTATE</div>
+                <div class="text-xs font-bold">정확한 시세, 투명한 가치<br>한국부동산원이 함께합니다</div>
+                <div class="mt-4 text-[10px] text-gray-100 font-normal opacity-70">※ 2026년 공시지가 확인 기간입니다.</div>
+            </div>
+
+            <div class="side-card bg-[#EE0022] text-white">
+                <div class="font-black text-lg mb-2">LINE 5 RED</div>
+                <p class="text-xs opacity-90">노동의 땀방울이<br>효빈의 혈맥이 되었습니다.<br>5호선 연장 사업 순항 중!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#1e293b] text-slate-400 py-12 mt-20 text-xs">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <p class="mb-4 text-white text-lg font-black tracking-tighter">효빈일보 (HYOBIN ILBO)</p>
+            <p class="mb-2">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p class="mb-2">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function vote(btn, type) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active-up') || btn.classList.contains('active-down')) {
+                btn.classList.remove('active-up', 'active-down');
+                count--;
+            } else {
+                btn.classList.add(type === 'up' ? 'active-up' : 'active-down');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+    </script>
+</body>
+</html>

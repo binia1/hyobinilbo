@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBS 효빈방송 - 국가 비상사태 속보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #000000; color: #f3f4f6; }
+        
+        .alert-blink {
+            animation: blink-animation 1s steps(5, start) infinite;
+        }
+        
+        @keyframes blink-animation {
+            to { visibility: hidden; }
+        }
+
+        .breaking-gradient {
+            background: linear-gradient(90deg, #991b1b 0%, #000000 100%);
+        }
+
+        .live-badge {
+            box-shadow: 0 0 10px #ef4444;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 긴급 재난/계엄 공지 바 -->
+    <div class="bg-red-700 text-white font-black text-center py-3 text-lg md:text-xl alert-blink border-b border-red-900">
+        <i class="fas fa-exclamation-triangle mr-2"></i> 긴급 속보 : 대통령, 비상계엄 선포 (2024.12.03 23:25)
+    </div>
+
+    <!-- 상단 헤더 -->
+    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50 opacity-95">
+        <div class="container mx-auto px-4 h-16 flex justify-between items-center">
+            <a href="홈.html" class="flex items-center gap-3">
+                <img src="이미지/HBS로고_흰색.png" alt="HBS 로고" class="h-8 w-auto brightness-0 invert" onerror="this.src='https://via.placeholder.com/100x40/000000/ffffff?text=HBS+NEWS'">
+                <span class="bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">재난특보</span>
+            </a>
+            
+            <div class="flex items-center gap-4 text-sm font-bold text-gray-400">
+                <span class="text-red-500 animate-pulse"><i class="fas fa-circle text-[10px] mr-1"></i>LIVE ON-AIR</span>
+                <!-- 전화번호 수정 -->
+                <span class="hidden md:inline">시청자 제보: 079-214-2311</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="container mx-auto px-4 py-6">
+        
+        <!-- 실시간 뉴스 티커 -->
+        <div class="mb-6 bg-gray-800 rounded p-3 flex items-center border-l-4 border-red-600">
+            <span class="text-red-500 font-bold mr-4 shrink-0">실시간 상황</span>
+            <marquee scrollamount="8" class="text-white text-sm">
+                [23:30] 계엄사령부 포고령 1호 발표 "국회·정당 활동 금지, 언론 검열" &nbsp;&nbsp;&nbsp;
+                [23:45] 계엄군, 국회 본관 진입 시도... 보좌진·시민과 대치 중 &nbsp;&nbsp;&nbsp;
+                [23:50] 박효빈 효빈시장 긴급 성명 "계엄 불복종 선언... 시청 사수할 것" &nbsp;&nbsp;&nbsp;
+                [23:55] 공수부대, 효빈시청 및 8호선 관제센터 진입... 일촉즉발 &nbsp;&nbsp;&nbsp;
+                [00:05] 야당 의원들, 담장 넘어 국회 본회의장 집결 시도
+            </marquee>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- 왼쪽: 뉴스 특보 생중계 -->
+            <div class="lg:col-span-2">
+                <div class="relative bg-black rounded-xl overflow-hidden shadow-2xl border border-gray-800 mb-6">
+                    <div class="absolute top-4 left-4 z-20 flex gap-2">
+                        <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded flex items-center live-badge">
+                            <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span> LIVE
+                        </span>
+                        <span class="bg-black/70 text-white text-xs font-bold px-3 py-1 rounded border border-gray-600">
+                            특집: 헌정 중단 위기
+                        </span>
+                    </div>
+                    
+                    <!-- 썸네일/플레이어 영역 -->
+                    <div class="relative group cursor-pointer">
+                        <img src="이미지/계엄령선포.png" alt="윤석열 대통령 담화" class="w-full h-[300px] md:h-[450px] object-cover opacity-80" onerror="this.src='https://via.placeholder.com/800x450/333333/ffffff?text=Martial+Law+Breaking+News'">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white/80 drop-shadow-lg group-hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- 하단 자막 오버레이 -->
+                        <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/90 to-transparent p-6">
+                            <div class="bg-red-700 text-white text-xs inline-block px-2 py-0.5 rounded mb-2 font-bold">속보</div>
+                            <h1 class="text-2xl md:text-3xl font-black text-white leading-tight mb-2">
+                                윤 대통령, 비상계엄 선포... "반국가 세력 척결"
+                            </h1>
+                            <p class="text-gray-300 text-sm md:text-base font-medium">
+                                "효빈 2.2% 득표율은 북한 해킹" 주장하며 45년 만에 계엄 발동... 국회 무력화 시도
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 주요 뉴스 그리드 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 뉴스 1 -->
+                    <a href="뉴스상세_박효빈.html" class="bg-gray-900 p-4 rounded-lg border-l-4 border-[#0056b3] hover:bg-gray-800 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[#0056b3] text-xs font-bold">효빈시</span>
+                            <span class="text-gray-500 text-xs">방금 전</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">박효빈 시장 "나를 밟고 가라"... 계엄군 앞 맨몸 저항</h3>
+                        <p class="text-sm text-gray-400">시 공무원 전원 비상 소집, 시청 출입구 봉쇄... "위헌적 명령 거부"</p>
+                    </a>
+                    
+                    <!-- 뉴스 2 -->
+                    <a href="뉴스상세_8호선.html" class="bg-gray-900 p-4 rounded-lg border-l-4 border-[#9856FF] hover:bg-gray-800 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[#9856FF] text-xs font-bold">교통/안전</span>
+                            <span class="text-gray-500 text-xs">10분 전</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">군, 8호선 관제센터 진입 시도... 기관사들 "전원 차단 막아라"</h3>
+                        <p class="text-sm text-gray-400">우신면 "지하 벙커 찾아내라" 난동... 시민들 역사로 집결해 스크럼</p>
+                    </a>
+
+                    <!-- 뉴스 3 -->
+                    <a href="뉴스상세_국회.html" class="bg-gray-900 p-4 rounded-lg border-l-4 border-yellow-500 hover:bg-gray-800 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-yellow-500 text-xs font-bold">정치</span>
+                            <span class="text-gray-500 text-xs">20분 전</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">국회의장 "계엄 해제 요구안 즉각 상정"... 의원들 담장 넘어 본회의장으로</h3>
+                        <p class="text-sm text-gray-400">여당 지도부 일부 연락 두절... 야당 "내란죄 탄핵 추진"</p>
+                    </a>
+
+                    <!-- 뉴스 4 -->
+                    <a href="뉴스상세_시민.html" class="bg-gray-900 p-4 rounded-lg border-l-4 border-red-500 hover:bg-gray-800 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-red-500 text-xs font-bold">사회</span>
+                            <span class="text-gray-500 text-xs">30분 전</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">효빈 시민들, 포고령 무시하고 거리로... "독재 타도"</h3>
+                        <p class="text-sm text-gray-400">안천동 트럭 부대 시청으로 이동 중... 창전시장 상인들 소금 뿌리며 저항</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 오른쪽: 실시간 상황판 -->
+            <div class="flex flex-col gap-6">
+                <!-- 계엄사령부 포고령 요약 -->
+                <div class="bg-red-900/20 border border-red-800 rounded-lg p-5">
+                    <h3 class="text-red-500 font-black text-lg mb-3 flex items-center">
+                        <i class="fas fa-bullhorn mr-2"></i> 계엄 포고령 제1호 (요약)
+                    </h3>
+                    <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
+                        <li>모든 정치 활동 금지 (국회, 정당, 집회 등)</li>
+                        <li>언론, 출판, 보도에 대한 검열 실시</li>
+                        <li>모든 전공의 등 의료인 본업 복귀 명령</li>
+                        <li>위반 시 영장 없이 체포, 구금, 압수수색 가능</li>
+                    </ul>
+                    <div class="mt-4 text-xs text-red-400 bg-black/30 p-2 rounded">
+                        * 박효빈 시장: "위헌적 포고령 거부, 효빈시는 따르지 않는다"
+                    </div>
+                </div>
+
+                <!-- 실시간 SNS 반응 -->
+                <div class="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                    <h3 class="text-white font-bold mb-4 border-b border-gray-600 pb-2">실시간 시민 반응</h3>
+                    <div class="space-y-4 h-64 overflow-y-auto pr-2 custom-scrollbar">
+                        <div class="text-sm">
+                            <span class="text-blue-400 font-bold">@hyobin_lover</span>
+                            <p class="text-gray-300 mt-1">지금 시청 앞입니다. 장갑차 왔는데 시민들이 안 비켜주고 있어요. 다들 나오세요!</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-gray-500 font-bold">@jaehoon_king96</span>
+                            <p class="text-gray-400 mt-1">만세!! 드디어 정의 구현!! 8호선 폭파 가즈아!! 각하 존경합니다!!</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-green-400 font-bold">@line8_driver</span>
+                            <p class="text-gray-300 mt-1">관제실 문 잠갔습니다. 군인들이 문 두드리고 난리 났습니다. 무섭습니다.</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-yellow-400 font-bold">@ancheon_kim</span>
+                            <p class="text-gray-300 mt-1">예비군 군복 입고 나갑니다. 후배들아 국민한테 총 쏘지 마라.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 시민 행동 수칙 -->
+                <div class="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                    <h3 class="text-white font-bold mb-3">⚠️ 시민 행동 요령</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 신분증을 반드시 소지하십시오.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 불필요한 외출을 자제하되, 비상 연락망을 유지하십시오.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> HBS 효빈방송 등 지역 방송을 주시하십시오.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 유언비어(우신면 등)에 현혹되지 마십시오.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 하단 푸터 -->
+    <footer class="bg-black border-t border-gray-800 py-8 mt-8 text-center text-xs text-gray-600">
+        <p class="mb-2">HBS는 어떠한 외압에도 굴하지 않고 진실만을 보도하겠습니다.</p>
+        <p>효빈광역시 재난방송 주관 방송사 HBS</p>
+        <p class="mt-4">주소: 효빈광역시 북구 중수동 23 | 대표이사: 임상진 | 제보: 079-214-2311</p>
+    </footer>
+
+</body>
+</html>

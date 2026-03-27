@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문화] "꿈이 현실로"... HAF 2025, 韓日 성우 18인 효빈 도시철도 '성지순례' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 노선 뱃지 (사용자 지정 색상) */
+        .line-badge { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; color: white; font-size: 12px; font-weight: bold; margin-right: 4px; vertical-align: middle; }
+        .line-1 { background-color: #0077DD; }
+        .line-2 { background-color: #00CCAA; }
+        .line-3 { background-color: #FFCC11; }
+        .line-4 { background-color: #FF5522; }
+        .line-5 { background-color: #EE0022; }
+        .line-6 { background-color: #881188; }
+        .line-7 { background-color: #FF8899; }
+        .line-8 { background-color: #9856FF; }
+        .line-bh { background-color: #6677CC; }
+
+        /* 현장 스케치 박스 */
+        .scene-box { background: #f0f8ff; border: 1px solid #cce5ff; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .scene-title { font-weight: bold; font-size: 18px; color: #0055aa; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 5px; }
+        .scene-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #b8daff; }
+        .scene-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .scene-header { font-weight: bold; font-size: 16px; margin-bottom: 5px; display: flex; align-items: center; }
+
+        /* 성우 명단 박스 */
+        .cv-list-box { background: #fff5f5; border: 1px solid #ffc9c9; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .cv-list-title { font-weight: bold; font-size: 18px; color: #cc0000; margin-bottom: 15px; text-align: center; }
+        .cv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .cv-grid-item { background: white; padding: 10px; border-radius: 4px; border: 1px solid #eee; font-size: 14px; }
+        .cv-grid-item strong { color: #333; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 공식 계정 마크 */
+        .official-mark { display: inline-flex; align-items: center; justify-content: center; background: #00a2e8; color: white; width: 14px; height: 14px; border-radius: 50%; font-size: 10px; margin-left: 4px; vertical-align: middle; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">문화 > HAF 2025</div>
+                <h2 class="article-title">"이게 진짜 성지순례"... HAF 2025, 韓日 성우 18인 효빈 도시철도 기습 방문에 '대혼란'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김문화 기자</span> (culture@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.08.16. 17:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">세토 아사미·박지윤 1호선 기관실 앞 조우... "실전 전투 준비 완료"<br>키토 아카리·김율, 6호선 전동차서 '동반 수면' 퍼포먼스<br>성우들, 본지 기사에 직접 댓글 남겨 "효빈시 최고" 인증</span></p>
+                    
+                    <div class="my-6">
+                        <img src="성우_단체_방문.png" alt="효빈역_앞_한일성우_단체사진.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0055aa/FFFFFF?text=Korea-Japan+Voice+Actors+Group+Photo'">
+                        <div class="img-caption">▲ 'HAF 2025: The Grand Slam' 참석 차 내한한 일본 성우진과 한국 성우진이 16일 오전 효빈역 광장에서 단체 기념촬영을 하고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김문화 기자] "진짜가 나타났다!"</p>
+
+                    <p>역대 최대 규모로 개막한 <a href="haf.html" class="text-blue-600 underline">효빈 애니메이션 페스티벌(HAF)</a> 2025의 하이라이트는 단연 한·일 성우 드림팀의 '효빈 도시철도 투어'였다. <a href="효빈교통공사.html" class="text-blue-600 underline">효빈교통공사</a>의 9개 노선 캐릭터를 담당하는 18명의 성우(한국 9명, 일본 9명)들이 실제 자신들이 목소리를 연기하는 노선을 깜짝 방문하자, 효빈시 전역은 팬들의 환호성으로 뒤덮였다.</p>
+
+                    <div class="cv-list-box">
+                        <div class="cv-list-title">🎙️ HAF 2025 효빈 도시철도 방문 성우진 (총 18명)</div>
+                        <div class="cv-grid">
+                            <div class="cv-grid-item"><span class="line-badge line-1">1</span> <b>고나미</b>: 박지윤(韓) / 세토 아사미(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-2">2</span> <b>하루빈</b>: 김선혜(韓) / 우치다 마아야(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-3">3</span> <b>박라미</b>: 이새아(韓) / 이시카와 유이(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-4">4</span> <b>다로나</b>: 윤아영(韓) / 타네자키 아츠미(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-5">5</span> <b>미소하</b>: 김채하(韓) / 쿠노 미사키(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-6">6</span> <b>라세나</b>: 김율(韓) / 키토 아카리(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-7">7</span> <b>임세정</b>: 윤미나(韓) / 스즈키 아이나(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-7">7</span> <b>임세하</b>: 방연지(韓) / 다테 사유리(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-8">8</span> <b>유리아</b>: 장예나(韓) / 사이토 슈카(日)</div>
+                            <div class="cv-grid-item"><span class="line-badge line-bh">빈</span> <b>전노아</b>: 김현지(韓) / 마에다 카오리(日)</div>
+                        </div>
+                    </div>
+
+                    <div class="scene-box">
+                        <div class="scene-title">🚆 효빈 도시철도 '성우 습격 사건' 현장 스케치</div>
+                        
+                        <!-- 1호선 -->
+                        <div class="scene-item">
+                            <div class="scene-header text-[#0077DD]"><span class="line-badge line-1">1</span> 1호선 (고나미): 박지윤 & 세토 아사미</div>
+                            <p class="text-sm">기관사 제복을 입은 두 성우가 효빈역 승강장에 등장했다. <b>세토 아사미</b>가 '방패용사 성공담'의 라프타리아 톤으로 "나는 당신의 검... 아니, 당신의 기관사!"를 외치자, <b>박지윤</b> 성우가 '닌자고' 니야 목소리로 "지금부터 안전 운행 작전을 개시한다!"고 받아쳐 현장을 군대 점호장 같은 엄숙함(?)과 웃음바다로 만들었다.</p>
+                        </div>
+
+                        <!-- 2호선 -->
+                        <div class="scene-item">
+                            <div class="scene-header text-[#00CCAA]"><span class="line-badge line-2">2</span> 2호선 (하루빈): 김선혜 & 우치다 마아야</div>
+                            <p class="text-sm">고송교차로역 개찰구에서 <b>우치다 마아야</b>가 한쪽 눈을 가리는 '중2병(릿카)' 포즈로 "어둠의 화염에 휩싸인... 승차권을 제시하라!"고 외치자, <b>김선혜</b> 성우가 코난 톤으로 "범인은 이 안에 있어... 부정승차범!"이라며 개찰구를 뛰어넘는 시늉을 해 시민들의 박수를 받았다.</p>
+                        </div>
+
+                        <!-- 4호선 -->
+                        <div class="scene-item">
+                            <div class="scene-header text-[#FF5522]"><span class="line-badge line-4">4</span> 4호선 (다로나): 윤아영 & 타네자키 아츠미</div>
+                            <p class="text-sm">이자공원역 사무실을 방문한 <b>타네자키 아츠미</b>는 결재 서류 더미를 보고 '스파이 패밀리' 아냐 표정을 지으며 "와쿠와쿠(두근두근)!"를 연발했다. 옆에 있던 <b>윤아영</b> 성우는 '도라에몽' 진구 목소리로 "도라에몽~ 결재 좀 대신 해줘~"라고 징징대는 콩트를 선보여 웃음을 자아냈다.</p>
+                        </div>
+
+                        <!-- 6호선 -->
+                        <div class="scene-item">
+                            <div class="scene-header text-[#881188]"><span class="line-badge line-6">6</span> 6호선 (라세나): 김율 & 키토 아카리</div>
+                            <p class="text-sm">가장 큰 화제는 6호선 전동차 내부였다. <b>키토 아카리</b>가 자신의 캐릭터(라세나) 등신대 옆에 기대어 '니지동' 카나타처럼 잠든 척을 하자, 팬들이 숨죽이며 셔터를 눌렀다. <b>김율</b> 성우는 마블의 케이트 비숍 톤으로 "일어나! 수능 공부해야지!"라며 깨우는 퍼포먼스로 '현실 자매' 케미를 보여줬다.</p>
+                        </div>
+
+                        <!-- 7호선 -->
+                        <div class="scene-item">
+                            <div class="scene-header text-[#FF8899]"><span class="line-badge line-7">7</span> 7호선 (임세정/임세하): 스즈키 아이나, 다테 사유리 & 윤미나, 방연지</div>
+                            <p class="text-sm">트램 정거장에서 <b>스즈키 아이나</b>는 "Shiny~!"(러브라이브 마리)를 외치며 등장했고, <b>다테 사유리</b>는 기타를 치는 시늉(러브라이브 카논)을 하며 "이 트램의 기계음은 F코드야!"라는 공대생 드립을 쳤다. 한국 성우인 <b>방연지</b>(원신 클레)가 "트램이 터지면 안 돼!"라고 받아쳐 폭소를 유발했다.</p>
+                        </div>
+
+                        <!-- 빈효선 -->
+                        <div class="scene-item">
+                            <div class="scene-header text-[#6677CC]"><span class="line-badge line-bh">빈</span> 빈효선 (전노아): 김현지 & 마에다 카오리</div>
+                            <p class="text-sm"><b>마에다 카오리</b>는 '아뮤즈의 광견'이라는 별명답게 예산 담당자에게 달려가 "예산 내놔!"를 시전했고, <b>김현지</b> 성우(케이온 아즈사)가 "선배! 품위를 지키세요!"라며 뜯어말리는 명장면을 연출했다.</p>
+                        </div>
+                    </div>
+
+                    <p>특히 이번 행사 직후 성우들이 본지(효빈일보) 기사에 직접 댓글을 남긴 것으로 확인되어 네티즌들 사이에서 "성지순례 왔다가 성우님을 영접했다"며 화제가 되고 있다.</p>
+
+                    <p>한편, <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a>(2024 총선 2.2% 낙선, 전과자) 씨는 이날도 시청 앞에서 1인 시위를 벌이다 시민들의 핀잔을 듣고 철수했다. 그는 온라인 댓글창에서도 성우들의 등판을 믿지 못하고 "AI 조작"이라 주장해 빈축을 사고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">12,405</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Seto_Asami_Official", isOfficial: true, time: "방금 전", like: 15200, dislike: 10, isPunished: false,
+                                content: "효빈시의 1호선 명예 기관사로서 영광이었습니다! 고나미와 함께 안전 운행 하겠습니다! 🫡 \n(ヒョビン市の1号線名誉機関士として光栄でした！高娜美と一緒に安全運行します！)",
+                                replies: [
+                                    { nick: "Park_Jiyoon_Official", isOfficial: true, content: "아사미 상! 오늘 호흡 최고였어요! 다음에 닌자고... 아니 1호선에서 또 만나요! ❤️" },
+                                    { nick: "Line1_Driver", content: "현직 1호선 기관사입니다. 두 분 덕분에 오늘 승객분들이 질서를 너무 잘 지켜주셨습니다. 감사합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1분 전", like: 2, dislike: 9800, isPunished: true,
+                                content: "다 거짓말이다! 일본 성우가 효빈일보에 댓글을 달 리가 없어! 박효빈이 댓글 알바 고용해서 일본어 번역기 돌린 거다! 속지 마라! 내 2.2% 득표율처럼 이것도 다 조작이야!",
+                                replies: [
+                                    { nick: "Fact_Violence", content: "옆에 파란 체크(공식 인증) 안 보이냐? 노안인가? 그리고 2.2%는 조작이 아니라 민심이다 아저씨야." },
+                                    { nick: "Seto_Asami_Fan", content: "세토 아사미 님이 니 친구냐? 어디서 행패야." }
+                                ]
+                            },
+                            {
+                                nick: "Citizen_Hyobin", time: "2분 전", like: 8500, dislike: 5, isPunished: false,
+                                content: "와 대박 ㅋㅋㅋ 외국인들이 왜 이렇게 많나 했더니 성우들 보러 온 거였구나. 효빈시민으로서 자부심 뿜뿜합니다!",
+                                replies: [
+                                    { nick: "Merchant_Kim", content: "상인회입니다. 오늘 매출 역대 최고 찍었습니다. 시장님 감사합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "3분 전", like: 1, dislike: 9200, isPunished: true,
+                                content: "왜구들이 쳐들어왔는데 자부심? 나라 팔아먹은 놈들! 내가 시장 되면 일본어 쓰는 사람 다 벌금 물릴 거다! 2.2%는 음모야!",
+                                replies: [
+                                    { nick: "Law_Student", content: "헌법상 표현의 자유 침해입니다. 법 공부 좀 하고 오세요 전과자 아저씨." },
+                                    { nick: "History_Teacher", content: "글로벌 시대에 쇄국정책이라니... 흥선대원군이세요?" }
+                                ]
+                            },
+                            {
+                                nick: "Kito_Akari_Official", isOfficial: true, time: "10분 전", like: 14500, dislike: 0, isPunished: false,
+                                content: "6호선 전동차... 너무 푹신해서 진짜로 잠들 뻔했어요(웃음). 라세나 쨩도 분명 좋아할 거예요. 효빈시 최고! 💤 \n(6号線の電車... とてもフカフカで本当に寝るところでした(笑)。ラセナちゃんもきっと気に入るはず。ヒョビン市最高！)",
+                                replies: [
+                                    { nick: "Kim_Yul_Official", isOfficial: true, content: "아카리 쨩, 자면 안 돼! 수능 공부해야지! (깨우는 연기 너무 재밌었어요 ㅋㅋ)" },
+                                    { nick: "Nijigasaki_Fan", content: "카나타 본체 등판 ㅋㅋㅋㅋ 성지순례 완료했습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Maeda_Kaori_Official", isOfficial: true, time: "15분 전", like: 13800, dislike: 0, isPunished: false,
+                                content: "예산!!! 예산을 주세요!!! (농담입니다) 효빈시의 술... 아니 풍경이 너무 아름답네요. 전노아 많이 사랑해주세요! 🐶 \n(予算！！！予算をください！！！(冗談です) ヒョビン市のお酒... いや、風景がとても美しいですね。田露娥をたくさん愛してください！)",
+                                replies: [
+                                    { nick: "Kim_Hyunji_Official", isOfficial: true, content: "카오리 쨩, 끝나고 막걸리 한잔하러 가자! 내가 쏜다! (예산 확보 완료)" },
+                                    { nick: "Mad_Dog", content: "광견 콤비 ㅋㅋㅋㅋ 진짜 술 드시러 가실 듯." }
+                                ]
+                            },
+                            {
+                                nick: "Uchida_Maaya_Official", isOfficial: true, time: "20분 전", like: 13200, dislike: 0, isPunished: false,
+                                content: "어둠의 화염에 휩싸인 효빈시여! 2호선은 제가 지킵니다. (읏차) \n(闇の炎に抱かれたヒョビン市よ！2号線は私が守ります。(よいしょ))",
+                                replies: [
+                                    { nick: "Kim_Seonhye_Official", isOfficial: true, content: "마아야 상, 범인은... 이 안에 있어! (오늘 릿카 포즈 너무 멋졌어요!)" }
+                                ]
+                            },
+                            {
+                                nick: "Ishikawa_Yui_Official", isOfficial: true, time: "22분 전", like: 12500, dislike: 0, isPunished: false,
+                                content: "박라미의 열정은 정말 아름답네요. 카메라를 들고 뛰는 모습이... 명령을 수행하는 안드로이드 같았어요. \n(朴喇美の情熱は本当に美しいですね。カメラを持って走る姿が... 命令を遂行するアンドロイドのようでした。)",
+                                replies: [
+                                    { nick: "Lee_Saeah_Official", isOfficial: true, content: "유이 상의 차분한 목소리... F학점 맞은 학생도 힐링 되는 기분이었어요. ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "25분 전", like: 0, dislike: 8800, isPunished: true,
+                                content: "성우들이 다 한패다! 일본 문화에 세뇌된 박효빈 정부를 규탄한다! 나한테는 댓글 안 달아주냐! 나 2024년 여당 후보였어! 윤대환 아들이라고!",
+                                replies: [
+                                    { nick: "Maeda_Kaori_Official", isOfficial: true, content: "예산 없어서 안 됩니다. (予算がないのでダメです。)" },
+                                    { nick: "Citizen_K", content: "와 미친 ㅋㅋㅋㅋ 마에다 카오리가 직접 딜 박음 ㅋㅋㅋㅋㅋ 인생 업적 축하한다 윤재훈." },
+                                    { nick: "Fact_Check", content: "공식 계정한테 '예산 없음' 소리 듣는 2.2% 낙선자 클래스 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Spy_Anya", time: "30분 전", like: 9800, dislike: 0, isPunished: false,
+                                content: "타네자키 아츠미 님이랑 윤아영 님 대화하는 거 봄? 윤아영 님이 진구 톤으로 징징대니까 타네자키 님이 아냐 톤으로 '치' 하고 지나감 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Yun_Ayung_Official", isOfficial: true, content: "아냐 쨩 너무 귀여웠어요... 진구는 오늘도 웁니다 ㅠㅠ" },
+                                    { nick: "Tanezaki_Atsumi_Official", isOfficial: true, content: "와쿠와쿠! (도라에몽 진구 연기, 정말 대단했어요!)" }
+                                ]
+                            },
+                            {
+                                nick: "Kuno_Misaki_Official", isOfficial: true, time: "35분 전", like: 11000, dislike: 0, isPunished: false,
+                                content: "미소하 쨩의 정책 분석력... 호크보다 대단할지도? 남은 음식... 아니, 복지 정책은 저에게 맡겨주세요! 🐷 \n(微笑夏ちゃんの政策分析力... ホークよりすごいかも？残飯... いや、福祉政策は私に任せてください！)",
+                                replies: [
+                                    { nick: "Kim_Chaeha_Official", isOfficial: true, content: "미사키 쨩의 귀여운 목소리로 팩폭 날리는 거... 배우고 싶습니다! (아이엠스타 톤으로)" }
+                                ]
+                            },
+                            {
+                                nick: "Suzuki_Aina_Official", isOfficial: true, time: "40분 전", like: 10500, dislike: 0, isPunished: false,
+                                content: "Shiny~! 7호선 트램은 정말 반짝반짝하네요! 마리처럼 헬기를 타고 오고 싶었지만 트램도 최고! ✨ \n(Shiny~! 7号線のトラムは本当にキラキラしてますね！鞠莉のようにヘリコプターで来たかったけど、トラムも最高！)",
+                                replies: [
+                                    { nick: "Yun_Mina_Official", isOfficial: true, content: "아이나 상의 텐션! 트램 유리창 깨지는 줄 알았어요 ㅋㅋ 최고!" },
+                                    { nick: "Date_Sayuri_Official", isOfficial: true, content: "언니! 트램에서 너무 크게 웃으면 안 돼! (기타 딩가딩가)" },
+                                    { nick: "Bang_Yeonji_Official", isOfficial: true, content: "사유리 쨩, 트램 기계음 F코드인 거 어떻게 알았어? ㅋㅋ (폭발광 클레 등장)" }
+                                ]
+                            },
+                            {
+                                nick: "Saito_Shuka_Official", isOfficial: true, time: "45분 전", like: 10200, dislike: 0, isPunished: false,
+                                content: "요우소로! 8호선 경전철, 바다를 항해하는 배 같아요! 유리아 쨩과 함께 전속 전진! 🫡 \n(ヨーソロー！8号線の軽電鉄、海を航海する船みたいです！柳利娥ちゃんと一緒に全速前進！)",
+                                replies: [
+                                    { nick: "Jang_Yena_Official", isOfficial: true, content: "슈카 상의 경례 각도... 역시 원조는 다르네요! 호크 톤으로 잔소리해서 미안해요 ㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Subway_Fan", time: "50분 전", like: 7000, dislike: 0, isPunished: false,
+                                content: "안내방송 파일 제발 음원으로 팔아주세요! 출근길에 마아야 상 목소리 듣고 싶어요 ㅠㅠ 현기증 난단 말이에요.",
+                                replies: [
+                                    { nick: "Hyobin_Metro", isOfficial: true, content: "고객님의 의견을 반영하여 굿즈샵에서 '보이스 카드' 판매를 검토하겠습니다!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "55분 전", like: 0, dislike: 9500, isPunished: true,
+                                content: "이게 다 성우들 돈벌이 수단이다! 시민들 주머니 털어서 일본으로 송금하는 거야! 나는 이런 거 절대 용납 못 해! 내 2.2% 지지자들아 일어나라!",
+                                replies: [
+                                    { nick: "Citizen_A", content: "2.2% 지지자 다 합쳐도 여기 댓글 수보다 적을 듯요..." },
+                                    { nick: "Voice_Actor_Fan", content: "성우분들 행사비보다 관광수입이 훨씬 많아요. 경제 공부 좀 다시 하세요." }
+                                ]
+                            },
+                            {
+                                nick: "Saneung_Baker", time: "1시간 전", like: 6800, dislike: 0, isPunished: false,
+                                content: "사능동 빵집 주인입니다. 오늘 빵 500개 완판했어요! 일본 손님들이 '사아야 빵' 달라면서 줄 서는데 눈물 날 뻔했습니다. 박효빈 시장님 감사합니다!",
+                                replies: [
+                                    { nick: "Hyobin_Resident", content: "와 사장님 대박나세요! 사능동 상권 살아나니까 너무 보기 좋네요." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 5분 전", like: 1, dislike: 9100, isPunished: true,
+                                content: "빵이 문제냐! 우리 아버지가 시장일 땐 쌀을 줬어! 빵 쪼가리 팔아서 부자 되겠냐! 그 빵집 내가 인수해서 밀어버릴 거야!",
+                                replies: [
+                                    { nick: "Saneung_Baker", content: "윤재훈 씨, 저번에 저희 가게 와서 행패 부리다 경찰에 끌려가셨죠? 또 오시면 바로 신고합니다." },
+                                    { nick: "Bread_Lover", content: "빵이 쪼가리? 님 인성이나 챙기세요. 아, 인성이 없나?" }
+                                ]
+                            },
+                            {
+                                nick: "Cosplay_Queen", time: "1시간 10분 전", like: 5500, dislike: 2, isPunished: false,
+                                content: "코스프레 퍼레이드 참가했는데 시민분들이 같이 사진 찍자고 해주셔서 너무 감동 ㅠㅠ 효빈시는 진짜 편견 없는 도시인 듯.",
+                                replies: [
+                                    { nick: "Citizen_B", content: "퀄리티 진짜 좋던데요? 아이들이 너무 좋아하더라고요. 내년에도 꼭 오세요!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 15분 전", like: 0, dislike: 8900, isPunished: true,
+                                content: "저게 옷이냐! 흉측하다! 우리 미풍양속을 다 해치고 있어! 내가 시장 되면 코스프레 금지법 만들 거야! 단속반 풀어서 다 잡아넣을 거라고!",
+                                replies: [
+                                    { nick: "Law_Student", content: "복장의 자유 침해입니다 아저씨... 그리고 님이 시장 될 확률보다 제가 로또 1등 될 확률이 높아요." },
+                                    { nick: "Citizen_C", content: "님 2024년 선거 유세 때 입었던 빨간 조끼가 더 흉측하던데 ㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Date_Sayuri_Official", isOfficial: true, time: "1시간 20분 전", like: 11500, dislike: 0, isPunished: false,
+                                content: "트램 소리가... F코드가 아니었어?! G코드였나?! 다시 들어봐야겠어! (기타 튜닝 중) 🎸 \n(トラムの音が... Fコードじゃなかったの？！Gコードだったか？！もう一度聞かなきゃ！)",
+                                replies: [
+                                    { nick: "Bang_Yeonji_Official", isOfficial: true, content: "사유리 쨩, 그거 모터 과열되는 소리야... 도망쳐!! (펑!)" },
+                                    { nick: "Eng_Prof", content: "기계공학과 교수입니다. 두 분 학교로 모시고 싶네요. (진지)" }
+                                ]
+                            },
+                            {
+                                nick: "Taxi_Driver_Choi", time: "1시간 30분 전", like: 6200, dislike: 0, isPunished: false,
+                                content: "택시 기사 20년 차입니다. 요즘처럼 손님 많은 건 처음이네요. 일본 손님들이 예의도 바르고 팁도 주셔서 운전할 맛 납니다.",
+                                replies: [
+                                    { nick: "YoonJaehoon(IP)", time: "1시간 31분 전", like: 0, dislike: 9300, isPunished: true, content: "태워주지 마! 승차 거부해! 파업하라고! 내가 시키는 대로 해! 나 윤대환 아들이야!" },
+                                    { nick: "Taxi_Driver_Choi", content: "윤재훈 씨, 저번에 요금 안 내고 도망갔죠? 블랙박스 영상 경찰서에 있습니다. 조만간 뵙죠." }
+                                ]
+                            },
+                            {
+                                nick: "Univ_Student_Park", time: "1시간 40분 전", like: 5800, dislike: 0, isPunished: false,
+                                content: "아까 시청 앞에서 윤재훈 혼자 소리 지르는 거 봄 ㅋㅋㅋ 지나가던 개도 안 쳐다보더라. 진짜 짠하더라.",
+                                replies: [
+                                    { nick: "YoonJaehoon(IP)", time: "1시간 42분 전", like: 0, dislike: 9000, isPunished: true, content: "안 쳐다본 게 아니라 내 카리스마에 압도된 거다! 시민들이 마음속으로는 다 나를 지지해! 2.2%는 조작이라고!" },
+                                    { nick: "Passing_Dog", content: "멍멍! (번역: 진짜 안 쳐다봤음)" }
+                                ]
+                            },
+                            {
+                                nick: "Real_Estate_Lee", time: "1시간 50분 전", like: 7500, dislike: 0, isPunished: false,
+                                content: "역세권 아파트 호가 1억 올랐습니다. 성지순례 코스 주변 상가도 공실률 0%입니다. 박효빈 시장님이 효빈시를 살려냈네요.",
+                                replies: [
+                                    { nick: "YoonJaehoon(IP)", time: "1시간 55분 전", like: 0, dislike: 9400, isPunished: true, content: "거품이다! 다 거품이야! 내가 시장 되면 아파트 다 몰수하고 재분배할 거야! 공산당 박효빈 물러가라!" },
+                                    { nick: "Citizen_D", content: "아파트 몰수하면 공산당은 님이잖아요 ㅋㅋㅋ 자승자박 레전드." }
+                                ]
+                            },
+                            {
+                                nick: "Foreigner_Mike", time: "2시간 전", like: 6900, dislike: 0, isPunished: false,
+                                content: "I flew from LA just for this festival. Hyobin City is amazing! The voice actors were incredible. Love you Korea! 🇺🇸🇰🇷",
+                                replies: [
+                                    { nick: "Welcome_Hyobin", content: "Welcome Mike! Hope you enjoy your stay!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "2시간 5분 전", like: 0, dislike: 9600, isPunished: true,
+                                content: "양키 고 홈! 외국인들 다 나가라! 대한민국은 우리 것이다! 쇄국정책만이 살길이다!",
+                                replies: [
+                                    { nick: "Global_Citizen", content: "Please ignore this crazy man. He is a local comedian(failed politician)." },
+                                    { nick: "Mike", content: "LOL okay grandpa." }
+                                ]
+                            },
+                            {
+                                nick: "Clean_Hyobin_Campaign", time: "2시간 10분 전", like: 8000, dislike: 0, isPunished: false,
+                                content: "행사장에 쓰레기 하나 없는 거 실화? 덕후들 시민의식 수준 ㄷㄷ해. 내가 본 축제 중 제일 깨끗함.",
+                                replies: [
+                                    { nick: "Volunteer", content: "자원봉사자인데 진짜 치울 게 없어서 심심할 정도였어요 ㅋㅋ 다들 자기 쓰레기 챙겨감." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "2시간 15분 전", like: 0, dislike: 9900, isPunished: true,
+                                content: "쓰레기는 박효빈이랑 너희 덕후들이야! 내가 시장 되면 싹 다 소각장에 넣어버릴 거야! 나 화났어!",
+                                replies: [
+                                    { nick: "Police_Cyber_Team", content: "윤재훈 씨, 협박죄 및 모욕죄로 캡처 완료했습니다. 출석 요구서 발송하겠습니다." },
+                                    { nick: "Citizen_E", content: "금융치료 엔딩 ㅊㅋㅊㅋ" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let officialMark = cmt.isOfficial ? `<span class="official-mark">V</span>` : "";
+                            let nickStyle = cmt.isOfficial ? "text-[#00a2e8]" : (cmt.isPunished ? "text-red-600" : "");
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.isOfficial ? "bg-blue-50 border border-blue-200" : "bg-gray-50 border border-gray-200";
+                                    const rNickStyle = reply.isOfficial ? "text-[#00a2e8]" : "text-[#0055aa]";
+                                    const rOfficialMark = reply.isOfficial ? `<span class="official-mark">V</span>` : "";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}${rOfficialMark}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}${officialMark} ${cmt.isPunished ? '(IP 차단됨)' : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_haf_seiyu_visit.html" class="ranking-link font-bold text-[#0055aa]">韓日 성우 18인 도시철도 습격</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_metro_surplus.html" class="ranking-link">효빈 도시철도 흑자 신화</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_tour_pass.html" class="ranking-link">HAF PASS 암표 전쟁</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, '망고 구걸' 굴욕</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">HAF 2025</div>
+                    <div class="text-xs">성우 토크쇼 DVD<br>예약 판매 시작</div>
+                </div>
+            </div>
+             <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈교통공사</div>
+                    <div class="text-xs text-blue-400">레일 루미네 굿즈<br>전 품목 10% 할인</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

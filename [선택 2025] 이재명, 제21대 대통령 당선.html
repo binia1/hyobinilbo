@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[선택 2025] 이재명, 제21대 대통령 당선... "국민이 이겼다, 다시 뛰는 대한민국" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #0055aa; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+
+        .breaking-badge { background-color: #0055aa; color: white; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+        
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #0055aa; width: 20px; }
+        
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content">
+            <div class="text-[#0055aa] font-bold text-sm mb-2">정치 > 제21대 대선</div>
+            <h1 class="article-title">[선택 2025] 이재명, 제21대 대통령 당선... "국민이 이겼다, 다시 뛰는 대한민국"</h1>
+            <div class="article-subtitle">
+                개표율 98.7% 상황서 '당선 확실'... 김문수·이준석 후보 따돌리고 압승<br>
+                "계엄의 상처 치유하고 통합의 길로"... 광화문·효빈광장 시민들 밤새 축제<br>
+                효빈시 득표율 85% 육박... 박효빈 시장 "시민의 위대한 승리, 정부와 협력할 것"
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2025.06.04 03:20 | 수정 2025.06.04 04:00</span>
+                <span>정치부 이덕북 기자 (politics@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="이미지/이재명당선.png" alt="개표 상황실에서 당선이 확실시되자 손을 들어 환호에 답하는 이재명 당선인의 모습" onerror="this.src='https://via.placeholder.com/600x400?text=President+Lee+Elected'">
+                    <div class="img-caption">▲ 4일 새벽, 이재명 더불어민주당 후보가 제21대 대통령 당선이 확실시되자 지지자들에게 손을 흔들고 있다.</div>
+                </div>
+
+                <p>
+                    <span class="text-[#0055aa] font-bold">"오늘 밤, 대한민국은 어둠을 걷어내고 다시 민주공화국의 아침을 맞이했습니다."</span>
+                </p>
+                <p>
+                    2025년 6월 4일, 대한민국의 새로운 대통령으로 기호 1번 더불어민주당 이재명 후보가 당선되었다. 이 당선인은 개표 초반부터 압도적인 격차로 2위 김문수 후보(국민의힘)와 3위 이준석 후보(개혁신당)를 따돌리며 일찌감치 승기를 굳혔다.
+                </p>
+                <p>
+                    특히 지난 계엄 사태의 진원지이자 '민주주의의 성지'로 떠오른 효빈시에서는 이재명 후보에게 85%에 육박하는 몰표를 던지며 정권 심판에 쐐기를 박았다. 시민들은 <strong style="color:#9856FF">효빈 8호선</strong> 역사와 시청 광장에 모여 "우리가 민주주의를 지켰다"며 밤새 축제를 벌였다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#0055aa] pl-3">김문수 "부정선거 불복"... 친윤계, 끝까지 '몽니'</h3>
+                <p>
+                    반면, 참패한 국민의힘 김문수 후보 측은 "효빈시 8호선 전자파로 인한 개표 조작"이라는 황당한 주장을 되풀이하며 결과 불복을 시사해 빈축을 샀다. 보석 중인 윤재훈 씨는 개표 방송을 보며 난동을 부리다 재수감될 위기에 처했다.
+                </p>
+                <p>
+                    이재명 당선인은 당선 수락 연설에서 "무너진 헌정 질서를 바로잡고, 갈라진 국민의 마음을 하나로 모으겠다"며 "특히 고통받은 효빈 시민들에게 깊은 위로와 감사를 전한다"고 밝혔다.
+                </p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#d9534f] text-sm font-normal ml-2">실시간 전쟁터</span> <span class="text-xs text-gray-400">총 68,291,004개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="새로운 대통령에게 바라는 점을 남겨주세요."></textarea>
+                    <button class="cmt-btn" onclick="alert('로그인이 필요합니다.')">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list"></div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기</button>
+                </div>
+                
+                <script>
+                    const commentData = [
+                        {
+                            nick: "재훈왕자96", date: "2025-06-04 03:25",
+                            content: "이건 사기야!!! 조작이라고!!! 대한민국은 망했어!!! 내가 당선됐어야 해!!! 내가 2.2%가 아니라 99%였다고!!! 8호선 전파가 투표함 바꿔치기한 거야!! 다 죽여버려!! 이재명 당선 무효 소송 낼 거야!! 내 변호사 어디 갔어!!",
+                            replies: [
+                                { nick: "용산탈출지능순", content: "재훈아 아직도 꿈꾸냐? 99%는 알코올 도수겠지. 변호사는 니가 돈 안 줘서 도망갔잖아. 이제 재수감될 일만 남았다. 감옥에서 대통령 놀이 해라." },
+                                { nick: "시민A", content: "와... 진짜 끝까지 추하다. 너 때문에 보수가 궤멸한 거야. 넌 보수의 역적이다. 할복이라도 해라." },
+                                { nick: "재훈왕자96", content: "닥쳐!! 난 불사조야!! 내가 3년 뒤에 다시 나온다!! 그때는 탱크 몰고 나온다!!" },
+                                { nick: "국방부", content: "전차 무단 탈취 예비 음모. 캡처해서 군검찰 이첩합니다." },
+                                { nick: "효빈시민", content: "니가 나오면 우린 짱돌 들고 나간다. 제발 좀 꺼져라." },
+                                { nick: "정신병원", content: "긴급 출동 중입니다. 진정제 2배 용량 준비했습니다." }
+                            ]
+                        },
+                        {
+                            nick: "투표완료", date: "2025-06-04 03:28",
+                            content: "눈물이 납니다. 드디어 긴 겨울이 가고 봄이 왔네요. 상식이 통하는 세상, 정의가 승리하는 세상을 보여주셔서 감사합니다. 효빈 시민으로서 자랑스럽습니다. 8호선 타고 출근하는 발걸음이 가볍겠네요.",
+                            replies: [
+                                { nick: "애국보수청년단", content: "나라 팔아먹은 놈들이 웃음이 나오냐! 적화통일 1일차다! 인공기 걸리기 전에 도망가라!" },
+                                { nick: "시민B", content: "적화통일 같은 소리 하네. 21세기에 빨갱이 타령 지겹지도 않냐? 니들이 나라 망친 주범이야." },
+                                { nick: "이준석지지자", content: "저도 4번 찍었지만 결과 승복합니다. 민주주의는 결과에 승복하는 것부터 시작이니까요. 축하합니다." },
+                                { nick: "우신면", content: "8호선 타지 마!! 그거 타면 뇌가 이재명 지지하게 조작돼!! 걸어 다녀!!" },
+                                { nick: "8호선역장", content: "우신면 씨, 역사 내 소란 행위로 고발 조치했습니다. 그만 좀 하세요." },
+                                { nick: "중도층", content: "이게 정상적인 나라지. 괴물들은 이제 감옥으로." }
+                            ]
+                        },
+                        {
+                            nick: "술톤주민우", date: "2025-06-04 03:32",
+                            content: "하... 재명 형님... 저 사실 형님 팬이었습니다... 저 좀 살려주세요... 사면 좀... 제가 윤재훈 비리 다 불겠습니다... 술 한잔 사주시면 뭐든 다 할게요...",
+                            replies: [
+                                { nick: "법무부", content: "주민우 씨, 가석방 취소 심사 들어갑니다. 아부는 감옥 가서 교도관한테 하세요." },
+                                { nick: "재훈왕자96", content: "이 박쥐 같은 새끼야!! 죽여버릴 거야!! 니가 내 돈 떼먹고 도망갔잖아!!" },
+                                { nick: "술톤주민우", content: "재훈아... 우린 끝났어... 너도 빨리 줄 서..." },
+                                { nick: "시민C", content: "진짜 더럽다 더러워. 의리도 없고 신념도 없고 오직 술과 돈뿐이네." },
+                                { nick: "효빈세무서", content: "탈세 혐의 조사 중입니다. 재산 압류 들어갑니다." },
+                                { nick: "룸마담", content: "주민우 잡아오면 현상금 줍니다. 내 돈 내놔." }
+                            ]
+                        },
+                        {
+                            nick: "부서원", date: "2025-06-04 03:35",
+                            content: "위대한 국민의 선택을 존중합니다. 저는 이제 민주당의 일원으로서 이재명 당선인의 성공적인 국정 운영을 위해 최선을 다해 돕겠습니다. 통합과 치유의 리더십으로 대한민국을 다시 세웁시다. 정의는 결코 패배하지 않습니다.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "배신자!! 민주당으로 튀니까 좋냐?!! 니가 1등 공신이지?!! 너 때문에 우리가 졌어!! 밤길 조심해라!!" },
+                                { nick: "시민D", content: "부서원 님 덕분에 보수의 양심이 지켜졌고, 이제는 민주당에서 큰 역할 해주시길 기대합니다." },
+                                { nick: "부서원캠프", content: "윤재훈 씨, 협박죄 추가입니다. 법적 대응합니다." },
+                                { nick: "민주당원", content: "부서원 고문님 환영합니다! 효빈시 승리의 주역이십니다. 앞으로도 함께해요!" },
+                                { nick: "김문수지지자", content: "너만 없었어도 우리가 이겼어!! 첩자 새끼!!" },
+                                { nick: "팩트", content: "부서원 없었어도 니들은 망했어. 2.2% 주제에 누굴 탓해." }
+                            ]
+                        },
+                        {
+                            nick: "우신면", date: "2025-06-04 03:40",
+                            content: "개표 조작이다!! 내가 <span style='color:#9856FF'>8호선</span> 지하 벙커에서 투표지 바꿔치기하는 거 봤다!! 렙틸리언들이 개표하고 있었다고!! 계엄군 다시 불러와!! 8호선 기둥을 무너뜨려야 나라가 산다!!",
+                            replies: [
+                                { nick: "8호선기관사", content: "아저씨... 오늘 축제 날인데 제발 재 뿌리지 마세요. 렙틸리언? ㅋㅋㅋ SF 영화 그만 보세요." },
+                                { nick: "공학박사", content: "렙틸리언 ㅋㅋㅋ 이제 외계인까지 나오네. 망상의 끝은 어디인가." },
+                                { nick: "선관위", content: "허위 사실 유포 및 선거 부정 주장, 즉시 검찰 고발합니다. 선처 없습니다." },
+                                { nick: "시민E", content: "저 사람 아직도 안 잡혀갔어? 우리나라 법이 너무 물러 터졌네." },
+                                { nick: "건설사", content: "우신면 씨, 8호선 안전진단 결과 이상 무. 허위 사실 유포로 손해배상 청구합니다." },
+                                { nick: "정신과", content: "구급차 도착했습니다. 우신면 씨 나오세요." }
+                            ]
+                        },
+                        {
+                            nick: "용산대변인(전직)", date: "2025-06-04 03:45",
+                            content: "대한민국의 미래가 암울합니다. 좌파 독재가 시작되었습니다. 우리는 지하로 숨어들어 끝까지 저항할 것입니다. 각하의 정신은 죽지 않았습니다.",
+                            replies: [
+                                { nick: "팩트폭격기", content: "지하로 숨는다고? ㅋㅋㅋ 하수구로 들어가냐? 니네 각하는 감옥 갔는데 정신만 살아서 뭐 하냐." },
+                                { nick: "시민F", content: "좌파 독재? 선거로 뽑힌 대통령한테 독재라니. 계엄 선포한 놈들이 할 말이냐?" },
+                                { nick: "재훈왕자96", content: "대변인님!! 저도 데려가세요!! 지하 벙커로!!" },
+                                { nick: "우신면", content: "지하 벙커는 내가 지킨다!! 오지 마!!" },
+                                { nick: "검찰", content: "도주 우려 있어 구속 영장 청구합니다. 지하 말고 구치소로 오세요." },
+                                { nick: "효빈시민", content: "제발 좀 꺼져라. 다시는 양지로 나오지 마라." }
+                            ]
+                        },
+                        {
+                            nick: "천공의제자", date: "2025-06-04 03:50",
+                            content: "나라의 운이 다했다. 푸른 기운이 덮쳤으니 이제 역병이 돌고 기근이 들 것이다. 부적 1장에 500만 원. 마지막 세일.",
+                            replies: [
+                                { nick: "과학자", content: "역병은 니들 존재 자체가 역병이고. 사기 칠 생각 말고 기술이나 배워라." },
+                                { nick: "재훈왕자96", content: "도사님!! 외상 되나요!! 제가 나중에 장관 시켜드릴게요!!" },
+                                { nick: "시민G", content: "장관 ㅋㅋㅋ 감방 방장이나 해라." },
+                                { nick: "국세청", content: "부적 판매 수익 미신고. 세무조사 대상입니다." },
+                                { nick: "기상청", content: "내일 날씨 맑음. 농사 아주 잘 됨. 풍년 예상." },
+                                { nick: "목사", content: "마귀들아 지옥으로 가라." }
+                            ]
+                        },
+                        {
+                            nick: "안천동김씨", date: "2025-06-04 03:55",
+                            content: "안천동 마을잔치 시작했습니다! 돼지 잡았습니다! 효빈 시민 여러분 다 오세요! 민주주의 승리의 맛을 봅시다! 윤재훈, 우신면은 오면 뼈도 못 추림.",
+                            replies: [
+                                { nick: "시민H", content: "지금 갑니다! 막걸리 챙겨갈게요!" },
+                                { nick: "재훈왕자96", content: "거지 잔치 안 가!! 내가 더 맛있는 거 먹을 거야!! (컵라면 물 부음)" },
+                                { nick: "편의점알바", content: "재훈아 컵라면 값이나 내고 먹어라. 외상 안 된다고." },
+                                { nick: "우신면", content: "돼지 고기에 도청 장치 심었어!! 먹지 마!!" },
+                                { nick: "정육점사장", content: "우신면 너 고소. 내 돼지를 모욕해?" },
+                                { nick: "경찰", content: "잔치 질서 유지 도와드리겠습니다. 축하합니다." }
+                            ]
+                        },
+                        {
+                            nick: "해외교포A", date: "2025-06-04 04:00",
+                            content: "뉴욕 타임스퀘어 전광판에 이재명 당선 속보 떴음. 교민들끼리 얼싸안고 울었다. 'Korea is back'. 이제야 고개 들고 다닌다. 윤석열, 윤재훈 때문에 쪽팔렸던 세월 안녕.",
+                            replies: [
+                                { nick: "유학생", content: "진짜 속 시원해요. 친구들이 '너네 나라 멋지다'고 엄지척해줌." },
+                                { nick: "용산외교실(잔류)", content: "미국 부정선거 개입 의혹..." },
+                                { nick: "시민I", content: "아직도 안 잘렸냐? 끈질긴 생명력 ㅋㅋㅋ 바퀴벌레네." },
+                                { nick: "재훈왕자96", content: "미국도 다 빨갱이야!! 트럼프 형 도와줘!!" },
+                                { nick: "미국인", content: "Please stop calling Trump. He doesn't know you. (트럼프 좀 그만 찾아. 걘 너 몰라.)" },
+                                { nick: "번역가", content: "국제적 스토커 윤재훈 ㅋㅋㅋ" }
+                            ]
+                        },
+                        {
+                            nick: "8호선알리미", date: "2025-06-04 04:05",
+                            content: "[축하] 제21대 대통령 당선을 축하합니다. <span style='color:#9856FF'>효빈 8호선</span>은 새 정부와 함께 시민의 안전한 발이 되겠습니다. 오늘 하루 전 구간 무료 운행합니다!",
+                            replies: [
+                                { nick: "시민J", content: "대박! 8호선 클라스! 오늘 하루 종일 타고 다닐게요!" },
+                                { nick: "우신면", content: "공짜 좋아하면 대머리 돼!! 타지 마!! 지옥행 열차야!!" },
+                                { nick: "탈모인", content: "우신면 너 이 새끼... 선 넘네. 가만 안 둔다." },
+                                { nick: "재훈왕자96", content: "무료? 나도 탈래!! 나 돈 없어!!" },
+                                { nick: "역무원", content: "윤재훈 씨는 탑승 금지입니다. 걸어 다니세요." },
+                                { nick: "박효빈시장", content: "8호선 무료 운행 결정 환영합니다. 시민들과 함께 기쁨을 나눕시다." }
+                            ]
+                        },
+                        {
+                            nick: "김문수캠프", date: "2025-06-04 04:10",
+                            content: "부정선거입니다. 사전투표함이 통째로 바뀌었습니다. 증거는 없지만 확신합니다. 우리는 결과에 승복할 수 없습니다. 광화문으로 집결하십시오!",
+                            replies: [
+                                { nick: "선관위", content: "증거 없는 허위 주장은 엄벌합니다. 고발 조치 완료." },
+                                { nick: "시민K", content: "증거는 없지만 확신한다 ㅋㅋㅋ 이게 니들 수준이야. 좀스럽다 진짜." },
+                                { nick: "이준석지지자", content: "추하다 추해. 깨끗하게 승복하는 게 보수의 품격이다." },
+                                { nick: "재훈왕자96", content: "가자!! 광화문으로!! 화염병 들어!!" },
+                                { nick: "경찰기동대", content: "불법 집회 및 무기 소지자 전원 검거하겠습니다." },
+                                { nick: "버스기사", content: "광화문 안 가요. 차 돌립니다." }
+                            ]
+                        },
+                        {
+                            nick: "가상화폐투자자", date: "2025-06-04 04:15",
+                            content: "이재명 당선 확정되자마자 한국 증시, 코인 떡상! '코리아 디스카운트 해소' 기대감 폭발. 윤석열 리스크 사라지니 살 것 같다. 오늘 소고기 먹자!",
+                            replies: [
+                                { nick: "개미", content: "나도 양전했다 ㅠㅠ 갓재명! 갓효빈!" },
+                                { nick: "우신면", content: "다 가짜 돈이야!! 휴지 조각 될 거야!! 내 땅만 진짜야!!" },
+                                { nick: "부동산사장", content: "님 땅값 똥값 됐어요... 혐오 시설(우신면 거주지) 근처라고 아무도 안 사요." },
+                                { nick: "재훈왕자96", content: "나한테 비트코인 1개만 기부해 줘... 나중에 100배로 갚을게..." },
+                                { nick: "시민L", content: "구걸하지 말고 폐지나 주워라." },
+                                { nick: "경제학자", content: "정치적 안정이 경제 성장의 첫걸음입니다." }
+                            ]
+                        },
+                        {
+                            nick: "효빈맘", date: "2025-06-04 04:20",
+                            content: "아이가 학교 가면서 '이제 군인 아저씨들이 총 안 쏘지?'라고 묻네요. 마음이 아팠습니다. 이제 안심하고 학교 보낼 수 있어 다행입니다. 아이들의 미래를 지켜주세요.",
+                            replies: [
+                                { nick: "애국보수청년단", content: "군인이 정권을 잡아야 나라가 산다!! 박정희 각하 그립습니다!!" },
+                                { nick: "시민M", content: "쌍팔년도에서 오셨어요? 타임머신 타고 돌아가세요." },
+                                { nick: "교육부", content: "평화와 인권 교육 강화하겠습니다." },
+                                { nick: "재훈왕자96", content: "학교 다 없애고 소년병 양성소 만들어야 돼!!" },
+                                { nick: "학부모", content: "미친놈... 너 내 눈에 띄면 죽는다." },
+                                { nick: "다른맘", content: "이제 발 뻗고 자요. 우리 아이들 세상은 밝을 거예요." }
+                            ]
+                        },
+                        {
+                            nick: "웹툰작가", date: "2025-06-04 04:25",
+                            content: "'슬기로운 감빵생활: 윤재훈&주민우 편' 오늘 연재 시작합니다. 1화: 신입 죄수 윤재훈, 방장한테 깝치다 뚜까 맞는 썰. 실화 바탕입니다.",
+                            replies: [
+                                { nick: "독자", content: "쿠키 100개 쏩니다 ㅋㅋㅋ 빨리 올려주세요 현기증 난단 말이에요." },
+                                { nick: "재훈왕자96", content: "고소할 거야!! 내 인권 내놔!! 국가인권위원회 제소한다!!" },
+                                { nick: "인권위", content: "범죄자 미화 안 합니다. 기각." },
+                                { nick: "술톤주민우", content: "작가님... 저는 좀 착하게 그려주시면 안 될까요... 술만 좀 주시면..." },
+                                { nick: "시민N", content: "착하게? ㅋㅋㅋ 악마를 천사로 그릴 순 없지." },
+                                { nick: "교도소장", content: "웹툰 보고 교도행정 참고하겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "전직군인", date: "2025-06-04 04:30",
+                            content: "군 통수권자가 제대로 된 사람이라 다행입니다. 군을 사유화하고 내란에 이용하려던 자들은 엄벌에 처해야 합니다. 군인의 명예를 되찾읍시다. 충성.",
+                            replies: [
+                                { nick: "현역장교", content: "선배님 말씀 명심하겠습니다. 국민만을 위해 충성하겠습니다." },
+                                { nick: "용산국방비서관", content: "..." },
+                                { nick: "재훈왕자96", content: "군인들이 빠져가지고!! 쿠데타 한 번 더 해!!" },
+                                { nick: "예비군", content: "재훈아 넌 군대도 안 간 게 말이 많아. 입대나 해라." },
+                                { nick: "병무청", content: "윤재훈 씨, 재검 통지서 발송했습니다. 현역 입대 가능합니다." },
+                                { nick: "시민O", content: "오 ㅋㅋㅋ 군대 가즈아! 이등병 윤재훈 기대된다." }
+                            ]
+                        },
+                        {
+                            nick: "택시기사", date: "2025-06-04 04:35",
+                            content: "오늘 택시 안에 웃음꽃이 피었습니다. 손님들이 다들 '이제 살 것 같다'고 하네요. 희망이 보입니다. 열심히 달리겠습니다.",
+                            replies: [
+                                { nick: "손님", content: "기사님 감사합니다! 오늘 날씨도 좋고 기분 최고네요!" },
+                                { nick: "재훈왕자96", content: "택시비 올려라!! 서민들 죽어봐라!!" },
+                                { nick: "시민P", content: "넌 택시 탈 돈도 없잖아 거지야." },
+                                { nick: "술톤주민우", content: "아저씨... 기본요금만... 안 될까요..." },
+                                { nick: "기사", content: "안 돼요. 내리세요." },
+                                { nick: "효빈시", content: "대중교통 지원 확대하겠습니다. 시민 여러분 힘내세요." }
+                            ]
+                        },
+                        {
+                            nick: "편의점알바", date: "2025-06-04 04:40",
+                            content: "편의점 TV로 개표 방송 보는데 윤재훈 얼굴 클로즈업 될 때마다 손님들이랑 빵 터짐 ㅋㅋㅋ 울고불고 난리 났던데? 쌤통이다.",
+                            replies: [
+                                { nick: "시민Q", content: "그 장면 짤로 돌아다님 ㅋㅋㅋ '나라 잃은 표정' 레전드." },
+                                { nick: "재훈왕자96", content: "울지 않았어!! 눈에 먼지 들어간 거야!! 난 강해!!" },
+                                { nick: "알바", content: "네네~ 외상값이나 갚으세요. 경찰 부르기 전에." },
+                                { nick: "점장", content: "윤재훈 출입 금지 포스터 더 크게 붙여야겠다." },
+                                { nick: "술톤주민우", content: "나도 울었어... 술이 없어서..." },
+                                { nick: "정신과", content: "알코올 의존증 치료 시급합니다." }
+                            ]
+                        },
+                        {
+                            nick: "법대생", date: "2025-06-04 04:45",
+                            content: "이제 시작입니다. 내란 수괴 윤석열과 그 부역자들에 대한 철저한 수사와 처벌이 이뤄져야 합니다. 법치주의가 바로 서는 날까지 지켜보겠습니다.",
+                            replies: [
+                                { nick: "검찰총장", content: "법과 원칙에 따라 성역 없이 수사하겠습니다." },
+                                { nick: "용산법무팀", content: "살려주세요... 시키는 대로 했을 뿐입니다..." },
+                                { nick: "시민R", content: "시키는 대로 한 것도 죄다. 죗값 치러라." },
+                                { nick: "재훈왕자96", content: "내가 법이야!! 내가 헌법이야!!" },
+                                { nick: "판사", content: "법정에서 봅시다. 징역 30년 예상합니다." },
+                                { nick: "로스쿨교수", content: "좋은 판례가 쏟아지겠군. 공부할 게 많아지겠다." }
+                            ]
+                        },
+                        {
+                            nick: "환경미화원", date: "2025-06-04 04:50",
+                            content: "거리 청소하는데 쓰레기보다 꽃가루가 더 많네요. 시민들이 폭죽 터뜨리고 축하하고... 치우는 건 힘들지만 기분은 좋습니다. 깨끗한 대한민국 만듭시다.",
+                            replies: [
+                                { nick: "시민S", content: "미화원님 죄송하고 감사합니다! 저희가 치울게요!" },
+                                { nick: "재훈왕자96", content: "쓰레기통 뒤져서 밥 먹어야겠다... 배고파..." },
+                                { nick: "고물상", content: "재훈아 박스 주워와라. 1kg에 50원 쳐줄게." },
+                                { nick: "우신면", content: "쓰레기봉투에 8호선 음모론 전단지 넣어서 버려!!" },
+                                { nick: "환경부", content: "무단 투기 과태료 부과합니다." },
+                                { nick: "시민T", content: "마음까지 깨끗해지는 기분입니다." }
+                            ]
+                        },
+                        {
+                            nick: "대한민국", date: "2025-06-04 05:00",
+                            content: "국민이 이겼습니다. 우리는 포기하지 않았고, 결국 민주주의를 지켜냈습니다. 이제 통합과 번영의 길로 나아갑시다. 대한민국은 영원할 것입니다.",
+                            replies: [
+                                { nick: "시민U", content: "대한민국 만세! 국민 만세!" },
+                                { nick: "박효빈시장", content: "효빈시가 그 길에 앞장서겠습니다." },
+                                { nick: "이재명당선인", content: "국민만 믿고 가겠습니다. 감사합니다." },
+                                { nick: "빌런들", content: "(단체로) 으아아아악!!!! 망했다!!!!" },
+                                { nick: "국민", content: "잘 가라. 멀리 안 나간다. Good Bye." },
+                                { nick: "역사", content: "2025년 6월 4일, 민주주의가 승리한 날로 기록하다." }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    commentData.forEach(cmt => {
+                        const div = document.createElement('div');
+                        // 김문수지지자 추가
+                        const villains = ['재훈왕자96', '술톤주민우', '우신면', '용산대변인(전직)', '김문수캠프', '애국보수청년단', '자유수호', '천공의제자', '용산외교실(잔류파)', '용산외교실(잔류)', '김문수지지자'];
+                        const isVillain = villains.includes(cmt.nick);
+
+                        div.className = `comment-item ${isVillain ? 'troll' : ''}`;
+                        
+                        // 빌런이면 비공감 폭탄(수십만 단위), 일반인은 공감 폭탄(수만 단위)
+                        const likeCount = isVillain ? Math.floor(Math.random() * 5) : Math.floor(Math.random() * 100000) + 50000;
+                        const dislikeCount = isVillain ? Math.floor(Math.random() * 1000000) + 300000 : Math.floor(Math.random() * 50);
+
+                        let repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:block;">`;
+                        cmt.replies.forEach(rp => {
+                            const rNick = rp.nick || '익명';
+                            const rContent = rp.content || '';
+                            const isRVillain = villains.includes(rNick);
+                            const rStyle = isRVillain ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;';
+                            
+                            const rLikeCount = isRVillain ? Math.floor(Math.random() * 3) : Math.floor(Math.random() * 5000);
+                            const rDislikeCount = isRVillain ? Math.floor(Math.random() * 50000) + 1000 : Math.floor(Math.random() * 10);
+                            
+                            repliesHtml += `
+                                <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0">
+                                    <div class="text-sm mb-1"><span class="font-bold" style="${rStyle}">└ ${rNick}</span>: ${rContent}</div>
+                                    <div class="text-xs text-gray-500 flex gap-2">
+                                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${rLikeCount}</span></span>
+                                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${rDislikeCount}</span></span>
+                                    </div>
+                                </div>`;
+                        });
+                        repliesHtml += `</div>`;
+
+                        div.innerHTML = `
+                            <div class="comment-nick">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date || '2025-06-04'}</span></div>
+                            <p class="comment-content">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${likeCount}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${dislikeCount}</span></span>
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active')) {
+                            count--;
+                            btn.classList.remove('active');
+                        } else {
+                            count++;
+                            btn.classList.add('active');
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="rank-news">
+                <div class="rank-title">오늘의 주요 뉴스</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text text-[#0055aa] font-bold">이재명 대통령 당선... "국민 통합 정부 만들 것"</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text">효빈시 85% 압도적 지지... 계엄 심판론 통했다</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text">김문수·이준석 패배 승복... 보수 재편 불가피</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text">윤재훈, 개표 방송 중 난동 부리다 긴급 체포</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text">우신면 '8호선 조작설' 유포... 검찰 수사 착수</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text">전국 곳곳 축제 분위기... 새로운 대한민국 기대</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-blue-50 p-4 border border-blue-100 text-center">
+                <div class="font-bold text-[#0055aa] mb-2">효빈일보 호외</div>
+                <div class="text-sm text-gray-600 mb-3">국민이 주인인 나라<br>새로운 아침이 밝았습니다</div>
+                <button class="bg-[#0055aa] text-white text-xs px-3 py-2 rounded">호외 PDF 보기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <div class="flex gap-4 mb-4">
+                <a href="회사소개.html" class="hover:text-white">회사소개</a>
+                <a href="구독신청.html" class="hover:text-white">구독신청</a>
+                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
+                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
+                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
+            </div>
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
+            <p>주소: 효빈광역시 북구 중수동 123 </p>
+            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            <div class="hidden">
+                <img src="이미지/지하철1호선.png" style="color:#0077DD">
+                <img src="이미지/지하철2호선.png" style="color:#00CCAA">
+                <img src="이미지/지하철3호선.png" style="color:#FFCC11">
+                <img src="이미지/지하철4호선.png" style="color:#FF5522">
+                <img src="이미지/지하철5호선.png" style="color:#EE0022">
+                <img src="이미지/지하철6호선.png" style="color:#881188">
+                <img src="이미지/지하철7호선.png" style="color:#FF8899">
+                <img src="이미지/지하철8호선.png" style="color:#9856FF">
+                <img src="이미지/빈효선광역전철.png" style="color:#6677CC">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

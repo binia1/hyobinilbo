@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[아카이브] 2010.03.15 "지옥의 갈색 버스 이제 안녕"... 두청운수, 최종 파산 및 해산 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f7f7f7; color: #333; }
+        
+        .archive-top-bar { background: #332211; color: #d4a373; padding: 10px 0; font-size: 13px; text-align: center; font-weight: bold; border-bottom: 4px solid #5d4037; }
+        
+        .news-header { border-bottom: 2px solid #0055aa; background: white; padding: 25px 0; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 15px; text-decoration: none; }
+
+        .article-container { max-width: 1000px; margin: 30px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 50px; border: 1px solid #ddd; position: relative; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        
+        .main-content::before {
+            content: "ARCHIVE 2010.03";
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 18px;
+            font-weight: 900;
+            color: #f0f0f0;
+            transform: rotate(-10deg);
+            pointer-events: none;
+        }
+
+        .article-title { font-size: 32px; font-weight: bold; line-height: 1.4; color: #111; margin-bottom: 20px; font-family: 'Nanum Myeongjo', serif; letter-spacing: -1.5px; }
+        .article-subtitle { font-size: 19px; color: #5d4037; margin-bottom: 30px; border-left: 5px solid #5d4037; padding-left: 15px; font-weight: 700; line-height: 1.5; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 35px; }
+        
+        .article-body { font-size: 18px; line-height: 2.1; color: #222; font-family: 'Nanum Myeongjo', serif; text-align: justify; } 
+        .article-body strong { font-weight: 800; color: #cc0000; }
+        .article-body p { margin-bottom: 30px; }
+        
+        .img-box { margin: 40px 0; border: 1px solid #eee; padding: 10px; background: #fdfdfd; }
+        .img-caption { font-size: 14px; color: #555; margin-top: 12px; text-align: center; background: #f5f5f5; padding: 12px; border-top: 1px solid #ddd; }
+
+        .comment-section { margin-top: 70px; border-top: 4px solid #111; padding-top: 30px; }
+        .comment-header { font-weight: bold; font-size: 22px; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
+        
+        .comment-item { padding: 25px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #fdfae6; border: 1px solid #e2d1a3; padding: 25px; margin-bottom: 20px; border-radius: 4px; }
+        .yoon-comment { background: #fff5f5; border: 2px solid #ffcccc; padding: 25px; margin-bottom: 20px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 20px; font-size: 13px; color: #666; border: 1px solid #ccc; padding: 4px 10px; border-radius: 3px; background: white; }
+        .vote-btn:hover { background: #f0f0f0; }
+        .vote-btn.active-up { color: #0077DD; font-weight: bold; border-color: #0077DD; background: #f0f7ff; }
+        .vote-btn.active-down { color: #cc0000; font-weight: bold; border-color: #cc0000; background: #fff0f0; }
+
+        .reply-container { margin-top: 20px; padding-left: 25px; border-left: 3px solid #eee; }
+        .reply-item { margin-bottom: 15px; font-size: 15px; background: #f9f9f9; padding: 15px; border-radius: 4px; border: 1px solid #efefef; }
+        
+        .side-content { flex: 1; }
+        .archive-card { background: white; border: 1px solid #ddd; padding: 25px; margin-bottom: 25px; }
+        .archive-card-title { font-weight: bold; border-bottom: 2px solid #0055aa; padding-bottom: 10px; margin-bottom: 20px; font-size: 17px; }
+        .archive-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+    /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+
+        
+        .line-red { color: #EE0022; font-weight: bold; }
+        .line-purple { color: #881188; font-weight: bold; }
+        .line-cyan { color: #6677CC; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="archive-top-bar">
+        2010년 3월 15일 자 효빈일보 경제면 아카이브 자료입니다.
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container px-6">
+        <div class="main-content">
+            <div id="article-content-area">
+                <div class="mb-4 text-[#5d4037] font-black underline decoration-2">경제속보 > 기업 해산 [종합]</div>
+                <h2 class="article-title">'갈색 제국'의 몰락... 두청운수, 면허 취소 및 최종 파산 처리</h2>
+                <div class="article-subtitle">윤대환 전 시장 몰락 3년 만에 법인 완전 소멸... 20년 독점 계약 '원천 무효'<br>임금 체불·보조금 횡령 등 비리 결정판... 효빈 교통 흑역사 마침표</div>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">강직 기자</span> (honest@hyobinilbo.com)<br>
+                        입력 2010.03.15. 14:20 | 수정 2010.03.15. 16:00
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p>[효빈일보 = 강직 기자] 효빈시 교통의 암세포로 불리던 <a href="두청운수.html" class="text-blue-600 underline">두청운수</a>가 마침내 역사 속으로 사라졌다. 효빈지방법원 파산부는 15일 오후, 두청운수 주식회사에 대한 파산 선고와 함께 법인 청산 종결을 공고했다.</p>
+
+                    <div class="img-box">
+                        <img src="두청운수_폐업현장.png" alt="두청운수_본사_압류.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/4d3a2b/ffffff?text=Doocheong+Transport+Bankrupt'">
+                        <div class="img-caption">▲ 15일 오후, 청엽구 소재 두청운수 본사 차고지에서 법원 관계자들이 압류된 갈색 버스들에 봉인지를 붙이고 있다. (사진=효빈일보 DB)</div>
+                    </div>
+
+                    <p>이번 파산 선고는 지난 2007년 실소유주인 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 전 시장의 구속 이후 3년 만에 내려진 최종 결정이다. 두청운수는 윤 전 시장 재임 시절 시정 권력을 등에 업고 지하철 <span class="line-red">5호선</span>과 <span class="line-purple">6호선</span>의 공사를 고의 지연시키고, 7,000원에 달하는 살인적인 버스 요금을 강요하는 등 무소불위의 횡포를 부려왔다.</p>
+
+                    <p>복귀한 <a href="박현만.html" class="text-blue-600 underline">박현만</a> 시장은 취임 직후 특별 감사를 실시하여 두청운수가 수년간 조직적으로 자행한 유가보조금 횡령과 불법 증차를 적발해냈다. 또한, 윤 전 시장이 임기 말 강제로 체결했던 '20년 독점 위탁 계약'에 대해서도 법원이 **"사익을 위해 공권력을 남용한 반사회적 계약"**이라며 원천 무효 판결을 내리면서 두청운수는 자금줄이 완전히 끊겼다.</p>
+
+                    <p>두청운수가 독점했던 알짜 노선들은 <a href="칠양여객.html" class="text-blue-600 underline">칠양여객</a>, <a href="소진여객.html" class="text-blue-600 underline">소진여객</a> 등 건실한 5대 업체로 재배분되었으며, 요금은 1,000원대의 정상 수준으로 환원되었다. 시민들은 "45인승 버스에 75명을 태우던 짐승 수송의 시대가 드디어 끝났다"며 환영의 뜻을 밝히고 있다.</p>
+
+                    <div class="img-box">
+                        <img src="시민_환호_현장.png" alt="두청운수_폐업_환호.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Citizens+Celebrating+Closure'">
+                        <div class="img-caption">▲ 두청운수 면허 취소 소식이 전해진 시청 앞 광장에서 시민들이 "정의 구현"을 외치며 기뻐하고 있다.</div>
+                    </div>
+
+                    <p>시청 관계자는 **"두청운수 본사 터는 시민들을 위한 '교통문화공원'으로 조성할 계획"**이라며 **"과거의 부패를 잊지 않기 위해 당시 운행되던 갈색 버스 한 대를 공원 구석에 '탐욕의 상징물'로 보존할 것"**이라고 밝혔다. 이로써 효빈시 교통사의 가장 치욕적인 한 페이지가 공식적으로 닫히게 되었다.</p>
+
+                    <div class="mt-10 pt-6 border-t border-gray-200 text-sm text-gray-500">
+                        &lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;
+                    </div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 (2010 vs 2026) -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    <span>전체 댓글</span> <span class="text-[#0055aa] text-xl">15,842</span>
+                </div>
+                
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 2010년 당시 베스트 댓글 -->
+                    <div class="best-comment shadow-sm">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-black text-blue-700">Hell_Bus_Survivor (2010.03.15)</span>
+                            <span class="text-xs text-gray-500">추천 85,200 | 비추천 2</span>
+                        </div>
+                        <p class="text-base font-bold text-gray-900">드디어 망했구나! 7,000원 내고 엔진룸 위에 쪼그려 앉아서 엉덩이 데였던 거 생각하면 아직도 자다가 깸. 박현만 시장님 진짜 고생하셨습니다. 이제 쾌적한 지하철이랑 정직한 버스 타게 해주세요!</p>
+                    </div>
+
+                    <!-- 윤재훈의 2026년 적반하장 댓글 -->
+                    <div class="yoon-comment">
+                        <div class="flex justify-between mb-3">
+                            <span class="font-black text-gray-900">YoonJaehoon(출소/무직) <span class="bg-red-600 text-white text-[10px] px-1 rounded ml-1">위험</span></span>
+                            <span class="text-xs text-gray-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm font-bold text-red-800">아니 ㅋㅋㅋ 옛날 기사 왜 또 끌올 하냐? 우리 아빠 회사가 망한 건 박현만이 강제로 뺏어간 거지! 자유 시장 경제에서 20년 계약한 걸 왜 무효로 해? 7,000원이 뭐가 비싸? 그만큼 서비스가 좋았잖아! 박효빈 튀기 시장이 이거 아카이브 조작해서 선동하는 거 다 고소할 거야! 우리 부자는 억울하다!</p>
+                        <div class="flex gap-2 mt-4">
+                            <span class="vote-btn" onclick="vote(this, 'up')">공감 <span class="count">0</span></span>
+                            <span class="vote-btn active-down" onclick="vote(this, 'down')">비공감 <span class="count">1,852,100</span></span>
+                        </div>
+                        <div class="reply-container">
+                            <div class="reply-item">
+                                <span class="font-bold text-blue-700">Fact_Destroyer_2026</span>: 재훈아 ㅋㅋㅋ '서비스가 좋았다'고? 45인승에 75명 태워서 타이어 터지게 만드는 게 서비스냐? 넌 진짜 4.8% 지능이라 경제학 정의도 새로 쓰나 보네. 2.2% 득표율로 찌그러져 있어라.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-gray-700">Ex_Ducheong_Driver</span>: 야 이 자식아, 니네 아빠가 내 퇴직금 떼먹고 튀어서 우리 가족이 얼마나 고생했는지 알아? 2024년에 출소했다고 좋아하지 마라. 길거리에서 만나면 진짜 가만 안 둔다.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-red-600 text-xs">YoonDaehwan(출소/동조)</span>: <span class="text-red-800 font-bold">재훈아, 아빠는 당당하다! 도로를 점령했던 그 갈색의 위엄을 저들은 시샘한 거다! 진실은 언젠가 밝혀질 거다! (좋아요 1)</span>
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-purple-700 text-xs">Otaku_Power</span>: 부자가 쌍으로 미쳤네 ㅋㅋㅋ 니네가 6호선 방해해서 우리 엄마 출퇴근 지옥 겪으셨어. <a href="칠양여객.html" class="text-blue-600 font-bold">칠양여객</a> 래핑버스나 보면서 반성해라 '똥재훈'아.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2010년 당시 격앙된 댓글들 -->
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">천주_통학생 (2010.03.15)</span>
+                            <span class="text-xs text-gray-500">추천 22,500</span>
+                        </div>
+                        <p class="text-sm">왕복 14,000원 내고 3년 다녔습니다. 내 청춘 돌려줘 윤대환. 짐짝처럼 끼어서 공부하던 거 생각하면 이가 갈린다. 오늘 축배 든다!</p>
+                        <div class="reply-container">
+                            <div class="reply-item"><span class="font-bold text-red-600 text-xs">YoonJaehoon(2026)</span>: 공부를 못하니까 버스나 타지! ㅋㅋㅋ 꼬우면 벤츠 타든가!</div>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">5호선_인부_동료 (2010.03.15)</span>
+                            <span class="text-xs text-gray-500">추천 35,200</span>
+                        </div>
+                        <p class="text-sm">투신하신 최 씨 형님, 보고 계십니까? 형님을 죽음으로 몰아넣은 저 악마의 회사가 오늘 망했습니다. 이제 편히 쉬세요. 정의는 늦게라도 오네요.</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">Plastic_Back_Pain (2010.03.15)</span>
+                            <span class="text-xs text-gray-500">추천 18,600</span>
+                        </div>
+                        <p class="text-sm">쿠션 없는 플라스틱 좌석 ㅋㅋㅋ 그거 때문에 허리 디스크 옴. 병원비 청구하고 싶은데 회사가 망했으니 어쩌나. 윤대환 재산 싹 다 압류해서 피해자들 보상해 줘라.</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">Justice_2026</span>
+                            <span class="text-xs text-gray-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm">2010년 아카이브 보니까 속이 다 시원하네 ㅋㅋㅋ <a href="박효빈.html" class="text-blue-600">박효빈</a> 시장님이 저 폐허를 딛고 효빈시를 다시 세우신 거네. 혐오 세력은 이제 2.2% 득표율로 영구 박제 컷!</p>
+                    </div>
+
+                    <div class="comment-item"><p class="text-xs text-gray-400 text-center">... 2010년 당시 시민들의 기쁨 섞인 댓글 2만 개가 더 있습니다 ...</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="archive-card shadow-sm">
+                <div class="archive-card-title">두청운수 흑역사 10선</div>
+                <ul class="archive-list">
+                    <li>- 45인승에 75명 태우기</li>
+                    <li>- 엔진룸 위 '사우나석' 운영</li>
+                    <li>- 구간 요금 7,000원 폭리</li>
+                    <li>- <span class="line-red">5호선</span> 공사 고의 중단</li>
+                    <li>- <span class="line-purple">6호선</span> 설계도 소각 사건</li>
+                    <li>- 비서관 쇠파이프 테러 사주</li>
+                    <li>- 플라스틱 '허리 분쇄' 좌석</li>
+                    <li>- "거지 촌동네" 외교 결례</li>
+                    <li>- 유가보조금 500억 횡령</li>
+                    <li>- 20년 독점 노예 계약 시도</li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#6677CC] p-6 text-white rounded text-center shadow-lg mb-6">
+                <div class="font-black text-xl mb-1 italic">BIN-HYO LINE</div>
+                <div class="text-xs font-bold">이제 7,000원 버스 대신<br>1,200원 광역전철을 타세요</div>
+                <div class="mt-4 text-[10px] text-gray-200 font-normal opacity-70">※ 2010년 당시 철도공사 캠페인입니다.</div>
+            </div>
+
+            <div class="archive-card" style="background: #eef2ff; border-left: 5px solid #0055aa;">
+                <div class="font-bold text-sm mb-2 text-blue-800">사후 소식</div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    두청운수 해산 이후 효빈시는 전면 준공영제를 도입하였으며, 2016년 마침내 <span class="line-purple">6호선</span>이 개통되어 교통망 정상화를 이루었습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#222] text-gray-400 py-12 mt-20 text-xs">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <p class="mb-4 text-white text-lg font-black tracking-tighter">효빈일보 디지털 아카이브 센터</p>
+            <p class="mb-2">제호: 효빈일보 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p class="mb-2">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function vote(btn, type) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active-up') || btn.classList.contains('active-down')) {
+                btn.classList.remove('active-up', 'active-down');
+                count--;
+            } else {
+                btn.classList.add(type === 'up' ? 'active-up' : 'active-down');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+    </script>
+</body>
+</html>

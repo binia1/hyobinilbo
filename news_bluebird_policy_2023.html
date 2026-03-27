@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] "덕질도 복지다"... 박효빈 시장, 청소년 문화지원 '블루버드 정책' 전격 시행 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #bae6fd 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 정책 박스 */
+        .policy-box { background: #e0f2fe; border: 1px solid #7dd3fc; border-radius: 8px; padding: 25px; margin: 30px 0; }
+        .policy-header { font-weight: bold; font-size: 18px; color: #0369a1; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .policy-list li { margin-bottom: 10px; font-size: 15px; }
+        .policy-highlight { color: #0284c7; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        /* 공식 계정 마크 */
+        .official-mark { display: inline-flex; align-items: center; justify-content: center; background: #00a2e8; color: white; width: 14px; height: 14px; border-radius: 50%; font-size: 10px; margin-left: 4px; vertical-align: middle; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+            /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 복지/청소년</div>
+                <h2 class="article-title">"덕질도 복지다"... 박효빈 시장, 청소년 문화지원 '블루버드 정책' 전격 시행</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이복지 기자</span> (welfare@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2023.11.15. 14:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">Liyuu 방문 당시 '성덕 외교' 화제... "모든 청소년에게 '최애'를 만날 기회를"<br>취약계층 청소년 2,000명에게 문화 바우처·멘토링 지원<br>사면받은 윤재훈 "세금으로 만화책 사주나" 비난... 시민들 "시대착오적 발상"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="박효빈_정책발표.png" alt="박효빈_시장_블루버드_정책발표.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0077DD/FFFFFF?text=Blue+Bird+Policy+Announcement'">
+                        <div class="img-caption">▲ 15일 오전 효빈시청 브리핑룸에서 박효빈 시장이 '블루버드 정책'의 취지를 설명하고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 이복지 기자] "가난하다고 해서 좋아하는 가수의 콘서트를 못 가고, 좋아하는 애니메이션 굿즈를 사지 못해 위축되는 아이들이 없어야 합니다. 문화 향유는 사치가 아니라, 청소년기의 정서적 성장을 위한 필수 권리입니다."</p>
+
+                    <p><a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장이 오늘(15일) 오전, 취약계층 아동·청소년을 위한 획기적인 문화 복지 프로젝트 **'블루버드 정책(Blue Bird Policy)'**을 발표했다. 이 정책은 최근 효빈시를 방문했던 일본 성우 **Liyuu(리유)**가 박 시장에게 "시장님의 순수한 팬심이 도시를 지켰다"고 감사를 표한 일화에서 영감을 받아 탄생했다.</p>
+
+                    <p>정책명인 '블루버드'는 Liyuu가 연기한 캐릭터 '탕쿠쿠'의 상징색이자, 파랑새(행복)를 의미한다. 박 시장은 "내가 대학 시절 **월드비전**의 도움으로 처음 내 꿈을 위한 여행을 떠났을 때의 감동을 잊지 못한다"며 "우리 아이들에게도 밥이나 생필품 지원을 넘어, '꿈'과 '취향'을 지원하고 싶다"고 배경을 설명했다.</p>
+
+                    <div class="policy-box">
+                        <div class="policy-header">🕊️ 블루버드 정책 주요 내용</div>
+                        <ul class="policy-list">
+                            <li><span class="policy-highlight">문화 바우처:</span> 도서, 공연 티켓, 굿즈, 악기 구입 등에 사용 가능한 연 20만 원 상당 포인트 지급.</li>
+                            <li><span class="policy-highlight">블루버드 멘토단:</span> 효빈대 학생들과 1:1 매칭하여 문화 체험 및 진로 탐색 지원.</li>
+                            <li><span class="policy-highlight">성지순례 지원:</span> HAF 기간 중 관내 취약계층 청소년 무료 초청 및 가이드 투어 제공.</li>
+                        </ul>
+                    </div>
+
+                    <p>한편, 지난달 특별사면으로 출소한 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a>(윤대환 전 시장 차남) 씨는 자신의 SNS를 통해 즉각 반발했다. 그는 "내가 감옥에 있는 동안 효빈시가 오타쿠들의 놀이터로 전락했다"며 "세금으로 아이들에게 만화책이나 사주는 게 복지냐. 내가 정치에 복귀하면 이런 포퓰리즘부터 뜯어고치겠다"고 맹비난했다.</p>
+
+                    <p>그러나 시민들의 반응은 윤 씨와 다르다. 효빈대 사회복지학과 김 모 교수는 "문화적 소외감은 청소년기 자존감 형성에 치명적"이라며 "단순 생계 지원을 넘어 정서적 만족을 추구하는 선진국형 복지 모델"이라고 평가했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">1,890</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Social_Worker", time: "방금 전", like: 3500, dislike: 10, isPunished: false,
+                                content: "현직 사회복지사입니다. 아이들이 지원금 받으면 쌀 사는 게 아니라 친구들이랑 영화 보고 싶어 해요. 그 마음을 헤아려주신 시장님께 감사드립니다. 이게 진짜 사람을 위한 복지죠.",
+                                replies: [
+                                    { nick: "Mayor_Hyobin", isOfficial: true, content: "현장에서 고생 많으십니다. 선생님 같은 분들이 계셔서 든든합니다. 아이들의 웃음을 위해 더 노력하겠습니다." },
+                                    { nick: "Citizen_A", content: "와 시장님 등판... 진짜 진심이 느껴지네요." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "3분 전", like: 5, dislike: 4800, isPunished: true,
+                                content: "내가 돌아왔다! 감옥에서 나오자마자 본다는 기사가 고작 이거냐? 세금으로 만화책을 사줘? 나라 꼴 잘 돌아간다! 박효빈 너는 내가 정치 재개하면 제일 먼저 심판할 거다! 효빈시를 구원할 사람은 나 윤재훈뿐이다!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "사면받았으면 조용히 사시지... 구원? 님이 효빈시의 재앙이었습니다. 기억 안 나세요?" },
+                                    { nick: "Citizen_B", content: "아저씨, 감 떨어지셨네요. 요즘은 문화 복지가 대세입니다. 꼰대 소리 그만하고 뉴스 좀 보세요." },
+                                    { nick: "Young_Voter", content: "정치 재개? 나오세요. 절대 안 뽑아줄 테니까 ㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Liyuu_Official", isOfficial: true, time: "10분 전", like: 12000, dislike: 0, isPunished: false,
+                                content: "시장님! '블루버드'라니... 이름 너무 예뻐요! 🕊️ 제 노래가 아이들에게 도움이 된다니 정말 기뻐요. 효빈시의 파랑새들이 훨훨 날아오르길 기도할게요! (Blue Bird... 本当に綺麗な名前ですね！)",
+                                replies: [
+                                    { nick: "Mayor_Hyobin", isOfficial: true, content: "Liyuu 님! (감격) 당신이 준 영감이 이 정책을 만들었습니다. 효빈시의 영원한 명예 시민이십니다!" },
+                                    { nick: "Keke_Fan", content: "성덕 시장님 살아계시죠? ㅋㅋㅋ 이 조합 찬성일세." }
+                                ]
+                            },
+                            {
+                                nick: "Low_Income_Student", time: "15분 전", like: 2100, dislike: 0, isPunished: false,
+                                content: "저도 이제 친구들이랑 똑같이 굿즈 살 수 있는 건가요? 맨날 구경만 했는데... 감사합니다 시장님. 공부 열심히 할게요.",
+                                replies: [
+                                    { nick: "Teacher", content: "그래, 기죽지 말고 당당하게 즐겨라. 선생님도 응원할게." }
+                                ]
+                            },
+                            {
+                                nick: "Villain_A(IP)", time: "20분 전", like: 2, dislike: 3200, isPunished: true,
+                                content: "윤재훈 형님 말씀이 맞다! 이건 포퓰리즘이다! 흙수저들한테 돈 줘봤자 PC방이나 가겠지! 내가 낸 세금 돌려내라!",
+                                replies: [
+                                    { nick: "Tax_Payer", content: "님 백수라서 세금 안 내잖아요... 왜 유세임?" },
+                                    { nick: "PC_Room_Boss", content: "PC방 가는 게 뭐 어때서요? 건전한 취미생활입니다. 님처럼 악플 다는 것보단 낫죠." }
+                                ]
+                            },
+                            {
+                                nick: "Univ_Student_Mentor", time: "25분 전", like: 1800, dislike: 0, isPunished: false,
+                                content: "블루버드 멘토단 지원했습니다! 저도 어릴 때 힘들었는데, 누가 손잡아 줬으면 했거든요. 아이들이랑 같이 덕질하면서 꿈 찾아줄게요!",
+                                replies: [
+                                    { nick: "HR_Dept", content: "훌륭한 인재시네요. 멘토링 활동 기대하겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Parent_Association", time: "30분 전", like: 2500, dislike: 2, isPunished: false,
+                                content: "처음엔 반신반의했는데, 아이들이 좋아하는 걸 지원해 준다는 취지가 좋네요. 억지로 공부시키는 것보다 정서적으로 훨씬 좋을 것 같습니다. 지지합니다.",
+                                replies: []
+                            },
+                            {
+                                nick: "Hyobin_Citizen", time: "35분 전", like: 3000, dislike: 1, isPunished: false,
+                                content: "윤재훈 사면된 거 진짜 꼴 보기 싫다. 나오자마자 악담이나 퍼붓고. 박효빈 시장이랑 비교되네. 다음 선거 때 두고 보자.",
+                                replies: [
+                                    { nick: "Vote_2024", content: "내년 총선 때 심판해야죠. 2.2%의 기적을 보여줍시다 ㅋㅋ" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let officialMark = cmt.isOfficial ? `<span class="official-mark">V</span>` : "";
+                            let nickStyle = cmt.isOfficial ? "text-[#00a2e8]" : (cmt.isPunished ? "text-red-600" : "");
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.isOfficial ? "bg-blue-50 border border-blue-200" : "bg-gray-50 border border-gray-200";
+                                    const rNickStyle = reply.isOfficial ? "text-[#00a2e8]" : "text-[#0055aa]";
+                                    const rOfficialMark = reply.isOfficial ? `<span class="official-mark">V</span>` : "";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}${rOfficialMark}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}${officialMark} ${cmt.isPunished ? '(IP 차단됨)' : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_bluebird_policy_2023.html" class="ranking-link font-bold text-[#0055aa]">블루버드 정책 시행</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_kuku_closet.html" class="ranking-link">쿠쿠 클로젯 화제</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_dangga_revival.html" class="ranking-link">당가동 상권 부활</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈 특별사면 논란</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈복지재단</div>
+                    <div class="text-xs">블루버드 멘토단 1기<br>모집 마감 임박</div>
+                </div>
+            </div>
+             <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈동신도시</div>
+                    <div class="text-xs text-blue-400">아파트 청약 안내<br>미래를 선점하세요</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

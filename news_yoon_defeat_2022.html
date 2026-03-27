@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치] "4.8%의 굴욕"... 윤재훈, 선거비 0원 보전 '파산 위기' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 분석 박스 */
+        .analysis-box { background: #fff0f0; border: 1px solid #ffc9c9; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .analysis-title { font-weight: bold; font-size: 16px; color: #d32f2f; margin-bottom: 10px; }
+        .analysis-item { display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #ffc9c9; padding-bottom: 4px; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 선거</div>
+                <h2 class="article-title">"4.8%의 굴욕"... 윤재훈, 선거비 전액 미보전 '파산 위기'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김정치 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2022.06.02. 10:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">보수 텃밭서 무소속(12%)에도 밀린 3위... '정치적 사망 선고'<br>득표율 10% 미만이라 기탁금·선거비용 한 푼도 못 받아<br>윤재훈 "이 도시는 내 것... 통행료 내놔라" 패배 인정 못하고 궤변</span></p>
+                    
+                    <div class="my-6">
+                        <img src="윤재훈_망연자실.png" alt="선거사무소에서_망연자실한_윤재훈.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Yoon+Jae-hoon+Devastated'">
+                        <div class="img-caption">▲ 2일 새벽, 4.8%의 득표율을 확인한 윤재훈 후보가 선거 사무소에서 텅 빈 모니터를 응시하고 있다. 캠프 관계자들은 이미 모두 떠난 상태다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김정치 기자] "효빈시의 주인은 나 윤재훈이다!"라고 외쳤던 호기는 온데간데없었다. 제8회 전국동시지방선거 효빈광역시장 선거에서 국민의힘 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a> 후보가 **4.8%**라는 충격적인 득표율로 낙선했다. 이는 무소속으로 출마한 유성민 후보(12.04%)의 절반에도 미치지 못하는 수치로, 사실상 시민들에게 '탄핵'을 당한 것이나 다름없다.</p>
+
+                    <p>현행 공직선거법상 득표율이 15% 이상이면 선거비용 전액을, 10% 이상 15% 미만이면 절반을 보전받는다. 하지만 윤 후보는 10%조차 넘기지 못해 기탁금을 포함한 수십억 원의 선거 비용을 전액 본인이 부담해야 한다. 이미 부친 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 전 시장의 추징금 문제로 재정난을 겪고 있는 윤 씨 일가에게는 회생 불가능한 치명타가 될 전망이다.</p>
+
+                    <div class="analysis-box">
+                        <div class="analysis-title">📉 윤재훈 후보 득표율 분석 (충격)</div>
+                        <div class="analysis-item"><span>최종 득표율</span> <span class="font-bold">4.80% (3위)</span></div>
+                        <div class="analysis-item"><span>선거비용 보전액</span> <span class="font-bold text-red-600">0원 (전액 미보전)</span></div>
+                        <div class="analysis-item"><span>패인 요인</span> <span>TV 토론 폭력 사태, 막말 파문, 부친 비리, <b>인성</b></span></div>
+                    </div>
+
+                    <p>윤 후보는 패배가 확정된 후에도 선거 불복을 시사하며 기이한 행보를 보이고 있다. 그는 SNS를 통해 "박효빈이 내 표를 훔쳤다", "효빈시의 도로는 우리 아버지가 깐 것이니 시민들은 통행료를 내라", "도시 이름을 '재훈시'로 바꿔야 한다"는 등의 상식 밖의 주장을 펼치고 있어 시민들의 빈축과 실소를 자아내고 있다.</p>
+
+                    <p>지역 정가 관계자는 "보수 정당 공천을 받고도 5% 미만 득표를 한 것은 전무후무한 일"이라며 "윤재훈이라는 이름은 효빈시 정치사에서 영원히 지워질 것"이라고 혹평했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">98,204</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Tax_Payer", time: "방금 전", like: 15200, dislike: 5, isPunished: false,
+                                content: "와 선거비용 0원 보전 ㅋㅋㅋ 쌤통이다. 내 세금이 윤재훈 밥값으로 안 나가서 다행이네. 파산 축하드려요~",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "내 돈 내놔! 선관위가 돈 떼먹었어! 내가 쓴 돈이 얼만데! 니들이 모금해서 갚아!" },
+                                    { nick: "Citizen_A", content: "모금은 무슨... 님 벌금이나 내세요. 압류 딱지 붙으러 갑니다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Citizen", time: "1분 전", like: 9800, dislike: 2, isPunished: false,
+                                content: "통행료를 내라니 ㅋㅋㅋ 여기가 무슨 봉이 김선달 시대냐? 도로 국유지야 이 무식한 사람아. 진짜 개그맨으로 전직해라.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "아스팔트 내가 깐 거야! 밟지 마! 날아다녀! 밟을 때마다 100원씩 내! 안 주면 길 막을 거야!" },
+                                    { nick: "Pigeon", content: "구구구 (그럼 난 공짜네? 날아다니니까)" },
+                                    { nick: "Police", content: "도로교통법 위반으로 체포될 수 있습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Conservative_Voter", time: "3분 전", like: 8500, dislike: 0, isPunished: false,
+                                content: "보수지만 4.8%는 진짜 창피하다. 무소속 유성민이 12%인데... 국힘은 윤재훈 공천 준 사람 징계해라. 보수 망신 다 시킨다.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "유성민 그 배신자! 내 표를 훔쳐갔어! 걔는 가짜 보수야! 내가 진짜야! 다 죽어버려!" },
+                                    { nick: "Real_Right", content: "진짜 보수는 품격을 지킵니다. 님은 그냥 양아치예요." }
+                                ]
+                            },
+                            {
+                                nick: "Rename_City", time: "5분 전", like: 6200, dislike: 0, isPunished: false,
+                                content: "'재훈시'로 바꾸라니 ㅋㅋㅋ 이름부터 망할 징조다. 효빈시 이름이 얼마나 예쁜데. 박효빈 시장님 이름이랑 찰떡임.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "효빈이 뭐야 촌스럽게! 재훈시가 훨씬 멋있어! '그레이트 재훈 시티'로 바꿀 거야! 영어로 GJC!" },
+                                    { nick: "English_Teacher", content: "Great Jaehoon City... 콩글리시 냄새가..." }
+                                ]
+                            },
+                            {
+                                nick: "Bank_Teller", time: "10분 전", like: 7500, dislike: 0, isPunished: false,
+                                content: "은행원입니다. 윤재훈 씨 대출 문의하러 오지 마세요. 신용등급 조회도 안 됩니다. 파산 신청이나 알아보세요.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "내가 누군지 알아? 윤대환 아들이야! 은행장 나오라 그래! 금고 문 열어! 돈 내놔!" },
+                                    { nick: "Police", content: "은행에서 난동 부리시면 업무방해 및 강도 미수로 체포합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Check", time: "15분 전", like: 5000, dislike: 1, isPunished: false,
+                                content: "2022년 선거 레전드: 박효빈 77.9% vs 윤재훈 4.8%. 16배 차이 ㅋㅋㅋ 이건 게임이 안 되는 수준임. 그냥 집에 가라.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "게임 안 끝났어! 3판 2선승제야! 다시 해! 재투표해! 심판 매수됐어!" },
+                                    { nick: "Referee", content: "선거는 단판 승부입니다. 룰도 모르시네." }
+                                ]
+                            },
+                            {
+                                nick: "Villain_A_Friend", time: "20분 전", like: 5, dislike: 4000, isPunished: false,
+                                content: "재훈이 형님, 저희가 돈 좀 모아보려고 했는데... 편의점 알바 잘려서 돈이 없습니다. 형님이 사주세요.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "야 이 쓸모없는 놈들아! 니들이 콩팥이라도 팔아왔어야지! 의리도 없는 것들! 내 눈앞에서 꺼져!" },
+                                    { nick: "Organ_Donor", content: "장기 매매는 불법입니다. 신고합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Metro_Worker", time: "25분 전", like: 4500, dislike: 0, isPunished: false,
+                                content: "윤재훈 낙선 기념으로 오늘 회식합니다. 우리 회사 말아먹을 뻔한 인간, 꼴 좋다. 8호선 정상화 가즈아!",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "내 지하철이야! 타지 마! 다 걸어 다녀! 레일 다 뜯어버릴 거야! 고철로 팔아먹을 거야!" },
+                                    { nick: "Rail_Tech", content: "레일 뜯으려면 장비 필요한데 대여료 있으세요?" }
+                                ]
+                            },
+                            {
+                                nick: "Angry_Mom", time: "30분 전", like: 3800, dislike: 0, isPunished: false,
+                                content: "아이들 앞에서 욕하고 소리 지르더니 4.8%... 인과응보네요. 제발 효빈시 떠나주세요. 교육상 안 좋습니다.",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "내가 왜 떠나! 니들이 떠나! 여긴 내 왕국이야! 다 내 백성이라고! 세금 내!" },
+                                    { nick: "Citizen_D", content: "왕국? 병원 가보세요. 망상증 심각하네." }
+                                ]
+                            },
+                            {
+                                nick: "Final_Boss", time: "35분 전", like: 6000, dislike: 0, isPunished: false,
+                                content: "결론: 돈도 없고, 명예도 없고, 지지율도 없고, 친구도 없다. 남은 건 빚이랑 전과 기록뿐. 인생 참...",
+                                replies: [
+                                    { nick: "YoonJaehoon", content: "나한테는 '정신승리'가 있다! 난 안 졌어! 박효빈이 반칙 쓴 거야! 내가 이긴 거야!" },
+                                    { nick: "Winner", content: "네네~ 정신승리 많이 하세요~ 우승 트로피는 박효빈 시장님 거 ^^" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let nickStyle = cmt.nick === "YoonJaehoon" ? "text-red-600 font-black" : "text-[#0055aa]";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.nick === "YoonJaehoon" ? "bg-red-50 border border-red-200" : "bg-gray-50 border border-gray-200";
+                                    const rNickStyle = reply.nick === "YoonJaehoon" ? "text-red-600 font-bold" : "text-[#0055aa]";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_yoon_defeat_2022.html" class="ranking-link font-bold text-[#0055aa]">윤재훈 4.8% 충격 패배</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_election_result_2022.html" class="ranking-link">박효빈 77.9% 압승</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_park_apology.html" class="ranking-link">박효빈 당선 소감</a></li>
+                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">보수 무소속 유성민 2위</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">효빈시의 새로운 미래</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈광역시청</div>
+                    <div class="text-xs text-blue-400">새로운 시장과 함께<br>시민이 행복한 도시</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

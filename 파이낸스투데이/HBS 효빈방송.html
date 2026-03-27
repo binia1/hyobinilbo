@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBS 효빈방송 - 효빈의 눈, 시민의 목소리</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8f9fa; }
+        
+        .hbs-primary { color: #0056b3; }
+        .bg-hbs-primary { background-color: #0056b3; }
+        .hbs-secondary { color: #ff0055; }
+        
+        .on-air-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* 뉴스 썸네일 호버 효과 */
+        .news-thumb:hover img { transform: scale(1.05); }
+        .news-thumb img { transition: transform 0.3s ease; }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 헤더 -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <!-- 최상단 유틸리티 바 -->
+        <div class="bg-gray-100 text-xs text-gray-500 py-1">
+            <div class="container mx-auto px-4 flex justify-between">
+                <div class="flex gap-4">
+                    <a href="로그인.html" class="hover:text-black">로그인</a>
+                    <a href="회원가입.html" class="hover:text-black">회원가입</a>
+                    <a href="고객센터.html" class="hover:text-black">고객센터</a>
+                </div>
+                <div class="flex gap-4">
+                    <span><i class="fas fa-tv mr-1"></i>채널번호: 6번</span>
+                    <span><i class="fas fa-radio mr-1"></i>FM 99.9MHz</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 메인 네비게이션 -->
+        <div class="container mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="홈.html" class="flex items-center gap-2">
+                <img src="이미지/HBS로고.png" alt="HBS 효빈방송" class="h-10 w-auto" onerror="this.src='https://via.placeholder.com/120x50/0056b3/ffffff?text=HBS+NEWS'">
+            </a>
+            
+            <nav class="hidden md:flex gap-8 font-bold text-lg text-gray-800">
+                <a href="뉴스.html" class="text-[#0056b3]">뉴스</a>
+                <a href="드라마.html" class="hover:text-[#0056b3]">드라마</a>
+                <a href="예능.html" class="hover:text-[#0056b3]">예능</a>
+                <a href="교양.html" class="hover:text-[#0056b3]">교양</a>
+                <a href="편성표.html" class="hover:text-[#0056b3]">편성표</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <div class="hidden lg:flex items-center bg-gray-100 rounded-full px-4 py-2">
+                    <input type="text" placeholder="검색어를 입력하세요" class="bg-transparent border-none outline-none text-sm w-40">
+                    <button><i class="fas fa-search text-gray-500"></i></button>
+                </div>
+                <a href="온에어.html" class="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full font-bold shadow-md hover:bg-red-700 transition">
+                    <span class="w-2 h-2 bg-white rounded-full on-air-badge"></span> ON AIR
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 속보 티커 -->
+    <div class="bg-[#0056b3] text-white overflow-hidden py-2">
+        <div class="container mx-auto px-4 flex items-center">
+            <span class="bg-red-600 text-xs font-bold px-2 py-1 rounded mr-3 shrink-0">속보</span>
+            <marquee behavior="scroll" direction="left" class="text-sm font-medium">
+                [정치] 이재명 대통령 "효빈 모델, 대한민국 표준으로"... 박효빈 시장과 환담 &nbsp;&nbsp;&nbsp;
+                [사회] '내란 선동' 윤재훈, 구치소 독방서 난동 부리다 추가 징계 &nbsp;&nbsp;&nbsp;
+                [교통] 효빈 8호선(Sky Rail) 개통 6개월 만에 누적 승객 500만 돌파 &nbsp;&nbsp;&nbsp;
+                [날씨] 내일 효빈 전역 맑음, 낮 최고기온 28도
+            </marquee>
+        </div>
+    </div>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <div class="container mx-auto px-4 py-8">
+        
+        <!-- 상단: 메인 뉴스 & 주요 뉴스 리스트 -->
+        <div class="flex flex-col lg:flex-row gap-8 mb-12">
+            <!-- 메인 헤드라인 (왼쪽) -->
+            <div class="w-full lg:w-2/3 relative group news-thumb cursor-pointer overflow-hidden rounded-xl shadow-lg">
+                <a href="뉴스상세.html">
+                    <img src="이미지/이재명박효빈악수.png" alt="이재명 대통령과 박효빈 시장의 악수" class="w-full h-[450px] object-cover" onerror="this.src='https://via.placeholder.com/800x450/333333/ffffff?text=President+Lee+Visits+Hyobin'">
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/70 to-transparent p-8 text-white">
+                        <span class="bg-[#0056b3] text-xs font-bold px-2 py-1 rounded mb-2 inline-block">HBS 뉴스 8</span>
+                        <h1 class="text-3xl md:text-4xl font-black mb-2 leading-tight">대통령의 선택은 '효빈'... "대한민국 혁신의 심장"</h1>
+                        <p class="text-gray-200 hidden md:block">이재명 대통령 취임 후 첫 지방 순방지로 효빈시 방문... 박효빈 시장의 '불복종 리더십'과 8호선 혁신 모델 극찬</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 주요 뉴스 리스트 (오른쪽) -->
+            <div class="w-full lg:w-1/3 flex flex-col gap-4">
+                <div class="border-b-2 border-gray-800 pb-2 mb-2 flex justify-between items-end">
+                    <h3 class="text-xl font-bold text-[#0056b3]">오늘의 주요 뉴스</h3>
+                    <span class="text-xs text-gray-500">2025.06.25 기준</span>
+                </div>
+
+                <!-- 뉴스 아이템 1 -->
+                <a href="뉴스상세_지지율.html" class="flex gap-4 group">
+                    <div class="w-1/3 overflow-hidden rounded-lg">
+                        <img src="이미지/박효빈지지율그래프.png" alt="지지율 그래프" class="w-full h-20 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/150x100?text=82.4%'">
+                    </div>
+                    <div class="w-2/3">
+                        <h4 class="font-bold text-gray-800 group-hover:text-[#0056b3] transition-colors line-clamp-2">박효빈 시장 지지율 82.4%... 역대 광역단체장 최고치 경신</h4>
+                        <p class="text-xs text-gray-500 mt-1">리얼미터 6월 조사 결과 발표</p>
+                    </div>
+                </a>
+
+                <!-- 뉴스 아이템 2 -->
+                <a href="뉴스상세_8호선.html" class="flex gap-4 group">
+                    <div class="w-1/3 overflow-hidden rounded-lg">
+                        <img src="이미지/8호선주행.png" alt="8호선 스카이레일" class="w-full h-20 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/150x100/9856FF/ffffff?text=Line+8'">
+                    </div>
+                    <div class="w-2/3">
+                        <h4 class="font-bold text-gray-800 group-hover:text-[#0056b3] transition-colors line-clamp-2">"지하 벙커? 없습니다" 8호선 괴담 종식... 전문가 현장 검증 완료</h4>
+                        <p class="text-xs text-gray-500 mt-1">우신면 전 의원 주장 허위로 판명</p>
+                    </div>
+                </a>
+
+                <!-- 뉴스 아이템 3 -->
+                <a href="뉴스상세_재판.html" class="flex gap-4 group">
+                    <div class="w-1/3 overflow-hidden rounded-lg">
+                        <img src="이미지/윤재훈법원출석.png" alt="윤재훈 법원 출석" class="w-full h-20 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/150x100?text=Trial'">
+                    </div>
+                    <div class="w-2/3">
+                        <h4 class="font-bold text-gray-800 group-hover:text-[#0056b3] transition-colors line-clamp-2">'내란 선동' 윤재훈 첫 공판... 법정서 "나는 왕족" 소란 피우다 퇴정</h4>
+                        <p class="text-xs text-gray-500 mt-1">변호인단 사임계 제출... 국선 변호</p>
+                    </div>
+                </a>
+
+                <!-- 뉴스 아이템 4 -->
+                <a href="뉴스상세_우신면.html" class="flex gap-4 group">
+                    <div class="w-1/3 overflow-hidden rounded-lg">
+                        <img src="이미지/우신면병원.png" alt="우신면 정신병원" class="w-full h-20 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/150x100?text=Hospital'">
+                    </div>
+                    <div class="w-2/3">
+                        <h4 class="font-bold text-gray-800 group-hover:text-[#0056b3] transition-colors line-clamp-2">우신면, 정신병원 탈출 시도 중 숟가락으로 땅굴 파다 발각</h4>
+                        <p class="text-xs text-gray-500 mt-1">병원 측 "보안 강화하겠다"</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 섹션: 온에어 & 편성표 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- 온에어 플레이어 (가상) -->
+            <div class="md:col-span-2 bg-black rounded-xl overflow-hidden shadow-lg relative group">
+                <div class="absolute top-4 left-4 z-10 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center">
+                    <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span> LIVE
+                </div>
+                <img src="이미지/HBS뉴스스튜디오.png" alt="뉴스 생중계 화면" class="w-full h-[350px] object-cover opacity-80" onerror="this.src='https://via.placeholder.com/800x400/000000/ffffff?text=HBS+NEWS+LIVE'">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <a href="온에어.html" class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-[#0056b3] hover:scale-110 transition duration-300 border-2 border-white">
+                        <i class="fas fa-play text-white text-2xl ml-1"></i>
+                    </a>
+                </div>
+                <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
+                    <h3 class="text-white text-xl font-bold">HBS 뉴스데스크</h3>
+                    <p class="text-gray-300 text-sm">진행: 김효빈 앵커 | 현재 시청자: 12,403명</p>
+                </div>
+            </div>
+
+            <!-- 편성표 (간략) -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-gray-800">지금 HBS는</h3>
+                    <a href="편성표.html" class="text-xs text-gray-500 hover:text-[#0056b3]">전체 편성표 ></a>
+                </div>
+                <ul class="space-y-4 relative">
+                    <!-- 타임라인 라인 -->
+                    <div class="absolute left-[58px] top-2 bottom-2 w-0.5 bg-gray-200"></div>
+
+                    <li class="flex items-start opacity-50">
+                        <span class="text-sm font-bold text-gray-500 w-12 text-right mr-4">18:00</span>
+                        <div>
+                            <p class="font-bold text-gray-600">생방송 투데이 효빈</p>
+                            <p class="text-xs text-gray-400">지역 맛집과 화제의 현장</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sm font-bold text-[#0056b3] w-12 text-right mr-4">19:00</span>
+                        <div class="bg-blue-50 p-2 rounded -mt-2 w-full border-l-4 border-[#0056b3]">
+                            <p class="font-bold text-[#0056b3] flex items-center">HBS 뉴스데스크 <span class="ml-2 text-[10px] bg-red-500 text-white px-1 rounded">ON</span></p>
+                            <p class="text-xs text-gray-500">효빈의 하루를 정리합니다</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sm font-bold text-gray-800 w-12 text-right mr-4">20:00</span>
+                        <div>
+                            <p class="font-bold text-gray-800">시사기획 '창'</p>
+                            <p class="text-xs text-gray-500">특집: 12.3 계엄, 그날의 진실</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sm font-bold text-gray-800 w-12 text-right mr-4">21:00</span>
+                        <div>
+                            <p class="font-bold text-gray-800">월화드라마 [스카이레일의 연인]</p>
+                            <p class="text-xs text-gray-500">8호선에서 피어난 로맨스 (12회)</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sm font-bold text-gray-800 w-12 text-right mr-4">22:00</span>
+                        <div>
+                            <p class="font-bold text-gray-800">예능 [효빈맛지도]</p>
+                            <p class="text-xs text-gray-500">게스트: 부서원 민주당 고문</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 섹션: 핫클립 & 다시보기 -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-black text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-video text-[#0056b3] mr-2"></i> 화제의 영상
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- 영상 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-2">
+                        <img src="이미지/박효빈사이다발언.png" alt="박효빈 사이다 발언" class="w-full h-40 object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/300x200?text=Clip+1'">
+                        <span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">03:42</span>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                        <i class="fas fa-play absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-80 group-hover:opacity-100"></i>
+                    </div>
+                    <p class="font-bold text-sm text-gray-800 line-clamp-2 group-hover:text-[#0056b3]">"나를 밟고 가라" 박효빈 시장, 계엄군 앞 명연설 다시보기 (조회수 500만)</p>
+                </div>
+                <!-- 영상 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-2">
+                        <img src="이미지/윤석열체포현장.png" alt="윤석열 체포 현장" class="w-full h-40 object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/300x200?text=Clip+2'">
+                        <span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">01:15</span>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                        <i class="fas fa-play absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-80 group-hover:opacity-100"></i>
+                    </div>
+                    <p class="font-bold text-sm text-gray-800 line-clamp-2 group-hover:text-[#0056b3]">[단독영상] 속옷 차림으로 난동 부리는 전직 대통령... 충격의 체포 순간</p>
+                </div>
+                <!-- 영상 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-2">
+                        <img src="이미지/8호선풍경.png" alt="8호선 풍경" class="w-full h-40 object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/300x200?text=Clip+3'">
+                        <span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">05:20</span>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                        <i class="fas fa-play absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-80 group-hover:opacity-100"></i>
+                    </div>
+                    <p class="font-bold text-sm text-gray-800 line-clamp-2 group-hover:text-[#0056b3]">하늘을 달리는 기차! 효빈 8호선(Sky Rail) 탑승기 (4K)</p>
+                </div>
+                <!-- 영상 4 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-2">
+                        <img src="이미지/안천동잔치.png" alt="안천동 잔치" class="w-full h-40 object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/300x200?text=Clip+4'">
+                        <span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">02:30</span>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                        <i class="fas fa-play absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-80 group-hover:opacity-100"></i>
+                    </div>
+                    <p class="font-bold text-sm text-gray-800 line-clamp-2 group-hover:text-[#0056b3]">"독재가 끝났다!" 안천동 마을 잔치 현장... 주민들 눈물의 파티</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 하단 배너 -->
+        <div class="w-full h-32 bg-gray-800 rounded-xl flex items-center justify-between px-8 text-white relative overflow-hidden mb-12">
+            <div class="absolute inset-0 bg-[url('이미지/방송국전경.png')] opacity-30 bg-cover bg-center"></div>
+            <div class="relative z-10">
+                <h3 class="text-2xl font-bold mb-1">시민 제보를 기다립니다</h3>
+                <p class="text-gray-300 text-sm">여러분의 소중한 제보가 더 나은 효빈을 만듭니다.</p>
+            </div>
+            <a href="제보하기.html" class="relative z-10 bg-[#0056b3] hover:bg-blue-600 px-6 py-3 rounded-lg font-bold transition">제보하기</a>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1">
+                    <img src="이미지/HBS로고_흰색.png" alt="HBS 로고" class="h-8 mb-4 brightness-0 invert" onerror="this.src='https://via.placeholder.com/100x40/333333/ffffff?text=HBS'">
+                    <p class="text-xs leading-relaxed">
+                        HBS 효빈방송은 효빈광역시를 대표하는 지역 민영 방송사입니다. 
+                        정론직필의 정신으로 시민의 눈과 귀가 되겠습니다.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">회사소개</h4>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="인사말.html" class="hover:text-white">인사말</a></li>
+                        <li><a href="조직도.html" class="hover:text-white">조직도</a></li>
+                        <li><a href="찾아오시는길.html" class="hover:text-white">찾아오시는길</a></li>
+                        <li><a href="채용정보.html" class="hover:text-white">채용정보</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">고객센터</h4>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="시청자게시판.html" class="hover:text-white">시청자 게시판</a></li>
+                        <li><a href="편성표.html" class="hover:text-white">편성표</a></li>
+                        <li><a href="제휴문의.html" class="hover:text-white">제휴문의</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">SNS</h4>
+                    <div class="flex gap-4 text-xl">
+                        <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-xs text-center md:text-left">
+                <p class="mb-2">주소: 효빈광역시 북구 중수동 23</p>
+                <p>대표이사: 임상진 | 사업자등록번호: 123-45-67890 | 전화: 079-214-2311</p>
+                <p class="mt-2">Copyright © HBS Hyobin Broadcasting System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 간단한 인터랙션 스크립트
+        document.querySelectorAll('.poll-card a').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // 실제 링크 이동을 위해 preventDefault는 제거하거나, 
+                // 데모용이라면 알림창을 띄우고 이동을 막을 수 있습니다.
+                // e.preventDefault();
+                // alert('로그인이 필요한 서비스입니다. (데모)');
+            });
+        });
+    </script>
+</body>
+</html>

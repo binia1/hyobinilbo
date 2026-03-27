@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[아카이브] 2007.01.13 "갈색 벽에 막힌 골든타임"... 도로 위에서 사그라든 두 생명 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f2f5; color: #333; }
+        
+        /* 아카이브 느낌을 주는 상단 바 */
+        .archive-top-bar { background: #333; color: #aaa; padding: 8px 0; font-size: 12px; text-align: center; }
+        
+        .news-header { border-bottom: 2px solid #0055aa; background: white; padding: 20px 0; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+
+        .article-container { max-width: 1000px; margin: 30px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 50px; border: 1px solid #ddd; border-radius: 2px; position: relative; }
+        
+        /* 신문 아카이브 워터마크 */
+        .main-content::before {
+            content: "ARCHIVE 2007";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 24px;
+            font-weight: 900;
+            color: #f0f0f0;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+
+        .article-title { font-size: 32px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 15px; font-family: 'Nanum Myeongjo', serif; letter-spacing: -1.5px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; border-left: 4px solid #0055aa; padding-left: 15px; font-weight: 700; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        
+        .article-body { font-size: 18px; line-height: 2; color: #222; font-family: 'Nanum Myeongjo', serif; text-align: justify; } 
+        .article-body strong { font-weight: 800; color: #cc0000; }
+        .article-body p { margin-bottom: 25px; }
+        
+        .img-box { margin: 30px 0; }
+        .img-caption { font-size: 14px; color: #666; margin-top: 10px; text-align: center; background: #f9f9f9; padding: 10px; border-bottom: 2px solid #ddd; }
+
+        .comment-section { margin-top: 60px; border-top: 3px solid #111; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        
+        .comment-item { padding: 20px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #fdf2f2; border: 1px solid #fecaca; padding: 20px; margin-bottom: 15px; border-radius: 4px; }
+        .yoon-comment { background: #f5f5f5; border: 1px solid #ddd; padding: 20px; margin-bottom: 15px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 15px; font-size: 13px; color: #666; border: 1px solid #ddd; padding: 3px 8px; border-radius: 3px; background: white; }
+        .vote-btn.active-up { color: #0055aa; font-weight: bold; border-color: #0055aa; }
+        .vote-btn.active-down { color: #cc0000; font-weight: bold; border-color: #cc0000; }
+
+        .reply-container { margin-top: 15px; padding-left: 20px; border-left: 3px solid #eee; }
+        .reply-item { margin-bottom: 10px; font-size: 14px; background: #fafafa; padding: 12px; border-radius: 4px; border: 1px solid #efefef; }
+        
+        .side-content { flex: 1; }
+        .archive-box { background: white; border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; }
+        .archive-title { font-weight: bold; border-bottom: 2px solid #0055aa; padding-bottom: 8px; margin-bottom: 15px; font-size: 16px; }
+         .archive-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 13px; }       /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+
+    </style>
+</head>
+<body>
+
+    <div class="archive-top-bar">
+        본 페이지는 2007년 1월 13일 자 기사의 디지털 아카이브 버전입니다.
+    </div>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container px-4">
+        <div class="main-content">
+            <div id="article-content-area">
+                <div class="mb-4 text-[#cc0000] font-bold">사회 > 사건/사고 [단독]</div>
+                <h2 class="article-title">"갈색 벽에 막힌 골든타임"... 14세 소년 등 시민 2명 도로 위에서 숨져</h2>
+                <div class="article-subtitle">운행 감축된 지하철 대신 쏟아진 갈색 버스들... 구급차 길 안 터주고 담배꽁초만 튕겨</div>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">강직 기자</span> (honest@hyobinilbo.com)<br>
+                        입력 2007.01.13. 09:10 | 수정 2007.01.13. 10:45
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p>[효빈일보 = 강직 기자] 12일 저녁 퇴근 시간, 효빈시 남구와 중구를 잇는 주간선도로에서 인간의 탐욕이 빚어낸 비극적인 참사가 발생했다. 구급차 한 대가 사이렌을 울리며 필사적으로 길을 찾았지만, 도로를 점령한 **'갈색 버스'**들의 벽에 가로막혀 결국 환자 2명이 병원 문턱조차 밟지 못한 채 사망했다.</p>
+
+                    <div class="img-box">
+                        <img src="갈색_버스_장벽.png" alt="갈색_버스_장벽.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/4d3a2b/ffffff?text=Muddy+Brown+Bus+Barrier'">
+                        <div class="img-caption">▲ 12일 오후 6시 40분경, 효빈시 남구 연결도로에서 두청운수 버스들이 3중으로 길을 막아 구급차가 고립되어 있다.</div>
+                    </div>
+
+                    <p>사건은 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 시장이 "공공재 적자 해소"를 명분으로 지하철과 전차의 운행 횟수를 30% 감축하며 시작됐다. 철도망이 마비되자 갈 곳 잃은 시민들은 윤 시장 일가가 운영하는 <a href="두청운수.html" class="text-blue-600 underline">두청운수</a>의 갈색 버스들로 몰려들었고, 도로는 이른바 **'갈색의 바퀴벌레'**라 불리는 버스 떼로 뒤덮였다.</p>
+
+                    <p>이 아수라장 속에 갇힌 구급차 안에는 천식 발작을 일으킨 김 모 군(14)이 타고 있었다. 구급대원은 무전을 통해 "환자 호흡 곤란! 제발 길 좀 터달라"고 울부짖었으나, 앞을 가로막은 두청운수 버스 기사는 창밖으로 담배꽁초를 튕기며 **"시장님도 버스 우선이라는데 왜 앵앵거리냐"**며 요지부동이었다. 결국 김 군은 병원을 500m 앞두고 심정지로 숨을 거두었다.</p>
+
+                    <p>같은 시각, 공사장 추락 사고로 과다출혈 상태였던 50대 가장 박 모 씨 또한 구급차에 몸을 실었으나 '갈색 버스 장벽'에 40분간 고립된 사이 끝내 쇼크사했다. 한 가정의 평범한 행복이 특정 세력의 버스 독점욕 때문에 아스팔트 위에서 증발해버린 것이다.</p>
+
+                    <p>더욱 경악스러운 것은 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 시장의 반응이다. 윤 시장은 다음 날 브리핑에서 고인들에 대한 애도는커녕 **"도로가 좁아서 생긴 불상사다. 역시 7호선 전차 궤도를 걷어내고 차선을 더 넓혀야 한다"**며 이번 비극을 전차 폐지의 명분으로 삼는 악마성을 드러냈다.</p>
+
+                    <div class="img-box">
+                        <img src="윤대환_2007_브리핑.png" alt="윤대환_시장_브리핑.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333/fff?text=Mayor+Yoon+Cold+Briefing'">
+                        <div class="img-caption">▲ 13일 오전, 참사 현장에 대해 "도로 확충만이 답"이라며 전차 폐지 필요성을 강조하고 있는 윤대환 시장.</div>
+                    </div>
+
+                    <p>시민들은 분노하고 있다. 시청 앞에는 '갈색 버스는 살인 버스다'라는 피켓을 든 시민들이 모여들기 시작했다. 한 유가족은 "내 아들을 죽인 건 도로가 아니라 시장의 탐욕"이라며 오열했다. 2007년의 효빈시는 지금, '시장은 없고 악귀만 앉아 있는' 암흑의 겨울을 지나고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-400">
+                        &lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;
+                    </div>
+                </div>
+            </div>
+
+            <!-- 아카이브 댓글창 (과거와 현재의 교차) -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    <span>전체 댓글</span> <span class="text-[#0055aa] text-lg">12,842</span>
+                </div>
+                
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 2007년 당시 베스트 댓글 -->
+                    <div class="best-comment">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-red-600">Hyobin_Dad (2007.01.13)</span>
+                            <span class="text-xs text-gray-500">추천 45,210 | 비추천 2</span>
+                        </div>
+                        <p class="text-sm font-medium">우리 아들이 김 군이랑 같은 반입니다. 학교 전체가 울음바다예요. 멀쩡하던 전차 없애고 지하철 줄여서 사람 죽여놓고, 도로 넓히겠다고요? 저게 인간입니까? 윤대환 시장, 당신은 반드시 천벌 받을 겁니다.</p>
+                    </div>
+
+                    <!-- 윤재훈의 2026년 적반하장 댓글 -->
+                    <div class="yoon-comment">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-800">YoonJaehoon(출소/무직) <span class="bg-red-600 text-white text-[10px] px-1 rounded ml-1">위험</span></span>
+                            <span class="text-xs text-gray-500">2026.02.01</span>
+                        </div>
+                        <p class="text-sm font-bold text-red-800">아니 ㅋㅋㅋ 옛날 기사 왜 또 끌올 하냐? 우리 아빠 말이 맞지! 도로가 좁으니까 구급차가 못 간 거 아냐! 전차 쇳덩어리들 때문에 사람 죽은 거라고! 우리 아빠는 선견지명이 있었던 거야! 박효빈 튀기 시장이 이거 조작해서 올리는 거지? 다 고소할 거야!</p>
+                        <div class="flex gap-2 mt-3">
+                            <span class="vote-btn" onclick="vote(this, 'up')">공감 <span class="count">2</span></span>
+                            <span class="vote-btn active-down" onclick="vote(this, 'down')">비공감 <span class="count">89,500</span></span>
+                        </div>
+                        <div class="reply-container">
+                            <div class="reply-item">
+                                <span class="font-bold text-blue-700">Fact_Check_2026</span>: 재훈아 ㅋㅋㅋ 나오자마자 고인 모독 실화냐? 그 소년 니네 아빠 버스 기사가 담배 튕기면서 안 비켜줘서 죽은 거야. 기사 안 읽냐? 너희 부자는 진짜 효빈의 암세포다.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-gray-700">Saneung_Baker</span>: 저 인간은 자식 먹는 빵에 침 뱉을 때부터 알아봤음. 인성이 유전이라는 게 학계의 정설.
+                            </div>
+                            <div class="reply-item">
+                                <span class="font-bold text-red-600 text-xs">YoonDaehwan(출소/동조)</span>: <span class="text-red-800 font-bold">재훈아 잘했다! 아빠가 뒤에 있다! 진실은 승리한다! 도로는 넓어야 한다!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2007년 다른 댓글들 -->
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-700">7호선_승무원 (2007.01.13)</span>
+                            <span class="text-xs text-gray-500">추천 12,000</span>
+                        </div>
+                        <p class="text-sm">회주공업 전차 노동자입니다. 시장님, 저희 보조금 떼서 두청운수 기름값으로 주셨죠? 그 대가가 어린 소년의 목숨입니까? 제발 사람답게 사세요.</p>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold text-gray-700">Nurse_Lee (2007.01.13)</span>
+                            <span class="text-xs text-gray-500">추천 9,800</span>
+                        </div>
+                        <p class="text-sm">효빈의료원 간호사입니다. 박 씨 아저씨, 과다출혈인데 40분이나 늦게 도착하셨어요. 수혈만 제때 했어도 살 수 있었습니다. 갈색 버스 기사들, 당신들도 공범입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="archive-box shadow-sm">
+                <div class="archive-title">2007년 1월 핫이슈</div>
+                <ul class="archive-list">
+                    <li>- <b>[사건]</b> 갈색 버스 골든타임 방해</li>
+                    <li>- <b>[행정]</b> <a href="5호선.html" class="text-red-600">5호선(빨간색)</a> 공사 전격 중단</li>
+                    <li>- <b>[시위]</b> 효빈의료원 민영화 반대 집회</li>
+                    <li>- <b>[교통]</b> 7호선 전차 폐지 찬반 격돌</li>
+                    <li>- <b>[사회]</b> 두청운수 독점 횡포 논란</li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#4d3a2b] p-6 text-white rounded text-center shadow-lg mb-6">
+                <div class="font-black text-xl mb-1 italic">DOOCHEONG</div>
+                <div class="text-xs font-bold">효빈의 품격, 갈색의 위엄<br>두청운수가 도로를 지킵니다</div>
+                <div class="mt-4 text-[10px] text-gray-400 font-normal opacity-50">※ 2007년 당시 실제 광고입니다.</div>
+            </div>
+
+            <div class="archive-box" style="background: #f9f9f9; border-left: 5px solid #0055aa;">
+                <div class="font-bold text-sm mb-2">아카이브 안내</div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    이 기사는 2007년 당시의 원문을 디지털화한 것입니다. 등장하는 지명과 인물은 당시 상황을 기준으로 합니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1000px] mx-auto px-4">
+            <p class="mb-2">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p class="mb-2">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function vote(btn, type) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active-up') || btn.classList.contains('active-down')) {
+                btn.classList.remove('active-up', 'active-down');
+                count--;
+            } else {
+                btn.classList.add(type === 'up' ? 'active-up' : 'active-down');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+    </script>
+</body>
+</html>

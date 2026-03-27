@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[22대 총선] "철도 건드리면 죽는다"... 사면받은 '빌런'들과 발목 잡은 '텃밭'의 처참한 궤멸 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #0055aa; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+        
+        .data-table-container { margin: 30px 0; border: 1px solid #ddd; padding: 15px; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .data-table-title { font-size: 16px; font-weight: bold; color: #0055aa; margin-bottom: 10px; border-bottom: 2px solid #0055aa; padding-bottom: 5px; }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 15px; }
+        .data-table th { background: #f0f4f8; border: 1px solid #ddd; padding: 6px; font-weight: bold; text-align: center; word-break: keep-all; }
+        .data-table td { border: 1px solid #ddd; padding: 6px; text-align: center; vertical-align: middle; }
+        .highlight-row { background-color: #fff9db; }
+        .winner { color: #0055aa; font-weight: bold; }
+        .loser { color: #d9534f; }
+        .sub-text { font-size: 11px; color: #666; display: block; margin-top: 2px;}
+        .vote-percent { font-family: 'Arial', sans-serif; letter-spacing: -0.5px; }
+
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center max-w-[1100px]">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-3xl font-black text-[#0055aa] tracking-tighter" style="font-family: 'Nanum Myeongjo';">효빈일보</a>
+                <span class="text-xs text-gray-400 mt-2">The Hyobin Daily News</span>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" placeholder="기사 검색" class="border border-gray-300 px-2 py-1 text-xs w-40">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-xs">검색</button>
+            </div>
+        </div>
+        <div class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content">
+            <div class="text-[#0055aa] font-bold text-sm mb-2">22대 총선 > 효빈광역시</div>
+            <h1 class="article-title">[22대 총선] "철도 건드리면 죽는다"... 사면받은 '빌런'들과 발목 잡은 '텃밭'의 처참한 궤멸</h1>
+            <div class="article-subtitle">
+                '창전 갑' 윤재훈 2.2%... 상인들에게 '소금 세례' 당하며 무소속 주현진(10.1%)에게도 참패<br>
+                '남구 갑' 우신면 15.5%... 8호선 지연에 분노한 부촌 평당5동, 2020년 40.6% -> 2024년 27.9% 급락<br>
+                민주당 11석·진보당 1석... 범민주진보진영 효빈 전석(12석) 싹쓸이
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2024.04.11 05:30 | 수정 2024.04.11 09:10</span>
+                <span>정치부 종합 (politics@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="https://dummyimage.com/600x400/0055aa/fff&text=Democratic-Progressive+Alliance+Sweep" alt="당선이 확정되자 환호하는 민주당 및 진보당 후보들">
+                    <div class="img-caption">▲ 11일 새벽, 효빈시 전 지역구 석권을 확정 지은 범민주진보 후보들이 손을 맞잡고 환호하고 있다.</div>
+                </div>
+
+                <p>
+                    <span class="text-[#0055aa] font-bold">"4년 전 분열로 얻은 어부지리는 끝났습니다. 철도를 공격한 대가는 혹독했습니다."</span>
+                </p>
+                <p>
+                    제22대 국회의원 선거 효빈광역시 개표 결과, <strong>더불어민주당 11석, 진보당 1석</strong>으로 범민주진보 진영이 효빈시 12개 선거구를 모두 싹쓸이했다. 반면 국민의힘은 전통적 텃밭인 남구 갑과 중구·동구에서조차 처참하게 무너졌다. 이는 '철도 인프라'를 건드린 대가와 '묻지마 사면'에 대한 민심의 분노가 결합된 결과다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#0055aa] pl-3">남구 갑 우신면: 8호선 지연 심판... 부촌 '평당5동'의 배신</h3>
+                <p>
+                    효빈시 최고 부촌 평당동을 품은 <strong>남구 갑</strong>에서 <strong>우신면 후보(국민의힘)</strong>는 <strong>15.50%</strong>라는 충격적인 성적표를 받았다. 2020년 21대 총선 당시에는 민주당 고원진(31.88%)과 무소속 노신상(23.80%)의 표 분산 덕분에 32.90%라는 낮은 득표율로 '어부지리' 당선을 거머쥐었다. 당시 우신면은 <strong>평당5동에서 40.63%</strong>를 득표하며 보수 텃밭의 힘을 보여줬다.
+                </p>
+                <p>
+                    하지만 이번엔 달랐다. <strong>'8호선 개통 1년 지연'</strong>의 책임론이 불거지며, 교통과 집값에 민감한 평당동 민심이 완전히 돌아섰다. 우신면은 이번 선거에서 <strong>평당5동 27.99%</strong>를 얻는 데 그쳐 반토막에 가까운 하락세를 보였다. 반면 민주당 <strong>고정민 후보는 평당5동에서 61.20%</strong>를, 전체 <strong>75.96%</strong>를 득표하며 압승했다.
+                </p>
+
+                <!-- 남구 갑 상세 데이터 테이블 -->
+                <div class="data-table-container">
+                    <div class="data-table-title">■ 남구 갑 개표 결과 비교 (21대 vs 22대)</div>
+                    <table class="data-table">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 37.5%">
+                            <col style="width: 37.5%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>2020년 21대 총선 (보수 신승)</th>
+                                <th>2024년 22대 총선 (보수 참패)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1위</strong></td>
+                                <td><span class="winner">우신면 (미래통합당)</span><br>33,684표 (32.90%)</td>
+                                <td><span class="winner">고정민 (더불어민주당)</span><br>90,289표 (75.96%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2위</strong></td>
+                                <td>고원진 (더불어민주당)<br>32,640표 (31.88%)</td>
+                                <td><span class="loser">우신면 (국민의힘)</span><br>18,424표 (15.50%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3위 이하</strong></td>
+                                <td class="text-left pl-2">
+                                    3위: 노신상 (무소속) 23.80%<br>
+                                    4위: 구지남 (민생당) 5.00%<br>
+                                    5위: 정영만 (무소속) 4.02%<br>
+                                    6위: 원공현 (정의당) 2.40%
+                                </td>
+                                <td class="text-left pl-2">
+                                    3위: 기아락 (개혁신당) 6.22%<br>
+                                    4위: 진현보 (자유통일당) 2.32%
+                                </td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>평당5동<br>(최고 부촌)</strong></td>
+                                <td><strong>우신면 40.63%</strong><br>vs 고원진 29.00%</td>
+                                <td><span class="loser"><strong>우신면 27.99%</strong></span><br>vs <span class="winner">고정민 61.20%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#0055aa] pl-3">창전 갑 윤재훈: 2.2%... 사면 효과는커녕 '소금 세례' 굴욕</h3>
+                <p>
+                    대통령 사면으로 복귀한 <strong>창전 갑 윤재훈 후보(국민의힘)</strong>는 <strong>2.20%(2,232표)</strong>를 얻는 데 그쳤다. 이는 보수 계열 <strong>무소속 주현진 후보(10.11%)</strong>에게도 5배 가까이 뒤진 수치다. 주현진 후보는 국민의힘 입당 제의를 받았으나 "인간 같지도 않은 사람(윤재훈)을 공천하는 당에는 절대 가지 않겠다"며 거절하고 무소속 출마를 고수한 것으로 알려졌다.
+                </p>
+                <p>
+                    윤 후보는 선거 운동 기간 중 시장 상인들을 향해 막말을 퍼붓다 분노한 상인들에게 <strong>'소금 세례'</strong>를 당하는 등 민심의 철저한 외면을 받았다. 2020년 미래통합당 색수통 후보가 얻은 10.04%에도 한참 못 미치는 역대 최악의 성적표다.
+                </p>
+
+                <!-- 창전 갑 상세 데이터 테이블 -->
+                <div class="data-table-container">
+                    <div class="data-table-title">■ 창전 갑 개표 결과 비교 (21대 vs 22대)</div>
+                    <table class="data-table">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 37.5%">
+                            <col style="width: 37.5%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>2020년 21대 총선</th>
+                                <th>2024년 22대 총선</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1위</strong></td>
+                                <td><span class="winner">추산령 (더불어민주당)</span><br>84,531표 (84.19%)</td>
+                                <td><span class="winner">추산령 (더불어민주당)</span><br>86,320표 (85.09%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2위</strong></td>
+                                <td>색수통 (미래통합당)<br>10,081표 (10.04%)</td>
+                                <td>주현진 (무소속-보수계열)<br>10,256표 (10.11%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3위 이하</strong></td>
+                                <td class="text-left pl-2">
+                                    3위: 주현진 (무소속) 5.77%
+                                </td>
+                                <td class="text-left pl-2">
+                                    3위: 안원욱 (개혁신당) 2.60%<br>
+                                    <span class="loser"><strong>4위: 윤재훈 (국민의힘) 2.20%</strong></span>
+                                </td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>특이사항</strong></td>
+                                <td>주현진 무소속 첫 도전</td>
+                                <td>윤재훈 <strong>동곡동 2.10%, 창전5동 1.87%</strong><br>사실상 지지율 소멸</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#0055aa] pl-3">중구·동구 주민우: 전차 폐지론의 역풍... 덕현동 외 전멸</h3>
+                <p>
+                    함께 사면된 <strong>중구·동구 주민우 후보(국민의힘)</strong> 역시 <strong>16.57%</strong>로 낙선했다. 2020년에는 민생당(30.04%), 민주당(28.62%), 무소속(27.12%), 민생당(14.22%)의 4파전 속에서 표가 갈리며 운 좋게 당선되었으나, 이번엔 민주당 김성민 후보(78.70%)에게 압도당했다.
+                </p>
+                <p>
+                    주민우는 선거 기간 내내 "전차 폐지"를 주장했으나, 전차 혜택을 보는 <strong>고도동(김성민 88.70%), 내조1동(89.80%)</strong> 등 대다수 지역에서 10% 내외 득표에 그쳤다. 그나마 보수세가 강한 원도심 <strong>덕현동</strong> 일대에서 20% 초중반대(덕현2동 26.55%)를 기록하며 간신히 체면치레를 했을 뿐이다.
+                </p>
+
+                <!-- 중구 동구 상세 데이터 테이블 -->
+                <div class="data-table-container">
+                    <div class="data-table-title">■ 중구 동구 개표 결과 비교 (21대 vs 22대)</div>
+                    <table class="data-table">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 37.5%">
+                            <col style="width: 37.5%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>2020년 21대 총선 (보수 신승)</th>
+                                <th>2024년 22대 총선 (보수 참패)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1위</strong></td>
+                                <td><span class="winner">주민우 (미래통합당)</span><br>50,668표 (30.04%)</td>
+                                <td><span class="winner">김성민 (더불어민주당)</span><br>131,800표 (78.70%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2위</strong></td>
+                                <td>여수원 (더불어민주당)<br>48,272표 (28.62%)</td>
+                                <td><span class="loser">주민우 (국민의힘)</span><br>27,750표 (16.57%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3위 이하</strong></td>
+                                <td class="text-left pl-2">
+                                    3위: 용시현 (무소속) 27.12%<br>
+                                    4위: 조낙지 (민생당) 14.22%
+                                </td>
+                                <td class="text-left pl-2">
+                                    3위: 목영민 (개혁신당) 3.22%<br>
+                                    4위: 조광훈 (자유통일당) 1.51%
+                                </td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>동별 득표율</strong></td>
+                                <td>4파전으로 표 분산 심화</td>
+                                <td><strong>고도동: 김 88.7% vs 주 9.5%</strong><br>덕현2동(보수세): 김 72% vs 주 26%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    한편, 남구 을에서는 민주당이 후보를 내지 않고 진보당과 단일화하여 <strong>진보당 신원임 후보</strong>가 60.54%로 당선되는 이변을 연출했다. 이로써 효빈시 12개 의석은 모두 범민주진보 진영이 차지하게 됐다.
+                </p>
+            </div>
+
+            <!-- 댓글창 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#0055aa] text-sm font-normal ml-2">실시간 베스트</span> <span class="text-xs text-gray-400">총 238,902개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="로그인 후 이용 가능합니다."></textarea>
+                    <button class="cmt-btn" onclick="alert('로그인이 필요합니다.')">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list"></div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기</button>
+                </div>
+                
+                <script>
+                    const comments = [
+                        {
+                            id: 1, nick: "상식적인시민", date: "2024-04-11 06:10",
+                            content: "윤석열 대통령님, 지금 개표 방송 보고 계십니까? 4.8%가 통계적 불가능이라며 사면해 준 윤재훈이 2.2% 받았습니다. 이것도 부정선거입니까? 범죄자를 사면해서 보수를 괴멸시킨 책임, 어떻게 지실 겁니까? 효빈 시민들은 당신의 오만과 독선에 철퇴를 내린 겁니다.",
+                            like: 95200, dislike: 1500,
+                            replies: [
+                                { id: 'r1-1', nick: "애국보수", content: "대통령 고유 권한인 사면권에 토 달지 마라!! 부정선거 맞다!! 2.2%는 말도 안 돼!!", like: 150, dislike: 8500 },
+                                { id: 'r1-2', nick: "팩트폭격", content: "권한 남용이죠. 토론회에서 쌍욕하고 난동 부린 범죄자를 '투사'로 둔갑시켰으니 ㅋㅋㅋ 결과가 증명하잖아요. 2.2%가 민심입니다.", like: 5200, dislike: 50 },
+                                { id: 'r1-3', nick: "재훈왕자96", content: "부정선거야!! 북한 해커가 개입했어!! 내 표가 민주당으로 다 넘어갔다고!! 대통령님 계엄령 선포해주세요!!", like: 15, dislike: 4000 },
+                                { id: 'r1-4', nick: "우신면", content: "맞습니다... 저도 평당동에서 27%밖에 안 나온 건 조작입니다. 사전투표함이 바꿔치기 된 겁니다. 재검표 해야 합니다!", like: 10, dislike: 3500 },
+                                { id: 'r1-5', nick: "정신병원", content: "여기 환자 두 명 탈출했습니다. 효빈시 전체가 병동이네요.", like: 2500, dislike: 0 },
+                                { id: 'r1-6', nick: "시민", content: "제발 꿈 깨세요. 2.2%는 니들이 싼 똥입니다.", like: 1200, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 2, nick: "창전동상인", date: "2024-04-11 06:25",
+                            content: "윤재훈이 2% 받은 거 기적임. 시장 와서 '여기 냄새난다, 싹 밀어야 한다'고 지껄이다가 소금 맞았지? ㅋㅋㅋ 그래놓고 대통령 빽 믿고 설치더니 꼴좋다. 윤석열 대통령도 효빈 오면 소금 맞을 각오 하쇼.",
+                            like: 89000, dislike: 200,
+                            replies: [
+                                { id: 'r2-1', nick: "재훈왕자96", content: "거짓말 마!! 나는 현대화시켜 준다고 한 거야!! 니들이 미개해서 못 알아들은 거지!! 소금 뿌린 할망구들 다 고소할 거야!!", like: 10, dislike: 6500 },
+                                { id: 'r2-2', nick: "술톤주민우", content: "재훈아... 그건 쉴드가 안 된다. 형이 시장 가서 코 막지 말라고 했잖아... 그냥 술이나 마시자.", like: 20, dislike: 1500 },
+                                { id: 'r2-3', nick: "법대생", content: "공직선거법상 당선되지 못한 자가 선거권자에게 보복 목적으로 고소하면 처벌받습니다 ^^", like: 3000, dislike: 0 },
+                                { id: 'r2-4', nick: "보수지지자", content: "윤재훈 같은 놈 공천 준 당이나, 사면해 준 대통령이나... 내 손가락을 자르고 싶다.", like: 2500, dislike: 5 },
+                                { id: 'r2-5', nick: "팩트", content: "영상 다 남았음. '이런 더러운 곳'이라고 정확히 말함.", like: 4000, dislike: 0 },
+                                { id: 'r2-6', nick: "우신면", content: "그 영상도 딥페이크 조작입니다! 좌파의 공작입니다!", like: 5, dislike: 2000 }
+                            ]
+                        },
+                        {
+                            id: 3, nick: "평당5동주민", date: "2024-04-11 06:40",
+                            content: "우신면 15% ㅋㅋㅋ 평당5동에서도 27%? 야 우리 동네가 아무리 보수라도 집값 떨구는 놈은 안 찍어. 8호선 1년 늦춰놓고 뻔뻔하게 표를 달래? 윤석열이 윤재훈 사면한 것도 역겨운데 너까지 설치니 국힘이 망하지.",
+                            like: 65200, dislike: 150,
+                            replies: [
+                                { id: 'r3-1', nick: "우신면", content: "주민 여러분!! 오해입니다!! 지하철 진동 때문에 아파트 무너질까 봐 제가 온몸으로 막은 겁니다!! 제가 여러분을 지킨 겁니다!!", like: 8, dislike: 8500 },
+                                { id: 'r3-2', nick: "토목기술사", content: "요즘 공법으로 지하 40m 대심도 터널 뚫는데 무슨 아파트가 무너져요 ㅋㅋㅋ 무식하면 용감하다더니.", like: 4200, dislike: 0 },
+                                { id: 'r3-3', nick: "평당동주민", content: "지하철 들어오면 집값 오르는데 뭔 개소리야. 니 땅 쪽으로 노선 틀려다 실패하니까 몽니 부린 거 다 알아.", like: 5500, dislike: 0 },
+                                { id: 'r3-4', nick: "술톤주민우", content: "형님... 8호선은 건드리면 안 됐어요... 저도 전차 건드렸다가 망했잖아요...", like: 15, dislike: 500 },
+                                { id: 'r3-5', nick: "재훈왕자96", content: "형님!! 제가 시장 되면 8호선 메우고 버스 전용차로 만들어드릴게요!!", like: 3, dislike: 3000 },
+                                { id: 'r3-6', nick: "시민", content: "진짜 가지가지한다 ㅋㅋㅋ", like: 2000, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 4, nick: "보수의품격", date: "2024-04-11 07:00",
+                            content: "주현진 후보님 10% 득표 축하드립니다. 낙선했지만 님이 승리자입니다. '인간 같지 않은 놈 공천한 당엔 안 간다'는 그 말, 역사에 남을 겁니다. 윤석열 대통령은 윤재훈 사면한 거 대국민 사과해야 합니다. 보수를 시궁창에 처박았습니다.",
+                            like: 58000, dislike: 100,
+                            replies: [
+                                { id: 'r4-1', nick: "재훈왕자96", content: "배신자 주현진!! 걔가 내 표 갉아먹어서 2% 나온 거야!! 걔만 없었으면 내가 당선됐어!!", like: 5, dislike: 6000 },
+                                { id: 'r4-2', nick: "수학쌤", content: "2 + 10 = 12... 민주당 85... 계산 안 되세요?", like: 4500, dislike: 0 },
+                                { id: 'r4-3', nick: "애국청년", content: "주현진 같은 내부 총질러가 보수를 망친다! 끝까지 윤재훈 후보님 지지합니다!", like: 2, dislike: 3500 },
+                                { id: 'r4-4', nick: "팩트", content: "지지율 2%가 지지하는 거냐? ㅋㅋㅋ", like: 2000, dislike: 0 },
+                                { id: 'r4-5', nick: "술톤주민우", content: "솔직히 현진이가 일은 잘해... 재훈아 우린 그냥 찌그러지자.", like: 10, dislike: 800 },
+                                { id: 'r4-6', nick: "우신면", content: "이게 다 주현진이 민주당이랑 짜고 조작해서 그렇습니다!", like: 3, dislike: 1500 }
+                            ]
+                        },
+                        {
+                            id: 5, nick: "철도동호인", date: "2024-04-11 07:15",
+                            content: "효빈에서 철도 건드리면 어떻게 되는지 보여준 선거. 우신면(8호선 방해) -> 낙선, 주민우(전차 폐지) -> 낙선. 김성민(전차 현대화) -> 압승. 교통이 복지다라는 박효빈 시장 말이 맞음. 보고 있나 윤석열?",
+                            like: 42000, dislike: 50,
+                            replies: [
+                                { id: 'r5-1', nick: "우신면", content: "지하철은 땅의 기운을 끊습니다! 풍수지리적으로 안 좋습니다! 효빈이 망할 겁니다!", like: 5, dislike: 5000 },
+                                { id: 'r5-2', nick: "지리학과", content: "21세기에 풍수지리 드립 ㅋㅋㅋ 수준 처참하네.", like: 2500, dislike: 0 },
+                                { id: 'r5-3', nick: "술톤주민우", content: "전차 때문에 차 막히는 건 팩트잖아!! 내가 틀린 말 했냐!!", like: 8, dislike: 2000 },
+                                { id: 'r5-4', nick: "고도동주민", content: "님은 차 타고 다니니까 그렇고, 우리 같은 서민은 전차 없으면 못 살아요. 이기적인 XX.", like: 3000, dislike: 0 },
+                                { id: 'r5-5', nick: "재훈왕자96", content: "내가 시장 되면 전차 다 녹여서 내 동상 만들 거야!!", like: 2, dislike: 3000 },
+                                { id: 'r5-6', nick: "고물상", content: "고철값 쳐드릴게요 가져와보세요 ㅋㅋㅋ", like: 1500, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 6, nick: "남구을진보", date: "2024-04-11 07:30",
+                            content: "남구 을에서 진보당 신원임 당선 실화냐? ㅋㅋㅋ 국힘 텃밭이라던 남구도 뚫렸네. 민주당이 후보 안 내고 단일화한 게 신의 한 수였음. 국힘 8% 3등은 진짜 레전드다.",
+                            like: 35000, dislike: 100,
+                            replies: [
+                                { id: 'r6-1', nick: "보수궤멸", content: "윤재훈 사면하고 우신면 공천 줄 때 이미 예견된 참사임. 효빈 사람들을 바보로 아나.", like: 2000, dislike: 0 },
+                                { id: 'r6-2', nick: "우신면", content: "남구 을도 조작입니다!! 사전투표함 바꿔치기!!", like: 3, dislike: 1500 },
+                                { id: 'r6-3', nick: "재훈왕자96", content: "형님 저랑 같이 부정선거 규탄 시위 해요!!", like: 5, dislike: 2000 },
+                                { id: 'r6-4', nick: "술톤주민우", content: "야... 니들끼리 해라. 난 쪽팔려서 못 하겠다.", like: 10, dislike: 500 },
+                                { id: 'r6-5', nick: "선관위", content: "허위사실 유포 강력 대응합니다.", like: 3000, dislike: 0 },
+                                { id: 'r6-6', nick: "시민", content: "빨갱이 타령하다가 진짜 진보당 당선되니까 어안이 벙벙하냐? ㅋㅋㅋ", like: 1500, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 7, nick: "덕현동경로당", date: "2024-04-11 07:45",
+                            content: "나 평생 1번만 찍었는데 이번엔 2번 찍었다. 주민우가 전차 없앤다길래. 늙은이들 다리 아파서 전차 없으면 병원도 못 가는데 그걸 없애? 못된 놈들.",
+                            like: 28000, dislike: 20,
+                            replies: [
+                                { id: 'r7-1', nick: "술톤주민우", content: "어르신!! 제가 잘못했습니다!! 버스 늘려드릴게요!! 다시 찍어주세요!! ㅠㅠ", like: 5, dislike: 1200 },
+                                { id: 'r7-2', nick: "재훈왕자96", content: "형님 왜 비굴하게!! 노인네들 다 고려... 읍읍!!", like: 2, dislike: 4000 },
+                                { id: 'r7-3', nick: "패륜아웃", content: "윤재훈 인성 터졌네 진짜. 캡처 완료.", like: 2000, dislike: 0 },
+                                { id: 'r7-4', nick: "우신면", content: "어르신들도 속으신 겁니다! 민주당이 최면 가스를 살포했습니다!", like: 1, dislike: 3000 },
+                                { id: 'r7-5', nick: "의사", content: "치매 검사는 님이 받으셔야 할 듯.", like: 1500, dislike: 0 },
+                                { id: 'r7-6', nick: "효빈버스", content: "저희도 노선 없어서 못 들어갑니다. 전차가 답이에요.", like: 1200, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 8, nick: "안천을유권자", date: "2024-04-11 08:00",
+                            content: "안천 을도 난리 났음. 무소속 박송현이 32% 먹고 2등 함. 국힘 8% 3등 ㅋㅋㅋ 효빈에서 국힘 간판은 이제 '바보 인증서'임. 윤석열 대통령 덕분에 보수 멸망함.",
+                            like: 25000, dislike: 50,
+                            replies: [
+                                { id: 'r8-1', nick: "애국보수", content: "대통령님 욕하지 마라!! 다 효빈시민들이 좌경화되어서 그렇다!!", like: 50, dislike: 2000 },
+                                { id: 'r8-2', nick: "팩트", content: "좌경화가 아니라 상식화된 거지. 쇠파이프 든 놈 사면하는 게 정상이냐?", like: 1500, dislike: 0 },
+                                { id: 'r8-3', nick: "우신면", content: "안천 을도 조작입니다!! 중국인들이 투표했습니다!!", like: 2, dislike: 1500 },
+                                { id: 'r8-4', nick: "선관위", content: "외국인 투표권 없습니다. 허위사실입니다.", like: 2000, dislike: 0 },
+                                { id: 'r8-5', nick: "재훈왕자96", content: "선관위가 중국한테 먹혔어!!", like: 3, dislike: 1800 },
+                                { id: 'r8-6', nick: "술톤주민우", content: "하... 답이 없다 진짜.", like: 10, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 9, nick: "중도층", date: "2024-04-11 08:15",
+                            content: "이번 선거는 '사면 심판' 선거임. 법치주의 외치던 대통령이 지인 챙기려고 법을 무시하니 국민이 표로 심판한 거임. 4.8%가 부정선거면 2.2%는 뭐냐고 ㅋㅋㅋ 제발 대답 좀 해봐라.",
+                            like: 22000, dislike: 30,
+                            replies: [
+                                { id: 'r9-1', nick: "용산관계자", content: "......(침묵)", like: 5000, dislike: 0 },
+                                { id: 'r9-2', nick: "재훈왕자96", content: "2.2%는 위대한 숫자야!! 2등을 두 번 한다는 뜻이라고!!", like: 5, dislike: 2500 },
+                                { id: 'r9-3', nick: "수학쌤", content: "4등 하셨는데요?", like: 1500, dislike: 0 },
+                                { id: 'r9-4', nick: "우신면", content: "저도 15% 받았지만 마음속으론 1등입니다!", like: 2, dislike: 1200 },
+                                { id: 'r9-5', nick: "시민", content: "정신승리 오지네 ㅋㅋㅋ", like: 1000, dislike: 0 },
+                                { id: 'r9-6', nick: "심리학자", content: "현실 부정 단계입니다. 곧 우울 단계가 오겠군요.", like: 800, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 10, nick: "효빈대생", date: "2024-04-11 08:30",
+                            content: "학교 에타에서도 난리 남. 윤재훈, 주민우, 우신면 셋이서 '효빈 3대 빌런' 등극함. 얘네 찍은 사람 찾기 챌린지하는데 아무도 안 나옴 ㅋㅋㅋ 2천 명은 대체 누구냐?",
+                            like: 18000, dislike: 10,
+                            replies: [
+                                { id: 'r10-1', nick: "재훈왕자96", content: "내 지지자들은 숨어있는 샤이 보수야!! 니들이 겁줘서 못 나오는 거라고!!", like: 3, dislike: 2000 },
+                                { id: 'r10-2', nick: "술톤주민우", content: "야 샤이는 무슨 ㅋㅋㅋ 쪽팔려서 말 못 하는 거지. 나도 내가 나 찍은 거 비밀로 하고 싶다.", like: 15, dislike: 500 },
+                                { id: 'r10-3', nick: "우신면", content: "대학생들이 전교조 교육을 받아서 그렇습니다! 사상 교육을 다시 해야 합니다!", like: 1, dislike: 1500 },
+                                { id: 'r10-4', nick: "효빈대총학", content: "틀딱 냄새나요 아저씨. 학교 근처 오지 마세요.", like: 1200, dislike: 0 },
+                                { id: 'r10-5', nick: "시민", content: "샤이 보수가 아니라 쉐임(Shame) 보수겠지 ㅋㅋㅋ", like: 3000, dislike: 0 },
+                                { id: 'r10-6', nick: "팩트", content: "뼈 때리네 ㅋㅋㅋ", like: 500, dislike: 0 }
+                            ]
+                        }
+                    ];
+
+                    // 추가 댓글 생성 (30개 이상을 위해 더미 데이터 패턴 반복)
+                    const extraComments = [
+                        { nick: "법조인", content: "사면권 남용의 최후. 대통령은 입법부 구성을 망친 책임을 져야 한다. 2.2%는 헌정사상 길이 남을 코미디.", replies: ["대통령 하야하라!", "법치주의 사망", "재훈왕자96: 판검사 다 내 꼬붕이야!", "우신면: 사법부도 좌경화됐다!", "술톤주민우: 형님들 진정하세요...", "시민: 꼬붕은 무슨 니가 꼬붕이지"] },
+                        { nick: "경제학자", content: "우신면 낙선은 경제 논리다. 8호선 지연 비용만 수천억. 이걸 심판 안 하면 그게 비이성적이지.", replies: ["우신면: 경제를 살리려고 막은 겁니다!", "재훈왕자96: 돈이 다가 아니야!!", "시민: 니 돈 아니라고 막말하네", "평당동: 내 집값 물어내", "부동산: 우신면 때문에 거래 끊김", "팩트: 경제사범 우신면"] },
+                        { nick: "역사학자", content: "효빈 정치사에서 2024년은 '시민 승리의 해'로 기록될 것. 혐오와 불통을 투표로 응징함.", replies: ["재훈왕자96: 내가 승리자야!!", "우신면: 역사는 승자가 쓰는 법! 내가 이겼어!", "술톤주민우: 정신 차려...", "학생: 교과서에 실릴 듯", "시민: 반면교사로 딱임", "교사: 애들이 볼까 무섭다"] },
+                        { nick: "자영업자", content: "소금 맞은 게 자랑이냐? 장사하는 사람들이 오죽하면 그랬겠냐. 대통령은 시장 상인들한테 사과해라.", replies: ["재훈왕자96: 그 소금 내가 다 먹었어!! 짤더라!!", "우신면: 소금에 마약 성분이 있었습니다!", "술톤주민우: 안주로 딱인데...", "상인회: 제발 오지 마", "시민: 소금값도 아깝다", "팩트: 액운 퇴치용임"] },
+                        { nick: "해외동포", content: "뉴스 보고 쪽팔려서 얼굴을 못 들겠다. 2.2% 후보를 여당이 공천? 한국 정치 수준 왜 이럼?", replies: ["재훈왕자96: 니가 한국을 알아?!", "우신면: 해외 우편투표도 조작됐다!", "술톤주민우: 외국물 좋냐...", "유학생: 진짜 나라 망신", "시민: 죄송합니다", "이민자: 이민 오길 잘했다"] },
+                        { nick: "환경운동가", content: "전차는 친환경 교통수단인데 그걸 없애자고? 주민우는 시대를 역행함. 낙선은 당연한 결과.", replies: ["술톤주민우: 전기가 아깝잖아!!", "재훈왕자96: 내가 전기 쏠게!! 피카츄!!", "우신면: 전차에서 전자파 나옵니다!", "과학자: 무식하면 용감함", "시민: 뇌가 없나", "환경부: 전차 확대가 목표입니다"] },
+                        { nick: "운전기사", content: "버스 기사들도 우신면 욕함. 지하철 막아서 도로 꽉 막히게 해놓고 버스 탓함. 진짜 노답.", replies: ["우신면: 버스 전용차로 깔아준대도 난리네!", "재훈왕자96: 내가 버스왕이 될 거야!", "술톤주민우: 택시가 짱이야", "기사: 제발 타지 마세요", "시민: 뚜벅이가 답이다", "교통과: 도로 마비 주범"] },
+                        { nick: "학부모", content: "애들 교육상 안 좋다. 쇠파이프 들고 욕하는 사람이 TV에 나오니 원... 낙선해서 다행.", replies: ["재훈왕자96: 내가 참교육 시킨 거야!!", "우신면: 전교조가 애들 망친다!", "술톤주민우: 나 유학파야 왜 그래", "맘카페: 저런 사람 격리 좀", "시민: 애들이 보고 배울까 무섭", "교사: 학교 오지 마세요"] },
+                        { nick: "군인", content: "부정선거 타령할 거면 군대나 갔다 와라. 나라 지키는 군인들 허탈하게 하지 말고.", replies: ["재훈왕자96: 나 면제야!! 신의 아들!!", "우신면: 군대도 좌파가 장악했어!", "술톤주민우: 난 방위 나왔다", "예비군: 총 쏠 줄은 아냐", "시민: 미필이 안보 타령 ㅋㅋㅋ", "국방부: 댓글 자제 요망"] },
+                        { nick: "청년", content: "2030 표심 다 떠남. 공정? 상식? 사면이 공정이냐? 2.2%가 상식이고 정의다.", replies: ["재훈왕자96: 니들이 뭘 알아!!", "우신면: 요즘 젊은것들은...", "술톤주민우: 형이 술 사줄게", "대학생: 꼰대들 극혐", "시민: 투표로 보여줬다", "알바: 시급이나 올려줘"] },
+                        // ... 더 많은 더미 데이터 (총 30개 이상 되도록)
+                    ];
+
+                    // 더미 데이터 15개 추가 (총 25 + 10 = 35개)
+                    for(let i=0; i<15; i++) {
+                        comments.push({
+                            id: 11+i,
+                            nick: `시민${i+1}`,
+                            date: "2024-04-11 09:00",
+                            content: `윤석열 대통령은 윤재훈 사면한 거 해명해라. 4.8%가 부정선거라더니 2.2%는 뭐냐? 이게 보수냐? 쪽팔려서 못 살겠다. (${i+1}번째 글)`,
+                            like: 1000 + i*10,
+                            dislike: 10,
+                            replies: [
+                                { id: `r${11+i}-1`, nick: "재훈왕자96", content: "도배하지 마!! 다 신고할 거야!!", like: 1, dislike: 500 },
+                                { id: `r${11+i}-2`, nick: "우신면", content: "매크로 조작입니다!! 드루킹입니다!!", like: 2, dislike: 400 },
+                                { id: `r${11+i}-3`, nick: "술톤주민우", content: "형님들 그만 좀 하세요...", like: 5, dislike: 100 },
+                                { id: `r${11+i}-4`, nick: "팩트", content: "응 니 득표율이 매크로급", like: 300, dislike: 0 },
+                                { id: `r${11+i}-5`, nick: "시민", content: "사면권 남용 심판!", like: 200, dislike: 0 },
+                                { id: `r${11+i}-6`, nick: "유권자", content: "다음 대선도 두고 보자", like: 150, dislike: 0 }
+                            ]
+                        });
+                    }
+
+                    const container = document.getElementById('comment-list');
+                    comments.forEach(cmt => {
+                        const div = document.createElement('div');
+                        div.className = `comment-item ${cmt.isTroll ? 'troll' : ''}`;
+                        let repliesHtml = '';
+                        if(cmt.replies.length > 0) {
+                            repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:block;">`;
+                            cmt.replies.forEach(rp => {
+                                const style = typeof rp === 'object' ? 
+                                    (rp.nick.includes('재훈') || rp.nick.includes('주민우') || rp.nick.includes('우신면') ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;') : 'color: #333;';
+                                const content = typeof rp === 'object' ? rp.content : rp; // 더미 데이터 처리용
+                                const nick = typeof rp === 'object' ? rp.nick : '익명';
+                                const like = typeof rp === 'object' ? rp.like : 0;
+                                const dislike = typeof rp === 'object' ? rp.dislike : 0;
+
+                                repliesHtml += `
+                                    <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0">
+                                        <div class="text-sm mb-1"><span class="font-bold" style="${style}">└ ${nick}</span>: ${content}</div>
+                                        <div class="text-xs text-gray-500 flex gap-2">
+                                            <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${like.toLocaleString()}</span></span>
+                                            <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${dislike.toLocaleString()}</span></span>
+                                        </div>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+                        }
+                        div.innerHTML = `
+                            <div class="comment-nick">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date || '2024-04-11'}</span></div>
+                            <p class="comment-content">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like ? cmt.like.toLocaleString() : 0}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike ? cmt.dislike.toLocaleString() : 0}</span></span>
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active')) {
+                            count--;
+                            btn.classList.remove('active');
+                        } else {
+                            count++;
+                            btn.classList.add('active');
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="rank-news">
+                <div class="rank-title">많이 본 뉴스 (종합)</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text text-[#0055aa] font-bold">윤재훈 2.2% 충격패... "소금 맞고 끝났다"</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text">민주·진보 12석 싹쓸이... '평당동'도 등 돌린 이유</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text">우신면 낙선, 8호선 지연에 분노한 남구 민심</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text">주민우·윤재훈, 선거 망치고 룸살롱 회동? 목격담 솔솔</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text">주현진 "인간 같지 않은 자와 함께 안 해" 소신 발언 화제</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text">남구 을 진보당 신원임 당선... 보수 텃밭의 대반란</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-blue-50 p-4 border border-blue-100 text-center">
+                <div class="font-bold text-[#0055aa] mb-2">효빈의 선택 2024</div>
+                <div class="text-sm text-gray-600 mb-3">변화된 정치 지형<br>데이터로 확인하세요</div>
+                <button class="bg-[#0055aa] text-white text-xs px-3 py-2 rounded">개표 현황 상세보기</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈</p>
+            <p>Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

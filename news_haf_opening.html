@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문화] "도시 전체가 덕질 성지"... 역대 최대 'HAF 2025' 화려한 개막 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* HAF PASS 소개 박스 */
+        .haf-box { background: #f0f4ff; border: 1px solid #cce0ff; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .haf-title { font-weight: bold; font-size: 18px; color: #0055aa; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 5px; }
+        .haf-list li { margin-bottom: 8px; font-size: 15px; display: flex; align-items: flex-start; }
+        .haf-list li::before { content: "•"; color: #0055aa; margin-right: 8px; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">문화 > 축제/행사</div>
+                <h2 class="article-title">"도시 전체가 덕질 성지"... 역대 최대 'HAF 2025' 화려한 개막</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김문화 기자</span> (culture@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2025.08.11. 09:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">슬로건 'The Grand Slam'... 7일간 11개 ZONE에서 펼쳐지는 서브컬처 대축제<br>효빈 도시철도 무제한 'HAF PASS' 매진 행렬... 지역 상권 '함박웃음'<br>박효빈 시장 "혐오 넘어선 문화의 힘 보여줄 것"... '블루버드 정책' 성과도 주목</span></p>
+                    
+                    <div class="my-6">
+                        <img src="HAF_2025_개막식.png" alt="HAF_2025_개막식_인파.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0055aa/FFFFFF?text=HAF+2025+Grand+Opening'">
+                        <div class="img-caption">▲ 11일 오전 효빈시 북구 HSCO 광장에서 열린 'HAF 2025: The Grand Slam' 개막식에 수만 명의 인파가 몰려 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김문화 기자] 아시아 최대 규모의 서브컬처 복합 축제 **'효빈 애니메이션 페스티벌(HAF) 2025'**가 오늘(11일) 대단원의 막을 올렸다. 올해 슬로건은 **"The Grand Slam: 덕질의 모든 것"**으로, 단순한 관람을 넘어 도시 전체를 무대로 하는 참여형 축제로 기획되었다.</p>
+
+                    <p>이번 HAF 2025는 역대 최대 규모인 1주일(7일) 동안 개최되며, 메인 행사장인 <a href="HSCO.html" class="text-blue-600 underline">HSCO</a>를 비롯해 효빈종합운동장, 효빈대학교, 사능동 빵 거리 등 시내 11개 구역(ZONE)에서 동시다발적으로 진행된다. 이는 과거 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 전 시장(2006~2007)이 "만화 장난질에 세금을 쓴다"며 행사를 강제 폐지하고 암흑기를 불러왔던 아픔을 딛고, 서브컬처를 도시의 핵심 성장 동력으로 부활시켰다는 점에서 의미가 깊다.</p>
+
+                    <p>특히 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장의 핵심 공약인 **'L-Project(상권연계 계획)'**가 빛을 발하고 있다. 축제 기간 동안 <a href="효빈도시철도.html" class="text-blue-600 underline">효빈 도시철도</a> 전 구간을 무제한 이용할 수 있는 **'HAF PASS'**는 사전 예매분이 전량 매진되었으며, 이를 들고 8개 구/군을 돌며 스탬프를 모으는 '성지순례' 행렬이 도시 곳곳을 수놓고 있다.</p>
+
+                    <div class="haf-box">
+                        <div class="haf-title">🎡 HAF 2025 주요 프로그램 및 특징</div>
+                        <ul class="haf-list">
+                            <li><strong>HAF PASS (효빈 트래블 패스포트):</strong> 1~8호선 및 빈효선 7일 무제한 이용권. NFC/QR 기능 탑재.</li>
+                            <li><strong>11개 테마 ZONE:</strong> HSCO(메인), 운동장(콘서트), 고송동(굿즈샵), 사가당동(특별관) 등 분산 개최.</li>
+                            <li><strong>한·일 성우 드림팀:</strong> 러브라이브, 뱅드림, 스파이패밀리 등 인기작 성우 50여 명 내한.</li>
+                            <li><strong>블루버드 정책 (Bluebird Policy):</strong> 취약계층 청소년에게 HAF 티켓 및 굿즈 구매 비용 전액 지원.</li>
+                            <li><strong>이타샤 모터쇼:</strong> 시청 앞 광장에서 펼쳐지는 전국 최대 규모 래핑카 전시.</li>
+                        </ul>
+                    </div>
+
+                    <p>구도심 상권의 부활도 눈에 띈다. 뱅드림 캐릭터 '야마부키 사아야'의 이름과 한자가 같은 **사능동(沙綾洞)** 빵집 골목은 이른 아침부터 '빵지순례'를 온 팬들로 북새통을 이뤘다. 상인회장 김 모씨(58)는 "평소보다 매출이 10배 이상 뛰었다"며 "HAF 덕분에 죽어가던 동네가 살아났다"고 함박웃음을 지었다.</p>
+
+                    <p>박효빈 시장은 개막사에서 "HAF는 단순한 축제가 아니라, 혐오와 편견을 넘어 문화의 다양성을 포용하는 효빈시의 정체성"이라며 "방문객 여러분 모두가 이곳에서만큼은 마음껏 행복해지길 바란다"고 밝혔다. 특히 박 시장은 개막식 직후 직접 <a href="6호선.html" class="text-blue-600 underline">6호선</a>을 타고 이동하며 시민들과 소통하는 파격 행보를 보여 '성공한 덕후 시장'의 면모를 과시했다.</p>
+
+                    <p>한편, 행사 기간 동안 효빈시 내 모든 숙박업소와 PC방은 만실을 기록 중이며, 인근 도시에서 출퇴근하는 관람객들을 위해 <a href="빈효선.html" class="text-blue-600 underline">빈효선 광역전철</a>이 24시간 특별 운행된다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">15,820</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Otaku_King", time: "방금 전", like: 12500, dislike: 10, isPunished: false,
+                                content: "와 HSCO 줄 실화냐 ㅋㅋㅋ 새벽 4시에 왔는데도 대기열 500번대임. 그래도 HAF PASS 있어서 지하철 공짜라 개꿀. 효빈시 사랑해요!",
+                                replies: [
+                                    { nick: "Early_Bird", content: "전 어제 밤새고 첫차 타고 왔습니다. 열정 인정!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1분 전", like: 5, dislike: 9800, isPunished: true,
+                                content: "나라가 미쳐 돌아간다! 평일에 일 안 하고 만화나 보러 다니는 게 정상이냐! 박효빈이 너네를 세뇌시킨 거야! HAF 당장 폐지해라! 내 2.2% 득표율은 조작이다!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "지금 휴가철이고 학생들은 방학입니다 아저씨. 님만 백수라서 평일인지 주말인지 모르는 거 아님?" },
+                                    { nick: "Citizen_A", content: "2.2% 받고 떨어진 사람이 말이 많네. HAF 덕분에 우리 가게 매출 3배 뛰었다. 조용히 해라." }
+                                ]
+                            },
+                            {
+                                nick: "Saneung_Baker", time: "5분 전", like: 8500, dislike: 0, isPunished: false,
+                                content: "사능동 빵집입니다! 오늘 준비한 '사아야 빵' 1000개 오전에 완판됐습니다 ㅠㅠ 멀리서 와주신 분들 너무 감사드려요. 내일은 2배로 준비할게요!",
+                                replies: [
+                                    { nick: "Bread_Lover", content: "사장님 내일 오픈런 갑니다. 제발 제 몫 남겨주세요 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Mayor_Fan", time: "10분 전", like: 7200, dislike: 2, isPunished: false,
+                                content: "시장님이 개막식 연설 짧게 끝내줘서 너무 좋았음 ㅋㅋㅋ '즐기세요!' 한마디 하고 내려가는데 쿨내 진동. 이게 진짜 행정이지.",
+                                replies: [
+                                    { nick: "Civil_Servant", content: "시장님 빨리 덕질하러 가고 싶어서 그러신 겁니다... (소곤소곤)" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "15분 전", like: 2, dislike: 9200, isPunished: true,
+                                content: "박효빈은 시장 자격이 없다! 시장실에 피규어가 가득하다며? 그게 시장실이냐 장난감 가게냐! 세금으로 피규어 산 거 다 안다! 감사 청구할 거다!",
+                                replies: [
+                                    { nick: "City_Hall_Staff", content: "시장님 피규어는 100% 사비로 구매하셨으며, 내역 다 공개되어 있습니다. 허위사실 유포로 신고합니다." },
+                                    { nick: "Figure_Collector", content: "그 피규어들 가격 오르면 시 재정에 기부한다고 약속하셨음. 님보다 훨씬 애국자임." }
+                                ]
+                            },
+                            {
+                                nick: "Foreigner_James", time: "20분 전", like: 6800, dislike: 0, isPunished: false,
+                                content: "Hyobin City is incredible! The subway system is so convenient with the HAF PASS. I feel like I'm in an anime world. Thank you!",
+                                replies: [
+                                    { nick: "Welcome_James", content: "Welcome to Hyobin! Enjoy the festival!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Guard_Club", time: "25분 전", like: 10, dislike: 5500, isPunished: true,
+                                content: "윤재훈 동지님 말씀이 맞다! 효빈시는 타락했다! 윤대환 시장님 시절의 청렴했던 효빈시를 되찾자! 두청운수 만세!",
+                                replies: [
+                                    { nick: "Old_Citizen", content: "윤대환 때 청렴? ㅋㅋㅋ 비리로 감방 간 게 청렴이냐? 그리고 두청운수 버스 의자 플라스틱이라 엉덩이 다 깨질 뻔했다." },
+                                    { nick: "Bus_Driver", content: "두청운수 시절 월급 밀려서 파업했던 거 기억 안 나냐? 어용노조 놈들." }
+                                ]
+                            },
+                            {
+                                nick: "Bluebird_Student", time: "30분 전", like: 9500, dislike: 0, isPunished: false,
+                                content: "블루버드 정책 덕분에 처음으로 HAF 와봤어요 ㅠㅠ 티켓값 비싸서 꿈도 못 꿨는데, 시청에서 지원해 줘서 굿즈도 샀습니다. 공부 열심히 해서 저도 베푸는 사람 될게요!",
+                                replies: [
+                                    { nick: "Teacher_Park", content: "기특하구나. 즐거운 추억 많이 만들고 가렴. 이게 진정한 복지다." }
+                                ]
+                            },
+                            {
+                                nick: "Subway_Maniac", time: "35분 전", like: 6200, dislike: 0, isPunished: false,
+                                content: "효빈 도시철도 1호선 고나미 성우 안내방송 듣고 지림... 진짜 박지윤 성우님 목소리 맞음? 톤이 완전히 다른데? 연기력 미쳤다.",
+                                replies: [
+                                    { nick: "Line1_User", content: "세토 아사미 일본어 버전도 나옵니다. 1호선 꼭 타세요 두 번 타세요." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "40분 전", like: 1, dislike: 8900, isPunished: true,
+                                content: "저 학생 거짓말쟁이다! 블루버드 정책은 포퓰리즘이야! 거지 근성만 키우는 거다! 내 돈 내놔 박효빈!",
+                                replies: [
+                                    { nick: "Social_Worker", content: "윤재훈 씨, 당신이 선거 때 쓴 돈 보전 못 받은 걸 왜 애한테 화풀이합니까? 추하다 진짜." }
+                                ]
+                            },
+                            {
+                                nick: "Hotel_Owner", time: "45분 전", like: 7800, dislike: 0, isPunished: false,
+                                content: "호텔 운영 10년 만에 처음으로 7일 연속 만실입니다. 일본, 대만, 미국... 전 세계에서 손님이 오네요. 효빈시가 자랑스럽습니다.",
+                                replies: []
+                            },
+                            {
+                                nick: "Traffic_Hell", time: "50분 전", like: 3000, dislike: 500, isPunished: false,
+                                content: "행사는 좋은데 차 너무 막힘... 시내버스 타려면 3대 보내야 함. 그래도 뭐 도시가 활기차니까 참는다.",
+                                replies: [
+                                    { nick: "Hyobin_City", content: "불편을 드려 죄송합니다. 행사 기간 동안 대중교통을 증편 운행 중이니 지하철 이용을 부탁드립니다." }
+                                ]
+                            },
+                            {
+                                nick: "Cosplay_Lover", time: "55분 전", like: 5100, dislike: 0, isPunished: false,
+                                content: "이자공원역에서 코스프레 촬영하는데 지나가는 할머님이 '예쁘다'고 칭찬해 주심 ㅠㅠ 효빈시 시민의식 진짜 최고인 듯.",
+                                replies: [
+                                    { nick: "Grandma", content: "젊은 사람들이 활기차고 보기 좋아~ 옷도 알록달록하니 꽃 같네." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 전", like: 0, dislike: 9600, isPunished: true,
+                                content: "다들 미쳤어! 저게 예뻐? 괴물이지! 내가 시장 되면 저런 옷 입고 다니는 놈들 다 잡아들여서 정신교육 시킬 거야!",
+                                replies: [
+                                    { nick: "Doctor_Kim", content: "정신과 의사입니다. 윤재훈 씨, 상담 치료가 시급해 보입니다. 연락 주세요." }
+                                ]
+                            },
+                            {
+                                nick: "L_Project_Success", time: "1시간 5분 전", like: 6600, dislike: 0, isPunished: false,
+                                content: "L-Project 진짜 대박인 듯. 도변읍 시골마을이었는데 '요우소로 광장' 생기고 나서 카페만 20개 생김. 땅값도 오르고 살기 좋아짐.",
+                                replies: [
+                                    { nick: "Landlord", content: "건물주입니다. 박효빈 시장님 종신 집권 기원합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Yoon", time: "1시간 10분 전", like: 8900, dislike: 0, isPunished: false,
+                                content: "윤재훈 2.2%도 많이 받은 거다. 0.2%가 적당함. 제발 효빈시 좀 떠나라. 물 흐리지 말고.",
+                                replies: [
+                                    { nick: "Yoon_Hater", content: "선거비용 보전 못 받아서 이사 갈 돈도 없을걸요 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Univ_Student", time: "1시간 15분 전", like: 4500, dislike: 0, isPunished: false,
+                                content: "효빈대 ZONE 4에서 코스프레 동아리 부스 운영 중입니다! 많이 놀러 오세요! 퀄리티 보장합니다!",
+                                replies: []
+                            },
+                            {
+                                nick: "Taxi_Driver_Lee", time: "1시간 20분 전", like: 5800, dislike: 0, isPunished: false,
+                                content: "택시 기사입니다. 손님들이 캐릭터 래핑 택시만 골라 타려고 해서 일반 택시는 좀 서럽네요 허허. 내년엔 저도 래핑 신청해야겠습니다.",
+                                replies: [
+                                    { nick: "Hyobin_Taxi_Union", content: "조합에서 래핑 지원금 나옵니다. 신청하세요 기사님!" }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 25분 전", like: 0, dislike: 9300, isPunished: true,
+                                content: "택시에 만화 그림을 그려? 택시의 품격을 떨어뜨리는 짓이다! 내가 두청운수 사장일 땐 버스에 광고 하나도 안 붙였어! 그게 품격이야!",
+                                replies: [
+                                    { nick: "Bus_Union", content: "광고 안 붙인 게 아니라 님 아버지가 광고비 횡령해서 아무도 광고 안 준 거잖아요 ㅋㅋㅋ 기억 조작 레전드." }
+                                ]
+                            },
+                            {
+                                nick: "Stamp_Rally_Master", time: "1시간 30분 전", like: 4200, dislike: 0, isPunished: false,
+                                content: "스탬프 랠리 11개 다 찍고 명예 기관사 자격증 받았다 ㅋㅋㅋ 다리 터질 것 같지만 뿌듯함. 내년에도 무조건 도전한다.",
+                                replies: [
+                                    { nick: "Respect", content: "와 벌써 다 찍으셨어요? 체력 무엇..." }
+                                ]
+                            },
+                            {
+                                nick: "Emma_Bread", time: "1시간 35분 전", like: 3800, dislike: 0, isPunished: false,
+                                content: "소조동 엠마 빵 거리에서 쑥꿀떡 먹었는데 진짜 맛있음. 혐오자 A씨가 엎으려다 실패한 그 떡임 ㅋㅋ 정의의 맛이라 더 맛있다.",
+                                replies: [
+                                    { nick: "Emma_Fan", content: "엠마 베르데가 지켜준 빵 거리... 성지순례 필수 코스죠." }
+                                ]
+                            },
+                            {
+                                nick: "Retro_Game", time: "1시간 40분 전", like: 3500, dislike: 0, isPunished: false,
+                                content: "중구 지하상가 레트로 장터에서 20년 전 게임팩 득템함 ㅠㅠ 효빈시는 진짜 없는 게 없구나.",
+                                replies: []
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 45분 전", like: 0, dislike: 9700, isPunished: true,
+                                content: "게임은 마약이다! 게임 팩 파는 놈들 다 구속시켜! 효빈시가 범죄 소굴이 되고 있어! 경찰은 뭐 하냐!",
+                                replies: [
+                                    { nick: "Police_Official", content: "저희는 지금 HAF 행사장 질서 유지 및 윤재훈 씨 같은 악성 민원인 감시하느라 바쁩니다." }
+                                ]
+                            },
+                            {
+                                nick: "LoveLive_Forever", time: "1시간 50분 전", like: 5900, dislike: 0, isPunished: false,
+                                content: "탄성군 흑택면(쿠로사와) 갔다가 다이아&루비 자매 코스어들 만남 ㅋㅋㅋ 면사무소 직원들이 핫피 입고 일하는 거 보고 빵 터짐.",
+                                replies: [
+                                    { nick: "Black_Swamp", content: "면장님이 제일 진심이심 ㅋㅋ 루비 오시라던데." }
+                                ]
+                            },
+                            {
+                                nick: "Itasha_Owner", time: "1시간 55분 전", like: 4800, dislike: 0, isPunished: false,
+                                content: "제 차가 이타샤 모터쇼 인기상 후보에 올랐습니다! 박효빈 시장님이 직접 오셔서 '이 캐릭터 저도 좋아해요'라고 하심 ㅋㅋ 성덕 인증.",
+                                replies: []
+                            },
+                            {
+                                nick: "Hyobin_Future", time: "2시간 전", like: 6100, dislike: 0, isPunished: false,
+                                content: "효빈시는 이제 노잼 도시가 아니다. 문화와 활력이 넘치는 '유잼 도시'다. 이 흐름 계속 이어가자.",
+                                replies: []
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "2시간 5분 전", like: 0, dislike: 9900, isPunished: true,
+                                content: "망해라! HAF 망해라! 비 와라! 태풍 불어라! 정전되어라! 나는 저주를 퍼부을 것이다! 으아아악!",
+                                replies: [
+                                    { nick: "Weather_Forecast", content: "이번 주 내내 맑음입니다 ^^ 윤재훈 씨 혈압만 흐림이네요." },
+                                    { nick: "Electric_Corp", content: "예비 전력 충분합니다. 걱정 마세요." }
+                                ]
+                            },
+                            {
+                                nick: "HAF_Volunteer", time: "2시간 10분 전", like: 5300, dislike: 0, isPunished: false,
+                                content: "자원봉사자인데, 외국인 분들이 길 물어보실 때마다 뿌듯함. 다들 효빈시 너무 좋다고 칭찬해 주심. 힘들지만 보람차다.",
+                                replies: [
+                                    { nick: "Citizen_F", content: "봉사자분들 덕분에 행사가 잘 돌아갑니다. 감사합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Last_Comment", time: "2시간 15분 전", like: 7000, dislike: 0, isPunished: false,
+                                content: "결론: HAF는 대박 났고, 윤재훈은 배 아파서 죽어가는 중. 이게 바로 권선징악이다.",
+                                replies: [
+                                    { nick: "Winner", content: "깔끔한 요약 ㅋㅋㅋ 추천 박고 갑니다." }
+                                ]
+                            },
+                            {
+                                nick: "End_Game", time: "2시간 20분 전", like: 8000, dislike: 0, isPunished: false,
+                                content: "내년 HAF 2026도 기대됩니다. 효빈시 파이팅!",
+                                replies: []
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    const nickClass = "font-bold text-[#0055aa]";
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.isPunished ? '(IP 차단됨)' : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_haf_opening.html" class="ranking-link font-bold text-[#0055aa]">HAF 2025 개막, 인파 폭발</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_haf_seiyu_visit.html" class="ranking-link">韓日 성우 18인 도시철도 습격</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_tour_pass.html" class="ranking-link">HAF PASS 암표 전쟁</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, '망고 구걸' 굴욕</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">HAF 2025</div>
+                    <div class="text-xs">공식 가이드북<br>무료 배포 중</div>
+                </div>
+            </div>
+             <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈교통공사</div>
+                    <div class="text-xs text-blue-400">HAF PASS 소지자<br>굿즈 10% 추가 할인</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

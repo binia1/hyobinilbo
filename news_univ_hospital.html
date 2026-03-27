@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[의료] 효빈대, 덕북 약산시에 제2병원 착공... "의료 공백 메운다" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 뉴스 헤더 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav { border-top: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; display: inline-block; padding-top: 12px; padding-bottom: 12px; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 스타일 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #d1fae5 50%, transparent 50%); }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 댓글창 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        /* 악성 댓글 (붉은 배경) */
+        .bad-comment { background: #fff0f0; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 기사 영역 -->
+        <div class="main-content shadow-sm">
+            <div class="mb-2 text-[#0055aa] font-bold">사회 > 의료/복지</div>
+            <h2 class="article-title">효빈대, 덕북 약산시에 제2병원 '약산병원' 착공... "의료 공백 메운다"</h2>
+            <div class="article-info">
+                <div>
+                    <span class="font-bold">최생명 기자</span> (med@hyobinilbo.com)<br>
+                    <span class="text-xs text-gray-400">입력 2026.01.06. 14:30</span>
+                </div>
+                <div class="flex gap-2 text-xs">
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                </div>
+            </div>
+            
+            <div class="article-body">
+                <p><span class="text-[#0055aa] font-bold">덕북권 최대 규모 500병상·스마트 진료 시스템 구축... 2029년 완공 목표<br>민부선 총장 "효빈 넘어 덕북 전체 아우르는 의료 허브 될 것"</span></p>
+                
+                <div class="my-6">
+                    <img src="약산병원_조감도.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/2a3a8c/FFFFFF?text=Yaksan+Hospital+Groundbreaking'">
+                    <div class="img-caption">▲ 효빈대학교 제2병원인 '약산병원' 조감도. 자연 친화적인 설계와 최첨단 의료 시설이 어우러진 모습이다. (사진=효빈대병원)</div>
+                </div>
+
+                <p>[효빈일보 = 최생명 기자] 효빈대학교가 덕북권역의 의료 인프라 확충을 위해 추진해 온 **제2병원 '약산병원'** 건립 사업이 마침내 첫 삽을 떴다. 6일 덕북 약산시 건립 부지에서 열린 기공식에는 박효빈 효빈시장, 민부선 효빈대 총장, 약산시장 등 주요 내외빈이 참석해 축하를 나눴다.</p>
+                <p>약산병원은 약산시 약산지구 내 대지 면적 2만 평, 연면적 5만 평 규모로 지어지며, 지하 4층, 지상 12층에 **500병상**을 갖춘 덕북권 최대 규모의 종합병원으로 탄생할 예정이다. 2029년 완공을 목표로 총 3,500억 원이 투입된다.</p>
+                <p>민부선 효빈대 총장은 기념사에서 "그동안 덕북 지역은 대형 의료기관이 부족해 중증 환자들이 서울이나 수도권으로 원정 진료를 가야 하는 불편을 겪었다"며 "약산병원은 심뇌혈관센터, 암센터 등 전문 진료 센터와 AI 기반의 스마트 의료 시스템을 갖춰 지역민들에게 최상의 의료 서비스를 제공할 것"이라고 밝혔다.</p>
+                <p>박효빈 시장은 축사에서 "약산병원 착공은 효빈시와 덕북 약산시가 의료 협력을 통해 상생 발전하는 중요한 이정표"라며 "효빈대병원이 본원과 제2병원을 잇는 탄탄한 의료 네트워크를 구축해 경기 남부와 덕북을 아우르는 의료 허브로 도약하기를 기대한다"고 말했다.</p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JS Load -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <!-- JS Load -->
+                </ul>
+            </div>
+            
+            <!-- 광고 배너 -->
+            <div class="ad-banner" style="background: #e3f2fd; border-color: #90caf9;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈대학교</div>
+                    <div class="text-xs text-blue-400">꿈을 현실로<br>2026 신입생 모집</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 초기 댓글 데이터 (20개 이상 리얼하게)
+        const initialComments = [
+            {
+                nick: "약산토박이", time: "14:35", content: "드디어 우리 동네에도 대학병원이 들어오는구나 ㅠㅠ 80세 노모 모시고 매번 수원까지 가느라 지옥 같았는데 정말 감사합니다. 민부선 총장님, 박효빈 시장님 만세!", 
+                like: 2500, dislike: 15, isBest: true,
+                replies: [
+                    { nick: "효빈시민", content: "축하드립니다! 약산시 발전하겠네요." },
+                    { nick: "건강제일", content: "진짜 덕북 의료 소외 심각했는데 다행입니다. 사람 살리는 게 먼저죠." }
+                ]
+            },
+            {
+                nick: "부동산전문가", time: "14:40", content: "약산지구 집값 떡상 각이네. 병원 들어오면 상권 살고 유동인구 늘어나고... 미리 사둔 사람 승리자. 약산시 이제 시골 아님.", 
+                like: 500, dislike: 200, isBest: false,
+                replies: [
+                    { nick: "투기꾼아웃", content: "병원 기사에 집값 얘기 좀 그만해라. 사람이 아파서 죽네 사네 하는데 돈 얘기뿐이냐?" },
+                    { nick: "팩트폭격", content: "근데 사실이긴 함. 대학병원은 확실한 호재 맞음. 욕할 건 아님." }
+                ]
+            },
+            {
+                nick: "효빈대생", time: "14:50", content: "우리 학교 폼 미쳤다 ㅋㅋㅋ 글로컬 선정에 제2병원 착공까지... 등록금 낸 보람이 있네. 의대생들 실습 갈 곳 늘어서 좋겠다. 민부선 총장님 카리스마 굿.", 
+                like: 1800, dislike: 5, isBest: true,
+                replies: [
+                    { nick: "MedicalStudent", content: "본과생인데 진짜 다행임. 병상 수 부족해서 실습 때 눈치 보였는데." }
+                ]
+            },
+            {
+                nick: "윤대환사랑회", time: "15:00", content: "돈 지랄 하네 ㅋㅋ 덕북 촌구석에 500병상? 적자 나서 5년 안에 망한다에 내 손목 건다. 이게 다 박효빈이 표 얻으려고 쇼하는 거다! 윤대환 시장님 계실 땐 이런 낭비 없었다!", 
+                like: 12, dislike: 3500, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "팩트체크", content: "이거 효빈대 재단 돈으로 짓는 건데요? 시 예산이랑 뭔 상관? 억까 작작 좀. 그리고 윤대환은 횡령범인데요?" },
+                    { nick: "IP_Tracker", content: "어? 이 IP 윤재훈 댓글 공작할 때 쓰던 IP랑 같은 대역인데? ㅋㅋㅋ 아직도 정신 못 차렸냐? 할배요." },
+                    { nick: "약산사람", content: "너 같은 놈은 아파도 약산병원 오지 마라. 119 불러서 서울 가라." }
+                ]
+            },
+            {
+                nick: "MinBusun_Fan", time: "15:05", content: "민부선 총장님 오늘 연설하실 때 목소리 톤부터 다르더라. 묵직하고 카리스마 넘침. '의료 공백 메우겠다' 할 때 소름 돋음. 역시 남자는 능력이지.", 
+                like: 800, dislike: 2, isBest: false,
+                replies: []
+            },
+            {
+                nick: "Concerned", time: "15:10", content: "병원 짓는 건 좋은데 의료진 수급은 되려나? 지방 병원 의사 구하기 힘들다던데.", 
+                like: 100, dislike: 5, isBest: false,
+                replies: [
+                    { nick: "HospitalStaff", content: "효빈대병원 본원이랑 순환 근무 시스템 갖춘다고 함. 걱정 ㄴㄴ" }
+                ]
+            },
+            {
+                nick: "YoonJaeHoon(IP)", time: "15:15", content: "저거 짓다가 부도날 거다. 내가 장담한다. 효빈대 재단 돈 없는 거 내가 다 안다.", 
+                like: 1, dislike: 2000, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "AuditTeam", content: "재단 재정 건전성 최상위 등급입니다. 님네 두청운수나 걱정하세요 ^^ 압류 들어갔던데?" },
+                    { nick: "Student", content: "재훈아 추하다..." }
+                ]
+            },
+            {
+                nick: "Construction", time: "15:20", content: "현장 소장입니다. 안전하게 튼튼하게 잘 짓겠습니다. 약산시의 랜드마크가 될 겁니다.", 
+                like: 1500, dislike: 0, isBest: true,
+                replies: [
+                    { nick: "Citizen", content: "고생 많으십니다! 안전 제일!" }
+                ]
+            },
+            {
+                nick: "TaxPayer", time: "15:25", content: "이런 게 진짜 복지다. 맨날 보도블록 뒤집는 것보다 병원 하나 짓는 게 백배 낫지. 박효빈 일 잘하네.", 
+                like: 1200, dislike: 10, isBest: true,
+                replies: []
+            },
+            {
+                nick: "AngryMom", time: "15:30", content: "지난번에 우리 애 열 40도인데 받아주는 병원 없어서 응급실 뺑뺑이 돌다가 피 말라 죽는 줄 알았다. 약산병원 빨리 지어주세요 ㅠㅠ", 
+                like: 2000, dislike: 0, isBest: true,
+                replies: [
+                    { nick: "Doctor", content: "권역응급의료센터도 같이 들어온답니다. 조금만 기다려주세요." }
+                ]
+            },
+            {
+                nick: "Patriot", time: "15:35", content: "민부선 총장이 민주당이라며? 학교나 잘 지키지 뭔 병원 사업이야. 수상하다 수상해. 좌파가 하는 일엔 항상 꿍꿍이가 있지.", 
+                like: 5, dislike: 1000, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "Citizen", content: "병원 짓는 거에 좌우가 어딨습니까? 사람 살리는 게 먼저지. 색깔론 지겹지도 않으세요?" },
+                    { nick: "Student", content: "우리 총장님 엠마 베르데 좋아하는 덕후신데... 정치 성향이 뭔 상관? 일만 잘하면 됐지." }
+                ]
+            },
+            {
+                nick: "Nurse", time: "15:40", content: "간호사인데 약산병원 채용 언제 뜨나요? 효빈대병원이 복지 좋다고 소문났던데 이직하고 싶네요.", 
+                like: 300, dislike: 0, isBest: false,
+                replies: [
+                    { nick: "HR", content: "내년 하반기부터 순차적으로 채용 공고 나갈 예정입니다. 많은 관심 부탁드려요." }
+                ]
+            },
+            {
+                nick: "DeokbukGuy", time: "15:45", content: "덕북 홀대론 이제 쏙 들어가겠네. 지하철도 뚫리고 병원도 생기고. 살기 좋아졌다.", 
+                like: 600, dislike: 2, isBest: false,
+                replies: []
+            },
+            {
+                nick: "Skeptic", time: "15:50", content: "선거철 되니까 또 토건 사업 벌이는구만. 완공되는지 두고 보자.", 
+                like: 20, dislike: 300, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "Fact", content: "착공식 했다잖아. 글 못 읽음? 예산도 이미 확보됨." }
+                ]
+            },
+            {
+                nick: "Patient", time: "15:55", content: "암 수술 받으러 서울 가야 하나 고민했는데, 29년 완공이면 그때까지 건강 관리 잘해야겠다. 효빈대 의료진 믿습니다.", 
+                like: 800, dislike: 0, isBest: false,
+                replies: []
+            },
+            {
+                nick: "ChickenHead", time: "16:00", content: "병원 앞 상가 분양 언제 함? 치킨집 자리 알아보러 간다.", 
+                like: 100, dislike: 5, isBest: false,
+                replies: []
+            },
+            {
+                nick: "SubwayFan", time: "16:05", content: "약산병원 생기면 3호선 연장 명분 확실해지네. 교통 수요 폭발할 듯.", 
+                like: 400, dislike: 1, isBest: false,
+                replies: []
+            },
+            {
+                nick: "EmmaVerde", time: "16:10", content: "총장님 오늘 넥타이 색깔 연두색이시던데... 혹시 엠마 베르데 상징색? ㅋㅋㅋ 공식석상에서도 덕심을 숨기지 않으시는...!", 
+                like: 500, dislike: 2, isBest: false,
+                replies: [
+                    { nick: "Student", content: "와 대박 ㅋㅋㅋ 진짜네. 총장님 리스펙." }
+                ]
+            },
+            {
+                nick: "HappyDay", time: "16:15", content: "오늘 기공식 떡이랑 수건 받아왔는데 퀄리티 좋네. 병원도 이렇게 튼튼하게 지어주길.", 
+                like: 200, dislike: 0, isBest: false,
+                replies: []
+            },
+            {
+                nick: "FutureDoc", time: "16:20", content: "효빈대 의대 지망생입니다. 약산병원 완공될 때쯤이면 저도 인턴 할 수 있겠죠? 열심히 공부하겠습니다!", 
+                like: 1000, dislike: 0, isBest: true,
+                replies: [
+                    { nick: "Senior", content: "어서 와라 지옥... 아니 천국으로 ^^ 후배님 환영합니다." }
+                ]
+            }
+        ];
+
+        // 랭킹 데이터
+        const rankingData = [
+            { title: "[속보] 조선일보, 1면 톱 사과문... \"뼈저리게 반성\"", url: "news_chosun_apology.html", highlight: true },
+            { title: "윤재훈 필리핀 갱단 '참교육' 사건 전말", url: "news_philippines.html" },
+            { title: "\"메카쿠시테!\"... 효빈대생들의 '성우 보호 작전'", url: "news_univ.html" },
+            { title: "윤대환 부자, 위키 여론조작 덜미", url: "news_article.html" },
+            { title: "효빈대 약산병원 착공, 덕북 의료지도 바꾼다", url: "news_univ_hospital.html" }
+        ];
+
+        // 페이지 로드 시 실행 (확실한 로딩을 위해 onload 사용)
+        document.addEventListener("DOMContentLoaded", function() {
+            // 댓글 렌더링
+            renderComments(initialComments);
+            document.getElementById('comment-count').innerText = initialComments.length;
+            
+            // 랭킹 렌더링
+            renderRanking();
+        });
+
+        function renderComments(comments) {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = "";
+
+            comments.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                // 악성 댓글은 붉은 배경으로 표시
+                if (cmt.type === 'bad') {
+                    div.className = "bad-comment";
+                } else {
+                    div.className = cmt.isBest ? "best-comment" : "comment-item";
+                }
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    // 답글은 기본적으로 보이게 설정
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display: block;">`;
+                    
+                    cmt.replies.forEach(reply => {
+                        repliesHtml += `
+                            <div class="reply-item">
+                                <span class="font-bold text-xs text-[#0055aa]">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.type === 'bad' ? 'text-red-600' : ''}">${cmt.nick}</span>
+                        <span class="text-xs text-gray-500">${cmt.time}</span>
+                    </div>
+                    <p class="text-sm mb-2 font-medium">${cmt.content.replace(/\n/g, '<br>')}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        function toggleVote(btn) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active', 'active-hate');
+                countSpan.innerText = (count - 1).toLocaleString();
+            } else {
+                btn.classList.add(btn.innerText.includes('공감') ? 'active' : 'active-hate');
+                countSpan.innerText = (count + 1).toLocaleString();
+            }
+        }
+
+        function addComment() {
+            const nick = document.getElementById('cmt-nick').value.trim();
+            const content = document.getElementById('cmt-content').value.trim();
+            if (!nick || !content) { alert("닉네임과 내용을 입력해주세요."); return; }
+            
+            const div = document.createElement('div');
+            div.className = "comment-item bg-yellow-50"; 
+            div.innerHTML = `
+                <div class="flex justify-between mb-2"><span class="font-bold text-sm">${nick}</span><span class="text-xs text-gray-500">방금 전</span></div>
+                <p class="text-sm mb-2">${content}</p>
+                <div class="text-xs text-gray-500 flex gap-3"><span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">0</span></span><span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">0</span></span></div>
+            `;
+            const container = document.getElementById('comment-list');
+            let bestComments = container.querySelectorAll('.best-comment');
+            if (bestComments.length > 0) container.insertBefore(div, bestComments[bestComments.length - 1].nextSibling);
+            else container.prepend(div);
+            
+            document.getElementById('cmt-content').value = "";
+            alert("댓글이 등록되었습니다.");
+        }
+
+        function renderRanking() {
+            const list = document.getElementById('ranking-list');
+            rankingData.forEach((news, index) => {
+                const li = document.createElement('li');
+                li.onclick = () => location.href = news.url;
+                const styleClass = news.highlight ? 'text-red-600 font-bold' : '';
+                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link ${styleClass}">${news.title}</span>`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

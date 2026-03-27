@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[경제] 'HAF PASS' 트래블 패스포트, 중고거래서 웃돈 거래 기승 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; } /* 답글 기본 표시 */
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 랭킹 스타일 유지 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+        <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">경제 > 관광/유통</div>
+                <h2 class="article-title">'HAF PASS' 트래블 패스포트, 중고거래서 웃돈 거래 기승... 市 "전량 무효화" 강력 경고</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">돈바람 기자</span> (money@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.07. 09:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">정가 5만 원 패스권, 중고나라서 25만 원 호가<br>박효빈 시장 "축제 물 흐리는 암표상, 발본색원할 것"<br>입장 시 신분증 대조 및 안면 인식 시스템 도입 예고</span></p>
+                    
+                    <div class="my-6">
+                        <img src="HAF_PASS_매진.png" alt="온라인_중고거래_캡처.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=HAF+PASS+Scalping'">
+                        <div class="img-caption">▲ 7일 오전 한 온라인 중고거래 플랫폼에 'HAF PASS'를 정가의 5배에 판매한다는 글이 올라와 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 돈바람 기자] 효빈시가 야심 차게 출시한 관광 결합형 교통패스 'HAF PASS(하프 패스)'가 품귀 현상을 빚으며 중고시장에서 수십만 원의 웃돈이 붙어 거래되고 있어 논란이다.</p>
+
+                    <p>'HAF PASS'는 HAF 기간 동안 <a href="6호선.html" class="text-blue-600 underline">6호선</a>을 비롯한 효빈시 전철과 버스 무제한 이용은 물론, 주요 박물관 무료입장, 굿즈샵 10% 할인의 혜택을 담은 올인원 패스다. 정가는 5만 원이지만, 현재 온라인 커뮤니티에서는 20만 원에서 최대 30만 원까지 호가하고 있다.</p>
+
+                    <p>상황이 심각해지자 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈시장은 이날 오전 긴급 브리핑을 열고 강력 대응을 예고했다. 박 시장은 "순수한 마음으로 축제를 즐기려는 방문객들을 볼모로 폭리를 취하는 행위는 절대 용납할 수 없다"며 "부정 거래가 적발된 티켓 일련번호는 즉시 무효 처리하고, 해당 판매자는 향후 효빈시가 주최하는 모든 행사의 예매를 영구 제한하겠다"고 밝혔다.</p>
+
+                    <div class="my-6">
+                        <img src="박효빈_브리핑.png" alt="박효빈_시장_브리핑.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0055aa/FFFFFF?text=Mayor+Park+Briefing'">
+                        <div class="img-caption">▲ 박효빈 시장이 7일 시청 브리핑룸에서 암표 근절 대책을 발표하고 있다.</div>
+                    </div>
+
+                    <p>효빈시는 암표 근절을 위해 현장 수령 시 신분증 대조를 의무화하고, 일부 구역에는 안면 인식 시스템을 시범 도입하기로 했다. 또한, 시민 제보 시스템 '효빈 신문고'를 통해 암표상을 신고할 경우 포상금을 지급하는 방안도 검토 중이다.</p>
+
+                    <p>한편, 일부 시민들 사이에서는 2023년 특별사면으로 풀려난 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a>(윤대환 전 시장의 아들) 추종 세력이 티켓 사재기에 개입했다는 의혹이 일고 있다. 윤재훈은 2023년 윤석열 대통령(탄핵 소추)의 사면을 받아 피선거권을 회복했으나, 지난 2024년 총선(창전갑)에서 집권 여당인 국민의힘 공천을 받고도 득표율 2.2%라는 초라한 성적으로 낙선한 바 있다.</p>
+                    
+                    <p>시민들은 "선거비용 보전은커녕 망신만 당한 사람이 아직도 정신을 못 차렸다"며 비판하고 있으나, 윤재훈 측은 "사면은 무죄의 증거"라며 HAF 행사장 진입을 시도하는 등 소란을 이어가고 있다. 시 관계자는 "조직적 방해 행위에 대해서는 법적 조치를 취할 것"이라고 경고했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">1,824</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Patriot_Yoon_Club", time: "방금 전", like: 12, dislike: 3400, isPunished: true,
+                                content: "윤석열 대통령 각하께서 사면해주신 무고한 분이다! 2024년 총선 2.2%는 부정선거의 증거다! 윤재훈 동지를 국회로!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "국힘 공천 받고 2.2%면 그냥 인기가 없는 거야... 부정선거 타령 좀 그만해라 지겹지도 않냐?" }
+                                ]
+                            },
+                            {
+                                nick: "Clean_Hyobin", time: "1분 전", like: 2800, dislike: 5,
+                                content: "시장님 대처 빠르시네. 암표상들 싹 다 잡아서 콩밥 먹여주세요. 사면받고도 정신 못 차린 윤재훈 패거리도요.",
+                                replies: [
+                                    { nick: "Citizen_B", content: "2.2%의 기적 윤재훈 ㅋㅋㅋ 창피해서라도 조용히 살 텐데 멘탈 하나는 인정함." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Love_Forever", time: "3분 전", like: 5, dislike: 2900, isPunished: true,
+                                content: "효빈시의 적통은 윤대환-윤재훈 가문이다! 사면복권된 깨끗한 정치인을 박해하지 마라! HAF PASS 당장 윤재훈 님께 상납해라!",
+                                replies: [
+                                    { nick: "Law_Student", content: "사면은 죄를 용서해 준 거지 죄가 없던 게 되는 게 아닙니다. 그리고 2.2%가 무슨 적통이에요, 그냥 낙선자지." }
+                                ]
+                            },
+                            {
+                                nick: "Otaku_King", time: "5분 전", like: 2500, dislike: 2,
+                                content: "솔직히 5만 원에 그 혜택이면 거저 주는 건데, 그걸 되팔이해? 덕후들 돈 뜯어내려는 기생충들 박멸해야 함.",
+                                replies: [
+                                    { nick: "Goods_Collector", content: "ㄹㅇ 굿즈 할인만 받아도 본전 뽑는데.. 되팔이들 때문에 순수한 팬들만 피눈물 흘림." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "10분 전", like: 1, dislike: 4500, isPunished: true,
+                                content: "야! 나 2023년에 대통령 특사로 나온 몸이야! 2024년엔 여당 후보로 출마도 했어! 2.2%는 다 조작이라고! 내가 VIP인데 왜 표를 안 줘!",
+                                replies: [
+                                    { nick: "Citizen_A", content: "아저씨... 여당 간판 달고 2.2% 받은 거면 그냥 나가 죽으라는 소리예요. VIP는 무슨, 그냥 동네 백수형이지." }
+                                ]
+                            },
+                            {
+                                nick: "Save_Yoon", time: "12분 전", like: 8, dislike: 2100, isPunished: true,
+                                content: "윤재훈 님은 비록 24년에 억울하게 낙선하셨지만, 2026년 지방선거에서 시장으로 화려하게 부활하실 것이다!",
+                                replies: [
+                                    { nick: "Citizen_C", content: "2.2% 받고 시장? ㅋㅋㅋ 꿈이 야무지시네. 선거비용 보전도 못 받아서 빚더미라던데?" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Mom", time: "15분 전", like: 3100, dislike: 0,
+                                content: "안면인식 시스템 도입 찬성합니다. 우리 아이들이 안전하게 즐길 수 있는 축제가 됐으면 좋겠어요. 암표상들 얼씬도 못하게 해주세요.",
+                                replies: [
+                                    { nick: "Safety_First", content: "맞습니다. 암표상들이 보통 치안도 어지럽히는데, 입구컷 당하면 훨씬 쾌적해질 듯요." }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Hyobin", time: "18분 전", like: 4, dislike: 1800, isPunished: true,
+                                content: "세금 낭비 오지네. 누가 저런 오타쿠 축제에 간다고 시스템까지 도입해? 윤재훈 님이 시장 되시면 싹 다 없앨 거다.",
+                                replies: [
+                                    { nick: "Economy_Prof", content: "윤재훈 씨는 2.2% 득표율이라 시장 될 일 없으니까 꿈 깨시고, HAF 경제효과는 3천억 넘습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Subway_Lover", time: "20분 전", like: 2200, dislike: 0,
+                                content: "6호선 타고 축제장 가는 길 설렌다 ㅎㅎ 암표상 신고하면 포상금 준다니까 눈에 불을 켜고 찾아봐야지.",
+                                replies: [
+                                    { nick: "Report_Master", content: "저 방금 당근에서 3명 신고함 ㅋㅋ 포상금으로 굿즈 살 생각에 싱글벙글." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Guard", time: "25분 전", like: 3, dislike: 1500, isPunished: true,
+                                content: "박효빈 독재다! 표 파는 것도 마음대로 못하게 하냐? 윤재훈 님이 국회 가셨으면 이런 법 다 뜯어고쳤다!",
+                                replies: [
+                                    { nick: "Democracy", content: "국회를 못 가셨잖아요... 2.2%... 안타깝지만 현실을 직시하세요." }
+                                ]
+                            },
+                            {
+                                nick: "Bread_Pilgrimage", time: "30분 전", like: 1900, dislike: 0,
+                                content: "사능동 빵집들도 패스 있으면 할인해 주시나요? 암튼 되팔이들 때문에 기분 잡칠 뻔했는데 시장님 대응 사이다!",
+                                replies: [
+                                    { nick: "Bakery_Assoc", content: "네! 패스 소지자분들께 웰컴 빵 드립니다. 암표 말고 정식 루트로 오세요~" }
+                                ]
+                            },
+                            {
+                                nick: "Free_Yoon", time: "35분 전", like: 2, dislike: 1700, isPunished: true,
+                                content: "윤재훈 님이 당선되셨다면 패스권 무료로 뿌렸을 거다! 박효빈은 돈밖에 모르는 수전노!",
+                                replies: [
+                                    { nick: "Memory_Loss", content: "당선 가능성이 0에 수렴하는데 무슨 가정을... 그리고 윤대환 때 무료 급식 없앤 건 기억 안 나냐?" }
+                                ]
+                            },
+                            {
+                                nick: "Seoul_Visitor", time: "40분 전", like: 2400, dislike: 0,
+                                content: "서울에서 이거 보려고 휴가 냈습니다. 암표상들 땜에 못 구할 뻔했는데 취소표 풀린다니 다행이네요. 대기탑니다.",
+                                replies: [
+                                    { nick: "Welcome_Hyobin", content: "취소표 꼭 잡으시길! 효빈시는 언제나 환영입니다." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "45분 전", like: 0, dislike: 3800, isPunished: true,
+                                content: "야 박효빈! 나 윤석열 대통령이 풀어준 사람이야! 감히 날 무시해? 망고 빙수 사 먹게 돈 좀 내놔! 나 선거 빚 갚아야 해!",
+                                replies: [
+                                    { nick: "Cafe_Owner", content: "손님, 정치 자금은 후원회 가서 찾으시고 여기선 결제나 하세요. 외상 절대 사절." }
+                                ]
+                            },
+                            {
+                                nick: "Right_Wing", time: "50분 전", like: 4, dislike: 1600, isPunished: true,
+                                content: "일본 만화 축제에 시 예산을 쓰는 게 말이 되냐? 매국노 박효빈 물러가라!",
+                                replies: [
+                                    { nick: "Global_Mind", content: "K-웹툰, 국내 애니 비중이 70%인데 뭔 소리? 그리고 문화 교류가 왜 매국이냐? 흥선대원군 납셨네." }
+                                ]
+                            },
+                            {
+                                nick: "Developer_Kim", time: "55분 전", like: 2100, dislike: 0,
+                                content: "매크로 돌려서 표 싹쓸이하는 업자들 IP 추적해서 잡는 거 기술적으로 충분히 가능함. 효빈시 IT팀 일 잘하네.",
+                                replies: [
+                                    { nick: "IT_Team_Lead", content: "칭찬 감사합니다. 밤새 서버 지키고 있습니다. 매크로 놈들 딱 대라." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Future", time: "1시간 전", like: 3, dislike: 1400, isPunished: true,
+                                content: "윤재훈 동지의 2.2%는 씨앗이다! 2028년 총선에서는 반드시 당선될 것이다! 효빈시의 미래는 윤재훈!",
+                                replies: [
+                                    { nick: "Fact_Violence", content: "씨앗이 아니라 그냥 거름이 된 것 같은데요? 4년 뒤면 0.2% 나올 듯." }
+                                ]
+                            },
+                            {
+                                nick: "Pass_Holder", time: "1시간 5분 전", like: 1800, dislike: 0,
+                                content: "정가 주고 산 내가 승리자. 되팔이 걸려서 30만 원 날린 호구들 꼴좋다 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Justice_Win", content: "그게 정의구현이죠. 축제 재밌게 즐기세요!" }
+                                ]
+                            },
+                            {
+                                nick: "Patriot_Mom", time: "1시간 10분 전", like: 5, dislike: 1300, isPunished: true,
+                                content: "애들 교육에 안 좋다. 만화 따위가 뭐가 중요하다고 난리냐. 윤대환 시장님 시절의 품격이 그립다.",
+                                replies: [
+                                    { nick: "Education_Expert", content: "선거법 위반으로 잘린 품격이요? 그리고 아들내미 2.2% 받은 게 더 교육에 안 좋을 듯." }
+                                ]
+                            },
+                            {
+                                nick: "Bus_Driver_Park", time: "1시간 15분 전", like: 2600, dislike: 0,
+                                content: "버스 기사입니다. HAF PASS 보여주시면 웃으면서 인사해 드립니다. 암표상 말고 진짜 손님들 많이 오셨으면 좋겠네요.",
+                                replies: [
+                                    { nick: "Thank_You_Driver", content: "기사님들 덕분에 편하게 이동합니다. 항상 감사합니다! 안전 운전하세요!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Power", time: "1시간 20분 전", like: 2, dislike: 1200, isPunished: true,
+                                content: "박효빈이 시민들 개인정보 팔아먹으려고 신분증 검사하는 거다! 음모다!",
+                                replies: [
+                                    { nick: "Privacy_Guard", content: "신분증 대조만 하고 폐기한다고 공문에 나와있다. 글 좀 읽어라 난독증아." }
+                                ]
+                            },
+                            {
+                                nick: "Real_Estate_King", time: "1시간 25분 전", like: 1700, dislike: 0,
+                                content: "암표상이 꼬인다는 건 그만큼 효빈시 가치가 올랐다는 증거지. 집값 오르는 소리 들린다~",
+                                replies: [
+                                    { nick: "Local_Resident", content: "집값 오르는 건 좋은데 암표상은 좀 꺼졌으면." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "1시간 30분 전", like: 0, dislike: 3500, isPunished: true,
+                                content: "야! 나 행사장 입구인데 왜 못 들어가게 해! 나 국힘 공천 받았던 사람이야! VIP 의전 안 하냐! 문 열어!",
+                                replies: [
+                                    { nick: "Security_Team", content: "공천 받으셨든 말든 티켓 없으면 못 들어갑니다. 그리고 2.2% 받으셨다면서요? 줄 서세요." }
+                                ]
+                            },
+                            {
+                                nick: "Culture_Lover", time: "1시간 35분 전", like: 2300, dislike: 0,
+                                content: "문화 예술을 돈벌이 수단으로만 보는 천박한 자본주의... 시장님의 철학이 빛을 발하네요. 지지합니다.",
+                                replies: [
+                                    { nick: "Artist_Kim", content: "예술인으로서 적극 공감합니다. 팬심을 이용하는 장사치들은 사라져야 해요." }
+                                ]
+                            },
+                            {
+                                nick: "Old_Yoon", time: "1시간 40분 전", like: 3, dislike: 1100, isPunished: true,
+                                content: "라떼는 윤대환 시장님이 다 알아서 해주셨어! 박효빈은 융통성이 없어!",
+                                replies: [
+                                    { nick: "Young_Man", content: "그 융통성이 비리입니다 어르신... 그리고 아드님 선거비용이나 좀 보태주세요." }
+                                ]
+                            },
+                            {
+                                nick: "Foreigner_Mike", time: "1시간 45분 전", like: 1500, dislike: 0,
+                                content: "Hyobin City's system is very strict but good. Scalpers are global problem. Respect Mayor Park.",
+                                replies: [
+                                    { nick: "Welcome_Mike", content: "Thanks Mike! Enjoy the festival!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Biased", time: "1시간 50분 전", like: 2, dislike: 1000, isPunished: true,
+                                content: "언론 탄압이다! 효빈일보는 박효빈 찬양 기사만 쓰냐? 윤재훈 동지의 2.2% 득표율의 진실도 써라!",
+                                replies: [
+                                    { nick: "Editor", content: "2.2%의 진실이요? 그냥 인기가 없다는 게 진실 아닐까요? ^^" }
+                                ]
+                            },
+                            {
+                                nick: "Hotel_Manager", time: "1시간 55분 전", like: 2000, dislike: 0,
+                                content: "숙박업소들도 동참하겠습니다. 바가지요금 근절하고 정직하게 모시겠습니다. 효빈시 이미지 우리가 지킵니다.",
+                                replies: [
+                                    { nick: "Good_Example", content: "오 사장님 마인드 굿! 어딘지 알려주시면 예약할게요." }
+                                ]
+                            },
+                            {
+                                nick: "End_Game", time: "2시간 전", like: 2500, dislike: 0,
+                                content: "결론: 암표 사지도 팔지도 말자. 걸리면 쪽박 찬다. 윤재훈 지지자들은 그냥 평생 2.2% 꿈꾸며 살아라 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Winner", content: "깔끔한 요약 추천 박고 갑니다." }
+                                ]
+                            },
+                            {
+                                nick: "Last_Warning", time: "2시간 전", like: 3000, dislike: 0,
+                                content: "지금 중고나라 글 다 삭제되고 있음 ㅋㅋㅋ 쫄리긴 한가 보네. 늦었다 이놈들아 경찰서에서 보자.",
+                                replies: [
+                                    { nick: "Police_Cyber", content: "이미 증거 채증 완료했습니다. 삭제해도 소용없습니다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                // 답글을 무조건 펼쳐 보이도록 수정 (요청사항 반영)
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+
+                                cmt.replies.forEach(reply => {
+                                    // 윤재훈 측 댓글에 대한 반박은 사이다 느낌으로 강조
+                                    const isRefutation = cmt.isPunished; 
+                                    const styleClass = isRefutation ? "bg-blue-50 border border-blue-200" : "bg-gray-50 border border-gray-200";
+                                    const nickClass = "font-bold text-[#0055aa]";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.isPunished ? '(IP 차단됨)' : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_tour_pass.html" class="ranking-link font-bold text-[#0055aa]">HAF PASS 암표 전쟁</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_metro_surplus.html" class="ranking-link">효빈 도시철도 26년 연속 흑자</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, 총선 낙선 후 '망고 난동'</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_realestate_trend.html" class="ranking-link">탄성군 도변읍 부동산 폭등</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈은행</div>
+                    <div class="text-xs">HAF PASS 구매자 대상<br>환전 우대 90% 쿠폰</div>
+                </div>
+            </div>
+             <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈동신도시</div>
+                    <div class="text-xs text-blue-400">특별공급 청약 안내<br>D-5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

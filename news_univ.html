@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] "메카쿠시테!"... 효빈대생 3천명, 윤재훈 '빵 테러' 막아냈다 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 뉴스 헤더 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav { border-top: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; display: inline-block; padding-top: 12px; padding-bottom: 12px; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 스타일 */
+        .article-title { font-size: 32px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 댓글창 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .bad-comment { background: #fff0f0; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 기사 영역 -->
+        <div class="main-content shadow-sm">
+            <div class="mb-2 text-[#0055aa] font-bold">사회 > 사건사고/대학</div>
+            <h2 class="article-title">[현장] "메카쿠시테!"... 효빈대생 3천 명, '인간 장벽'으로 윤재훈 난동 막았다</h2>
+            <div class="article-info">
+                <div>
+                    <span class="font-bold">김캠퍼스 기자</span> (edu@hyobinilbo.com)<br>
+                    <span class="text-xs text-gray-400">입력 2026.01.06. 14:00</span>
+                </div>
+                <div class="flex gap-2 text-xs">
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                </div>
+            </div>
+            <div class="article-body">
+                <p><span class="text-[#0055aa] font-bold">베르데 홀 로비 난입해 등신대 걷어차고 '결식아동 빵'에 침 뱉어<br>내한 성우 보호 위해 학생들이 '인간 방패' 자처... 민부선 총장 "강력 처벌"</span></p>
+                
+                <div class="my-6">
+                    <img src="효빈대_베르데홀.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/3344aa/FFFFFF?text=Verde+Hall+Incident'">
+                    <div class="img-caption">▲ 효빈대학교 베르데 홀 로비. 윤재훈 씨가 난동을 부린 현장에는 학생들이 성우들을 보호하기 위해 만든 인간 장벽의 흔적이 남아있다. (사진=효빈대학교)</div>
+                </div>
+
+                <p>[효빈일보 = 김캠퍼스 기자] "남의 소중한 것을 부수면서 희열을 느끼는 건, 인간으로서 '실격'이에요." (일본 성우 M씨)</p>
+                <p>윤대환 전 시장의 아들 윤재훈 씨가 효빈대학교의 상징적 건물인 **'베르데 홀'**에 난입해 천인공노할 난동을 부리다 학생들에게 제압당했다. 그는 행사장에 설치된 캐릭터 등신대를 걷어차려다 **대리석 기둥을 차 다리가 골절**되는 촌극을 빚었으며, 심지어 **결식아동 후원용 빵에 침을 뱉는** 엽기적인 행각까지 벌였다.</p>
+                
+                <h3 class="text-xl font-bold mt-8 mb-4">■ "성우님들 눈 가려!"... 감동의 '메카쿠시테' 작전</h3>
+                <p>사건 당시 베르데 홀에는 일본의 유명 성우들이 내한 행사를 위해 방문 중이었다. 윤 씨가 욕설을 퍼부으며 로비로 진입하자, 현장에 있던 3천여 명의 학생들은 일제히 **"메카쿠시테(눈 가려)!!!"**를 외치며 인간 장벽을 만들었다. 멀리서 온 손님들에게 추태를 보이지 않으려는 학생들의 필사적인 노력이었다.</p>
+                <p>결국 윤 씨는 조리과학과(칼 소지), 사회복지학과, 만화애니메이션학과 학생들의 연합 작전에 의해 5분 만에 제압당했다. 현장에 있던 건축학과 학생들은 "윤재훈 다리보다 이탈리아산 대리석 기둥에 흠집이 났는지 먼저 확인하라"며 팩트 폭격을 날리기도 했다.</p>
+
+                <h3 class="text-xl font-bold mt-8 mb-4">■ 민부선 총장 "대학의 명예 훼손... 무관용 원칙"</h3>
+                <p>사태를 보고받은 **민부선 효빈대학교 총장**은 격노했다. 민 총장은 긴급 기자회견을 열고 "지성의 전당인 대학에서, 그것도 아이들을 위한 기부 물품을 훼손한 행위는 용서받을 수 없는 테러"라며 "민형사상 모든 책임을 물어 학교의 명예를 지키겠다"고 밝혔다. 민 총장은 이후 충격을 받았을 내한 성우들을 찾아가 90도로 허리 굽혀 사과했다.</p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JS Load -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <!-- JS Load -->
+                </ul>
+            </div>
+            
+            <!-- 광고 배너 -->
+            <div class="ad-banner" style="background: #e3f2fd; border-color: #90caf9;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">효빈대학교</div>
+                    <div class="text-xs text-blue-400">꿈을 현실로<br>2026 신입생 모집</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 초기 댓글 데이터 (리얼한 반응 포함, 20개 이상)
+        const initialComments = [
+            {
+                nick: "HNU_19학번", time: "14:20", content: "현장에 있었습니다. 윤재훈이 결식아동 빵에 침 뱉는 순간 진짜 피가 거꾸로 솟더군요. 그때 누가 먼저랄 것도 없이 '메카쿠시테' 외치는데 눈물 날 뻔했습니다. 우리 후배님들 진짜 자랑스럽습니다. 효빈대 포에버!", 
+                like: 4500, dislike: 12, isBest: true,
+                replies: [
+                    { nick: "Freshman", content: "선배님 감사합니다. 저희도 무서웠지만 성우님들 지켜야 한다는 생각뿐이었습니다." },
+                    { nick: "J-PopFan", content: "일본 트위터 트렌드 1위 찍었대요. '효빈의 기적'이라고 난리남." }
+                ]
+            },
+            {
+                nick: "애국청년단", time: "14:35", content: "이게 학교냐 오타쿠 소굴이냐? 신성한 상아탑에서 일본 만화 행사나 하고 있고 ㅉㅉ 윤재훈 씨가 오죽했으면 그랬겠냐? 그리고 학생 3천 명이 사람 한 명 둘러싸고 린치한 건 명백한 집단 폭행이다! 경찰은 학생들 전원 구속 수사해라!", 
+                like: 5, dislike: 3200, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "LawStudent", content: "린치가 아니라 시민 체포권 행사입니다. 기물 파손 및 업무 방해 현행범이었으니까요. 법 공부 좀 하고 오시죠?" },
+                    { nick: "Archi_Student", content: "윤재훈 다리 부러진 건 지가 대리석 기둥 차서 부러진 겁니다. CCTV 다 있어요. 날조 ㄴㄴ" },
+                    { nick: "SocialWorker", content: "결식아동 빵에 침 뱉은 건 쉴드 불가입니다. 인간이길 포기한 짓이죠. 저게 사람이냐?" }
+                ]
+            },
+            {
+                nick: "MinBusunFan", time: "14:50", content: "민부선 총장님... 평소엔 엠마 베르데 굿즈 모으시는 인자한 덕후신데, 학생들 건드리니까 눈빛 변하는 거 봐라. 역시 박효빈 시장 애제자로 키워내신 참스승답다. 정치 성향 떠나서 이번 대처는 100점 만점임.", 
+                like: 1200, dislike: 5, isBest: true,
+                replies: [
+                    { nick: "Alumni", content: "맞아요. 민주당 지지자라고 까는 사람들 있던데, 지금 그게 중요함? 학교 지킨 게 중요하지." }
+                ]
+            },
+            {
+                nick: "YoonJaeHoon_Fan", time: "15:00", content: "그깟 빵 쪼가리가 뭐라고... 우리 재훈이 형님 다리 부러진 건 안 불쌍하냐? 치료비 물어내라! 효빈대는 책임져라! 좌파 대학 폐교해라!", 
+                like: 2, dislike: 1500, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "Baker", content: "그 빵, 새벽부터 제과제빵과 학생들이 봉사로 만든 겁니다. 니들 같은 백수들이랑은 차원이 다른 정성이 들어간 거예요. 빵 모독하지 마세요." },
+                    { nick: "Doctor", content: "지 발로 벽 차서 부러진 걸 누구한테 청구합니까? 보험 사기단이세요?" }
+                ]
+            },
+            {
+                nick: "Student_Council", time: "15:10", content: "총학생회입니다. 윤재훈 씨의 난동으로 인한 피해액 산정 중입니다. 대리석 기둥 파손, 빵 전량 폐기, 행사 지연 손해배상까지 싹 다 청구할 예정입니다. 합의는 없습니다.", 
+                like: 2800, dislike: 10, isBest: true,
+                replies: []
+            },
+            {
+                nick: "Archi_Prof", time: "15:15", content: "베르데 홀 기둥은 이탈리아산 천연 대리석입니다. 윤재훈 씨 다리뼈보다 비쌉니다. 기둥에 금 갔으면 정말 용서 못 합니다.", 
+                like: 900, dislike: 5, isBest: false,
+                replies: [
+                    { nick: "Student", content: "교수님 ㅋㅋㅋㅋㅋ 뼈 때리시네" }
+                ]
+            },
+            {
+                nick: "HyobinMom", time: "15:20", content: "우리 애도 효빈대 다니는데, 오늘 뉴스 보고 걱정돼서 전화했더니 오히려 자랑스러워하네요. 불의를 보고 참지 않는 학생들, 정말 대견합니다. 효빈시의 미래가 밝네요.", 
+                like: 1500, dislike: 2, isBest: true,
+                replies: []
+            },
+            {
+                nick: "LoveLive", time: "15:25", content: "오늘 온 성우님들이 효빈대생들한테 감동받아서 울었다고 함. 일본에서도 난리 남. 효빈대는 이제 전 세계 러브라이버들의 성지다. 엠마 베르데 팬이신 총장님도 성덕 되셨네.", 
+                like: 2000, dislike: 10, isBest: true,
+                replies: []
+            },
+            {
+                nick: "Patriot", time: "15:30", content: "쪽발이 앞잡이 대학이냐? 일본 성우가 뭐라고 저렇게 굽신거려? 민부선 총장 사퇴해라! 좌파 총장이 학교 망친다!", 
+                like: 10, dislike: 800, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "History", content: "손님 접대하는 게 굽신거리는 거냐? 예의지. 댁들은 손님 오면 쫓아냄? 그리고 여기서 좌우가 왜 나옴?" },
+                    { nick: "Student", content: "응~ 너네 윤대환은 감옥 갔어~" }
+                ]
+            },
+            {
+                nick: "Unknown", time: "15:35", content: "윤재훈 쟤는 왜 저렇게 사냐... 아빠는 횡령범, 아들은 테러범. 콩가루 집안 레전드네.", 
+                like: 600, dislike: 5, isBest: false,
+                replies: []
+            },
+            {
+                nick: "Bread", time: "15:40", content: "제빵과 학생입니다. 빵에 침 뱉을 때 진짜 칼 들고 뛰쳐나갈 뻔했습니다. 선배들이 말려서 참았지만, 평생 저주할 겁니다.", 
+                like: 1100, dislike: 0, isBest: false,
+                replies: [
+                    { nick: "Citizen", content: "고생했어요 ㅠㅠ 다음엔 제가 사 먹으러 갈게요." }
+                ]
+            },
+            {
+                nick: "Observer", time: "15:45", content: "근데 '메카쿠시테'가 뭐임? 눈 가리라는 뜻인가? 상황 판단력 대박이네. 나 같으면 멍때렸을 듯.", 
+                like: 300, dislike: 2, isBest: false,
+                replies: [
+                    { nick: "ExplainBot", content: "네, 일본어로 '눈 가려줘'라는 뜻입니다. 성우들이 더러운 꼴 못 보게 하려는 배려였죠." }
+                ]
+            },
+            {
+                nick: "YoonFamily", time: "15:50", content: "이거 다 조작이다! 학생들이 먼저 시비 걸었다! 우리 재훈이는 피해자다! 증거 영상 있다!", 
+                like: 1, dislike: 2000, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "FactCheck", content: "그 영상 좀 올려봐라. CCTV랑 라이브 방송 영상 수두룩한데 뭔 개소리야." },
+                    { nick: "Police", content: "허위사실 유포도 죄입니다." }
+                ]
+            },
+            {
+                nick: "Graduate", time: "15:55", content: "졸업생입니다. 모교가 뉴스에 나와서 놀랐는데, 내용 보고 가슴이 웅장해졌습니다. 민부선 총장님 역시 박효빈 시장 스승님답습니다. 존경합니다.", 
+                like: 700, dislike: 3, isBest: false,
+                replies: []
+            },
+            {
+                nick: "Passerby", time: "16:00", content: "윤재훈 똥 지린 거 실화냐? ㅋㅋㅋㅋㅋ 진짜 가지가지 한다.", 
+                like: 500, dislike: 5, isBest: false,
+                replies: [
+                    { nick: "Witness", content: "그건 터미널 사건이고, 이번엔 다리 부러짐 ㅋㅋㅋ 맨날 몸개그하네." }
+                ]
+            },
+            {
+                nick: "Admin", time: "16:05", content: "욕설 및 비방 댓글은 삭제될 수 있습니다. 건전한 인터넷 문화를 만들어갑시다.", 
+                like: 100, dislike: 200, isBest: false,
+                replies: [
+                    { nick: "User", content: "윤재훈 욕은 착한 욕설 아닙니까? 봐주세요." }
+                ]
+            },
+            {
+                nick: "Foreigner", time: "16:10", content: "Hyobin University students are heroes! Respect from USA.", 
+                like: 800, dislike: 2, isBest: false,
+                replies: []
+            },
+            {
+                nick: "Local", time: "16:15", content: "당선동 주민인데, 학생들 평소에도 착함. 인사도 잘하고. 윤재훈이 잘못 건드린 거임.", 
+                like: 900, dislike: 1, isBest: false,
+                replies: []
+            },
+            {
+                nick: "CatLover", time: "16:20", content: "학교 고양이들도 윤재훈 싫어하더라. 하악질 함 ㅋㅋㅋ 짐승만도 못한 놈.", 
+                like: 400, dislike: 0, isBest: false,
+                replies: []
+            },
+            {
+                nick: "Justice", time: "16:25", content: "민부선 총장님, 절대 합의해주지 마세요. 이번 기회에 본때를 보여줘야 합니다. 엠마 베르데의 이름으로 처단하세요!", 
+                like: 1000, dislike: 2, isBest: false,
+                replies: []
+            },
+            {
+                nick: "YoonJaeHoon(IP)", time: "16:30", content: "두고 보자... 내가 시장 되면 니들 대학 다 없애버릴 거야!!! 그리고 민부선 저거 좌파인 거 내가 다 까발린다!", 
+                like: 0, dislike: 5000, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "IP_Tracker", content: "응~ 너 낙선했어~ 2.2%~ ㅋㅋㅋ 그리고 총장님 민주당 지지자인 거 전교생이 다 알아 ㅋㅋㅋ" },
+                    { nick: "Hospital", content: "환자분, 진정하시고 약 드세요." }
+                ]
+            }
+        ];
+
+        // 랭킹 데이터
+        const rankingData = [
+            { title: "[속보] 조선일보, 1면 톱 사과문... \"뼈저리게 반성\"", url: "news_chosun_apology.html", highlight: true },
+            { title: "윤재훈 필리핀 갱단 '참교육' 사건 전말", url: "news_philippines.html" },
+            { title: "\"메카쿠시테!\"... 효빈대생들의 '성우 보호 작전'", url: "news_univ.html" },
+            { title: "윤대환 부자, 위키 여론조작 덜미", url: "news_article.html" },
+            { title: "효빈터미널, '똥재훈' 덕분에(?) 래핑버스 성지 됐다", url: "news_bus_terminal.html" }
+        ];
+
+        // 페이지 로드 시 실행 (확실한 로딩을 위해 onload 사용)
+        document.addEventListener("DOMContentLoaded", function() {
+            // 댓글 렌더링
+            renderComments(initialComments);
+            document.getElementById('comment-count').innerText = initialComments.length;
+            
+            // 랭킹 렌더링
+            renderRanking();
+        });
+
+        function renderComments(comments) {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = "";
+
+            comments.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                // 악성 댓글은 붉은 배경으로 표시
+                if (cmt.type === 'bad') {
+                    div.className = "bad-comment";
+                } else {
+                    div.className = cmt.isBest ? "best-comment" : "comment-item";
+                }
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    // 답글은 기본적으로 보이게 설정
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display: block;">`;
+                    
+                    cmt.replies.forEach(reply => {
+                        repliesHtml += `
+                            <div class="reply-item">
+                                <span class="font-bold text-xs text-[#0055aa]">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.type === 'bad' ? 'text-red-600' : ''}">${cmt.nick}</span>
+                        <span class="text-xs text-gray-500">${cmt.time}</span>
+                    </div>
+                    <p class="text-sm mb-2 font-medium">${cmt.content.replace(/\n/g, '<br>')}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        function toggleVote(btn) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active', 'active-hate');
+                countSpan.innerText = (count - 1).toLocaleString();
+            } else {
+                btn.classList.add(btn.innerText.includes('공감') ? 'active' : 'active-hate');
+                countSpan.innerText = (count + 1).toLocaleString();
+            }
+        }
+
+        function addComment() {
+            const nick = document.getElementById('cmt-nick').value.trim();
+            const content = document.getElementById('cmt-content').value.trim();
+            if (!nick || !content) { alert("닉네임과 내용을 입력해주세요."); return; }
+            
+            const div = document.createElement('div');
+            div.className = "comment-item bg-yellow-50"; 
+            div.innerHTML = `
+                <div class="flex justify-between mb-2"><span class="font-bold text-sm">${nick}</span><span class="text-xs text-gray-500">방금 전</span></div>
+                <p class="text-sm mb-2">${content}</p>
+                <div class="text-xs text-gray-500 flex gap-3"><span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">0</span></span><span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">0</span></span></div>
+            `;
+            const container = document.getElementById('comment-list');
+            let bestComments = container.querySelectorAll('.best-comment');
+            if (bestComments.length > 0) container.insertBefore(div, bestComments[bestComments.length - 1].nextSibling);
+            else container.prepend(div);
+            
+            document.getElementById('cmt-content').value = "";
+            alert("댓글이 등록되었습니다.");
+        }
+
+        function renderRanking() {
+            const list = document.getElementById('ranking-list');
+            rankingData.forEach((news, index) => {
+                const li = document.createElement('li');
+                li.onclick = () => location.href = news.url;
+                const styleClass = news.highlight ? 'text-red-600 font-bold' : '';
+                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link ${styleClass}">${news.title}</span>`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

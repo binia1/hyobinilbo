@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[단독] '효빈 보수의 양심' 부서원, 국민의힘 탈당... "계엄 옹호하는 당에 미래 없다" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #0055aa; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+
+        .breaking-badge { background-color: #0055aa; color: white; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+        
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content">
+            <div class="text-[#0055aa] font-bold text-sm mb-2">정치 > 정당</div>
+            <h1 class="article-title">[단독] '효빈 보수의 양심' 부서원, 국민의힘 탈당... "계엄 옹호하는 당에 미래 없다"</h1>
+            <div class="article-subtitle">
+                20일 효빈시의회서 긴급 기자회견... "헌정 질서 유린한 정당에 단 하루도 머물 수 없어"<br>
+                지난 지선 중구청장 후보 출신... "보수의 가치는 자유민주주의 수호, 지금의 여당은 독재 옹호 집단"<br>
+                지역 정가 "합리적 보수의 이탈 가속화될 것"... 윤재훈 측 "배신자, 잘 나갔다" 비난
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2024.12.20 10:30 | 수정 2024.12.20 11:15</span>
+                <span>정치부 이덕북 기자 (politics@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="이미지/부서원탈당.png" alt="효빈시의회 브리핑룸에서 굳은 표정으로 탈당 선언문을 낭독하는 부서원 전 중구청장 후보" onerror="this.src='https://via.placeholder.com/600x400?text=Press+Conference'">
+                    <div class="img-caption">▲ 20일 오전, 부서원 전 국민의힘 효빈 중구청장 후보가 효빈시의회에서 탈당 기자회견을 하고 있다.</div>
+                </div>
+
+                <p>
+                    <span class="text-[#0055aa] font-bold">"국민에게 총부리를 겨눈 권력을 옹호하는 것은 보수가 아닙니다. 저는 오늘, 부끄러운 당적을 버리고 광장으로 나갑니다."</span>
+                </p>
+                <p>
+                    효빈광역시 중구의 대표적인 소장파 정치인이자 지난 지방선거 국민의힘 중구청장 후보였던 <strong>부서원(44)</strong> 위원장이 20일 전격 탈당을 선언했다. 12.3 비상계엄 사태와 이후 탄핵 국면에서 보여준 여당의 행태에 "참을 수 없는 모멸감"을 느꼈다는 것이 이유다.
+                </p>
+                <p>
+                    부 전 후보는 이날 오전 효빈시의회 브리핑룸에서 기자회견을 열고 "보수의 가치는 헌법 수호와 자유민주주의에 있다"며 "하지만 지금의 국민의힘은 내란을 획책한 대통령을 감싸기에 급급하며, 국민의 명령인 탄핵을 거부하는 '방탄 정당'으로 전락했다"고 강도 높게 비판했다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#0055aa] pl-3">"8호선 음모론, 지역 정치인으로서 부끄러워... 사죄드린다"</h3>
+                <p>
+                    특히 그는 윤재훈 전 후보와 우신면 전 의원 등이 주장하는 <strong style="color:#9856FF">8호선</strong> 관련 음모론에 대해서도 "같은 당적을 가졌던 사람으로서 시민 여러분께 고개 숙여 사죄드린다"고 밝혔다. 그는 "시민의 발이 되어주는 8호선을 지하 벙커니 전파 기지니 하며 매도하는 것은 정신 나간 망동"이라며 "이런 자들을 제명하지 못하는 당에 더 이상 희망은 없다"고 일갈했다.
+                </p>
+                <p>
+                    청하건설 대표이사이기도 한 부 전 후보는 지역 내에서 합리적이고 실용적인 보수 인사로 평가받아왔다. 그의 탈당은 효빈시 내 중도·보수 지지층의 이탈을 가속화할 것으로 보인다. 향후 거취에 대해서는 "당분간 무소속으로 남겠으나, 무너진 효빈의 정치를 바로 세우기 위해 어떤 역할이든 마다하지 않겠다"고 여지를 남겼다.
+                </p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#0055aa] text-sm font-normal ml-2">실시간 베스트</span> <span class="text-xs text-gray-400">총 28,491개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="바르고 고운 말을 씁시다."></textarea>
+                    <button class="cmt-btn" onclick="alert('로그인이 필요합니다.')">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list"></div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기</button>
+                </div>
+                
+                <script>
+                    const commentData = [
+                        {
+                            nick: "재훈왕자96", date: "2024-12-20 10:35",
+                            content: "배신자 새끼!! 잘 나갔다 퉤퉤!! 니가 감히 우리 위대한 당을 욕해? 너 공천 못 받을까 봐 튀는 거지? 박효빈한테 돈 받았냐? 8호선 공사판에서 콩고물 주워 먹었지?! 내가 다 안다!! 너도 내란 공범으로 고발할 거야!!",
+                            replies: [
+                                { nick: "용산탈출지능순", content: "재훈아 아직도 안 잡혀갔냐? 부서원 님이 니네 당 유일한 정상인이었어. 이제 국힘은 진짜 쓰레기 매립지 됐다." },
+                                { nick: "시민A", content: "부서원 대표는 너처럼 백수가 아니라 건실한 기업인이야. 열등감 폭발하는 거 추하다." },
+                                { nick: "재훈왕자96", content: "닥쳐!! 나도 기업가야!! '재훈미래전략연구소' 대표라고!! (직원 0명)" },
+                                { nick: "팩트", content: "연구소? ㅋㅋㅋ 니네 집 안방이겠지. 전기세나 내라." },
+                                { nick: "중구주민", content: "부서원 님 응원합니다. 쓰레기통에서 잘 나오셨어요." },
+                                { nick: "검찰", content: "윤재훈 씨, 악성 루머 유포 추가 고발 접수됐습니다. 조사받을 거 많네요." }
+                            ]
+                        },
+                        {
+                            nick: "중구상인회장", date: "2024-12-20 10:38",
+                            content: "부서원 대표, 고생 많았소. 젊은 사람이 그동안 저런 미치광이들 사이에서 얼마나 힘들었을까. 우리 상인들은 자네 믿네. 당이 뭐가 중요해, 사람이 중요하지. 오늘 가게 오면 소주 한잔 주겠네.",
+                            replies: [
+                                { nick: "부서원(본인)", content: "회장님 감사합니다. 더 올바른 길로 가서 중구를 위해 봉사하겠습니다. 조만간 찾아뵙겠습니다." },
+                                { nick: "재훈왕자96", content: "저 가게 불매운동 해!! 빨갱이 소굴이야!! 내 지지자들 다 모여!!" },
+                                { nick: "지지자(0명)", content: "..." },
+                                { nick: "상인B", content: "윤재훈 넌 오면 소금 뿌린다고 했지? 아직도 정신 못 차렸네." },
+                                { nick: "시민C", content: "상인회장님 멋지십니다. 저도 중구 가서 밥 먹을게요!" },
+                                { nick: "술톤주민우", content: "회장님 저도 소주 한잔만... 공짜로..." }
+                            ]
+                        },
+                        {
+                            nick: "우신면", date: "2024-12-20 10:42",
+                            content: "부서원!! 너 8호선 지하 벙커 비밀 알고 도망가는 거지? 입막음 당했냐? 비겁한 놈!! 진실을 밝혀라!! <span style='color:#9856FF'>8호선</span>은 악마의 통로다!!",
+                            replies: [
+                                { nick: "8호선기관사", content: "아저씨 제발 좀... 병원 가시라니까요. 8호선은 오늘도 평화롭게 운행 중입니다." },
+                                { nick: "공학박사", content: "고가 철도에 지하 벙커가 물리적으로 어떻게 존재합니까? 4차원 주머니에요?" },
+                                { nick: "우신면", content: "투명 망토 기술을 쓴 거라고!! 내가 봤어!!" },
+                                { nick: "시민D", content: "투명 망토 ㅋㅋㅋ 해리포터냐? 판타지 소설 그만 써라." },
+                                { nick: "정신과", content: "보호자분, 입원 수속 서둘러주세요." },
+                                { nick: "건축가", content: "우신면 씨 말대로면 노벨 물리학상 감이네요. 공간 왜곡 기술이라니." }
+                            ]
+                        },
+                        {
+                            nick: "술톤주민우", date: "2024-12-20 10:45",
+                            content: "서원아... 형이다... 너 나가면 형은 누구랑 술 마시냐... 룸살롱 N빵 해야 하는데... 너 돈 많잖아... 나 버리지 마...",
+                            replies: [
+                                { nick: "시민E", content: "진짜 추잡하다 ㅋㅋㅋ N빵 하려고 당에 붙어있으라고 하냐? 인간 거머리네." },
+                                { nick: "재훈왕자96", content: "형!! 저런 배신자한테 구걸하지 마!! 우리가 다시 정권 잡으면 돈방석 앉을 거야!!" },
+                                { nick: "술톤주민우", content: "재훈아... 솔직히 우린 망한 거 같아... 술이나 마시자..." },
+                                { nick: "룸마담", content: "주민우 너 외상값 안 갚으면 니네 집 찾아간다. 부서원 씨는 깔끔하게 계산하고 갔어." },
+                                { nick: "경찰", content: "주민우 씨, 조사 받으러 오셔야죠. 술 깨고 오세요." },
+                                { nick: "간사랑", content: "술 좀 그만 드세요. 간경화 옵니다." }
+                            ]
+                        },
+                        {
+                            nick: "용산대변인", date: "2024-12-20 10:50",
+                            content: "일부 기회주의자의 탈당에 일희일비하지 않습니다. 우리 당은 대통령님을 중심으로 굳건히 뭉쳐 난국을 타개할 것입니다. 부서원 씨의 앞날에 불행... 아니, 유감을 표합니다.",
+                            replies: [
+                                { nick: "팩트폭격기", content: "불행을 빈다고 쓰려다 지웠냐? ㅋㅋㅋ 속 좁은 거 봐라. 니네 당은 이제 타이타닉이야." },
+                                { nick: "시민F", content: "기회주의자는 니들이지. 국민 버리고 권력에 붙은 간신배들." },
+                                { nick: "재훈왕자96", content: "맞습니다!! 굳건합니다!! 우리는 2.2%지만 일당백입니다!!" },
+                                { nick: "수학쌤", content: "2.2%면 그냥 소멸 직전인 거야 재훈아..." },
+                                { nick: "탈당러", content: "저도 오늘 탈당계 냈습니다. 부끄러워서 못 살겠어요." },
+                                { nick: "기자", content: "대변인님, 지금 의원들 줄탈당 중인데 파악 못 하셨나요?" }
+                            ]
+                        },
+                        {
+                            nick: "애국보수청년단", date: "2024-12-20 10:55",
+                            content: "부서원 화형식 거행한다! 배신자의 말로는 처참할 것이다! 효빈시청 앞에서 화형식 할 테니 다 모여라! 박효빈이랑 부서원 둘 다 처단하자!",
+                            replies: [
+                                { nick: "소방서", content: "도심 내 불법 소각 행위 엄금합니다. 출동해서 과태료 부과합니다." },
+                                { nick: "시민G", content: "니들은 할 줄 아는 게 불지르는 거랑 패악질밖에 없냐? 사회의 암적인 존재들." },
+                                { nick: "자유수호", content: "야... 오늘 날씨 춥대... 그냥 피시방 가자..." },
+                                { nick: "재훈왕자96", content: "안 돼!! 나가서 싸워!! 내가 컵라면 사줄게!!" },
+                                { nick: "청년회", content: "컵라면으로 퉁치려고? ㅋㅋㅋ 가성비 갑질 오지네." },
+                                { nick: "경찰", content: "집회 신고 안 됐습니다. 모이면 해산시킵니다." }
+                            ]
+                        },
+                        {
+                            nick: "효빈지킴이", date: "2024-12-20 11:00",
+                            content: "보수지만 부서원 님은 인정합니다. 지난 토론회 때 유일하게 정책 얘기하시던 분. 윤재훈이 욕할 때 혼자서 효빈 미래 얘기하시던 모습 기억납니다. 응원합니다.",
+                            replies: [
+                                { nick: "시민H", content: "맞아요. 저도 민주당 지지자지만 부서원 후보는 괜찮게 봤습니다. 협치 기대합니다." },
+                                { nick: "재훈왕자96", content: "정책이 밥 먹여주냐!! 정치는 기세야 기세!! 내가 짱이야!!" },
+                                { nick: "시민I", content: "그래서 2.2% 받았냐? 기세 좋게 망했네." },
+                                { nick: "중도층", content: "이런 분들이 많아져야 나라가 삽니다. 힘내세요." },
+                                { nick: "대학생", content: "상식이 통하는 정치인이 필요합니다." },
+                                { nick: "우신면", content: "정책? 다 8호선 옹호하는 가짜 뉴스야!!" }
+                            ]
+                        },
+                        {
+                            nick: "천공의제자", date: "2024-12-20 11:05",
+                            content: "부서원의 관상에 배신의 기운이 서려 있다 했다. 그는 붉은 용(민주당)에게 먹힐 운명이다. 가지 말아야 할 길을 가는구나 쯧쯧.",
+                            replies: [
+                                { nick: "과학자", content: "소설 쓰고 앉아있네. 배신은 니네 교주가 국민한테 한 게 배신이고." },
+                                { nick: "재훈왕자96", content: "역시 도사님!! 혜안이십니다!! 저 놈은 지옥 갈 겁니다!!" },
+                                { nick: "목사", content: "사이비 이단들은 지옥불이 예약되어 있다." },
+                                { nick: "시민J", content: "붉은 용? 판타지 소설 좀 그만 읽으세요. 현실을 사세요." },
+                                { nick: "무속인", content: "저런 놈들 때문에 우리까지 욕먹어... 쟤 가짜야." },
+                                { nick: "부서원지지자", content: "악담을 퍼부어도 부서원 님은 잘 될 겁니다. 두고 보세요." }
+                            ]
+                        },
+                        {
+                            nick: "건설업계", date: "2024-12-20 11:10",
+                            content: "청하건설 부 대표님, 그동안 맘고생 심하셨죠. 우신면 같은 인간이 8호선 괴담 퍼뜨려서 건설 경기 다 죽여놨는데, 같은 당이라고 말도 못 하고... 이제 속 시원하게 할 말 하세요.",
+                            replies: [
+                                { nick: "우신면", content: "너희들도 한패지? 시멘트에다가 도청 장치 섞어서 건물 지었지? 다 안다!!" },
+                                { nick: "건설직원", content: "아 진짜 미치겠네. 시멘트에 도청 장치를 어떻게 섞어요 아저씨..." },
+                                { nick: "시민K", content: "우신면 뇌 구조 한번 보고 싶다. 진짜 궁금함." },
+                                { nick: "재훈왕자96", content: "건설 마피아 놈들!! 내가 집권하면 니들 다 세무조사야!!" },
+                                { nick: "국세청", content: "저희를 사적으로 이용하지 마세요. 윤재훈 씨부터 조사할 겁니다." },
+                                { nick: "부동산사장", content: "부 대표님 탈당 환영합니다. 이제야 집값 좀 안정되겠네요." }
+                            ]
+                        },
+                        {
+                            nick: "용산국방비서관", date: "2024-12-20 11:15",
+                            content: "적전 분열을 일으키는 행위는 이적 행위입니다. 계엄은 국가를 위한 결단이었습니다. 이를 부정하는 자는 대한민국의 적입니다.",
+                            replies: [
+                                { nick: "예비군", content: "국민한테 총 쏘는 게 국가를 위한 거냐? 니들이 적이다." },
+                                { nick: "시민L", content: "아직도 정신 못 차렸네. 감옥 가서도 그 소리 해봐라." },
+                                { nick: "군인권센터", content: "내란 옹호 발언 기록했습니다. 나중에 딴소리하지 마세요." },
+                                { nick: "재훈왕자96", content: "비서관님 충성!! 저들에게 기관총을 쏘세요!!" },
+                                { nick: "현역군인", content: "제발 닥치세요... 우리도 쪽팔려 죽겠습니다..." },
+                                { nick: "헌병대", content: "비서관님, 조사실로 모시겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "효빈맘", date: "2024-12-20 11:20",
+                            content: "아이 키우는 엄마로서 부서원 님의 결단 환영합니다. 우리 아이들에게 '잘못된 건 잘못됐다'고 말할 수 있는 어른이 되어주셔서 감사합니다. 민주당 가셔도 응원할게요.",
+                            replies: [
+                                { nick: "애국보수청년단", content: "맘충이 또 설치네! 정치판 기웃거리지 말고 밥이나 해!" },
+                                { nick: "시민M", content: "니네 엄마한테나 가서 밥 달라고 해라. 불효자들아." },
+                                { nick: "부서원", content: "감사합니다. 아이들이 부끄럽지 않은 효빈시를 만들겠습니다." },
+                                { nick: "재훈왕자96", content: "다 짜고 치는 고스톱이야!! 댓글 알바 썼지?!" },
+                                { nick: "시민N", content: "알바는 니가 쓰는 거겠지. 댓글 수준 보면 딱 나옴." },
+                                { nick: "다른맘", content: "저도요! 합리적인 분이라 좋아했습니다. 기대합니다." }
+                            ]
+                        },
+                        {
+                            nick: "택시기사", date: "2024-12-20 11:25",
+                            content: "손님들이 부서원 얘기 많이 합니다. '그나마 사람 냄새나는 양반'이라고. 탈당 잘하셨어요. 똥통에 있으면 같이 냄새납니다. 어서 나오세요.",
+                            replies: [
+                                { nick: "술톤주민우", content: "아저씨 나 좀 태워줘... 돈 없어... 외상..." },
+                                { nick: "기사", content: "안 태워요. 걸어가세요. 냄새나요." },
+                                { nick: "용산소통비서관", content: "민심을 호도하지 마십시오. 택시 기사 여론 조작 의심됩니다." },
+                                { nick: "손님", content: "조작은 니들이 했지 2.2% ㅋㅋㅋ" },
+                                { nick: "재훈왕자96", content: "택시 다 없애고 드론 택시 만들 거야!! 내가!!" },
+                                { nick: "드론전문가", content: "기술력도 없으면서 입만 살아서..." }
+                            ]
+                        },
+                        {
+                            nick: "편의점알바", date: "2024-12-20 11:30",
+                            content: "부서원 아저씨 우리 편의점 단골인데, 올 때마다 알바생들한테 고생한다고 간식 사주심. 인성 진짜 좋으신 분임. 윤재훈이랑은 차원이 다름. 윤재훈은 와서 진상만 부림.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "내가 언제 진상 부렸어!! 왕족의 품격을 보여줬지!!" },
+                                { nick: "알바", content: "품격 ㅋㅋㅋ 유통기한 지난 거 내놓으라고 소리 지른 게 품격이냐?" },
+                                { nick: "시민O", content: "인성은 못 속이죠. 부서원 님 승승장구하세요." },
+                                { nick: "술톤주민우", content: "나도 간식 사줄게... 소주 한 병만 줘..." },
+                                { nick: "점장", content: "주민우 출입 금지. 사진 붙여놨음." },
+                                { nick: "효빈시민", content: "미담이 쏟아지네. 역시 사람은 겪어봐야 안다." }
+                            ]
+                        },
+                        {
+                            nick: "안천동김씨", date: "2024-12-20 11:35",
+                            content: "안천동 주민들도 부서원 탈당 지지합니다. 지난번 유세 때 우리 동네 와서 경청하던 모습 기억합니다. 당적 바뀌어도 찍어드립니다. 배신자는 윤석열이지 부서원이 아닙니다.",
+                            replies: [
+                                { nick: "용산안보실", content: "특정 정치인 지지 발언은 선거법 위반 소지가 있습니다." },
+                                { nick: "선관위", content: "아니요, 단순 지지 의사는 합법입니다. 용산은 빠지세요." },
+                                { nick: "시민P", content: "선관위 나이스샷 ㅋㅋㅋ 용산 쭈글해졌네." },
+                                { nick: "재훈왕자96", content: "안천동 거지들!! 내가 재개발 안 해줄 거야!!" },
+                                { nick: "부동산", content: "님 낙선해서 재개발 권한 없어요..." },
+                                { nick: "주민", content: "재훈이 니가 안 와도 우리끼리 잘 산다." }
+                            ]
+                        },
+                        {
+                            nick: "전직여당당원", date: "2024-12-20 11:40",
+                            content: "저도 오늘 탈당했습니다. 20년 동안 지켰던 당인데... 계엄령 보고 정떨어졌습니다. 부 위원장님 따라갑니다. 민주당 입당 원서 쓰러 갑니다.",
+                            replies: [
+                                { nick: "환영합니다", content: "잘 생각하셨습니다. 상식이 통하는 세상 만듭시다." },
+                                { nick: "애국보수청년단", content: "배신자!! 지옥 끝까지 쫓아간다!!" },
+                                { nick: "시민Q", content: "쫓아가서 뭐 하게? 밥 사달라고? ㅋㅋㅋ" },
+                                { nick: "용산정무라인", content: "탈당 러시... 막을 수가 없다..." },
+                                { nick: "재훈왕자96", content: "다 꺼져!! 나 혼자 당 만들 거야!! '윤재훈황제당'!!" },
+                                { nick: "정신과", content: "이분 상태가 점점 심각해지네요..." }
+                            ]
+                        },
+                        {
+                            nick: "법대생", date: "2024-12-20 11:45",
+                            content: "부서원 님의 탈당 선언문, 헌법 정신을 정확히 꿰뚫고 있네요. '국민의 총칼로 헌정 질서를 유린하는 정당에 머물 수 없다'. 명문입니다. 정치인의 품격이 느껴집니다.",
+                            replies: [
+                                { nick: "용산법무팀", content: "헌법 해석은 대통령의 고유 권한입니다. (억지)" },
+                                { nick: "법대생", content: "헌법재판소가 웃겠네요. 1학년도 안 할 소리를..." },
+                                { nick: "시민R", content: "윤재훈은 맨날 쌍욕만 하는데 비교된다 진짜." },
+                                { nick: "재훈왕자96", content: "나도 글 잘 써!! '다 죽여버려' 얼마나 명문이냐!!" },
+                                { nick: "국어쌤", content: "그건 명문이 아니라 살인 예고예요 학생..." },
+                                { nick: "기자", content: "선언문 전문 공유 좀 부탁드립니다. 기사 써야겠네요." }
+                            ]
+                        },
+                        {
+                            nick: "구성연지지자", date: "2024-12-20 11:50",
+                            content: "지난 선거 때 구성연 청장님 찍었지만, 부서원 후보도 훌륭하다고 생각했습니다. 민주당 오시면 대환영입니다. 두 분이 손잡으면 효빈시 중구는 천하무적일 듯.",
+                            replies: [
+                                { nick: "부서원캠프", content: "감사합니다. 구성연 청장님과 협력해서 좋은 정치 보여드리겠습니다." },
+                                { nick: "우신면", content: "둘이 짜고 8호선 땅굴 숨기려는 거야!! 내가 다 알아!!" },
+                                { nick: "시민S", content: "우신면은 8호선이랑 결혼해라 그냥." },
+                                { nick: "재훈왕자96", content: "나도 껴줘!! 나도 민주당 갈래!! (철새)" },
+                                { nick: "민주당", content: "입당 거부합니다. 돌아가세요." },
+                                { nick: "술톤주민우", content: "나도 갈래... 거기 술 주냐?" }
+                            ]
+                        },
+                        {
+                            nick: "해외교포", date: "2024-12-20 11:55",
+                            content: "해외에서도 부서원 탈당 뉴스 떴습니다. '양심 있는 보수 정치인의 결단'이라고. 한국 보수가 다 죽지 않았다는 걸 보여줘서 고맙습니다. 윤석열 같은 괴물만 있는 게 아니었네요.",
+                            replies: [
+                                { nick: "용산외교실", content: "외신 보도 통제하겠습니다. (안 됨)" },
+                                { nick: "유학생", content: "진짜 다행이에요. 외국 친구들이 한국 정치인 다 미친 줄 알거든요." },
+                                { nick: "재훈왕자96", content: "내가 괴물이라고? 난 신이야!! God!!" },
+                                { nick: "시민T", content: "God이 아니라 Dog겠지." },
+                                { nick: "번역가", content: "Dog도 아까움. Monster임." },
+                                { nick: "교포B", content: "부서원 화이팅! 후원금 보냅니다." }
+                            ]
+                        },
+                        {
+                            nick: "웹툰작가", date: "2024-12-20 12:00",
+                            content: "신작 웹툰 캐릭터 구상 중인데 부서원 님 모티브로 '빛의 기사' 캐릭터 만듭니다. 윤재훈은 '어둠의 찌질이'로 확정. ㅋㅋㅋ",
+                            replies: [
+                                { nick: "재훈왕자96", content: "야!! 주인공은 나야!! 날 멋있게 그려!!" },
+                                { nick: "작가", content: "네, 아주 멋있게 찌질하게 그려드릴게요." },
+                                { nick: "독자", content: "기대됩니다 ㅋㅋㅋ 쿠키 장전 완료." },
+                                { nick: "우신면", content: "내 캐릭터는? 8호선 파괴자!!" },
+                                { nick: "시민U", content: "우신면은 그냥 배경(벽)으로 그려주세요." },
+                                { nick: "술톤주민우", content: "난 술병 들고 있는 엑스트라 1..." }
+                            ]
+                        },
+                        {
+                            nick: "효빈시청", date: "2024-12-20 12:05",
+                            content: "부서원 전 후보님의 용기 있는 결단에 박수를 보냅니다. 당은 달라도 효빈시를 사랑하는 마음은 같을 것입니다. 앞으로 시정에 많은 조언 부탁드립니다.",
+                            replies: [
+                                { nick: "박효빈시장", content: "부서원 님, 환영합니다. 정의로운 길을 함께 갑시다." },
+                                { nick: "재훈왕자96", content: "박효빈!! 니가 꼬셨지!! 더러운 뒷거래!!" },
+                                { nick: "용산정무수석", content: "효빈시청은 반국가 세력의 본거지다! 예산 전액 삭감하겠다! 굶어 죽어봐라!" },
+                                { nick: "시민V", content: "세금이 니 돈이냐? 우리가 낸 세금으로 월급 받는 주제에! 효빈시는 우리가 먹여 살린다!" },
+                                { nick: "용산소통비서관", content: "박효빈이 부서원을 포섭해서 내란을 획책하고 있다. 효빈시를 봉쇄해야 한다!" },
+                                { nick: "효빈시민", content: "봉쇄는 니들 아가리를 봉쇄해야지. 뚫린 입이라고 막말하네. 시청 건드리면 용산으로 쳐들어간다!" },
+                                { nick: "우신면", content: "시청 지하에도 땅굴 있다!! 다 폭파해!!" },
+                                { nick: "청원경찰", content: "우신면 씨 시청 출입 금지입니다." }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    commentData.forEach(cmt => {
+                        const div = document.createElement('div');
+                        // '선관위' 삭제
+                        const villains = ['재훈왕자96', '술톤주민우', '우신면', '용산대변인', '용산법무팀', '용산경호처', '용산안보실', '용산정무라인', '용산외교실', '용산과학수사대', '용산경제팀', '애국보수청년단', '자유수호', '멸공의횃불', '용산작전과', '용산지휘부', '천공의제자', '용산보건비서관', '용산비서실', '용산민정실', '용산기상청', '문화부', '의원(익명)', '여당의원(익명)', '용산소통비서관', '용산국방비서관', '용산위생과', '효빈세무서', '용산정무수석'];
+                        const isVillain = villains.includes(cmt.nick);
+
+                        div.className = `comment-item ${isVillain ? 'troll' : ''}`;
+                        
+                        // 빌런이면 비공감 폭탄(수십만 단위), 일반인은 공감 폭탄(수만 단위)
+                        // 상황 종료 후라 비공감이 더 폭발적으로 늘어남
+                        const likeCount = isVillain ? Math.floor(Math.random() * 10) : Math.floor(Math.random() * 50000) + 20000;
+                        const dislikeCount = isVillain ? Math.floor(Math.random() * 200000) + 50000 : Math.floor(Math.random() * 50);
+
+                        let repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:block;">`;
+                        cmt.replies.forEach(rp => {
+                            const rNick = rp.nick || '익명';
+                            const rContent = rp.content || '';
+                            const isRVillain = villains.includes(rNick);
+                            const rStyle = isRVillain ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;';
+                            
+                            const rLikeCount = isRVillain ? Math.floor(Math.random() * 5) : Math.floor(Math.random() * 5000);
+                            const rDislikeCount = isRVillain ? Math.floor(Math.random() * 10000) : Math.floor(Math.random() * 10);
+                            
+                            repliesHtml += `
+                                <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0">
+                                    <div class="text-sm mb-1"><span class="font-bold" style="${rStyle}">└ ${rNick}</span>: ${rContent}</div>
+                                    <div class="text-xs text-gray-500 flex gap-2">
+                                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${rLikeCount}</span></span>
+                                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${rDislikeCount}</span></span>
+                                    </div>
+                                </div>`;
+                        });
+                        repliesHtml += `</div>`;
+
+                        div.innerHTML = `
+                            <div class="comment-nick">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date || '2024-12-20'}</span></div>
+                            <p class="comment-content">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${likeCount}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${dislikeCount}</span></span>
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active')) {
+                            count--;
+                            btn.classList.remove('active');
+                        } else {
+                            count++;
+                            btn.classList.add('active');
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="rank-news">
+                <div class="rank-title">오늘의 주요 뉴스</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text text-[#0055aa] font-bold">부서원, 국힘 탈당... "계엄 옹호 못 해"</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text">윤재훈, '내란 선동' 혐의로 2차 소환 조사</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text">박효빈 시장 "8호선 정상 운행, 음모론 엄단"</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text">국민의힘 탈당 러시... 효빈시당 '공황 상태'</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text">탄핵 심판 본격화... 헌재, 첫 변론기일 지정</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text">주민우, 밀항 시도하다 부산항서 검거 '망신'</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-blue-50 p-4 border border-blue-100 text-center">
+                <div class="font-bold text-[#0055aa] mb-2">효빈시 의회 속보</div>
+                <div class="text-sm text-gray-600 mb-3">부서원 전 후보 기자회견<br>전문 다시보기</div>
+                <button class="bg-[#0055aa] text-white text-xs px-3 py-2 rounded">영상 보기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <div class="flex gap-4 mb-4">
+                <a href="회사소개.html" class="hover:text-white">회사소개</a>
+                <a href="구독신청.html" class="hover:text-white">구독신청</a>
+                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
+                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
+                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
+            </div>
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
+            <p>주소: 효빈광역시 북구 중수동 123 </p>
+            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
+            <div class="hidden">
+                <img src="이미지/지하철1호선.png" style="color:#0077DD">
+                <img src="이미지/지하철2호선.png" style="color:#00CCAA">
+                <img src="이미지/지하철3호선.png" style="color:#FFCC11">
+                <img src="이미지/지하철4호선.png" style="color:#FF5522">
+                <img src="이미지/지하철5호선.png" style="color:#EE0022">
+                <img src="이미지/지하철6호선.png" style="color:#881188">
+                <img src="이미지/지하철7호선.png" style="color:#FF8899">
+                <img src="이미지/지하철8호선.png" style="color:#9856FF">
+                <img src="이미지/빈효선광역전철.png" style="color:#6677CC">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

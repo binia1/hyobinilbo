@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문화] "덕후들의 성지"... 제16회 HAF 개막, 10만 인파 운집 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 뉴스 헤더 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav { border-top: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; display: inline-block; padding-top: 12px; padding-bottom: 12px; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 스타일 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #ffd1d1 50%, transparent 50%); }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 댓글창 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        /* 윤대환 지지자용 (붉은 배경) */
+        .bad-comment { background: #fff0f0; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 4px; } 
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 기사 영역 -->
+        <div class="main-content shadow-sm">
+            <div class="mb-2 text-[#0055aa] font-bold">문화 > 축제/공연</div>
+            <h2 class="article-title">[현장] "아시아의 아키하바라"... 제16회 HAF 개막, 10만 인파에 효빈시 '들썩'</h2>
+            <div class="article-info">
+                <div>
+                    <span class="font-bold">문덕후 기자</span> (culture@hyobinilbo.com)<br>
+                    <span class="text-xs text-gray-400">입력 2026.01.06. 14:00</span>
+                </div>
+                <div class="flex gap-2 text-xs">
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                    <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                </div>
+            </div>
+            <div class="article-body">
+                <p><span class="text-[#0055aa] font-bold">"The Grand Slam" 역대 최대 규모... 경제 효과 500억 추산<br>박효빈 시장, 인기 캐릭터 코스프레 깜짝 등장... "덕업일치 도시 만들 것"<br>사능동 '사능빵집', 당가동 '디저트 거리' 등 구도심 상권 성지순례로 부활</span></p>
+                
+                <div class="my-6">
+                    <img src="HAF_현장.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/FF4500/FFFFFF?text=HAF+Festival+Crowd'">
+                    <div class="img-caption">▲ 6일 제16회 효빈 애니메이션 페스티벌(HAF)이 열린 효빈호수공원 전경. 전국 각지에서 모인 코스어와 관람객들로 인산인해를 이루고 있다. (사진=효빈일보)</div>
+                </div>
+
+                <p>[효빈일보 = 문덕후 기자] 대한민국 서브컬처의 심장, **제16회 효빈 애니메이션 페스티벌(HAF)**이 'The Grand Slam'이라는 슬로건 아래 6일 화려한 막을 올렸다. 과거 윤대환 전 시장 시절 예산 전액 삭감과 폐지 위기라는 '암흑기'를 겪었던 HAF는, 이제 효빈시를 먹여 살리는 핵심 엔진으로 완전히 부활했다.</p>
+                <p>이번 축제는 단순한 행사장을 넘어 **효빈 도시철도**망을 혈관 삼아 도시 전체가 거대한 행사장으로 변모했다. 관람객들은 'HAF PASS'를 들고 8개 구·군의 거점 지역을 돌며 스탬프 랠리를 즐겼다. 특히 **사능동(사아야 거리)**은 발 디딜 틈조차 없었다. 지명이 애니메이션 '뱅드림!'의 캐릭터 **'야마부키 사아야'**와 같다는 점이 알려지며, 동네 빵집인 **'사능빵집'**은 성지순례객들로 장사진을 이뤘다. '사아야 빵'은 오전 9시에 이미 완판되었다.</p>
+                <p>개막식의 하이라이트는 단연 **박효빈 시장**의 깜짝 등장이었다. 박 시장은 자신이 '오시(최애)'라고 밝힌 애니메이션 캐릭터 의상을 입고 무대에 올라 "취향이 존중받는 도시, 상상력이 경쟁력이 되는 도시를 만들겠다"고 선언해 '덕후'들의 열광적인 지지를 받았다. 이는 과거 윤재훈 후보가 "오타쿠들이 도시 이미지를 망친다"고 비하했던 것과 극명히 대비되는 모습이다.</p>
+                <p>효빈시 경제연구소는 이번 7일간의 축제로 인한 경제적 파급 효과를 약 **500억 원**으로 추산했다. 인근 상권인 사능빵집과 굿즈샵 '과진점'은 재료 소진으로 조기 마감되는 등 특수를 톡톡히 누리고 있다.</p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JS Load -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <!-- JS Load -->
+                </ul>
+            </div>
+            
+            <!-- 광고 배너 1 -->
+            <div class="ad-banner" style="background: #fff8e1; border-color: #ffe082;">
+                <div class="text-center">
+                    <div class="font-bold text-orange-600 mb-1">사능빵집 (본점)</div>
+                    <div class="text-xs text-orange-400">사아야가 구운 듯한 초코소라빵<br>HAF 기간 한정 판매 중!</div>
+                </div>
+            </div>
+            
+            <!-- 광고 배너 2 -->
+            <div class="w-full h-40 bg-gray-100 flex items-center justify-center text-gray-500 border border-gray-300 text-xs text-center p-4">
+                <span>[광고]<br>효빈대 만화애니메이션학과<br>2026 신입생 모집</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 초기 댓글 데이터 (리얼한 반응 포함 - 데이터 대폭 증가)
+        const initialComments = [
+            {
+                nick: "PoppinParty", time: "14:10", content: "와 사능빵집 미쳤다... 초코소라빵 퀄리티 대박임. 사장님이 앞치마 두르고 '이らっしゃ이마세(어서오세요)' 하는데 진짜 사아야네 빵집 온 줄 ㅋㅋㅋ 박효빈 시장님 덕분에 성불합니다.", 
+                like: 4500, dislike: 15, isBest: true,
+                replies: [
+                    { nick: "SeoulUser", content: "부럽다... 우리 동네는 파리바게뜨밖에 없는데." },
+                    { nick: "HyobinCitizen", content: "내일 아침 일찍 가야겠네요. 오늘 9시에 매진됐대요." }
+                ]
+            },
+            {
+                nick: "사능동주민", time: "14:15", content: "처음엔 오타쿠들 몰려온다길래 시끄러울까 봐 걱정했는데, 애들이 정말 착해요. 쓰레기도 다 주워가고. 무엇보다 죽어가던 우리 동네 빵집이 대박 나서 너무 좋습니다. 사능빵집 사장님 싱글벙글하시는 거 보니 저도 좋네요.", 
+                like: 3800, dislike: 20, isBest: true,
+                replies: [
+                    { nick: "Baker", content: "감사합니다! 덕분에 알바생 3명 더 채용했습니다. 효빈시 파이팅!" },
+                    { nick: "Local", content: "이게 진짜 도시 재생이지. 엄한 도로에 페인트칠하는 것보다 백배 낫다." }
+                ]
+            },
+            {
+                nick: "애국보수_윤사랑", time: "14:30", content: "나라가 망조가 들었다. 신성한 효빈시에서 일본 왜놈 만화 쪼가리나 입고 설치다니! 이게 다 윤대환 시장님이 쫓겨나서 생긴 일이다. 윤 시장님 계실 땐 이런 천박한 행사는 어림도 없었는데... 효빈시의 품격이 땅에 떨어졌다! 당장 행사 취소하고 태극기 집회나 열어라!", 
+                like: 15, dislike: 5600, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "팩트폭격기", content: "윤대환이 품격? 버스 요금 횡령하고 기사들 월급 떼먹은 게 품격인가요? 할아버지 정신 차리세요. 윤대환은 지금 감옥에서 콩밥 드시고 계십니다." },
+                    { nick: "Student", content: "아저씨가 말하는 그 '천박한' 행사로 오늘 하루 번 돈이 윤대환이 평생 해먹은 돈보다 많을걸요? 경제 1도 모르면서." },
+                    { nick: "Citizen", content: "품격 타령 그만하고 제발 방구석에서 나오지 마세요." },
+                    { nick: "History", content: "애국보수라면서 횡령범을 옹호하시네 ㅋㅋ" }
+                ]
+            },
+            {
+                nick: "똥재훈(IP)", time: "14:35", content: "저런 병X 같은 오타쿠 새끼들이 도시를 점령하니까 나라 꼬라지가 이 모양이지. 다 가스실로 보내야 돼. 냄새나는 씹덕들 극혐.", 
+                like: 2, dislike: 2100, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "IP_Tracker", content: "어? 이 IP 윤재훈 댓글 공작할 때 쓰던 IP랑 같은데? ㅋㅋㅋ 아직도 정신 못 차렸냐? 두청운수 본사지 너?" },
+                    { nick: "Police", content: "혐오 표현으로 신고 접수했습니다. IP 추적 들어갑니다." },
+                    { nick: "HyobinMom", content: "너 같은 인간이 도시 망신이다." }
+                ]
+            },
+            {
+                nick: "LiyuuFan", time: "14:50", content: "작년 탕쿠쿠 대첩 때 우리 리유 쨩 지켜준 효빈 시민분들 평생 잊지 않겠습니다. 덕분에 올해도 안심하고 놉니다. 쿠쿠스 배리어 만세!", 
+                like: 1500, dislike: 5, isBest: false,
+                replies: []
+            },
+            {
+                nick: "K-PopHater", time: "15:00", content: "아이돌 콘서트보다 여기가 훨씬 낫네. 질서 정연하고 굿즈 퀄리티도 좋고. HAF 영원하라!", 
+                like: 300, dislike: 50, isBest: false,
+                replies: []
+            },
+            {
+                nick: "TaxPayer", time: "15:10", content: "세금 아깝다 생각했는데, 경제 효과 500억이면 인정이지. 윤대환이 도로 깐다고 날린 돈 생각하면... 박효빈이 효자네.", 
+                like: 1200, dislike: 30, isBest: true,
+                replies: []
+            },
+            {
+                nick: "OldMan", time: "15:20", content: "나이 먹고 저러고 싶냐 쯧쯧... 세상 말세다.", 
+                like: 10, dislike: 400, isBest: false, type: 'bad',
+                replies: [
+                    { nick: "YoungMan", content: "남 취미에 훈수 두지 마시고 본인 인생이나 사세요. 피해 준 거 없잖아요?" },
+                    { nick: "Merchant", content: "어르신, 저 사람들이 우리 가게 매출 올려주는 고마운 분들입니다." }
+                ]
+            }
+        ];
+
+        // 랭킹 데이터
+        const rankingData = [
+            { title: "[속보] 조선일보, 1면 톱 사과문... \"뼈저리게 반성\"", url: "news_chosun_apology.html", highlight: true },
+            { title: "윤재훈 필리핀 갱단 '참교육' 사건 전말", url: "news_philippines.html" },
+            { title: "\"메카쿠시테!\"... 효빈대생들의 '성우 보호 작전'", url: "news_univ.html" },
+            { title: "윤대환 부자, 위키 여론조작 덜미", url: "news_article.html" },
+            { title: "효빈터미널, '똥재훈' 덕분에(?) 래핑버스 성지 됐다", url: "news_bus_terminal.html" }
+        ];
+
+        // 페이지 로드 시 실행 (확실한 로딩을 위해)
+        document.addEventListener('DOMContentLoaded', function() {
+            // 댓글 렌더링
+            renderComments(initialComments);
+            document.getElementById('comment-count').innerText = initialComments.length;
+            
+            // 랭킹 렌더링
+            renderRanking();
+        });
+
+        function renderComments(comments) {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = "";
+
+            comments.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                // 윤대환 지지자 댓글은 붉은 배경으로 표시
+                if (cmt.type === 'bad') {
+                    div.className = "bad-comment";
+                } else {
+                    div.className = cmt.isBest ? "best-comment" : "comment-item";
+                }
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    // 답글은 기본적으로 보이게 설정
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display: block;">`;
+                    
+                    cmt.replies.forEach(reply => {
+                        repliesHtml += `
+                            <div class="reply-item">
+                                <span class="font-bold text-xs text-[#0055aa]">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.type === 'bad' ? 'text-red-600' : ''}">${cmt.nick}</span>
+                        <span class="text-xs text-gray-500">${cmt.time}</span>
+                    </div>
+                    <p class="text-sm mb-2 font-medium">${cmt.content.replace(/\n/g, '<br>')}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        function toggleVote(btn) {
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active', 'active-hate');
+                countSpan.innerText = (count - 1).toLocaleString();
+            } else {
+                btn.classList.add(btn.innerText.includes('공감') ? 'active' : 'active-hate');
+                countSpan.innerText = (count + 1).toLocaleString();
+            }
+        }
+
+        function addComment() {
+            const nick = document.getElementById('cmt-nick').value.trim();
+            const content = document.getElementById('cmt-content').value.trim();
+            if (!nick || !content) { alert("닉네임과 내용을 입력해주세요."); return; }
+            
+            const div = document.createElement('div');
+            div.className = "comment-item bg-yellow-50"; 
+            div.innerHTML = `
+                <div class="flex justify-between mb-2"><span class="font-bold text-sm">${nick}</span><span class="text-xs text-gray-500">방금 전</span></div>
+                <p class="text-sm mb-2">${content}</p>
+                <div class="text-xs text-gray-500 flex gap-3"><span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">0</span></span><span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">0</span></span></div>
+            `;
+            const container = document.getElementById('comment-list');
+            let bestComments = container.querySelectorAll('.best-comment');
+            if (bestComments.length > 0) container.insertBefore(div, bestComments[bestComments.length - 1].nextSibling);
+            else container.prepend(div);
+            
+            document.getElementById('cmt-content').value = "";
+            alert("댓글이 등록되었습니다.");
+        }
+
+        function renderRanking() {
+            const list = document.getElementById('ranking-list');
+            rankingData.forEach((news, index) => {
+                const li = document.createElement('li');
+                li.onclick = () => location.href = news.url;
+                const styleClass = news.highlight ? 'text-red-600 font-bold' : '';
+                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link ${styleClass}">${news.title}</span>`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

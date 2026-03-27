@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] "단맛은 인권이다"... 저소득층 아동 위한 '해피 쿠쿠 카드' 화제 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #bae6fd 50%, transparent 50%); } /* 파스텔 블루 강조 */
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 카드 소개 박스 */
+        .card-box { background: #f0f9ff; border: 1px solid #bce3fd; border-radius: 12px; padding: 25px; margin: 30px 0; display: flex; gap: 20px; align-items: center; }
+        .card-visual { width: 180px; height: 110px; background: linear-gradient(135deg, #a2d2ff, #bde0fe); border-radius: 10px; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-shrink: 0; position: relative; overflow: hidden; }
+        .card-visual::after { content: "Happy Kuku"; position: absolute; bottom: 10px; right: 15px; font-style: italic; opacity: 0.8; }
+        .card-info { flex: 1; }
+        .card-title { font-weight: bold; font-size: 18px; color: #0055aa; margin-bottom: 8px; }
+        .card-desc { font-size: 14px; color: #555; line-height: 1.6; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        /* 공식 계정 마크 */
+        .official-mark { display: inline-flex; align-items: center; justify-content: center; background: #00a2e8; color: white; width: 14px; height: 14px; border-radius: 50%; font-size: 10px; margin-left: 4px; vertical-align: middle; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+                /* 헤더 스타일 */
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .top-bar { background: #f8f9fa; border-bottom: 1px solid #eee; padding: 5px 0; font-size: 12px; color: #666; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 15px; font-size: 16px; text-decoration: none; display: inline-block; height: 50px; line-height: 50px; }
+        .news-nav a:hover, .news-nav a.active { color: #0055aa; border-bottom: 3px solid #0055aa; }
+
+        /* 레이아웃 */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; display: flex; gap: 30px; }
+        .main-column { flex: 3; }
+        .side-column { flex: 1; }
+
+        /* 섹션 헤더 */
+        .page-header { border-bottom: 2px solid #333; margin-bottom: 20px; padding-bottom: 10px; }
+        .page-title { font-size: 24px; font-weight: 900; color: #0055aa; }
+
+        /* 메인 헤드라인 */
+        .headline-card { background: white; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden; cursor: pointer; transition: box-shadow 0.2s; }
+        .headline-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .headline-img { width: 100%; height: 400px; object-fit: cover; }
+        .headline-content { padding: 25px; }
+        .headline-title { font-size: 28px; font-weight: bold; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif; line-height: 1.3; }
+        .headline-title:hover { text-decoration: underline; color: #0055aa; }
+        .headline-desc { font-size: 15px; color: #555; line-height: 1.6; height: 48px; overflow: hidden; }
+
+        /* 서브 그리드 뉴스 */
+        .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .news-card { background: white; border: 1px solid #e2e2e2; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .news-card img { width: 100%; height: 180px; object-fit: cover; }
+        .news-card-content { padding: 15px; }
+        .news-card-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+        .news-card-meta { font-size: 12px; color: #888; }
+
+        /* 리스트형 뉴스 */
+        .news-list-box { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .list-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        .list-title { font-size: 15px; color: #333; }
+        .list-time { font-size: 12px; color: #999; }
+
+        /* 사이드바 랭킹 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; padding: 20px; margin-bottom: 20px; }
+        .ranking-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+        .ranking-list li:hover .rank-title { text-decoration: underline; color: #0055aa; }
+        .rank-num { font-weight: 900; color: #0055aa; font-size: 16px; font-style: italic; width: 20px; }
+        .rank-title { font-size: 14px; line-height: 1.4; }
+
+        /* 광고 배너 */
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; }
+
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 복지/인권</div>
+                <h2 class="article-title">"단맛은 인권이다"... 저소득층 아동 위한 '해피 쿠쿠 카드' 화제</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이복지 기자</span> (welfare@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.08.20. 11:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">"돈 없어서 크레페 못 먹는 아이 없어야"... 박효빈 시장의 '성덕 행정'<br>급식 카드 디자인 차별 없애고 디저트 전용 포인트 지급<br>상인들 "카드 내면 토핑 2배"... 지역사회가 함께 키우는 아이들</span></p>
+                    
+                    <div class="my-6">
+                        <img src="아이들_크레페.png" alt="크레페를_먹는_아이들.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/bae6fd/333333?text=Happy+Kids+with+Crepes'">
+                        <div class="img-caption">▲ 20일 오전 안천구 당가동의 한 디저트 카페에서 아이들이 '해피 쿠쿠 카드'로 결제한 크레페를 먹으며 환하게 웃고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 이복지 기자] "예전에는 급식 카드 꺼내기가 부끄러워서 편의점만 갔어요. 근데 이 카드는 예뻐서 친구들한테 자랑했어요!"</p>
+
+                    <p>효빈시가 저소득층 결식 우려 아동에게 지급하던 급식 카드를 전면 개편해 내놓은 **'해피 쿠쿠 카드(Happy Keke Card)'**가 아이들의 자존감을 높여주는 '착한 행정'으로 주목받고 있다. 이 카드는 일반 급식 카드와 달리 힙한 파스텔 블루 디자인으로 제작되었으며, 특히 안천구 <a href="당가동.html" class="text-blue-600 underline">당가동</a>의 핫플레이스인 디저트 카페와 베이커리에서도 자유롭게 사용할 수 있다는 점이 특징이다.</p>
+
+                    <div class="card-box">
+                        <div class="card-visual">Happy Kuku<br>Premium Pass</div>
+                        <div class="card-info">
+                            <div class="card-title">💳 해피 쿠쿠 카드 (Happy Kuku Card)</div>
+                            <div class="card-desc">
+                                • <b>디자인:</b> <a href="탕쿠쿠.html" class="text-blue-600 underline">탕쿠쿠</a> 퍼스널 컬러(파스텔 블루) 적용, 일반 신용카드와 구별 불가.<br>
+                                • <b>혜택:</b> 식사비 외 월 5만 원 상당의 <b>'스위트 포인트(간식비)'</b> 추가 충전.<br>
+                                • <b>가맹점:</b> 당가동 디저트 거리 내 크레페, 딤섬, 카페 등 150개소.<br>
+                                • <b>철학:</b> "가난하다고 해서 유행하는 디저트를 못 먹어선 안 된다. 단맛은 아이들의 권리다."
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>이 정책의 탄생 배경에는 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장의 남다른 사연이 있다. 최근 일본의 성우 <b>Liyuu(리유)</b>가 "효빈시에 가면 크레페를 먹고 싶다"고 언급하자, 박 시장은 기뻐하는 한편, "돈이 없어서 그 크레페를 구경만 해야 하는 아이들이 있다면 그건 불완전한 행복"이라며 밤새워 정책을 입안했다고 한다.</p>
+
+                    <p>박 시장은 과거 대학 시절 <b>월드비전</b>의 지원을 받아 생애 처음으로 자신을 위한 여행을 떠났던 경험을 회상하며, "아이들에게 필요한 건 단순히 배를 채울 밥뿐만 아니라, 또래와 어울리며 문화를 향유할 수 있는 '자존감'이다"라고 강조했다.</p>
+
+                    <p>지역 상인들의 반응도 뜨겁다. 당가동 상인회는 자발적으로 '해피 쿠쿠 존'을 선포하고, 해당 카드를 소지한 아동에게는 무료 사이즈업이나 토핑 추가 혜택을 제공하고 있다. 한 크레페 가게 사장은 "시장님이 쏘는 거나 마찬가지"라며 "아이들이 눈치 보지 않고 당당하게 주문하는 모습을 보면 내가 다 배부르다"고 전했다.</p>
+
+                    <p>이 소식을 들은 Liyuu는 SNS를 통해 "효빈시는 정말 따뜻한 곳이네요. 제 노래가, 그리고 쿠쿠가 이렇게 좋은 일에 쓰여서 너무 기뻐요"라며 감동의 메시지를 전해왔다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">3,850</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Single_Mom", time: "방금 전", like: 5200, dislike: 10, isPunished: false,
+                                content: "혼자 아이 키우느라 빠듯해서 유행하는 디저트 한 번 못 사줬는데... 아이가 어제 '엄마 나도 친구들이랑 크레페 먹었다!'며 자랑하더라고요. 카드도 너무 예쁘다고 지갑에 고이 넣어두는 거 보고 몰래 울었습니다. 시장님 정말 감사합니다.",
+                                replies: [
+                                    { nick: "Mayor_Hyobin", isOfficial: true, content: "어머님, 울지 마세요. 아이가 행복했다면 저도 행복합니다. 앞으로도 아이들의 웃음을 지키겠습니다." },
+                                    { nick: "Citizen_A", content: "와 시장님 등판... 진짜 '찐'이다." },
+                                    { nick: "Neighbor", content: "힘내세요! 아이가 참 밝고 예쁘더라고요." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "3분 전", like: 5, dislike: 4800, isPunished: true,
+                                content: "세금이 썩어난다! 가난한 놈들은 밥이나 먹지 무슨 디저트야! 배가 불렀어! 내가 시장이었으면 쌀가마니나 던겨줬을 거다! 이거 다 포퓰리즘이야! 내 2.2%는 조작이라고!",
+                                replies: [
+                                    { nick: "Social_Worker", content: "지금이 1950년대입니까? 쌀만 주면 감사하다고 절하던 시대 지났어요. 정서적 박탈감이 얼마나 큰 문제인지 모르시죠?" },
+                                    { nick: "Fact_Check", content: "님 지지율 2.2% 받은 이유를 알겠네요. 공감 능력 제로." },
+                                    { nick: "Student_B", content: "아저씨 같은 어른 될까 봐 공부 열심히 할게요 ^^" }
+                                ]
+                            },
+                            {
+                                nick: "Crepe_Boss", time: "10분 전", like: 3100, dislike: 0, isPunished: false,
+                                content: "당가동 크레페 사장입니다. 쿠쿠 카드 들고 오는 꼬마 손님들한테는 무조건 딸기랑 생크림 2배로 올려줍니다. '잘 먹겠습니다!' 하고 인사하는데 얼마나 예쁜지 몰라요. 시장님 덕분에 장사할 맛 납니다.",
+                                replies: [
+                                    { nick: "Good_Shop", content: "사장님 멋지십니다! 저도 돈쭐 내러 갈게요." }
+                                ]
+                            },
+                            {
+                                nick: "Liyuu_Official", isOfficial: true, time: "15분 전", like: 12000, dislike: 0, isPunished: false,
+                                content: "제 말 한마디가 이렇게 멋진 정책이 되다니... 효빈시의 아이들은 정말 행복하겠어요! 💙 시장님, 다음에 가면 제가 아이들에게 크레페 쏠게요! (私の言葉一つがこんな素敵な政策になるなんて... ヒョビン市の子供たちは本当に幸せですね！)",
+                                replies: [
+                                    { nick: "Mayor_Hyobin", isOfficial: true, content: "Liyuu 님... (입틀막) 오시면 아이들과 함께 환영하겠습니다! 성덕이라 행복해요!" },
+                                    { nick: "Keke_Fan", content: "와 본인 등판 ㅋㅋㅋ 시장님 심장 괜찮으신가요?" }
+                                ]
+                            },
+                            {
+                                nick: "Villain_A(IP)", time: "20분 전", like: 2, dislike: 4200, isPunished: true,
+                                content: "저거 다 세금 낭비다! 애들한테 돈 쓰는 척하면서 지 지지율 올리는 거지! 위선자 박효빈! 내가 나가면 다 폭로한다!",
+                                replies: [
+                                    { nick: "Prison_Guard", content: "20대 방 조용히 해라. 통매음으로 형량 늘어나고 싶냐?" },
+                                    { nick: "Citizen_C", content: "님 밥값으로 나가는 세금이 더 아까움." }
+                                ]
+                            },
+                            {
+                                nick: "Teacher_Kim", time: "25분 전", like: 2500, dislike: 0, isPunished: false,
+                                content: "학교 선생님입니다. 급식 카드 디자인이 예뻐지니까 아이들이 숨기지 않고 당당하게 꺼내더라고요. 낙인효과 없앤 게 진짜 신의 한 수입니다. 행정은 이렇게 하는 거죠.",
+                                replies: [
+                                    { nick: "Education_Dept", content: "선생님 감사합니다. 학교 현장에서도 많은 지도 부탁드립니다." }
+                                ]
+                            },
+                            {
+                                nick: "Kasumin_Fan", time: "30분 전", like: 2200, dislike: 0, isPunished: false,
+                                content: "사가라 마유(카스미 성우) 님도 이 소식 듣고 '귀여움은 정의!'라면서 엄청 좋아하셨대요 ㅋㅋ 다음엔 '쿠쿠 클로젯(의류 지원)'도 만들어주세요!",
+                                replies: [
+                                    { nick: "Mayor_Hyobin", isOfficial: true, content: "좋은 아이디어입니다. 메모하겠습니다. (진지)" },
+                                    { nick: "Budget_Team", content: "시장님... 살려주세요... (야근 확정)" }
+                                ]
+                            },
+                            {
+                                nick: "Taxpayer", time: "35분 전", like: 2800, dislike: 2, isPunished: false,
+                                content: "내 세금이 윤재훈 밥값이 아니라 아이들 크레페 값으로 쓰인다니 기분 좋네. 세금 낼 맛 난다.",
+                                replies: []
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let officialMark = cmt.isOfficial ? `<span class="official-mark">V</span>` : "";
+                            let nickStyle = cmt.isOfficial ? "text-[#00a2e8]" : (cmt.isPunished ? "text-red-600" : "");
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.isOfficial ? "bg-blue-50 border border-blue-200" : "bg-gray-50 border border-gray-200";
+                                    const rNickStyle = reply.isOfficial ? "text-[#00a2e8]" : "text-[#0055aa]";
+                                    const rOfficialMark = reply.isOfficial ? `<span class="official-mark">V</span>` : "";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}${rOfficialMark}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}${officialMark} ${cmt.isPunished ? '(IP 차단됨)' : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="news_happy_kuku_card.html" class="ranking-link font-bold text-[#0055aa]">해피 쿠쿠 카드, 아이들의 웃음</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_dangga_revival.html" class="ranking-link">당가동 '파스텔 기적'의 전말</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_haf_seiyu_visit.html" class="ranking-link">韓日 성우 18인 도시철도 습격</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_japan_otaku.html" class="ranking-link">日 SNS서 효빈시 인기 급상승</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, '망고 구걸' 굴욕</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈복지재단</div>
+                    <div class="text-xs">해피 쿠쿠 카드 후원하기<br>아이들에게 달콤함을 선물하세요</div>
+                </div>
+            </div>
+             <div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-600 mb-1">당가동 상가번영회</div>
+                    <div class="text-xs text-blue-400">쿠쿠 카드 소지 아동<br>전 메뉴 사이즈업 무료</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

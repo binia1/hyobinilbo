@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 윤재훈 '징역 6월' 실형 선고... 박효빈 향해 "죽여버리겠다" 욕설 난동 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #0055aa; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+        .article-image { width: 100%; margin: 30px 0; }
+        .article-image img { width: 100%; height: auto; border: 1px solid #eee; }
+        .img-caption { font-size: 13px; color: #777; margin-top: 10px; text-align: center; }
+
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #0055aa; width: 20px; }
+        .rank-text { color: #333; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .rank-text:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center max-w-[1100px]">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-3xl font-black text-[#0055aa] tracking-tighter" style="font-family: 'Nanum Myeongjo';">효빈일보</a>
+                <span class="text-xs text-gray-400 mt-2">The Hyobin Daily News | Since 1995</span>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" placeholder="기사 검색" class="border border-gray-300 px-2 py-1 text-xs w-40">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-xs">검색</button>
+            </div>
+        </div>
+        <div class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 기사 영역 -->
+        <div class="main-content">
+            <div class="text-[#0055aa] font-bold text-sm mb-2">사회 > 법원/검찰</div>
+            <h1 class="article-title">[속보] 윤재훈 '징역 6월' 실형 선고... 박효빈 향해 "죽여버리겠다" 욕설 난동</h1>
+            <div class="article-subtitle">
+                재판부 "TV 토론회서 반인륜적 혐오 발언 및 물리적 방해... 민주주의 근간 흔들어"<br>
+                학폭 가해자가 피해자 조롱, 다문화 비하 등 죄질 극히 불량... 도주 우려 있어 법정구속<br>
+                선고 직후 "박효빈 개XX야!" 고성... 교도관에게 끌려나가며 재판장 아수라장
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2023.04.02 10:30 | 수정 2023.04.02 11:45</span>
+                <span>법조팀 (court@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="https://dummyimage.com/600x400/0055aa/fff&text=Court+Ruling+Report" alt="효빈지방법원 앞에서 호송차에 오르는 윤재훈의 모습을 그린 삽화">
+                    <div class="img-caption">▲ 2일 오전, 공직선거법 위반 혐의로 실형을 선고받은 윤재훈 씨가 법무부 호송 버스에 탑승하고 있다. (자료사진)</div>
+                </div>
+
+                <p>
+                    <span class="text-[#0055aa] font-bold">"피고인은 선거라는 신성한 민주주의 절차를 개인의 화풀이 장소로 전락시켰습니다. 이에 징역 6월의 실형을 선고하고 도주 우려가 있어 법정 구속합니다."</span>
+                </p>
+                <p>
+                    지난해 6.2 지방선거 TV 토론회에서 초유의 '방송 중단 사태'를 일으켰던 윤재훈(29) 전 국민의힘 효빈시장 후보에게 실형이 선고됐다. 효빈지방법원 형사합의1부(부장판사 김정의)는 2일 공직선거법 위반(후보자 비방, 선거 자유 방해) 및 폭행 미수 혐의로 기소된 윤 씨에게 <strong>징역 6월</strong>을 선고했다.
+                </p>
+                <p>
+                    재판부는 판결문에서 "피고인은 생방송 중인 TV 토론회에서 상대 후보인 박효빈 시장에게 '기생충', '잡종' 등 입에 담기 힘든 혐오 발언을 쏟아냈다"며 "특히 본인이 과거 학교폭력 가해자였음에도 피해자인 박 시장의 상처를 조롱거리로 삼은 것은 인간으로서 지켜야 할 최소한의 선을 넘은 행위"라고 질타했다. 또한 "책상을 걷어차고 물리적 위협을 가해 3초간 방송 송출이 중단되는 사고를 유발한 점은 선거의 공정성을 파괴한 중대 범죄"라고 양형 이유를 밝혔다.
+                </p>
+                <p>
+                    <strong>◆ 박효빈 향해 "개XX야 죽여버린다" 욕설... 주민우 전 의원도 가세</strong><br>
+                    선고가 내려지자 법정은 순식간에 아수라장이 됐다. 실형 선고에 격분한 윤 씨는 피고인석에서 박효빈 시장(참관하지 않음)을 찾는 듯 두리번거리다, 방청석을 향해 <strong>"박효빈 이 개XX야! 니가 나를 감옥에 보내? 내가 나가면 너 죽여버릴 거야!"</strong>라며 입에 담지 못할 욕설을 퍼부었다.
+                </p>
+                <p>
+                    교도관들이 그를 제압해 끌고 나가는 과정에서도 윤 씨는 "우리 아빠가 누군지 아냐! 놔라! 전화기 내놔!"라고 소리치며 발길질을 하는 등 난동을 멈추지 않았다.
+                </p>
+                <p>
+                    한편, 이날 법정에는 <strong>주민우 전 의원</strong>도 모습을 드러냈다. 지난 2022년 2월 1일 선거법 위반 벌금형 확정으로 의원직을 상실(당선무효)한 주 전 의원은, 윤 씨가 끌려나가자 기자들 앞에서 "이것은 명백한 정치적 보복이다!"라고 목소리를 높였다.
+                </p>
+                <p>
+                    주 전 의원은 "나도 억울하게 배지를 뺏겼고, 이제는 윤재훈까지 죽이려 한다"며 "박효빈과 그 추종 세력이 사법부를 장악해 보수를 씨를 말리려 하는 작태"라고 윤 씨를 강력하게 옹호했다.
+                </p>
+                <p>
+                    이번 판결이 확정될 경우, 윤 씨는 피선거권이 박탈되어 공직 선거에 출마할 수 없게 된다. 윤 씨 측 변호인은 "정치적 표현의 자유를 억압한 과도한 판결"이라며 즉각 항소할 뜻을 밝혔다.
+                </p>
+            </div>
+
+            <!-- 2023년 4월 당시 댓글창 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#0055aa] text-sm font-normal ml-2">2023.04.02 베스트 댓글</span> <span class="text-xs text-gray-400">총 23,405개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="인터넷 예절을 지켜주세요. 명예훼손, 무단광고 등은 삭제될 수 있습니다."></textarea>
+                    <button class="cmt-btn" onclick="addComment()">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list">
+                    <!-- 댓글 리스트는 스크립트로 로드됨 -->
+                </div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기 (1/2300)</button>
+                </div>
+                
+                <script>
+                    const comments = [
+                        {
+                            id: 1, nick: "사법정의구현", date: "2023-04-02 10:35",
+                            content: "징역 6월? 장난하냐? 방송에서 사람 죽이겠다고 난동 부리고 인격 살인했는데 고작 6개월? 검사가 구형을 얼마나 개판으로 했으면 판사가 이것밖에 못 때리냐. 유전무죄 무전유죄네.",
+                            like: 28420, dislike: 150,
+                            replies: [
+                                { id: 'r1-1', nick: "법조인", content: "솔직히 이 정도 죄질이면 최소 1년 6개월에서 2년은 나와야 정상임. 6개월은 진짜 '봐주기' 냄새가 너무 난다.", like: 5400, dislike: 10 },
+                                { id: 'r1-2', nick: "효빈시민", content: "윤대환 라인 검사들이 아직도 꽉 잡고 있나 보네. 그래도 실형 나와서 구속된 게 어디냐. 꼴 좋다.", like: 3100, dislike: 5 },
+                                { id: 'r1-3', nick: "재훈왕자96", content: "(관리자에 의해 삭제된 댓글입니다 - 구치소 수감 중 접속 불가)", like: 0, dislike: 0 },
+                                { id: 'r1-4', nick: "친위대장", content: "우리 대장님 건드리지 마라! 6개월 금방이다. 나오시면 복수할 거다!", like: 5, dislike: 4500 },
+                                { id: 'r1-5', nick: "팩트폭격", content: "응~ 피선거권 박탈이야~ 10년 동안 정치 못 해~ 꿈 깨~", like: 2200, dislike: 2 }
+                            ]
+                        },
+                        {
+                            id: 2, nick: "술톤주민우", date: "2023-04-02 10:40",
+                            content: "이건 정치적 살인이다!! 내가 작년 2월에 말도 안 되는 벌금형으로 배지 뺏길 때부터 알아봤어! 박효빈 저 독재자가 사법부까지 주무르는구나! 재훈아 형이 구해줄게! 우리가 보수의 희망이다!",
+                            like: 80, dislike: 5600,
+                            isTroll: true,
+                            replies: [
+                                { id: 'r2-1', nick: "중구주민", content: "아저씨... 술이나 깨세요. 님 선거법 위반해서 잘린 거 온 동네가 다 아는데 뭔 정치 탄압 타령이세요.", like: 1500, dislike: 2 },
+                                { id: 'r2-2', nick: "동구할매", content: "둘이 아주 쌍으로 난리네. 감옥 가서 둘이 회담이나 해라.", like: 1200, dislike: 1 },
+                                { id: 'r2-3', nick: "술톤주민우", content: "닥쳐!! 내가 다시 국회 들어가면 니들 다 고소할 거야!! 재훈이랑 같이 효빈을 뒤집어엎을 거라고!!", like: 10, dislike: 2800 },
+                                { id: 'r2-4', nick: "검찰", content: "주민우 씨, 허위사실 유포 및 명예훼손 혐의 추가되셨습니다.", like: 3500, dislike: 0 },
+                                { id: 'r2-5', nick: "ㅋㅋㅋ", content: "엔딩 맛집이네 ㅋㅋㅋ", like: 800, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 3, nick: "성덕박효빈", date: "2023-04-02 11:00",
+                            content: "끌려나가면서 '박효빈 죽여버린다'고 욕했다며? ㅋㅋㅋ 진짜 인성 밑바닥 인증하네. 시장님은 너 신경도 안 써. 8호선 뚫느라 바쁘시거든. 감옥에서 반성문이나 써라.",
+                            like: 8900, dislike: 50,
+                            replies: [
+                                { id: 'r3-1', nick: "러브라이버", content: "시장님을 욕하다니... '니코니코니' 펀치 맞고 싶냐? 애니 하나도 안 보고 감옥에 있으려니 심심하겠네.", like: 300, dislike: 20 },
+                                { id: 'r3-2', nick: "재훈왕자96(유령)", content: "나 나가면 피규어 다 부숴버릴 거야!! 두고 봐!!", like: 1, dislike: 1200 },
+                                { id: 'r3-3', nick: "교도관", content: "수용자 번호 2304, 조용히 해라. 징벌방 가고 싶나?", like: 4500, dislike: 0 },
+                                { id: 'r3-4', nick: "법대생", content: "협박죄 추가요~ 형기 늘어나겠네 축하해 ^^", like: 1500, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 4, nick: "변호사", date: "2023-04-02 11:15",
+                            content: "판결문에 '인간으로서의 선을 넘었다'고 적힌 건 진짜 이례적임. 판사도 윤재훈이 얼마나 악질인지 안 거지. 근데 6개월은 진짜... 구형이 얼마나 낮았으면...",
+                            like: 4500, dislike: 10,
+                            replies: [
+                                { id: 'r4-1', nick: "목격자", content: "법정에서 '아빠' 찾으면서 우는데 진짜 가관이더라. 나이 서른 먹고 쪽팔리지도 않나 봐.", like: 1200, dislike: 0 },
+                                { id: 'r4-2', nick: "심리학자", content: "나르시시스트의 전형적인 붕괴 현상입니다. 자신의 패배를 인정 못 하고 부모나 외부 탓을 하는 거죠.", like: 800, dislike: 0 },
+                                { id: 'r4-3', nick: "술톤주민우", content: "우리 재훈이가 얼마나 착한데!! 니들이 몰라서 그래!! 걔는 효빈의 보물이야!!", like: 2, dislike: 1500 },
+                                { id: 'r4-4', nick: "환경미화원", content: "보물이 아니라 폐기물이죠 아저씨.", like: 2200, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 5, nick: "학폭피해자모임", date: "2023-04-02 11:30",
+                            content: "윤재훈이 박효빈 시장에게 욕설을 퍼붓는 걸 보고 소름이 돋았습니다. 반성은커녕 살의를 품고 있네요. 6개월 뒤에 나와서 무슨 짓을 할지 두렵습니다.",
+                            like: 6200, dislike: 5,
+                            replies: [
+                                { id: 'r5-1', nick: "시민", content: "걱정 마세요. 우리가 지켜줄 겁니다. 그리고 전과자 되면 힘 못 써요.", like: 500, dislike: 0 },
+                                { id: 'r5-2', nick: "경찰", content: "신변보호 요청하시면 즉시 조치하겠습니다.", like: 1200, dislike: 0 },
+                                { id: 'r5-3', nick: "친위대장", content: "밤길 조심해라... 우리 재훈 님 건드린 대가는 톡톡히 치를 거다.", like: 1, dislike: 3500 },
+                                { id: 'r5-4', nick: "사이버수사대", content: "해당 댓글 협박 혐의로 추적 시작합니다.", like: 4000, dislike: 0 }
+                            ]
+                        },
+                        {
+                            id: 6, nick: "8호선존버", date: "2023-04-02 11:50",
+                            content: "주민우 저 양반은 아직도 정신 못 차렸네 ㅋㅋ 22년 2월에 의원직 날라가고 백수 됐으면서 윤재훈 꽁무니만 쫓아다니네. 둘이 손잡고 콩밥이나 먹어라.",
+                            like: 3500, dislike: 20,
+                            replies: [
+                                { id: 'r6-1', nick: "술톤주민우", content: "백수 아니야!! 나 유학파야!! 고문이라고 불러!!", like: 3, dislike: 1200 },
+                                { id: 'r6-2', nick: "팩트", content: "응 무직~", like: 800, dislike: 0 }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    
+                    comments.forEach(cmt => {
+                        const div = document.createElement('div');
+                        div.className = `comment-item ${cmt.isTroll ? 'troll' : ''}`;
+                        
+                        let repliesHtml = '';
+                        if(cmt.replies.length > 0) {
+                            repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:none;" id="reply-${cmt.id}">`;
+                            cmt.replies.forEach(rp => {
+                                const style = rp.nick === '재훈왕자96' || rp.nick === '재훈왕자96(유령)' || rp.nick === '술톤주민우' ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;';
+                                repliesHtml += `
+                                    <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0" id="comment-${rp.id}">
+                                        <div class="text-sm mb-1"><span class="font-bold" style="${style}">└ ${rp.nick}</span>: ${rp.content}</div>
+                                        <div class="text-xs text-gray-500 flex gap-2">
+                                            <span class="vote-btn" onclick="toggleVote(this, '${rp.id}', 'like')">공감 <span class="count">${rp.like.toLocaleString()}</span></span>
+                                            <span class="vote-btn" onclick="toggleVote(this, '${rp.id}', 'dislike')">비공감 <span class="count">${rp.dislike.toLocaleString()}</span></span>
+                                        </div>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+                        }
+
+                        let replyButtonHtml = cmt.replies.length > 0 ? 
+                            `<span class="vote-btn" onclick="toggleReply('reply-${cmt.id}')">답글 ${cmt.replies.length}</span>` : '';
+
+                        div.innerHTML = `
+                            <div class="comment-nick" id="comment-${cmt.id}">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date}</span></div>
+                            <p class="comment-content">${cmt.content.replace(/\n/g, '<br>')}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this, '${cmt.id}', 'like')">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this, '${cmt.id}', 'dislike')">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                ${replyButtonHtml}
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+
+                    function toggleReply(id) {
+                        const el = document.getElementById(id);
+                        if (el.style.display === 'block') el.style.display = 'none';
+                        else el.style.display = 'block';
+                    }
+                    
+                    function toggleVote(btn, id, type) {
+                        const parent = btn.parentElement;
+                        const likeBtn = parent.querySelector(`span[onclick*="'like'"]`);
+                        const dislikeBtn = parent.querySelector(`span[onclick*="'dislike'"]`);
+                        
+                        const likeCountSpan = likeBtn.querySelector('.count');
+                        const dislikeCountSpan = dislikeBtn.querySelector('.count');
+                        
+                        let likeCount = parseInt(likeCountSpan.innerText.replace(/,/g, ''));
+                        let dislikeCount = parseInt(dislikeCountSpan.innerText.replace(/,/g, ''));
+                        
+                        if (type === 'like') {
+                            if (likeBtn.classList.contains('active')) {
+                                likeCount--;
+                                likeBtn.classList.remove('active');
+                            } else {
+                                likeCount++;
+                                likeBtn.classList.add('active');
+                                if (dislikeBtn.classList.contains('active')) {
+                                    dislikeCount--;
+                                    dislikeBtn.classList.remove('active');
+                                }
+                            }
+                        } else if (type === 'dislike') {
+                            if (dislikeBtn.classList.contains('active')) {
+                                dislikeCount--;
+                                dislikeBtn.classList.remove('active');
+                            } else {
+                                dislikeCount++;
+                                dislikeBtn.classList.add('active');
+                                if (likeBtn.classList.contains('active')) {
+                                    likeCount--;
+                                    likeBtn.classList.remove('active');
+                                }
+                            }
+                        }
+                        
+                        likeCountSpan.innerText = likeCount.toLocaleString();
+                        dislikeCountSpan.innerText = dislikeCount.toLocaleString();
+                    }
+
+                    function addComment() {
+                        alert("댓글이 등록되었습니다.");
+                    }
+                </script>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <!-- 2023년 4월 당시 이슈 뉴스 -->
+            <div class="rank-news">
+                <div class="rank-title">많이 본 뉴스 (2023.04.02)</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_court_ruling.html'">[속보] 윤재훈 징역 6월 법정구속... 박효빈 향해 욕설 난동</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text" onclick="alert('기사 준비 중')">주민우 전 의원 "윤재훈 구속은 정치 보복"... 법원 앞 시위</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text" onclick="alert('기사 준비 중')">박효빈 시장, "사법부 판단 존중... 시정에 집중하겠다"</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text" onclick="alert('기사 준비 중')">윤대환 전 시장, 아들 실형 소식에 '혼절'... 응급실 이송</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text" onclick="alert('기사 준비 중')">효빈시 벚꽃 축제 인산인해... '박효빈 효과' 상권 활짝</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text" onclick="alert('기사 준비 중')">효빈교통공사, 8호선 조기 개통 위한 TF팀 발족</span></li>
+                    <li><span class="rank-num">7</span> <span class="rank-text" onclick="alert('기사 준비 중')">국민의힘 효빈시당 "윤재훈 개인 일탈... 당과 무관" 꼬리 자르기?</span></li>
+                    <li><span class="rank-num">8</span> <span class="rank-text" onclick="alert('기사 준비 중')">효빈대학교, '윤재훈 규탄' 대자보 릴레이... "학교 망신 그만"</span></li>
+                    <li><span class="rank-num">9</span> <span class="rank-text" onclick="alert('기사 준비 중')">학폭 피해자 연대 "징역 6월은 너무 짧다... 항소 촉구"</span></li>
+                    <li><span class="rank-num">10</span> <span class="rank-text" onclick="alert('기사 준비 중')">[사설] TV 토론장 난동, 실형 선고는 민주주의의 경고</span></li>
+                </ul>
+            </div>
+
+            <!-- 배너 -->
+            <div style="background: #fff0f0; height: 250px; display: flex; justify-content: center; align-items: center; border: 1px solid #ffcccc; text-align: center; padding: 20px;">
+                <div>
+                    <div class="font-bold text-lg mb-2" style="color:#d9534f;">법무부 교정본부</div>
+                    <div class="text-sm mb-4">준법 정신은<br>민주시민의 기본입니다</div>
+                    <button class="bg-gray-600 text-white px-4 py-2 text-sm rounded" onclick="alert('법무부 홈페이지로 이동합니다.')">준법 캠페인 보기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <div class="flex gap-4 mb-4">
+                <a href="#" class="hover:text-white">회사소개</a>
+                <a href="#" class="hover:text-white">구독신청</a>
+                <a href="#" class="hover:text-white">고충처리인</a>
+            </div>
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈</p>
+            <p>Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

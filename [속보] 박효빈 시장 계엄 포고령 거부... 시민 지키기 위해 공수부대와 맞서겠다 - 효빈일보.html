@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 박효빈 시장 "계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; cursor: pointer; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; padding-top: 40px; }
+        .main-content { flex: 2.5; background: white; border: 1px solid #e2e2e2; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 700; line-height: 1.3; color: #111; margin-bottom: 15px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; margin-bottom: 25px; line-height: 1.5; border-left: 4px solid #d9534f; padding-left: 15px; }
+        .article-meta { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; text-align: justify; }
+        .article-body p { margin-bottom: 20px; word-break: break-all; }
+        .article-body strong { font-weight: 700; color: #000; }
+
+        .breaking-badge { background-color: #d9534f; color: white; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+        
+        .cmt-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 30px; }
+        .cmt-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cmt-box { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin-bottom: 30px; }
+        .cmt-input { width: 100%; height: 80px; border: 1px solid #ccc; padding: 10px; font-size: 14px; resize: none; }
+        .cmt-btn { background: #0055aa; color: white; padding: 8px 20px; font-size: 14px; border: none; cursor: pointer; float: right; margin-top: 10px; }
+        
+        .comment-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .comment-nick { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 5px; }
+        .comment-content { font-size: 15px; color: #444; line-height: 1.5; margin-bottom: 8px; }
+        .comment-item.troll { background-color: #fff5f5; border: 1px solid #ffcccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-item.troll .comment-nick { color: #d9534f; font-family: 'Gulim', sans-serif; }
+        .comment-item.troll .comment-content { font-weight: 500; color: #a94442; letter-spacing: -0.5px; }
+        
+        .vote-btn { cursor: pointer; color: #888; font-size: 12px; margin-right: 10px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 3px; display: inline-flex; items-center: center; gap: 4px; }
+        .vote-btn:hover { background: #f0f0f0; color: #0055aa; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; border-color: #0055aa; background-color: #e6f0ff; }
+
+        .rank-news { background: white; border: 1px solid #e2e2e2; padding: 20px; }
+        .rank-title { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 15px; font-size: 16px; }
+        .rank-list li { margin-bottom: 12px; font-size: 14px; display: flex; gap: 10px; }
+        .rank-num { font-weight: bold; color: #d9534f; width: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html" class="active">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content">
+            <div class="text-[#d9534f] font-bold text-sm mb-2">속보 > 정치</div>
+            <h1 class="article-title"><span class="breaking-badge">속보</span>박효빈 시장 "계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다"</h1>
+            <div class="article-subtitle">
+                3일 밤 11시 50분 긴급 성명... "위헌적 계엄령에 시 행정력 협조 거부"<br>
+                "8호선은 하늘 위 고가 철도, 지하시설 망상은 정신병"... 시청 진입로 봉쇄<br>
+                시 공무원 전원 비상 소집 "시민 체포하려는 군인 막아라" 지시
+            </div>
+            
+            <div class="article-meta">
+                <span>입력 2024.12.03 23:55 | 수정 2024.12.04 00:10</span>
+                <span>사회부 이덕북 기자 (society@hyobinilbo.com)</span>
+            </div>
+
+            <div class="article-body">
+                <div class="article-image">
+                    <img src="이미지/박효빈불복종.png" alt="효빈시청 현관 앞에서 스크럼을 짜고 계엄군과 대치 중인 박효빈 시장과 공무원들" onerror="this.src='https://via.placeholder.com/600x400?text=Civil+Disobedience'">
+                    <div class="img-caption">▲ 박효빈 효빈시장이 3일 밤 시청 정문 앞에서 공무원, 시민들과 함께 계엄군의 진입을 막아서고 있다.</div>
+                </div>
+
+                <p>
+                    <span class="text-[#d9534f] font-bold">"나를 밟고 가라. 내 목숨이 붙어있는 한 단 한 명의 시민도, 단 하나의 전철역도 내어줄 수 없다."</span>
+                </p>
+                <p>
+                    박효빈 효빈시장이 윤석열 대통령의 비상계엄 선포에 대해 '전면 불복종'을 선언했다. 박 시장은 3일 밤 11시 50분, 효빈시청 정문 앞에서 긴급 기자회견을 열고 "이번 계엄령은 헌법적 요건을 갖추지 못한 명백한 내란 행위"라며 "효빈시는 불법적인 계엄 포고령을 거부하며, 계엄군의 어떠한 지시에도 따르지 않겠다"고 천명했다.
+                </p>
+                <p>
+                    특히 대통령실이 계엄 선포의 주요 명분으로 <strong style="color:#9856FF">효빈 도시철도 8호선</strong>을 '지하 비밀 벙커의 전파 교란 기지'라고 지목한 것에 대해, 박 시장은 "8호선은 전 구간이 지상 10m 위에 떠 있는 <strong>고가 경전철(Sky Rail)</strong>이다. 하늘에 떠 있는 철도를 두고 지하 벙커 운운하는 것은 이 정권이 현실 감각을 상실한 망상 집단임을 자인하는 꼴"이라고 일갈했다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#d9534f] pl-3">"8호선 통제실 침탈은 시민 생명 위협... 사수할 것"</h3>
+                <p>
+                    현재 계엄사령부 소속 공수부대 병력이 <strong style="color:#9856FF">8호선</strong> 고가 역사와 종합관제센터, 시청 진입을 시도하고 있다. 이에 박 시장은 시 산하 전 공무원에게 비상 소집 명령을 내리고, 시청 청사 방호와 도시철도 역사 사수를 지시했다.
+                </p>
+                <p>
+                    박 시장은 "군인이 고가 선로 위 관제실에 난입해 전력을 차단하면 10m 상공을 운행 중인 열차가 멈춰 대형 추락 참사가 날 수 있다. 시장으로서 이를 방관할 수 없다"고 강조했다.
+                </p>
+
+                <h3 class="font-bold text-lg mt-8 mb-3 text-black border-l-4 border-[#d9534f] pl-3">시민들 "시장님 지키자" 시청으로 집결</h3>
+                <p>
+                    박 시장의 불복종 선언이 전해지자, 야간 통행 금지령(포고령)에도 불구하고 수천 명의 효빈 시민들이 시청 앞 광장으로 몰려나왔다. 이들은 공수부대 장갑차 앞을 가로막고 "계엄 철폐", "윤석열 체포"를 외치며 인간 띠를 형성했다.
+                </p>
+                <p>
+                    한편, 계엄군 측은 "박효빈 시장을 내란 선동 및 계엄법 위반 혐의로 현행범 체포하겠다"고 경고 방송을 하고 있어 물리적 충돌이 초읽기에 들어갔다.
+                </p>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="cmt-section">
+                <div class="cmt-header">
+                    <span>네티즌 의견 <span class="text-[#d9534f] text-sm font-normal ml-2">실시간 폭주</span> <span class="text-xs text-gray-400">총 3,829,102개</span></span>
+                    <button class="text-xs text-gray-500 border p-1">최신순</button>
+                </div>
+                
+                <div class="cmt-box">
+                    <textarea class="cmt-input" placeholder="비상계엄 하에서는 유언비어 유포 시 처벌받을 수 있습니다."></textarea>
+                    <button class="cmt-btn" onclick="alert('계엄법에 의거하여 댓글 작성이 제한되었습니다.')">등록</button>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div id="comment-list"></div>
+                
+                <div class="text-center mt-6">
+                    <button class="border border-gray-300 px-10 py-2 text-sm text-gray-600 bg-white hover:bg-gray-50 font-bold">댓글 더보기</button>
+                </div>
+                
+                <script>
+                    const commentData = [
+                        {
+                            nick: "재훈왕자96", date: "2024-12-03 23:58",
+                            content: "박효빈 이 빨갱이 새끼야!! 드디어 본색을 드러내는구나! 니가 바로 내란 수괴였어!! 감히 '국가 원수'인 대통령님의 신성한 명령을 거부해? 계엄군 형님들 뭐 하십니까!! 박효빈 당장 머리끄덩이 잡고 끌어내서 광화문 광장에서 효수형 시키세요!! 내가 2.2% 받은 건 내 잘못이 아니라 다 저 빨갱이가 8호선 지하 벙커에서 전파 빔 쏴서 내 표 삭제해서 그런 거라고!! 억울해서 미치겠다!! 탱크로 밀어버려!! 시청에 있는 놈들 다 간첩이야!!",
+                            replies: [
+                                { nick: "용산대변인", content: "박효빈의 행위는 헌법 질서를 부정하는 명백한 국가 반역입니다. 즉시 사살 명령도 불사하겠습니다. 윤재훈 동지의 피맺힌 억울함, 오늘 밤에 확실하게 다 풀어드리겠습니다. 효빈시를 빨갱이들로부터 정화합시다." },
+                                { nick: "술톤주민우", content: "재훈아 형이 간다!! 야전삽 날카롭게 갈아서 챙겼다!! 시청 뒷문 내가 따놨다!! 오늘 박효빈 목 따서 대통령님께 바치고 청와대 영빈관에서 폭탄주 말아먹자!! 충성 충성 충성!!" },
+                                { nick: "우신면", content: "8호선 고가 철도는 위장막이야!! 그 기둥 속으로 들어가면 지하 5km에 김정은이 파놓은 땅굴이랑 연결된다!! 내가 지도 다 그려놨어!! 당장 폭파해!! 버스의 시대가 온다!! 내 땅값 복구시켜!!" },
+                                { nick: "시민A", content: "니들이 사람이냐? 전쟁 났냐? 2.2% 받은 게 억울해서 85% 받은 시장을 죽이자고? 진짜 악마가 따로 없다. 윤재훈 너는 지옥에나 가라. 천벌 받을 놈들." },
+                                { nick: "지지자", content: "박효빈 시장님 털끝 하나라도 건드리면 효빈 시민 150만이 전부 들고일어난다. 군인들, 당신들 부모 형제가 여기 있다. 총구 돌려라. 시민을 쏘면 니들도 평생 살인자다." },
+                                { nick: "용산경호처", content: "댓글 단 놈들 IP 다 따놨다. 곧 헌병대 들이닥칠 테니 기다려라. 반동분자들은 싹 다 청소한다." },
+                                { nick: "효빈맘", content: "애들이 보고 있어요... 제발 그만하세요... 어떻게 같은 나라 사람끼리 죽이겠다고..." },
+                                { nick: "멸공의횃불", content: "효빈맘? 너도 빨갱이 맘충이네! 애새끼들도 싹 다 수용소 보내서 사상을 개조해야 돼! 박효빈을 찢어 죽이자!!" },
+                                { nick: "팩트폭격기", content: "고가 경전철 기둥 속에 지하 5km 땅굴? ㅋㅋㅋ SF 영화 찍냐? 뇌가 우동사리냐? 제발 병원 좀 가라." },
+                                { nick: "천공의제자", content: "박효빈의 기운이 검다. 오늘 밤에 피를 보아야 나라의 운이 트인다. 서쪽에서 온 귀인을 맞이하라." }
+                            ]
+                        },
+                        {
+                            nick: "애국보수청년단", date: "2024-12-04 00:00",
+                            content: "박효빈 정체 밝혀졌다! 북한 김정은한테 지령 받고 효빈시에 지하 땅굴 파서 남침 루트 만든 간첩이다! 8호선 고가 철도는 눈속임이고 그 콘크리트 기둥 안에 핵미사일 숨겨둔 거 다 안다! 스위치만 누르면 서울로 날아간다! 당장 체포해서 사형시켜라! 효빈 시민들아 속지 마라! 저놈은 대한민국을 적화통일시키려는 괴수다! 계엄군 환영합니다! 쓸어버리세요!",
+                            replies: [
+                                { nick: "자유수호", content: "맞습니다! 박효빈 눈빛 봐라. 저게 사람 눈빛이냐? 살기가 가득하다. 100% 간첩이다. 즉결 처형이 답이다. 탱크로 밀어서 쥐포를 만들어야 함." },
+                                { nick: "팩트체크", content: "와... 고가 철도 기둥에 핵미사일? ㅋㅋㅋ 상상력 대장이네. 너네 집 기둥엔 외계인 숨어있냐? 망상병 환자들은 병원으로 가세요. 군대 부르지 말고. 세금 아깝다." },
+                                { nick: "효빈시민", content: "너네 같은 가짜 보수들이 나라를 망치는 거야. 8호선 기둥이 미사일이면 내가 아이언맨이다 미친놈들아. 제발 현실을 살아라." },
+                                { nick: "재훈왕자96", content: "내가 봤어!! 박효빈이 밤마다 8호선 기둥 끌어안고 '수령님' 하고 우는 거 내가 봤다고!! 저거 다 핵폭탄이야!! 터지기 전에 선제 타격해!!" },
+                                { nick: "정상인", content: "윤재훈씨... 약 드실 시간 지났어요... 간호사님 여기 환자 탈출했어요." },
+                                { nick: "용산작전과", content: "첩보 확인됨. 8호선 전 구간 타격 지점으로 설정. 미사일 발사 승인 대기 중." },
+                                { nick: "시민K", content: "야 이 미친놈들아 도심 한복판에 미사일을 쏜다고? 다 죽자는 거냐? 니들이 북한군보다 더하다." },
+                                { nick: "우신면", content: "핵폭탄 터지면 내 땅값은? 아니지, 터지기 전에 내가 가서 해체한다! 내가 영웅이 될 거야!" },
+                                { nick: "정신과전문의", content: "집단적 망상 장애가 심각해 보입니다. 단체 입원이 시급합니다." },
+                                { nick: "학생", content: "교과서에서 배운 독재가 이런 거군요. 어른들이 부끄럽습니다." }
+                            ]
+                        },
+                        {
+                            nick: "효빈지킴이", date: "2024-12-04 00:01",
+                            content: "시장님 ㅠㅠ 제발 피하세요... 도망가세요... 저 무식한 군인들이 무슨 짓을 할지 모릅니다. 장갑차로 밀고 들어온대요. 시민들은 저희가 몸으로 막겠습니다. 시장님은 살아서 이 참상을 증언해 주셔야죠. 제발 무사하세요 ㅠㅠ",
+                            replies: [
+                                { nick: "박효빈시장", content: "(공식) 사랑하는 시민 여러분, 저는 도망가지 않습니다. 시장이 시민을 버리고 어디로 가겠습니까. 제가 제일 앞에서, 가장 먼저 맞겠습니다. 두려워하지 마십시오. 정의는 반드시 승리합니다. 우리는 이깁니다." },
+                                { nick: "용산경호처", content: "박효빈 위치 파악 완료. 타격대 진입 5분 전. 사살 준비. 저항하는 시민들도 전원 사살하라. 폭도는 인간이 아니다." },
+                                { nick: "시민K", content: "미쳤냐? 니들이 대한민국 군인이냐 북한군이냐? 자국민 시장을 사살하라고? 니들 제정신이야? 쏘는 순간 니들도 끝이야 이 살인마들아!!" },
+                                { nick: "용산안보실", content: "전시 상황이다. 반역자는 즉결 처형이 원칙이다. 작전을 방해하는 시민들도 내란 공범으로 간주, 경고 없이 조준 사격 허가한다. 다 죽여. 시체는 불태워라." },
+                                { nick: "재훈왕자96", content: "쏴라!!! 다 쏴죽여!!! 피의 축제를 열자!!! 꺄하하하하!! 내 2.2%의 한을 총알로 갚아주마!! 박효빈 목 잘라서 축구하자!!" },
+                                { nick: "분노한시민", content: "야 이 미친 대통령실 놈들아, 시민들을 다 죽이겠다고? 니들이 그러고도 보수냐? 니들은 그냥 학살자야. 역사책에 히틀러랑 동급으로 박제될 거다." },
+                                { nick: "예비군", content: "안보실 미친 새끼들아. 내가 낸 세금으로 산 총알을 우리한테 쏘겠다고? 야 예비군들 뭐하냐, 지금 당장 집에 있는 연장 다 들고 나와. 저놈들은 군인이 아니라 테러리스트다." },
+                                { nick: "술톤주민우", content: "예비군 저거 잡아!! IP 추적해서 가족까지 다 삼청교육대 보내!! 감히 각하의 군대에 대들어? 내가 야전삽으로 니들 머리통 다 깨버린다!! 뇌수를 마셔주마!!" },
+                                { nick: "효빈맘", content: "우리 아이들이 보고 있어요... 제발 그만하세요... 어떻게 정부가 국민을 죽이겠다고 협박을 해요... 이게 나라입니까..." },
+                                { nick: "용산작전과", content: "감성팔이 금지. 화염방사기 투입 준비 완료. 시청 광장 싹 태워버려. 소독이다. 벌레들은 태워 죽여야지." },
+                                { nick: "시민Z", content: "화염방사기? 진짜 악마가 지옥에서 올라왔구나. 니들 오늘 여기서 살아 못 나간다. 우리 시체 밟고 지나가 봐라. 끝까지 저항한다." }
+                            ]
+                        },
+                        {
+                            nick: "8호선기관사", date: "2024-12-04 00:10",
+                            content: "지금 <span style='color:#9856FF'>8호선</span> **지상 고가 관제센터** 상황입니다. 동료들과 문 잠그고 책상 쌓아서 바리게이트 쳤습니다. 밖에서 군인들이 개머리판으로 문 부수고 들어오려고 하는데, **여기 지상 10m 상공입니다!!** 전력 차단되면 달리는 열차 추락할 수도 있습니다!! 제발 멈추세요! 우린 조작 같은 거 할 줄 모릅니다! 다들 보이잖아요!! 여기가 무슨 지하 벙커입니까!!",
+                            replies: [
+                                { nick: "우신면", content: "거짓말 마라! 그 고가 철도 기둥 밑으로 땅굴 파서 북한이랑 연결된 거 다 안다! 눈에 보이는 게 다가 아니야!! 당장 문 열어!! 8호선은 빨갱이 소굴이다! 폭파가 답이다!! 다 떨어져 죽어라!!" },
+                                { nick: "재훈왕자96", content: "맞아!! 고가 철도는 홀로그램이야!! 진짜는 지하 500m에 있어!! 거기 핵폭탄 숨겨놨잖아!! 수류탄 까넣어!! 다 공범이야!! 몰살시켜!!" },
+                                { nick: "시민", content: "야 이 돌대가리들아... 8호선은 착공부터 완공까지 시민들이 눈으로 다 봤는데 뭔 개소리야... 님들 눈엔 저 콘크리트 기둥이 투명 엘리베이터로 보이냐? 병원부터 가라. 제발." },
+                                { nick: "공학박사", content: "고가 경전철 기둥에 핵미사일? ㅋㅋㅋ 물리적으로 불가능합니다. 공간도 안 나와요. 차라리 지구 평면설을 믿으세요. 무식이 통통 튀네." },
+                                { nick: "예비군", content: "관제센터 위치 어디입니까? 예비군들이 사다리차 타고 올라가서라도 돕겠습니다. 우리 가족이 타고 있습니다. 군인들, 민간인 건드리면 니들 다 죽는다." },
+                                { nick: "용산과학수사대", content: "홀로그램 가능성 배제 못 함. 일단 폭파 후 잔해 조사하겠다. 비켜라." },
+                                { nick: "승객", content: "지금 열차 안인데 밖에 군인들이 총 겨누고 있어요 ㅠㅠ 살려주세요... 애기가 울어요..." },
+                                { nick: "술톤주민우", content: "울지 마라! 곧 천국 보내줄게 ㅋㅋㅋ 다 죽어!!" },
+                                { nick: "철도동호회", content: "8호선은 우리들의 꿈이다. 건드리지 마라. 철덕들이여 집결하라!" },
+                                { nick: "시민X", content: "윤재훈, 우신면... 니들은 진짜 인간도 아니다. 악귀들이다." }
+                            ]
+                        },
+                        {
+                            nick: "창전동소금명인", date: "2024-12-04 00:15",
+                            content: "우리 시장님 잡아가면 나 오늘부로 소금 장사 접고 화염병 든다. 창전시장 상인회 전원 집결했다. 식칼 들고 나간다. 윤재훈 이 썩을 놈아, 니가 사람이면, 니가 밥 처먹고 사는 인간이면 이러면 안 되지. 하늘이 무섭지도 않냐? 시장통 할매들이 눈 시퍼렇게 뜨고 보고 있다. 천벌 받을 놈.",
+                            replies: [
+                                { nick: "재훈왕자96", content: "할망구 시끄러워! 곧 삼청교육대 부활시켜서 제일 먼저 보내줄게!! 가서 소금이나 뿌리면서 뺑이 쳐라 ㅋㅋㅋ 늙은 것들은 다 죽어야 돼! 냄새나는 시장 싹 밀어버리고 내 동상 세울 거야!" },
+                                { nick: "상인회", content: "시장으로 다 모여! 소금 말고 캡사이신 챙겨라! 눈에 뿌려버리게! 우리 시장님은 우리가 지킨다! 깡패 새끼들 오기만 해봐라! 니들 뼈를 발라버리겠다!" },
+                                { nick: "청년회", content: "어머니들, 저희가 앞장서겠습니다. 뒤에서 돌만 날라주세요. 윤재훈 저거 오늘 끝장냅시다. 인간이길 포기한 짐승입니다." },
+                                { nick: "용산정무라인", content: "폭도들이 흉기를 소지하고 난동을 부리고 있다. 전원 체포하고 저항 시 발포하라." },
+                                { nick: "시장할매", content: "쏴라 이놈들아! 6.25 때도 살아남았다! 니들이 인민군보다 더한 놈들이다!" },
+                                { nick: "술톤주민우", content: "할망구들 입 닥쳐!! 내가 가서 주둥이를 찢어놓을라니까!!" },
+                                { nick: "시민Y", content: "어르신들 건드리면 진짜 끝장이다. 전국이 일어난다." },
+                                { nick: "옆동네주민", content: "창전시장 갑니다. 윤재훈 잡으러 갑니다." },
+                                { nick: "소방관", content: "화재 위험... 아니, 그냥 다 태워버리고 싶네 저놈들." },
+                                { nick: "경찰(익명)", content: "저희도 명령 거부하고 싶습니다... 죄송합니다..." }
+                            ]
+                        },
+                        {
+                            nick: "해외교포A", date: "2024-12-04 00:20",
+                            content: "방금 뉴욕 타임즈(NYT) 1면 톱기사 떴음. 제목이 'Mayor of Resistance(저항의 시장)'. 박효빈 시장이 시청 앞에서 팔짱 끼고 군인들 노려보는 사진 대문짝만하게 나옴. '한국 민주주의 최후의 보루'라고 칭송 중임. 반면에 윤석열은 'Paranoid Dictator(편집증적 독재자)'라고 박제됨. 쪽팔림과 자랑스러움이 동시에 느껴진다.",
+                            replies: [
+                                { nick: "유학생", content: "와... 박효빈 시장님 진짜 자랑스럽다. 제발 무사하시길 기도합니다. 한국 민주주의가 아직 살아있다는 걸 보여주세요." },
+                                { nick: "재훈왕자96", content: "가짜뉴스야!! 뉴욕 타임즈도 다 북한한테 매수된 빨갱이 신문이야!! 바이든도 간첩이야!! 믿지 마!! 박효빈은 악마야!! 찢어 죽여야 돼!!" },
+                                { nick: "기자", content: "NYT 기사 팩트입니다. 지금 전 세계가 효빈시청을 주목하고 있습니다. 윤재훈 씨, 당신은 국제적 망신거리입니다. 당신 아버지가 지하에서 통곡하시겠네요." },
+                                { nick: "용산외교실", content: "미국 대사 초치해서 항의하겠다. 내정 간섭이다." },
+                                { nick: "미국대사관", content: "(공식) 우리는 민주적 절차를 지지하며, 폭력 사용에 반대한다." },
+                                { nick: "술톤주민우", content: "양키 고 홈!! 우리가 알아서 한다!! 박효빈 목만 따면 끝이야!!" },
+                                { nick: "시민", content: "나라 망신 다시키네... 제발 닥쳐라..." },
+                                { nick: "번역가", content: "해외 반응: '한국 게임 오버냐?', '시장이 영웅이다', '대통령이 미쳤다'." },
+                                { nick: "교포B", content: "내일 백악관 앞에서 시위합니다. 박효빈 시장님 힘내세요." },
+                                { nick: "전세계인", content: "#PrayForHyobin #StandWithMayorPark" }
+                            ]
+                        },
+                        {
+                            nick: "안천동김씨", date: "2024-12-04 00:30",
+                            content: "안천동 예비군들 군복 입고 지금 트럭 타고 시청으로 갑니다. 계엄군 후배님들, 국민한테 총 쏘지 마십시오. 당신들 부모 형제가 여기 있습니다. 명령이 잘못됐으면 거부하는 게 진짜 군인입니다. 우리가 당신들을 막을 겁니다.",
+                            replies: [
+                                { nick: "예비군", content: "동참합니다. 군복 입고 인간 띠 잇겠습니다. 선배가 간다. 총구 내려라. 쏘면 니들도 평생 후회한다. 우린 끝까지 간다." },
+                                { nick: "용산안보실", content: "예비군 소집 명령 안 내렸다. 집으로 돌아가라. 즉시 해산하지 않으면 군법 회부한다. 반란군으로 간주하여 현장 사살하겠다. 탱크로 밀어버리기 전에 꺼져." },
+                                { nick: "시민", content: "진짜 군인은 여기 있었네. 감사합니다. 눈물 납니다. 안보실 니들이 반란군이다. 국민을 죽이겠다는 게 정부냐? 살인 집단이지." },
+                                { nick: "현역군인", content: "(익명) 저희도 쏘기 싫습니다... 제발 막아주세요... 명령 불복종하면 저희가 죽습니다... 살려주세요 시민 여러분..." },
+                                { nick: "특전사출신", content: "후배들아, 국민을 지키는 게 군인이다. 권력을 지키는 건 개다. 개가 되지 마라." },
+                                { nick: "재훈왕자96", content: "예비군 놈들 싹 다 잡아서 탄광으로 보내!! 내가 왕이다!!" },
+                                { nick: "트럭기사", content: "트럭 50대 몰고 가서 바리게이트 칩니다. 뚫을 테면 뚫어봐라." },
+                                { nick: "간호사", content: "부상자 나오면 저희가 치료합니다. 구급차 대기 중입니다." },
+                                { nick: "어머니", content: "내 아들아 총 내려라... 엄마가 왔다..." },
+                                { nick: "용산지휘부", content: "동요하지 마라! 발포해! 다 죽여!" }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    commentData.forEach(cmt => {
+                        const div = document.createElement('div');
+                        const villains = ['재훈왕자96', '술톤주민우', '우신면', '용산대변인', '용산법무팀', '용산경호처', '용산안보실', '용산정무라인', '용산외교실', '용산과학수사대', '용산경제팀', '애국보수청년단', '자유수호', '멸공의횃불', '용산작전과', '용산지휘부', '천공의제자'];
+                        const isVillain = villains.includes(cmt.nick);
+
+                        div.className = `comment-item ${isVillain ? 'troll' : ''}`;
+                        
+                        // 빌런이면 비공감 폭탄(수만 단위), 일반인은 공감 폭탄(수만 단위)
+                        const likeCount = isVillain ? Math.floor(Math.random() * 50) : Math.floor(Math.random() * 50000) + 10000;
+                        const dislikeCount = isVillain ? Math.floor(Math.random() * 80000) + 20000 : Math.floor(Math.random() * 100);
+
+                        let repliesHtml = `<div class="bg-gray-50 p-3 mt-2 rounded border border-gray-100" style="display:block;">`;
+                        cmt.replies.forEach(rp => {
+                            const rNick = rp.nick || '익명';
+                            const rContent = rp.content || '';
+                            const isRVillain = villains.includes(rNick);
+                            const rStyle = isRVillain ? 'color: #d9534f; font-weight: bold;' : 'color: #0055aa;';
+                            
+                            const rLikeCount = isRVillain ? Math.floor(Math.random() * 20) : Math.floor(Math.random() * 3000);
+                            const rDislikeCount = isRVillain ? Math.floor(Math.random() * 5000) : Math.floor(Math.random() * 20);
+                            
+                            repliesHtml += `
+                                <div class="mb-3 border-b border-gray-200 pb-2 last:border-0 last:pb-0">
+                                    <div class="text-sm mb-1"><span class="font-bold" style="${rStyle}">└ ${rNick}</span>: ${rContent}</div>
+                                    <div class="text-xs text-gray-500 flex gap-2">
+                                        <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${rLikeCount}</span></span>
+                                        <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${rDislikeCount}</span></span>
+                                    </div>
+                                </div>`;
+                        });
+                        repliesHtml += `</div>`;
+
+                        div.innerHTML = `
+                            <div class="comment-nick">${cmt.nick} <span class="text-gray-400 font-normal text-xs ml-2">${cmt.date || '2024-12-04'}</span></div>
+                            <p class="comment-content">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${likeCount}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${dislikeCount}</span></span>
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active')) {
+                            count--;
+                            btn.classList.remove('active');
+                        } else {
+                            count++;
+                            btn.classList.add('active');
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="rank-news">
+                <div class="rank-title">실시간 속보 (종합)</div>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span> <span class="rank-text text-[#d9534f] font-bold">박효빈 시장 "나를 밟고 가라" 계엄군과 정면 대치</span></li>
+                    <li><span class="rank-num">2</span> <span class="rank-text">시민들, 시청 앞 집결... 장갑차 막아선 인간 띠</span></li>
+                    <li><span class="rank-num">3</span> <span class="rank-text">8호선 관제센터 일촉즉발... "전력 차단 시 대참사"</span></li>
+                    <li><span class="rank-num">4</span> <span class="rank-text">국회, 담장 넘어 본회의장 진입 시도 중</span></li>
+                    <li><span class="rank-num">5</span> <span class="rank-text">미 국무부 "한국 상황 심각한 우려" 성명 발표</span></li>
+                    <li><span class="rank-num">6</span> <span class="rank-text">전국 지자체장 잇따라 "계엄 거부" 선언 동참</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-red-50 p-4 border border-red-100 text-center">
+                <div class="font-bold text-[#d9534f] mb-2">효빈시 긴급 공지</div>
+                <div class="text-sm text-gray-600 mb-3">시민 여러분, 시청 광장으로<br>모여주십시오. 우리가 효빈을 지킵니다.</div>
+                <button class="bg-[#d9534f] text-white text-xs px-3 py-2 rounded">실시간 상황 보기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
+        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
+            <div class="flex gap-4 mb-4">
+                <a href="회사소개.html" class="hover:text-white">회사소개</a>
+                <a href="구독신청.html" class="hover:text-white">구독신청</a>
+                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
+                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
+                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
+            </div>
+            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
+            <p>주소: 효빈광역시 북구 중수동 123 </p>
+            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효빈광역시 여론조사 - 시민의 뜻이 정책이 됩니다</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f3f4f6; }
+        
+        .hyobin-blue { color: #0077DD; }
+        .bg-hyobin-blue { background-color: #0077DD; }
+        .hyobin-green { color: #00CCAA; }
+        
+        .poll-card { transition: transform 0.2s, box-shadow 0.2s; }
+        .poll-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        .progress-bar-container { background-color: #e5e7eb; border-radius: 9999px; overflow: hidden; height: 24px; }
+        .progress-bar-fill { height: 100%; text-align: right; padding-right: 10px; color: white; font-weight: bold; font-size: 14px; line-height: 24px; transition: width 1s ease-in-out; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4 h-20 flex justify-between items-center max-w-6xl">
+            <a href="홈.html" class="flex items-center gap-3">
+                <img src="이미지/효빈시로고.png" alt="효빈광역시 로고" class="h-10 w-auto" onerror="this.src='https://via.placeholder.com/150x50?text=HYOBIN+CITY'">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black text-gray-800 tracking-tight">효빈광역시</span>
+                    <span class="text-xs text-gray-500 font-bold tracking-widest">여론조사센터</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex gap-8 font-bold text-gray-600">
+                <a href="조사참여.html" class="hover:text-[#0077DD] transition-colors">진행중인 조사</a>
+                <a href="결과분석.html" class="hover:text-[#0077DD] transition-colors">결과 및 분석</a>
+                <a href="데이터공개.html" class="hover:text-[#0077DD] transition-colors">데이터 공개</a>
+                <a href="시민제안.html" class="hover:text-[#0077DD] transition-colors">조사 제안</a>
+            </nav>
+            <div class="flex gap-2">
+                <a href="로그인.html" class="px-4 py-2 text-sm font-bold text-gray-600 border border-gray-300 rounded hover:bg-gray-50">로그인</a>
+                <a href="회원가입.html" class="px-4 py-2 text-sm font-bold text-white bg-[#0077DD] rounded hover:bg-blue-600">시민패널 가입</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        
+        <!-- 상단: 시장 직무수행 평가 (하이라이트) -->
+        <section class="bg-white rounded-xl shadow-sm p-8 mb-8 border-t-4 border-[#0077DD]">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-full md:w-1/3 text-center">
+                    <img src="이미지/박효빈시장.png" alt="박효빈 시장" class="w-48 h-48 rounded-full object-cover mx-auto border-4 border-gray-100 shadow-md" onerror="this.src='https://via.placeholder.com/200?text=Mayor+Park'">
+                    <h2 class="text-2xl font-bold mt-4">박효빈 효빈시장</h2>
+                    <p class="text-gray-500 text-sm">민선 8기 직무수행 평가 (2025년 6월 3주차)</p>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <div class="mb-6">
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="text-3xl font-black text-[#0077DD]">긍정 평가 82.4%</span>
+                            <span class="text-sm text-gray-500">전월 대비 <span class="text-red-500 font-bold">▲ 5.2%p</span></span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill bg-[#0077DD]" style="width: 82.4%;">82.4%</div>
+                        </div>
+                        <!-- 수정된 부분: 전국 20개 광역단체장 중 1위 -->
+                        <p class="text-xs text-gray-400 mt-1 text-right">* 전국 20개 광역단체장 중 1위</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">주요 긍정 요인</h4>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>계엄 사태 당시 시민 보호 및 불복종 리더십</li>
+                                <li>8호선(Sky Rail) 성공적 개통 및 운영</li>
+                                <li>중앙정부(이재명 정부)와의 협치 기대감</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">주요 부정 요인</h4>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>일부 지역(평당동 등) 개발 지연 불만</li>
+                                <li>가짜 뉴스(음모론)에 대한 피로감</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- 왼쪽: 진행 중인 여론조사 -->
+            <div class="w-full lg:w-2/3">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <span class="w-2 h-8 bg-[#0077DD] mr-2 rounded-sm"></span>
+                    참여해 주세요 (진행 중인 조사)
+                </h3>
+                
+                <div class="grid gap-4">
+                    <!-- 투표 카드 1 -->
+                    <div class="poll-card bg-white p-6 rounded-lg shadow-sm border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-[#FF5522] text-white text-xs font-bold px-3 py-1 rounded-bl-lg">마감 임박</div>
+                        <h4 class="text-lg font-bold mb-2 hover:text-[#0077DD] cursor-pointer">
+                            <a href="여론조사상세_8호선.html">효빈 도시철도 8호선(Sky Rail) 연장 노선 선호도 조사</a>
+                        </h4>
+                        <p class="text-gray-600 text-sm mb-4">현재 운행 중인 8호선의 2단계 연장 구간(안천~평당)에 대한 시민 여러분의 의견을 묻습니다.</p>
+                        <div class="flex justify-between items-center text-xs text-gray-500">
+                            <span>참여자: 124,502명</span>
+                            <a href="여론조사상세_8호선.html" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-black transition-colors">투표하기</a>
+                        </div>
+                    </div>
+
+                    <!-- 투표 카드 2 -->
+                    <div class="poll-card bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <div class="absolute top-0 right-0 bg-[#00CCAA] text-white text-xs font-bold px-3 py-1 rounded-bl-lg">진행 중</div>
+                        <h4 class="text-lg font-bold mb-2 hover:text-[#0077DD] cursor-pointer">
+                            <a href="여론조사상세_상권.html">구도심(창전시장 등) 활성화 방안 시민 아이디어 투표</a>
+                        </h4>
+                        <p class="text-gray-600 text-sm mb-4">전통시장 현대화와 청년몰 유치 등 구도심 활성화를 위한 최우선 과제는 무엇이라고 생각하십니까?</p>
+                        <div class="flex justify-between items-center text-xs text-gray-500">
+                            <span>참여자: 45,210명</span>
+                            <a href="여론조사상세_상권.html" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-black transition-colors">투표하기</a>
+                        </div>
+                    </div>
+
+                    <!-- 투표 카드 3 -->
+                    <div class="poll-card bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <div class="absolute top-0 right-0 bg-[#00CCAA] text-white text-xs font-bold px-3 py-1 rounded-bl-lg">진행 중</div>
+                        <h4 class="text-lg font-bold mb-2 hover:text-[#0077DD] cursor-pointer">
+                            <a href="여론조사상세_캐릭터.html">효빈시 새로운 마스코트 '효빈이와 철도요정' 디자인 선호도</a>
+                        </h4>
+                        <p class="text-gray-600 text-sm mb-4">새로운 시대를 맞이한 효빈시의 얼굴, 시민 여러분이 직접 뽑아주세요. (A안: 미래지향적 / B안: 친근함 강조)</p>
+                        <div class="flex justify-between items-center text-xs text-gray-500">
+                            <span>참여자: 89,331명</span>
+                            <a href="여론조사상세_캐릭터.html" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-black transition-colors">투표하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 오른쪽: 결과 요약 및 배너 -->
+            <div class="w-full lg:w-1/3 flex flex-col gap-6">
+                
+                <!-- 최근 결과 요약 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-gray-800 mb-4 border-b pb-2">최근 조사 결과 (Factor Check)</h3>
+                    
+                    <div class="mb-4">
+                        <p class="text-sm font-bold text-gray-700 mb-1">Q. 8호선 지하 벙커/전파 음모론을 신뢰하십니까?</p>
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-1">
+                            <div class="bg-red-500 h-4 rounded-full text-[10px] text-white text-center leading-4" style="width: 1.2%">1.2%</div>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span>신뢰함 (1.2%)</span>
+                            <span class="font-bold text-[#0077DD]">신뢰 안 함 (98.8%)</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="text-sm font-bold text-gray-700 mb-1">Q. 12.3 계엄 당시 가장 잘 대처한 인물은?</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li class="flex justify-between"><span>1. 박효빈 효빈시장</span> <span class="font-bold text-[#0077DD]">78.5%</span></li>
+                            <li class="flex justify-between"><span>2. 국회 (탄핵 가결)</span> <span class="font-bold">15.2%</span></li>
+                            <li class="flex justify-between"><span>3. 기타</span> <span class="font-bold">6.3%</span></li>
+                        </ul>
+                    </div>
+                    <a href="결과분석.html" class="block text-center text-xs text-gray-400 hover:underline mt-4">더 많은 결과 보기 ></a>
+                </div>
+
+                <!-- 배너 -->
+                <div class="bg-gradient-to-br from-[#0077DD] to-[#6677CC] p-6 rounded-lg shadow-md text-white text-center">
+                    <h3 class="font-bold text-xl mb-2">시민 패널 모집</h3>
+                    <p class="text-sm mb-4 opacity-90">당신의 의견이 효빈을 바꿉니다.<br>지금 가입하고 모바일 상품권 받으세요!</p>
+                    <button class="bg-white text-[#0077DD] font-bold py-2 px-6 rounded-full text-sm hover:bg-gray-100 transition">가입하기</button>
+                </div>
+
+                <!-- 관련 링크 -->
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="효빈시청.html" class="flex items-center hover:text-[#0077DD]">🏢 효빈시청 바로가기</a></li>
+                        <li><a href="도시철도공사.html" class="flex items-center hover:text-[#0077DD]">🚇 효빈도시철도공사 (8호선 안내)</a></li>
+                        <li><a href="시의회.html" class="flex items-center hover:text-[#0077DD]">⚖️ 효빈시의회</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-800 text-gray-400 py-10 mt-12">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold text-white mb-2">효빈광역시 여론조사센터</h2>
+                    <p class="text-xs">Hyobin Metropolitan City Public Opinion Research Center</p>
+                </div>
+                <div class="flex gap-4 text-sm">
+                    <a href="이용약관.html" class="hover:text-white">이용약관</a>
+                    <a href="개인정보처리방침.html" class="font-bold text-white hover:text-gray-200">개인정보처리방침</a>
+                    <a href="조사윤리규정.html" class="hover:text-white">조사윤리규정</a>
+                    <a href="사이트맵.html" class="hover:text-white">사이트맵</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-xs text-center md:text-left">
+                <p class="mb-2">주소: 효빈광역시 북구 중수동 123 효빈시청 제2청사 4층 | 대표전화: 031-123-4567</p>
+                <p>Copyright © Hyobin Metropolitan City. All rights reserved.</p>
+            </div>
+
+            <!-- 지하철 노선 색상 (요청사항 반영: 숨김 처리되어 있으나 디자인 요소로 활용 가능) -->
+            <div class="hidden">
+                <div style="background-color: #0077DD;">1호선</div>
+                <div style="background-color: #00CCAA;">2호선</div>
+                <div style="background-color: #FFCC11;">3호선</div>
+                <div style="background-color: #FF5522;">4호선</div>
+                <div style="background-color: #EE0022;">5호선</div>
+                <div style="background-color: #881188;">6호선</div>
+                <div style="background-color: #FF8899;">7호선</div>
+                <div style="background-color: #9856FF;">8호선</div>
+                <div style="background-color: #6677CC;">빈효선광역전철</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 간단한 인터랙션 스크립트
+        document.querySelectorAll('.poll-card a').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // 실제 링크 이동을 위해 preventDefault는 제거하거나, 
+                // 데모용이라면 알림창을 띄우고 이동을 막을 수 있습니다.
+                // e.preventDefault();
+                // alert('로그인이 필요한 서비스입니다. (데모)');
+            });
+        });
+    </script>
+</body>
+</html>
