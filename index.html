@@ -108,6 +108,13 @@
         html.dark footer { background: #0a0a0a; border-top: 1px solid #222; }
         .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
         .footer-links a { color: #ccc; margin-right: 15px; text-decoration: none; }
+
+        /* 깜빡임 애니메이션 (속보용) */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .blink-animation { animation: blink 1.2s infinite; }
     </style>
 </head>
 <body class="transition-colors duration-300">
@@ -158,7 +165,16 @@
         </nav>
     </header>
 
-    <div class="container relative">
+    <!-- 실시간 속보 전광판 (새로 추가됨) -->
+    <div class="bg-red-600 dark:bg-red-800 text-white font-bold py-2 shadow-md mb-2">
+        <div class="max-w-[1100px] mx-auto px-2 flex items-center gap-3 cursor-pointer hover:underline" onclick="if(!event.target.closest('.scrap-btn')) location.href='news_bok_rate_cut.html'">
+            <span class="bg-white text-red-600 px-2 py-0.5 rounded text-xs font-black blink-animation shrink-0">긴급속보</span>
+            <span class="text-sm truncate flex-1">[속보] 한국은행, 기준금리 연 3.25%로 0.25%p 전격 인하... 3년 2개월 만에 '피벗'(통화정책 전환)</span>
+            <button class="scrap-btn !text-white hover:!text-yellow-300" data-url="news_bok_rate_cut.html" data-title="한국은행 기준금리 인하" title="스크랩하기">★</button>
+        </div>
+    </div>
+
+    <div class="container relative pt-2">
         <!-- 메인 컬럼 -->
         <div class="main-column">
             
@@ -179,14 +195,14 @@
 
             <!-- 주요 뉴스 그리드 -->
             <div class="sub-grid">
-                <!-- 서브 기사 1 -->
-                <div class="news-card" onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html'">
-                    <img src="https://via.placeholder.com/400x200/224488/FFFFFF?text=Democracy+Wins" alt="민주주의 승리">
-                    <div class="news-card-content">
-                        <div class="news-card-title">[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 환호</div>
+                <!-- 서브 기사 1 (현실 속보로 교체) -->
+                <div class="news-card border-red-300 dark:border-red-900" onclick="if(!event.target.closest('.scrap-btn')) location.href='news_bok_rate_cut.html'">
+                    <img src="https://via.placeholder.com/400x200/8B0000/FFFFFF?text=Bank+of+Korea" alt="한국은행 금리인하">
+                    <div class="news-card-content bg-red-50 dark:bg-red-900/10">
+                        <div class="news-card-title text-red-700 dark:text-red-400">[속보] 한국은행, 기준금리 0.25%p 전격 인하... 3년 2개월 만에 '피벗' 단행</div>
                         <div class="news-card-meta">
-                            <span>정치 | 박효빈 기자</span>
-                            <button class="scrap-btn" data-url="[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html" data-title="[속보] 6시간의 악몽 끝, 계엄 해제" title="스크랩하기">★</button>
+                            <span>경제 | 경제부</span>
+                            <button class="scrap-btn" data-url="news_bok_rate_cut.html" data-title="한국은행 기준금리 인하" title="스크랩하기">★</button>
                         </div>
                     </div>
                 </div>
@@ -241,11 +257,11 @@
                         <button class="scrap-btn list-scrap" data-url="[선택 2025] 이재명, 제21대 대통령 당선.html" data-title="이재명, 제21대 대통령 당선" title="스크랩하기">★</button>
                     </div>
                 </div>
-                <div class="list-item" onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html'">
-                    <span class="list-title">[사회] [속보] 박효빈 시장 "계엄 포고령 거부... 공수부대와 맞서겠다"</span>
+                <div class="list-item" onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html'">
+                    <span class="list-title">[사회] [속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 환호</span>
                     <div class="flex items-center">
                         <span class="list-time">2시간 전</span>
-                        <button class="scrap-btn list-scrap" data-url="[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html" data-title="박효빈 시장 계엄 거부 선언" title="스크랩하기">★</button>
+                        <button class="scrap-btn list-scrap" data-url="[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html" data-title="계엄 해제에 효빈 시민들 환호" title="스크랩하기">★</button>
                     </div>
                 </div>
                 <div class="list-item" onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 윤석열 전 대통령 구속.html'">
@@ -282,20 +298,20 @@
                     <span class="text-xs text-gray-500 font-normal">14:00 기준</span>
                 </div>
                 <ul class="ranking-list">
+                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_bok_rate_cut.html'">
+                        <span class="rank-num text-red-600">1</span>
+                        <span class="rank-title font-bold">[속보] 한국은행, 기준금리 연 3.25%로 인하... 3년만에 통화정책 전환</span>
+                        <button class="scrap-btn" data-url="news_bok_rate_cut.html" data-title="한국은행 기준금리 인하" title="스크랩하기">★</button>
+                    </li>
                     <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html'">
-                        <span class="rank-num">1</span>
+                        <span class="rank-num">2</span>
                         <span class="rank-title">[속보] 윤석열 대통령 탄핵안 가결... 직무 즉시 정지</span>
                         <button class="scrap-btn" data-url="[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html" data-title="윤석열 대통령 탄핵안 가결" title="스크랩하기">★</button>
                     </li>
                     <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html'">
-                        <span class="rank-num">2</span>
+                        <span class="rank-num">3</span>
                         <span class="rank-title">6시간 악몽 끝... 효빈 시민들 "반란군 체포하라"</span>
                         <button class="scrap-btn" data-url="[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html" data-title="계엄 해제에 효빈 시민들 환호" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html'">
-                        <span class="rank-num">3</span>
-                        <span class="rank-title">박효빈 시장 "시민 위해 공수부대와 맞서겠다" 선언</span>
-                        <button class="scrap-btn" data-url="[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html" data-title="박효빈 시장 공수부대와 맞서겠다" title="스크랩하기">★</button>
                     </li>
                     <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html'">
                         <span class="rank-num">4</span>
@@ -517,6 +533,9 @@
     // 1. 데이터베이스 통합 연동 (기사, 아카이브, 구분)
     // ==========================================
     const NEWS_DATABASE = [
+        // --- 현실 기반 속보 (새로 추가) ---
+        { type: '기사', title: '[속보] 한국은행, 기준금리 연 3.25%로 전격 인하... 통화정책 전환', url: 'news_bok_rate_cut.html', keywords: '한국은행 금리 인하 피벗 경제 속보 이창용' },
+
         // --- 아카이브 (10년 이상) ---
         { type: '아카이브', title: '[2007년 아카이브] 갈색 겨울, 두청운수 파업 사태', url: 'archive_2007_brown_winter.html', keywords: '2007 갈색 겨울 파업 두청운수 흑역사 archive brown winter' },
         { type: '아카이브', title: '[2007년 아카이브] 두청운수 사건 최종 판결', url: 'archive_2007_final_verdict.html', keywords: '2007 판결 법원 두청운수 archive final verdict' },

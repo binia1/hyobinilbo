@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 한국은행, 기준금리 연 3.25%로 전격 인하... 3년 2개월 만에 '피벗' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-subtitle { font-size: 18px; color: #555; line-height: 1.5; margin-bottom: 20px; font-weight: normal; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold text-sm">경제 > 금융/부동산</div>
+                <h2 class="article-title">[속보] 한국은행, 기준금리 연 3.25%로 전격 인하... 3년 2개월 만에 '피벗' 단행</h2>
+                <h3 class="article-subtitle">물가 상승률 1%대 진입 및 내수 침체 우려 반영<br>효빈시 산업단지 및 자영업계 "숨통 트였다" 환영 속 가계부채 자극 우려도</h3>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이경제 기자</span> (finance@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.03.27. 10:30 | 수정 2026.03.27. 11:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <div class="my-6">
+                        <img src="한국은행_금융통화위원회.png" alt="한국은행 금통위 전경" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/1a365d/FFFFFF?text=Bank+of+Korea+Monetary+Policy+Board'">
+                        <div class="img-caption">▲ 27일 오전 서울 중구 한국은행 본부에서 열린 금융통화위원회 본회의에서 총재가 의사봉을 두드리고 있다. (사진=공동취재단)</div>
+                    </div>
+
+                    <p>[효빈일보 = 이경제 기자] 한국은행 금융통화위원회(이하 금통위)가 27일 통화정책방향 회의를 열고 **현재 연 3.50%인 기준금리를 3.25%로 0.25%포인트(p) 전격 인하**했다.</p>
+
+                    <p>이로써 한국은행은 지난 2023년 1월 기준금리를 3.50%로 끌어올린 이후 이어져 온 최장기 동결 기조를 깨고, 3년 2개월 만에 통화정책의 방향을 긴축에서 완화로 전환하는 이른바 **'피벗(Pivot)'**을 단행하게 되었다.</p>
+
+                    <p>이번 금리 인하의 주된 배경으로는 물가 상승세의 뚜렷한 둔화와 장기화되고 있는 내수 부진이 꼽힌다. 통계청이 최근 발표한 소비자물가지수 상승률이 한국은행의 목표치인 2%를 밑도는 1%대 후반에 안정적으로 안착하면서, 금리 인하를 위한 물가 측면의 조건은 충족되었다는 평가가 지배적이었다.</p>
+
+                    <p>여기에 고금리 장기화로 인해 극심한 침체를 겪고 있는 민간 소비와 자영업자들의 이자 부담을 덜어주어야 한다는 위기감이 이번 결정에 쐐기를 박은 것으로 분석된다.</p>
+
+                    <div class="my-6">
+                        <img src="효빈산업단지_전경.png" alt="효빈산업단지 전경" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/4a5568/FFFFFF?text=Hyobin+Industrial+Complex'">
+                        <div class="img-caption">▲ 금리 인하 소식에 안도하고 있는 효빈광역시 국가산업단지 전경. 대출 이자 부담을 겪던 지역 중소기업들에게 긍정적인 신호로 작용할 전망이다. (효빈일보 DB)</div>
+                    </div>
+
+                    <p>이번 한국은행의 피벗 결정에 대해 **효빈광역시 지역 경제계는 일제히 환영의 뜻**을 밝혔다. 특히 최근 계엄 사태 등 굵직한 정치·사회적 혼란 속에서 투자 심리가 급격히 얼어붙었던 효빈 지역 상공인들은 이번 조치가 시장에 활력을 불어넣을 것으로 기대하고 있다.</p>
+
+                    <p>효빈상공회의소 관계자는 본지와의 통화에서 "그동안 고금리로 인해 한계 상황에 내몰렸던 효빈 지역 내 영세 중소기업과 소상공인들에게 이번 금리 인하는 가뭄의 단비와 같다"며, "위축되었던 설비 투자와 민간 소비가 점진적으로 회복되기를 바란다"고 말했다.</p>
+
+                    <p>다만, 일각에서는 이번 기준금리 인하가 겨우 진정세를 보이고 있는 수도권 및 효빈시 주요 도심(북구, 청엽구 일대)의 부동산 시장을 다시 자극할 수 있다는 우려의 목소리도 나온다. 실제로 금리 인하 기대감이 선반영되면서 이달 들어 효빈시 주요 아파트 단지의 매수 문의가 소폭 증가하는 움직임이 감지된 바 있다.</p>
+
+                    <p>이에 대해 한국은행 총재는 금통위 직후 열린 기자간담회에서 "물가와 성장 흐름을 고려할 때 긴축 정도를 소폭 축소하는 것이 적절하다고 판단했다"면서도, "가계부채 증가세와 수도권 주택가격 추이 등 금융안정 리스크에 대해서는 정부의 거시건전성 정책과 공조하여 면밀히 모니터링할 것"이라며 시장의 과도한 금리 인하 기대감을 경계했다.</p>
+
+                    <p>한편, 한국은행의 이번 결정으로 미국 연방준비제도(Fed)의 정책금리(연 4.75~5.00%)와의 금리 차이는 기존 1.50%p에서 1.75%p로 다시 소폭 확대되었다. 향후 외국인 자본 유출 및 환율 변동성 확대 여부에도 시장의 이목이 집중되고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">1,842</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="건전한 토론 문화를 위해 타인을 비방하거나 명예를 훼손하는 댓글은 자제해 주시기 바랍니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "경제시민", time: "10분 전", like: 3420, dislike: 152, isPunished: false,
+                                content: "다행입니다. 자영업자들 대출 이자 감당 못해서 매일 폐업 소식만 들려왔는데, 이제라도 숨통이 좀 트였으면 좋겠습니다. 내수 침체가 너무 심각해요.",
+                                replies: [
+                                    { nick: "소상공인연합", content: "공감합니다. 0.25%포인트가 당장 큰 변화를 주진 않겠지만, 방향성이 바뀌었다는 것 자체에 심리적 위안을 얻습니다." }
+                                ]
+                            },
+                            {
+                                nick: "무주택자", time: "15분 전", like: 2105, dislike: 840, isPunished: false,
+                                content: "금리 내리는 건 좋은데, 집값 다시 폭등하는 거 아닌지 걱정됩니다. 효빈시 북구 쪽 아파트 벌써 매물 거둬들이고 호가 올린다는 이야기가 돌고 있습니다. 대출 규제는 확실히 묶어둬야 합니다.",
+                                replies: [
+                                    { nick: "부동산전문가", content: "정부에서도 가계부채 관리를 엄격히 하겠다고 했으니 과거와 같은 폭등장은 오기 힘들 것입니다. 옥석 가리기가 중요해 보입니다." },
+                                    { nick: "청엽구주민", content: "청엽구 쪽도 신축 위주로 슬금슬금 오르더군요. 집값 안정화 대책이 동반되어야 합니다." }
+                                ]
+                            },
+                            { 
+                                nick: "달러투자자", time: "25분 전", content: "미국은 아직 안 내렸는데 한미 금리차가 다시 1.75%p로 벌어졌네요. 환율 1400원 다시 돌파하면 수입 물가 올라서 결국 서민들 물가 부담만 더 커지는 거 아닌가요? 한은도 딜레마가 컸을 듯.", like: 1850, dislike: 45, 
+                                replies: [] 
+                            },
+                            { 
+                                nick: "효빈산단근로자", time: "30분 전", content: "최근 계엄 사태 때문에 공장 가동 멈추고 바이어들 계약 취소한다고 난리도 아니었는데, 금리라도 내려가니 회사 대출 이자 부담 줄어서 다행입니다. 빨리 나라가 안정되었으면 합니다.", like: 4120, dislike: 12, 
+                                replies: [
+                                    {nick: "민주주의만세", content: "맞습니다. 정치적 안정이 곧 경제 안정이죠. 시민들이 힘을 합쳐 막아내서 정말 다행입니다."}
+                                ] 
+                            },
+                            { 
+                                nick: "주식개미", time: "40분 전", content: "피벗 선언 나왔으니 제발 코스피 5000선 좀 회복하자... 5천 넘은 지가 언젠데 지금 계속 역행해서 꼬라박는 중이냐 ㅠㅠ 효빈 지역 향토 기업들도 제발 주가 좀 방어해라.", like: 890, dislike: 320, 
+                                replies: [] 
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "45분 전", like: 5, dislike: 12500, isPunished: true,
+                                content: "금리 내리면 뭐하냐!! 특사로 풀려났는데 우리 아빠 남구 저택은 3차 유찰돼서 헐값에 넘어가고 통장은 다 압류됐는데!! 이거 다 박효빈이랑 좌파 카르텔이 내 인생 망친 거다!! 나 두청운수 후계자 윤재훈이라고!!!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "23년 광복절 특사로 윤석열이 억지로 풀어줬으면 조용히 찌그러져 살 것이지 어디서 기어나와서 어그로냐 ㅋㅋㅋ" },
+                                    { nick: "Debt_Collector", content: "루트 M 소송 패소한 거 13억 빚이나 갚으세요 도련님 ^^ 특사로 풀려나면 빚이 없어지나?" },
+                                    { nick: "Hyobin_Citizen", content: "두청운수 공중분해 된 지가 언젠데 아직도 후계자 타령이야 ㅋㅋㅋ 필리핀으로 도망치지도 못하고 꼴좋다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num text-red-600">1</span> <a href="news_bok_rate_cut.html" class="ranking-link font-bold text-[#0055aa]">[속보] 한국은행 금리 0.25%p 전격 인하</a></li>
+                    <li><span class="ranking-num">2</span> <a href="news_yoon_impeachment.html" class="ranking-link">윤석열 대통령 탄핵안 가결... 직무 정지</a></li>
+                    <li><span class="ranking-num">3</span> <a href="news_martial_law_hyobin.html" class="ranking-link">계엄 해제 환호... "민주주의 지켜냈다"</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_park_past.html" class="ranking-link">박효빈 시장, 공수부대 앞 '결사항전' 화제</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_economy.html" class="ranking-link">금리 인하, 효빈시 부동산 시장 반응은?</a></li>
+                    <li><span class="ranking-num">6</span> <a href="news_dangga_dessert.html" class="ranking-link">당가(Dangga) 상권, 금리 인하에 훈풍 부나</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner" style="background: #f8f9fa; border-color: #ddd;">
+                <div class="text-center">
+                    <div class="font-bold text-gray-800 mb-1">효빈상공회의소</div>
+                    <div class="text-xs text-gray-600">위기를 기회로!<br>지역 경제 활성화 캠페인</div>
+                </div>
+            </div>
+            <div class="ad-banner" style="background: #e1f5fe; border-color: #81d4fa;">
+                <div class="text-center">
+                    <div class="font-bold text-blue-700 mb-1">효빈은행대출센터</div>
+                    <div class="text-xs text-blue-600">기준금리 인하 기념<br>소상공인 대환대출 특별우대</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
