@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치] "보수의 가치는 탱크에 있지 않다" 박준서, 이부역서 파란 넥타이 매고 민주당 전격 입당 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; border-top: 4px solid #0055aa; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: 900; line-height: 1.35; color: #111; margin-bottom: 10px; letter-spacing: -1.5px; font-family: 'Nanum Myeongjo', serif; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        
+        .article-body { font-size: 18px; line-height: 1.85; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 26px; text-align: justify; }
+        
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+        
+        .quote-box { background-color: #f0f7ff; border-left: 4px solid #0055aa; padding: 24px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 17px; color: #333; font-weight: bold; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; border-top: 3px solid #0055aa; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; color: #0055aa; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .analysis-box { background: #f8f9fa; border: 1px solid #e2e8f0; border-top: 4px solid #0055aa; padding: 25px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif;}
+        .analysis-title { font-size: 20px; font-weight: bold; color: #0055aa; margin-bottom: 15px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 10px;}
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="administration.html">행정/자치</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="opinion.html">오피니언</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">정치 > 정당/선거</div>
+                <h2 class="article-title">[정치] "보수의 가치는 탱크에 있지 않다" 박준서, 이부역서 파란 넥타이 매고 민주당 전격 입당</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최기자</span> (choi_reporter@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2025.01.15. 14:30 | 수정 2025.01.15. 15:10</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">2024년 남구 제2선거구 보궐선거서 곽두환 전 의원 논란 수습하려다 낙선했던 비운의 후보<br>12.3 비상계엄 선포에 "민주주의 위협" 깊은 환멸 표하며 평당 4동 이부역 광장서 입당 회견<br>"Bushido... 아니, 민주주의 만세!" 연설 화제... 과거 라이벌 원상민 의원과 협력 다짐</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/박준서_입당회견.png" alt="박준서 입당 회견" class="w-full border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Park+Jun-seo+Press+Conference'">
+                        <div class="img-caption">▲ 15일, 효빈시 남구 평당 4동 이부역(<a href="와카미야이브.html">와카미야 이브</a> 성지) 광장에서 열린 <a href="박준서.html">박준서</a> 전 국민의힘 후보의 <a href="더불어민주당.html">더불어민주당</a> 전격 입당 기자회견. 붉은 넥타이를 풀고 파란 넥타이를 맨 그가 주먹을 불끈 쥐며 포즈를 취하고 있다. (사진=효빈일보)</div>
+                    </div>
+
+                    <p><strong>"곽두환 전 의원이 남긴 지역구의 상처를 치유하려 노력했으나, 12.3 비상계엄이라는 국가적 위기 앞에서 뼈저린 한계를 느꼈습니다. 진정한 보수의 가치는 '자유'에 있지, 무력을 앞세운 탱크에 있지 않습니다."</strong></p>
+
+                    <p>지난 2024년 4월, 효빈시 남구 제2선거구(평당2~5동) 재보궐선거에서 <a href="국민의힘.html">국민의힘</a> 소속으로 출마하여 25.1%의 득표율을 기록하며 낙선했던 <a href="박준서.html">박준서</a> 전 후보가 15일 <a href="더불어민주당.html">더불어민주당</a>에 전격 합류했다. 보수 성향이 강했던 평당 5동을 포함한 남구 일대의 민심 변화에 작지 않은 파장이 예상된다.</p>
+
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">◆ 전임자의 그늘과 뼈아팠던 2024년 재보궐선거</h3>
+
+                    <p>박 전 후보는 지역 사회에서 합리적인 보수 인사로 평가받아 왔다. 그러나 그가 출마했던 2024년 재보궐선거는 전임자인 <a href="곽두환.html">곽두환</a> 전 의원이 남구의 주요 관광 자원인 이부역(이브 성지)에 대해 부적절한 철거 발언을 쏟아낸 직후 치러진 선거였다.</p>
+
+                    <p>당시 선거 유세에서 박 후보는 <strong>"저는 문화를 존중하는 정치인입니다"</strong>라며 차별화를 꾀했다. 하지만 지역 주민들과 서브컬처 팬덤의 반응은 냉담했다. 특정 정당의 공천장 자체가 유권자들에게 강한 거부감을 일으켰고, 그는 본인의 정책적 역량을 온전히 평가받지 못한 채 선거비용 보전 기준선을 턱걸이하며 고배를 마셨다. 지역 정가에 따르면 낙선 직후 그는 측근들과의 자리에서 전임 곽 전 의원과 당에 대한 강한 원망을 표출했던 것으로 알려졌다.</p>
+
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">◆ "자유민주주의 위협에 깊은 환멸"... 12.3 계엄 사태가 결정타</h3>
+
+                    <p>그의 정치적 결단에 마침표를 찍은 것은 지난해 12월 3일 선포되었던 비상계엄 사태였다. 자유롭고 개방적인 문화를 중시하는 효빈시의 특성상, 당시 계엄군 투입과 언론 통제 시도는 지역의 젊은 세대와 상권에 막대한 충격을 안겼다.</p>
+
+                    <p>박 전 후보는 당시를 회상하며 <strong>"시민의 자유를 군화발로 짓밟으려 했던 사건을 보며 깊은 절망을 느꼈다"</strong>며 "효빈시에서 더 이상 보수의 깃발 아래 정치를 이어가는 것은 무의미하다고 판단했다"고 탈당의 배경을 설명했다.</p>
+
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">◆ 이부역 입당 회견... 화합과 쇄신 다짐</h3>
+
+                    <p>15일 박 전 후보는 과거 논란의 중심이었던 남구 평당 4동 이부역 광장을 입당 기자회견장으로 택했다. 그는 이 자리에서 붉은색 넥타이를 직접 풀어 던지고, 푸른색 넥타이를 착용하는 퍼포먼스를 선보였다.</p>
+
+                    <p>"문화를 탄압하려 했던 과거의 망령과, 민주주의를 위협한 계엄의 공포가 서린 곳에서는 정치를 할 수 없습니다. 효빈시의 자유와 다양성을 지키는 길을 가겠습니다."</p>
+
+                    <p>회견 말미에 그는 긴장 속에서도 주먹을 쥐고 <strong>"Bushido(무사도)! 아니, 민주주의 만세!"</strong>라고 외치는 가벼운 해프닝을 연출해 현장에 모인 지역 주민들과 팬덤의 박수를 자아내기도 했다.</p>
+
+                    <div class="analysis-box">
+                        <div class="analysis-title">💡 기자의 시선: 경쟁자에서 동반자로... 지역 정가의 푸른 바람</div>
+                        <p>이번 입당식에서 가장 눈길을 끈 장면은 지난 재보궐선거에서 치열하게 맞붙었던 <a href="원상민.html">원상민</a> 시의원의 환영 인사였습니다.</p>
+                        <p>원 의원은 박 전 후보를 따뜻하게 맞이하며 <strong>"과거의 짐을 덜어내고 이제 한 배를 탔으니, 이부역 지역 조명 개선 사업 등을 함께 논의합시다"</strong>라고 손을 내밀었습니다. 현재 민주당 남구 지역위원회 부위원장으로 임명된 박 전 후보는 지역 문화와 행정을 깊이 이해하기 위해 다방면으로 소통 행보를 넓히고 있습니다.</p>
+                        <p>보수 색채가 짙었던 평당 5동 주민들 역시 그의 이적을 긍정적으로 평가하는 분위기입니다. "정당의 틀을 벗고 지역 발전을 택했다"는 주민들의 호응 속에서, 박준서 부위원장의 합류가 다가오는 2026년 지방선거의 판세를 어떻게 흔들지 지역 사회의 이목이 집중되고 있습니다.</p>
+                    </div>
+
+                    <p>한편, 과거 이부역 논란을 촉발했던 곽두환 전 의원은 의원직 상실 후 이주한 <a href="탄성군.html">탄성군</a> 지역에서 현지 밴드 동호회의 음악 소음 문제로 지속적인 마찰을 빚고 있는 것으로 전해졌다. 박 부위원장은 이에 대해 "스스로 자초한 결과"라며 짧은 논평을 남겼다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">42,158</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 정치 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="#" class="ranking-link font-bold text-[#0055aa]">[정치] "보수의 가치는 탱크에..." 박준서 민주당 전격 입당</a></li>
+                    <li><span class="ranking-num">2</span> <a href="#" class="ranking-link">박준서 입당 회견서 "Bushido!" 외쳐... 평당동 일대 웃음바다</a></li>
+                    <li><span class="ranking-num">3</span> <a href="#" class="ranking-link">원상민 시의원 "어제의 적이 오늘의 덕메이트" 박준서 환영</a></li>
+                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">탄성군 주민들 "곽두환 매일 시끄럽다 민원... 제발 좀 가라"</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">윤재훈 "박준서 배신자! 2.1%의 철퇴를 맞을 것" 또 망언</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4 cursor-pointer hover:bg-gray-50 transition" onclick="location.href='공식굿즈샵.html'">
+                <div>
+                    <div class="font-black text-[#FF8899] mb-1" style="color: #FF8899;">Pastel*Palettes 신보 발매!</div>
+                    <div class="text-xs text-gray-600 font-bold mb-2">효빈시 레코드샵 절찬 판매 중</div>
+                    <img src="이미지/파스파레_앨범.png" alt="파스파레 앨범" class="w-full h-24 object-contain mb-2" onerror="this.src='https://placehold.co/200x100?text=PasPare+Album'">
+                    <div class="text-[10px] text-gray-500">이부역 특설 매대 한정 포카 증정</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs font-sans">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Eve_Oshi_Bushido", time: "방금 전", like: 35200, dislike: 24, isPunished: false,
+                content: "부시도 ㅋㅋㅋㅋㅋ 이 아저씨 입당하자마자 밈 하나 거하게 만들었네 ㅋㅋㅋㅋ 기자회견장에서 파란 넥타이 매고 무사도 외치는 거 뻘하게 터졌음 ㅋㅋㅋㅋ 민주당 부위원장님 격하게 환영합니다!!",
+                replies: [
+                    { nick: "KwakDoHwan_Official", content: "일본 사무라이(Bushido)를 외치는 자가 무슨 대한민국 정치인입니까!! 평당동의 수치입니다!! 당장 사퇴하십시오!!" },
+                    { nick: "Tanseong_Resident", content: "곽두환 씨 탄성군에서 일렉기타 소리 시끄럽다고 민원이나 넣으시지 여기까지 와서 찌질거리시네 ㅋㅋㅋㅋ 선거법 위반 전과자는 좀 조용히 계세요" },
+                    { nick: "PasPare_Fan", content: "이제 이부역 조명 예산 달달하게 뽑아주시겠네 ㅋㅋㅋ 곽두환이 싼 똥 치우느라 고생하셨습니다 위원장님 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "Pyeongdang_5_Voter", time: "5분 전", like: 28500, dislike: 42, isPunished: false,
+                content: "평당 5동 토박이입니다. 솔직히 지난번 선거 때 박준서 후보 사람 참 괜찮았는데 당이 그 당이라 차마 못 찍었습니다. 12.3 계엄령 터지는 거 보고 진짜 저 당에는 미래가 없다고 느꼈는데, 박 후보님 용기 있는 결단 지지합니다.",
+                replies: [
+                    { nick: "YoonJaehoon(IP)", content: "거짓말 마라!! 평당 5동은 위대한 윤재훈의 2.1% 콘크리트 지지층이다!! 너는 간첩이다!!" },
+                    { nick: "Fact_Check_Bot", content: "2.1%면 아파트 동대표 선거도 떨어져 이 모지리야 ㅋㅋㅋㅋ 기탁금 5천만원은 다 갚았냐 신불자 놈아 ㅋㅋㅋ" },
+                    { nick: "Right_Wing_Normal", content: "탱크로 밀어버리겠다는 집단을 어떻게 지지합니까. 정상적인 보수는 효빈시에서 다 멸종했습니다." }
+                ]
+            },
+            {
+                nick: "YoonJaehoon(IP)", time: "12분 전", like: 15, dislike: 48200, isPunished: true,
+                content: "이 더러운 배신자 놈!! 위대한 구국 결단을 모독하다니!! 너 같은 놈은 보수의 수치다!! 우리 2.1%의 애국 지지자들이 널 반드시 심판할 것이다!! 이부역을 당장 폭파시켜버리겠다!!",
+                replies: [
+                    { nick: "HyoBin_Lawyer", content: "이부역 폭파 협박 특수협박죄로 방금 남부경찰서에 수사 의뢰 접수했습니다. 또 뵙겠네요 윤재훈 씨." },
+                    { nick: "Bushido_Guardian", content: "장난감 비비탄 총 든 애송이가 어딜 감히 이부역을 건드려 ㅋㅋㅋ 칼 뽑기 전에 썩 꺼져라" }
+                ]
+            },
+            {
+                nick: "Tanseong_Gun_Resident", time: "20분 전", like: 41200, dislike: 30, isPunished: false,
+                content: "탄성군 주민입니다. 곽두환 그 인간 진짜 우리 동네로 이사 와서 매일 밤 락(Rock) 밴드 연습하는 거 시끄럽다고 시청에 민원 넣고 난리 치는데 진짜 죽겠습니다 ㅋㅋㅋ 근데 젊은 애들한테 쌍욕 먹고 쭈구리 돼서 다니는 거 보면 속이 다 시원함 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "KwakDoHwan_Official", content: "매일 밤 뚱땅거리는 소음 때문에 잠을 잘 수가 없습니다!! 이것은 나를 쫓아내려는 좌파들의 표적 테러입니다!!" },
+                    { nick: "Rock_Will_Never_Die", content: "지가 걸즈 밴드 크라이 성지로 기어들어와놓고 누굴 탓해 ㅋㅋㅋㅋ 절이 싫으면 중이 떠나라 방 빼 아저씨야 ㅋㅋㅋ" },
+                    { nick: "Hyobin_Brother", content: "탄성군 주민분들 고생이 많으십니다 ㅠㅠ 그 인간 우리가 치워야 했는데 짬처리 죄송합니다 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "Won_Sang_Min_Supporter", time: "25분 전", like: 22400, dislike: 18, isPunished: false,
+                content: "원상민 의원이랑 깐부 맺은 게 개웃김 ㅋㅋㅋ 어제의 적이 오늘의 덕메이트 ㅋㅋㅋㅋ 노동요로 파스파레 듣는다는데 이참에 두 분이서 코스프레 한번 하시죠 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Jo_Byung_Jin", content: "시의회가 오타쿠 소굴이 되고 있습니다!! 고작 조명 예산 따위에 혈세를 낭비하다니 통탄할 노릇입니다!!" },
+                    { nick: "Politics_Is_Fun", content: "조병진 의원님 ㅋㅋㅋ 시장님 눈치 좀 챙기시죠? 저번에 본회의장에서 왕따당하시더니 아직도 정신 못 차리셨네 ㅋㅋㅋㅋ" },
+                    { nick: "City_Council_Staff", content: "실제로 원 의원님이랑 박 위원장님 두 분이서 요즘 남구청 예산 짤 때 콧노래로 슈와슈와 부르십니다 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Gwangyeok_Commuter", time: "30분 전", like: 15800, dislike: 22, isPunished: false,
+                content: "기사엔 점잖게 원망을 표출했다고 써있는데 ㅋㅋㅋ 실제 썰 들어보면 낙선하고 소주 병나발 불면서 '곽두환 개XX!!' 외쳤다며 ㅋㅋㅋㅋ 인간극장 찍었네 ㅠㅠ 그동안 고생 많으셨습니다 위원장님 ㅠㅠ",
+                replies: [
+                    { nick: "Sympathy_100", content: "25.1% 받을 때 얼마나 억울했을까 ㅋㅋㅋ 이제 파란 길만 걸으십쇼!!" }
+                ]
+            },
+            {
+                nick: "JCM_Truth_Teller", time: "35분 전", like: 4, dislike: 31200, isPunished: true,
+                content: "파란 옷을 입든 빨간 옷을 입든 너희들은 모두 가짜다!! 효빈시의 진정한 승리자는 2006년 3표 차로 억울하게 패배한 나 지총민뿐이다!! 나의 0.8% 지지자들이 이부역을 접수할 것이다!!",
+                replies: [
+                    { nick: "YoonJaehoon(IP)", content: "닥쳐라 이 길거리 노숙자 놈아!! 내 위대한 2.1%가 널 짓밟아 주마!!" },
+                    { nick: "Normal_Citizen", content: "25%한테 깨진 놈이랑 2.1% 받은 놈, 0.8% 받은 놈들이 싸우고 있네 웅장하다 진짜 ㅋㅋㅋㅋ 밑바닥 밑에 지하실 파고 앉았네" },
+                    { nick: "Ignore_Troll", content: "할배... 평당동은 땅값 비싸서 박스 주울 것도 없어요... 제발 효빈역 지하도로 돌아가세요..." }
+                ]
+            },
+            {
+                nick: "Rational_Voter", time: "40분 전", like: 19500, dislike: 45, isPunished: false,
+                content: "근데 진짜 보수 정당이 계엄령으로 자폭할 줄은 몰랐지... 박준서 전 후보 정도면 효빈시에서 진짜 합리적이고 멀쩡한 보수였는데 당이 쓰레기라 인재를 잃었네. 민주당 가서 잘하시길.",
+                replies: [
+                    { nick: "True_Mayor_Yoon", content: "배가 불렀구나!! 내가 두청운수로 이 도시의 기틀을 닦았거늘!! 나를 모독하고 배신한 자들은 지옥에 갈 것이다!!" },
+                    { nick: "Fact_Check_Bot", content: "어디서 똥차 매연 냄새가 나나 했더니 윤대환 할배 부계정 팠네 ㅋㅋㅋ 빵에서 살만하디? 평생 나오지 마라" }
+                ]
+            },
+            {
+                nick: "Eve_Station_Merchant", time: "45분 전", like: 14200, dislike: 12, isPunished: false,
+                content: "이부역 상인회입니다. 박준서 부위원장님 입당 환영합니다. 작년에 곽두환이 무사도 산책로 밀어버리겠다고 했을 때 상인들 단체로 멘붕 왔었는데, 위원장님이 잘 막아주셔서 감사합니다.",
+                replies: [
+                    { nick: "KwakDoHwan_Official", content: "그 흉물스러운 일본 잔재 거리, 제가 정계에 복귀하면 전부 밀어버리고 무궁화를 심을 겁니다!!" },
+                    { nick: "Merchant_B", content: "의원직 짤린 전과자 백수 아저씨가 뭘 어떻게 밀어버려요 ㅋㅋㅋㅋㅋㅋ 진짜 개그맨 다 됐네 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "PasPare_Fanclub", time: "50분 전", like: 11200, dislike: 10, isPunished: false,
+                content: "파스파레 팬덤인데, 솔직히 작년에 박 후보님 빨간 점퍼 입고 오셨을 때 분위기 싸하게 만들어서 죄송합니다 ㅠㅠ 곽두환 트라우마가 너무 심해서 그랬어요. 파란 넥타이 맸으니 이제 한 식구네요!",
+                replies: [
+                    { nick: "Welcome_Park", content: "팬덤 공식 사과 ㅋㅋㅋㅋ 훈훈하네" }
+                ]
+            },
+            {
+                nick: "Escape_Is_Intelligence", time: "55분 전", like: 18900, dislike: 25, isPunished: false,
+                content: "계엄당 탈출은 생존 본능이지. 효빈시에서 21세기에 탱크로 밀어버리겠다는데 누가 뽑아주냐 ㅋㅋㅋ 박준서 님 살 길 진짜 잘 찾으셨음.",
+                replies: [
+                    { nick: "Smart_Move", content: "진짜 지능 순 탈출 맞음 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Hyobin_Univ_Everytime", time: "1시간 전", like: 16500, dislike: 14, isPunished: false,
+                content: "효빈대 에타에서 박준서좌 지금 완전 밈 됨 ㅋㅋㅋ '부시도!! 앗차차 민주주의 만세!!' 짤 돌아다니는데 호감도 급상승 중임 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Jo_Byung_Jin", content: "대학생들이 학업에 정진하지 않고 천박한 유행어나 만들고 있으니 효빈시의 미래가 어둡습니다!!" },
+                    { nick: "College_Student", content: "에타 밈 되면 선거 무조건 이기는데 ㅋㅋㅋ 넌 좀 조용히 해라 눈치 없는 조병진 아저씨야 ㅋㅋㅋ 다음 지선에 구의원 나가시면 백퍼 당선각" }
+                ]
+            },
+            {
+                nick: "Conservative_Tears", time: "1시간 10분 전", like: 9500, dislike: 120, isPunished: false,
+                content: "윤대환, 윤재훈 부자가 말아먹은 효빈시 보수를 곽두환이 아주 확인사살을 했구나... 이제 효빈시에 보수 깃발 꽂을 자리는 영원히 사라졌다. 한심한 놈들.",
+                replies: [
+                    { nick: "True_Mayor_Yoon", content: "내 위대한 업적을 깎아내리지 마라!! 두청운수가 없었으면 너희들은 아직도 소달구지를 타고 다녔을 것이다!!" },
+                    { nick: "Sad_Right", content: "7천원짜리 콩나물시루 버스 탈 바에야 쾌적한 소달구지가 백배 낫습니다 범죄자 할배요 ㅉㅉ" }
+                ]
+            },
+            {
+                nick: "Da_In_Bae_Won", time: "1시간 20분 전", like: 12400, dislike: 15, isPunished: false,
+                content: "원상민 시의원도 진짜 대인배네. 작년 보궐 때 피 터지게 싸우던 상대 후보였는데 곽두환 때문에 억울하게 진 거 아니까 저렇게 챙겨주는 거 보소 ㅋㅋㅋ 역시 효빈시 정치판 낭만 뒤진다.",
+                replies: [
+                    { nick: "Romantic_Politics", content: "이게 진짜 정치지 ㅋㅋㅋ 서로 죽일 듯이 물어뜯는 여의도랑은 차원이 다름." }
+                ]
+            },
+            {
+                nick: "Night_Walker", time: "1시간 30분 전", like: 8200, dislike: 9, isPunished: false,
+                content: "야간에 알바 끝나고 이부역 지나가다 기자회견 봤는데 ㅋㅋㅋㅋ 저 아저씨 진짜 찐텐으로 무사도 외쳤음 ㅋㅋㅋㅋ 옆에 있던 민주당 당직자들 표정 동공지진 오던데 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "KwakDoHwan_Official", content: "심야에 주택가에서 무사도라니요!! 당장 경찰에 소음 공해로 신고하겠습니다!!" },
+                    { nick: "Witness_A", content: "아저씨는 탄성군 밴드 소음이나 신경 쓰시고요 ㅋㅋㅋ 백수 전과자 된 아저씨보다 박준서 부위원장님이 백배 낫습니다 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Real_Estate_Master", time: "1시간 40분 전", like: 14500, dislike: 32, isPunished: false,
+                content: "솔직히 평당 5동 집값 생각하면 민주당 찍는 게 맞음. 이부역 상권 망하면 집값 뚝뚝 떨어지는데 곽두환 그 무식한 인간이 초를 친 거임. 박준서가 민주당 갔으니 이제 평당동은 맘 놓고 파란색 찍으면 됨.",
+                replies: [
+                    { nick: "Jo_Byung_Jin", content: "부동산보다 중요한 것은 올바른 국가관입니다!! 일본 캐릭터 상권을 지키는 것은 매국 행위입니다!!" },
+                    { nick: "Capitalism_Win", content: "그래서 조병진 의원님 지역구 상권이랑 집값은 안녕하시고요? ㅋㅋㅋ 눈치 없이 혼자 헛소리하다가 국힘에서도 손절당한 놈이 말이 많네" }
+                ]
+            },
+            {
+                nick: "Martial_Law_Trauma", time: "1시간 50분 전", like: 17800, dislike: 55, isPunished: false,
+                content: "계엄령 터졌을 때 효빈시 분위기 진짜 살벌했지... L-Project 취소되네 마네, HAF 폐지되네 마네... 효빈 경제 밥줄 다 끊길 뻔함. 진짜 보수당은 이제 쳐다보기도 싫다.",
+                replies: [
+                    { nick: "YoonJaehoon(IP)", content: "계엄은 정당했다!! 오타쿠 홍위병들을 쓸어버리기 위한 대통령님의 위대한 영단이었다!!" },
+                    { nick: "Anime_Fan", content: "2.1% 모지리야 니네 당 지지율이나 쓸어버리지 마라 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Shuwa_Shuwa_Fund", time: "2시간 전", like: 9800, dislike: 12, isPunished: false,
+                content: "박준서 부위원장님!! 이부역 조명 예산 편성 팍팍 해주세요!! 우리 이브 쨩 더 예쁘게 빛나야 합니다!! 슈와슈와~~",
+                replies: [
+                    { nick: "KwakDoHwan_Official", content: "그딴 쓸데없는 조명 예산, 제가 정계에 복귀하면 전액 삭감시킬 겁니다!!" },
+                    { nick: "Budget_Master", content: "선거법 위반으로 짤려서 출마도 못 하는 피선거권 박탈 아저씨가 예산을 어떻게 삭감해요 ㅋㅋㅋㅋㅋㅋㅋㅋ 진짜 개그맨이네 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Kwak_Do_Hwan_Where", time: "2시간 15분 전", like: 11500, dislike: 18, isPunished: false,
+                content: "탄성군에서 쫓겨난 곽두환은 대체 어디로 가냐 ㅋㅋㅋㅋ 진짜 가는 곳마다 민폐네. 그냥 무인도 가서 혼자 살지.",
+                replies: [
+                    { nick: "KwakDoHwan_Official", content: "쫓겨난 것이 아니다!! 락 음악의 야만성을 견디지 못해 내 발로 나온 것이다!!" },
+                    { nick: "YoonJaehoon(IP)", content: "곽두환 그 무능한 놈은 우리 위대한 윤 가문의 수치다!! 내가 2.1%의 힘으로 그를 심판할 것이다!!" },
+                    { nick: "Exile_To_Island", content: "2.1%가 곽두환을 심판한대 ㅋㅋㅋㅋ 둘이 손잡고 무인도 개척이나 하라고 해라 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Popcorn_City", time: "2시간 30분 전", like: 21000, dislike: 40, isPunished: false,
+                content: "효빈시는 진짜 정치가 꿀잼 컨텐츠임 ㅋㅋㅋㅋ 시장님은 마스코트 아빠고, 시의원들은 애니 성지순례하고 ㅋㅋㅋ 다른 도시는 맨날 치고받고 싸우는데 여긴 낭만이 있네. 박준서 님 환영합니다!",
+                replies: [
+                    { nick: "Hyobin_Pride", content: "이게 바로 덕후 친화 도시의 품격입니다 ㅋㅋㅋ 빌런들도 알아서 자폭해주니 속이 다 시원하네요" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const currentNick = reply.nick || "";
+                    
+                    // 빌런들의 닉네임을 빨간색으로 하이라이트
+                    const isVillain = currentNick.match(/Yoon|Ji_|JCM_|Freedom_Fighter|Kwak|Jo_Byung_Jin|True_Mayor_Yoon/);
+                    const nickClass = reply.nickClass || (isVillain ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${currentNick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+</body>
+</html>

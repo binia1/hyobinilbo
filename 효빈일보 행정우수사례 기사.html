@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[종합] "단순한 인형이 아니다"... 효빈시 마스코트 '한바다', 2025 행정혁신 우수사례 '대통령상' 쾌거 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; border-top: 4px solid #0055aa; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: 900; line-height: 1.35; color: #111; margin-bottom: 10px; letter-spacing: -1.5px; font-family: 'Nanum Myeongjo', serif; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        
+        .article-body { font-size: 18px; line-height: 1.85; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 26px; text-align: justify; }
+        
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+        
+        .quote-box { background-color: #f0f7ff; border-left: 4px solid #0055aa; padding: 24px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 17px; color: #333; font-weight: bold; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; border-top: 3px solid #0055aa; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; color: #0055aa; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .analysis-box { background: #f8f9fa; border: 1px solid #e2e8f0; border-top: 4px solid #0055aa; padding: 25px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif;}
+        .analysis-title { font-size: 20px; font-weight: bold; color: #0055aa; margin-bottom: 15px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 10px;}
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="administration.html" class="active">행정/자치</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="opinion.html">오피니언</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">행정/자치 > 시정소식</div>
+                <h2 class="article-title">[종합] "단순한 인형이 아니다"... 효빈시 마스코트 '한바다', 2025 행정혁신 우수사례 '대통령상' 쾌거</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">행정부 이정환 기자</span> (lee_admin@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2025.12.28. 14:00 | 수정 2025.12.28. 14:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">전국 최초 2D 마스코트를 시정의 파트너로 격상시킨 '감성 행정' 대성공<br>'한바다에게 이야기해!' 게시판 통해 1년간 민원 3만 건 해결하며 쌍방향 소통<br>피규어·인형 등 굿즈 수익금 전액 '시민 복지기금'으로 환원... "진정한 선순환 모델"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/한바다_대통령상.png" alt="한바다 대통령상 수상 그래픽" class="w-full border border-gray-200" onerror="this.src='https://placehold.co/800x450/e0f2fe/1e3a8a?text=Presidential+Award+Han+Bada'">
+                        <div class="img-caption">▲ 28일 행정안전부 주관 '2025 지방자치단체 혁신행정 우수사례 경진대회'에서 영예의 대상(대통령상)을 수상한 효빈광역시 공식 마스코트 '한바다'. 박효빈 시장과 대변인실 직원들이 한바다의 등신대와 함께 수상의 기쁨을 나누고 있다. (사진=효빈광역시청 제공)</div>
+                    </div>
+
+                    <p>효빈광역시의 든든한 동반자이자 공식 마스코트인 <a href="한바다.html">한바다</a> 주무관(?)이 2025년 대한민국 최고의 행정 혁신 아이콘으로 우뚝 섰다. 28일 <a href="행정안전부.html">행정안전부</a> 주관으로 열린 '2025 지방자치단체 혁신행정 우수사례 경진대회'에서 효빈광역시의 <strong>'마스코트를 활용한 시민 소통 및 복지 재원 선순환 프로젝트'</strong>가 영예의 대상(대통령상)을 수상했다.</p>
+
+                    <p>이번 수상은 단순한 2D 캐릭터나 홍보용 인형을 넘어, 마스코트에게 확고한 세계관과 인격을 부여해 <strong>'시정의 파트너'</strong>로 격상시킨 <a href="박효빈.html">박효빈</a> 시장의 '감성 행정(Moe Administration)'이 국가적 차원에서 공식 인정받은 결과다.</p>
+
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 30px; margin-bottom: 15px; color:#111;">◆ '한바다에게 이야기해!'... 딱딱한 민원 창구를 따뜻한 소통의 장으로</h3>
+
+                    <p>심사위원단이 가장 높게 평가한 부분은 쌍방향 소통 채널인 <a href="한바다에게이야기해.html">'한바다에게 이야기해!'</a> 게시판의 대성공이다. 기존의 딱딱하고 관료적인 민원 게시판의 틀을 깨고, 시민들이 한바다에게 시정 제안이나 일상적인 고민을 남기면 한바다가 직접 <strong>"요우소로!"</strong>라는 유쾌한 인사말과 함께 공감 어린 답변을 달아주는 방식이다.</p>
+
+                    <p>이 게시판은 지난 1년간 무려 3만 건 이상의 민원과 제안을 성공적으로 처리했다. 특히 대중교통 노선 개편, <a href="도시철도.html"><span style='color:#0077DD; font-weight:bold;'>1호선(#0077DD)</span></a> 연장, 가로등 수리 등 자칫 시민들의 짜증을 유발할 수 있는 행정 불만 사항들이 한바다 특유의 ENFJ 성향 '팩트폭력+애교' 콤보를 만나 불만율이 전년 대비 80%나 급감하는 기적을 만들어냈다.</p>
+
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 30px; margin-bottom: 15px; color:#111;">◆ 굿즈(Goods) 판매 수익 전액을 '시민 복지'로 환원</h3>
+
+                    <p>이번 대상 수상의 결정적 요인은 <strong>'문화 자본의 복지 환원'</strong>이라는 전에 없던 선순환 모델을 구축한 데 있다. 효빈시는 시청 1층과 온라인에 <a href="공식굿즈샵.html">'공식 굿즈 팝업스토어'</a>를 열고, 유명 피규어 제작사인 세가(SEGA), 굿스마일 등과 협력하여 고품질의 피규어, 넨도로이드, 엎드린 네소베리 인형, 에코백 등을 판매해 왔다.</p>
+
+                    <div class="quote-box">
+                        올해 한바다 관련 굿즈 판매로 효빈시가 거둬들인 순수익만 무려 <strong>150억 원</strong>에 달한다. 시청 측은 이 막대한 수익금을 단 한 푼의 예외 없이 '한바다 시민 복지 기금'으로 전액 환원했다.
+                    </div>
+
+                    <p>이 복지 기금은 청년들의 대중교통 무제한 탑승을 지원하는 <strong>'H-Pass' 사업 재원, 결식아동 무상 급식 지원, 그리고 청년 주거 안정을 위한 전월세 보증금 이자 지원 사업</strong>에 전액 투입되었다. "오타쿠들의 덕질이 도시의 복지를 책임진다"는 우스갯소리가 현실이 된 셈이다.</p>
+
+                    <div class="analysis-box">
+                        <div class="analysis-title">💡 다양한 시정 사업과 완벽한 융합, HAF 축제 대박까지</div>
+                        <p>한바다는 단순한 굿즈 판매를 넘어 시의 굵직한 사업들을 성공으로 이끌고 있습니다.</p>
+                        <p>매년 10월 열리는 <strong>'HAF(효빈 애니메이션 페스티벌)'</strong>의 메인 호스트로 활약하며 전국 수백만 명의 '항해사(공식 팬덤)'를 끌어들여 지역 경제를 견인했습니다. 또한 대중교통 마니아라는 설정을 살려 <a href="간선버스.html"><span style='color:#01B7ED; font-weight:bold;'>간선버스(#01B7ED)</span></a>, <a href="마을버스.html"><span style='color:#A664A0; font-weight:bold;'>마을버스(#A664A0)</span></a> 등 산뜻한 버스 도색 개편 사업을 시민들에게 친근하게 홍보하는 데 일등 공신 역할을 톡톡히 해냈습니다.</p>
+                    </div>
+
+                    <p>박효빈 시장은 28일 수상 소감에서 "과거 특정 시장(<a href="윤대환.html">윤대환</a>) 시절, 흉물스러운 갈색 버스에 밀려 16개월 동안이나 지하 창고에 갇혀있던 우리의 한바다가 마침내 대통령상을 품에 안게 되어 감개무량하다"며 눈시울을 붉혔다.</p>
+
+                    <p>박 시장은 이어 "한바다는 단순한 그림이 아니라 우리 효빈 시민들이 함께 키우고 사랑해 온 진정한 시정의 파트너"라며, "앞으로도 굿즈 수익금은 100% 시민을 위해 사용할 것이며, 전국 최고의 '덕후 친화적, 시민 친화적' 행정을 펼쳐 나가겠다"고 포부를 밝혔다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">48,912</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 행정 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="#" class="ranking-link font-bold text-[#0055aa]">[종합] 효빈시 마스코트 '한바다', 행정 우수사례 대통령상</a></li>
+                    <li><span class="ranking-num">2</span> <a href="#" class="ranking-link">"오타쿠가 도시를 살렸다" 굿즈 수익 150억 복지기금 환원</a></li>
+                    <li><span class="ranking-num">3</span> <a href="#" class="ranking-link">박효빈 시장 수상 소감 중 눈물... "지하창고 16개월 생각나"</a></li>
+                    <li><span class="ranking-num">4</span> <a href="공식굿즈샵.html" class="ranking-link">대통령상 수상 기념 한바다 굿즈샵, 접속 폭주로 한때 마비</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">H-Pass 이용 청년들 "한바다 굿즈 사서 교통비 굳히기 꿀잼"</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4 cursor-pointer hover:bg-gray-50 transition" onclick="location.href='공식굿즈샵.html'">
+                <div>
+                    <div class="font-black text-[#0047AB] mb-1">효빈 공식 굿즈샵</div>
+                    <div class="text-xs text-gray-600 font-bold mb-2">대통령상 수상 기념 BEST 굿즈!</div>
+                    <img src="이미지/한바다 스케일피규어.png" alt="피규어" class="w-full h-24 object-contain mb-2" onerror="this.src='https://placehold.co/200x100?text=AD'">
+                    <div class="text-[10px] text-gray-500">효빈광역시청 대변인실</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs font-sans">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Navigator_No1", time: "방금 전", like: 32400, dislike: 15, isPunished: false,
+                content: "바다 누나 폼 미쳤다 ㅠㅠㅠㅠ 내가 내 돈 주고 산 4만 5천원짜리 세가 스케일 피규어가 우리 동네 결식아동 돕고 청년들 H-Pass 재원으로 쓰인다니 ㅠㅠ 이거 완전 천사 아니냐? 통장 털릴 명분 확실하네 내일 넨도 사러 간다!!",
+                replies: [
+                    { nick: "Good_Consumer", content: "진짜 돈 쓰는 맛이 난다 ㅋㅋㅋ 내 덕질이 도시를 구한다고 ㅋㅋㅋ" },
+                    { nick: "HyoBin_Staff", content: "항해사 여러분들의 따뜻한 구매 덕분입니다! 감사합니다 💙" }
+                ]
+            },
+            {
+                nick: "Citizen_Of_Hyobin", time: "5분 전", like: 28500, dislike: 22, isPunished: false,
+                content: "윤대환 시절에 쓰레기 취급받으면서 지하 비품 창고에 16개월이나 갇혀있던 우리 요정님이 이제 대통령상까지 받다니 ㅠㅠ 기사 읽다가 박효빈 시장님이 눈물 훔쳤다는 대목에서 저도 울컥했습니다. 이게 바로 '서사'가 있는 행정이죠.",
+                replies: [
+                    { nick: "Survivor_2006", content: "그 시절 똥색 버스 타면서 돈불라 쳐다봐야 했던 거 생각하면... 지금은 천국임 ㅠㅠ" },
+                    { nick: "Tears_Of_Joy", content: "진짜 효빈시 현대사의 산증인 ㅠㅠ बा다야 꽃길만 걷자!" }
+                ]
+            },
+            {
+                nick: "YoonJaehoon(IP)", time: "12분 전", like: 18, dislike: 45200, isPunished: true,
+                content: "이것은 명백한 세금 낭비이자 좌파들의 포퓰리즘 쇼다!! 국가가 미쳐 돌아가서 한낱 2D 가시나 쪼가리한테 대통령상을 준단 말이냐!! 당장 상장을 회수하고 위대하신 윤대환 시장님께 그 상을 바쳐라!! 굿즈 수익금은 모두 공산당 비자금일 것이다!!",
+                replies: [
+                    { nick: "Fact_Bomber", content: "비자금은 니네 아빠가 <span style='color:#881188; font-weight:bold;'>6호선</span> 도면 태워먹으면서 두청운수로 빼돌린 게 비자금이고요 ㅋㅋㅋ" },
+                    { nick: "Tax_Accountant", content: "기사 좀 읽어라 2.1% 지지율 빡통아. 150억 수익 나서 세금 아낀 건데 무슨 세금 낭비야 능지 처참하네." },
+                    { nick: "HyoBin_Lawyer", content: "허위사실 유포로 채증 완료했습니다. 내일 경찰서에서 뵙겠습니다." }
+                ]
+            },
+            {
+                nick: "H_Pass_User", time: "20분 전", like: 21500, dislike: 30, isPunished: false,
+                content: "나 취준생인데 H-Pass 덕분에 면접 보러 다닐 때 <span style='color:#01B7ED; font-weight:bold;'>간선버스</span>, <span style='color:#00CCAA; font-weight:bold;'>2호선</span> 맘 편히 환승하고 다님 ㅠㅠ 이 재원이 다 굿즈 팔아서 나온 거였다니... 취업하면 무조건 첫 월급으로 한바다 네소베리 세트 산다 진짜.",
+                replies: [
+                    { nick: "Job_Seeker_Bro", content: "나도 ㅠㅠ 교통비 부담 확 줄었음. 한바다 주무관님 충성충성!!" }
+                ]
+            },
+            {
+                nick: "Doocheong_Nostalgia", time: "25분 전", like: 5, dislike: 38400, isPunished: true,
+                content: "요즘 젊은 것들은 배가 불렀다. 나때는 두청운수 45인승 버스에 75명씩 타면서 끈끈한 정을 나눴는데... 그런 낭만 있는 회사를 망하게 한 박효빈은 사퇴해야 한다! 장난감 팔아서 복지? 나라 망하는 지름길이다!",
+                replies: [
+                    { nick: "Boomer_Detector", content: "할배 척추 접히면서 1시간 내내 엔진룸에 신문지 깔고 가던 게 낭만이에요? 틀니 2주 압수." },
+                    { nick: "Line1_Rider", content: "요금 7천원 삥뜯던 살인마 버스 회사를 쉴드치네 ㅋㅋㅋ 윤재훈 캠프 알바 왔능가" }
+                ]
+            },
+            {
+                nick: "Board_User_A", time: "35분 전", like: 19800, dislike: 12, isPunished: false,
+                content: "'한바다에게 이야기해!' 게시판 진짜 혁신이긴 함. <span style='color:#FF8899; font-weight:bold;'>7호선</span> 전차 역 앞에 가로등 고장 나서 무섭다고 올렸더니 다음날 바로 고쳐지고 바다 주무관님이 '요우소로! 안전하게 모시겠습니다!' 답글 달아줌 ㅋㅋㅋ 행정이 덕력을 만나면 이렇게 효율적이구나 싶었음.",
+                replies: [
+                    { nick: "Public_Servant", content: "타 지자체 공무원입니다. 저희도 벤치마킹하려고 오늘 회의했습니다. 효빈시 부러워요..." }
+                ]
+            },
+            {
+                nick: "JCM_Truth_Teller", time: "45분 전", like: 2, dislike: 25100, isPunished: true,
+                content: "대통령상도 조작이다!! 심사위원들은 모두 박효빈에게 매수되었다!! 2006년 3표 차로 시장직을 도둑맞은 나 지총민이 0.8%의 진실을 안고 청와대로 쳐들어갈 것이다!!",
+                replies: [
+                    { nick: "Ignore_Troll", content: "아저씨 청와대 용산으로 옮긴 지가 언젠데 아직도 청와대 타령이에요... 진짜 업데이트 안되네." },
+                    { nick: "YoonJaehoon(IP)", content: "닥쳐라 이 길거리 노숙자야!! 나의 장난감 총이 너를 심판할 것이다!!" },
+                    { nick: "Normal_Citizen", content: "2.1%랑 0.8% 진짜 환장의 콜라보다 ㅋㅋㅋㅋ" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const currentNick = reply.nick || "";
+                    const nickClass = reply.nickClass || (currentNick.includes("Yoon") || currentNick.includes("Ji_") || currentNick.includes("JCM_") || currentNick.includes("Doocheong") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${currentNick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+</body>
+</html>

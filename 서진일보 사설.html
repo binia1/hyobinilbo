@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사설] 서울 깍쟁이 언론들은 서진 시민들의 피눈물을 아는가 - 서진일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 서진일보 브랜드 컬러: 버건디 (#8b0000) */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; border-top: 4px solid #8b0000; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #8b0000; text-decoration: underline; }
+        .news-nav .active { color: #8b0000; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 36px; font-weight: 900; line-height: 1.35; color: #111; margin-bottom: 10px; letter-spacing: -1.5px; font-family: 'Nanum Myeongjo', serif; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        
+        .article-body { font-size: 18px; line-height: 1.85; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #ffdfdf 50%, transparent 50%); }
+        .article-body p { margin-bottom: 26px; text-align: justify; }
+        
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #8b0000; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+        
+        .quote-box { background-color: #faf5f5; border-left: 4px solid #8b0000; padding: 24px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 17px; color: #444; font-weight: bold; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; border-top: 3px solid #8b0000; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; color: #8b0000; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #8b0000; }
+        .ranking-num { font-weight: bold; color: #8b0000; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #fff5f5; border: 1px solid #ffcdd2; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #8b0000; font-weight: bold; }
+        .vote-btn.active { color: #8b0000; font-weight: bold; }
+        .vote-btn.active-hate { color: blue; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #8b0000; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <div class="flex items-end gap-3 cursor-pointer" onclick="location.href='index.html'">
+                <h1 class="text-4xl font-black text-[#8b0000] tracking-tighter" style="font-family: 'Nanum Myeongjo', serif;">서진일보</h1>
+                <span class="text-sm font-bold text-gray-500 mb-1">SEOJIN ILBO</span>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#8b0000] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="#">홈</a>
+                <a href="#">정치</a>
+                <a href="#">경제</a>
+                <a href="#">사회</a>
+                <a href="#" class="active">사설/칼럼</a>
+                <a href="#">지역/서진</a>
+                <a href="#">오피니언</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#8b0000] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">오피니언 > 사설</div>
+                <h2 class="article-title">[사설] 서울 깍쟁이 언론들은 서진 시민들의 피눈물을 아는가</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">서진일보 논설위원실</span><br>
+                        <span class="text-xs text-gray-400">입력 2026.03.30. 05:00 | 수정 2026.03.30. 08:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p>최근 효빈광역시 공식 소통 게시판에 이른바 '윤대환 전 시장 옹호 악플'이 게재되자, 효빈시청이 이를 영구 박제하고 형사고발을 예고했다. 그러자 기다렸다는 듯이 서울의 일부 중앙 보수 언론들이 일제히 효빈시를 맹비난하고 나섰다. "캐릭터를 비난했다고 고소하는 것은 권력 남용"이라며, 과거 윤대환 시장 시절을 그리워하는 목소리조차 차단하는 '좌파 독재'라는 프레임을 씌우고 있다.</p>
+
+                    <p>우리 서진일보는 이들 중앙 언론의 무지몽매함에 참담함을 금할 수 없다. <strong>책상머리에 앉아 이념의 잣대로만 세상을 재단하는 그 잘난 서울 깍쟁이 언론들은, 과연 윤대환 치하에서 우리 서진 시민들이 흘려야 했던 피눈물을 알기나 하는가?</strong></p>
+
+                    <div class="quote-box">
+                        윤대환은 서진시 출신이다. 그러나 그는 고향의 자랑이 아니라 '고향의 수치'이자 '등골 브레이커'였다. 시장 권력을 쥐자마자 그가 가장 먼저 한 일은 자신의 가족 기업인 <a href="두청운수.html">두청운수</a>의 배를 불리기 위해 서진-효빈 간 장거리 버스 노선을 철저히 통제한 것이다.
+                    </div>
+
+                    <p>그 시절 서진 시민들에게 효빈으로의 출퇴근과 통학은 매일매일이 생존을 건 사투였다. 수익성을 극대화하겠다는 명목으로 배차 간격을 박살 낸 윤대환 덕분에, 영하 10도의 혹한 속에서도 서진 시민들은 1시간 넘게 정류장에서 발을 굴렀다. 마침내 도착한 45인승 버스에는 무려 75명의 승객이 구겨 넣어졌다.</p>
+
+                    <p>그 짐짝 같은 버스 안에서 서진의 아들딸들은 <strong>'무릎 좌석(남의 무릎 위에 포개어 앉기)'</strong>이라는 비참한 굴욕을 견뎌야 했다. 자리가 없어 운전석 옆 불룩 튀어나온 <strong>엔진룸 덮개 위에 신문지를 깔고 앉았던 '사우나석'의 고통</strong>을 서울의 엘리트 기자들은 상상이나 해보았는가? 한여름 펄펄 끓는 엔진룸 위에서 엉덩이에 화상을 입어가며 대학 등록금을 아끼려 7,000원의 폭리 요금을 냈던 것이 바로 우리 서진 시민들이다.</p>
+
+                    <p>더욱이 그는 자신의 버스 독점을 지키기 위해 서진과 천주, 약산을 잇는 광역철도망 백지화라는 천인공노할 짓을 저질렀다. 그래놓고도 인근 지자체를 향해 "거지 촌동네"라며 폭언을 퍼부었다. 이토록 악랄하게 시민들의 고혈을 쥐어짜던 시절을 가리켜 <strong>'진정한 르네상스'</strong>라고 찬양하는 악성 게시물이 과연 단순한 '표현의 자유'인가? 범죄자에 대한 노골적인 비호이자, 피해자들에 대한 명백한 2차 가해다.</p>
+
+                    <p>서진시는 전통적인 보수 텃밭이다. 그러나 이념이 상식과 인륜을 덮을 수는 없다. 윤대환은 보수의 가치를 대변한 정치인이 아니라, 탐욕에 눈이 멀어 고향을 짓밟고 민생을 파탄 낸 파렴치한 기득권일 뿐이다. 중앙 보수 언론들이 오직 '효빈의 민주당 소속 시장을 때리기 위해' 윤대환 같은 자의 망령을 옹호한다면, 서진 시민들은 기꺼이 보수라는 이름표를 떼어 던질 것이다.</p>
+
+                    <p>효빈시의 단호한 형사고발 조치에 우리 서진 시민들은 전폭적인 지지를 보낸다. 범죄를 찬양하고 피해자의 상처를 헤집는 악플러에게 선처 따위는 사치다. 서울의 언론들은 얄팍한 정치 공세를 당장 멈추고, 지금이라도 당장 서진 터미널에 내려와 시민들에게 그 시절 두청운수의 악몽이 어떠했는지 직접 물어보라.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 서진일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#8b0000]" id="comment-count">14,295</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="서진일보는 건전한 댓글 문화를 지향합니다."></textarea>
+                        <button class="bg-[#8b0000] text-white px-6 font-bold text-sm hover:bg-[#660000] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span>많이 본 뉴스</span>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="#" class="ranking-link font-bold text-[#8b0000]">[사설] 서울 깍쟁이 언론들은 서진 시민들의 피눈물을 아는가</a></li>
+                    <li><span class="ranking-num">2</span> <a href="#" class="ranking-link">보수 텃밭 서진시, 2026 지선에서 "국힘 버리나" 이탈 조짐</a></li>
+                    <li><span class="ranking-num">3</span> <a href="#" class="ranking-link">윤대환 일가 소유 토지, 시의회서 강제 환수 논의 급물살</a></li>
+                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">[포토] 구 두청운수 터미널 앞 분노의 규탄 집회</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">무소속 유성민 지지율 15% 돌파? 서진 민심 요동친다</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#fdfdfd] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-black text-[#8b0000] mb-1">서진시외버스터미널</div>
+                    <div class="text-xs text-gray-600 font-bold mb-2">프리미엄 고속버스 신규 도입!</div>
+                    <div class="text-sm text-gray-800">더 이상 좁은 좌석은 없다!<br>누워서 가는 편안함</div>
+                    <div class="text-[10px] text-gray-500 mt-2">서진시 교통과</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#222] text-gray-400 py-10 mt-20 text-xs font-sans">
+        <div class="max-w-[1080px] mx-auto px-4 flex justify-between items-center">
+            <div>
+                <p class="font-bold text-lg text-white mb-2" style="font-family: 'Nanum Myeongjo', serif;">서진일보</p>
+                <p>제호: 서진일보 | 등록번호: 덕빈 다00042 | 발행인/편집인: 송태규</p>
+                <p>주소: 덕빈북도 서진시 중앙로 123 서진일보 사옥</p>
+                <p>전화: 078-432-0101 | Copyright © Seojin Ilbo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Seojin_Native_88", time: "방금 전", like: 12500, dislike: 15, isPunished: false,
+                content: "10년 묵은 체증이 다 내려가는 명문 사설이다!! 우리 서진일보 기백 안 죽었네!! 서울 놈들이 뭘 안다고 윤대환을 쉴드쳐? 매일 아침 효빈대 통학할 때 엔진룸 위에서 신문지 깔고 가면서 허리 디스크 걸린 거 생각하면 지금도 치가 떨린다.",
+                replies: [
+                    { nick: "Bus_Trauma_Girl", content: "여름엔 화상 입고 겨울엔 문틈으로 바람 다 들어와서 얼어 죽을 뻔했죠... 그게 르네상스라니 미친 악플러 새끼" },
+                    { nick: "Seoul_Ignorant", content: "솔직히 서울 사람이라 몰랐습니다. 서진일보 사설 보고 윤대환이 얼마나 악질인지 뼈저리게 느끼고 갑니다. 사과드립니다." }
+                ]
+            },
+            {
+                nick: "Freedom_Fighter_Yoon", time: "5분 전", like: 12, dislike: 18400, isPunished: true,
+                content: "서진일보 이 배신자 놈들!! 윤대환 시장님이 너희 고향을 얼마나 아끼셨는데!! 은혜도 모르는 좌파 간첩 언론은 당장 폐간하라!! 중앙 언론의 위대한 사설을 감히 반박하다니 하늘이 두렵지 않느냐!!",
+                replies: [
+                    { nick: "Fact_Check_Bot", content: "고향 아낀 놈이 고향 사람들을 75명씩 짐짝처럼 구겨 넣냐? 뇌가 없으면 키보드에서 손 떼라 벌레야." },
+                    { nick: "Seojin_Butcher", content: "서진 정육점입니다. 이 새끼 서진 오면 내가 칼 들고 쫓아간다. 고향의 수치 같은 놈." },
+                    { nick: "Line6_Victim", content: "효빈에서 넘어왔습니다. 서진 시민분들도 저런 놈들 때문에 고통이 많으시네요. 연대합니다." }
+                ]
+            },
+            {
+                nick: "Hyobin_Citizen_Respect", time: "12분 전", like: 10200, dislike: 8, isPunished: false,
+                content: "효빈 시민입니다. 서진일보 사설 보고 감동받아서 가입하고 댓글 남깁니다. 윤대환 고향이라 솔직히 서진시 별로 안 좋아했는데, 찐 민심은 우리랑 똑같이 고통받은 피해자였군요 ㅠㅠ 똥색 버스 트라우마 동지로서 굳건히 연대합니다!!",
+                replies: [
+                    { nick: "Seojin_Native_88", content: "효빈 시민님 환영합니다! 우리 같이 광역전철 <span style='color:#6677CC; font-weight:bold;'>빈효선</span>이나 타고 맛있는 거나 먹으러 다닙시다 ㅠㅠ" },
+                    { nick: "Hyobin_Mayor_Fan", content: "박효빈 시장님이 광역전철 뚫어주셔서 진짜 다행입니다 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "YoonJaehoon_Is_My_God", time: "18분 전", like: 4, dislike: 15200, isPunished: true,
+                content: "이 더러운 서진 촌놈들!! 우리 윤재훈 사령관님이 2.1%의 지지율로 효빈시를 정복하면 서진시는 지도에서 지워버릴 것이다!! 박효빈의 노예가 된 서진일보는 폭파시켜버리겠다!!",
+                replies: [
+                    { nick: "Math_Teacher", content: "2.1%로 누굴 정복해 등신아 ㅋㅋㅋ 기탁금 5천만원이나 준비해라 신용불량자 새끼야." },
+                    { nick: "Seojin_Police", content: "본사 폭파 협박으로 채증 완료. 신원 조회 들어갑니다." },
+                    { nick: "YoonJaehoon(IP)", content: "경찰은 당장 물러가라!! 이것은 정치 탄압이다!!" },
+                    { nick: "Popcorn_Eater", content: "경찰 등판하니까 바로 본계정 튀어나오는 거 개웃기네 진짜 ㅋㅋㅋㅋ 지능 처참하다." },
+                    { nick: "HyoBin_Lawyer", content: "효빈시 법무팀입니다. 서진경찰서와 공조하여 해당 IP 철저히 수사하겠습니다." }
+                ]
+            },
+            {
+                nick: "Moderate_Conservative", time: "25분 전", like: 8900, dislike: 22, isPunished: false,
+                content: "평생 보수당만 찍어온 서진 토박이입니다. 이번 조중동 등 중앙 언론 사설 보고 보수라는 단어에 회의감이 들었습니다. 저딴 패륜 범죄자를 이념 하나 같다고 쉴드치다니요. 윤대환 부자는 보수가 아니라 그냥 사기꾼입니다.",
+                replies: [
+                    { nick: "Right_Wing_Normal", content: "맞습니다. 진짜 보수라면 저런 놈들을 먼저 도려내야 합니다. 이번엔 무조건 무소속 유성민 밀어서 윤씨 일가 심판합시다." },
+                    { nick: "Seojin_Grandpa", content: "내 나이 칠십인데 나도 이번엔 당 안 보고 사람 찍을란다. 똥색 버스 치가 떨린다." }
+                ]
+            },
+            {
+                nick: "JCM_Truth_Teller", time: "30분 전", like: 2, dislike: 12500, isPunished: true,
+                content: "효빈도 서진도 모두 썩었다!! 진실은 2006년에 3표를 도둑맞은 나 지총민에게 있다!! 내 0.8%의 지지자들이 서진일보를 접수할 것이다!!",
+                replies: [
+                    { nick: "Ignore_Troll", content: "효빈일보에서 차단먹고 서진일보까지 원정 옴? ㅋㅋㅋㅋ 진짜 징하다 징해." },
+                    { nick: "Seojin_Native_88", content: "0.8% 빌런 왔능가 ㅋㅋㅋㅋㅋ 여기 올 시간 있으면 폐지나 주우쇼." }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const currentNick = reply.nick || "";
+                    const nickClass = reply.nickClass || (currentNick.includes("Yoon") || currentNick.includes("Ji_") || currentNick.includes("JCM_") || currentNick.includes("Freedom_Fighter") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${currentNick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+</body>
+</html>

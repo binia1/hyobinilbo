@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치] "보이스피싱인 줄 알았다"... 국민의힘 조병진, 여주연 사퇴로 시의원 비례대표 '기적의 승계' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; border-top: 4px solid #0055aa; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: 900; line-height: 1.35; color: #111; margin-bottom: 10px; letter-spacing: -1.5px; font-family: 'Nanum Myeongjo', serif; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        
+        .article-body { font-size: 18px; line-height: 1.85; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 26px; text-align: justify; }
+        
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+        
+        .quote-box { background-color: #f0f7ff; border-left: 4px solid #0055aa; padding: 24px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 17px; color: #333; font-weight: bold; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; border-top: 3px solid #0055aa; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; color: #0055aa; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .analysis-box { background: #f8f9fa; border: 1px solid #e2e8f0; border-top: 4px solid #0055aa; padding: 25px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif;}
+        .analysis-title { font-size: 20px; font-weight: bold; color: #0055aa; margin-bottom: 15px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 10px;}
+        .strike { text-decoration: line-through; color: #888; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="administration.html">행정/자치</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="opinion.html">오피니언</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">정치 > 시의회</div>
+                <h2 class="article-title">[정치] "보이스피싱인 줄 알았다"... 국민의힘 조병진, 여주연 사퇴로 시의원 비례대표 '기적의 승계'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최기자</span> (choi_reporter@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2022.06.05. 14:00 | 수정 2022.06.05. 14:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">국민의힘 비례 1번 여주연 당선인, 임기 시작 전 전격 사퇴 선언<br>곽두환 지역구 당선자의 무리한 행보 및 효빈시 여론 악화에 큰 부담 느낀 듯<br>비례 2번 조병진 승계 확정... 자택서 휴식 중 선관위 연락에 "가문의 쾌거" 환호</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/조병진.png" alt="조병진 의원" class="w-full border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Jo+Byeong-jin'">
+                        <div class="img-caption">▲ 지난 제8회 전국동시지방선거에서 <a href="국민의힘.html">국민의힘</a> 비례대표 2번으로 출마했던 <a href="조병진.html">조병진</a> 당선인. 비례대표 1번 당선인의 전격 사퇴로 제9대 효빈광역시의회에 극적으로 입성하게 되었다. (사진=효빈일보 DB)</div>
+                    </div>
+
+                    <p>제9대 <a href="효빈시의회.html">효빈광역시의회</a> 개원을 앞두고 이례적인 촌극이 벌어졌다. <a href="국민의힘.html">국민의힘</a> 소속 비례대표 1번으로 당선이 확정되었던 여주연 당선인이 돌연 사퇴를 선언함에 따라, 후순위인 비례대표 2번 <a href="조병진.html">조병진</a>(61) 후보가 의원직을 승계하게 된 것이다.</p>
+
+                    <p>정치권에 따르면, 여주연 전 당선인은 선거 직후부터 강한 심리적 압박을 토로해 온 것으로 알려졌다. 유일한 보수 지역구 당선자인 <a href="곽두환.html">곽두환</a>(남구 2선거구) 당선인이 선거 기간 내내 지역의 주요 서브컬처 문화 자본과 충돌하며 시민들의 거센 반발을 샀고, 선거법 위반 혐의로 수사 선상에까지 오르며 당 지지율이 곤두박질친 것이 결정적 요인으로 분석된다.</p>
+
+                    <div class="quote-box">
+                        지역 정가의 한 관계자는 "여 전 당선인이 '효빈시 특유의 문화적 지형을 고려할 때, 곽 당선인과 함께 의정 활동을 하다가는 걷잡을 수 없는 비판 여론에 직면할 것'이라며 심각한 우려를 표했다"고 전했다.
+                    </div>
+
+                    <p>비례대표 1번의 릴레이 사퇴로 인해 행운의 배지를 거머쥔 주인공은 조병진 후보다. 대구 달성군 화원읍 출신인 조 후보는 평당동 일대에서 공인중개사 사무소를 운영하며 지역 향우회와 보수 정당의 평당원으로 오래 활동해 온 인물이다. 당초 비례 2번은 효빈시의 험지 특성상 '낙선 확정 번호'로 여겨졌기에, 조 후보 본인조차 당선을 전혀 기대하지 않았던 것으로 전해진다.</p>
+
+                    <p>흥미로운 점은 승계 통보 당시의 일화다. 효빈시 선거관리위원회 관계자가 승계 절차 안내를 위해 조 후보의 자택으로 전화를 걸었을 당시, 조 후보는 TV로 예능 프로그램을 시청하며 휴식을 취하고 있었다.</p>
+
+                    <p>조 후보는 "당선되셨으니 의회 등록 절차를 밟아달라"는 선관위 직원의 전화를 처음에는 보이스피싱으로 오인하여 <strong>"요즘 사기꾼들은 선관위 사칭도 하느냐"</strong>며 통화를 끊었던 것으로 확인되었다. 이후 상황의 진위를 파악한 그는 "화원 조씨 가문의 쾌거"라며 몹시 기뻐했다는 후문이다.</p>
+
+                    <div class="analysis-box">
+                        <div class="analysis-title">💡 기자의 시선: 세대교체 의회 속 '전통적 꼰대력'의 충돌 우려</div>
+                        <p>조병진 당선인의 합류는 제9대 효빈시의회에 독특한 긴장감을 불어넣을 전망입니다.</p>
+                        <p>이번 효빈시의회는 2000년대생 초선 의원들이 대거 유입되며 대대적인 세대교체가 이루어졌습니다. 반면 조 당선인은 1961년생으로 의회 내 최고령급 원로 인사이자, 전통적이고 수직적인 보수 가치관을 강하게 고수하는 것으로 정평이 나 있습니다. 특히 <a href="박효빈.html">박효빈</a> 시장이 주도하는 유연하고 진보적인 '문화 행정' 및 서브컬처 장려 정책에 대해 공개적인 반감을 표출해 온 바 있습니다.</p>
+                        <p>시민 사회 일각에서는 "문화적 다양성이 생명인 효빈시에서, 전통적 가치관만을 고집하는 조 당선인이 자칫 시대의 흐름을 역행하는 갈등의 불씨가 될 수 있다"는 우려 섞인 목소리도 나오고 있습니다. 기적적인 '로또 승계'로 의회에 입성한 그가 젊은 시의회와 어떻게 조화를 이룰지 귀추가 주목됩니다.</p>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">15,824</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 정치 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="#" class="ranking-link font-bold text-[#0055aa]">[정치] "보이스피싱인 줄..." 국민의힘 조병진 기적의 승계</a></li>
+                    <li><span class="ranking-num">2</span> <a href="#" class="ranking-link">여주연 비례대표 사퇴의 전말... "곽두환 리스크 못 견뎠다"</a></li>
+                    <li><span class="ranking-num">3</span> <a href="#" class="ranking-link">조병진 당선인 "효빈시의 오타쿠 문화를 정화하겠다" 선포</a></li>
+                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">20대 시의원들 "조병진 의원님, 에어팟은 빼고 말씀하시죠?"</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">박효빈 시장, 새 시의회 개원식서 "편견 없는 소통 기대" 뼈 있는 축사</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4 cursor-pointer hover:bg-gray-50 transition" onclick="location.href='공식굿즈샵.html'">
+                <div>
+                    <div class="font-black text-[#0077DD] mb-1" style="color: #0077DD;">효빈 1호선 개통 기념</div>
+                    <div class="text-xs text-gray-600 font-bold mb-2">하나조노 타에 테마 교통카드 발매!</div>
+                    <img src="이미지/효빈교통카드.png" alt="교통카드" class="w-full h-24 object-contain mb-2" onerror="this.src='https://placehold.co/200x100?text=Transportation+Card'">
+                    <div class="text-[10px] text-gray-500">각 역사 고객센터에서 절찬 판매 중</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs font-sans">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Hanazono_Tae_Fan", time: "방금 전", like: 15400, dislike: 12, isPunished: false,
+                content: "화원 조씨 ㅋㅋㅋㅋ 아저씨 화원이 일본어로 <span class='strike'>하나조노</span>인 건 아시나요? <span style='color:#0077DD; font-weight:bold;'>1호선</span> 파스파레 타에 성씨랑 똑같음 ㅋㅋㅋㅋ 하나조노 병진 센세 폼 미쳤다 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Jo_Byung_Jin_Official", content: "어디 신성한 우리 가문 이름을 천박한 일본 만화 쪼가리 이름에 갖다 붙이느냐!! 당장 사과하고 글 지워라!!" },
+                    { nick: "Line1_Commuter", content: "아저씨가 사과하라고 하면 우리가 사과하겠냐? ㅋㅋㅋ 하나조노 병진 센세 화이팅! 타에 짱 굿즈 많이 사주세요 ㅋㅋㅋ" },
+                    { nick: "Fact_Check_Bot", content: "본인 고향 이름이 씹덕 캐릭터랑 똑같아서 강제로 성지순례 홍보대사 되게 생겼네 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Intelligence_Escape", time: "5분 전", like: 12500, dislike: 21, isPunished: false,
+                content: "여주연 전 당선인 진짜 똑똑하네 ㅋㅋㅋ 곽두환 똥물 튈까봐 바로 <span class='strike'>런</span> 지능적 후퇴 ㅋㅋㅋ 폭탄돌리기 최종 당첨자는 미스터트롯 보던 할배 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Political_Analyst", content: "솔직히 곽두환이 이부역 건드린 순간부터 국힘 뱃지 달고 효빈시에서 돌아다니면 길가다 돌 맞아도 합법인 수준이었음 ㅋㅋㅋ 탈출은 지능순." },
+                    { nick: "KwakDoHwan_Official", content: "나의 위대한 애국 투쟁을 오물 취급하다니!! 여주연은 보수의 수치다!!" },
+                    { nick: "Normal_Citizen", content: "아저씨 아직 감방 안 가셨어요? 선거법 위반 혐의 수사나 잘 받으세요 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Jo_Byung_Jin_Official", time: "12분 전", like: 15, dislike: 45200, isPunished: true,
+                content: "본 의원은 하늘이 내린 애국 보수의 기둥입니다!! 시의회를 장악한 핏덩이들과 오타쿠 놈들의 기강을 확실히 잡겠습니다!! 관공서에 걸린 남사스러운 그림들을 당장 불태우고 붓글씨 병풍을 치겠습니다!!",
+                replies: [
+                    { nick: "Gen_Z_Councilor", content: "아... 비례 2번 할아버지 들어오신다길래 벌써부터 에어팟 빼고 눈치 봐야 하나 걱정되네요 ㅠㅠ 꼰대 냄새 벌써 남..." },
+                    { nick: "Ethics_Committee", content: "조병진 의원님, 타 의원을 '핏덩이'로 비하하는 발언은 윤리위 회부 대상입니다. 품위 유지하시죠." },
+                    { nick: "Mayor_PHB_Fan", content: "시장님 눈썹 찌푸려지는 소리 여기까지 들린다 ㅋㅋㅋ 붓글씨 병풍 치기 전에 아저씨가 먼저 치워질 듯 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "KwakDoHwan_Official", time: "18분 전", like: 12, dislike: 38500, isPunished: true,
+                content: "조 의원님의 입성을 환영합니다! 저와 함께 평당동의 일본 잔재 이부역을 밀어버리고 무궁화를 심읍시다!! 효빈시를 좌파들의 마수에서 구출해 냅시다!!",
+                replies: [
+                    { nick: "PasPare_Fan", content: "이브 쨩은 핀란드 혼혈이라고 무식한 놈아!! 설정 파괴 좀 작작 해라!!" },
+                    { nick: "Pyeongdang_Merchant", content: "아저씨 제발 우리 상권 좀 그만 박살내요... 무궁화 심으면 밥이 나옵니까 떡이 나옵니까?" }
+                ]
+            },
+            {
+                nick: "YoonJaehoon(IP)", time: "25분 전", like: 8, dislike: 51200, isPunished: true,
+                content: "위대한 2.1%의 지지율이 조병진을 당선시킨 것이다!! 우리는 조병진과 함께 탱크를 몰고 시청으로 진격할 것이다!! 박효빈은 당장 시장직을 내놔라!!",
+                replies: [
+                    { nick: "Fact_Check_Bot", content: "2.1%는 니 지지율이고 ㅋㅋㅋ 조병진은 그냥 어부지리로 주운 거고 ㅋㅋㅋ 비비탄 총이나 쏘는 백수 새끼가 어딜 진격해 ㅋㅋㅋ" },
+                    { nick: "Jo_Byung_Jin_Official", content: "윤재훈 군... 자네의 지지는 고맙지만 탱크 운운하는 건 좀 선을 넘은 것 같네... 자중하게." },
+                    { nick: "Popcorn_Eater", content: "조병진마저 손절하는 2.1% 빌런 ㅋㅋㅋㅋㅋㅋㅋㅋ 개웃기네 진짜 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "True_Mayor_Yoon", time: "30분 전", like: 5, dislike: 48900, isPunished: true,
+                content: "조 의원, 자네가 의회에 들어가면 가장 먼저 전차 예산을 전액 삭감하고 두청운수 버스 노선을 부활시키게!! 이 도시의 진정한 제왕은 나 윤대환과 똥색 버스뿐이다!!",
+                replies: [
+                    { nick: "Bus_Driver", content: "윤대환 할배는 아직도 두청운수 타령이네 ㅋㅋㅋ 75명 가축 수송하던 시절로 돌아가자고? 감방에서 콩밥이나 드쇼 쫌." },
+                    { nick: "Line7_Tram_Lover", content: "전차 없애면 내가 할배 수염 다 뽑아버릴 거임 ㅋㅋㅋ <span style='color:#FF8899; font-weight:bold;'>7호선</span>은 낭만이다!!" }
+                ]
+            },
+            {
+                nick: "JCM_Truth_Teller", time: "38분 전", like: 3, dislike: 35100, isPunished: true,
+                content: "승계도 당선도 모두 거짓이다!! 2006년에 도둑맞은 내 표를 내놔라!! 0.8%의 진실만이 효빈시를 지배한다!! 캐리어 부대가 출동할 것이다!!",
+                replies: [
+                    { nick: "Normal_Citizen", content: "아 진짜 이 기사 댓글창 빌런들 총집합했네 ㅋㅋㅋㅋ 조병진 곽두환 윤재훈 윤대환 지총민 어벤져스냐? ㅋㅋㅋㅋ 효빈시 빌런 엑스포 열렸네 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Secret_Sponsor_Grandson", time: "45분 전", like: 28500, dislike: 15, isPunished: false,
+                content: "할아버지 축하드려요~ 이제 시의원 월급 받으시면 제 아이미(Aimi) 누나 굿즈 살 돈 팍팍 주시는 거죠? ^^7 비빔밥 최고!",
+                replies: [
+                    { nick: "Jo_Byung_Jin_Official", content: "민수야!! 너 여기서 뭐 하는 짓이냐!! 당장 댓글 지우지 못해!! 내가 준 돈으로 일본 기집애 사진을 사다니 불효막심한 놈!!" },
+                    { nick: "Aimi_Love", content: "조병진 의원님! 아이미 스폰서가 되어주셔서 감사합니다! 애국 보수 의원님의 위대한 후원 잊지 않겠습니다 ㅋㅋㅋ" },
+                    { nick: "Netizen_A", content: "할아버지 월급으로 일본 성우 덕질하는 손주 ㅋㅋㅋㅋ 진짜 콩가루 집안 꿀잼이네 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Info_Master", time: "55분 전", like: 19800, dislike: 22, isPunished: false,
+                content: "썰 들어보니까 선관위 전화 받고 보이스피싱인 줄 알고 끊으셨다며 ㅋㅋㅋㅋ 미스터트롯 보다가 참외 깎아 먹으면서 '요즘 사기꾼들 뻔뻔하네' 이러고 끊었대 ㅋㅋㅋㅋ 진짜 시트콤 찍냐 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "LMAO_Daily", content: "진짜 국힘은 인재가 없긴 없나보다. 비례 2번을 저런 동네 향우회 꼰대 아저씨한테 주다니 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Dangga_Merchant", time: "1시간 전", like: 15400, dislike: 18, isPunished: false,
+                content: "제발 당가동 와서 깽판만 치지 마쇼. 우리 쿠쿠 쨩 건드리면 상인회 단체로 국자랑 밀대 들고 나갈 거임. 저번에도 바지본인가 뭔가 하는 할배들 와서 깽판 치다 경찰서 갔지 ㅡㅡ",
+                replies: [
+                    { nick: "KwakDoHwan_Official", content: "탕 쿠쿠는 중화사상의 잔재다!! 당장 철거해라!!" },
+                    { nick: "Dangga_Chef", content: "아저씨는 재판이나 받으러 가세요. 웍으로 대가리 맞기 싫으면." }
+                ]
+            },
+            {
+                nick: "MZ_Voter", time: "1시간 10분 전", like: 21500, dislike: 30, isPunished: false,
+                content: "저런 할배가 의회 들어가면 뭐 하냐 어차피 민주당이 다수당이고 00년대생 시의원들이 다 팩트로 팰 텐데 ㅋㅋㅋ 에어팟 끼고 회의 들어갔다가 할배 뒷목 잡고 쓰러지는 거 생중계로 보고 싶다 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Gen_Z_Councilor", content: "준비 중입니다 ^^ 콩나물 대가리 안 빼고 버텨보겠습니다 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Tanseong_Resident", time: "1시간 20분 전", like: 18200, dislike: 25, isPunished: false,
+                content: "곽두환 저 인간은 우리 동네(탄성군) 와서 락 시끄럽다고 맨날 민원 넣더니 여기서 또 댓글 달고 있네 ㅋㅋㅋ 진짜 가지가지 한다 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Rock_Will_Never_Die", content: "걸즈 밴드 크라이 성지에 이사 와놓고 시끄럽다 지랄 ㅋㅋㅋ 절이 싫으면 중이 떠나쇼 쫌" }
+                ]
+            },
+            {
+                nick: "Hyobin_Pride", time: "1시간 30분 전", like: 25400, dislike: 40, isPunished: false,
+                content: "효빈시는 진짜 정치가 꿀잼 예능이다 ㅋㅋㅋ 매일매일 새로운 빌런이 등장하고 그걸 시장님이랑 시민들이 참교육하는 낭만의 도시 ㅋㅋㅋㅋ 조병진 할배 활약 기대합니다 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Popcorn_City", content: "진짜 팝콘 각 제대로 섰음 ㅋㅋㅋ 다음 본회의 생중계 무조건 본다 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Subculture_King", time: "1시간 40분 전", like: 14200, dislike: 15, isPunished: false,
+                content: "조병진 이 양반아, 효빈시에서 굿즈 팔고 행사해서 버는 세금이 얼만 줄 아냐? <span class='strike'>무식하면 용감하다더니</span> 진짜 뭣도 모르면서 병풍 치라고 소리 지르면 그게 보수냐 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Tax_Accountant", content: "HAF 행사 한 번 하면 북구 남구 상권 일주일치 매출 뽑음 ㅋㅋㅋ 저 할배는 진짜 경제관념 1도 없음" }
+                ]
+            },
+            {
+                nick: "Line1_Commuter", time: "1시간 50분 전", like: 16800, dislike: 20, isPunished: false,
+                content: "할배 <a href='도시철도.html'><span style='color:#0077DD; font-weight:bold;'>1호선(#0077DD)</span></a> 타에 랩핑 열차 한번 강제로 태워드려야 정신 차리시려나 ㅋㅋㅋ 자기 고향 이름(화원) 적힌 캐릭터 보고 혈압 오르는 거 직관하고 싶네 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Hanazono_Tae_Fan", content: "하나조노 열차에 하나조노 병진 센세 탑승 ㅋㅋㅋㅋ 전설의 레전드 짤 탄생 예감" }
+                ]
+            },
+            {
+                nick: "Politics_Is_Fun", time: "2시간 전", like: 12500, dislike: 18, isPunished: false,
+                content: "곽두환도 지금 선거법 위반으로 수사받고 있는데 쟤까지 날아가면 9대 시의회 국힘은 조병진 혼자 남겠네 ㅋㅋㅋ 빤쓰런 1명에 당선무효 예약 1명 ㅋㅋㅋ 진짜 궤멸 수준이다.",
+                replies: [
+                    { nick: "Conservative_Tears", content: "솔직히 보수 지지자인데도 이번 효빈시 국힘 라인업은 쉴드가 안 된다... 다 꼰대에 꼴통들뿐임." }
+                ]
+            },
+            {
+                nick: "Mayor_PHB_Fan", time: "2시간 15분 전", like: 28900, dislike: 30, isPunished: false,
+                content: "우리 갓효빈 시장님, 새 시의회 개원식 때 저 꼰대 영감님 보면서 속으로 무슨 생각 하셨을까 ㅋㅋㅋ '편견 없는 소통 기대한다'고 뼈 있는 축사 날리셨던데 ㅋㅋㅋ 시장님 화이팅!!",
+                replies: [
+                    { nick: "City_Hall_Staff", content: "시장님 축사 쓰시면서 한숨 푹푹 쉬셨습니다 ㅋㅋㅋ '또 빌런 하나 들어왔네' 하시면서 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Gwangyeok_Bus_Rider", time: "2시간 30분 전", like: 11200, dislike: 14, isPunished: false,
+                content: "똥색 버스 시절 그리워하는 윤대환이나, 인형 부수라는 곽두환 조병진이나... 그냥 니들 다 같이 <span style='color:#485EC6; font-weight:bold;'>광역버스</span> 타고 무인도로 꺼져버려 쫌.",
+                replies: [
+                    { nick: "True_Mayor_Yoon", content: "네 이놈!! 두청운수의 위대함을 모르는 핏덩이 놈!!" },
+                    { nick: "Fact_Check_Bot", content: "할배 좀 감방으로 들어가세요 제발 ㅋㅋㅋ 댓글 달 시간에 반성문이나 쓰쇼" }
+                ]
+            },
+            {
+                nick: "Alba_Student", time: "2시간 45분 전", like: 17400, dislike: 22, isPunished: false,
+                content: "시청 로비에서 붓글씨 병풍 치라고 깽판 치다가 여고생들한테 '할아버지 세금 우리가 다 낸다'고 팩폭 맞은 거 진짜 레전드 ㅋㅋㅋ 나 그 자리에 있었는데 할배 귀까지 시뻘개짐 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Jo_Byung_Jin_Official", content: "어린것들이 어른 공경할 줄 모르고!! 나라가 말세다 말세야!!" },
+                    { nick: "School_Girl", content: "존중받고 싶으면 깽판 치지 마세요 할아버지 ^^ 굿즈샵 매출액이나 보고 오시든가 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "LoveLive_Super_Fan", time: "3시간 전", like: 24500, dislike: 35, isPunished: false,
+                content: "조 의원님 손주가 민주당 04년생 의원한테 스파이 짓 해서 할배 정보 다 넘기고 있다며 ㅋㅋㅋㅋ 진짜 완벽한 민주당 일가족이다 ㅋㅋㅋㅋ 할아버지 돈으로 당비 내는 손주 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Secret_Sponsor_Grandson", content: "쉬잇! 그건 비밀입니다! ^^7 민주주의 만세!" },
+                    { nick: "Jo_Byung_Jin_Official", content: "뭐... 뭣이?! 민수야 네 이노오오옴!!!!" },
+                    { nick: "Popcorn_City", content: "실시간 혈압 상승 직관 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 팝콘 꿀맛이네 ㅋㅋㅋㅋ" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const currentNick = reply.nick || "";
+                    
+                    // 빌런들의 닉네임을 빨간색으로 하이라이트
+                    const isVillain = currentNick.match(/Yoon|Ji_|JCM_|Freedom_Fighter|Kwak|Jo_Byung_Jin|True_Mayor_Yoon|Doocheong/);
+                    const nickClass = reply.nickClass || (isVillain ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${currentNick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+</body>
+</html>

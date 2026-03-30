@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치/외교] "플라스틱 쪼가리가 아니다"... 박효빈 시장, 상하이·시부야 합작 '탕 쿠쿠' 파손에 국제적 결례 사과 및 철퇴 예고 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; border-top: 4px solid #0055aa; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: 900; line-height: 1.35; color: #111; margin-bottom: 10px; letter-spacing: -1.5px; font-family: 'Nanum Myeongjo', serif; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        
+        .article-body { font-size: 18px; line-height: 1.85; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 26px; text-align: justify; }
+        
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+        
+        .quote-box { background-color: #f0f7ff; border-left: 4px solid #0055aa; padding: 24px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 17px; color: #333; font-weight: bold; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; border-top: 3px solid #0055aa; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; color: #0055aa; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .analysis-box { background: #f8f9fa; border: 1px solid #e2e8f0; border-top: 4px solid #0055aa; padding: 25px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif;}
+        .analysis-title { font-size: 20px; font-weight: bold; color: #0055aa; margin-bottom: 15px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 10px;}
+        .strike { text-decoration: line-through; color: #888; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="administration.html" class="active">행정/자치</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="opinion.html">오피니언</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">정치 > 시정/외교</div>
+                <h2 class="article-title">[정치/외교] "플라스틱 쪼가리가 아니다"... 박효빈 시장, 상하이·시부야 합작 '탕 쿠쿠' 파손에 국제적 결례 사과 및 철퇴 예고</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최기자</span> (choi_reporter@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.12. 09:30 | 수정 2026.01.12. 10:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">안천구 당가동 탕 쿠쿠 등신대, 알고 보니 3국(효빈-상하이-시부야) 서브컬처 관광 교류의 상징물<br>비보 접한 박효빈 시장, 외교적 결례에 분노 삼키며 24시간 철야 근무 후 새벽 4시 현장 달려가<br>시청 법무팀 투입 예산 논란에 "소상공인 무료 법률구조 조례 활용한 합법적 지원" 묘수 돌파</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/박효빈_새벽방문.png" alt="박효빈 시장 당가동 새벽 방문" class="w-full border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Mayor+Park+at+Dangga-dong'">
+                        <div class="img-caption">▲ 12일 새벽 4시경, 안천구 <a href="당가동.html">당가동</a> 마을회관에 임시 수리된 채 보관 중인 <a href="탕쿠쿠.html">탕 쿠쿠</a> 등신대 앞을 지키고 있는 <a href="박효빈.html">박효빈</a> 시장의 뒷모습. 해당 조형물은 단순한 기성품이 아닌 3개 도시의 관광 교류를 상징하는 공공 자산으로 밝혀졌다. (사진=당가동 상인회 제공)</div>
+                    </div>
+
+                    <p>지난 11일 안천구 <a href="당가동.html">당가동</a>에서 발생한 극우 성향 시민단체 '효빈바른지명지키기운동본부(바지본)' 엄모 대표의 <a href="러브라이브슈퍼스타.html">탕 쿠쿠</a> 등신대 파손 사건이 단순한 기물 파손을 넘어 <strong>'국제적 외교 결례'</strong> 사태로 비화하고 있다.</p>
+
+                    <p>파손된 등신대가 단순 상업용 굿즈가 아니라, 효빈시가 캐릭터의 배경이 되는 일본 도쿄도 시부야구, 그리고 고향인 중국 상하이시와 공동 기획하여 한정 제작한 <strong>'3국 서브컬처 관광 우호 교류 상징물'</strong>이었기 때문이다. 일부 무지한 단체의 폭력 행위가 효빈시의 국제적 위상을 실추시킬 위기에 처하자, <a href="효빈광역시청.html">효빈광역시청</a>은 즉각적이고 전례 없는 강경 대응에 나섰다.</p>
+
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">◆ 새벽 4시의 방문... 억눌린 분노와 '찐사랑'</h3>
+
+                    <p>사건 당일 비보를 접한 <a href="박효빈.html">박효빈</a> 시장의 분노는 극에 달했던 것으로 전해진다. 자타가 공인하는 '탕 쿠쿠'의 열성 팬이기도 한 그에게 이 사건은 개인적인 '덕질'의 훼손이자, 본인이 공들여 구축한 3국 관광 벨트가 물리적 테러에 직면한 중대한 행정적 위기였다.</p>
+
+                    <div class="quote-box">
+                        현장에 있던 공무원들은 "시장님이 보고서를 쥔 손을 떨며 펜촉을 부러뜨리셨다"고 증언했다. 그러나 박 시장은 <strong>"...지금 당장 달려가서 놈들을 심판하고 싶지만, 나는 시장이다. 오후 일정, 예정대로 진행해."</strong>라며 차갑게 감정을 억눌렀다.
+                    </div>
+
+                    <p>그는 그날 오후 예정되어 있던 하수처리장 기공식과 해외 투자 화상 회의 등 살인적인 스케줄을 완벽하게 소화해 냈다. 그리고 모든 결재를 마친 새벽 3시 30분, 박 시장은 관용차 대신 자가용을 직접 몰아 당가동 마을회관으로 직행했다. 전혀 잠을 이루지 못한 상태였다.</p>
+
+                    <p>새벽 4시, 테이프로 임시 수리된 등신대 앞에 선 그는 <strong>"쿠쿠 쨩... 미안해... 시장으로서, 그리고 한 명의 팬으로서 지켜주지 못했어"</strong>라고 읊조렸다고 한다. 밤샘 당직을 서던 상인회장은 "시장님의 눈에 핏발이 서 있어서, 부서진 등신대보다 시장님의 과로사가 더 걱정될 지경이었다"고 당시의 무거운 공기를 전했다.</p>
+
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">◆ 법망의 허점을 노린 시의회의 공격... '묘수'로 돌파</h3>
+
+                    <p>동이 틀 때까지 현장을 지킨 박 시장은 날이 밝자마자 시 고문변호사단을 당가동 상인회 측에 전격 파견했다. 그러자 곧바로 시의회에서 국민의힘 소속 <a href="조병진.html">조병진</a> 의원이 제동을 걸고 나섰다.</p>
+
+                    <p>조 의원은 "고작 플라스틱 인형 쪼가리 하나 부서졌다고 상인회의 사적인 민사소송에 세금으로 고문변호사를 대주느냐"며 공직선거법 위반 및 기부행위 소지를 물고 늘어졌다. 자칫 행정력 남용 논란으로 번질 수 있는 위기였으나, 이는 박효빈 시장이 치밀하게 설계한 '합법적 행정 묘수'에 의해 산산조각 났다.</p>
+
+                    <div class="analysis-box">
+                        <div class="analysis-title">💡 기자의 시선: 조례와 공공자산 프레임을 활용한 완벽한 철퇴</div>
+                        <p>시청 대변인실은 즉각 브리핑을 열고 조 의원의 주장을 반박했습니다. <strong>"이번 법률 지원은 '효빈시 소상공인 무료 법률구조 조례'에 의거하여, 시 고문변호사의 연간 자문 쿼터를 당가동 상인회에 합법적으로 배정한 것"</strong>이라고 못 박았습니다.</p>
+                        <p>더욱 결정적인 한 수는 '공공자산 프레임'이었습니다. 대변인은 <strong>"해당 등신대는 3개 도시 관광 협약에 의해 시 예산이 투입된 '공공 관광 자산'이므로, 효빈시청 역시 단순한 조력자가 아니라 '공동 피해자(원고)' 자격으로 직접 소송에 임하는 것"</strong>이라고 쐐기를 박았습니다.</p>
+                        <p>이러한 명분 앞에 여야 의원들(유원민, 오서영 의원 등)은 "사유재산과 외교 자산을 수호하는 시장의 조치가 200% 옳다"며 십자포화로 조 의원을 고립시켰습니다.</p>
+                    </div>
+
+                    <p>박 시장은 법무팀에 다음과 같은 살벌한 지시를 내린 것으로 확인되었다. <strong>"단순 기성품 가격이 아닙니다. 한정판 프리미엄 가액, 상권 훼손으로 인한 영업 손실액(일실수입), 그리고 국제적 외교 결례에 따른 무형의 위자료까지 법이 허용하는 최대치를 영혼까지 끌어모아 청구하십시오."</strong></p>
+
+                    <p>현재 상하이시와 시부야구청 측에서도 이번 사태에 우려를 표하는 서한을 보내온 상태다. 오타쿠의 '가슴'과 행정가의 '이성'을 결합하여 무지한 폭력에 철퇴를 내린 효빈시의 대처가 전국적인 모범 사례로 주목받고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">81,402</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 정치 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="#" class="ranking-link font-bold text-[#0055aa]">[정치] "플라스틱 쪼가리가 아니다" 효빈시장 철야 방문</a></li>
+                    <li><span class="ranking-num">2</span> <a href="#" class="ranking-link">상하이·시부야 합작 등신대 파손에 국제적 망신 "어쩌나"</a></li>
+                    <li><span class="ranking-num">3</span> <a href="#" class="ranking-link">박효빈 시장의 합법적 묘수 "무료 법률구조 조례 영혼까지 끌어모아"</a></li>
+                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">조병진 시의원 "인형 하나에 세금?" 헛소리하다 여야 십자포화</a></li>
+                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">방탄유리 입은 당가동 탕 쿠쿠, 관광객 3배 늘었다</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4 cursor-pointer hover:bg-gray-50 transition" onclick="location.href='공식굿즈샵.html'">
+                <div>
+                    <div class="font-black text-[#FF8899] mb-1" style="color: #0055aa;">당가동 부흥의 아이콘!</div>
+                    <div class="text-xs text-gray-600 font-bold mb-2">탕 쿠쿠 한정판 아크릴 입고 완료</div>
+                    <img src="이미지/탕쿠쿠_등신대.png" alt="탕 쿠쿠 굿즈" class="w-full h-24 object-contain mb-2" onerror="this.src='https://placehold.co/200x100?text=Tang+Keke+Goods'">
+                    <div class="text-[10px] text-gray-500">효빈광역시청 대변인실 굿즈샵</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs font-sans">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "LoveLive_Super_Fan", time: "방금 전", like: 52100, dislike: 15, isPunished: false,
+                content: "와 미쳤다 ㅋㅋㅋㅋ 그냥 플라스틱 인형 부순 줄 알았는데 상하이-시부야 합동 프로젝트 상징물이었어? ㅋㅋㅋㅋㅋ 바지본 할배들 걍 길가다 비싼 외제차 긁은 수준이 아니라 대사관 차를 들이받은 거네 ㅋㅋㅋㅋ <span class='strike'>이건 단순 손괴가 아니라 테러지</span> 영혼까지 끌어모은 손해배상 개꿀딱!!",
+                replies: [
+                    { nick: "Diplomacy_Nerd", content: "진짜 나라 망신 ㅠㅠ 시부야 구청에서 우려 서한 보냈대잖아 ㅠㅠ 무식하면 가만히나 있지" },
+                    { nick: "Dangga_Dong_Merchant", content: "상인회장입니다. 어쩐지 시장님이 새벽에 오셔서 눈에 불을 켜시더니... 국제적 자산이라 변호사비 전액 지원이 가능했던 거군요. 갓효빈 만세입니다 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "Jo_Byung_Jin_Official", time: "5분 전", like: 12, dislike: 62400, isPunished: true,
+                content: "이것은 공산당과 쪽바리들의 문화 침략이다!! 어찌하여 대한민국 제2의 도시 효빈이 상하이와 시부야의 놀아나는 앞잡이가 되었단 말이냐!! 저 흉물스러운 중국년 인형을 파손한 것은 참된 애국 행위다!!",
+                replies: [
+                    { nick: "Yoo_Won_Min_Fan", content: "조 의원님... 외교부에서 님 발언 캡처해서 국힘 당사로 보낸대요 ㅋㅋㅋㅋ 외교적 결례 멈춰 제발 ㅋㅋㅋ" },
+                    { nick: "Fact_Check_Bot", content: "아저씨가 좋아하는 일본 우익 정치인 만나는 건 애국이고, 우리가 시부야랑 관광 교류하는 건 매국임? 논리 수준이 유치원생만도 못하네 ㅉㅉ" },
+                    { nick: "Secret_Sponsor_Grandson", content: "할아버지 제발 가만히 좀 계세요!! 제 타에 굿즈도 시부야에서 온 거란 말이에요 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "Law_Hacker_PHB", time: "12분 전", like: 41200, dislike: 22, isPunished: false,
+                content: "박효빈 시장 행정력 진짜 소름 돋는다 ㄷㄷㄷ '소상공인 무료 법률 쿼터 몰빵' + '공공 관광 자산 프레임'으로 시 고문변호사 합법적으로 투입시킨 거 보소 ㅋㅋㅋㅋ 조병진이 선거법 위반으로 물고 늘어질 구멍을 완벽하게 차단함 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Law_Student_K", content: "법학도인데 진짜 행정법의 빈틈을 극한으로 활용한 교과서적 묘수입니다 ㅋㅋㅋ 조병진이 딴지 걸 명분조차 완벽하게 차단함." },
+                    { nick: "City_Hall_Staff", content: "법무팀 직원입니다... 시장님 지시 떨어지자마자 관련 조례 100페이지 뒤져서 명분 찾느라 피똥 쌌습니다 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "KwakDoHwan_Official", time: "18분 전", like: 8, dislike: 58200, isPunished: true,
+                content: "상하이가 웬 말인가!! 우리는 자랑스러운 한우를 먹으며 무궁화를 심어야 한다!! 이부역의 무사도 잔재도, 당가동의 중국몽도 모두 불태워버려야 진정한 자주독립 국가다!!",
+                replies: [
+                    { nick: "Delivery_Rider", content: "선거법 위반 전과자 아저씨 아직도 안 주무심? ㅋㅋㅋ 한우 돌리다 짤린 놈이 말은 오지게 많네 ㅋㅋㅋ" },
+                    { nick: "Tanseong_Resident", content: "아저씨 우리 동네에서 밴드 연습 시끄럽다고 민원 넣다가 청년회장한테 털렸잖아요 ㅋㅋㅋ 좀 자쇼 쫌" },
+                    { nick: "Jo_Byung_Jin_Official", content: "곽 의원님... 마음은 알겠으나 중국 대사관이 지켜보고 있습니다... 자중하십시오..." }
+                ]
+            },
+            {
+                nick: "YoonJaehoon(IP)", time: "25분 전", like: 15, dislike: 65100, isPunished: true,
+                content: "하하하!! 이 위대한 외교 분쟁은 나의 2.1% 애국 정예 병력이 배후에서 조종한 것이다!! 박효빈은 당장 국제 사회에 사과하고 나에게 시장직을 양보하라!! 나의 장난감 총이 시부야를 불태울 것이다!!",
+                replies: [
+                    { nick: "Police_Cyber", content: "윤재훈 씨, 국제 테러 협박 및 허위사실 유포로 IP 추적 완료했습니다. 사이버수사대로 출석하세요." },
+                    { nick: "Math_Teacher", content: "2.1% 병력으로 시부야 불태운대 ㅋㅋㅋㅋㅋㅋㅋㅋ 동네 초딩 5명 모아놓고 참 장하다 진짜 ㅋㅋㅋㅋ" },
+                    { nick: "Popcorn_City", content: "진짜 미친놈들 총집합이네 ㅋㅋㅋㅋ 조병진마저 손절하는 2.1% 클라스 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Finance_Geek", time: "30분 전", like: 38200, dislike: 15, isPunished: false,
+                content: "기사 본문 읽어보면 민사 청구 항목이 살벌함 ㅋㅋㅋ '영업손실액(일실수입)'이랑 '외교 결례 위자료' ㅋㅋㅋㅋ 그냥 부서진 플라스틱 판때기 값이 아니라, 저거 부서져서 못 번 마라탕이랑 초코바나나 수익까지 다 물어내야 함 ㅋㅋㅋ 바지본 할배들 연금 다 털리겠네",
+                replies: [
+                    { nick: "Justice_Served", content: "이게 진짜 Z세대식 금융치료지 ㅋㅋㅋㅋ 자본주의의 매운맛을 보여주마" }
+                ]
+            },
+            {
+                nick: "True_Mayor_Yoon", time: "32분 전", like: 5, dislike: 53200, isPunished: true,
+                content: "내가 효빈을 다스리던 시절에는 감히 씹덕 만화 쪼가리가 외교의 중심에 서는 꼴은 없었다!! 오직 나의 위대한 두청운수 똥색 버스만이 진정한 외교 사절단이었다!!",
+                replies: [
+                    { nick: "Fact_Check_Bot", content: "감방에서 폰 몰래 쓰느라 고생이 많수다 윤대환 할배 ㅋㅋㅋ 천주시장한테 '거지 동네' 망언해서 지자체 외교 박살 낸 놈이 무슨 외교 사절단이야 ㅋㅋㅋ" },
+                    { nick: "Line6_Commuter", content: "<span style='color:#881188; font-weight:bold;'>6호선</span> 도면 태워먹은 방화범 새끼가 혀가 존나게 기네 진짜 ㅡㅡ" }
+                ]
+            },
+            {
+                nick: "JCM_Truth_Teller", time: "40분 전", like: 3, dislike: 41200, isPunished: true,
+                content: "상하이도 시부야도 모두 가짜다!! 세계의 진실은 오직 2006년 3표 차로 억울하게 패배한 나 지총민에게 있다!! 나의 0.8% 지지자들이 UN 본부를 점거할 것이다!!",
+                replies: [
+                    { nick: "Ignore_Troll", content: "할배... 효빈역 지하도 춥잖아요... UN 갈 차비도 없으면서 제발 쫌... 빈 박스나 덮고 주무셔..." },
+                    { nick: "Normal_Citizen", content: "아 진짜 2.1%랑 0.8% 영혼의 맞다이 존나 웅장하다 ㅋㅋㅋㅋ 효빈시 빌런 엑스포 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Shanghai_Student", time: "45분 전", like: 31200, dislike: 45, isPunished: false,
+                content: "효빈대 유학 중인 상하이 유학생입니다. 당가동 쿠쿠 등신대 파손됐다는 소식 듣고 중국 커뮤니티(웨이보)에서도 난리 났었는데, 시장님이 밤새서 달려가고 위자료까지 전액 배상 소송 걸어줬다는 뉴스 번역해서 올리니까 다들 갓효빈 찬양 중입니다 ㅋㅋㅋ 따거!",
+                replies: [
+                    { nick: "Hyobin_Pride", content: "휴... 다행이다 진짜 ㅠㅠ 무식한 단체 하나 때문에 나라 망신 당할 뻔 ㅠㅠ" },
+                    { nick: "Nihao_Keke", content: "민간 외교는 시장님이 다 캐리하네 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Shibuya_Resident_Kor", time: "52분 전", like: 28900, dislike: 30, isPunished: false,
+                content: "일본 시부야구 거주 중인 한국인입니다. 여기 로컬 신문에도 효빈시 테러 사건 작게 났었는데, 시장 대처가 워낙 깔끔해서 오히려 효빈시 행정력 칭찬하는 분위기임 ㅋㅋㅋ 전화위복 오졌다 진짜.",
+                replies: [
+                    { nick: "Admin_Master", content: "시장님이 새벽에 달려간 찐사랑 서사가 일본 애들 갬성 제대로 자극한 듯 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Dangga_Choco_Banana", time: "1시간 전", like: 24500, dislike: 22, isPunished: false,
+                content: "우리 동네 비만 오면 물 잠기던 곳이었는데 쿠쿠 덕분에 지금은 외국인 관광객 넘쳐남 ㅋㅋㅋ 조병진 영감탱이가 인형 쪼가리에 세금 낭비라고 헛소리할 때 진짜 웍으로 명치 패고 싶었음.",
+                replies: [
+                    { nick: "Merchant_B", content: "조 의원님 평당동 공인중개사 하시던 분이 상권 무서운 줄을 모르네 ㅋㅋㅋ 다음 선거 때 봅시다." }
+                ]
+            },
+            {
+                nick: "Line1_Commuter", time: "1시간 10분 전", like: 22100, dislike: 18, isPunished: false,
+                content: "오늘 퇴근하고 <a href='도시철도.html'><span style='color:#0077DD; font-weight:bold;'>1호선(#0077DD)</span></a> 타고 당가동으로 돈쭐 내러 갑니다. 조병진 곽두환 엿 먹이려면 상권을 더 번창하게 만들어줘야 함 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Line7_Tram_Lover", content: "저는 <span style='color:#FF8899; font-weight:bold;'>7호선(#FF8899)</span> 타고 넘어가겠습니다! 쿠쿠 쨩 우리가 지킨다!" }
+                ]
+            },
+            {
+                nick: "Bulletproof_Keke", time: "1시간 20분 전", like: 19800, dislike: 15, isPunished: false,
+                content: "방탄 아크릴 케이스 ㅋㅋㅋㅋ 시장님 진짜 사비 털어서 케이스 씌워준 거 광기다 ㅋㅋㅋㅋ 이제 바지본 할배들이 쇠파이프 들고 와도 기스 하나 안 남 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Safety_First", content: "테이프로 감아놓은 상처까지 보존해서 오히려 성지순례 명소 됨 ㅋㅋㅋ 갓벽한 엔딩" }
+                ]
+            },
+            {
+                nick: "Liella_Fan", time: "1시간 30분 전", like: 17500, dislike: 12, isPunished: false,
+                content: "아침에 쿠쿠 쨩 목 부러진 거 보고 울었는데, 시장님이 변호사 붙여서 영혼까지 뜯어낸다는 기사 보고 완전 치유받음 ㅠㅠ 박효빈은 신이다 ㅠㅠ",
+                replies: [
+                    { nick: "KwakDoHwan_Official", content: "중국몽에 찌든 한심한 족속들!! 대한민국이 무너지고 있다!!" },
+                    { nick: "Liella_Fan", content: "@KwakDoHwan_Official 전과자 아저씨는 탄성군에서 베이스 소리나 들으세요 ㅗ" }
+                ]
+            },
+            {
+                nick: "Anti_Villain", time: "1시간 40분 전", like: 15200, dislike: 20, isPunished: false,
+                content: "조병진 의원은 진짜 의회에서 혼자 뭐하냐 ㅋㅋㅋㅋ 같은 당도 다 런하고 혼자 남아서 맨날 공공자산이 뭔지도 모르고 헛소리하다가 2000년대생 초선들한테 팩트로 뚜드려 맞고 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Gen_Z_Councilor", content: "조 의원님 제발 본회의 들어오실 때 에어팟 끼고 있는 거 보고 호통 좀 그만 치세요 ㅠㅠ 시대가 변했습니다 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "Bus_Company_CEO", time: "1시간 50분 전", like: 14200, dislike: 18, isPunished: false,
+                content: "조병진 의원님, 칠양여객 대표입니다. 우리 버스 노선에 댁들 선거 광고 안 받습니다. 시장님처럼 문화를 아끼고 국제 감각 있는 분들만 모시겠습니다.",
+                replies: [
+                    { nick: "CEO_Chad", content: "대표님 씹상남자 ㅋㅋㅋㅋ 조병진 완전 왕따 확정이네 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "YoonJaehoon(IP)", time: "2시간 전", like: 10, dislike: 39500, isPunished: true,
+                content: "저 칠양여객 배신자 놈!! 우리 가문이 닦아놓은 버스판을 훔쳐간 놈!! 내가 2.1%의 힘으로 널 파산시킬 것이다!!",
+                replies: [
+                    { nick: "Fact_Check_Bot", content: "두청운수가 시민들 고혈 빨아먹고 7천원 삥뜯은 거겠지 ㅋㅋㅋ 장난감 총이나 내려놔 핏덩이야" }
+                ]
+            },
+            {
+                nick: "We_Are_The_World", time: "2시간 15분 전", like: 18900, dislike: 25, isPunished: false,
+                content: "진짜 기사 읽다가 웅장해진다 ㅋㅋㅋ 시장의 철야 강행군 + 사비 방탄 케이스 + 법무팀 합법적 동원 + 국제 외교 문제 비화 ㅋㅋㅋㅋ 효빈시는 넷플릭스 드라마로 만들어도 될 듯 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Hyobin_Pride", content: "이게 바로 덕후 친화 도시의 매운맛이다 ㅋㅋㅋ 무식한 빌런들은 절대 못 살아남음 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Moderate_Conservative", time: "2시간 30분 전", like: 16500, dislike: 30, isPunished: false,
+                content: "솔직히 보수 지지자로서 바지본 같은 폭력 단체들 진짜 부끄럽다. 유원민 의원 말이 100% 맞음. 남의 생업이랑 공공 외교 자산 박살 내는 게 무슨 보수야 그냥 테러리스트지. 1년 6개월 실형 아주 꼬시다.",
+                replies: [
+                    { nick: "Right_Wing_Normal", content: "그러니까요. 상권 보호가 진짜 보수의 가치지 저딴 깡패들이 무슨 보수입니까." }
+                ]
+            },
+            {
+                nick: "Night_Walker", time: "3시간 전", like: 21000, dislike: 18, isPunished: false,
+                content: "어제 새벽에 배달 가다 봤는데 진짜 관용차 아니고 본인 자가용 끌고 혼자 오셨더라 ㅋㅋㅋ 수행비서도 없이 조용히 와서 부러진 인형 목 쓰다듬는 거 보고 찐사랑 인정했음 ㅋㅋㅋ 갓효빈 만세!!",
+                replies: [
+                    { nick: "Respect_Rider", content: "라이더님 목격담 지리네요 ㄷㄷ 진짜 밤새 잠도 안 주무시고 ㅠㅠ" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const currentNick = reply.nick || "";
+                    
+                    // 빌런들의 닉네임을 빨간색으로 하이라이트
+                    const isVillain = currentNick.match(/Yoon|Ji_|JCM_|Freedom_Fighter|Kwak|Jo_Byung_Jin|True_Mayor_Yoon|Doocheong|Kwak_Fan_Club/);
+                    const nickClass = reply.nickClass || (isVillain ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${currentNick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+</body>
+</html>
