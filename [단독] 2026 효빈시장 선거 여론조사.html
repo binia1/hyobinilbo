@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[단독] 박효빈 74.8% '압도적 1위'... 유성민 14.5% 전액 보전 눈앞, 윤재훈·지총민 '도토리 키재기' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .poll-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; }
+        .poll-table th, .poll-table td { border: 1px solid #ccc; padding: 12px; text-align: center; vertical-align: middle; }
+        .poll-table th { background-color: #f0f4f8; font-weight: bold; color: #333; }
+        .poll-table tr:nth-child(even) { background-color: #fafafa; }
+        .poll-table td:nth-child(3) { font-weight: bold; font-size: 18px; }
+        
+        .bar-container { width: 100%; background-color: #e9ecef; border-radius: 4px; overflow: hidden; height: 20px; }
+        .bar { height: 100%; min-width: 2px; transition: width 0.5s ease; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .analysis-box { background: #fdfdfd; border: 1px solid #ddd; border-top: 4px solid #0055aa; padding: 25px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif;}
+        .analysis-title { font-size: 20px; font-weight: bold; color: #0055aa; margin-bottom: 15px; border-bottom: 1px dashed #ccc; padding-bottom: 10px;}
+        .strike { text-decoration: line-through; color: #888; }
+    </style>
+</head>
+<body>
+
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">정치 > 선거/여론조사</div>
+                <h2 class="article-title">[단독여론조사] 박효빈 74.8% '압도적 1위'... 유성민 14.5% 돌풍 속 빌런들의 '처참한 성적표'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최기자</span> (choi_reporter@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.03.28. 19:00 | 수정 2026.03.28. 19:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈일보·효빈리서치 D-60 공동 여론조사 결과 전격 공개<br>박효빈 74.8% 철옹성 유지... 유성민, 보수 대안으로 15% '전액 보전' 턱밑 추격<br>윤재훈 2.1%로 반토막 났음에도 "승리했다" 횡설수설... 지총민 0.8% 고립무원</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/여론조사결과.png" alt="여론조사 결과 그래픽" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Hyobin+Mayor+Election+Poll+2026'">
+                        <div class="img-caption">▲ 2026년 제9회 전국동시지방선거 효빈광역시장 선거 D-60 여론조사 결과 그래픽. (그래픽=효빈일보)</div>
+                    </div>
+
+                    <p>오는 6월 치러지는 제9회 전국동시지방선거 <a href="효빈광역시장.html">효빈광역시장</a> 선거가 약 60일 앞으로 다가온 가운데, 효빈일보가 효빈리서치에 의뢰해 실시한 여론조사 결과가 28일 발표되었다. 예상대로 현직인 <a href="더불어민주당.html">더불어민주당</a> <a href="박효빈.html">박효빈</a> 시장이 70%대의 압도적인 지지율로 선두를 굳힌 가운데, 제3지대와 군소 후보들의 처절한 생존 게임이 눈길을 끌고 있다.</p>
+
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 19px; margin-top: 40px; margin-bottom: 15px; color:#111;">📊 [여론조사] 2026 차기 효빈시장 적합도 다자대결</h3>
+                    <table class="poll-table">
+                        <thead>
+                            <tr>
+                                <th>후보 이름</th>
+                                <th>소속 정당</th>
+                                <th>지지율 (%)</th>
+                                <th>등락 (22년 지선 대비)</th>
+                                <th style="width: 35%;">지지율 그래프</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="박효빈.html">박효빈</a></td>
+                                <td>더불어민주당</td>
+                                <td style="color: #004ea2;">74.8%</td>
+                                <td>🔻 3.1%p</td>
+                                <td class="text-left">
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 74.8%; background-color: #004ea2;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="유성민.html">유성민</a></td>
+                                <td>무소속</td>
+                                <td style="color: #555555;">14.5%</td>
+                                <td style="color: #d32f2f;">🔺 2.5%p</td>
+                                <td class="text-left">
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 14.5%; background-color: #555555;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="이사원.html">이사원</a></td>
+                                <td>정의당</td>
+                                <td style="color: #e5b300;">2.8%</td>
+                                <td>🔻 0.4%p</td>
+                                <td class="text-left">
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 2.8%; background-color: #e5b300;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="윤재훈.html">윤재훈</a></td>
+                                <td>국민의힘</td>
+                                <td style="color: #e61e2b;">2.1%</td>
+                                <td>🔻 2.7%p</td>
+                                <td class="text-left">
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 2.1%; background-color: #e61e2b;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="지총민.html">지총민</a></td>
+                                <td>새미래민주당</td>
+                                <td style="color: #00a9e0;">0.8%</td>
+                                <td style="color: #666;">(신규 출마)</td>
+                                <td class="text-left">
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 0.8%; min-width: 3px; background-color: #00a9e0;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>없음/모름</td>
+                                <td>(무당층)</td>
+                                <td style="color: #888888; font-weight: normal; font-size: 15px;">5.0%</td>
+                                <td>-</td>
+                                <td class="text-left">
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 5.0%; background-color: #cccccc;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-family: 'Noto Sans KR', sans-serif; font-size: 13px; color: #777;">* 조사의뢰: 효빈일보<br>* 조사기관: 효빈리서치<br>* 조사기간: 2026년 3월 25일 ~ 27일 (3일간)<br>* 조사대상: 효빈광역시 거주 만 18세 이상 남녀 1,000명<br>* 표본오차: 95% 신뢰수준에 ±3.1%p (자세한 사항은 중앙선거여론조사심의위원회 홈페이지 참조)</p>
+
+                    <div class="analysis-box">
+                        <div class="analysis-title">💡 정치부 최기자의 심층 분석 코멘트</div>
+                        <p><strong>① 박효빈의 철옹성 vs 이사원의 눈물:</strong> 박효빈 시장은 74.8%라는 경이로운 수치로 사실상 재선을 예약했습니다. <a href="노서현.html">노서현</a> 서구청장의 통 큰 경선 양보로 내부 결속까지 다진 상태입니다. 반면, 노동 현장을 대변하려던 <a href="정의당.html">정의당</a> <a href="이사원.html">이사원</a> 후보는 2.8%로 고전 중입니다. 박 시장이 '효빈 패스'와 실전(알바 3개)으로 단련된 디테일한 노동 정책으로 진보 어젠다를 완벽히 뺏어간 것이 뼈아픕니다.</p>
+
+                        <p><strong>② 유성민, 효빈시 선거 역사를 새로 쓰나?:</strong> 이번 여론조사의 실질적인 관전 포인트는 <a href="무소속.html">무소속</a> <a href="유성민.html">유성민</a> 후보의 14.5%입니다. 부끄러운 보수를 청산하겠다며 나선 그에게 효빈시의 합리적 보수층이 무섭게 결집하고 있습니다. 앞으로 단 0.5%p만 더 끌어올려 15%를 돌파한다면, 효빈시 선거 역사상 최초로 무소속 후보가 기탁금과 선거비용 전액을 보전받는 <span class="strike">그리고 국힘을 멸망시키는</span> 기적을 쓰게 됩니다.</p>
+
+                        <p><strong>③ 2.1%의 정신 승리 vs 0.8%의 고립무원:</strong> 효빈시 선거판의 '웃음벨'을 담당하는 두 빌런의 추락도 흥미롭습니다. 장난감 BB탄 총을 들고 계엄사령관 행세를 하던 <a href="국민의힘.html">국민의힘</a> <a href="윤재훈.html">윤재훈</a> 후보는 과거 4.8%에서 반토막 난 2.1%를 기록했습니다. 그러나 본인은 "2024년 총선(2.2%)의 콘크리트 지지층이 굳건하다!"라며 정작 크게 기뻐하고 있습니다. <span class="strike">기탁금 5천만 원 날리고 신불자 확정인데 속도 참 편합니다.</span></p>
+                        
+                        <p>여기에 2006년 3표 차 패배의 망령 <a href="지총민.html">지총민</a> 후보는 0.8%라는 사실상 통계적 의미가 없는 처참한 수치를 기록하며 완벽하게 고립되었습니다. 윤재훈 후보 측은 이 결과를 두고 "내가 0.8% 거지를 이겼다!"며 잔치 분위기라고 하니, 두 후보의 하찮은 도토리 키재기를 지켜보는 시민들의 피로도만 높아지고 있습니다.</p>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">38,194</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="hyobin_poll_news.html" class="ranking-link font-bold text-[#0055aa]">[여론조사] 박효빈 74.8%... 유성민 14.5% 돌풍</a></li>
+                    <li><span class="ranking-num">2</span> <a href="phb_re_election_news.html" class="ranking-link">박효빈, 효빈역 환승센터서 출마 선언 "덕후의 힘"</a></li>
+                    <li><span class="ranking-num">3</span> <a href="yoonsm_declaration.html" class="ranking-link">유성민 "비비탄 쏘는 패륜아, 보수 참칭 못 해"</a></li>
+                    <li><span class="ranking-num">4</span> <a href="yoon_declaration.html" class="ranking-link">윤재훈 "나의 2%는 무적이다" 기탁금 출처 논란</a></li>
+                    <li><span class="ranking-num">5</span> <a href="jcm_declaration.html" class="ranking-link">월세 밀려 쫓겨난 지총민, 캐리어 끌고 노숙 유세</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 패스 (H-Pass)</div>
+                    <div class="text-xs text-blue-600 font-bold mb-2">대중교통 무제한의 마법!</div>
+                    <div class="text-[10px] text-gray-500">효빈교통공사</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs font-sans">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Real_Hyobin", time: "방금 전", like: 39540, dislike: 45, isPunished: false,
+                content: "효빈시의 진짜 주인은 이름부터 효빈(Hyobin)인 박효빈 시장님이지 ㅋㅋㅋ 74.8% 막대그래프 보소 혼자 화면 탈출하려 하네 ㅋㅋㅋ 시장님 평생 종신 가즈아!!",
+                replies: [
+                    { nick: "Subculture_King", content: "이름이 곧 도시인 사나이 ㄷㄷ 효빈시를 지배하는 성덕" },
+                    { nick: "Hyo_Bin_Citizen", content: "진짜 효빈역에 박효빈 동상 하나 세워드려야 함 ㅠㅠ" },
+                    { nick: "YoonJaehoon(IP)", content: "이름이 똑같아서 당선된 거다!! 무효다!! 내 이름 윤재훈으로 도시 이름을 바꿔라!!" },
+                    { nick: "Fact_Check", content: "그럼 재훈시냐? ㅋㅋㅋㅋ 어감이 존나 구리네 기생충아" }
+                ]
+            },
+            {
+                nick: "YoonJaehoon(IP)", time: "3분 전", like: 15, dislike: 29800, isPunished: true,
+                content: "하하하하!! 보아라 나의 위대한 2.1% 막대기를!! 지총민 0.8% 따위는 보이지도 않는구나!! 나의 콘크리트 애국 지지층이 51%로 폭발할 것이다!! 효빈일보는 나의 승리를 대서특필하라!!",
+                replies: [
+                    { nick: "Math_Teacher", content: "2.1%로 승리 선언 ㅋㅋㅋㅋ 4.8%에서 반토막 났는데 뇌가 녹았나 진짜" },
+                    { nick: "Observer", content: "기자님 심층 분석 코멘트에 '기탁금 5천만원 날리고 신불자 확정' 팩트 폭력 미쳤다 ㅋㅋㅋㅋ" },
+                    { nick: "Ji_Chong_Min_Fan", content: "어린놈의 새끼가 입만 살아서! 장난감 총이나 내려놔라 핏덩이야!" },
+                    { nick: "Police_Officer", content: "윤재훈 씨 선거법 위반 증거 수집 중입니다. 계속 떠드십시오." }
+                ]
+            },
+            {
+                nick: "Conservative_Real", time: "10분 전", like: 22800, dislike: 110, isPunished: false,
+                content: "무소속 유성민 의원님 14.5% ㄷㄷ 진짜 0.5%만 더 채워서 기탁금 전액 보전의 신화를 써봅시다!! 보수의 양심을 지켜주세요!!",
+                replies: [
+                    { nick: "Right_Wing_Normal", content: "진짜 윤재훈 찍을 바엔 유성민 찍어서 15% 만들어주는 게 보수 살리는 길임." },
+                    { nick: "Vote_Strategic", content: "무당층 5% 여러분, 유성민한테 표 줘서 윤재훈 국힘에서 영구 제명시킵시다." },
+                    { nick: "YoonJaehoon(IP)", content: "이 배신자 놈들아!! 유성민은 좌파 프락치다!!" }
+                ]
+            },
+            {
+                nick: "Subway_Commuter", time: "15분 전", like: 18400, dislike: 56, isPunished: false,
+                content: "박효빈 시장님이 <span style='color:#0077DD; font-weight:bold;'>1호선</span>이랑 <span style='color:#EE0022; font-weight:bold;'>5호선</span> 환승 통로 개선해 준 거 생각하면 74.8%도 부족함. 윤대환이 말아먹은 철도망 복구해 준 것만으로도 평생 까방권 드립니다.",
+                replies: [
+                    { nick: "Line2_Rider", content: "ㅇㅈ <span style='color:#00CCAA; font-weight:bold;'>2호선</span> 배차 간격 줄인 것도 신의 한 수임." },
+                    { nick: "Line8_Commuter", content: "<span style='color:#9856FF; font-weight:bold;'>8호선</span> 백지화 막아준 것도 ㅠㅠ 갓효빈!" }
+                ]
+            },
+            {
+                nick: "Ji_Chong_Min_Fan", time: "22분 전", like: 5, dislike: 21500, isPunished: true,
+                content: "이 여론조사는 거대 양당의 조작이다!! 2006년의 진정한 주인 나 지총민의 0.8%는 거짓이다!! 나의 유튜브에 진실한 12명의 용사들이 있다!! 박효빈은 사퇴하라!!",
+                replies: [
+                    { nick: "Gosiwon_Owner", content: "아저씨 효빈역 광장에서 캐리어 깔고 노숙 중이라며? 날 추운데 동사하지 말고 그냥 포기하쇼." },
+                    { nick: "Doocheong_Driver", content: "2006년에 3표 차로 표 분산시킨 역적이 혓바닥이 기네 ㅡㅡ" },
+                    { nick: "YoonJaehoon(IP)", content: "하하하! 쫓겨난 길거리 거지 놈!! 내 2.1%가 효빈시를 지배할 것이다!!" },
+                    { nick: "Fact_Check", content: "2.1%나 0.8%나 둘 다 기탁금 5천만원 날리는 건 똑같다 ㅂㅅ들아 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Labor_Union_Lee", time: "30분 전", like: 12100, dislike: 320, isPunished: false,
+                content: "이사원 위원장 지지자로서 2.8%는 눈물 납니다 ㅠㅠ 하지만 솔직히 박 시장님이 웬만한 진보 어젠다를 다 정책으로 실현해버려서... 알바 쓰리잡 짬바는 못 이기겠네요 ㅠㅠ",
+                replies: [
+                    { nick: "Citizen_B", content: "정의당은 아쉽지만, 갓효빈이 너무 사기캐임 ㅋㅋㅋ" },
+                    { nick: "Worker_A", content: "솔직히 우리 노조원들도 이번엔 박효빈 찍기로 합의 봄;;;" }
+                ]
+            },
+            {
+                nick: "Gwangyeok_Commuter", time: "35분 전", like: 14500, dislike: 44, isPunished: false,
+                content: "약산, 천주에서 효빈으로 출퇴근하는 사람들한테 박효빈은 신임. <span style='color:#6677CC; font-weight:bold;'>빈효선광역전철</span>이랑 <span style='color:#485EC6; font-weight:bold;'>광역버스</span>에 H-Pass 적용시켜준 거 ㅠㅠ 대중교통의 황제다 진짜.",
+                replies: [
+                    { nick: "Town_Bus_Driver", content: "<span style='color:#A664A0; font-weight:bold;'>마을버스</span> 기사 휴게실 고쳐준 것도 잊지 마쇼. 디테일 끝판왕임." }
+                ]
+            },
+            {
+                nick: "Otaku_A", time: "42분 전", like: 13500, dislike: 21, isPunished: false,
+                content: "윤재훈 저놈은 장난감 총 들고 애니메이션 시청 금지 조례 만든다던데 ㅋㅋㅋ 2.1%로 당선되면 아주 효빈시 분서갱유 하겠네 ㅋㅋㅋ L-Project 건드리면 상인들한테 맞아 죽는다.",
+                replies: [
+                    { nick: "Dang_Ga_Dong_Owner", content: "당가동 굿즈샵 상인 연합회입니다. 파리채랑 빗자루 항시 대기 중입니다." },
+                    { nick: "Tourism_Board", content: "L-Project가 효빈시 1년 관광 수익 다 내주는데 그걸 없앤대 ㅋㅋㅋ 경제관념 제로." }
+                ]
+            },
+            {
+                nick: "Kang_Supporter", time: "50분 전", like: 11200, dislike: 41, isPunished: false,
+                content: "강성택 전 의원님은 22년에 본인 아집 깨닫고 정계 은퇴하시면서 속죄라도 하시는데... 지총민 저 인간은 진짜 인간 말종이네요. 0.8%도 많이 나온 거임.",
+                replies: [
+                    { nick: "Respect_Kang", content: "강 의원님 어제도 비 오는데 3표의 눈물 기념비 닦고 가셨음 ㅠㅠ" },
+                    { nick: "History_Teacher", content: "지총민은 진짜 역사에 남을 비호감 트롤러다." }
+                ]
+            },
+            {
+                nick: "Bus_Company_CEO", time: "1시간 전", like: 15200, dislike: 33, isPunished: false,
+                content: "칠양여객 대표 옥덕호입니다. <span style='color:#01B7ED; font-weight:bold;'>간선버스</span>랑 <span style='color:#FF5800; font-weight:bold;'>좌석버스</span>에 윤재훈, 지총민 선거 광고는 10억을 줘도 안 받습니다. 우리 Liella! 랩핑 훼손하려던 놈들 용서 못 합니다.",
+                replies: [
+                    { nick: "CEO_Chad", content: "대표님 씹상남자 ㅋㅋㅋㅋ 폼 미쳤다." },
+                    { nick: "YoonJaehoon(IP)", content: "이 버스회사 적폐 놈들아!! 보조금 다 끊어버릴 거다!!" },
+                    { nick: "Bus_Company_CEO", content: "@YoonJaehoon(IP) 당선 확률 2%짜리가 어디서 협박질이야 장난감 총이나 내려놔" }
+                ]
+            },
+            {
+                nick: "Yoon_Secret_Account", time: "1시간 10분 전", like: 4, dislike: 16800, isPunished: true,
+                content: "나는 효빈시의 평범한 주부다! 우리 동네 엄마들은 다 윤재훈 사령관님을 지지한다! 박효빈은 당장 시장직을 내놔라!! 여론조사 74%는 CIA가 개입한 거다!!",
+                replies: [
+                    { nick: "Hyobin_Mom", content: "어디서 주부 사칭이야 홀아비 냄새 펄펄 나는데 ㅋㅋㅋ" },
+                    { nick: "IP_Tracker", content: "이거 IP 보니까 아까 윤재훈 본계정이랑 똑같은데? 다중이 짓 또 걸렸네 ㅋㅋㅋ" },
+                    { nick: "YoonJaehoon(IP)", content: "내 비밀계정 누가 해킹했어!! (자폭)" }
+                ]
+            },
+            {
+                nick: "Airport_Bus_Driver", time: "1시간 20분 전", like: 12400, dislike: 25, isPunished: false,
+                content: "<span style='color:#84C36E; font-weight:bold;'>공항버스</span> 기사입니다. 윤재훈이 필리핀 대사관 어그로 끌어서 케손시티랑 자매결연 맺은 덕분에 필리핀 관광객들 엄청 늘었어요 ㅋㅋㅋ 외교의 다크나이트 인정합니다 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Diplomat_K", content: "진짜 윤재훈이랑 김팀장은 효빈시 무역 발전에 큰 공(?)을 세움 ㅋㅋㅋㅋ" },
+                    { nick: "Philippine_Embassy", content: "참고로 윤재훈 씨는 필리핀 영구 입국 금지(Persona Non Grata) 상태입니다. 오지 마세요." }
+                ]
+            },
+            {
+                nick: "Saaya_Bakery", time: "1시간 30분 전", like: 14200, dislike: 30, isPunished: false,
+                content: "사능동 빵집입니다. <span style='color:#FFCC11; font-weight:bold;'>3호선</span> 사능역에 사아야 생일 광고 찢으려던 윤재훈 놈을 응징해주신 동네 할머님들 감사합니다 ㅋㅋㅋ 박효빈 시장님이 빵 복구 도와주신 은혜 잊지 않고 무조건 투표합니다.",
+                replies: [
+                    { nick: "Bread_Lover", content: "시장님 직접 앞치마 두르고 빵 주워 담던 짤 아직도 폰에 있음 ㅠㅠ 갓효빈" }
+                ]
+            },
+            {
+                nick: "Moderate_Voter", time: "1시간 40분 전", like: 10800, dislike: 44, isPunished: false,
+                content: "무당층 5%입니다. 오늘 이 기사 보고 마음 정했습니다. 15% 보전의 기적을 만들어 윤재훈을 확실히 끝장내기 위해 유성민 찍겠습니다.",
+                replies: [
+                    { nick: "Right_Wing_Normal", content: "훌륭한 선택이십니다. 혐오 팔이들 다 치워버립시다." },
+                    { nick: "Vote_Punish", content: "윤재훈 기탁금 5천만원 국고 환수 가즈아!" }
+                ]
+            },
+            {
+                nick: "Hyobin_Sister", time: "2시간 전", like: 17500, dislike: 88, isPunished: false,
+                content: "우리 오빠(박효빈) 괴롭히던 윤재훈 쓰레기. 니가 초딩 때 나랑 오빠 기초수급자라고 놀리면서 때리던 거 다 기억해. 2.1%면 시민들도 너 쓰레기인 거 다 안다는 뜻이다. ㅉㅉ",
+                replies: [
+                    { nick: "Wow_Sister_Again", content: "박슬아 님 등판 ㄷㄷㄷ 진짜 흙수저 신화 맞구나 ㅠㅠ" },
+                    { nick: "Protect_HyoBin", content: "시장님 어릴 때 저런 놈한테 시달리면서 컸구나 ㅠㅠ 우리가 지켜줄게!!" },
+                    { nick: "Lawyer_Team", content: "박효빈 시장 법무팀입니다. 윤재훈 씨 측의 추가적인 협박 정황 채증 중입니다." }
+                ]
+            },
+            {
+                nick: "Min_President", time: "2시간 15분 전", like: 15100, dislike: 32, isPunished: false,
+                content: "우리 효빈대학교의 자랑 박효빈 동문의 재선을 총장으로서 열렬히 지지합니다. HAF 2배 확장과 카스밍 로드 연장은 이 도시의 문화적 품격을 높일 것입니다. (오하라 마리 굿즈는 잘 있습니다.)",
+                replies: [
+                    { nick: "Hyobin_Univ_Student", content: "총장님 오하라 마리 덕질 커밍아웃 ㅋㅋㅋㅋㅋㅋㅋㅋ" },
+                    { nick: "Alumni_A", content: "스승과 제자가 쌍으로 성덕 ㅋㅋㅋㅋ 효빈대 폼 미쳤다 진짜" }
+                ]
+            },
+            {
+                nick: "JCM_Truth_Teller", time: "2시간 30분 전", like: 1, dislike: 16500, isPunished: true,
+                content: "너희들이 아무리 비웃어도 진실은 승리한다! 0.8%는 거대 양당의 폭거다! 나 지총민은 캐리어를 끌고 효빈시 전역을 돌며 나의 12% 지지자들을 다시 깨울 것이다!!",
+                replies: [
+                    { nick: "Citizen_D", content: "효빈역에서 캐리어 깔고 유튜브 하는데 12명 보더라 ㅋㅋㅋㅋ 12%가 아니라 12명 ㅋㅋㅋ" },
+                    { nick: "YoonJaehoon(IP)", content: "하하하! 12명 보는 거지 방송!! 나는 50명이 본다!! 내가 이겼다!!" },
+                    { nick: "Observer", content: "진짜 바닥 밑 지하실 병림픽 대환장 파티 ㅋㅋㅋㅋㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "No_Seo_Hyun", time: "2시간 45분 전", like: 16200, dislike: 65, isPunished: false,
+                content: "서구청장 노서현입니다. 74.8%라는 압도적 지지율은 박효빈 시장님의 땀과 노력의 결정체입니다. 저 역시 시장 경선을 양보하고 서구 발전에 매진하여 민주당 원팀의 승리를 돕겠습니다.",
+                replies: [
+                    { nick: "Minjoo_OneTeam", content: "서구청장님 대인배 ㅠㅠ 2028년 서구 갑/을 분구되면 무조건 청장님 찍습니다!" },
+                    { nick: "West_Gu_Resident", content: "이게 바로 품격 있는 정치인의 양보지. 윤재훈 보고 있냐?" }
+                ]
+            },
+            {
+                nick: "City_Tour_Guide", time: "3시간 전", like: 11200, dislike: 15, isPunished: false,
+                content: "<span style='color:#7777AA; font-weight:bold;'>시티투어버스</span> 기사입니다. 박 시장님이 만들어 놓은 성지순례 코스 덕에 주말마다 차가 터져나갑니다. 일본 관광객들도 성우 방송 들으려고 엄청 와요. 윤재훈 저놈은 이거 다 불태우겠다는데 미친놈이죠.",
+                replies: [
+                    { nick: "Tourism_Board", content: "L-Project가 효빈시 지역 경제 하드캐리 중인데 그걸 엎는대 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Line6_Commuter", time: "3시간 15분 전", like: 12500, dislike: 22, isPunished: false,
+                content: "출퇴근길 <span style='color:#881188; font-weight:bold;'>6호선</span>에서 박 시장님 자주 보는데, 관용차 안 타고 시민들이랑 부대끼면서 수첩에 민원 적으심. 쇼가 아니라 진짜 일 중독자 맞음. 74.8% 나올 자격 충분하다.",
+                replies: [
+                    { nick: "City_Hall_Staff", content: "시장님 어제도 야근하시면서 HAF 스탬프 동선 직접 짜고 퇴근하셨습니다 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Subway_Line7_Tram", time: "3시간 30분 전", like: 9800, dislike: 18, isPunished: false,
+                content: "과거 윤대환 시절에 <span style='color:#FF8899; font-weight:bold;'>7호선</span> 효빈전차 폐지한다고 난리쳤던 거 생각하면 진짜 이가 갈림. 박효빈 시장님이 7호선 현대화 잘 마무리해주시길 바랍니다!",
+                replies: [
+                    { nick: "Tram_Lover", content: "7호선 랩핑 열차 낭만 미쳤음 ㅠㅠ 영원히 지켜주세요 시장님!" }
+                ]
+            },
+            {
+                nick: "Exp_Bus_Driver", time: "3시간 45분 전", like: 10500, dislike: 20, isPunished: false,
+                content: "<span style='color:#D81C2F; font-weight:bold;'>급행버스</span> 노조입니다. 박 시장님 취임 후 심야 귀가 버스(올빼미 버스) 신설돼서 시민들 귀가 엄청 편해졌습니다. 우리 기사님들 수당도 빵빵하게 챙겨주시고요. 무조건 재선 가야 합니다.",
+                replies: [
+                    { nick: "Night_Worker", content: "올빼미 버스 없었으면 알바 끝나고 맨날 2시간 걸어갔어야 함 ㅠㅠ 갓효빈!" },
+                    { nick: "YoonJaehoon(IP)", content: "택시 기사들 다 굶어 죽게 만드는 좌파 포퓰리즘이다!!" },
+                    { nick: "Taxi_Union", content: "@YoonJaehoon(IP) 박 시장님이 우리 택시 환승 보조금도 챙겨주셨는데 헛소리 말고 꺼져" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("JCM_") || reply.nick.includes("Yoon_Is_God") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${reply.nick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+</body>
+</html>

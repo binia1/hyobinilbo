@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 이재명 대통령 국정 지지율 65% '고공행진'… 국민의힘 19% 출범 이래 '최저' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 데이터 표 스타일 */
+        .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        .data-table th { background-color: #f0f4f8; color: #0055aa; font-weight: bold; border-top: 2px solid #0055aa; }
+        .data-table tr:nth-child(even) { background-color: #fafafa; }
+        .data-table tr:hover { background-color: #f1f8ff; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .breaking-label { display: inline-block; background-color: #0055aa; color: white; padding: 2px 8px; font-size: 14px; font-weight: bold; border-radius: 3px; margin-bottom: 8px; vertical-align: middle; }
+        
+        /* 효빈시 대중교통 뱃지 디자인 */
+        .transit-badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: white; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 청와대/정당</div>
+                <div><span class="breaking-label">여론조사 속보</span></div>
+                <h2 class="article-title">이재명 대통령 국정 지지율 65% '고공행진'… 국민의힘 19% 출범 이래 '최저'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 여론조사팀 강기자</span> (poll@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.03.27. 10:05 | 수정 2026.03.28. 10:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">한국갤럽 3월 4주차 조사… 긍정 65%, 부정 24% 기록<br>부동산 정책 긍정률 51% 기록하며 13년 만에 절반 넘겨<br>보수 텃밭 TK·PK에서도 긍정 우세… 국민의힘 지지율은 10%대로 추락</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/이재명대통령.png" alt="" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=President+Lee+Jae-myung'">
+                        <div class="img-caption">▲ <a href="이재명.html" class="text-blue-600 underline">이재명</a> 대통령이 용산 대통령실에서 국무회의를 주재하며 발언하고 있다. 취임 9개월 차를 맞은 이 대통령의 국정 지지율이 65%를 기록, 역대 대통령 동기 대비 세 번째로 높은 수치를 달성했다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>[효빈일보 = 강기자] <a href="대통령선거.html" class="text-blue-600 underline">조기 대선</a>으로 출범한 이재명 대통령의 직무 수행 지지율이 65%를 기록하며 압도적인 국정 동력을 과시하고 있는 것으로 나타났다. 반면 제1야당인 국민의힘 지지율은 당명 변경 이후 처음으로 10%대로 추락하며 최저치를 경신했다.</p>
+
+                    <p>여론조사 전문기관 <a href="한국갤럽.html" class="text-blue-600 underline">한국갤럽</a>이 27일 발표한 2026년 3월 4주차(24~26일) 정기 여론조사 결과에 따르면, 이 대통령이 직무를 '잘하고 있다'는 긍정 평가는 직전 조사(3월 3주차 67%) 대비 2%포인트 하락한 <strong>65%</strong>로 집계됐다. '잘못하고 있다'는 부정 평가는 전주 대비 1%포인트 하락한 24%였으며, 그 외 10%는 의견을 유보했다.</p>
+
+                    <!-- 데이터 표 1: 대통령 직무 수행 평가 (생략 금지 지시 준수) -->
+                    <table class="data-table">
+                        <caption>[표 1] 이재명 대통령 직무 수행 평가 (단위: %)</caption>
+                        <thead>
+                            <tr>
+                                <th width="20%">조사 기간</th>
+                                <th width="26%" style="color: #e11d48;">긍정 평가 (잘하고 있다)</th>
+                                <th width="26%" style="color: #0055aa;">부정 평가 (잘못하고 있다)</th>
+                                <th width="28%">어느 쪽도 아님 / 모름 / 무응답</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3월 3주차</td>
+                                <td style="color: #e11d48; font-weight: bold;">67</td>
+                                <td style="color: #0055aa; font-weight: bold;">25</td>
+                                <td>8</td>
+                            </tr>
+                            <tr style="background-color: #f1f8ff;">
+                                <td style="font-weight: bold;">3월 4주차 (이번주)</td>
+                                <td style="color: #e11d48; font-weight: bold; font-size: 18px;">65</td>
+                                <td style="color: #0055aa; font-weight: bold; font-size: 18px;">24</td>
+                                <td style="font-weight: bold;">10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>이번 조사에서 가장 눈에 띄는 점은 <strong>부동산 정책 긍정률</strong>이다. 응답자의 51%가 현 정부의 부동산 정책을 긍정적으로 평가했는데, 이는 무려 13년 만에 50%를 넘긴 수치다. 또한 전통적인 보수 텃밭인 대구·경북(TK)과 부산·울산·경남(PK)에서도 긍정 평가가 각각 52%, 57%로 우세했다.</p>
+
+                    <p>긍정 평가 이유로는 <strong>'경제/민생'(17%)</strong>과 <strong>'전반적으로 잘한다'(10%)</strong>, '외교' 및 '부동산 정책'(각 8%)이 최상위권에 꼽혔다. 부정 평가 이유로는 '경제/민생/고환율'(17%), '외교' 및 '부동산 정책'(각 7%), '도덕성'(7%), '자격 미달'(7%) 등이 언급됐다.</p>
+
+                    <!-- 데이터 표 2: 긍정/부정 평가 이유 (생략 금지 지시 준수) -->
+                    <table class="data-table">
+                        <caption>[표 2] 이재명 대통령 직무 수행 긍정/부정 평가 이유 (자유응답, 상위 4개)</caption>
+                        <thead>
+                            <tr>
+                                <th width="50%" colspan="2">긍정 평가 이유</th>
+                                <th width="50%" colspan="2">부정 평가 이유</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: bold; color: #e11d48;">경제/민생</td>
+                                <td>17%</td>
+                                <td style="font-weight: bold; color: #0055aa;">경제/민생/고환율</td>
+                                <td>17%</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #e11d48;">전반적으로 잘한다</td>
+                                <td>10%</td>
+                                <td style="font-weight: bold; color: #0055aa;">외교 및 부동산 정책</td>
+                                <td>7%</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #e11d48;">외교</td>
+                                <td>8%</td>
+                                <td style="font-weight: bold; color: #0055aa;">도덕성</td>
+                                <td>7%</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #e11d48;">부동산 정책</td>
+                                <td>8%</td>
+                                <td style="font-weight: bold; color: #0055aa;">자격 미달</td>
+                                <td>7%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="my-6">
+                        <img src="이미지/갤럽조사결과.png" alt="" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Gallup+Korea+Poll+Results'">
+                        <div class="img-caption">▲ 정당 지지도 조사 결과, 더불어민주당이 46%로 선두를 달리고 있다. 반면 국민의힘은 19%를 기록, 당명 변경 이후 사상 최저치로 추락했다.</div>
+                    </div>
+
+                    <p>정당 지지도 조사에서는 명암이 극명하게 갈렸다. <strong><a href="더불어민주당.html" class="text-blue-600 underline">더불어민주당</a>이 46%</strong>를 기록하며 선두를 질주한 반면, 제1야당인 <strong><a href="국민의힘.html" class="text-blue-600 underline">국민의힘</a>은 19%</strong>에 머물렀다. 이는 2020년 '미래통합당'에서 '국민의힘'으로 당명을 바꾼 이후 최저치 기록이다.</p>
+
+                    <p>이어 <a href="개혁신당.html" class="text-blue-600 underline">개혁신당</a>이 3%, <a href="조국혁신당.html" class="text-blue-600 underline">조국혁신당</a> 2%, 진보당 1% 순이었으며, 지지하는 정당이 없는 무당층은 27%로 조사됐다.</p>
+
+                    <!-- 데이터 표 3: 정당 지지도 (생략 금지 지시 준수) -->
+                    <table class="data-table" style="margin-bottom: 20px;">
+                        <caption>[표 3] 주요 정당 지지도 (단위: %)</caption>
+                        <thead>
+                            <tr>
+                                <th width="50%">정당명</th>
+                                <th width="50%">지지도</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: bold; color: #0055aa;">더불어민주당</td>
+                                <td style="font-weight: bold; font-size: 16px;">46</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #e11d48;">국민의힘</td>
+                                <td style="font-weight: bold; font-size: 16px; color: #e11d48;">19 (당명 변경 후 최저)</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #FF5522;">개혁신당</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #0077B6;">조국혁신당</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #888;">무당층 (어느 정당도 지지하지 않음)</td>
+                                <td>27</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>정치권 전문가들은 다가오는 6월 <a href="지방선거.html" class="text-blue-600 underline">지방선거</a>를 앞두고 '샤이 보수' 층이 사실상 지지를 철회하고 무당층(27%)으로 대거 숨어든 결과라고 분석하고 있다. 효빈광역시와 같이 여당 소속 단체장(<a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장)이 포진한 지역에서는 이러한 격차가 지방선거판을 완전히 흔들 것으로 예상된다.</p>
+
+                    <p style="font-size: 12px; color: #888; margin-top: 10px;">* 이번 조사는 한국갤럽이 2026년 3월 24~26일 전국 만 18세 이상 성인 1,000명을 대상으로 무선전화 가상번호 무작위 추출 방식으로 진행했다. 표본오차는 95% 신뢰수준에서 ±3.1%p다. 자세한 내용은 중앙선거여론조사심의위원회 홈페이지를 참조.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">22,105</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Fact_Assassination", time: "방금 전", like: 52100, dislike: 430, isPunished: false,
+                                content: "와 지지율 65% ㄷㄷ 역대급이네. 제일 놀라운 건 국힘 19%임 ㅋㅋㅋㅋ 20% 벽 깨지고 드디어 10%대로 추락했네. 오늘 아침 연청색 <span class='transit-badge' style='background-color: #6677CC;'>빈효선광역전철</span> 타면서 뉴스 보는데 진심 빵 터짐. TK에서도 민주당 긍정 우세면 사실상 보수 멸망 선고 아님?",
+                                replies: [
+                                    { nick: "Hyobin_Citizen", content: "맞아요 아까 파란색 광역버스(<span class='transit-badge' style='background-color: #485EC6;'>#485EC6</span>)에서도 다들 그 얘기함 ㅋㅋㅋ 진짜 지방선거 국힘 전멸각이다." },
+                                    { nick: "Economics_101", content: "부동산 정책 50% 넘긴 거 13년 만이라는 게 레전드. 일 잘하니까 지지율 오르는 건 당연한 거임." }
+                                ]
+                            },
+                            {
+                                nick: "Middle_Voter", time: "1분 전", like: 31200, dislike: 250, isPunished: false,
+                                content: "솔직히 대선 때 이재명 안 찍었는데, 주식 살리고 집값 안정화되는 거 보니까 일 잘하는 건 인정해야겠다. 주황색 <span class='transit-badge' style='background-color: #FF5522;'>4호선</span> 타고 퇴근하면서 보수 유튜브만 보던 우리 부장님도 요새는 주식 앱만 보심 ㅋㅋㅋ 65% 나올 만하네.",
+                                replies: [
+                                    { nick: "Intellectual", content: "인정할 건 인정하는 게 진짜 지성인입니다. 맹목적 지지나 비난보다 훨씬 멋지시네요." },
+                                    { nick: "Hyobin_Local", content: "저도 국힘 지지자였는데 이번 지선은 박효빈 시장님 찍으려고요. 능력이 최고임." }
+                                ]
+                            },
+                            {
+                                nick: "True_Conservative(IP: 14.33.*.*)", time: "2분 전", like: 140, dislike: 48900, isPunished: true,
+                                content: "이거 다 좌빨 갤럽이 여론조사 조작한 거다!!!! 당장 한국갤럽 압수수색해라!!!! 나라 살림 거덜내고 빚내서 퍼주는 이재명을 65%나 지지한다고??? 개돼지 국민들이 눈앞에 돈 좀 쥐어주니까 헤벌레 해가지고 나라 망하는 줄도 모르네 캭퉤!!!! 국민의힘이 19%라는 건 백퍼센트 조작이다!!!!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "할배요... TK PK에서도 50% 넘게 잘한다고 하는데 조작무새 짓 좀 그만하세요. 부끄럽지도 않나 ㅋㅋㅋ" },
+                                    { nick: "Stop_Delusion", content: "계엄령 내리던 당이 아직도 19%나 나오는 게 더 신기함. 콘크리트 진짜 징하다." },
+                                    { nick: "Mental_Care", content: "어르신, 현실 부정 단계시군요. 빨간색 <span class='transit-badge' style='background-color: #EE0022;'>5호선</span> 타고 병원 가서 혈압약 좀 타 드십쇼. 화병 납니다." }
+                                ]
+                            },
+                            { 
+                                nick: "KOSPI_ToTheMoon", time: "3분 전", content: "이재명이 대통령 되고 나서 내 마이너스 계좌가 드디어 빨간불로 변했다. 이것만으로도 난 평생 지지한다. 금투세 폐지하고 상법 개정하니까 외국인들 쓸어 담는 거 보소. 보수 정권은 맨날 기업 편만 들더니 결국 개미들 살린 건 민주당이네.", like: 28500, dislike: 310, 
+                                replies: [
+                                    {nick:"Stock_Ant", content:"ㄹㅇ 주식쟁이들은 깔 수가 없음 ㅋㅋㅋ 내 지갑 빵빵하게 해주는데 누가 싫어함?"},
+                                    {nick:"Fact_Assault", content:"보수당은 입으로만 시장 친화적이고 행동은 기득권 친화적이었지. 상법 개정 결사반대하던 거 잊지 말자."}
+                                ] 
+                            },
+                            { 
+                                nick: "Politics_Watcher", time: "5분 전", content: "국힘 19% 찍은 거 보니까 진짜 끝났구나 싶음. 샤이 보수가 아니라 그냥 쉐임(Shame) 보수 된 듯 ㅋㅋㅋ 부끄러워서 국힘 지지한다고 말도 못 하고 다 무당층(27%)으로 도망간 거 아님? 6월 지선 투표율만 높으면 완벽하게 심판 가능함.", like: 35500, dislike: 210, 
+                                replies: [
+                                    {nick:"Big_Picture", content:"윤대환 사태 때부터 이미 보수는 도덕성 잃고 나락 간 거임 ㅋㅋㅋ 자업자득."},
+                                    {nick:"Vote_Power", content:"지방선거 투표율 70% 넘겨서 확실하게 박효빈 시장님 연임시킵시다!"}
+                                ] 
+                            },
+                            { 
+                                nick: "RealEstate_King(IP: 211.33.*.*)", time: "7분 전", content: "집값 다 박살 내놓고 긍정률 51%가 말이 되냐??? 내 강남 아파트 호가 떨어진 거 생각하면 피가 거꾸로 솟는다!! 무주택자 거지 새끼들만 살기 좋은 나라 만든 좌빨 정부 아웃!!! 내 재산 물어내라!!!", like: 88, dislike: 31200, isPunished: true,
+                                replies: [
+                                    {nick:"Fact_Check_Bot", content:"아저씨... 집값이 '안정화'된 거지 박살 난 게 아니에요 ㅋㅋㅋ 정상화되는 과정입니다."},
+                                    {nick:"Speculator_Out", content:"투기꾼 검거 완료 ㅋㅋㅋ 주황색 좌석버스(<span class='transit-badge' style='background-color: #FF5800;'>#FF5800</span>) 타고 외곽으로 임장이나 다니시길 ㅋㅋㅋ"}
+                                ] 
+                            },
+                            { 
+                                nick: "Hyobin_Youth", time: "8분 전", content: "우리 효빈시 박효빈 시장님이랑 이재명 대통령님 티키타카 너무 좋음! 중앙에서 경제 살려주고 지자체에서 청년 주택이랑 순환버스(<span class='transit-badge' style='background-color: #E7D600; color: #333;'>#E7D600</span>) 늘려주니까 효빈시 진짜 살 맛 납니다! 이번 지선 무조건 투표장 갑니다.", like: 21000, dislike: 85, 
+                                replies: [
+                                    {nick:"Hyobin_Pride", content:"효빈시는 진짜 축복받은 도시임 ㅠㅠ 이사 오길 잘했다 진짜."},
+                                    {nick:"More_Bus_Plz", content:"마을버스(<span class='transit-badge' style='background-color: #A664A0;'>#A664A0</span>) 배차도 좀만 더 줄여주시면 완벽할 듯!!"}
+                                ] 
+                            },
+                            { 
+                                nick: "RIP_PPP", time: "9분 전", content: "국민의힘 지지율 19% ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 휴대폰 배터리도 19%면 충전기 꽂는데 저 당은 꽂을 데가 없네 ㅋㅋㅋㅋㅋㅋㅋㅋ", like: 45200, dislike: 110, 
+                                replies: [
+                                    {nick:"LOL_Master", content:"비유 미쳤다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 올해의 드립상 드립니다."},
+                                    {nick:"Fact_Drop", content:"충전기 역할 하던 윤대환 전 시장이 15년형 받고 감방 갔잖아요 ㅋㅋㅋㅋ 꽂을 데가 없음 ㅋㅋㅋ"}
+                                ] 
+                            },
+                            { 
+                                nick: "Subway_Commuter", time: "10분 전", content: "초록색 <span class='transit-badge' style='background-color: #00CCAA;'>2호선</span> 타고 출근하는데 기사 제목 보고 두 번 놀랐다. 이재명 65%에 한 번, 국힘 19%에 또 한 번 ㅋㅋㅋ 13년 만에 부동산 긍정 51% 찍은 게 진짜 컸나 봄. 내 집 마련의 꿈이 다시 살아나는 중 ㅠㅠ", like: 21200, dislike: 115, 
+                                replies: [
+                                    {nick:"Hyobin_Love", content:"시장님도 효빈시 청년 주택 늘려주신댔음. 살기 좋은 효빈시 폼 미쳤다 ㅋㅋㅋㅋ"}
+                                ] 
+                            },
+                            { 
+                                nick: "Doom_Sayer", time: "15분 전", content: "어차피 저거 다 거품임. 6월 선거 끝나면 주식 폭락하고 부동산 세금 폭탄 때릴 거 뻔한데 머저리들 좋다고 65% 지지하네 ㅋㅋㅋ 헬조선은 탈출이 답이다. 19% 남은 보수들이 진짜 애국자임 ㅅㄱ", like: 85, dislike: 25500, isPunished: true,
+                                replies: [
+                                    {nick:"Duty_First", content:"방구석 백수 쿨찐 등장이요~ 연두색 공항버스(<span class='transit-badge' style='background-color: #84C36E;'>#84C36E</span>) 타고 빨리 헬조선 탈출하셈 ㅋㅋㅋ 비행기 표 살 돈은 있고?"},
+                                    {nick:"No_Troll", content:"19%가 애국자래 ㅋㅋㅋㅋ 사이비 종교 믿는 광신도 마인드 징글징글하다."}
+                                ] 
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("True") || reply.nick.includes("Doom") || reply.nick.includes("RealEstate") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm border border-[#0055aa]">
+                <div class="ranking-title border-b-[#0055aa]">
+                    <span class="text-[#0055aa]">정치 핫이슈</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num text-[#0055aa]">1</span> <a href="대통령지지율.html" class="ranking-link font-bold text-[#0055aa]">이재명 65% 국정 지지율 '역대급'… TK·PK도 긍정 우세</a></li>
+                    <li><span class="ranking-num">2</span> <a href="정당지지도.html" class="ranking-link">국민의힘 19% 추락… 당명 변경 후 사상 최저치</a></li>
+                    <li><span class="ranking-num">3</span> <a href="부동산정책.html" class="ranking-link">13년 만에 부동산 정책 긍정률 50% 돌파 이변</a></li>
+                    <li><span class="ranking-num">4</span> <a href="박효빈시장지선.html" class="ranking-link">박효빈 시장 지지율 68.5%… 압도적 재선 가도</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner bg-[#f0f7ff] border border-[#cce5ff] p-4 text-center rounded mt-4">
+                <div>
+                    <div class="font-bold text-[#0055aa] mb-1 text-lg">효빈 여론조사연구소</div>
+                    <div class="text-sm text-gray-600">6월 지방선거 D-67<br>정확한 민심의 흐름, 효빈 리서치가 짚어드립니다.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

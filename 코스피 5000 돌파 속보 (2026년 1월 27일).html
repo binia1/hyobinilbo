@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 코스피, 사상 최초 '5,000시대' 활짝 열렸다… 새 정부 부양책·AI 특수 '폭발' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 데이터 표 스타일 */
+        .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        .data-table th { background-color: #f0f4f8; color: #e11d48; font-weight: bold; border-top: 2px solid #e11d48; }
+        .data-table tr:nth-child(even) { background-color: #fafafa; }
+        .data-table tr:hover { background-color: #fff0f2; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #e11d48; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .breaking-label { display: inline-block; background-color: #e11d48; color: white; padding: 2px 8px; font-size: 14px; font-weight: bold; border-radius: 3px; margin-bottom: 8px; vertical-align: middle; }
+        
+        /* 효빈시 대중교통 뱃지 디자인 */
+        .transit-badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: white; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html" class="active">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#e11d48] font-bold">경제 > 증권/금융</div>
+                <div><span class="breaking-label">긴급 속보</span></div>
+                <h2 class="article-title">코스피, 사상 최초 '5,000시대' 활짝 열렸다… 새 정부 부양책·AI 특수 '폭발'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">금융팀 이기자</span> (finance@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.27. 15:35 | 수정 2026.01.27. 15:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#e11d48] font-bold">장 마감 기준 5,012.34 기록하며 종가 기준 첫 5,000선 안착<br>작년 조기 대선 이후 이어지는 '코리아 밸류업' 정책 효과 톡톡<br>삼성전자 13만전자 돌파, SK하이닉스 30만원 시대 개막... 반도체 투톱 견인</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/코스피5000전광판.png" alt="" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=KOSPI+5000+Milestone'">
+                        <div class="img-caption">▲ 27일 오후 <a href="한국거래소.html" class="text-blue-600 underline">한국거래소</a>(KRX) 전광판에 <a href="코스피.html" class="text-blue-600 underline">코스피</a> 지수가 사상 최초로 5,000을 돌파한 5,012.34를 가리키고 있다. 거래소 직원들이 박수를 치며 환호하고 있다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>[효빈일보 = 이기자] 대한민국 주식시장이 마침내 꿈의 숫자라 불리던 <strong>'코스피 5,000시대'</strong>를 활짝 열었다. 1980년 지수 산출 이래 46년 만에 달성한 대기록이다.</p>
+
+                    <p>27일 한국거래소에 따르면 코스피 지수는 전 거래일 대비 68.42포인트(1.38%) 오른 <strong>5,012.34</strong>에 장을 마감했다. 이날 지수는 외국인과 기관의 강력한 동반 매수세에 힘입어 장중 한때 5,030선까지 치솟기도 했다.</p>
+
+                    <p>코스피가 단기간에 5,000 고지에 안착할 수 있었던 주된 원동력은 <strong>'새 정부의 강력한 경제 부양책'</strong>과 <strong>'글로벌 AI 반도체 슈퍼사이클'</strong>이 맞물린 결과로 풀이된다. 지난해 6월 조기 대선으로 출범한 현 정부가 추진한 초강도 '코리아 디스카운트 해소법(상법 개정 및 배당 분리과세)'이 국회를 통과하면서 외국인 자금이 봇물 터지듯 유입되었다.</p>
+
+                    <!-- 데이터 표 1 (생략 금지 지시 준수) -->
+                    <table class="data-table">
+                        <caption>[표] 대한민국 코스피 역사상 주요 마일스톤 돌파 일지</caption>
+                        <thead>
+                            <tr>
+                                <th width="25%">구분</th>
+                                <th width="35%">돌파 일자 (종가 기준)</th>
+                                <th width="40%">주요 상승 배경</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: bold;">코스피 1,000</td>
+                                <td>1989년 3월 31일 (1,003.31)</td>
+                                <td>3저 호황 (저금리, 저유가, 저달러) 및 88올림픽 특수</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">코스피 2,000</td>
+                                <td>2007년 7월 25일 (2,004.22)</td>
+                                <td>적립식 펀드 열풍 및 조선/철강 등 중후장대 산업 호황</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">코스피 3,000</td>
+                                <td>2021년 1월 7일 (3,031.68)</td>
+                                <td>코로나19 유동성 장세 및 동학개미운동</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">코스피 4,000</td>
+                                <td>2025년 8월 12일 (4,012.88)</td>
+                                <td>새 정부 출범 밸류업 정책 가시화 및 금리 인하 사이클</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #e11d48; font-size: 16px;">코스피 5,000</td>
+                                <td style="font-weight: bold; color: #e11d48; font-size: 16px;">2026년 1월 27일 (5,012.34)</td>
+                                <td style="font-weight: bold; color: #e11d48;">AI 반도체 폭등, 주주환원율 40% 돌파</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>특히 시가총액 1, 2위인 <strong><a href="삼성전자.html" class="text-blue-600 underline">삼성전자</a></strong>와 <strong><a href="SK하이닉스.html" class="text-blue-600 underline">SK하이닉스</a></strong>의 쌍끌이 랠리가 지수 상승을 견인했다. 차세대 HBM(고대역폭메모리) 독점 공급 계약 소식에 삼성전자는 이날 13만 2천 원으로 신고가를 경신하며 이른바 '13만전자'에 안착했고, SK하이닉스 역시 사상 최초로 30만 원 벽을 돌파했다.</p>
+
+                    <!-- 데이터 표 2 (생략 금지 지시 준수) -->
+                    <table class="data-table" style="margin-top: 20px;">
+                        <caption>[표] 코스피 5,000 돌파 견인 시가총액 상위 5종목 주가 현황 (1/27 종가)</caption>
+                        <thead>
+                            <tr>
+                                <th width="15%">순위</th>
+                                <th width="30%">종목명</th>
+                                <th width="25%">종가</th>
+                                <th width="30%">전일 대비 증감률</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: bold;">1위</td>
+                                <td style="font-weight: bold; color: #e11d48;">삼성전자</td>
+                                <td>132,000원</td>
+                                <td style="color: #e11d48; font-weight: bold;">▲ 4.3%</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">2위</td>
+                                <td style="font-weight: bold; color: #e11d48;">SK하이닉스</td>
+                                <td>304,500원</td>
+                                <td style="color: #e11d48; font-weight: bold;">▲ 6.8%</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">3위</td>
+                                <td>LG에너지솔루션</td>
+                                <td>612,000원</td>
+                                <td style="color: #e11d48;">▲ 1.5%</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">4위</td>
+                                <td>현대차</td>
+                                <td>345,000원</td>
+                                <td style="color: blue;">▼ 0.8%</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">5위</td>
+                                <td style="font-weight: bold; color: #e11d48;">NAVER</td>
+                                <td>318,000원</td>
+                                <td style="color: #e11d48; font-weight: bold;">▲ 3.2% (국산 AI 모델 흥행)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="my-6">
+                        <img src="이미지/효빈시민환호.png" alt="" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Hyobin+Citizens+Cheering'">
+                        <div class="img-caption">▲ 코스피 5,000 돌파 소식이 전해진 27일 오후, <a href="효빈광역시.html" class="text-blue-600 underline">효빈광역시</a>를 달리는 초록색 2호선 지하철 안에서 한 시민이 주식 앱 수익률을 확인하며 주먹을 불끈 쥐고 있다.</div>
+                    </div>
+
+                    <p>코스피 대폭등 소식에 도심은 축제 분위기다. 퇴근길 <span class="transit-badge" style="background-color: #00CCAA;">초록색 2호선</span>과 <span class="transit-badge" style="background-color: #485EC6;">광역버스</span> 안에서는 연신 스마트폰 주식 앱(MTS)을 켜고 수익률을 확인하는 직장인들의 밝은 표정을 쉽게 찾아볼 수 있었다.</p>
+
+                    <p>증권가에서는 올해 상반기 내로 <strong>코스피 5,500선</strong> 돌파도 무난할 것이라는 장밋빛 전망을 쏟아내고 있다. 모건스탠리는 최신 보고서를 통해 "한국 시장은 더 이상 디스카운트(할인) 대상이 아닌 프리미엄 시장으로 진입했다"고 평가했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#e11d48]" id="comment-count">42,912</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#e11d48] text-white px-6 font-bold text-sm hover:bg-[#be123c] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Stock_Master", time: "방금 전", like: 82100, dislike: 450, isPunished: false,
+                                content: "와 코스피 5000 실화냐 ㅠㅠㅠ 9만전자에 물려서 3년을 눈물 흘리며 존버했는데 13만전자 뚫는 거 보고 오열함 ㅠㅠㅠ 오늘 파란색 <span class='transit-badge' style='background-color: #0077DD;'>1호선</span> 타고 퇴근하는데 사람들 다 입가에 미소가 번져있음 ㅋㅋㅋㅋ 우리 집안 오늘 소고기 파티다!!!!",
+                                replies: [
+                                    { nick: "Hyobin_Bus_Rider", content: "저도 방금 급행버스(<span class='transit-badge' style='background-color: #D81C2F;'>#D81C2F</span>)에서 10년 묵은 삼전 털었습니다. 이재명 정부 상법 개정 진짜 신의 한 수 였음 ㄷㄷ" },
+                                    { nick: "Rich_Dream", content: "이 기세면 나도 내 집 마련 ㅆ가능??? 가즈아!!!!" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Gov_Patriot(IP: 14.33.*.*)", time: "2분 전", like: 120, dislike: 65900, isPunished: true,
+                                content: "이거 다 좌파 정부가 억지로 돈 풀어서 만든 거품이다!!!! 외국인들 내일 당장 다 팔고 튈 텐데 바보 같은 개미들만 좋다고 춤추네 ㅉㅉ 코스피 2000까지 다시 폭락해서 다 한강 가라 캭퉤!!!!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "할배요... 외국인이 지금 역대급으로 매수 중이라 오르는 건데요. 주식 계좌 없죠? ㅋㅋㅋ" },
+                                    { nick: "Stop_Delusion", content: "나라 경제가 잘 돼도 질투 나서 억까하는 마인드 진짜 레전드다. 인성 빻았네." },
+                                    { nick: "Mental_Care", content: "인버스 곱버스 타셨다가 청산당하셨군요... 노란색 <span class='transit-badge' style='background-color: #FFCC11;'>3호선</span> 타고 절에 가서 마음 수련이나 하십쇼." }
+                                ]
+                            },
+                            { 
+                                nick: "Economy_Watcher", time: "5분 전", content: "표 보니까 진짜 가슴 웅장해지네. 2021년 코로나 때 3000 찍고 박스권 갇혀서 진짜 답답했는데, 4000 뚫고 5000까지 다이렉트 ㄷㄷ 국장 탈출은 지능순이라더니 이젠 미장 탈출이 지능순 됨 ㅋㅋㅋㅋ", like: 45500, dislike: 210, 
+                                replies: [
+                                    {nick:"Big_Picture", content:"엔비디아 팔고 닉스 산 내가 승리자다 ㅋㅋㅋㅋ 수익률 300% 달달해~"},
+                                    {nick:"Vote_Power", content:"역시 코리아 디스카운트는 정치 문제였음. 낡은 기득권 쳐내고 법 바꾸니까 바로 날아가는 거 보소."}
+                                ] 
+                            },
+                            { 
+                                nick: "Subway_Commuter", time: "10분 전", content: "아 나만 주식 안 해 ㅠㅠ 나만 벼락거지 된 기분임. 지금이라도 삼성전자 풀매수 들어가면 되나요??? 연청색 <span class='transit-badge' style='background-color: #6677CC;'>빈효선광역전철</span> 안에서 나 혼자만 우울함 ㅠㅠ", like: 12200, dislike: 315, 
+                                replies: [
+                                    {nick:"Caution_Plz", content:"인간 지표 떴다! 고점 신호 ㅋㅋㅋㅋ 다들 도망쳐!!"},
+                                    {nick:"Hyobin_Love", content:"지금 들어가면 상투 잡는 겁니다. 박효빈 시장님이 효빈시 청년 주거 지원금 늘려주신댔으니 그거 기다려보셈."}
+                                ] 
+                            },
+                            { 
+                                nick: "Doom_Sayer", time: "15분 전", content: "이런 기사 뜰 때가 숏 칠 타이밍이다 ㅋㅋㅋ 13만전자? 낼모레 5만전자로 반토막 날 거다 ㅋㅋㅋ 부자들 배불려주는 더러운 자본주의 시장 싹 다 망해버려라!!", like: 55, dislike: 38500, isPunished: true,
+                                replies: [
+                                    {nick:"Duty_First", content:"방구석 백수 쿨찐 등장이요~ 니 인생이나 숏 쳐라 ㅋㅋㅋ"},
+                                    {nick:"No_Troll", content:"열등감 덩어리네 진짜. 열심히 일해서 모은 돈으로 투자한 사람들 욕하지 마라."}
+                                ] 
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Anti") || reply.nick.includes("Doom") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm border border-[#e11d48]">
+                <div class="ranking-title border-b-[#e11d48]">
+                    <span class="text-[#e11d48]">증권·경제 핫이슈</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num text-[#e11d48]">1</span> <a href="코스피5000돌파.html" class="ranking-link font-bold text-[#e11d48]">코스피 사상 첫 5,000 안착… 역사 썼다</a></li>
+                    <li><span class="ranking-num">2</span> <a href="삼성전자13만전자.html" class="ranking-link">삼성전자 13만원 돌파… 20만전자 가시권?</a></li>
+                    <li><span class="ranking-num">3</span> <a href="밸류업효과.html" class="ranking-link">"이재명 정부 밸류업 대성공" 외국인 자금 싹쓸이</a></li>
+                    <li><span class="ranking-num">4</span> <a href="벼락부자속출.html" class="ranking-link">효빈시 아파트 호가 덩달아 상승… "주식 대박 났네"</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner bg-[#fff1f2] border border-[#fecdd3] p-4 text-center rounded mt-4">
+                <div>
+                    <div class="font-bold text-[#e11d48] mb-1 text-lg">효빈 증권</div>
+                    <div class="text-sm text-[#be123c]">코스피 5,000 돌파 기념 특별 이벤트!<br>신규 계좌 개설 시 투자지원금 5만원 100% 지급</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

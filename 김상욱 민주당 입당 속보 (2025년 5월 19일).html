@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[속보] 대선 D-15… 김상욱, 더불어민주당 전격 입당 "이재명 후보 지지" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 데이터 표 스타일 */
+        .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; }
+        .data-table th, .data-table td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        .data-table th { background-color: #f0f4f8; color: #0055aa; font-weight: bold; border-top: 2px solid #0055aa; }
+        .data-table tr:nth-child(even) { background-color: #fafafa; }
+        .data-table tr:hover { background-color: #f1f8ff; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .breaking-label { display: inline-block; background-color: #0055aa; color: white; padding: 2px 8px; font-size: 14px; font-weight: bold; border-radius: 3px; margin-bottom: 8px; vertical-align: middle; }
+        
+        /* 효빈시 대중교통 뱃지 디자인 */
+        .transit-badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: white; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 대선/정당</div>
+                <div><span class="breaking-label">긴급 속보</span></div>
+                <h2 class="article-title">대선 D-15… 김상욱, 더불어민주당 전격 입당 "이재명 후보 지지"</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">국회취재팀 최기자</span> (assembly@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2025.05.19. 09:30 | 수정 2025.05.19. 09:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">국민의힘 탈당 11일 만에 야당행 결단… "위기에 빠진 나라 구하는 게 우선"<br>이재명 대표 "국가와 국민을 위한 용기 있는 결단, 환영한다"<br>민주당 의석 171석으로 증가… 여권은 "선거용 철새 정치" 맹비난</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/이재명김상욱악수.png" alt="" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Lee+Jae-myung+and+Kim+Sang-wook'">
+                        <div class="img-caption">▲ 19일 오전 여의도 <a href="국회의사당.html" class="text-blue-600 underline">국회의사당</a> 더불어민주당 당대표 회의실에서 열린 입당 환영식에서 <a href="이재명.html" class="text-blue-600 underline">이재명</a> 대선 후보(오른쪽)가 신임 입당자인 <a href="김상욱.html" class="text-blue-600 underline">김상욱</a> 의원과 손을 맞잡고 있다. 조기 대선을 불과 15일 앞두고 보수 진영 현역 의원이 제1야당에 전격 합류했다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>[효빈일보 = 최기자] <strong>6월 3일 <a href="대통령선거.html" class="text-blue-600 underline">조기 대선</a></strong>을 단 15일 앞둔 5월 19일, 대선 정국을 뒤흔들 초대형 변수가 발생했다. 지난 8일 국민의힘을 전격 탈당했던 김상욱 의원이 <strong><a href="더불어민주당.html" class="text-blue-600 underline">더불어민주당</a>에 전격 입당</strong>하며 이재명 후보 지지를 선언했다.</p>
+
+                    <p>김 의원은 이날 오전 국회 민주당 당대표 회의실에서 열린 입당 환영식에서 "보수의 쇄신을 기다리기에는 대한민국의 헌정 질서와 민생이 너무나 심각하게 무너지고 있다"며 "대선이라는 중대한 갈림길에서, 위기에 빠진 나라를 구하고 상식을 회복하기 위해 이재명 후보와 민주당에 힘을 싣기로 결단했다"고 입당 배경을 밝혔다.</p>
+
+                    <p>이재명 대선 후보는 김 의원에게 당원 가입 원서를 직접 전달받고 파란색 점퍼를 입혀주며 환영했다. 이 후보는 "대선을 코앞에 두고 김 의원님이 보여주신 진영을 뛰어넘는 용기 있는 결단에 깊이 감사드린다"며 "헌정 파괴 세력을 심판하고 민주주의를 굳건히 세워 승리로 보답하겠다"고 화답했다.</p>
+
+                    <!-- 데이터 표 (생략 금지 지시 준수) -->
+                    <table class="data-table">
+                        <caption>[표] 김상욱 의원 더불어민주당 입당에 따른 국회 의석수 변화 (2025.05.19 기준)</caption>
+                        <thead>
+                            <tr>
+                                <th width="25%">정당명</th>
+                                <th width="25%">김상욱 탈당 직후<br>(5월 8일)</th>
+                                <th width="25%">김상욱 민주당 입당<br>(현재)</th>
+                                <th width="25%">증감</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: bold; color: #0055aa;">더불어민주당</td>
+                                <td>170석</td>
+                                <td style="font-weight: bold; color: #0055aa; font-size: 16px;">171석</td>
+                                <td style="color: red;">▲ 1 (대선 정국 호재)</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #e11d48;">국민의힘</td>
+                                <td>107석</td>
+                                <td style="font-weight: bold; color: #e11d48;">107석</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">조국혁신당</td>
+                                <td>12석</td>
+                                <td>12석</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: #888;">무소속</td>
+                                <td>3석 (김상욱 포함)</td>
+                                <td>2석</td>
+                                <td style="color: blue;">▼ 1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>대선을 불과 보름 남긴 시점에서 보수 현역 의원의 제1야당 직행은 대선 판세를 요동치게 만들고 있다. 더불어민주당은 171석으로 덩치를 키웠으며, '통합과 포용'이라는 대선 프레임을 한층 강화하게 됐다.</p>
+                    
+                    <p>반면 보수 진영은 발칵 뒤집혔다. 국민의힘 선거대책위원회는 즉각 논평을 내고 "탈당 11일 만에 본색을 드러냈다. 표를 구걸하기 위해 좌파 진영에 투항한 선거용 철새 정치인의 전형"이라며 "울산 남구갑 유권자들에 대한 명백한 배신 행위는 대선에서 반드시 심판받을 것"이라고 맹비난했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">21,392</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Democracy_Win", time: "방금 전", like: 35200, dislike: 820, isPunished: false,
+                                content: "탈당하고 무소속으로 있을 줄 알았는데 민주당 입당 ㄷㄷ 대선 15일 남기고 진짜 큰 거 왔네. 오늘 연보라색 <span class='transit-badge' style='background-color: #9856FF;'>8호선</span> 타고 출근하면서 뉴스 보는데 이재명 대표랑 악수하는 사진 보고 빵 터짐 ㅋㅋㅋ 환영합니다!",
+                                replies: [
+                                    { nick: "Hyobin_Bus", content: "간선버스(<span class='transit-badge' style='background-color: #01B7ED;'>#01B7ED</span>) 타고 있는데 여기도 다 김상욱 의원 얘기 중임. 이번 조기 대선은 끝났네요 ㅋㅋㅋ" },
+                                    { nick: "Good_Choice", content: "계엄 세력 심판을 위해 힘을 합치는 게 맞지. 굿 초이스!" }
+                                ]
+                            },
+                            {
+                                nick: "Angry_Conservative(IP: 14.33.*.*)", time: "2분 전", like: 155, dislike: 41900, isPunished: true,
+                                content: "김상욱 이 기회주의자 철새 놈아!!!! 탈당한 지 2주일도 안 돼서 민주당 점퍼를 입어??? 보수 유권자들을 능멸해도 유분수지!!!! 대선 끝나고 보자 이 쓰레기 같은 놈!!!!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "할배요... 민심을 능멸한 건 댁들 당이고요. 아직도 정신 못 차리셨네." },
+                                    { nick: "Mental_Care", content: "대선 2주 남고 질 거 같으니까 화가 많이 나셨네요. 초록색 지선버스(<span class='transit-badge' style='background-color: #37B484;'>#37B484</span>) 타고 산책 좀 다녀오십쇼." }
+                                ]
+                            },
+                            { 
+                                nick: "Politics_Watcher", time: "5분 전", content: "와 민주당 171석 ㄷㄷㄷ 대선 목전에 두고 현역 뺏어오기 성공했네. 국힘은 107석에 대선 분위기도 쌉창나고 진짜 초상집이겠다 ㅋㅋㅋ 6월 3일에 투표장 꼭 가야지", like: 28500, dislike: 210, 
+                                replies: [
+                                    {nick:"Big_Picture", content:"이재명 대표 얼굴에 웃음꽃 핀 거 보소 ㅋㅋㅋ 표정 관리 안 됨."},
+                                    {nick:"Vote_Power", content:"침몰하는 배에서 탈출한 김상욱 의원 지능 상위 1% 인정"}
+                                ] 
+                            },
+                            { 
+                                nick: "Subway_Commuter", time: "10분 전", content: "빨간색 <span class='transit-badge' style='background-color: #D81C2F;'>급행버스</span> 기다리면서 보다가 깜짝 놀랐습니다. 우리 효빈시 시민들도 6월 3일 조기 대선 때 투표 제대로 해서 낡은 정치 심판합시다!", like: 23200, dislike: 115, 
+                                replies: [
+                                    {nick:"Hyobin_Love", content:"투표율 80% 찍어봅시다 효빈시 파이팅!"}
+                                ] 
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Angry") || reply.nick.includes("Troll") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm border border-[#0055aa]">
+                <div class="ranking-title border-b-[#0055aa]">
+                    <span class="text-[#0055aa]">대선 D-15 핫이슈</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num text-[#0055aa]">1</span> <a href="김상욱민주당입당.html" class="ranking-link font-bold text-[#0055aa]">김상욱 민주당 전격 입당… "이재명 후보 지지"</a></li>
+                    <li><span class="ranking-num">2</span> <a href="민주당의석수.html" class="ranking-link">민주당 171석으로 덩치 키워… 대선 승리 '청신호'</a></li>
+                    <li><span class="ranking-num">3</span> <a href="국힘반발.html" class="ranking-link">국민의힘 "탈당 11일 만에 본색 드러낸 철새" 맹공</a></li>
+                    <li><span class="ranking-num">4</span> <a href="효빈시장코멘트.html" class="ranking-link">박효빈 시장 "낡은 정치 끝내고 상식이 승리할 것"</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner bg-[#f8f9fa] border border-[#e2e2e2] p-4 text-center rounded mt-4">
+                <div>
+                    <div class="font-bold text-[#0055aa] mb-1 text-lg">효빈 선거관리위원회</div>
+                    <div class="text-sm text-gray-600">6월 3일 제21대 대통령선거<br>여러분의 소중한 한 표가 대한민국을 바꿉니다.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

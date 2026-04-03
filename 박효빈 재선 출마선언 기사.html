@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[현장] "오타쿠의 질주는 멈추지 않는다!" 박효빈 시장, 압도적 지지율 속 재선 출마 공식 선언 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html" class="active">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="culture.html">생활/문화</a>
+                <a href="world.html">세계</a>
+                <a href="it.html">IT/과학</a>
+                <a href="opinion.html">오피니언</a>
+                <a href="photo.html">포토</a>
+                <a href="tv.html">TV</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">정치 > 선거/정당</div>
+                <h2 class="article-title">[현장] "오타쿠의 질주는 멈추지 않는다!" 박효빈 시장, 압도적 지지율 속 재선 출마 공식 선언</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최기자</span> (choi_reporter@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.04.10. 10:00 | 수정 2026.04.10. 11:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈역 대중교통 환승센터서 출마 선언... "H-Pass와 L-Project의 완성 이루겠다"<br>장난감 총 든 윤재훈 겨냥 "도시의 미래는 혐오 아닌 연대로 만들어진다" 일침<br>노서현 서구청장 등 민주당 인사 대거 참석... '74.8%' 대세론 굳히기 돌입</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/박효빈재선.png" alt="박효빈 재선 출마선언" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/003399/FFFFFF?text=Mayor+Park+Hyo-bin+Declaration'">
+                        <div class="img-caption">▲ 10일 오전, <a href="효빈역.html">효빈역</a> 대중교통 환승센터에서 <a href="더불어민주당.html">더불어민주당</a> 소속 <a href="박효빈.html">박효빈</a> 효빈광역시장이 지지자들의 환호 속에 제9회 지방선거 재선 출마를 공식 선언하고 있다. 그의 뒤로 H-Pass의 상징인 <span style="color:#01B7ED; font-weight:bold;">간선버스</span>가 지나가고 있다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>“시민 여러분, 덕후가 세상을 바꾼다는 것을 우리는 지난 4년간 완벽하게 증명해 냈습니다. 멈추지 않는 효빈의 내일을 위해, 저 박효빈이 다시 한번 신발 끈을 조여 맸습니다!”</p>
+                    
+                    <p>현재 70%대 중반의 압도적인 지지율을 구가하며 사실상 재선을 예약했다는 평가를 받는 <a href="박효빈.html">박효빈</a>(30) 효빈광역시장이 10일 오전, <a href="효빈역.html">효빈역</a> 환승센터에서 제9회 전국동시지방선거 재선 출마를 공식 선언했다.</p>
+
+                    <p>출마 선언 장소를 구청이나 선관위가 아닌 '환승센터'로 정한 것은 그의 핵심 치적인 '효빈 패스(H-Pass)'와 궤도 교통망 정책을 강조하기 위한 치밀한 포석으로 풀이된다. 현장에는 이른 아침부터 모인 수천 명의 지지자들과 덕후(...) 시민들이 나카스 카스미의 상징색인 <span style="color:#E7D600; font-weight:bold;">파스텔 옐로우</span> 응원봉을 흔들며 콘서트장을 방불케 하는 장관을 연출했다.</p>
+
+                    <div class="quote-box">
+                        <strong>"가난하다고 해서 자유를 모르는 것이 아닙니다. 오히려 생존을 위해 매 순간 쟁취해야 하는 것이 자유입니다."</strong><br><br>
+                        "저는 대학 시절 알바 3개를 뛰며 곰팡이 핀 반지하에서 청춘을 버텼습니다. 그렇기에 청년 주택 '효빈 하우스'를 만들었고, 월 3만 원의 '효빈 패스'로 시민들의 발걸음을 가볍게 했습니다. 이제 우리는 서브컬처 종주도시 프로젝트(L-Project)를 통해 굿즈 소비를 넘어 아시아 최대의 문화 콘텐츠 생산 기지로 도약할 것입니다. HAF(효빈 애니메이션 페스티벌)의 규모를 두 배로 키우고, 카스밍 로드를 전역으로 확대해 가장 안전하고 힙한 도시를 완성하겠습니다!"
+                    </div>
+
+                    <p>박 시장은 최근 장난감 BB탄 총을 들고 '오타쿠 척결'을 외치며 출마를 선언한 <a href="국민의힘.html">국민의힘</a> <a href="윤재훈.html">윤재훈</a> 예비후보와, 2006년 3표 차 패배의 원흉인 <a href="지총민.html">지총민</a> 예비후보를 향해 날카로운 일침을 가하기도 했다.</p>
+
+                    <p>"장난감 총을 들고 시민들을 위협하는 2%대의 혐오 세력이나, 남 탓만 하며 20년 전 과거에 갇혀 있는 0.8%의 망령에게 이 위대한 도시를 단 하루도 넘겨줄 수 없습니다. 도시의 미래는 혐오와 조롱이 아니라, 상대를 이해하는 연대와 땀 흘린 자를 위한 디테일한 행정으로 만들어집니다."</p>
+
+                    <p>이날 행사에는 출마를 양보하고 원팀을 선언한 <a href="노서현.html">노서현</a> 서구청장과 효빈대 총장을 비롯한 각계 인사들이 대거 참석해 '박효빈 대세론'에 힘을 실었다. 노 청장은 축사에서 "나보다 뛰어난 청년 시장을 돕는 것이 효빈시를 위한 길"이라며 치켜세웠다. 거침없는 정책 추진력과 탄탄한 팬덤을 모두 거머쥔 '헌정 사상 최연소 광역단체장' 박효빈의 재선 가도에 적수는 없어 보인다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">24,198</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="phb_re_election_news.html" class="ranking-link font-bold text-[#0055aa]">[현장] 박효빈 시장 재선 공식 출마 선언</a></li>
+                    <li><span class="ranking-num">2</span> <a href="hyobin_election_news.html" class="ranking-link">효빈시장 대진표 완성... 박효빈 74.8%</a></li>
+                    <li><span class="ranking-num">3</span> <a href="yoon_declaration.html" class="ranking-link">윤재훈, 장난감 총 들고 출마 선언 '시민들 싸늘'</a></li>
+                    <li><span class="ranking-num">4</span> <a href="news_yoonsm.html" class="ranking-link">유성민 "박효빈과 정정당당하게 정책 대결 하겠다"</a></li>
+                    <li><span class="ranking-num">5</span> <a href="news_jcm_fail.html" class="ranking-link">지총민 고시원 쫓겨나... 노숙 유세 예고</a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 패스 (H-Pass)</div>
+                    <div class="text-xs text-blue-600 font-bold mb-2">당신의 발걸음을 가볍게!</div>
+                    <div class="text-[10px] text-gray-500">효빈교통공사</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs font-sans">
+        <div class="max-w-[1080px] mx-auto px-4">
+            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Hyobin_Otaku", time: "방금 전", like: 32540, dislike: 45, isPunished: false,
+                content: "캬 카스밍 로드 전역 확대 공약 미쳤다 ㅋㅋㅋㅋ 시장님 사심 200% 들어간 공약이지만 치안율 40% 올랐으니 반박 불가임. 재선 무조건 가즈아!!!",
+                replies: [
+                    { nick: "Security_Mom", content: "서구 맘카페에서도 카스밍 로드 빨리 깔아달라고 난리예요 ㅋㅋㅋ 노란 불빛 너무 예쁨" },
+                    { nick: "Subculture_King", content: "이게 바로 덕업일치 행정이지. 효빈시는 성지다!" },
+                    { nick: "YoonJaehoon(IP)", content: "이 매국노 오타쿠 새끼들!! 내 2.1% 지지율이 무섭지 않느냐!!" },
+                    { nick: "Fact_Check", content: "응 하나도 안 무서워 장난감 총 내려놔라 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Doocheong_Driver", time: "5분 전", like: 28900, dislike: 82, isPunished: false,
+                content: "오늘 환승센터 출마 선언식 다녀왔습니다. 윤대환 애비놈이 말아먹은 <span style='color:#EE0022; font-weight:bold;'>5호선</span> 복구하고, <span style='color:#01B7ED; font-weight:bold;'>간선버스</span> 체계 살려준 게 누굽니까. 우리 교통 노동자들은 무조건 박효빈입니다.",
+                replies: [
+                    { nick: "Line1_Commuter", content: "매일 <span style='color:#0077DD; font-weight:bold;'>1호선</span> 지옥철 타다가 H-Pass 생기고 <span style='color:#D81C2F; font-weight:bold;'>급행버스</span> 타니까 살맛 남. 갓효빈!" },
+                    { nick: "Taxi_Driver", content: "올빼미 버스 첨엔 반대했는데, 박 시장이 우리 택시 지원금도 챙겨줘서 입 닫았음 ㅋㅋㅋ 일 진짜 잘함." },
+                    { nick: "Ji_Chong_Min_Fan", content: "내가 시장됐으면 버스비 무료였다! 내 0.8%는 조작이다!!" },
+                    { nick: "Doocheong_Driver", content: "@Ji_Chong_Min_Fan 영감탱이 2006년 두청운수 파업할때 입 싹 닫았으면서 어디서 뻥을 쳐" }
+                ]
+            },
+            {
+                nick: "Blue_Bird_Student", time: "10분 전", like: 24500, dislike: 33, isPunished: false,
+                content: "박효빈 시장님이 '가난하다고 자유를 모르는게 아니다'라고 하셨을때 펑펑 울었습니다. 반지하에서 편의점 야간 알바 뛰어본 분이라 저희 맘을 너무 잘 알아요 ㅠㅠ 효빈 하우스 평생 연장해주세요!!",
+                replies: [
+                    { nick: "Youth_Power", content: "저도 희망TV 쓰리잡 시절 영상 보고 박시장님 팬 됐습니다. 진정한 흙수저 신화죠." },
+                    { nick: "Liyuu_Fan", content: "블루 버드 멘토단 출신입니다. 탕쿠쿠 대첩때 시장님이 흘리신 눈물은 찐이었습니다." }
+                ]
+            },
+            {
+                nick: "YoonJaehoon(IP)", time: "15분 전", like: 8, dislike: 21400, isPunished: true,
+                content: "이 더러운 오타쿠 카르텔 놈들!! 환승센터는 우리 아버지가 만든 거다 통행료 내라!! 나의 위대한 2.1% 지지층이 100만 명을 끌고 와서 너희를 심판할 것이다!! 탕탕!!",
+                replies: [
+                    { nick: "Police_Officer", content: "BB탄 총 쏘지 마세요 윤재훈 씨. 또 체포당하고 싶습니까?" },
+                    { nick: "Math_Teacher", content: "효빈시 인구가 296만인데 2.1%가 어떻게 100만 명이 되니... 산수도 못하네" },
+                    { nick: "Mental_Clinic", content: "보호자분 어디 계십니까? 환자분이 또 폰 훔쳐서 댓글 다네요." },
+                    { nick: "Ji_Chong_Min_Fan", content: "핏덩이 새끼가 시끄럽다!! 진정한 계엄사령관은 나 지총민이다!!" }
+                ]
+            },
+            {
+                nick: "Conservative_Real", time: "25분 전", like: 15200, dislike: 140, isPunished: false,
+                content: "솔직히 보수 성향이지만 박효빈 시장 일 잘하는 건 인정해야 됨. 다만 견제가 필요하니 저는 유성민 후보님 찍어서 15% 보전받게 해드릴 겁니다. 윤재훈은 인간 쓰레기고요.",
+                replies: [
+                    { nick: "Right_Wing_Normal", content: "맞습니다. 혐오 정치 윤재훈은 보수의 수치입니다. 유성민 화이팅!" },
+                    { nick: "Yoo_Supporter", content: "이번 선거의 목표는 유성민 15% 뚫기 + 윤재훈 1% 미만으로 강등시키기 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Line8_Rider", time: "30분 전", like: 12500, dislike: 15, isPunished: false,
+                content: "우리 동네 <span style='color:#9856FF; font-weight:bold;'>8호선</span> 윤재훈 애비가 적자라고 백지화 시켰던 거 박효빈 시장님이 재개통 시켜줌 ㅠㅠ 나 매일 <span style='color:#E7D600; font-weight:bold;'>순환버스</span> 타고 다니다가 8호선 타니까 눈물남 ㅠㅠ",
+                replies: [
+                    { nick: "Transit_Nerd", content: "8호선 역마다 스탬프 랠리 생긴 거 존잼 ㅋㅋㅋ 성우 목소리 안내방송도 갓벽함." },
+                    { nick: "Subway_Lover", content: "<span style='color:#6677CC; font-weight:bold;'>빈효광역선</span>까지 연장되면 효빈시는 아시아 원탑 철도 도시 됨." }
+                ]
+            },
+            {
+                nick: "Labor_Union_Lee", time: "40분 전", like: 9800, dislike: 320, isPunished: false,
+                content: "정의당 이사원 위원장 지지자지만... 박효빈 시장 연설 들으면 가슴이 뜁니다. 노동자의 땀방울을 아는 진짜배기 시장. 이번엔 전략적으로 박효빈 찍겠습니다.",
+                replies: [
+                    { nick: "Citizen_B", content: "진보 어젠다를 시장님이 다 흡수해버려서 정의당이 설 자리가 없긴 하죠..." },
+                    { nick: "Worker_C", content: "알바 3개 뛴 짬바 무시 못함 ㅋㅋㅋ 근로기준법 씹어드시는 분" }
+                ]
+            },
+            {
+                nick: "Ji_Chong_Min_Fan", time: "45분 전", like: 3, dislike: 18500, isPunished: true,
+                content: "이 무식한 놈들아!! 2006년의 12% 신화가 박현만을 심판했듯이 2026년의 0.8%가 박효빈을 심판할 것이다!! 나 지총민은 노숙하면서라도 끝까지 완주한다!!",
+                replies: [
+                    { nick: "Gosiwon_Owner", content: "아저씨 방 뺐으니까 고시원 앞에 짐 놓고 가지 마요. 고물상에 팔아버리기 전에." },
+                    { nick: "Citizen_D", content: "진짜 노숙 유세 하냐 ㅋㅋㅋㅋㅋ 강성택 전 의원님 보고 부끄러운 줄 알아라." },
+                    { nick: "YoonJaehoon(IP)", content: "하하하 0.8% 거지가 따로 없구나!! 내 비밀 펀드 5천만 원이 부러우냐!!" },
+                    { nick: "Tax_Office", content: "@YoonJaehoon(IP) 윤재훈 씨, 그 자금 출처 내일 조사 나갑니다." }
+                ]
+            },
+            {
+                nick: "Min_President", time: "55분 전", like: 16500, dislike: 25, isPunished: false,
+                content: "우리 효빈대의 자랑, 15학번 박효빈 동문의 재선 도전을 총장으로서, 그리고 동지(?)로서 열렬히 환영합니다. HAF 규모 2배 확장 공약은 탁월한 혜안입니다.",
+                replies: [
+                    { nick: "Hyobin_Univ_Student", content: "총장님 오하라 마리 굿즈 사러 HAF 오실거 다 압니다 ㅋㅋㅋㅋㅋ" },
+                    { nick: "Alumni_A", content: "스승과 제자가 쌍으로 덕업일치 ㅋㅋㅋㅋ 효빈대 폼 미쳤다." }
+                ]
+            },
+            {
+                nick: "No_Seo_Hyun", time: "1시간 전", like: 14200, dislike: 55, isPunished: false,
+                content: "박효빈 시장님의 압승을 확신합니다. 서구청장으로서 시장님과 발맞춰 효빈시의 발전을 이끌겠습니다. 윤재훈 같은 자격 미달 후보는 이번 선거로 완전히 퇴출시켜야 합니다.",
+                replies: [
+                    { nick: "Minjoo_OneTeam", content: "서구청장님 대인배 ㅠㅠ 시장 경선 양보하시고 원팀 가는 모습 든든합니다!" },
+                    { nick: "West_Gu_Resident", content: "2028년 총선 서구 갑/을 분구되면 무조건 청장님 찍겠습니다!" }
+                ]
+            },
+            {
+                nick: "Saaya_Bakery", time: "1시간 10분 전", like: 11500, dislike: 12, isPunished: false,
+                content: "시장님 출마 선언식 끝나고 우리 빵집 오셔서 사아야 빵 50개 싹쓸이해가심 ㅋㅋㅋㅋ 관저 가서 비서실장이랑 나눠 드실 듯. 진짜 못말리는 성덕 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Bread_Lover", content: "관저 이름이 카스미 하우스 잖아요 ㅋㅋㅋㅋ 비서실장님은 치카리코 파고 ㅋㅋㅋ" },
+                    { nick: "Otaku_A", content: "시청 공무원 면접 질문이 '최애가 누구냐'는 소문이 진짜였어 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Airport_Bus_Driver", time: "1시간 20분 전", like: 8900, dislike: 20, isPunished: false,
+                content: "케손시티 자매결연 맺고 나서 <span style='color:#84C36E; font-weight:bold;'>공항버스</span>에 필리핀 관광객들 미어터집니다. 윤재훈 그 모지리 놈이 어그로 끈 덕분에 오히려 외교 대박 터짐 ㅋㅋㅋ 박효빈 시장님 외교력 갑!",
+                replies: [
+                    { nick: "Diplomat_K", content: "인구 300만 거대 도시를 정글이라고 놀린 윤재훈 능지 ㅋㅋㅋ 덕분에 효빈시 경제만 떡상함." },
+                    { nick: "Filipino_Resident", content: "시장님 타갈로그어로 필리핀 방송에 사과하신 거 보고 울었습니다 ㅠㅠ 자랑스러워요." }
+                ]
+            },
+            {
+                nick: "Yoon_Secret_Account", time: "1시간 30분 전", like: 2, dislike: 17800, isPunished: true,
+                content: "이 조작 언론아! 윤재훈 사령관님의 장난감 총은 정의의 무기다! 박효빈의 카스밍 로드를 다 부숴버리고 어두침침한 옛날 골목으로 되돌리겠다!! 2.1% 만세!!",
+                replies: [
+                    { nick: "Security_Mom", content: "가로등 부수면 니 뚝배기도 부숴버린다. 애들 밤길 위험하게 미쳤냐?" },
+                    { nick: "IP_Tracker", content: "윤재훈 넌 폰 압수 안 당했냐? 계속 아이디 바꿔서 오네 ㅋㅋㅋ" },
+                    { nick: "YoonJaehoon(IP)", content: "누가 내 비밀계정 털었어!! 조작이다!!" }
+                ]
+            },
+            {
+                nick: "Line3_Rider", time: "1시간 45분 전", like: 7600, dislike: 11, isPunished: false,
+                content: "<span style='color:#FFCC11; font-weight:bold;'>3호선</span> 사능역(Sa-neung)에 야마부키 사아야 생일 광고 또 걸렸더라 ㅋㅋㅋ 박시장님 취임하고 나서 합법 광고 게시대 확충해준 거 진짜 신의 한 수임. 도시 미관도 살고 씹덕들 돈도 빨아먹고.",
+                replies: [
+                    { nick: "Ad_Agency", content: "스마트 시정 게시대 덕분에 불법 현수막 싹 사라지고 세수 빵빵해짐. 행정 천재 맞음." },
+                    { nick: "YoonJaehoon(IP)", content: "그 광고판 내가 찢어버릴거다!! 쿠소아마!!" },
+                    { nick: "Saaya_Bakery", content: "@YoonJaehoon(IP) 사능동 할매들 몽둥이 찜질 또 맞고싶냐 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "City_Tour_Guide", time: "2시간 전", like: 6200, dislike: 14, isPunished: false,
+                content: "<span style='color:#7777AA; font-weight:bold;'>시티투어버스</span> 기사입니다. 주말마다 '성지순례 코스' 예약 꽉 차서 버스 증차했습니다 ㅋㅋㅋ HAF 축제 2배 키우면 2층 버스 도입해야 할 듯요. 시장님 충성!",
+                replies: [
+                    { nick: "Tourism_Board", content: "L-Project가 효빈시 먹여 살리는 중. 윤재훈은 이거 엎는다고? ㅋㅋㅋ 자영업자들한테 맞아 죽을 듯." }
+                ]
+            },
+            {
+                nick: "Gwangyeok_Commuter", time: "2시간 15분 전", like: 5800, dislike: 18, isPunished: false,
+                content: "약산에서 효빈 출퇴근하는 직장인입니다. <span style='color:#485EC6; font-weight:bold;'>광역버스</span> H-Pass 적용시켜준 거 평생 은혜 잊지 않겠습니다 ㅠㅠ 교통비 반토막 남.",
+                replies: [
+                    { nick: "Citizen_F", content: "타 지역 사람들도 부러워하는 갓효빈시 복지 클라스 ㄷㄷ" },
+                    { nick: "Ji_Chong_Min_Fan", content: "약산놈들이 왜 효빈시 예산을 축내느냐!! 박효빈은 사퇴하라!!" }
+                ]
+            },
+            {
+                nick: "Kang_Supporter", time: "2시간 30분 전", like: 4500, dislike: 21, isPunished: false,
+                content: "강성택 의원님이 오늘 아침에도 조용히 3표의 눈물 기념비 닦고 가시는 거 봤습니다. 지총민 저 인간은 진짜 인간 말종이네요. 0.8%도 아깝습니다.",
+                replies: [
+                    { nick: "Respect_Kang", content: "사죄할 줄 아는 올드보이와 아집만 남은 망령의 차이..." }
+                ]
+            },
+            {
+                nick: "Subway_Line4", time: "2시간 45분 전", like: 5100, dislike: 12, isPunished: false,
+                content: "<span style='color:#FF5522; font-weight:bold;'>4호선</span> 연장 공사도 깔끔하게 마무리 하신 거 보면 행정력은 진짜 역대 최고임. 윤대환이 파놓은 함정 다 메우고 도시 정상화 시켜놨음.",
+                replies: [
+                    { nick: "Line6_Rider", content: "<span style='color:#881188; font-weight:bold;'>6호선</span> 타고 출퇴근 하실 때 시장님 수첩에 민원 적으시는 거 봄. 쇼가 아니라 진짜 워커홀릭임." }
+                ]
+            },
+            {
+                nick: "YoonJaehoon_Victim", time: "3시간 전", like: 7200, dislike: 15, isPunished: false,
+                content: "윤재훈 저놈 일본 8개 도시 테러하고 이시가키섬으로 밀입국하려다 영구 입국 금지 당한 놈이 무슨 낯짝으로 출마를 ㅋㅋㅋ 전 세계구급 찐따임.",
+                replies: [
+                    { nick: "Otaku_A", content: "아키하바라 메이드 카페 난입 사건은 진짜 일본 뉴스 1면 탔지 ㅋㅋㅋㅋ 국격 살살 녹음" },
+                    { nick: "YoonJaehoon(IP)", content: "그건 애국 투쟁이었다!! 쪽바리 문화를 몰아내기 위한 위대한 거사다!!" },
+                    { nick: "Fact_Check", content: "경찰한테 포위당해서 오줌 지린 주제에 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Local_Line7", time: "3시간 15분 전", like: 4300, dislike: 8, isPunished: false,
+                content: "저번 HAF 때 <span style='color:#FF8899; font-weight:bold;'>7호선</span>(효빈전차)에 랩핑한 거 진짜 예술이었음 ㅠㅠ 낭만 그 자체. 다음 임기때도 전차 현대화 사업 꼭 잘 마무리해주시길 바랍니다!",
+                replies: [
+                    { nick: "Tram_Lover", content: "과거에 윤대환이 트램 폐지한다고 난리쳤던 거 생각하면 아찔함..." },
+                    { nick: "Hyobin_City_Hall", content: "7호선 현대화는 시장님 역점 사업입니다. 걱정 마십시오!" }
+                ]
+            },
+            {
+                nick: "Town_Bus_Driver", time: "3시간 30분 전", like: 3900, dislike: 14, isPunished: false,
+                content: "<span style='color:#A664A0; font-weight:bold;'>마을버스</span> 기사입니다. 박 시장님 취임하고 기사들 휴게실 호텔급으로 싹 고쳐준 거 진짜 감사합니다. 알바 뛰시던 분이라 노동자 맘을 너무 잘 알아요.",
+                replies: [
+                    { nick: "Labor_Union_Lee", content: "인정할 건 인정합니다. 이사원 위원장님 지지자지만 박 시장 휴게실 정책은 완벽했습니다." }
+                ]
+            },
+            {
+                nick: "Fact_Check_Master", time: "4시간 전", like: 8800, dislike: 40, isPunished: false,
+                content: "총정리: 박효빈(74.8%)은 일 잘하는 성덕 사기캐라 적수가 없음. 유성민(14.5%)은 보수 희망. 이사원(2.8%)은 어젠다 뺏겨서 고전 중. 윤재훈(2.1%)은 장난감 총 들고 정신승리하는 범죄자. 지총민(0.8%)은 노숙 유세하는 20년 전 망령. 끝.",
+                replies: [
+                    { nick: "Good_Summary", content: "깔끔한 요약추. 2026 효빈시장 선거는 이거 하나로 정리 끝남 ㅋㅋㅋ" },
+                    { nick: "Vote_Power", content: "투표율 올려서 저 2.1%랑 0.8% 기탁금 5천만원 싹 다 국고로 환수시킵시다!" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("JCM_") || reply.nick.includes("Yoon_Is_God") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${reply.nick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+</body>
+</html>
