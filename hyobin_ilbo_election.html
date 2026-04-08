@@ -117,28 +117,7 @@
 <body>
 
     <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html" class="active">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html">경제</a>
-                <a href="society.html">사회</a>
-                <a href="world.html">국제</a>
-                <a href="culture.html">문화</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-            </div>
-        </nav>
-    </header>
+    <div id="common-header"></div>
 
     <div class="article-container">
         <!-- 메인 기사 영역 -->
@@ -441,21 +420,7 @@
         <!-- 사이드바 -->
         <div class="side-content">
             <!-- 많이 본 뉴스 -->
-            <div class="rank-news">
-                <div class="rank-title">많이 본 뉴스 (종합)</div>
-                <ul class="rank-list">
-                    <li><span class="rank-num">1</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">김성민 79.9%, 박효빈 77.9%... 효빈시 '민주당 천하' 재확인</span></li>
-                    <li><span class="rank-num">2</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">윤재훈(국힘 시장 후보), 선거 비용 미지급 논란... "파산 위기"</span></li>
-                    <li><span class="rank-num">3</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">효빈 부동산, '김성민-박효빈' 원팀 효과에 기대감 상승</span></li>
-                    <li><span class="rank-num">4</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">7호선 전차 폐지론 종식... "현대화 사업 즉시 착수"</span></li>
-                    <li><span class="rank-num">5</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">올해 HAF(효빈 애니 페스티벌) 역대급 라인업 예고</span></li>
-                    <li><span class="rank-num">6</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">주민우 전 의원, 만취 상태로 투표소 난동... 경찰 출동</span></li>
-                    <li><span class="rank-num">7</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">학폭 피해자 연대 "윤재훈 낙선은 사필귀정... 사과하라"</span></li>
-                    <li><span class="rank-num">8</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">효빈교통공사, 빈효선 증차 예산 확보... "출퇴근 숨통"</span></li>
-                    <li><span class="rank-num">9</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">범죄도시2 천만 관객 눈앞... 효빈 촬영지 인기</span></li>
-                    <li><span class="rank-num">10</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_election.html'">고송-중수 도로 협소로 BRT 무산... 6호선 증차로 선회</span></li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
 
             <!-- 배너 -->
             <div style="background: #e9ecef; height: 250px; display: flex; justify-content: center; align-items: center; border: 1px solid #ddd; text-align: center; padding: 20px;">
@@ -469,20 +434,9 @@
     </div>
 
     <!-- 푸터 -->
-    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
-        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
-            <div class="flex gap-4 mb-4">
-                <a href="#" class="hover:text-white">회사소개</a>
-                <a href="#" class="hover:text-white">구독신청</a>
-                <a href="#" class="hover:text-white">고충처리인</a>
-                <a href="#" class="hover:text-white">청소년보호정책</a>
-                <a href="#" class="hover:text-white">저작권규약</a>
-            </div>
-            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
-            <p>주소: 효빈광역시 북구 중수동 123 </p>
-            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
 
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

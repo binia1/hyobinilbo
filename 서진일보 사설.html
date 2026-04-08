@@ -65,29 +65,7 @@
 </head>
 <body>
 
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-            <div class="flex items-end gap-3 cursor-pointer" onclick="location.href='index.html'">
-                <h1 class="text-4xl font-black text-[#8b0000] tracking-tighter" style="font-family: 'Nanum Myeongjo', serif;">서진일보</h1>
-                <span class="text-sm font-bold text-gray-500 mb-1">SEOJIN ILBO</span>
-            </div>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
-                <button class="bg-[#8b0000] text-white px-3 py-1 text-sm font-bold">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="#">홈</a>
-                <a href="#">정치</a>
-                <a href="#">경제</a>
-                <a href="#">사회</a>
-                <a href="#" class="active">사설/칼럼</a>
-                <a href="#">지역/서진</a>
-                <a href="#">오피니언</a>
-            </div>
-        </nav>
-    </header>
+    <div id="common-header"></div>
     
     <div class="article-container">
         <div class="main-content shadow-sm">
@@ -154,18 +132,7 @@
 
         <!-- 사이드바 -->
         <div class="side-content">
-            <div class="ranking-box shadow-sm">
-                <div class="ranking-title">
-                    <span>많이 본 뉴스</span>
-                </div>
-                <ul class="ranking-list" id="ranking-list">
-                    <li><span class="ranking-num">1</span> <a href="#" class="ranking-link font-bold text-[#8b0000]">[사설] 서울 깍쟁이 언론들은 서진 시민들의 피눈물을 아는가</a></li>
-                    <li><span class="ranking-num">2</span> <a href="#" class="ranking-link">보수 텃밭 서진시, 2026 지선에서 "국힘 버리나" 이탈 조짐</a></li>
-                    <li><span class="ranking-num">3</span> <a href="#" class="ranking-link">윤대환 일가 소유 토지, 시의회서 강제 환수 논의 급물살</a></li>
-                    <li><span class="ranking-num">4</span> <a href="#" class="ranking-link">[포토] 구 두청운수 터미널 앞 분노의 규탄 집회</a></li>
-                    <li><span class="ranking-num">5</span> <a href="#" class="ranking-link">무소속 유성민 지지율 15% 돌파? 서진 민심 요동친다</a></li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
             
             <div class="ad-banner bg-[#fdfdfd] border border-gray-200 p-4 text-center mt-4">
                 <div>
@@ -179,16 +146,7 @@
     </div>
 
     <!-- 푸터 -->
-    <footer class="bg-[#222] text-gray-400 py-10 mt-20 text-xs font-sans">
-        <div class="max-w-[1080px] mx-auto px-4 flex justify-between items-center">
-            <div>
-                <p class="font-bold text-lg text-white mb-2" style="font-family: 'Nanum Myeongjo', serif;">서진일보</p>
-                <p>제호: 서진일보 | 등록번호: 덕빈 다00042 | 발행인/편집인: 송태규</p>
-                <p>주소: 덕빈북도 서진시 중앙로 123 서진일보 사옥</p>
-                <p>전화: 078-432-0101 | Copyright © Seojin Ilbo. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
 
     <!-- 댓글 렌더링 스크립트 -->
     <script>
@@ -315,5 +273,7 @@
         }
         function addComment() { alert("댓글이 등록되었습니다."); }
     </script>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

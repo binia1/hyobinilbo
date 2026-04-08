@@ -58,29 +58,7 @@
 <body>
 
     <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html" class="active">경제</a>
-                <a href="society.html">사회</a>
-                <a href="culture.html">생활/문화</a>
-                <a href="world.html">세계</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-                <a href="tv.html">TV</a>
-            </div>
-        </nav>
-    </header>
+    <div id="common-header"></div>
     <div class="article-container">
         <div class="main-content shadow-sm">
             <div id="article-content-area">
@@ -270,19 +248,7 @@
 
         <!-- 사이드바 -->
         <div class="side-content">
-            <div class="ranking-box shadow-sm">
-                <div class="ranking-title">
-                    <span class="text-[#0055aa]">많이 본 뉴스</span>
-                    <a href="news_list.html" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
-                </div>
-                <ul class="ranking-list" id="ranking-list">
-                    <li><span class="ranking-num">1</span> <a href="news_foreign_press.html" class="ranking-link font-bold text-[#0055aa]">필리핀 언론 '한국 인종차별' 보도</a></li>
-                    <li><span class="ranking-num">2</span> <a href="news_quezon_city.html" class="ranking-link">케손시티 시장, 효빈시에 '자매결연' 제안</a></li>
-                    <li><span class="ranking-num">3</span> <a href="news_liyuu_message.html" class="ranking-link">성우 Liyuu, 피해자에 눈물의 응원</a></li>
-                    <li><span class="ranking-num">4</span> <a href="news_chosun_fake.html" class="ranking-link">조선일보 '잡종 혈통' 망언 파문</a></li>
-                    <li><span class="ranking-num">5</span> <a href="news_yoon_jail.html" class="ranking-link">윤재훈, 구치소 '망고 구걸' 굴욕</a></li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
             
             <!-- 광고 -->
             <div class="ad-banner">
@@ -295,12 +261,8 @@
     </div>
 
     <!-- 푸터 -->
-    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
-        <div class="max-w-[1080px] mx-auto px-4">
-            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
-            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
-            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

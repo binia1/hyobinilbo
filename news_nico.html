@@ -11,12 +11,6 @@
 
         body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
         
-        /* 뉴스 헤더 */
-        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
-        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
-        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
-        .news-nav .active { color: #0055aa; }
-
         /* 레이아웃 */
         .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
         .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
@@ -29,14 +23,6 @@
         .article-body strong { font-weight: 800; }
         .article-body p { margin-bottom: 24px; }
         .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-
-        /* 사이드바 */
-        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
-        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
-        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
-        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
-        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
-        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
 
         /* 댓글창 */
         .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
@@ -59,43 +45,12 @@
         .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
         .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
         .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
-
-        /* 모달 */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center; }
-        .modal-window { background: white; width: 500px; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 10px; }
-        .modal-content { font-size: 14px; line-height: 1.6; color: #555; white-space: pre-wrap; }
-        .modal-close { margin-top: 20px; text-align: right; }
-        .modal-close-btn { background: #333; color: white; padding: 8px 20px; border-radius: 4px; font-size: 13px; }
     </style>
 </head>
 <body>
 
-    <!-- 상단 GNB -->
-    <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html" class="active">경제</a>
-                <a href="society.html">사회</a>
-                <a href="culture.html">생활/문화</a>
-                <a href="world.html">세계</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-                <a href="tv.html">TV</a>
-            </div>
-        </nav>
-    </header>
+    <!-- 공통 헤더 자동 주입 박스 -->
+    <div id="common-header"></div>
 
     <div class="article-container">
         <!-- 메인 기사 영역 -->
@@ -130,53 +85,21 @@
 
         <!-- 사이드바 -->
         <div class="side-content">
-            <!-- 많이 본 뉴스 -->
-            <div class="ranking-box shadow-sm">
-                <div class="ranking-title">
-                    <span class="text-[#0055aa]">많이 본 뉴스</span>
-                    <a href="news_list.html" target="_blank" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
-                </div>
-                <ul class="ranking-list" id="ranking-list">
-                    <!-- JS Load -->
-                </ul>
-            </div>
+            
+            <!-- ⭐ 시장님 극대노 방지: 랜덤 랭킹 뉴스 코어 주입 위치 ⭐ -->
+            <div id="common-sidebar-ranking"></div>
 
             <!-- 광고 배너 -->
-            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
-                <span>광고 영역 (효빈교통공사)</span>
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300 rounded">
+                <span class="font-bold text-[#0055aa]">광고 영역 (효빈교통공사)</span>
             </div>
-            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
-                <span>광고 영역 (성심당 효빈점)</span>
-            </div>
-        </div>
-    </div>
-
-    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
-        <div class="max-w-[1080px] mx-auto px-4">
-            <div class="flex gap-4 mb-4 font-bold text-gray-300">
-                <a href="#" onclick="openFooterModal('company')">회사소개</a> | 
-                <a href="#" onclick="openFooterModal('terms')">이용약관</a> | 
-                <a href="#" onclick="openFooterModal('privacy')">개인정보처리방침</a> | 
-                <a href="#" onclick="openFooterModal('youth')">청소년보호정책</a> | 
-                <a href="#" onclick="openFooterModal('help')">고충처리</a>
-            </div>
-            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
-            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
-            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- 푸터용 팝업 모달 -->
-    <div id="footerModal" class="modal-overlay">
-        <div class="modal-window">
-            <div class="modal-title" id="modalTitle">제목</div>
-            <div class="modal-content" id="modalContent">내용</div>
-            <div class="modal-close">
-                <button class="modal-close-btn" onclick="document.getElementById('footerModal').style.display='none'">닫기</button>
+            <div class="w-full h-64 bg-[#fff8e1] flex items-center justify-center text-orange-500 border border-[#ffe082] rounded mt-2">
+                <span class="font-bold">광고 영역 (성심당 효빈점)</span>
             </div>
         </div>
     </div>
 
+    <!-- ⭐ 절대 사수: SPA 기사 데이터베이스 및 렌더링 스크립트 ⭐ -->
     <script>
         let currentArticleId = 'news_nico'; // 기본값을 니코니코니 기사로 설정
 
@@ -187,7 +110,7 @@
                 category: "정치 > 의회/행정",
                 body: `
                     <p><span class="text-[#0055aa] font-bold">제28회 임시회서 파격적인 '애니송' 제창... 방청석 시민들 "환호와 박수"<br>야당 "품위 손상" 퇴장 vs 시민들 "권위 내려놓은 신선한 충격" 호평 일색<br>외신도 주목... "한국의 젊은 시장, 경직된 관료 사회에 '모에(Moe)' 던지다"</span></p>
-                    <div class="my-6"><img src="시의회_니코니코니.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Nico+Nico+Ni+in+Council'"><div class="img-caption">▲ 박효빈 효빈시장이 28일 시의회 본회의장에서 '니코니코니' 포즈를 취하며 미소 짓고 있다. (사진=효빈일보)</div></div>
+                    <div class="my-6"><img src="이미지/시의회_니코니코니.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Nico+Nico+Ni+in+Council'"><div class="img-caption">▲ 박효빈 효빈시장이 28일 시의회 본회의장에서 '니코니코니' 포즈를 취하며 미소 짓고 있다. (사진=효빈일보)</div></div>
                     <p>[효빈일보 = 강소통 기자] "아나타노 하토니~ 니코니코니~ (당신의 하트에 니코니코니)"</p>
                     <p>28일 오전, 무거운 침묵이 감돌던 효빈시의회 본회의장에 경쾌한 애니메이션 주제가가 울려 퍼졌다. 박효빈 효빈시장이 제28회 임시회 식전 행사에서 인기 애니메이션 '러브라이브'의 주제곡 'Snow halation'을 제창하고, 시그니처 포즈인 '니코니코니'를 선보이는 파격을 감행한 것이다.</p>
                     <p>통상적인 개회식이었다면 엄숙한 훈시가 이어졌겠지만, 이날은 달랐다. 박 시장이 주황색 펜라이트를 흔들며 등장하자 방청석을 가득 메운 200여 명의 시민과 학생들은 "와아!" 하는 함성과 함께 박수로 화답했다. 딱딱하기만 했던 의회 공기가 순식간에 축제의 장으로 변모하는 순간이었다.</p>
@@ -243,8 +166,8 @@
                 category: "사회 > 사건사고",
                 body: `
                     <p><span class="text-[#0055aa] font-bold">"만화 여자나 좋아하는 병X들..." 비하 발언 쏟아내며 여론 조작 시도<br>IP 추적 결과 '남구 자택' 및 '두청운수' 확인... "실수로 본계정 접속" 촌극도</span></p>
-                    <div class="my-6"><img src="문서_조작_적발.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Document+Manipulation+Detected'"><div class="img-caption">▲ 효빈위키 운영진이 공개한 로그 파일. 동일한 IP에서 다수의 계정이 접속해 여론을 조작한 정황이 포착됐다. (자료=효빈위키 운영팀)</div></div>
-                    <p>[효빈일보 = 김철수 기자] 윤대환 전 효빈광역시장과 그의 아들 윤재훈 씨가 지역 커뮤니티 사이트인 '효빈위키'에서 조직적으로 여론을 조작하려다 덜미가 잡혔다. 자신들의 범죄 사실이 기록된 문서를 훼손하고, 다수의 차명 계정을 동원해 이를 미화하려 한 정황이 드러나 충격을 주고 있다.</p>
+                    <div class="my-6"><img src="이미지/문서_조작_적발.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Document+Manipulation+Detected'"><div class="img-caption">▲ 효빈위키 운영진이 공개한 로그 파일. 동일한 IP에서 다수의 계정이 접속해 여론을 조작한 정황이 포착됐다. (자료=효빈위키 운영팀)</div></div>
+                    <p>[효빈일보 = 김철수 기자] 윤대환 전 효빈광역시장과 그의 아들 윤재훈 씨가 지역 커뮤니티 사이트인 '효빈위키'에서 조직적으로 여론 조작하려다 덜미가 잡혔다. 자신들의 범죄 사실이 기록된 문서를 훼손하고, 다수의 차명 계정을 동원해 이를 미화하려 한 정황이 드러나 충격을 주고 있다.</p>
                     <p>5일 효빈위키 운영진에 따르면, 지난 주말 사이 '윤대환' 및 '윤재훈' 문서에 대한 비정상적인 편집 시도가 급증했다. 이들은 심야 시간대를 틈타 <strong>'대변 테러 사건'</strong>과 <strong>'엠마의 빵 훼손 사건'</strong> 등 자신들의 치부가 기록된 항목을 삭제하거나, 이를 "정치적 표현의 자유" 또는 "수행비서의 과잉 충성" 등으로 왜곡하여 서술했다.</p>
                     <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
                 `,
@@ -264,7 +187,7 @@
             },
             'news4': {
                 title: "박효빈 시장, '8호선 정상화' 현장 점검... \"시민의 승리\"", category: "정치 > 행정",
-                body: `<p>[효빈일보 = 정시청 기자] 박효빈 시장이 8호선 공사 재개 현장을 방문했습니다. 그는 '이 모든 것은 포기하지 않은 시민들의 승리'라고 소감을 밝혔습니다.</p>`,
+                body: `<p>[효빈일보 = 정시청 기자] 박효빈 시장이 <span style='color:#9856FF; font-weight:bold;'>8호선(연보라색)</span> 공사 재개 현장을 방문했습니다. 그는 '이 모든 것은 포기하지 않은 시민들의 승리'라고 소감을 밝혔습니다.</p>`,
                 comments: []
             },
             'news5': {
@@ -274,7 +197,7 @@
             },
             'news6': {
                 title: "1호선 캐릭터 '고나미', 효빈시 홍보대사 위촉", category: "문화 > 캐릭터",
-                body: `<p>[효빈일보 = 김문화 기자] 효빈도시철도 1호선의 마스코트 '고나미'가 시 공식 홍보대사로 위촉되었습니다. 가상 캐릭터로는 이례적인 행보입니다.</p>`,
+                body: `<p>[효빈일보 = 김문화 기자] 효빈도시철도 <span style='color:#0077DD; font-weight:bold;'>1호선(파란색)</span>의 마스코트 '고나미'가 시 공식 홍보대사로 위촉되었습니다. 가상 캐릭터로는 이례적인 행보입니다.</p>`,
                 comments: []
             },
             'news7': {
@@ -299,41 +222,25 @@
             }
         };
 
-        const rankingData = [
-            { id: 'news_nico', title: "\"니코니코니~\" 박효빈 시장, 시의회서 파격 소통... 반응 '폭발'" },
-            { id: 'main', title: "[단독] 윤대환·윤재훈 부자, 위키 문서 조작 '덜미'" },
-            { id: 'news1', title: "윤재훈 필리핀 입국 금지, 갱단 연루설 '사실로 확인'" },
-            { id: 'news2', title: "[단독] 두청운수 불법 차고지, 시청 '원상복구 명령'" },
-            { id: 'news3', title: "효빈대 학식 '누마즈 귤 샐러드' 연일 매진 행렬" },
-            { id: 'news4', title: "박효빈 시장, '8호선 정상화' 현장 점검... \"시민의 승리\"" },
-            { id: 'news5', title: "효빈교통공사 굿즈샵 '과진점' 오픈... \"덕질과 교통의 만남\"" },
-            { id: 'news6', title: "1호선 캐릭터 '고나미', 효빈시 홍보대사 위촉" },
-            { id: 'news7', title: "[기획] \"가난과 폭력을 넘어\"... 박효빈 시장의 '눈물 젖은 빵'" },
-            { id: 'news8', title: "[포토] 효빈국제공항 2활주로 착공식 현장" }
-        ];
-
-        window.onload = function() {
-            // URL 파라미터 체크 로직 추가
+        document.addEventListener("DOMContentLoaded", () => {
             const urlParams = new URLSearchParams(window.location.search);
             const articleId = urlParams.get('id');
 
-            if (articleId && (allArticles[articleId] || rankingData.some(item => item.id === articleId))) {
+            if (articleId && allArticles[articleId]) {
                 renderArticle(articleId);
             } else {
-                renderArticle('news_nico'); // 기본값: 니코니코니 기사
+                renderArticle('news_nico'); // 기본값
             }
-            
-            renderRanking();
-        };
+        });
 
         function renderArticle(id) {
             currentArticleId = id;
             let data = allArticles[id];
             
+            // fallback (if not found in allArticles)
             if (!data) {
-                const rankItem = rankingData.find(item => item.id === id);
                 data = {
-                    title: rankItem ? rankItem.title : "기사 제목 없음",
+                    title: "기사 제목 없음",
                     category: "사회 > 일반",
                     body: `<p>해당 기사의 상세 내용은 준비 중입니다.</p><div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보&gt;</div>`,
                     comments: []
@@ -358,13 +265,14 @@
             `;
 
             renderComments(data.comments);
-            document.getElementById('comment-count').innerText = data.comments.length;
+            document.getElementById('comment-count').innerText = data.comments ? data.comments.length : 0;
             window.scrollTo(0, 0);
         }
 
         function renderComments(comments) {
             const container = document.getElementById('comment-list');
             container.innerHTML = "";
+            if(!comments) return;
 
             comments.forEach((cmt, idx) => {
                 const div = document.createElement('div');
@@ -495,41 +403,12 @@
             document.getElementById('cmt-content').value = "";
             alert("댓글이 등록되었습니다.");
         }
-
-        function renderRanking() {
-            const list = document.getElementById('ranking-list');
-            rankingData.forEach((news, index) => {
-                const li = document.createElement('li');
-                li.onclick = () => renderArticle(news.id);
-                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link">${news.title}</span>`;
-                list.appendChild(li);
-            });
-        }
-
-        function openFooterModal(type) {
-            const modal = document.getElementById('footerModal');
-            const title = document.getElementById('modalTitle');
-            const content = document.getElementById('modalContent');
-            modal.style.display = 'flex';
-            
-            let text = "";
-            switch(type) {
-                case 'company': text = "회사소개...\n발행인: 최진언 | 편집인: 강정직"; break;
-                case 'terms': text = "이용약관 내용..."; break;
-                case 'privacy': text = "개인정보처리방침 내용..."; break;
-                case 'youth': text = "청소년보호정책 내용..."; break;
-                case 'help': text = "고충처리인: 박공정 (079-212-2123)"; break;
-            }
-            title.innerText = type.toUpperCase();
-            content.innerText = text;
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('footerModal');
-            if (event.target == modal) { modal.style.display = 'none'; }
-        }
     </script>
-    <script src="assets/wiki_index.js"></script>
-    <script src="assets/hb_wiki_core.js"></script>
+
+    <!-- 공통 푸터 자동 주입 박스 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

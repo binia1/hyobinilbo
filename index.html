@@ -120,50 +120,7 @@
 <body class="transition-colors duration-300">
 
     <!-- 최상단 바 (날씨, 다크모드, 스크랩 추가) -->
-    <div class="top-bar">
-        <div class="max-w-[1100px] mx-auto flex justify-between px-2 items-center">
-            <div class="flex items-center gap-4">
-                <span class="font-bold text-[#0055aa] dark:text-[#4dabf7]">효빈일보</span>
-                <span id="current-time">2026.03.26 (목) 10:42</span>
-                <span id="current-weather" class="text-orange-500 dark:text-orange-400 font-bold">☀️ 맑음 22℃ / 미세먼지 좋음 (효빈시)</span>
-            </div>
-            <div class="flex items-center gap-3">
-                <button id="toggle-dark-mode" class="hover:underline flex items-center gap-1" title="야간 모드 전환">
-                    <span id="dark-mode-icon">🌙</span> <span id="dark-mode-text">야간 모드</span>
-                </button> |
-                <button id="open-scrapbook" class="hover:underline flex items-center gap-1 text-yellow-600 dark:text-yellow-400 font-bold" title="저장한 기사 보기">
-                    ⭐ 스크랩북 (<span id="scrap-count">0</span>)
-                </button> | 
-                <a href="index.html" class="hover:underline">효빈위키 홈</a> | 
-                <span id="btn-login-top" class="cursor-pointer hover:underline text-gray-800 dark:text-gray-200">로그인</span> |
-                <span id="btn-subscribe-top" class="cursor-pointer hover:underline text-[#0055aa] dark:text-[#4dabf7] font-bold">구독신청</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-            <h1 class="text-4xl font-black text-[#0055aa] dark:text-[#4dabf7] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2 relative">
-                <input type="text" placeholder="기사, 아카이브 검색" class="border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-3 py-1 text-sm w-64 focus:outline-none focus:border-[#0055aa] dark:focus:border-[#4dabf7]" id="hnNewsSearchInput" autocomplete="off">
-                <button class="bg-[#0055aa] hover:bg-[#004488] dark:bg-[#0066cc] dark:hover:bg-[#0055aa] text-white px-3 py-1 text-sm font-bold transition-colors">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200 dark:border-gray-700">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html" class="active">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html">경제</a>
-                <a href="society.html">사회</a>
-                <a href="world.html">국제</a>
-                <a href="culture.html">문화</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-            </div>
-        </nav>
-    </header>
+    <div id="common-header"></div>
 
     <!-- 실시간 속보 전광판 (새로 추가됨) -->
     <div class="bg-red-600 dark:bg-red-800 text-white font-bold py-2 shadow-md mb-2">
@@ -292,64 +249,7 @@
         <!-- 사이드바 컬럼 -->
         <div class="side-column">
             <!-- 실시간 랭킹 -->
-            <div class="ranking-box">
-                <div class="section-title border-none mb-2 pb-0">
-                    <span class="text-[#0055aa] dark:text-[#4dabf7]">많이 본 뉴스</span>
-                    <span class="text-xs text-gray-500 font-normal">14:00 기준</span>
-                </div>
-                <ul class="ranking-list">
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_bok_rate_cut.html'">
-                        <span class="rank-num text-red-600">1</span>
-                        <span class="rank-title font-bold">[속보] 한국은행, 기준금리 연 3.25%로 인하... 3년만에 통화정책 전환</span>
-                        <button class="scrap-btn" data-url="news_bok_rate_cut.html" data-title="한국은행 기준금리 인하" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html'">
-                        <span class="rank-num">2</span>
-                        <span class="rank-title">[속보] 윤석열 대통령 탄핵안 가결... 직무 즉시 정지</span>
-                        <button class="scrap-btn" data-url="[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html" data-title="윤석열 대통령 탄핵안 가결" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html'">
-                        <span class="rank-num">3</span>
-                        <span class="rank-title">6시간 악몽 끝... 효빈 시민들 "반란군 체포하라"</span>
-                        <button class="scrap-btn" data-url="[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html" data-title="계엄 해제에 효빈 시민들 환호" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html'">
-                        <span class="rank-num">4</span>
-                        <span class="rank-title">[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당</span>
-                        <button class="scrap-btn" data-url="[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html" data-title="효빈 보수의 양심 부서원 탈당" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_univ_human_shield.html'">
-                        <span class="rank-num">5</span>
-                        <span class="rank-title">효빈대 학생들, 인간방패로 계엄군 막아내</span>
-                        <button class="scrap-btn" data-url="news_univ_human_shield.html" data-title="효빈대 학생들 인간방패" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_martial_law_hyobin.html'">
-                        <span class="rank-num">6</span>
-                        <span class="rank-title">[긴급] 효빈시 전역 계엄령 선포 파장... 도심 마비</span>
-                        <button class="scrap-btn" data-url="news_martial_law_hyobin.html" data-title="효빈시 전역 계엄령 선포" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_park_past.html'">
-                        <span class="rank-num">7</span>
-                        <span class="rank-title">[기획] "비 새는 단칸방"... 박효빈 시장의 과거</span>
-                        <button class="scrap-btn" data-url="news_park_past.html" data-title="비 새는 단칸방 박효빈 시장" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_emma_bread.html'">
-                        <span class="rank-num">8</span>
-                        <span class="rank-title">효빈 명물 '엠마빵', 하루 1만개 팔려나가며 돌풍</span>
-                        <button class="scrap-btn" data-url="news_emma_bread.html" data-title="효빈 명물 엠마빵 완판" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='news_dangga_dessert.html'">
-                        <span class="rank-num">9</span>
-                        <span class="rank-title">당가(Dangga) 디저트 카페 효빈 상륙... 2030 열광</span>
-                        <button class="scrap-btn" data-url="news_dangga_dessert.html" data-title="당가 디저트 카페 효빈 상륙" title="스크랩하기">★</button>
-                    </li>
-                    <li onclick="if(!event.target.closest('.scrap-btn')) location.href='hyobin_ilbo_election_2024.html'">
-                        <span class="rank-num">10</span>
-                        <span class="rank-title">2024 효빈 선거 대기획: 시민의 선택은 어디로</span>
-                        <button class="scrap-btn" data-url="hyobin_ilbo_election_2024.html" data-title="2024 효빈 선거 대기획" title="스크랩하기">★</button>
-                    </li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
 
             <!-- 광고 -->
             <div class="ad-banner">
@@ -508,23 +408,7 @@
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content flex-col md:flex-row gap-6">
-            <div class="footer-links flex flex-wrap gap-y-2">
-                <span class="policy-link cursor-pointer hover:text-white transition-colors" data-type="about">회사소개</span>
-                <span class="policy-link cursor-pointer hover:text-white transition-colors" data-type="subscribe">구독신청</span>
-                <span class="policy-link cursor-pointer hover:text-white transition-colors" data-type="grievance">고충처리</span>
-                <span class="policy-link cursor-pointer hover:text-white transition-colors" data-type="terms">이용약관</span>
-                <span class="policy-link cursor-pointer hover:text-white transition-colors font-bold text-gray-300" data-type="privacy">개인정보처리방침</span>
-            </div>
-            <div>
-                <p class="mb-1">제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
-                <p class="mb-1">주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
-                <p>전화: 079-212-2123 | 팩스: 079-212-2124</p>
-                <p class="mt-2 text-gray-600 dark:text-gray-500">Copyright © Hyobin Ilbo. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
 
 
 <script>
@@ -534,10 +418,8 @@
     // ==========================================
     const NEWS_DATABASE = [
         // --- 현실 기반 속보 (새로 추가) ---
-        { type: '기사', title: '[속보] 한국은행, 기준금리 연 3.25%로 전격 인하... 통화정책 전환', url: 'news_bok_rate_cut.html', keywords: '한국은행 금리 인하 피벗 경제 속보 이창용' },
-
-        // --- 아카이브 (10년 이상) ---
-        { type: '아카이브', title: '[2007년 아카이브] 갈색 겨울, 두청운수 파업 사태', url: 'archive_2007_brown_winter.html', keywords: '2007 갈색 겨울 파업 두청운수 흑역사 archive brown winter' },
+        { type: '기사', title: '2025년 대선', url: '2025년 대선.html', keywords: '2025년 대선 선거 대통령 이재명' },
+        { type: '아카이브', title: '[2007년 아카이브] 갈색 겨울, 두청운수 파업 사태', url: 'archive_2007_brown_winter.html', keywords: '2007 갈색 겨울 파업 두청운수 archive brown winter' },
         { type: '아카이브', title: '[2007년 아카이브] 두청운수 사건 최종 판결', url: 'archive_2007_final_verdict.html', keywords: '2007 판결 법원 두청운수 archive final verdict' },
         { type: '아카이브', title: '[2007년 아카이브] 치열했던 법정 공방 기록', url: 'archive_2007_legal_battle.html', keywords: '2007 법정 공방 재판 두청운수 archive legal battle' },
         { type: '아카이브', title: '[2007년 아카이브] 5호선 참사의 비극', url: 'archive_2007_line5_tragedy.html', keywords: '2007 5호선 참사 지하철 사고 archive line5 tragedy' },
@@ -546,29 +428,20 @@
         { type: '아카이브', title: '[2007년 아카이브] 신세계 언론의 보도 행태', url: 'archive_2007_shinsegae_press.html', keywords: '2007 신세계 언론 보도 가짜뉴스 archive shinsegae press' },
         { type: '아카이브', title: '[2010년 아카이브] 두청운수, 결국 최종 부도 처리', url: 'archive_2010_doocheong_bankruptcy.html', keywords: '2010 두청운수 부도 파산 파산 archive bankruptcy' },
         { type: '아카이브', title: '[2011년 아카이브] 효빈 5호선, 우여곡절 끝 개통', url: 'archive_2011_line5_opening.html', keywords: '2011 5호선 개통 지하철 빨간색 archive line5 opening' },
-        
-        // --- 구분 (카테고리 홈) ---
-        { type: '구분', title: '효빈일보 홈', url: 'index.html', keywords: '메인 홈 표지 index 구분' },
-        { type: '구분', title: '정치 뉴스 홈', url: 'politics.html', keywords: '정치 시정 시장 선거 politics 구분' },
-        { type: '구분', title: '경제 뉴스 홈', url: 'economy.html', keywords: '경제 기업 산업 예산 economy 구분' },
-        { type: '구분', title: '사회 뉴스 홈', url: 'society.html', keywords: '사회 사건 사고 경찰 society 구분' },
-        { type: '구분', title: '국제 뉴스 홈', url: 'world.html', keywords: '국제 세계 해외 특파원 world 구분' },
         { type: '구분', title: '문화 뉴스 홈', url: 'culture.html', keywords: '문화 축제 애니메이션 굿즈 culture 구분' },
-        { type: '구분', title: 'IT/과학 뉴스 홈', url: 'it.html', keywords: 'it 과학 기술 인터넷 사이버 it 구분' },
-        { type: '구분', title: '오피니언 홈', url: 'opinion.html', keywords: '오피니언 사설 칼럼 기고 opinion 구분' },
-        { type: '구분', title: '포토 뉴스 홈', url: 'photo.html', keywords: '포토 사진 화보 현장 photo 구분' },
-
-        // --- 일반 기사 (한글/영문 혼합) ---
-        { type: '기사', title: '2025년 제21대 대통령 선거 특집', url: '2025년 대선.html', keywords: '2025년 대선 선거 대통령 이재명' },
+        { type: '구분', title: '경제 뉴스 홈', url: 'economy.html', keywords: '경제 기업 산업 예산 economy 구분' },
         { type: '기사', title: '[법원] 효빈일보 법정 공방 판결 속보', url: 'hyobin_ilbo_court_ruling.html', keywords: '효빈일보 법원 판결 소송 court ruling' },
         { type: '기사', title: '효빈일보 선거 특집 보도', url: 'hyobin_ilbo_election.html', keywords: '효빈일보 선거 특집 보도 election' },
         { type: '기사', title: '2024 효빈 선거 대기획', url: 'hyobin_ilbo_election_2024.html', keywords: '2024 선거 총선 효빈일보 election' },
         { type: '기사', title: '[논란] 2023년 특별사면 명단 파장', url: 'hyobin_ilbo_pardon_2023.html', keywords: '2023 특별사면 사면 논란 pardon' },
-        { type: '기사', title: '기본 뉴스 양식', url: 'news_article.html', keywords: '일반 기사 테스트 article' },
+        { type: '구분', title: '효빈일보 홈', url: 'index.html', keywords: '메인 홈 표지 index 구분' },
+        { type: '구분', title: 'IT/과학 뉴스 홈', url: 'it.html', keywords: 'it 과학 기술 인터넷 사이버 it 구분' },
+        { type: '기사', title: '기본 뉴스 기사', url: 'news_article.html', keywords: '일반 기사 테스트 article' },
         { type: '기사', title: '[속보] 검찰, 윤 전 시장 일가 전격 감사 착수', url: 'news_audit_yoon.html', keywords: '윤석열 윤대환 감사 검찰 수사 audit yoon' },
         { type: '기사', title: '효빈시 빵지순례... 성심당 효빈점 열풍', url: 'news_bakery_tour.html', keywords: '빵지순례 성심당 빵 튀김소보로 bakery tour' },
         { type: '기사', title: '2023년 청년 파랑새 정책 전면 실시', url: 'news_bluebird_policy_2023.html', keywords: '2023 파랑새 정책 청년 지원 bluebird policy' },
         { type: '기사', title: '청와대, 효빈시 관련 브리핑', url: 'news_blue_house.html', keywords: '청와대 대통령실 브리핑 blue house' },
+        { type: '기사', title: '[속보] 한국은행, 기준금리 연 3.25%로 전격 인하', url: 'news_bok_rate_cut.html', keywords: '한국은행 금리 인하 피벗 경제 속보 이창용' },
         { type: '기사', title: '효빈 종합버스터미널 새단장', url: 'news_bus_terminal.html', keywords: '버스터미널 교통 고속버스 bus terminal' },
         { type: '기사', title: '최진언 발행인 장녀, 해외 명문대 합격 화제', url: 'news_choi_daughter_success.html', keywords: '최진언 딸 성공 합격 choi daughter success' },
         { type: '기사', title: '[단독] 조선일보, 효빈시 관련 오보 공식 사과', url: 'news_chosun_apology.html', keywords: '조선일보 사과 오보 정정 chosun apology' },
@@ -595,7 +468,8 @@
         { type: '기사', title: '지역화폐 효빈페이, 사용처 대폭 확대', url: 'news_hyobin_pay.html', keywords: '효빈페이 지역화폐 경제 hyobin pay' },
         { type: '기사', title: '일본 오타쿠 관광객, 효빈시 싹쓸이 쇼핑', url: 'news_japan_otaku.html', keywords: '일본 오타쿠 관광객 쇼핑 japan otaku' },
         { type: '기사', title: '패션 브랜드 쿠쿠 클로젯, 효빈 상륙', url: 'news_kuku_closet.html', keywords: '쿠쿠 클로젯 패션 의류 kuku closet' },
-        { type: '기사', title: '뉴스 목록 전체 보기', url: 'news_list.html', keywords: '뉴스 목록 전체 news list' },
+        { type: '구분', title: '뉴스 목록 전체 보기', url: 'news_list.html', keywords: '뉴스 목록 전체 news list' },
+        { type: '구분', title: '뉴스 목록 템플릿', url: 'news_list_template.html', keywords: '뉴스 목록 템플릿 template' },
         { type: '기사', title: 'Liyuu(리유), 효빈 시민들에게 전하는 메시지', url: 'news_liyuu_message.html', keywords: 'liyuu 리유 탕쿠쿠 메시지 성우 liyuu message' },
         { type: '기사', title: '[긴급] 효빈시 전역 계엄령 선포 파장', url: 'news_martial_law_hyobin.html', keywords: '계엄령 효빈시 군대 계엄군 비상 martial law' },
         { type: '기사', title: '박효빈 시장, 와타세 행사 취소에 극대노', url: 'news_mayor_anger_watase.html', keywords: '박효빈 시장 극대노 와타세 anger watase' },
@@ -604,7 +478,7 @@
         { type: '기사', title: '효빈도시철도 공사, 사상 첫 흑자 전환', url: 'news_metro_surplus.html', keywords: '효빈도시철도 흑자 전환 지하철 metro surplus' },
         { type: '기사', title: '효빈 지하철, 인기 성우 안내방송 도입', url: 'news_metro_voice_actors.html', keywords: '지하철 성우 안내방송 전철 metro voice actors' },
         { type: '기사', title: '니코니코 동화, 효빈시 특집 생방송 편성', url: 'news_nico.html', keywords: '니코니코 니코동 생방송 nico' },
-        { type: '기사', title: '[오피니언] 효빈의 미래를 말하다', url: 'news_opinion.html', keywords: '오피니언 칼럼 사설 opinion' },
+        { type: '구분', title: '오피니언 메인', url: 'news_opinion.html', keywords: '오피니언 칼럼 사설 opinion' },
         { type: '기사', title: '정치인 특별사면 강행에 시민사회 강력 비판', url: 'news_pardon_criticism.html', keywords: '특별사면 비판 논란 pardon criticism' },
         { type: '기사', title: '박효빈 시장, 과거 실언 관련 대국민 사과', url: 'news_park_apology.html', keywords: '박효빈 사과 실언 논란 park apology' },
         { type: '기사', title: '[기획] 비 새는 단칸방... 박효빈 시장의 과거', url: 'news_park_past.html', keywords: '박효빈 과거 단칸방 기획 눈물 park past' },
@@ -612,6 +486,7 @@
         { type: '기사', title: '경찰, HAF 암표상 무더기 검거', url: 'news_police_scalper.html', keywords: '경찰 암표상 검거 단속 haf police scalper' },
         { type: '기사', title: '효빈시-퀘존시(필리핀), 자매결연 협약', url: 'news_quezon_city.html', keywords: '퀘존시 필리핀 자매결연 quezon city' },
         { type: '기사', title: '스쿨 아이돌 힐스(구 두청힐스) 개장', url: 'news_school_idol_hills.html', keywords: '스쿨아이돌 힐스 두청힐스 테마파크 school idol hills' },
+        { type: '구분', title: '뉴스 템플릿', url: 'news_template.html', keywords: '뉴스 템플릿 template' },
         { type: '기사', title: '효빈 투어패스 누적 판매 100만장 돌파', url: 'news_tour_pass.html', keywords: '투어패스 관광 패스권 여행 tour pass' },
         { type: '기사', title: '효빈대학교, 2026학년도 신입생 경쟁률 폭발', url: 'news_univ.html', keywords: '효빈대 대학교 신입생 경쟁률 귤 샐러드 univ' },
         { type: '기사', title: '효빈대병원, 최우수 의료기관 선정', url: 'news_univ_hospital.html', keywords: '효빈대병원 병원 의료기관 univ hospital' },
@@ -621,24 +496,49 @@
         { type: '기사', title: '2022 선거, 윤대환 일가의 참패 원인', url: 'news_yoon_defeat_2022.html', keywords: '윤대환 패배 선거 분석 2022 yoon defeat' },
         { type: '기사', title: '[해설] 윤석열 탄핵, 그 후의 효빈', url: 'news_yoon_impeachment.html', keywords: '윤석열 탄핵 해설 분석 yoon impeachment' },
         { type: '기사', title: '윤대환 등 정치인 대거 사면 논란 (2023)', url: 'news_yoon_pardon_2023.html', keywords: '윤대환 사면 2023 논란 yoon pardon' },
-        
-        // --- 한글 파일명 기사 (최신) ---
+        { type: '구분', title: '오피니언 홈', url: 'opinion.html', keywords: '오피니언 사설 칼럼 기고 opinion 구분' },
+        { type: '구분', title: '포토 뉴스 홈', url: 'photo.html', keywords: '포토 사진 화보 현장 photo 구분' },
+        { type: '구분', title: '정치 뉴스 홈', url: 'politics.html', keywords: '정치 시정 시장 선거 politics 구분' },
+        { type: '구분', title: '사회 뉴스 홈', url: 'society.html', keywords: '사회 사건 사고 경찰 society 구분' },
+        { type: '구분', title: '국제 뉴스 홈', url: 'world.html', keywords: '국제 세계 해외 특파원 world 구분' },
         { type: '기사', title: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다', url: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다.html', keywords: '강서구 용산 확인사살 기획' },
-        { type: '기사', title: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당', url: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html', keywords: '부서원 탈당 국민의힘 보수 양심' },
+        { type: '기사', title: '[단독] 2026 효빈시장 선거 여론조사', url: '[단독] 2026 효빈시장 선거 여론조사.html', keywords: '선거 여론조사 2026' },
         { type: '기사', title: '[단독] 윤석열 구속 취소', url: '[단독] 윤석열 구속 취소.html', keywords: '윤석열 구속 취소 단독' },
+        { type: '기사', title: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당', url: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html', keywords: '부서원 탈당 국민의힘 보수 양심' },
         { type: '기사', title: '[선택 2025] 이재명, 제21대 대통령 당선', url: '[선택 2025] 이재명, 제21대 대통령 당선.html', keywords: '이재명 대통령 당선 선거 2025' },
-        { type: '기사', title: '[속보] 6시간의 악몽 끝, 계엄 해제에 효빈 시민들 환호', url: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html', keywords: '속보 계엄 해제 환호 민주주의 승리 반란군' },
-        { type: '기사', title: '[속보] 국회, 비상계엄 해제 요구안 가결 (최단기 종료)', url: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보.html', keywords: '속보 국회 비상계엄 해제 가결 최단기' },
-        { type: '기사', title: '[속보] 박효빈 시장 \'계엄 포고령 거부... 공수부대와 맞서겠다\'', url: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html', keywords: '속보 박효빈 계엄 거부 공수부대' },
-        { type: '기사', title: '[속보] 윤석열 대통령 탄핵안 가결... 직무 즉시 정지', url: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html', keywords: '속보 윤석열 탄핵 가결 직무 정지' },
+        { type: '기사', title: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라', url: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html', keywords: '속보 계엄 해제 환호 민주주의 승리 반란군' },
+        { type: '기사', title: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료', url: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보.html', keywords: '속보 국회 비상계엄 해제 가결 최단기' },
+        { type: '기사', title: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다', url: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html', keywords: '속보 박효빈 계엄 거부 공수부대' },
+        { type: '기사', title: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지', url: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html', keywords: '속보 윤석열 탄핵 가결 직무 정지' },
         { type: '기사', title: '[속보] 윤석열 전 대통령 구속', url: '[속보] 윤석열 전 대통령 구속.html', keywords: '속보 윤석열 구속' },
         { type: '기사', title: '[속보] 윤석열 전 대통령 재구속', url: '[속보] 윤석열 전 대통령 재구속.html', keywords: '속보 윤석열 재구속' },
-        { type: '기사', title: '[속보] 탄핵안 \'정족수 미달\' 자동 폐기... 여당 의원 집단 도주', url: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장.html', keywords: '속보 탄핵안 정족수 미달 폐기 도주' },
+        { type: '기사', title: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장', url: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장.html', keywords: '속보 탄핵안 정족수 미달 폐기 도주' },
         { type: '기사', title: '[속보] 헌재, 윤석열 탄핵 인용', url: '[속보] 헌재, 윤석열 탄핵 인용.html', keywords: '속보 헌재 윤석열 탄핵 인용' },
-        { type: '기사', title: '[여론조사] 박효빈 효빈시장, 지지율 82.4% 고공행진', url: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html', keywords: '여론조사 박효빈 지지율 고공행진' },
+        { type: '기사', title: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진', url: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html', keywords: '여론조사 박효빈 지지율 고공행진' },
+        { type: '기사', title: '[지선 D-60] 2026 효빈시장 선거 대진표', url: '[지선 D-60] 2026 효빈시장 선거 대진표.html', keywords: '지방선거 대진표 효빈시장' },
         { type: '기사', title: '[현장] 이재명 대통령, 취임 후 첫 효빈 방문', url: '[현장] 이재명 대통령, 취임 후 첫 효빈 방문.html', keywords: '현장 이재명 효빈 방문 취임' },
-        { type: '기사', title: '윤석열 비상계엄 선포, 부정선거 주장', url: '윤석열 비상계엄 선포, 부정선거 주장.html', keywords: '윤석열 비상계엄 부정선거' },
-        { type: '기사', title: '윤석열 속옷저항 논란', url: '윤석열 속옷저항.html', keywords: '윤석열 속옷저항 논란' }
+        { type: '기사', title: '[현장] 지총민 출마선언', url: '[현장] 지총민 출마선언.html', keywords: '지총민 출마 선언' },
+        { type: '기사', title: '김상욱 민주당 입당 속보 (2025년 5월 19일)', url: '김상욱 민주당 입당 속보 (2025년 5월 19일).html', keywords: '김상욱 민주당 입당' },
+        { type: '기사', title: '김상욱 탈당 속보 (2025년 5월 8일)', url: '김상욱 탈당 속보 (2025년 5월 8일).html', keywords: '김상욱 탈당' },
+        { type: '기사', title: '박효빈 재선 출마선언 기사', url: '박효빈 재선 출마선언 기사.html', keywords: '박효빈 재선 출마' },
+        { type: '구분', title: '서진일보 사설', url: '서진일보 사설.html', keywords: '서진일보 사설 오피니언' },
+        { type: '기사', title: '유성민 출마선언 기사', url: '유성민 출마선언 기사.html', keywords: '유성민 출마' },
+        { type: '기사', title: '윤석열 비상계엄 선포, 부정선거 주장', url: '윤석열 비상계엄 선포, 부정선거 주장.html', keywords: '윤석열 계엄 부정선거' },
+        { type: '기사', title: '윤석열 속옷저항 논란', url: '윤석열 속옷저항.html', keywords: '윤석열 속옷 저항' },
+        { type: '기사', title: '윤재훈 출마선언 기사', url: '윤재훈 출마선언 기사.html', keywords: '윤재훈 출마' },
+        { type: '기사', title: '이재명 대통령 지지율 속보', url: '이재명 대통령 지지율 속보.html', keywords: '이재명 지지율' },
+        { type: '기사', title: '조병진 의원직 승계 기사', url: '조병진 승계 기사.html', keywords: '조병진 승계' },
+        { type: '기사', title: '코스피 5000 돌파 속보 (2026년 1월 27일)', url: '코스피 5000 돌파 속보 (2026년 1월 27일).html', keywords: '코스피 5000 경제' },
+        { type: '기사', title: '효빈일보 - 윤재훈 선거법 고발 참사', url: '효빈일보 - 윤재훈 선거법 고발 참사.html', keywords: '윤재훈 고발 선거법' },
+        { type: '기사', title: '효빈일보 과도한 탄압 논란 반박 기사', url: '효빈일보 과도한 탄압 논란 반박 기사.html', keywords: '탄압 논란 반박' },
+        { type: '기사', title: '효빈일보 곽두환 당선무효 기사', url: '효빈일보 곽두환 당선무효 기사.html', keywords: '곽두환 당선 무효' },
+        { type: '기사', title: '효빈일보 당가동 새벽 방문 기사', url: '효빈일보 당가동 새벽 방문 기사.html', keywords: '당가동 방문' },
+        { type: '기사', title: '효빈일보 박준서 입당 기사', url: '효빈일보 박준서 입당 기사.html', keywords: '박준서 입당' },
+        { type: '기사', title: '효빈일보 박효빈 시장 당가동 사건 기사', url: '효빈일보 박효빈 시장 당가동 사건 기사.html', keywords: '박효빈 당가동' },
+        { type: '기사', title: '효빈일보 부시도 라이더 협박 기사', url: '효빈일보 부시도 라이더 협박 기사.html', keywords: '부시도 라이더 협박' },
+        { type: '기사', title: '효빈일보 서브컬처 정치 기획기사', url: '효빈일보 서브컬처 정치 기획기사.html', keywords: '서브컬처 정치 박효빈' },
+        { type: '기사', title: '효빈일보 악플 박제 기사', url: '효빈일보 악플 박제 기사.html', keywords: '악플 박제' },
+        { type: '기사', title: '효빈일보 행정우수사례 기사', url: '효빈일보 행정우수사례 기사.html', keywords: '행정우수사례 박효빈' }
     ];
 
     // ==========================================
@@ -1194,5 +1094,7 @@
 
     <script src="assets/wiki_index.js"></script>
     <script src="assets/hb_wiki_core.js"></script>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

@@ -52,29 +52,7 @@
 <body>
 
     <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html" class="active">경제</a>
-                <a href="society.html">사회</a>
-                <a href="culture.html">생활/문화</a>
-                <a href="world.html">세계</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-                <a href="tv.html">TV</a>
-            </div>
-        </nav>
-    </header>
+    <div id="common-header"></div>
 
     <div class="article-container px-4">
         <div class="main-content shadow-sm">
@@ -232,18 +210,7 @@
 
         <!-- 사이드바 -->
         <div class="side-content">
-            <div class="ranking-box shadow-sm">
-                <div class="ranking-title">
-                    <span class="text-[#0055aa]">정치 주요 뉴스</span>
-                </div>
-                <ul class="ranking-list">
-                    <li><span class="ranking-num">1</span> <a href="news_mayor_anger_watase.html" class="ranking-link font-bold text-[#0055aa]">박효빈 시장 분노 성명</a></li>
-                    <li><span class="ranking-num">2</span> <a href="news_watase_cancellation.html" class="ranking-link">와타세 유즈키 내한 취소</a></li>
-                    <li><span class="ranking-num">3</span> <a href="news_martial_law_hyobin.html" class="ranking-link">효빈시 '불복종' 선언 전말</a></li>
-                    <li><span class="ranking-num">4</span> <a href="news_yoon_jail_return.html" class="ranking-link">윤재훈 재구속 영장 청구</a></li>
-                    <li><span class="ranking-num">5</span> <a href="news_blue_house.html" class="ranking-link">대통령 엄중 처벌 지시</a></li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
             
             <div class="ad-banner bg-[#881188] p-6 text-white rounded text-center shadow-lg">
                 <div class="font-black text-xl mb-2 italic">LINE 6 PURPLE</div>
@@ -260,12 +227,8 @@
     </div>
 
     <!-- 푸터 -->
-    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
-        <div class="max-w-[1080px] mx-auto px-4">
-            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
-            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
-            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

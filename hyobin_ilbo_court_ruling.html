@@ -60,32 +60,7 @@
 <body>
 
     <!-- 헤더 -->
-    <header class="news-header">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center max-w-[1100px]">
-            <div class="flex items-center gap-4">
-                <a href="index.html" class="text-3xl font-black text-[#0055aa] tracking-tighter" style="font-family: 'Nanum Myeongjo';">효빈일보</a>
-                <span class="text-xs text-gray-400 mt-2">The Hyobin Daily News | Since 1995</span>
-            </div>
-            <div class="flex gap-2">
-                <input type="text" placeholder="기사 검색" class="border border-gray-300 px-2 py-1 text-xs w-40">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-xs">검색</button>
-            </div>
-        </div>
-        <div class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html" class="active">경제</a>
-                <a href="society.html">사회</a>
-                <a href="culture.html">생활/문화</a>
-                <a href="world.html">세계</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-                <a href="tv.html">TV</a>
-            </div>
-        </div>
-    </header>
+    <div id="common-header"></div>
 
     <div class="article-container">
         <!-- 메인 기사 영역 -->
@@ -324,21 +299,7 @@
         <!-- 사이드바 -->
         <div class="side-content">
             <!-- 2023년 4월 당시 이슈 뉴스 -->
-            <div class="rank-news">
-                <div class="rank-title">많이 본 뉴스 (2023.04.02)</div>
-                <ul class="rank-list">
-                    <li><span class="rank-num">1</span> <span class="rank-text" onclick="location.href='hyobin_ilbo_court_ruling.html'">[속보] 윤재훈 징역 6월 법정구속... 박효빈 향해 욕설 난동</span></li>
-                    <li><span class="rank-num">2</span> <span class="rank-text" onclick="alert('기사 준비 중')">주민우 전 의원 "윤재훈 구속은 정치 보복"... 법원 앞 시위</span></li>
-                    <li><span class="rank-num">3</span> <span class="rank-text" onclick="alert('기사 준비 중')">박효빈 시장, "사법부 판단 존중... 시정에 집중하겠다"</span></li>
-                    <li><span class="rank-num">4</span> <span class="rank-text" onclick="alert('기사 준비 중')">윤대환 전 시장, 아들 실형 소식에 '혼절'... 응급실 이송</span></li>
-                    <li><span class="rank-num">5</span> <span class="rank-text" onclick="alert('기사 준비 중')">효빈시 벚꽃 축제 인산인해... '박효빈 효과' 상권 활짝</span></li>
-                    <li><span class="rank-num">6</span> <span class="rank-text" onclick="alert('기사 준비 중')">효빈교통공사, 8호선 조기 개통 위한 TF팀 발족</span></li>
-                    <li><span class="rank-num">7</span> <span class="rank-text" onclick="alert('기사 준비 중')">국민의힘 효빈시당 "윤재훈 개인 일탈... 당과 무관" 꼬리 자르기?</span></li>
-                    <li><span class="rank-num">8</span> <span class="rank-text" onclick="alert('기사 준비 중')">효빈대학교, '윤재훈 규탄' 대자보 릴레이... "학교 망신 그만"</span></li>
-                    <li><span class="rank-num">9</span> <span class="rank-text" onclick="alert('기사 준비 중')">학폭 피해자 연대 "징역 6월은 너무 짧다... 항소 촉구"</span></li>
-                    <li><span class="rank-num">10</span> <span class="rank-text" onclick="alert('기사 준비 중')">[사설] TV 토론장 난동, 실형 선고는 민주주의의 경고</span></li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
 
             <!-- 배너 -->
             <div style="background: #fff0f0; height: 250px; display: flex; justify-content: center; align-items: center; border: 1px solid #ffcccc; text-align: center; padding: 20px;">
@@ -352,17 +313,9 @@
     </div>
 
     <!-- 푸터 -->
-    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
-        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
-            <div class="flex gap-4 mb-4">
-                <a href="#" class="hover:text-white">회사소개</a>
-                <a href="#" class="hover:text-white">구독신청</a>
-                <a href="#" class="hover:text-white">고충처리인</a>
-            </div>
-            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈</p>
-            <p>Copyright © Hyobin Ilbo. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
 
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

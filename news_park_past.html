@@ -11,11 +11,6 @@
 
         body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
         
-        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
-        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
-        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
-        .news-nav .active { color: #0055aa; }
-
         .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
         .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
         .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
@@ -26,13 +21,6 @@
         .article-body strong { font-weight: 800; background: linear-gradient(to top, #e0f2fe 50%, transparent 50%); }
         .article-body p { margin-bottom: 24px; }
         .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-
-        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
-        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
-        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
-        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
-        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
-        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
 
         .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
         .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
@@ -54,41 +42,12 @@
         .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
         .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
         .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
-
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center; }
-        .modal-window { background: white; width: 500px; padding: 30px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #0055aa; padding-bottom: 10px; }
-        .modal-content { font-size: 14px; line-height: 1.6; color: #555; white-space: pre-wrap; }
-        .modal-close { margin-top: 20px; text-align: right; }
-        .modal-close-btn { background: #333; color: white; padding: 8px 20px; border-radius: 4px; font-size: 13px; }
     </style>
 </head>
 <body>
 
-    <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html" class="active">경제</a>
-                <a href="society.html">사회</a>
-                <a href="culture.html">생활/문화</a>
-                <a href="world.html">세계</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-                <a href="tv.html">TV</a>
-            </div>
-        </nav>
-    </header>
+    <!-- 공통 헤더 자동 주입 박스 -->
+    <div id="common-header"></div>
 
     <div class="article-container">
         <div class="main-content shadow-sm">
@@ -110,7 +69,7 @@
                     <p><span class="text-[#0055aa] font-bold">서구 당선동 달동네 출신, 학교폭력 피해자에서 '상생의 아이콘'으로<br>"누군가의 '좋아함'이 비웃음 받지 않는 도시 만들 것"</span></p>
                     
                     <div class="my-6">
-                        <img src="https://via.placeholder.com/800x450/333333/FFFFFF?text=Mayor+Park+Hyobin+Past" class="w-full">
+                        <img src="이미지/박효빈_과거.png" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Mayor+Park+Hyobin+Past'" class="w-full">
                         <div class="img-caption">▲ 서구 당선동의 옛 집터를 방문한 박효빈 시장. 그는 이곳에서 가장 힘겨웠던 10대를 보냈다. (사진=효빈일보 DB)</div>
                     </div>
 
@@ -158,53 +117,21 @@
 
         <!-- 사이드바 -->
         <div class="side-content">
-            <div class="ranking-box shadow-sm">
-                <div class="ranking-title">
-                    <span class="text-[#0055aa]">많이 본 뉴스</span>
-                    <a href="news_list.html" target="_blank" class="text-xs text-gray-500 cursor-pointer hover:underline">더보기 ></a>
-                </div>
-                <ul class="ranking-list" id="ranking-list">
-                    <!-- JS Load -->
-                </ul>
-            </div>
             
-            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
-                <span>광고 영역 (효빈교통공사)</span>
+            <!-- ⭐ 핵심: 랜덤 랭킹 뉴스 자동 주입 위치 ⭐ -->
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300 mb-5 rounded">
+                <span class="font-bold text-[#485EC6]">광고 영역 (효빈교통공사)</span>
             </div>
-            <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500 border border-gray-300">
-                <span>광고 영역 (성심당 효빈점)</span>
-            </div>
-        </div>
-    </div>
-
-    <footer class="bg-[#333] text-gray-400 py-10 mt-20 text-xs">
-        <div class="max-w-[1080px] mx-auto px-4">
-            <div class="flex gap-4 mb-4 font-bold text-gray-300">
-                <a href="#" onclick="openFooterModal('company')">회사소개</a> | 
-                <a href="#" onclick="openFooterModal('terms')">이용약관</a> | 
-                <a href="#" onclick="openFooterModal('privacy')">개인정보처리방침</a> | 
-                <a href="#" onclick="openFooterModal('youth')">청소년보호정책</a> | 
-                <a href="#" onclick="openFooterModal('help')">고충처리</a>
-            </div>
-            <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
-            <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
-            <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- 푸터용 팝업 모달 -->
-    <div id="footerModal" class="modal-overlay">
-        <div class="modal-window">
-            <div class="modal-title" id="modalTitle">제목</div>
-            <div class="modal-content" id="modalContent">내용</div>
-            <div class="modal-close">
-                <button class="modal-close-btn" onclick="document.getElementById('footerModal').style.display='none'">닫기</button>
+            <div class="w-full h-64 bg-[#fff8e1] flex items-center justify-center text-orange-500 border border-[#ffe082] rounded">
+                <span class="font-bold">광고 영역 (성심당 효빈점)</span>
             </div>
         </div>
     </div>
 
+    <!-- ⭐ 절대 사수: 25개 꿀잼 댓글 복원 스크립트 ⭐ -->
     <script>
-        // 댓글 데이터 (25개)
         const commentsData = [
             // 1. 윤재훈 참교육 (18명 이상 참여)
             {
@@ -239,7 +166,7 @@
                     {nick:"Youth", content:"우리 시대의 진짜 영웅입니다."}, 
                     {nick:"MarketLady", content:"시장에서 마주치면 국밥 한 그릇 사주고 싶어."}, 
                     {nick:"LibraryUser", content:"도서관 예산 늘려줘서 너무 고마워요."},
-                    {nick:"YoonFan", content:"쇼하는 거다! 속지 마라!"} // 분탕
+                    {nick:"YoonFan", content:"쇼하는 거다! 속지 마라!"}
                 ] 
             },
             // 3. 교사의 증언
@@ -250,7 +177,7 @@
                     {nick:"BullyHunter", content:"학폭 가해자들은 윤재훈처럼 쫄딱 망해야 함."},
                     {nick:"Counselor", content:"치유의 아이콘이네요."},
                     {nick:"Student", content:"시장님 존경합니다."},
-                    {nick:"A_ssi", content:"학교폭력도 다 사회적응 과정이다."} // 분탕
+                    {nick:"A_ssi", content:"학교폭력도 다 사회적응 과정이다."}
                 ] 
             },
             // 4. A씨(부동산필승)의 분탕
@@ -273,7 +200,7 @@
                     {nick:"TrainDriver", content:"기관사 처우 개선도 많이 해주셨습니다."},
                     {nick:"StationStaff", content:"역무원 안전 가림막 설치해주셔서 감사합니다."},
                     {nick:"KORAIL", content:"철도 굿즈 퀄리티가 너무 좋아서 저희도 배우고 갑니다."},
-                    {nick:"YoonDaeHwan", content:"철도가 밥 먹여주냐? 버스가 최고다!"} // 분탕
+                    {nick:"YoonDaeHwan", content:"철도가 밥 먹여주냐? 버스가 최고다!"}
                 ] 
             },
             // 6. 안천구 주민
@@ -345,33 +272,20 @@
             { nick: "Ghost1", time: "6시간 전", content: "고나미 홍보대사 위촉 축하! 1호선의 전설이 되어라.", like: 100, dislike: 0, replies: [{nick:"Ghost2", content:"성불한다."}, {nick:"Subway", content:"안전운행."}, {nick:"Yoon", content:"귀신이 어딨어."}, {nick:"Shaman", content:"업보가 많구나."}, {nick:"Admin", content:"..."}] }
         ];
 
-        // 랭킹 리스트 데이터 (세계관 반영)
-        const rankingData = [
-            { id: 'news1', title: "윤재훈 필리핀 입국 금지, 갱단 연루설 '사실로 확인'" },
-            { id: 'news2', title: "[단독] 두청운수 불법 차고지, 시청 '원상복구 명령'" },
-            { id: 'news3', title: "효빈대 학식 '누마즈 귤 샐러드' 연일 매진 행렬" },
-            { id: 'news4', title: "박효빈 시장, '8호선 정상화' 현장 점검... \"시민의 승리\"" },
-            { id: 'news5', title: "효빈교통공사 굿즈샵 '과진점' 오픈 (구 두청힐스 부지)" },
-            { id: 'news6', title: "1호선 캐릭터 '고나미', 효빈시 홍보대사 위촉" },
-            { id: 'news7', title: "[기획] \"가난과 폭력을 넘어\"... 박효빈 시장의 '눈물 젖은 빵'" },
-            { id: 'news8', title: "[포토] 효빈국제공항 2활주로 착공식 현장" },
-            { id: 'news9', title: "윤대환 일가 '루트 M' 소송 패소 확정... 13억 빚더미" },
-            { id: 'news10', title: "효빈 시민 85%, \"현 시정에 만족한다\" 역대 최고치" }
-        ];
-
-        window.onload = function() {
+        document.addEventListener("DOMContentLoaded", () => {
             renderComments(commentsData);
-            renderRanking();
-        };
+        });
 
-        // 댓글 렌더링 함수 (대규모 답글 처리 포함)
+        // 댓글 렌더링 함수
         function renderComments(comments) {
             const container = document.getElementById('comment-list');
+            if(!container) return;
+            
             container.innerHTML = "";
 
             comments.forEach((cmt, idx) => {
                 const div = document.createElement('div');
-                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+                div.className = cmt.isPunished ? "best-comment punished-comment" : (cmt.like > 1000 ? "best-comment" : "comment-item");
                 
                 let repliesHtml = "";
                 let replyButtonHtml = "";
@@ -383,7 +297,7 @@
 
                     cmt.replies.forEach(reply => {
                         const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
-                        const nickClass = reply.nickClass || (reply.nick.includes("A씨") || reply.nick.includes("Yoon") || reply.nick.includes("윤재훈") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+                        const nickClass = reply.nickClass || (reply.nick.includes("A씨") || reply.nick.includes("A_ssi") || reply.nick.includes("Yoon") || reply.nick.includes("윤재훈") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
 
                         repliesHtml += `
                             <div class="reply-item ${styleClass}">
@@ -413,11 +327,12 @@
 
         function toggleReply(id) {
             const el = document.getElementById(id);
-            el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+            if(el) {
+                el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+            }
         }
 
         function toggleVote(btn) {
-            // (이전과 동일한 로직)
             const parent = btn.parentElement;
             const countSpan = btn.querySelector('.count');
             let count = parseInt(countSpan.innerText.replace(/,/g, ''));
@@ -452,42 +367,14 @@
         }
 
         function addComment() {
-            // (이전과 동일한 로직)
             alert("댓글이 등록되었습니다.");
         }
-
-        function renderRanking() {
-            const list = document.getElementById('ranking-list');
-            rankingData.forEach((news, index) => {
-                const li = document.createElement('li');
-                li.onclick = () => window.open('news_article.html', '_blank'); 
-                li.innerHTML = `<span class="ranking-num">${index + 1}</span> <span class="ranking-link">${news.title}</span>`;
-                list.appendChild(li);
-            });
-        }
-
-        function openFooterModal(type) {
-            const modal = document.getElementById('footerModal');
-            const title = document.getElementById('modalTitle');
-            const content = document.getElementById('modalContent');
-            modal.style.display = 'flex';
-            
-            let text = "";
-            switch(type) {
-                case 'company': text = "회사소개...\n발행인: 최진언 | 편집인: 강정직"; break;
-                case 'terms': text = "이용약관 내용..."; break;
-                case 'privacy': text = "개인정보처리방침 내용..."; break;
-                case 'youth': text = "청소년보호정책 내용..."; break;
-                case 'help': text = "고충처리인: 박공정 (079-212-2123)"; break;
-            }
-            title.innerText = type.toUpperCase();
-            content.innerText = text;
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('footerModal');
-            if (event.target == modal) { modal.style.display = 'none'; }
-        }
     </script>
+
+    <!-- 공통 푸터 자동 주입 박스 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

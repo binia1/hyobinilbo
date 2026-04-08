@@ -56,28 +56,7 @@
 <body>
 
     <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html" class="active">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html">경제</a>
-                <a href="society.html">사회</a>
-                <a href="world.html">국제</a>
-                <a href="culture.html">문화</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-            </div>
-        </nav>
-    </header>
+    <div id="common-header"></div>
 
     <div class="article-container">
         <div class="main-content">
@@ -298,17 +277,7 @@
         </div>
 
         <div class="side-content">
-            <div class="rank-news">
-                <div class="rank-title">실시간 속보 (종합)</div>
-                <ul class="rank-list">
-                    <li><span class="rank-num">1</span> <span class="rank-text text-[#0055aa] font-bold">계엄 해제... 시민들 "민주주의 지켰다" 환호</span></li>
-                    <li><span class="rank-num">2</span> <span class="rank-text">윤재훈·주민우 등 '내란 선동' 혐의 긴급 체포</span></li>
-                    <li><span class="rank-num">3</span> <span class="rank-text">박효빈 시장 "시민의 위대한 승리... 일상으로 복귀"</span></li>
-                    <li><span class="rank-num">4</span> <span class="rank-text">8호선 첫차 정상 운행... '지하 벙커설'은 가짜뉴스</span></li>
-                    <li><span class="rank-num">5</span> <span class="rank-text">국회, 대통령 탄핵 소추안 발의... 여당도 '손절'</span></li>
-                    <li><span class="rank-num">6</span> <span class="rank-text">경찰, 우신면 등 악성 유포자 자택 압수수색</span></li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
             
             <div class="bg-blue-50 p-4 border border-blue-100 text-center">
                 <div class="font-bold text-[#0055aa] mb-2">효빈시 정상화 안내</div>
@@ -319,20 +288,9 @@
     </div>
 
     <!-- 푸터 -->
-    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
-        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
-            <div class="flex gap-4 mb-4">
-                <a href="회사소개.html" class="hover:text-white">회사소개</a>
-                <a href="구독신청.html" class="hover:text-white">구독신청</a>
-                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
-                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
-                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
-            </div>
-            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
-            <p>주소: 효빈광역시 북구 중수동 123 </p>
-            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
 
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

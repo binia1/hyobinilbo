@@ -112,28 +112,7 @@
 <body>
 
     <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html" class="active">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html">경제</a>
-                <a href="society.html">사회</a>
-                <a href="world.html">국제</a>
-                <a href="culture.html">문화</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-            </div>
-        </nav>
-    </header>
+    <div id="common-header"></div>
 
     <div class="article-container">
         <div class="main-content">
@@ -346,17 +325,7 @@
         </div>
 
         <div class="side-content">
-            <div class="rank-news">
-                <div class="rank-title">실시간 속보 (종합)</div>
-                <ul class="rank-list">
-                    <li><span class="rank-num">1</span> <span class="rank-text text-[#d9534f] font-bold">윤 대통령 "효빈 2.2%는 북한 소행... 비상계엄 선포"</span></li>
-                    <li><span class="rank-num">2</span> <span class="rank-text">계엄군, 효빈시청 진입... 박효빈 시장 체포 영장</span></li>
-                    <li><span class="rank-num">3</span> <span class="rank-text">야당 "명백한 내란 행위... 탄핵 소추안 발의"</span></li>
-                    <li><span class="rank-num">4</span> <span class="rank-text">시민들, 광화문·효빈광장 집결... "계엄 철폐"</span></li>
-                    <li><span class="rank-num">5</span> <span class="rank-text">8호선 전 구간 운행 중단... 군, 선로 뜯어내 정밀 수색</span></li>
-                    <li><span class="rank-num">6</span> <span class="rank-text">환율 1500원 돌파, 증시 폭락... 한국 경제 '패닉'</span></li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
             
             <div class="bg-red-50 p-4 border border-red-100 text-center">
                 <div class="font-bold text-[#d9534f] mb-2">계엄사령부 공지</div>
@@ -367,20 +336,9 @@
     </div>
 
     <!-- 푸터 -->
-    <footer class="bg-[#333] text-gray-400 py-10 mt-20">
-        <div class="container mx-auto px-4 max-w-[1100px] text-xs">
-            <div class="flex gap-4 mb-4">
-                <a href="회사소개.html" class="hover:text-white">회사소개</a>
-                <a href="구독신청.html" class="hover:text-white">구독신청</a>
-                <a href="고충처리인.html" class="hover:text-white">고충처리인</a>
-                <a href="청소년보호정책.html" class="hover:text-white">청소년보호정책</a>
-                <a href="저작권규약.html" class="hover:text-white">저작권규약</a>
-            </div>
-            <p class="mb-2">효빈일보 | 등록번호: 효빈 가00001 | 발행인: 김효빈 | 편집인: 이덕북</p>
-            <p>주소: 효빈광역시 북구 중수동 123 </p>
-            <p class="mt-4">Copyright © Hyobin Ilbo. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
 
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

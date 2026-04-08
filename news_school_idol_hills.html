@@ -83,28 +83,7 @@
 <body>
 
     <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-                        <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48 rounded-sm">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold rounded-sm">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="news_list.html">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html" class="active">경제</a>
-                <a href="society.html">사회</a>
-                <a href="world.html">국제</a>
-                <a href="culture.html">문화</a>
-                <a href="it.html">IT/과학</a>
-                <a href="opinion.html">오피니언</a>
-                <a href="photo.html">포토</a>
-            </div>
-        </nav>
-    </header>
+    <div id="common-header"></div>
 
     <div class="container">
         <!-- 기사 본문 -->
@@ -205,34 +184,7 @@
         <!-- 사이드바 -->
         <div class="side-column">
             <!-- 랭킹 -->
-            <div class="ranking-box">
-                <div class="ranking-title flex justify-between items-center mb-3 border-b border-gray-200 pb-2">
-                    <span class="text-[#d97706] font-bold">많이 본 뉴스</span>
-                    <span class="text-xs text-gray-500">실시간 기준</span>
-                </div>
-                <ul class="ranking-list">
-                    <li onclick="alert('현재 보고 계신 기사입니다.')">
-                        <span class="rank-num">1</span>
-                        <span class="rank-title font-bold">스쿨아이돌힐스 청약 서버 마비... "접속 대기만 10만 명"</span>
-                    </li>
-                    <li onclick="location.href='news_article_otaku.html'">
-                        <span class="rank-num">2</span>
-                        <span class="rank-title">효빈시 '오타쿠 특구' 선포, 경제 효과 분석</span>
-                    </li>
-                    <li onclick="location.href='news_list.html'">
-                        <span class="rank-num">3</span>
-                        <span class="rank-title">윤대환 전 시장 "아파트 이름이 뭐? 말세다" 옥중 한탄</span>
-                    </li>
-                    <li onclick="location.href='news_list.html'">
-                        <span class="rank-num">4</span>
-                        <span class="rank-title">8호선 역세권 집값, 1년 새 40% 폭등</span>
-                    </li>
-                    <li onclick="location.href='news_list.html'">
-                        <span class="rank-num">5</span>
-                        <span class="rank-title">효빈도시공사 채용 경쟁률 역대 최고</span>
-                    </li>
-                </ul>
-            </div>
+            <div id="common-sidebar-ranking"></div>
 
             <!-- 관련 광고 -->
             <div class="bg-blue-50 border border-blue-200 p-4 text-center mb-5 cursor-pointer hover:bg-blue-100 transition rounded-lg">
@@ -249,26 +201,7 @@
     </div>
 
     <!-- 깔끔한 푸터 -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-top">
-                <div class="footer-logo">효빈일보</div>
-                <div class="footer-menu">
-                    <a href="company.html">회사소개</a>
-                    <a href="subscribe.html">구독신청</a>
-                    <a href="ad_inquiry.html">광고문의</a>
-                    <a href="terms.html">이용약관</a>
-                    <a href="privacy.html">개인정보처리방침</a>
-                </div>
-            </div>
-            <div class="footer-info">
-                <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
-                <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
-                <p>전화: 079-212-2123 | 팩스: 079-212-2124 | 이메일: news@hyobinilbo.com</p>
-                <p class="mt-4 text-gray-500 font-light">Copyright © 2026 Hyobin Ilbo. All rights reserved. Unauthorized reproduction is prohibited.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="common-footer"></div>
 
     <script>
         // 댓글 데이터 (윤재훈의 난동 ver.)
@@ -444,5 +377,7 @@
         document.addEventListener('DOMContentLoaded', renderComments);
         renderComments(); // 안전장치
     </script>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>
