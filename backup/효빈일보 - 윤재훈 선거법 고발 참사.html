@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치] "결식아동 돕는 게 선거법 위반?" 윤재훈 '황당 고발'에 선관위 "합법적 자선" 철퇴 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 지자체/행정</div>
+                <h2 class="article-title">"결식아동 돕는 게 선거법 위반?" 윤재훈 '황당 고발'에 선관위 "합법적 자선" 철퇴</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">강정치 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.04.06. 10:30 | 수정 2026.04.06. 11:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">윤재훈, 박효빈 시장의 10년 넘은 월드비전 후원을 '사전선거운동'으로 선관위에 고발<br>선관위 "정치적 목적 없는 순수 자선단체 기부는 공직선거법상 합법" 기각 처분<br>박효빈 시장 측 "빈곤에 시달려보지 않은 자의 오만... 아이들 밥그릇 건드리지 말라"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/선관위_기각발표.png" alt="선거관리위원회 브리핑" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Election+Commission+Briefing'">
+                        <div class="img-caption">▲ 효빈시 선거관리위원회가 윤재훈 측이 제기한 박효빈 시장의 '기부행위 위반' 고발 건에 대해 "위법성 없음"으로 기각 처분을 내리고 있다. (사진=효빈일보 DB)</div>
+                    </div>
+
+                    <p>[효빈일보 = 강정치 기자] <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈광역시장의 오랜 구호단체 후원 활동을 공직선거법 위반으로 몰아가려던 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a>의 무리한 고발이 결국 선거관리위원회의 '철퇴'를 맞았다. 가난 구제를 정치적 꼼수로 폄하하려다 여론의 역풍만 거세게 맞은 형국이다.</p>
+
+                    <p>6일 효빈시 선거관리위원회는 윤재훈 측이 제기한 박효빈 시장의 '월드비전 정기 후원' 관련 공직선거법 제112조(기부행위) 위반 고발 건에 대해 **"위법성 조각 사유에 완벽히 부합하는 합법적 자선행위"라며 최종 기각 처리**했다고 밝혔다.</p>
+
+                    <p>앞서 윤재훈은 기자회견을 열고 "박 시장이 매월 거액의 돈을 월드비전에 입금하는 것은 결식아동과 그 부모들의 표를 돈으로 사려는 명백한 사전선거운동"이라고 주장하며, "가난한 자들을 핑계로 불법 정치 자금을 살포하고 있다"는 원색적인 비난과 함께 고발장을 제출했다.</p>
+
+                    <p>하지만 선관위의 판단은 명확했다. 선관위 관계자는 "공직선거법 제112조 제2항 제3호에 따라, **구호적·자선적 목적으로 설립된 기관이나 단체에 정치적 목적을 노골적으로 드러내지 않고 행하는 기부는 '기부행위의 예외'로 인정**받는다"고 설명했다. 나아가 "박 시장의 후원 내역을 조사한 결과, 고등학생 시절부터 10년 이상 단 한 번의 끊김 없이 이어져 온 순수 기탁금이며, 본인의 직함이나 사진을 내세워 정치적으로 홍보한 바가 전혀 없다"고 못 박았다.</p>
+
+                    <div class="my-6">
+                        <img src="이미지/박효빈_기자회견.png" alt="박효빈 시장" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Mayor+Park+Statement'">
+                        <div class="img-caption">▲ 박효빈 효빈광역시장이 선관위 기각 결정 직후, 시청 브리핑룸에서 윤재훈의 악의적 고발 행태를 강하게 비판하고 있다.</div>
+                    </div>
+
+                    <p>이 소식을 접한 박효빈 시장은 특유의 단호한 태도로 응수했다. 박 시장은 시청 브리핑룸에서 열린 백브리핑에서 **"자선 단체에 기부하는 정당한 행위를 정치적 프레임으로 엮으려는 시도야말로 법의 취지를 훼손하는 저열한 짓"**이라며, "가난을 조롱하고 배고픈 서러움을 모르는 자가, 이제는 아이들의 밥그릇에 들어가는 후원금마저 끊으려 든다"고 강하게 비판했다.</p>
+
+                    <p>이어 박 시장은 "제가 배운 것이 복지이고 법이다. 법전은 윤재훈 씨처럼 생떼를 쓰라고 있는 장식품이 아니다. **저를 감옥에 보내고 싶다면 빵에 침을 뱉거나 자선단체를 건드리지 말고, 정정당당하게 정책으로 덤벼라**"라며 일침을 가했다. 시청 관계자에 따르면, 박 시장은 선관위 결과가 나온 직후 사비로 월드비전 후원 한도를 한 단계 더 증액한 것으로 알려졌다.</p>
+
+                    <p>지역 정가에서는 이번 사태를 윤재훈의 '자살골'로 평가하고 있다. 법률적 검토조차 제대로 거치지 않은 막무가내식 고발로 인해, 오히려 박효빈 시장의 '쓰리잡 흙수저 신화'와 진정성 있는 후원 미담만 다시 한번 전국적으로 홍보해 준 꼴이 되었기 때문이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">18,592</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Social_Worker_Kim", time: "방금 전", like: 45020, dislike: 12, isPunished: false,
+                                content: "진짜 악마가 따로 없네. 결식아동 돕는 게 사전선거운동이면, 대한적십자사랑 구세군 냄비에 돈 넣는 사람들은 다 구속해야 되냐? 지가 안 한다고 남도 안 하는 줄 아나 봄.",
+                                replies: [
+                                    { nick: "Fact_Check", content: "심지어 고등학생 때부터 10년 넘게 해오던 거임 ㅋㅋㅋ 선거 출마하려고 10년 전부터 빌드업 짰다는 기적의 논리" },
+                                    { nick: "Law_Student", content: "공직선거법 제112조 2항 3호. 법대 1학년도 아는 조항인데 쟤네 변호사는 뭐 하는 놈임?" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Citizen_01", time: "5분 전", like: 38500, dislike: 25, isPunished: false,
+                                content: "박효빈 시장님 진짜 멋있다. '법전은 니들 장식품이 아니다' ㄷㄷㄷ 사이다 그 자체. 윤재훈은 지 무덤을 지가 굴착기로 파고 있네. 시장님 지지율 5% 더 올려준 일등공신임.",
+                                replies: [
+                                    { nick: "Nijigasaki_Fan", content: "시장님 어제 퇴근하시면서 카스밍 굿즈 보면서 혼자 웃고 계시던데 ㅋㅋㅋ 멘탈 갑이심." },
+                                    { nick: "Blue_Bird_1기", content: "시장님이 후원 증액하신 건 진짜 대인배. 윤재훈 찌질한 고발에 돈으로 혼쭐내주심." }
+                                ]
+                            },
+                            {
+                                nick: "YoonJaehoon(IP)", time: "10분 전", like: 5, dislike: 52000, isPunished: true,
+                                content: "선관위 놈들 다 박효빈한테 매수당했네!! 고등학생 때부터 돈 낸 것도 다 나중에 시장 하려고 큰 그림 그린 거야! 더러운 가짜 서민 코스프레!",
+                                replies: [
+                                    { nick: "Mental_Clinic", content: "환자분, 여기서 이러시면 안 됩니다. 투약 시간입니다." },
+                                    { nick: "Tax_Thief_Hunter", content: "어휴... 니가 초딩 때 시장님한테 세금 돼지라고 괴롭히던 거 다 소문났다. 인성 어디 안 가네." },
+                                    { nick: "Logic_Destroyer", content: "고딩 때 시장 하려고 한 달에 만원 이만 원씩 월드비전에 입금했다는 게 니 뇌피셜이냐? ㅋㅋㅋ 제발 소설 좀 작작 써" }
+                                ]
+                            },
+                            {
+                                nick: "Lawyer_Park", time: "15분 전", like: 29000, dislike: 8, isPunished: false,
+                                content: "선거법 전문 변호사입니다. 구호단체 정기후원은 선거법 위반 판단의 기초 요건인 '특정성'과 '정치적 목적성'이 아예 결여되어 있습니다. 윤재훈 측에서 이 고발장을 접수했을 때 선관위 직원들 표정이 어땠을지 안 봐도 비디오네요. 업무방해 수준입니다.",
+                                replies: [
+                                    { nick: "Citizen_A", content: "변호사님 팩트리어트 미사일 발사 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Free_Yoon_Daehwan", time: "20분 전", like: 2, dislike: 48000, isPunished: true,
+                                content: "우파 시민들이여 일어나라! 좌파 시장이 불법 자금으로 표를 매수하고 있다! 선관위도 한통속이다! 애국보수 윤재훈 장군님을 지켜라!",
+                                replies: [
+                                    { nick: "Normal_Right", content: "보수 망신 그만 시키고 찌그러져라. 결식아동 돕는 거 훼방 놓는 게 보수냐? 깡패 새끼지." },
+                                    { nick: "Police_Report", content: "빵에 침 뱉다 걸려서 감방 간 '장군님' ㅋㅋㅋㅋ 진짜 개그맨이 따로 없네." }
+                                ]
+                            },
+                            { nick: "WorldVision_Staff", time: "25분 전", content: "저희 단체 후원자님을 정치 싸움에 끌어들이지 말아 주세요. 박효빈 후원자님은 정말 본인이 가장 힘드실 때부터 조용히 나눔을 실천해오신 분입니다. 이번 일로 상처받지 않으셨으면 좋겠습니다.", like: 35000, dislike: 0, replies: [] },
+                            { nick: "University_Student", time: "30분 전", content: "윤재훈 쟤는 빵에 침 뱉고, 성우 폭행하려다 제압당하고, 이젠 고발장 썼다가 기각당하고... 그랜드슬램 달성이네 ㅋㅋㅋ 인생이 시트콤이냐?", like: 21000, dislike: 4, replies: [] },
+                            { nick: "Hyobin_Pride", time: "35분 전", content: "시장님이 '정당하게 정책으로 덤벼라' 할 때 카타르시스 오짐. 행정 괴물한테 어설프게 법으로 덤비니까 뼈도 못 추리지.", like: 19500, dislike: 2, replies: [] },
+                            { nick: "McDonalds_Alba", time: "40분 전", content: "울 시장님 예전에 심야 알바하면서 바닥 닦던 분임. 고생해 본 사람이 없는 사람 심정 아는 거다. 금수저 윤재훈이 뭘 알겠냐.", like: 18000, dislike: 1, replies: [] },
+                            { nick: "Anime_Fan", time: "45분 전", content: "시장님 어제 선관위 발표 나고 관저에서 Roselia 'FIRE BIRD' 틀어놓고 턱걸이 하셨다에 내 굿즈 건다 ㅋㅋㅋㅋ", like: 15200, dislike: 0, replies: [{nick: "Secretary_Room", content: "어... 어떻게 아셨죠? (동공지진)"}] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Free") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">월드비전 효빈지부</div>
+                    <div class="text-xs">여러분의 작은 나눔이<br>한 청년의 미래를 바꿉니다.<br><span class="text-blue-500 underline mt-1 inline-block">후원 동참하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

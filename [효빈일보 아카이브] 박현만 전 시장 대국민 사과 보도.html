@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치/이슈] "지총민 지적이 맞다, 내 탓이오"... 박현만, 남 탓 대신 '대인(大人)의 사과' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 */
+        .strike { text-decoration: line-through; color: #888; }
+        .archive-badge { background-color: #333; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header">
+        <div id="common-header"></div>
+        </div>
+    </div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <span class="archive-badge">과거 기사 디지털 아카이브 (2026.04.10 디지털화)</span>
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 현장/이슈</div>
+                <h2 class="article-title">"지총민 지적이 맞다, 내 탓이오"... 박현만, 남 탓 대신 '대인(大人)의 사과'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">강정치 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2007.10.27. 10:15 | 수정 2007.10.27. 11:20</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">"박현만이 무능해 표 잃은 것" 지총민 망언에 화내는 대신 대국민 사과 발표<br>"시민 눈높이 맞추지 못한 제 잘못 커... 변명의 여지 없다" 고개 숙여<br>적반하장 지총민과 극명한 대조... 효빈 시민들 "우리 손가락이 잘못했다" 눈물<br>분열됐던 민주·진보 진영, 박현만의 '품격 있는 성찰' 계기로 강력한 결집 조짐</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/박현만_기자회견.png" alt="대국민 사과하는 박현만 전 시장" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Park+Hyun-man+Apology'">
+                        <div class="img-caption">▲ 27일 오전, <a href="박현만.html" class="text-blue-600 underline">박현만</a> 전 효빈시장이 2006년 선거 패배와 관련해 대국민 담화를 열고 "모든 것은 부족했던 제 탓"이라며 시민들을 향해 깊이 고개 숙여 사과하고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 강정치 기자] 2006년 제4회 지방선거에서 단 '3표' 차이로 낙선했던 <a href="박현만.html" class="text-blue-600 underline">박현만</a> 전 효빈시장이 최근 <a href="지총민.html" class="text-blue-600 underline">지총민</a> 전 후보의 망언과 관련해 대시민 담화문을 발표했다. 남을 탓하며 책임을 회피한 지 전 후보와 달리, 박 전 시장은 모든 책임을 온전히 자신에게 돌리며 '대인(大人)의 품격'을 보여주었다.</p>
+
+                    <p>사건의 발단은 며칠 전 지총민 전 후보의 기자회견이었다. 선거 당시 12.29%를 득표하며 표를 분산시켰던 그는 쏟아지는 비판 여론에 대해 "박현만이 무능해서 내가 표를 많이 얻은 것이다. 나에게 구걸하듯 빌었어야 했다"며 책임을 박 전 시장에게 전가하는 적반하장의 태도를 보였다.</p>
+
+                    <p>이에 대해 박현만 전 시장은 27일 긴급 기자회견을 열고 반박이나 분노 대신, 뜻밖의 진심 어린 사과를 건넸다.</p>
+
+                    <p>박 전 시장은 무거운 표정으로 마이크를 잡고 **"지총민 후보의 말씀이 맞습니다. 제가 더 잘했어야 했습니다"**라고 입을 열었다. 이어 그는 **"시민 여러분을 더 설득하고, 제 진심을 더 낮은 곳에서 전했어야 했는데 그러지 못했습니다. 열심히 한다고 했지만 시민들의 눈높이에 맞지 않았던 제 잘못이 큽니다. 고통받고 계신 시민 여러분께 정말 죄송합니다"**라며 깊이 고개를 숙였다.</p>
+
+                    <p>현재 효빈시는 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 시장의 폭정으로 신음하고 있다. <a href="효빈6호선.html" style="color: #881188; font-weight: bold; text-decoration: underline;">6호선</a> 철도 공사가 중단되고, 시민들은 두청운수의 7,000원짜리 버스에 짐짝처럼 끼여 타며 고통받고 있다. 이런 상황에서 피해자인 박 전 시장이 오히려 "내 탓이오"라며 사과하는 모습은 효빈 시민들의 마음을 강하게 울렸다.</p>
+
+                    <div class="my-6">
+                        <img src="이미지/7000원_갈색버스.png" alt="효빈시 7000원 갈색 버스 가축수송" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=7000+Won+Bus+Hell'">
+                        <div class="img-caption">▲ 윤대환 시정 하에서 7,000원의 폭리를 취하고 있는 두청운수 갈색 버스의 아침 출근길 모습. 시민들은 매일 '가축 수송'의 고통을 겪고 있다.</div>
+                    </div>
+
+                    <p>시민들의 반응은 폭발적이다. 특히 선거 당시 "기득권 양당을 심판하겠다"며 지총민에게 표를 던졌던 유권자들의 참회가 이어지고 있다. 효빈시 남구에 거주하는 직장인 김 모 씨는 본지와의 인터뷰에서 "출근길 7,000원짜리 만원 버스 안에서 신문으로 박 시장님의 사과를 읽고 펑펑 울었다"며, "내 한 표가 저렇게 훌륭한 사람을 떨어뜨리고 뻔뻔한 사람에게 힘을 실어줬다는 게 죄스럽다. 박 시장님이 '제 잘못'이라고 할 때, 속으로 '아닙니다, 제 손가락이 잘못했습니다'라고 수천 번 외쳤다"고 토로했다.</p>
+
+                    <p>박현만 전 시장의 이번 사과는 단순한 입장 표명을 넘어, 분열되었던 효빈시의 진보·중도 진영을 하나로 묶는 강력한 접착제가 되고 있다. 108배 사죄를 올렸던 <a href="서무련.html" class="text-blue-600 underline">서무련</a> 전 후보 측도 "박 시장님의 책임감에 깊이 감화되었다"며 지지 의사를 굳히는 분위기다.</p>
+
+                    <p>자신의 잘못을 부인하며 고립의 길을 택한 지총민, 그리고 "내 탓"이라며 시민들의 아픔을 껴안은 박현만. 2006년 '3표 차 비극'의 당사자들이 보여준 극명한 태도 차이는, 효빈시의 향후 정치 지형을 뒤흔들 거대한 태풍의 눈이 되고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 (2026년 기준 아카이브 반응) -->
+            <div class="comment-section">
+                <div class="comment-header mb-4">
+                    <span class="text-lg font-bold text-red-600">[복원됨] 2007년 10월 27일 기사 송고 직후 실시간 반응</span>
+                    <span class="text-xs text-gray-500 ml-2 font-normal">(기자회견 당일 당시 댓글)</span>
+                </div>
+                <div class="comment-list-container mb-12" id="comment-list-2007"></div>
+
+                <div class="comment-header mt-8 border-t-2 border-gray-200 pt-6">
+                    아카이브 네티즌 반응 <span class="text-[#0055aa]" id="comment-count">35,102</span>
+                    <span class="text-xs text-gray-500 ml-2 font-normal">(현재 시간: 2026년 기준 성지순례)</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list"></div>
+                <script>
+                    const commentsData2007 = [
+                        {
+                            nick: "Regret_Voter_Ji", time: "2007.10.27 10:25", like: 8520, dislike: 14, isPunished: false,
+                            content: "지총민 찍은 내 손가락을 부러뜨리고 싶습니다... 지총민 그 쓰레기는 남 탓만 하는데, 피해자인 시장님이 내 탓이라고 고개 숙이시는 거 보고 오늘 두청운수 버스 안에서 짐짝처럼 끼어서 펑펑 울었습니다. 정말 죄송합니다 시장님...",
+                            replies: [
+                                { nick: "Angry_Student", content: "진짜 대인배다... 지총민 그 새끼는 이거 보고도 지가 잘나서 그런 줄 알겠지? 길가다 마주치면 멱살 잡는다 진짜" }
+                            ]
+                        },
+                        {
+                            nick: "Line6_Waiting", time: "2007.10.27 10:32", like: 6400, dislike: 22, isPunished: false,
+                            content: "시장님이 뭐가 부족해요 ㅠㅠ <a href='효빈6호선.html' style='color:#881188; font-weight:bold;'>6호선</a> 깔아서 우리 동네 살려주시려던 분인데... 부족한 건 저런 훌륭한 분을 두고 이상한 놈들한테 표 갈라준 우리 시민들 안목입니다 ㅠㅠㅠ 돌아와주세요 제발",
+                            replies: []
+                        },
+                        {
+                            nick: "Ji_Camp_Staff", time: "2007.10.27 10:45", like: 12, dislike: 9800, isPunished: true,
+                            content: "이제야 본인의 무능을 인정하시는군요. 지총민 후보님의 따끔한 지적이 박현만 전 시장을 반성하게 만들었습니다. 지총민 후보님이 효빈의 진정한 리더입니다.",
+                            replies: [
+                                { nick: "Furious_Citizen", content: "야 이 미친 알바 새끼야 ㅋㅋㅋㅋ 눈치가 없는 거냐 뇌가 없는 거냐? 니네 후보가 찌질하게 징징대는 걸 대인배처럼 받아주신 건데 그걸 또 지들 덕이라고 포장하네 토악질 나온다" }
+                            ]
+                        },
+                        {
+                            nick: "Yoon_Guard", time: "2007.10.27 10:55", like: 8, dislike: 8400, isPunished: true,
+                            content: "패배자의 구차한 변명일 뿐입니다!! 윤대환 시장님이 7000원 버스로 효빈의 재정을 튼튼하게 만들고 계십니다!!",
+                            replies: [
+                                { nick: "Realist", content: "두청운수 사장 아들내미 학원비 대주느라 내 등골이 휜다 이 악마 새끼들아" }
+                            ]
+                        }
+                    ];
+
+                    const commentsData = [
+                        {
+                            nick: "History_Watcher", time: "방금 전", like: 88200, dislike: 14, isPunished: false,
+                            content: "효빈위키에서 '80.9% 기적의 시발점' 문서 읽고 성지순례 왔습니다... 저렇게 진심으로 내 탓이라고 품어주시니까 2008년에 시민들이 눈물 흘리며 80.9% 몰표로 보답해 드렸지. 진짜 정치인의 그릇이란 게 뭔지 보여주는 레전드 사건.",
+                            replies: [
+                                { nick: "Fact_Check", content: "저 발언 듣고 서무련 이사장님도 완전 감화되셔서 복지재단 설립 결심하셨다며... 지총민 혼자만 끝까지 똥볼 차다가 3%대 받고 멸망 ㅋㅋㅋㅋ" },
+                                { nick: "Hyobin_Pride", content: "박현만 시장님의 저 포용력 덕분에 나중에 <a href='박효빈.html' class='text-blue-500 underline'>박효빈</a> 시장님 시대까지 탄탄하게 이어질 수 있었던 거임. 진짜 국부(國父) 그 자체 ㅠㅠ" }
+                            ]
+                        },
+                        {
+                            nick: "Free_Isaiah", time: "5분 전", like: 12, dislike: 92000, isPunished: true,
+                            content: "박현만의 저 가짜 눈물에 시민들이 속은 겁니다!! 윤대환 시장님이 7000원으로 물가를 통제하려 하셨던 그 혜안을 잊지 마십시오!! 지총민 후보님도 애국보수입니다!!",
+                            replies: [
+                                { nick: "Normal_Student", content: "어휴 <a href='이차야.html' class='text-blue-500 underline'>이차야</a> ㅋㅋㅋㅋ 야 넌 이제 윤대환, 윤재훈도 모자라서 지총민까지 애국보수 타이틀 달아주냐? 쓰레기 콜렉터답다 진짜 ㅋㅋㅋㅋ" },
+                                { nick: "Subway_Driver", content: "물가 통제 ㅇㅈㄹ ㅋㅋㅋ 7000원이면 국밥이 한 그릇인데 버스 한 번 타는 데 국밥을 내라는 게 통제냐 수탈이냐 빡통아" }
+                            ]
+                        },
+                        {
+                            nick: "Yoon_Guard_99", time: "10분 전", like: 8, dislike: 85000, isPunished: true,
+                            content: "윤재훈 장군님께서 2026년에 저런 박현만의 후예인 박효빈을 반드시 심판하실 겁니다!! 4.8%는 부정선거의 증거입니다!!",
+                            replies: [
+                                { nick: "Logic_Destroyer", content: "심판? ㅋㅋㅋ 지가 학폭 가해자 새끼면서 피해자 조롱하고, 쇠파이프 들고 나댔는데 근력이 딸려서 전치 2주도 못 낸 씹멸치 난동꾼을 빠네 ㅋㅋㅋ" },
+                                { nick: "Anti_Villain", content: "야 일본 가서 <a href='미후네_시오리코.html' class='text-blue-500 underline'>미후네 시오리코</a> 판넬에 래커 칠하다 잡혀간 윤재훈이나 빨면서 무슨 심판 타령이야. 유성민 후보가 국힘 버리고 무소속 간 이유를 모름?" }
+                            ]
+                        },
+                        {
+                            nick: "Vote_For_HyoBin", time: "15분 전", like: 59500, dislike: 8, isPunished: false,
+                            content: "저 2007년에 지총민 찍고 7000원 버스에서 매일 후회하다가 이 기사 보고 진짜 육성으로 오열했던 직장인입니다. 그 뒤로 우리 집안은 박현만-박효빈 시장님 무조건 고정입니다. 내 밥그릇 뺏어가는 놈이랑 내 눈물 닦아주는 분은 확실히 구분해야 합니다.",
+                            replies: [
+                                { nick: "Binyo_Line_Rider", content: "형님 고생하셨습니다 ㅠㅠ 내일 투표일인데 <span style='color:#0077DD; font-weight:bold;'>파란색 1호선</span> 타고 투표장 가서 윤재훈 무조건 심판합시다. 효빈의 평화는 우리가 지켜야죠." }
+                            ]
+                        }
+                    ];
+
+                    function renderComments(data, containerId) {
+                        const container = document.getElementById(containerId);
+                        if(!container) return;
+                        container.innerHTML = ""; 
+
+                        data.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 3000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                const replyId = `reply-${containerId}-${idx}`;
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('${replyId}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="${replyId}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="${replyId}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Free") || reply.nick.includes("Yoon") || reply.nick.includes("Camp") || reply.nick.includes("Clean") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+                    }
+
+                    renderComments(commentsData2007, 'comment-list-2007');
+                    renderComments(commentsData, 'comment-list');
+
+                    function toggleReply(id) {
+                        const el = document.getElementById(id);
+                        if (el.style.display === 'block') el.style.display = 'none';
+                        else el.style.display = 'block';
+                    }
+                    
+                    function toggleVote(btn) {
+                        const parent = btn.parentElement;
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                            btn.classList.remove('active');
+                            btn.classList.remove('active-hate');
+                            count--;
+                        } else {
+                            if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                            else btn.classList.add('active');
+                            count++;
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                    function addComment() { alert("댓글이 등록되었습니다."); }
+                </script>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈광역시 화해의 날 기념식</div>
+                    <div class="text-xs">분열의 역사를 극복하고 통합의 미래로!<br>박효빈 시장과 시민들이 함께합니다.<br><span class="text-[#0055aa] underline mt-1 inline-block">참여 신청</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+<div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

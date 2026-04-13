@@ -2,36 +2,36 @@
     // ==========================================
     // 1. 기사 데이터베이스 (카테고리 완비)
     // ==========================================
-    const NEWS_DATABASE = [
+const NEWS_DATABASE = [
         // --- 현실 기반 속보 & 주요 기사 ---
-        { type: '기사', category: '정치', title: '[선택 2025] 이재명, 제21대 대통령 당선 확정', url: '[선택 2025] 이재명, 제21대 대통령 당선.html', keywords: '이재명 대통령 당선 선거 2025' },
-        { type: '기사', category: '정치', title: '2025년 대선 특집', url: '2025년 대선.html', keywords: '2025년 대선 선거 대통령 이재명' },
-        { type: '기사', category: '정치', title: '[속보] 윤석열 대통령 탄핵안 가결... 직무 즉시 정지', url: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html', keywords: '속보 윤석열 탄핵 가결 직무 정지' },
+        { type: '기사', category: '정치', title: '[21대 대선] 이재명 대통령 당선... 효빈시 박효빈 시장과 환상의 공조 기대', url: '[선택 2025] 이재명, 제21대 대통령 당선.html', keywords: '이재명 대통령 당선 선거 2025' },
+        { type: '기사', category: '정치', title: '[21대 대선] 이재명 대통령 당선... 효빈시 박효빈 시장과 환상의 공조 기대', url: '2025년 대선.html', keywords: '2025년 대선 선거 대통령 이재명' },
+        { type: '기사', category: '정치', title: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지', url: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html', keywords: '속보 윤석열 탄핵 가결 직무 정지' },
         { type: '기사', category: '정치', title: '[속보] 헌재, 윤석열 탄핵 인용', url: '[속보] 헌재, 윤석열 탄핵 인용.html', keywords: '속보 헌재 윤석열 탄핵 인용' },
-        { type: '기사', category: '사회', title: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 환호', url: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html', keywords: '속보 계엄 해제 환호 민주주의 승리 반란군' },
-        { type: '기사', category: '정치', title: '[속보] 국회, 비상계엄 해제 요구안 가결... 헌정사상 최단기 종료', url: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보.html', keywords: '속보 국회 비상계엄 해제 가결 최단기' },
+        { type: '기사', category: '사회', title: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라', url: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html', keywords: '속보 계엄 해제 환호 민주주의 승리 반란군' },
+        { type: '기사', category: '정치', title: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보', url: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보.html', keywords: '속보 국회 비상계엄 해제 가결 최단기' },
         { type: '기사', category: '사회', title: '윤석열 비상계엄 선포, 부정선거 주장', url: '윤석열 비상계엄 선포, 부정선거 주장.html', keywords: '윤석열 계엄 부정선거' },
         { type: '기사', category: '사회', title: '[단독] 윤석열 구속 취소', url: '[단독] 윤석열 구속 취소.html', keywords: '윤석열 구속 취소 단독' },
         { type: '기사', category: '사회', title: '[속보] 윤석열 전 대통령 구속', url: '[속보] 윤석열 전 대통령 구속.html', keywords: '속보 윤석열 구속' },
         { type: '기사', category: '사회', title: '[속보] 윤석열 전 대통령 재구속', url: '[속보] 윤석열 전 대통령 재구속.html', keywords: '속보 윤석열 재구속' },
-        { type: '기사', category: '정치', title: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 아수라장', url: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장.html', keywords: '속보 탄핵안 정족수 미달 폐기 도주' },
+        { type: '기사', category: '정치', title: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장', url: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장.html', keywords: '속보 탄핵안 정족수 미달 폐기 도주' },
         { type: '기사', category: '사회', title: '윤석열 속옷저항 논란', url: '윤석열 속옷저항.html', keywords: '윤석열 속옷 저항' },
         { type: '기사', category: '경제', title: '[속보] 한국은행, 기준금리 연 3.25%로 전격 인하', url: 'news_bok_rate_cut.html', keywords: '한국은행 금리 인하 피벗 경제 속보 이창용' },
         { type: '기사', category: '경제', title: '코스피 5000 돌파 속보 (2026년 1월 27일)', url: '코스피 5000 돌파 속보 (2026년 1월 27일).html', keywords: '코스피 5000 경제' },
         
         // --- 아카이브 (10년 이상) ---
-        { type: '아카이브', category: '특집', title: '[2007년 아카이브] 갈색 겨울, 두청운수 파업 사태', url: 'archive_2007_brown_winter.html', keywords: '2007 갈색 겨울 파업 두청운수 archive brown winter' },
-        { type: '아카이브', category: '특집', title: '[2007년 아카이브] 두청운수 사건 최종 판결', url: 'archive_2007_final_verdict.html', keywords: '2007 판결 법원 두청운수 archive final verdict' },
-        { type: '아카이브', category: '특집', title: '[2007년 아카이브] 치열했던 법정 공방 기록', url: 'archive_2007_legal_battle.html', keywords: '2007 법정 공방 재판 두청운수 archive legal battle' },
-        { type: '아카이브', category: '특집', title: '[2007년 아카이브] 5호선 참사의 비극', url: 'archive_2007_line5_tragedy.html', keywords: '2007 5호선 참사 지하철 사고 archive line5 tragedy' },
-        { type: '아카이브', category: '특집', title: '[2007년 아카이브] 대통령, 두청운수 사태 강력 질책', url: 'archive_2007_president_rebuke.html', keywords: '2007 대통령 질책 비판 두청운수 archive president rebuke' },
-        { type: '아카이브', category: '특집', title: '[2007년 아카이브] 도심 마비시킨 폭력 시위', url: 'archive_2007_protest_violence.html', keywords: '2007 폭력 시위 마비 시청 archive protest violence' },
-        { type: '아카이브', category: '특집', title: '[2007년 아카이브] 신세계 언론의 보도 행태', url: 'archive_2007_shinsegae_press.html', keywords: '2007 신세계 언론 보도 가짜뉴스 archive shinsegae press' },
-        { type: '아카이브', category: '특집', title: '[2010년 아카이브] 두청운수, 결국 최종 부도 처리', url: 'archive_2010_doocheong_bankruptcy.html', keywords: '2010 두청운수 부도 파산 파산 archive bankruptcy' },
-        { type: '아카이브', category: '특집', title: '[2011년 아카이브] 효빈 5호선, 우여곡절 끝 개통', url: 'archive_2011_line5_opening.html', keywords: '2011 5호선 개통 지하철 빨간색 archive line5 opening' },
+        { type: '아카이브', category: '특집', title: '갈색 벽에 막힌 골든타임... 14세 소년 등 시민 2명 도로 위에서 숨져', url: 'archive_2007_brown_winter.html', keywords: '2007 갈색 겨울 파업 두청운수 archive brown winter' },
+        { type: '아카이브', category: '특집', title: '상고를 기각한다... 대법원, 윤대환 시장 당선무효형 확정... 1년 10개월 폭정 종지부', url: 'archive_2007_final_verdict.html', keywords: '2007 판결 법원 두청운수 archive final verdict' },
+        { type: '아카이브', category: '특집', title: '거지 촌동네가 구걸질인가... 법원, 윤대환 시장 이웃 도시 모독 행정에 철퇴', url: 'archive_2007_legal_battle.html', keywords: '2007 법정 공방 재판 두청운수 archive legal battle' },
+        { type: '아카이브', category: '특집', title: '내 노동은 죄가 아니다... 5호선 중단 항의하던 노동자, 공사장서 숨진 채 발견', url: 'archive_2007_line5_tragedy.html', keywords: '2007 5호선 참사 지하철 사고 archive line5 tragedy' },
+        { type: '아카이브', category: '특집', title: '노 대통령, 효빈시 참사에 시민 생명을 이권과 바꾸는 자, 공직 자격 없다 격노', url: 'archive_2007_president_rebuke.html', keywords: '2007 대통령 질책 비판 두청운수 archive president rebuke' },
+        { type: '아카이브', category: '특집', title: '하얀 가운과 피 묻은 아스팔트... 시청 광장 용역 쇠파이프 난입에 아수라장', url: 'archive_2007_protest_violence.html', keywords: '2007 폭력 시위 마비 시청 archive protest violence' },
+        { type: '아카이브', category: '특집', title: '신세계 효빈점장 윤대환 시장은 쓰레기 이하... 터미널 정상화 안 되면 영업 중단', url: 'archive_2007_shinsegae_press.html', keywords: '2007 신세계 언론 보도 가짜뉴스 archive shinsegae press' },
+        { type: '아카이브', category: '특집', title: '갈색 제국의 몰락... 두청운수, 면허 취소 및 최종 파산 처리', url: 'archive_2010_doocheong_bankruptcy.html', keywords: '2010 두청운수 부도 파산 파산 archive bankruptcy' },
+        { type: '아카이브', category: '특집', title: '상처를 딛고 달린다... 효빈 5호선 전격 개통, 서구-탄성 30분 시대', url: 'archive_2011_line5_opening.html', keywords: '2011 5호선 개통 지하철 빨간색 archive line5 opening' },
 
         // --- 효빈시 주요 기사 ---
-        { type: '기사', category: '정치', title: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다', url: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html', keywords: '속보 박효빈 계엄 거부 공수부대' },
+        { type: '기사', category: '정치', title: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보', url: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html', keywords: '속보 박효빈 계엄 거부 공수부대' },
         { type: '기사', category: '정치', title: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진', url: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html', keywords: '여론조사 박효빈 지지율 고공행진' },
         { type: '기사', category: '정치', title: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다', url: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다.html', keywords: '강서구 용산 확인사살 기획' },
         { type: '기사', category: '정치', title: '효빈일보 - 윤재훈 선거법 고발 참사', url: '효빈일보 - 윤재훈 선거법 고발 참사.html', keywords: '윤재훈 고발 선거법' },
@@ -41,18 +41,60 @@
         { type: '기사', category: '정치', title: '효빈일보 박준서 입당 기사', url: '효빈일보 박준서 입당 기사.html', keywords: '박준서 입당' },
         { type: '기사', category: '정치', title: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당', url: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html', keywords: '부서원 탈당 국민의힘 보수 양심' },
         { type: '기사', category: '정치', title: '조병진 의원직 승계 기사', url: '조병진 승계 기사.html', keywords: '조병진 승계' },
-        { type: '기사', category: '문화', title: '효빈 명물 엠마빵, 하루 1만개 팔렸다', url: 'news_emma_bread.html', keywords: '엠마빵 엠마 베르데 빵지순례 emma bread' },
-        { type: '기사', category: '문화', title: '제1회 효빈 애니메이션 페스티벌(HAF) 개최', url: 'news_haf.html', keywords: 'haf 효빈 애니메이션 페스티벌 축제' },
-        { type: '기사', category: '문화', title: '일본 유명 성우, HAF 전격 방문', url: 'news_haf_seiyu_visit.html', keywords: 'haf 성우 방문 일본 애니메이션 seiyu visit' },
-        { type: '기사', category: '사회', title: '효빈대 학생들, 인간방패로 계엄군 막아내', url: 'news_univ_human_shield.html', keywords: '효빈대 인간방패 계엄군 민주주의 univ human shield' },
-        { type: '기사', category: '경제', title: '침체기 겪던 당가 상권, 화려한 부활', url: 'news_dangga_revival.html', keywords: '당가 상권 부활 도시재생 dangga revival' },
-        { type: '기사', category: '국제', title: '필리핀 갱단 연루 윤재훈, 필리핀서 심판받나', url: 'news_philippines.html', keywords: '필리핀 윤재훈 국제 갱단 피노이 프라이드 philippines' },
-        { type: '기사', category: '국제', title: '효빈시-퀘존시(필리핀), 자매결연 협약', url: 'news_quezon_city.html', keywords: '퀘존시 필리핀 자매결연 quezon city' },
-        { type: '기사', category: '사회', title: '[기획] 비 새는 단칸방... 박효빈 시장의 과거', url: 'news_park_past.html', keywords: '박효빈 과거 단칸방 기획 눈물 park past' },
-        { type: '기사', category: '사회', title: '효빈 종합버스터미널 새단장', url: 'news_bus_terminal.html', keywords: '버스터미널 교통 고속버스 bus terminal' },
+        { type: '기사', category: '문화', title: '그분은 경제학보다 인성 교육이 필요해... 日 성우, 빵 난동에 우아한 일침', url: 'news_emma_bread.html', keywords: '엠마빵 엠마 베르데 빵지순례 emma bread' },
+        { type: '기사', category: '문화', title: '[현장] 아시아의 아키하바라... 제16회 HAF 개막, 10만 인파에 효빈시 들썩', url: 'news_haf.html', keywords: 'haf 효빈 애니메이션 페스티벌 축제' },
+        { type: '기사', category: '문화', title: '이게 진짜 성지순례... HAF 2025, 韓日 성우 18인 효빈 도시철도 기습 방문에 대혼란', url: 'news_haf_seiyu_visit.html', keywords: 'haf 성우 방문 일본 애니메이션 seiyu visit' },
+        { type: '기사', category: '사회', title: '결식아동 빵에 침 뱉고 사가라 마유 폭행 시도... 효빈대생 3천 명 철벽 방어', url: 'news_univ_human_shield.html', keywords: '효빈대 인간방패 계엄군 민주주의 univ human shield' },
+        { type: '기사', category: '경제', title: '내 최애가 도시를 살렸다... 당가동 파스텔 블루 기적의 전말', url: 'news_dangga_revival.html', keywords: '당가 상권 부활 도시재생 dangga revival' },
+        { type: '기사', category: '국제', title: '[특파원] Don t touch our blood... 필리핀 피노이 프라이드, 윤재훈을 심판하다', url: 'news_philippines.html', keywords: '필리핀 윤재훈 국제 갱단 피노이 프라이드 philippines' },
+        { type: '기사', category: '국제', title: '필리핀의 아들 모욕하지 마라... 케손시티 시장, 효빈시에 자매결연 깜짝 제안', url: 'news_quezon_city.html', keywords: '퀘존시 필리핀 자매결연 quezon city' },
+        { type: '기사', category: '사회', title: '[기획] 비 새는 단칸방의 오타쿠, 효빈을 구하다... 박효빈 시장의 눈물 젖은 빵', url: 'news_park_past.html', keywords: '박효빈 과거 단칸방 기획 눈물 park past' },
+        { type: '기사', category: '사회', title: '[현장] 똥재훈 사건의 그곳... 효빈터미널, 전국 최초 래핑버스 성지 등극', url: 'news_bus_terminal.html', keywords: '버스터미널 교통 고속버스 bus terminal' },
         { type: '기사', category: '정치', title: '[단독] 2026 효빈시장 선거 여론조사', url: '[단독] 2026 효빈시장 선거 여론조사.html', keywords: '선거 여론조사 2026' },
         { type: '기사', category: '정치', title: '[지선 D-60] 2026 효빈시장 선거 대진표', url: '[지선 D-60] 2026 효빈시장 선거 대진표.html', keywords: '지방선거 대진표 효빈시장' },
-        
+        { type: '기사', category: '정치', title: '[선택 2025] 이재명, 제21대 대통령 당선 확정', url: '[선택 2025] 이재명, 제21대 대통령 당선.html', keywords: '이재명 대통령 당선 선거 2025' },
+        { type: '기사', category: '정치', title: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지', url: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html', keywords: '속보 윤석열 탄핵 가결 직무 정지' },
+        { type: '기사', category: '정치', title: '[속보] 헌재, 윤석열 탄핵 인용', url: '[속보] 헌재, 윤석열 탄핵 인용.html', keywords: '속보 헌재 윤석열 탄핵 인용' },
+        { type: '기사', category: '사회', title: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라', url: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html', keywords: '속보 계엄 해제 환호 민주주의 승리 반란군' },
+        { type: '기사', category: '정치', title: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보', url: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보.html', keywords: '속보 국회 비상계엄 해제 가결 최단기' },
+        { type: '기사', category: '사회', title: '윤석열 비상계엄 선포, 부정선거 주장', url: '윤석열 비상계엄 선포, 부정선거 주장.html', keywords: '윤석열 계엄 부정선거' },
+        { type: '기사', category: '사회', title: '[단독] 윤석열 구속 취소', url: '[단독] 윤석열 구속 취소.html', keywords: '윤석열 구속 취소 단독' },
+        { type: '기사', category: '사회', title: '[속보] 윤석열 전 대통령 구속', url: '[속보] 윤석열 전 대통령 구속.html', keywords: '속보 윤석열 구속' },
+        { type: '기사', category: '사회', title: '[속보] 윤석열 전 대통령 재구속', url: '[속보] 윤석열 전 대통령 재구속.html', keywords: '속보 윤석열 재구속' },
+        { type: '기사', category: '정치', title: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장', url: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장.html', keywords: '속보 탄핵안 정족수 미달 폐기 도주' },
+        { type: '기사', category: '사회', title: '윤석열 속옷저항 논란', url: '윤석열 속옷저항.html', keywords: '윤석열 속옷 저항' },
+        { type: '기사', category: '경제', title: '코스피 5000 돌파 속보 (2026년 1월 27일)', url: '코스피 5000 돌파 속보 (2026년 1월 27일).html', keywords: '코스피 5000 경제' },
+        { type: '기사', category: '정치', title: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보', url: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html', keywords: '속보 박효빈 계엄 거부 공수부대' },
+        { type: '기사', category: '정치', title: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진', url: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html', keywords: '여론조사 박효빈 지지율 고공행진' },
+        { type: '기사', category: '정치', title: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다', url: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다.html', keywords: '강서구 용산 확인사살 기획' },
+        { type: '기사', category: '정치', title: '효빈일보 - 윤재훈 선거법 고발 참사', url: '효빈일보 - 윤재훈 선거법 고발 참사.html', keywords: '윤재훈 고발 선거법' },
+        { type: '기사', category: '사회', title: '효빈일보 박효빈 시장 당가동 사건 기사', url: '효빈일보 박효빈 시장 당가동 사건 기사.html', keywords: '박효빈 당가동' },
+        { type: '기사', category: '사회', title: '효빈일보 악플 박제 기사', url: '효빈일보 악플 박제 기사.html', keywords: '악플 박제' },
+        { type: '기사', category: '정치', title: '효빈일보 곽두환 당선무효 기사', url: '효빈일보 곽두환 당선무효 기사.html', keywords: '곽두환 당선 무효' },
+        { type: '기사', category: '정치', title: '효빈일보 박준서 입당 기사', url: '효빈일보 박준서 입당 기사.html', keywords: '박준서 입당' },
+        { type: '기사', category: '정치', title: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당', url: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html', keywords: '부서원 탈당 국민의힘 보수 양심' },
+        { type: '기사', category: '정치', title: '조병진 의원직 승계 기사', url: '조병진 승계 기사.html', keywords: '조병진 승계' },
+        { type: '기사', category: '정치', title: '[단독] 2026 효빈시장 선거 여론조사', url: '[단독] 2026 효빈시장 선거 여론조사.html', keywords: '선거 여론조사 2026' },
+        { type: '기사', category: '정치', title: '[지선 D-60] 2026 효빈시장 선거 대진표', url: '[지선 D-60] 2026 효빈시장 선거 대진표.html', keywords: '지방선거 대진표 효빈시장' },
+        { type: '기사', category: '정치', title: '[현장] 이재명 대통령, 취임 후 첫 효빈 방문', url: '[현장] 이재명 대통령, 취임 후 첫 효빈 방문.html', keywords: '현장 이재명 효빈 방문 취임' },
+        { type: '기사', category: '정치', title: '[현장] 지총민 출마선언', url: '[현장] 지총민 출마선언.html', keywords: '지총민 출마 선언' },
+        { type: '기사', category: '정치', title: '김상욱 민주당 입당 속보 (2025년 5월 19일)', url: '김상욱 민주당 입당 속보 (2025년 5월 19일).html', keywords: '김상욱 민주당 입당' },
+        { type: '기사', category: '정치', title: '김상욱 탈당 속보 (2025년 5월 8일)', url: '김상욱 탈당 속보 (2025년 5월 8일).html', keywords: '김상욱 탈당' },
+        { type: '기사', category: '정치', title: '박효빈 재선 출마선언 기사', url: '박효빈 재선 출마선언 기사.html', keywords: '박효빈 재선 출마' },
+        { type: '기사', category: '정치', title: '유성민 출마선언 기사', url: '유성민 출마선언 기사.html', keywords: '유성민 출마' },
+        { type: '기사', category: '정치', title: '윤재훈 출마선언 기사', url: '윤재훈 출마선언 기사.html', keywords: '윤재훈 출마' },
+        { type: '기사', category: '정치', title: '이재명 대통령 지지율 속보', url: '이재명 대통령 지지율 속보.html', keywords: '이재명 지지율' },
+        { type: '기사', category: '사회', title: '효빈일보 과도한 탄압 논란 반박 기사', url: '효빈일보 과도한 탄압 논란 반박 기사.html', keywords: '탄압 논란 반박' },
+        { type: '기사', category: '사회', title: '효빈일보 당가동 새벽 방문 기사', url: '효빈일보 당가동 새벽 방문 기사.html', keywords: '당가동 방문' },
+        { type: '기사', category: '사회', title: '효빈일보 부시도 라이더 협박 기사', url: '효빈일보 부시도 라이더 협박 기사.html', keywords: '부시도 라이더 협박' },
+        { type: '기사', category: '정치', title: '효빈일보 서브컬처 정치 기획기사', url: '효빈일보 서브컬처 정치 기획기사.html', keywords: '서브컬처 정치 박효빈' },
+        { type: '기사', category: '행정', title: '효빈일보 행정우수사례 기사', url: '효빈일보 행정우수사례 기사.html', keywords: '행정우수사례 박효빈 효빈광역시 복지행정' },
+        { type: '기사', category: '사회', title: '[효빈일보] 제미나이 오인 사건 보도', url: '[효빈일보] 제미나이 오인 사건 보도.html', keywords: '제미나이 박효빈 윤석열 오인사건 하극상' },
+        { type: '기사', category: '사회', title: '[효빈일보] 제미나이 공식 사과 보도', url: '[효빈일보] 제미나이 공식 사과 보도.html', keywords: '제미나이 사과 구글코리아 박효빈 환각현상' },
+        { type: '기사', category: '사회', title: '[효빈일보] 윤석열 정부 대학생 멘토링 시급 삭감 실태 단독 보도', url: '[효빈일보] 윤석열 정부 대학생 멘토링 시급 삭감 실태 단독 보도.html', keywords: '멘토링 시급삭감 윤석열 1350원 한국장학재단' },
+        { type: '기사', category: '정치', title: '[효빈일보] 박효빈 시장 합법적 강도 비판', url: '[효빈일보] 박효빈 시장 합법적 강도 비판.html', keywords: '합법적강도 박효빈 시드머니 150만원 윤석열' },
+        { type: '기사', category: '오피니언', title: '1,350원의 눈물 외면한 중앙 언론, 청년의 내일은 뉴스가 되지 못하는가', url: '1,350원의 눈물 외면한 중앙 언론, 청년의 내일은 뉴스가 되지 못하는가.html', keywords: '언론비판 기레기 1350원 침묵 박효빈' },
+        { type: '기사', category: '정치', title: '[효빈일보] 전북 광역철도 대광법 반대 권영진 비판 기사', url: '[효빈일보] 전북 광역철도 대광법 반대 권영진 비판 기사.html', keywords: '대광법 권영진 전북광역철도 빈효선 박효빈' },
         // --- 구분 (카테고리 홈) ---
         { type: '구분', category: '안내', title: '효빈일보 홈', url: 'index.html', keywords: '메인 홈 표지 index 구분' },
         { type: '구분', category: '안내', title: '정치 뉴스 홈', url: 'politics.html', keywords: '정치 시정 시장 선거 politics 구분' },
@@ -62,10 +104,142 @@
         { type: '구분', category: '안내', title: '문화 뉴스 홈', url: 'culture.html', keywords: '문화 축제 애니메이션 굿즈 culture 구분' },
         { type: '구분', category: '안내', title: 'IT/과학 뉴스 홈', url: 'it.html', keywords: 'it 과학 기술 인터넷 사이버 it 구분' },
         { type: '구분', category: '안내', title: '오피니언 홈', url: 'opinion.html', keywords: '오피니언 사설 칼럼 기고 opinion 구분' },
-        { type: '구분', category: '안내', title: '포토 뉴스 홈', url: 'photo.html', keywords: '포토 사진 화보 현장 photo 구분' },
-        { type: '구분', category: '안내', title: '전체 기사 목록', url: 'news_list.html', keywords: '뉴스 목록 전체 news list' }
-    ];
+        { type: '구분', category: '안내', title: '포토 뉴스 홈', url: 'photo.html', keywords: '포토 사진 화보 현장 photo 구분' },       
+         { type: '구분', category: '안내', title: '서진일보 사설', url: '서진일보 사설.html', keywords: '서진일보 사설 오피니언' },
+        { type: '구분', category: '안내', title: '전체 기사 목록', url: 'news_list.html', keywords: '뉴스 목록 전체 news list' }, {
+    id: "ARCH-2006-001",
+    type: "정치",
+    date: "2006.06.01",
+    title: "[속보] 효빈시장 개표 100%... 윤대환, 단 3표 차이로 당선 확정",
+    url: "news_2006_election_result.html",
+    keywords: "윤대환 박현만 3표차 당선 개표결과 6호선백지화",
+    summary: "단 3표 차이로 가른 효빈의 운명. 윤대환 당선과 함께 효빈의 철도 르네상스가 멈추다."
+  },
+  {
+    id: "ARCH-2006-002",
+    type: "정치",
+    date: "2006.10.25",
+    title: "\"내가 아니라 무능한 박현만 탓\"... 지총민, 적반하장 기자회견에 효빈 민심 '폭발'",
+    url: "news_ji_chongmin_press.html",
+    keywords: "지총민 망언 박현만탓 단일화실패 3표도둑",
+    summary: "선거 패배의 책임을 박현만에게 전가한 지총민 전 후보의 뻔뻔한 기자회견 보도."
+  },
 
+  // --- 2007년: 효빈의 붉은 겨울과 시민의 고통 ---
+  {
+    id: "ARCH-2007-001",
+    type: "사회",
+    date: "2007.01.13",
+    title: "\"골든타임 막은 갈색 버스의 벽\"... 尹 '교통 효율화'가 앗아간 두 생명",
+    url: "news_2007_ambulance_tragedy.html",
+    keywords: "구급차고립 14세소년사망 두청운수 갈색버스 가축수송",
+    summary: "철도 감축과 버스 독점이 불러온 비극. 구급차를 가로막은 두청운수 버스로 인해 시민 2명 사망."
+  },
+  {
+    id: "ARCH-2007-002",
+    type: "사회",
+    date: "2007.01.14",
+    date_detail: "2007.01.14 10:30",
+    title: "\"환자가 원래 위독했던 탓\"... 윤대환, 구급차 참사 유가족 앞 '악마의 망언'",
+    url: "news_yoon_ambulance_remark.html",
+    keywords: "윤대환망언 유가족모독 전차궤도탓 악플러고소",
+    summary: "사망 참사의 책임을 희생자에게 돌린 윤대환 시장의 망언 브리핑 및 시민들의 분노."
+  },
+  {
+    id: "ARCH-2007-003",
+    type: "사회",
+    date: "2007.02.15",
+    title: "\"감히 내게 악플을?\" 윤대환, 비판 시민 무더기 고소... 시청 지하실서 초등학생 아들이 조롱까지",
+    url: "news_yoon_defamation_lawsuit.html",
+    keywords: "윤대환고소 시청지하실조사실 윤재훈조롱 학폭루머",
+    summary: "비판 댓글을 단 시민들을 시청 지하실로 소환해 조롱하고 협박한 사상 초유의 공권력 남용 사건."
+  },
+  {
+    id: "ARCH-2007-004",
+    type: "정치",
+    date: "2007.07.12",
+    title: "\"제 욕심이 철길을 끊었습니다\" 서무련, 빗속 108배 사죄... '3표 비극' 짊어지다",
+    url: "news_seo_mooryun_apology.html",
+    keywords: "서무련 108배사죄 빗속의참회 정계은퇴 결자해지",
+    summary: "표 분산의 책임을 통감하고 빗속에서 시민들에게 사죄한 서무련 후보의 결단."
+  },
+  {
+    id: "ARCH-2007-005",
+    type: "정치",
+    date: "2007.10.27",
+    title: "\"지총민 지적이 맞다, 내 탓이오\"... 박현만, 남 탓 대신 '대인(大人)의 사과'",
+    url: "news_park_hyunman_apology.html",
+    keywords: "박현만사과 내탓이오 대인의품격 결집의시작",
+    summary: "모든 것을 자신의 탓으로 돌리며 시민들의 마음을 하나로 모은 박현만 전 시장의 역사적 사과."
+  },
+
+  // --- 2023년 ~ 2025년: 윤석열 정권과의 투쟁 ---
+  {
+    id: "ARCH-2023-001",
+    type: "정치",
+    date: "2023.03.02",
+    title: "물가는 뛰는데 청년 시급은 '역주행'... 尹 정부, 대학생 멘토링 예산 '꼼수 삭감' 실태",
+    url: "news_tutoring_wage_cut.html",
+    keywords: "튜터링시급삭감 1350원삭감 한국장학재단 청년자립붕괴",
+    summary: "2023년 단행된 멘토링 시급 삭감 사태의 실태를 파헤친 단독 보도."
+  },
+  {
+    id: "ARCH-2023-002",
+    type: "정치",
+    date: "2023.04.14",
+    title: "박효빈 시장, \"청년 시드머니 150만 원 뺏은 건 합법적 강도\"... 尹 정부 직격",
+    url: "news_park_robbery.html",
+    keywords: "박효빈 시장 합법적강도 시드머니150만원 관저찜질방",
+    summary: "청년들의 자립 자금을 탈취한 정부를 '강도'에 비유하며 비판한 박효빈 시장의 일침."
+  },
+  {
+    id: "ARCH-2023-003",
+    type: "오피니언",
+    date: "2023.04.17",
+    title: "'1,350원'의 눈물 외면한 중앙 언론, 청년의 내일은 뉴스가 되지 못하는가",
+    url: "news_media_critique.html",
+    keywords: "언론비판 기레기 침묵의카르텔 1350원의눈물",
+    summary: "청년들의 피해에는 입을 다물고 권력의 심기만 경호하는 중앙 언론을 향한 칼럼."
+  },
+  {
+    id: "ARCH-2025-001",
+    type: "정치",
+    date: "2025.02.12",
+    title: "전북 광역철도 '대광법' 가로막은 권영진... \"제주는 어쩌고\" 황당 논리 도마 위",
+    url: "news_daegwang_act.html",
+    keywords: "대광법 권영진 전북패싱 해저터널이나뚫어라",
+    summary: "전북의 철도 이동권을 가로막은 권영진 의원의 궤변과 이에 대한 박효빈 시장의 분노."
+  },
+
+  // --- 2026년: 현재와 기록의 보존 ---
+  {
+    id: "ARCH-2026-001",
+    type: "사회/IT",
+    date: "2026.04.11",
+    title: "\"청년 시장 그려달랬더니 웬...\" AI 제미나이, 박효빈 시장 취임식에 '윤석열 사진' 뱉어내 대참사",
+    url: "news_gemini_error.html",
+    keywords: "제미나이오류 박효빈 윤석열 하극상 대파금지",
+    summary: "구글 AI 제미나이가 박효빈 시장 취임식 요청에 엉뚱한 사진을 생성해 발생한 해프닝."
+  },
+  {
+    id: "ARCH-2026-002",
+    type: "사회/IT",
+    date: "2026.04.13",
+    title: "\"제가 미쳤었나 봅니다\" 제미나이, 박효빈 시장에 공식 사과... 구글코리아 시청 '진땀' 방문",
+    url: "news_gemini_apology.html",
+    keywords: "제미나이사과 구글코리아 박효빈 파불고기부활",
+    summary: "AI의 오류를 인정하고 시장을 직접 방문해 고개를 숙인 구글코리아의 공식 사과 보도."
+  },
+  {
+    id: "ARCH-2026-003",
+    type: "정치",
+    date: "2026.04.16",
+    title: "단 3표가 가른 효빈의 운명... '사죄' 택한 서무련과 '남 탓' 지총민의 엇갈린 최후",
+    url: "news_2006_election_aftermath.html",
+    keywords: "서무련 지총민 최후비교 3표의비극 역사적각성",
+    summary: "2006년 선거 이후 두 후보의 삶을 통해 본 정치인의 성찰과 파멸에 대한 기획 기사."
+  }
+    ];
     // ==========================================
     // 2. 코어 전용 독립 CSS (원래 HTML의 CSS를 완벽히 무시하고 덮어씀)
     // ==========================================

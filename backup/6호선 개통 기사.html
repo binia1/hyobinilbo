@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[현장] "잃어버린 5년, 마침내 보라색 궤도가 달린다!" 효빈 6호선 전면 개통 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .article-body del { color: #999; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 (가상) -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">사회 > 교통/인프라</div>
+                <h2 class="article-title">[현장] "잃어버린 5년, 마침내 보라색 궤도가 달린다!" 효빈 6호선 전면 개통</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">사회부 박기자</span> (park_news@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2016.04.04. 10:00 | 수정 2016.07.10. 15:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">2007년 윤대환 전 시장의 '설계도 파쇄' 딛고 9년 만의 결실<br>마잡역 ~ 고송나루역 구간 운행 시작... "갈색 버스의 횡포 이제 끝"<br>경전철 논란 딛고 중형 6량으로 타협 개통... (이후 폭발적 수요로 3개월 만에 7량 긴급 증결)</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/6호선_개통식.png" alt="효빈 도시철도 6호선 개통식 현장" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/881188/FFFFFF?text=Hyobin+Metro+Line+6+Opening'">
+                        <div class="img-caption">▲ 3일 오전, <a href="마잡역.html">마잡역</a>에서 열린 <a href="효빈 도시철도 6호선.html"><span style="color:#881188; font-weight:bold;">효빈 도시철도 6호선</span></a> 개통식에서 효빈교통공사 6000호대 전동차가 테이프 컷팅과 함께 플랫폼을 빠져나가고 있다. 시민들의 염원이 담긴 보라색 전동차가 잃어버린 5년의 시간을 뚫고 힘차게 출발했다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>"그는 효빈의 현재뿐만 아니라, 6호선이라는 미래까지 태워버린 방화범이었습니다. 하지만 우리는 결국 잿더미 속에서 이 보라색 궤도를 다시 깔았습니다!"</p>
+                    
+                    <p>3일 오전, <a href="마잡역.html">마잡역</a>에서 열린 개통식에서 한 시민 대표의 연설에 현장은 눈물바다가 되었다. 2007년 11월 10일 밤, 당시 <a href="윤대환.html">윤대환</a> 전 시장이 시청 지하 소각장에서 저질렀던 전대미문의 '6호선 설계도 파쇄 사건' 이후 무려 9년 만에 맞이하는 <a href="효빈 도시철도 6호선.html"><span style="color:#881188; font-weight:bold;">효빈 6호선</span></a>의 정식 개통일이었다.</p>
+
+                    <p>이번에 개통한 노선은 청엽구 <a href="마잡역.html">마잡역</a>을 기점으로 동구 <a href="가동사거리역.html">가동사거리역</a>을 거쳐 북구 <a href="고송나루역.html">고송나루역</a>에 이르는 21.61km 구간이다. (단, 공사 지연으로 <a href="시청역.html">시청역</a>은 올 9월, <a href="전덕역.html">전덕역</a>은 2021년 개통 예정)</p>
+
+                    <div class="quote-box">
+                        <strong>"전철 없어야 내 갈색 버스가 산다" 며 불태웠던 과거, 시민의 승리로 끝나다</strong><br><br>
+                        원래 계획대로라면 2011년에 개통했어야 할 6호선은, 자신의 일가인 '두청운수'에 7,000원짜리 버스 요금 독점권을 쥐여주려던 윤 전 시장의 광기 어린 방해로 5년이나 지연되었다. 기초 지질 조사 데이터부터 수십억 원어치의 설계도가 소각장 연기로 사라졌고, 그 피해는 고스란히 고송신도시와 중수지구 주민들의 극심한 교통 체증으로 돌아갔다.
+                    </div>
+
+                    <p>그러나 2008년 <a href="박현만.html">박현만</a> 시장 취임 이후 사업이 재개되었다. 이 과정에서 윤대환계 잔존 세력이 "수요가 적다"며 억지로 경전철로 축소하려 했으나, 박 시장과 효빈시청은 폭발적인 잠재 수요를 예측해 이를 단호히 반려했다.</p>
+                    
+                    <p>결국 <a href="효빈교통공사.html">효빈교통공사</a>는 반대파와 타협하는 듯한 모양새를 취하며 중형 중전철(6000호대 전동차) 6량 1편성으로 절충안을 도입했다. 하지만 개통 첫날부터 발 디딜 틈 없이 꽉 찬 객차를 본 전문가들은 "만약 경전철로 지었다면 개통 첫날부터 지옥철이 되어 마비됐을 것"이라며 가슴을 쓸어내렸다.<br>
+                    <span class="text-sm text-[#0055aa] font-bold">※ 취재팀 덧붙임(2016.07.10): 개통 직후 예측을 아득히 뛰어넘는 폭발적인 수요가 몰리면서, 6호선은 개통 불과 3개월 만에 1량을 긴급 증결하여 현재의 7량 1편성 체제로 운행 중이다.</span></p>
+
+                    <p>6호선의 상징색은 상상력을 의미하는 <strong>보라색(#881188)</strong>이다. 6호선의 개통으로 극악의 혼잡도를 자랑하던 <a href="효빈 도시철도 2호선.html"><span style="color:#00CCAA; font-weight:bold;">2호선</span></a> 중수-고송 구간과 <a href="효빈 도시철도 3호선.html"><span style="color:#FFCC11; font-weight:bold;">3호선</span></a> 청엽-고송 구간의 숨통이 트일 전망이다. 특히 <a href="북구청역.html">북구청역</a>에서 <a href="중수역.html">중수역</a>으로 이동하기 위해 버스나 빙 돌아가는 환승을 강요받던 시민들은 "10분이면 갈 거리를 5년 동안 돌아갔다"며 감격을 감추지 못했다.</p>
+
+                    <p>개통 첫날, 마잡역 승강장에는 휠체어를 탄 어르신부터 교복을 입은 학생들까지 수많은 시민이 모여 보라색 전동차와 기념사진을 찍었다. 윤대환의 검은 연기가 빼앗아 갔던 효빈의 5년이, 마침내 희망의 보라색 궤도를 타고 힘차게 앞으로 나아가기 시작했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">12,854</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 도시철도 6호선 개통!</div>
+                    <div class="text-xs text-purple-600 font-bold mb-2">상상력의 보라색, 효빈을 잇다</div>
+                    <div class="text-[10px] text-gray-500">효빈교통공사</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Gosong_Citizen", time: "방금 전", like: 15420, dislike: 12, isPunished: false,
+                content: "어제 <a href='고송나루역.html'>고송나루역</a>에서 첫차 타는데 진짜 눈물 나더라... 그동안 <a href='두청운수.html'>두청운수</a> 똥차 버스 타면서 만원 버스에 짐짝처럼 구겨지던 5년의 세월이 스쳐 지나감. 윤대환 개X끼 ㅠㅠㅠㅠ",
+                replies: [
+                    { nick: "Line2_Survivor", content: "ㄹㅇ ㅋㅋㅋ <a href='효빈 도시철도 2호선.html'><span style='color:#00CCAA; font-weight:bold;'>2호선</span></a> 중수역 혼잡도 토 나올 뻔했는데 이제야 사람답게 출근하겠네" },
+                    { nick: "Bus_Hater", content: "7000원 삥뜯던 갈색 버스 이제 아무도 안 타쥬? 망해라 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Train_Expert", time: "5분 전", like: 12100, dislike: 30, isPunished: false,
+                content: "경전철로 지으려다 중형 6량으로 타협 본 거 진짜 신의 한 수다. 오늘 아침 출근길 보니까 6량도 벌써부터 꽉꽉 들어차던데, 윤대환 끄나풀들 말 듣고 경전철 지었으면 오늘 당장 유리창 다 깨지고 마비됐을 듯 ㄷㄷ 이 속도면 조만간 1량 더 증량해야 할 것 같은데?",
+                replies: [
+                    { nick: "City_Planner", content: "ㅇㅈ 고송신도시랑 중수지구 인구가 얼만데 거기를 경전철로 퉁치려고 했음 ㅋㅋㅋ 진짜 도시 망칠 뻔" },
+                    { nick: "Line1_Lover", content: "앞으로 효빈교통공사 최대 밥줄 노선 예약이요~" }
+                ]
+            },
+            {
+                nick: "Yoon_Is_God", time: "12분 전", like: 5, dislike: 21300, isPunished: true,
+                content: "이 불법적인 보라색 쇳덩어리는 당장 운행을 멈춰라!! 우리 위대하신 윤대환 아버지께서 남구와 북구의 쾌적한 버스 환경을 위해 손수 설계도를 폐기하시는 결단을 내리셨거늘!! 6호선 타는 놈들은 다 빨갱이다!! 탕탕!!",
+                replies: [
+                    { nick: "Fact_Check", content: "응 니네 아버지 빵에 있어 ㅋㅋㅋ 2.1% 잼민아 가서 장난감 총이나 갖고 놀아라" },
+                    { nick: "Namgu_Resident", content: "쾌적한 버스 환경 같은 소리 하네 ㅋㅋㅋ 두청운수 문짝 떨어져 나가는 똥차에 75명씩 태우던 게 쾌적이냐?" },
+                    { nick: "Police_Officer", content: "윤재훈씨 아이피 추적 다 됩니다. 조용히 사십쇼." },
+                    { nick: "YoonJaehoon(IP)", content: "조작이다!! 좌파 언론의 선동이다!! 내 펀드 5천만 원으로 너희를 다 묻어버릴 것이다!!" }
+                ]
+            },
+            {
+                nick: "Transfer_Master", time: "18분 전", like: 9800, dislike: 15, isPunished: false,
+                content: "<a href='덕현역.html'>덕현역</a>이랑 <a href='오내사거리역.html'>오내사거리역</a> 환승 설계 진짜 예술임. 옛날엔 북구청에서 청엽구 쪽으로 가려면 <a href='입희역.html'>입희역</a>까지 빙 돌아서 가야 했는데 이제 그냥 직선으로 꽂아버리네 ㅋㅋㅋ 삶의 질 수직 상승!!",
+                replies: [
+                    { nick: "Onae_Resident", content: "철도 음영지역이던 오내동에 역 2개나 생김 ㅠㅠ 빛현만 ㅠㅠ" },
+                    { nick: "Cheongyeop_Guy", content: "<a href='마잡역.html'>마잡역</a>에서 1호선 환승도 개꿀임." }
+                ]
+            },
+            {
+                nick: "Hyobin_Univ_15", time: "25분 전", like: 8500, dislike: 42, isPunished: false,
+                content: "와 6호선 노선도랑 역 디자인 너무 예뻐요! ㅠㅠ 보라색 코드 #881188 완전 씹덕 취향 저격... 나중에 제가 시장 되면 효빈시를 진짜 철도랑 서브컬처의 성지로 만들어버리고 싶네요 ㅋㅋㅋ 에휴 그냥 대학생의 망상입니다 ㅋㅋ 중간고사나 공부해야지...",
+                replies: [
+                    { nick: "Realist", content: "학생... 꿈이 큰 건 좋은데 시장이 개나 소나 하는 건 줄 아냐 ㅋㅋㅋ" },
+                    { nick: "Nerd_Bro", content: "야 나도 너 찍어준다 ㅋㅋㅋㅋ 오타쿠 시장 나오면 꿀잼일 듯" },
+                    { nick: "Future_Sight", content: "(성지순례) 이 댓글은 10년 뒤 전설이 됩니다." },
+                    { nick: "Subculture_Fan", content: "보라색 #881188... 미나토 유키나 색깔이네? 님 뱅드림 좀 보심? ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Ji_Chong_Min_Fan", time: "30분 전", like: 3, dislike: 18500, isPunished: true,
+                content: "이딴 쓸모없는 지하철 파느라 우리 고귀한 효빈시의 정기가 다 빠져나가고 있다!! 2006년 영광스러운 12%의 지도자 지총민 사령관님이 계셨다면 진작에 이런 낭비는 막으셨을 것이다!! 박현만은 당장 사퇴하라!!",
+                replies: [
+                    { nick: "Fact_Check", content: "할아버지, 지하철 뚫리니까 공기 좋고 쾌적하잖아요. 제발 경로 우대권으로 <a href='효빈 도시철도 1호선.html'><span style='color:#0077DD; font-weight:bold;'>1호선</span></a> 타고 온천이나 다녀오세요." },
+                    { nick: "Gosiwon_Owner", content: "아저씨 고시원 방값 6개월 밀렸으니까 당장 방 빼요." },
+                    { nick: "Yoon_Secret_Account", content: "틀딱 놈아 꺼져라 효빈의 우파 사령관은 오직 나 윤재훈뿐이다!! 탕탕!!" }
+                ]
+            },
+            {
+                nick: "City_Hall_Insider", time: "40분 전", like: 7600, dislike: 10, isPunished: false,
+                content: "2007년에 시청 지하 소각장에서 파쇄기 과열될 때까지 서류 갈아버리던 거 제가 직접 봤습니다. 진짜 검은 연기 뿜어져 나올 때 나라 망하는 줄 알았어요. 9년 만에 개통된 거 보니까 진짜 울컥하네요. 정의는 승리합니다.",
+                replies: [
+                    { nick: "Tears_of_Joy", content: "진짜 진시황 분서갱유급 폭거였음... 고생하셨습니다 ㅠㅠ" },
+                    { nick: "Hanbada_Fan", content: "그때 지하 창고에 갇혀있던 우리 마스코트 한바다는 얼마나 무서웠을까 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "Line3_Hater", time: "50분 전", like: 6200, dislike: 15, isPunished: false,
+                content: "솔직히 <a href='효빈 도시철도 3호선.html'><span style='color:#FFCC11; font-weight:bold;'>3호선</span></a> 청엽~고송 구간 출퇴근 시간에 타면 압사당할 거 같았는데, 6호선 생기고 나서 사람 확 줄었음. 진짜 혈압약 끊어도 될 듯 ㅋㅋㅋ 6호선은 신이다.",
+                replies: [
+                    { nick: "Line6_Rider", content: "근데 6호선도 지금 사람 미어터짐 ㅋㅋㅋㅋ 효빈교통공사 싱글벙글 하는 소리 들린다" },
+                    { nick: "Finance_Dept", content: "효빈교통공사 올해 흑자 전환 각 ㅋㅋㅋㅋ" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${reply.nick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+</body>
+</html>

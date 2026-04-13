@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회/사건] "골든타임 막은 갈색 버스의 벽"... 尹 '교통 효율화'가 앗아간 두 생명 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 */
+        .strike { text-decoration: line-through; color: #888; }
+        .archive-badge { background-color: #333; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header">
+        <div id="common-header"></div>
+        </div>
+    </div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <span class="archive-badge">과거 기사 디지털 아카이브 (2026.04.12 디지털화)</span>
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 사건사고</div>
+                <h2 class="article-title">"골든타임 막은 갈색 버스의 벽"... 尹 '교통 효율화'가 앗아간 두 생명</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김사회 기자</span> (social@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2007.01.13. 10:20 | 수정 2007.01.13. 11:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">12일 퇴근길 남구-중구 간선도로서 구급차 고립... 14세 천식 환자·50대 추락 인부 끝내 사망<br>지하철·전차 30% 감축 후 도로 점령한 '두청운수' 버스들, 사이렌 울려도 진로 방해<br>구급대원 "버스 3중으로 막혀 갓길조차 없었다... 기사는 창문 열고 담배만 피워"<br>윤대환 시장 "도로 좁은 탓, 전차 궤도 걷어내야" 망언... 유가족·시민 분노 임계점 돌파</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/구급차_갈색버스.png" alt="갈색 버스에 가로막힌 구급차" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Ambulance+Blocked+by+Brown+Buses'">
+                        <div class="img-caption">▲ 12일 오후 6시 40분경, 남구와 중구를 잇는 주간선도로에서 환자를 싣고 병원으로 향하던 구급차가 두청운수 소속 갈색 버스들에 갇혀 오도 가도 못하고 있다. 이 고립된 40분의 시간 동안 구급차 안의 두 생명은 끝내 숨을 거뒀다. (독자 제보 영상 갈무리)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김사회 기자] "제발 길 좀 터주세요! 아이가 숨을 못 쉽니다!" 구급대원의 피맺힌 절규는 무심한 버스 엔진 소리에 묻혀버렸다. <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 시장의 무리한 '교통 효율화(철도 감축)' 정책으로 빚어진 사상 최악의 교통 대란 속에서, 생사를 다투던 무고한 시민 두 명이 차디찬 구급차 안에서 목숨을 잃는 비극이 발생했다.</p>
+
+                    <p>사건은 12일 오후 6시경 남구에서 중구로 향하는 주간선도로에서 발생했다. 당시 도로는 윤대환 시장 취임 이후 지하철과 전차 운행이 30% 감축되면서 쏟아져 나온 승용차들과, 특정 노선을 독점하다시피 한 '두청운수'의 갈색 버스들이 뒤엉켜 거대한 주차장을 방불케 했다.</p>
+
+                    <p>오후 6시 40분, 학교에서 중증 천식 발작을 일으킨 14세 김 모 군을 태운 구급차가 현장에 갇혔다. 사이렌을 울리며 필사적으로 진입을 시도했지만, 3차선 도로를 나란히 점거한 두청운수 소속 버스 세 대는 미동도 하지 않았다. 현장 구급대원은 "갓길조차 버스들이 꼬리를 물고 있어 진입이 불가능했다"며, "앞차 기사에게 창문을 두드리며 비켜달라고 애원했지만, 기사는 창문을 내리고 담배꽁초만 튕길 뿐 길을 열어주지 않았다"고 분통을 터뜨렸다.</p>
+
+                    <p>결국 병원을 불과 500m 앞두고 도로 위에 40분간 갇혀 있던 김 군은 구급차 안에서 심정지를 일으켜 사망했다. 비극은 여기서 끝나지 않았다. 같은 시각, 인근 공사장에서 추락해 과다출혈 상태로 이송 중이던 50대 일용직 노동자 박 모 씨를 태운 또 다른 구급차 역시 이 '갈색 버스의 벽'에 막혀 골든타임을 놓치고 쇼크사하는 참사가 연이어 발생했다.</p>
+
+                    <div class="my-6">
+                        <img src="이미지/윤대환_망언브리핑.png" alt="기자회견 중인 윤대환 시장" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Yoon+Dae-hwan+Briefing'">
+                        <div class="img-caption">▲ 13일 오전 시청 브리핑룸에서 윤대환 시장이 전날 발생한 구급차 고립 사망 사건과 관련해 "도로가 좁아서 생긴 일"이라며 전차 궤도 철거를 주장하는 망언을 쏟아내고 있다.</div>
+                    </div>
+
+                    <p>두 명의 소중한 생명이 억울하게 희생된 이 참사 앞에서, 행정 책임자인 윤대환 시장이 보인 태도는 시민들의 슬픔을 경악과 분노로 바꾸어 놓았다.</p>
+
+                    <p>윤 시장은 13일 오전 긴급 브리핑에서 유가족에 대한 사과 대신 **"도로가 좁아서 생긴 불상사다. 이번 일을 교훈 삼아 차선을 갉아먹는 낡은 전차 궤도를 하루빨리 걷어내고 버스 전용 차로를 넓혀야 한다"**는 망언을 쏟아냈다. 자신이 철도를 감축해 교통량을 폭증시키고, 일가 기업인 두청운수에 노선 독점을 몰아주어 발생한 참사를 오히려 눈엣가시 같던 구 <a href="전차7호선.html" class="text-blue-600 underline">전차(7호선)</a> 폐지의 명분으로 악용하려는 섬뜩한 속내를 드러낸 것이다.</p>
+
+                    <p>유가족과 시민단체의 분노는 임계점을 돌파했다. 김 군의 유가족은 "내 자식을 죽인 건 천식이 아니라 시장의 탐욕과 저 저주스러운 갈색 똥차들"이라며 시청 앞에서 오열했다. 시민들 사이에서는 두청운수의 횡포에 대한 제보가 빗발치고 있다. "윤 시장이 '버스가 우선'이라며 두청운수 기사들의 불법 운전을 비호해왔기에, 사이렌을 무시하고 담배를 피우는 괴물들이 탄생한 것"이라는 지적이 지배적이다.</p>
+
+                    <p>"수익성 없는 공공재는 죄악"이라는 삐뚤어진 철학이 지배하는 2007년 1월의 효빈. 거리를 점령한 갈색 버스들의 굉음 속에서, 시민의 생명이라는 가장 소중한 공공재가 무참히 짓밟히고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 (2026년 기준 아카이브 반응) -->
+            <div class="comment-section">
+                <div class="comment-header mb-4">
+                    <span class="text-lg font-bold text-red-600">[복원됨] 2007년 1월 13일 기사 송고 직후 실시간 반응</span>
+                    <span class="text-xs text-gray-500 ml-2 font-normal">(사건 다음 날 당시 댓글)</span>
+                </div>
+                <div class="comment-list-container mb-12" id="comment-list-2007"></div>
+
+                <div class="comment-header mt-8 border-t-2 border-gray-200 pt-6">
+                    아카이브 네티즌 반응 <span class="text-[#0055aa]" id="comment-count">42,591</span>
+                    <span class="text-xs text-gray-500 ml-2 font-normal">(현재 시간: 2026년 기준 성지순례)</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list"></div>
+                <script>
+                    const commentsData2007 = [
+                        {
+                            nick: "Hyobin_Mom", time: "2007.01.13 10:25", like: 12520, dislike: 14, isPunished: false,
+                            content: "우리 애가 딱 저 나이인데 기사 읽다가 손이 떨려서 눈물이 납니다... 구급차 사이렌이 울리는데 담배 피우면서 안 비켜준 갈색 버스 기사는 살인자나 다름없습니다. 제발 천벌을 받기를...",
+                            replies: [
+                                { nick: "Angry_Student", content: "두청운수 새끼들 시장 빽 믿고 도로에서 완전 조폭처럼 운전함. 진짜 버스에 불 지르고 싶다 개새끼들" }
+                            ]
+                        },
+                        {
+                            nick: "Line6_Waiting", time: "2007.01.13 10:32", like: 9400, dislike: 22, isPunished: false,
+                            content: "애초에 기차랑 지하철 배차 줄여서 사람들 억지로 버스로 내몰더니, 결국 차가 꽉 막혀서 사람이 죽었네요. 그래놓고 뭐? 전차를 걷어내? 이 악마 새끼 진짜 탄핵 못 시킵니까?",
+                            replies: []
+                        },
+                        {
+                            nick: "Yoon_Guard", time: "2007.01.13 10:45", like: 12, dislike: 18800, isPunished: true,
+                            content: "구급차가 늦은 건 안타깝지만 윤대환 시장님 말씀대로 낡은 전차 철길이 차선을 잡아먹어서 생긴 구조적 문제입니다! 흉물스러운 전차를 빨리 폐지하는 게 정답입니다!",
+                            replies: [
+                                { nick: "Furious_Citizen", content: "야 이 미친 알바 새끼야 ㅋㅋㅋㅋ 애가 죽었는데 철길 탓을 해? 철길 없앴으면 니네 두청운수 버스가 두 줄로 서서 막았겠지 악마 새끼들아 당장 시청 앞으로 나와라" }
+                            ]
+                        },
+                        {
+                            nick: "Regret_Voter_Ji", time: "2007.01.13 10:55", like: 8400, dislike: 18, isPunished: false,
+                            content: "지총민 찍었던 내 손가락을 자르고 싶다... 내 1표가 저런 악마를 당선시켜서 애가 죽었어... 미안하다 얘야 어른들이 멍청해서...",
+                            replies: [
+                                { nick: "Realist", content: "이제 후회하면 뭐합니까. 애는 죽었고, 우리는 계속 7000원짜리 저 똥차 타고 다녀야 하는데." }
+                            ]
+                        }
+                    ];
+
+                    const commentsData = [
+                        {
+                            nick: "History_Watcher", time: "방금 전", like: 98200, dislike: 14, isPunished: false,
+                            content: "성지순례 왔습니다. 2007년 '효빈의 붉은 겨울'의 도화선이 된 그 끔찍한 사건... 이 기사 뜨고 며칠 뒤에 5호선 인부 자살 사건까지 터지면서 시민들 인내심이 완전 끊어졌었죠. 진짜 저 갈색 버스 사진만 봐도 트라우마 옴 ㅠㅠ",
+                            replies: [
+                                { nick: "Fact_Check", content: "박효빈 시장님이 취임하시고 '긴급차량 우선 신호 시스템' 전면 도입하실 때 이 14살 소년 이야기하시면서 우셨음 ㅠㅠ 다신 이런 일 없게 하겠다고..." },
+                                { nick: "Hyobin_Pride", content: "윤대환 저 악마 새끼는 자기 배 불리려고 애 죽은 걸 전차 철거 핑계로 썼지. 진짜 능지처참을 해도 모자랄 놈." }
+                            ]
+                        },
+                        {
+                            nick: "Free_Isaiah", time: "5분 전", like: 12, dislike: 99000, isPunished: true,
+                            content: "효빈의 자유를 억압하는 좌파 선동 기사입니다!! 저 당시 교통 혼잡은 무능한 박현만이 남긴 적폐 때문이었고, 윤대환 시장님은 그것을 해결하려 하셨을 뿐입니다!!",
+                            replies: [
+                                { nick: "Normal_Student", content: "어휴 <a href='이차야.html' class='text-blue-500 underline'>이차야</a> 넌 진짜 사람이냐? 애가 죽은 기사에 와서까지 쉴드치네. 전북대 에타에서도 사람 취급 못 받으면서 왜 자꾸 기어 나와 ㅋㅋㅋㅋ" },
+                                { nick: "Subway_Driver", content: "해결은 개뿔 ㅋㅋㅋ 구급차 막고 담배 피우던 두청운수 기사 새끼가 니네 윤대환의 본모습이다. 니가 숨 못 쉬어서 구급차 탔는데 갈색 버스에 갇혀봐야 정신 차리지" }
+                            ]
+                        },
+                        {
+                            nick: "Free_Yoon_Daehwan", time: "8분 전", like: 8, dislike: 95000, isPunished: true,
+                            content: "위대한 윤대환 시장님 만세!! 두청운수는 효빈의 핏줄이었습니다!! 전차라는 흉물을 비호하는 세력들이 구급차를 고의로 막은 겁니다!!",
+                            replies: [
+                                { nick: "Logic_Destroyer", content: "와 씨발 진짜 종교다 종교 ㅋㅋㅋㅋ 영상에 두청운수 버스가 길막하고 있는 게 떡하니 찍혔는데 전차 비호 세력이 막아? 빵에 침 뱉다 걸린 니네 장군님 뇌피셜이냐? ㅋㅋㅋ" },
+                                { nick: "Anti_Villain", content: "이런 댓글 다는 새끼들은 싹 다 잡아서 <a href='효빈항.html' class='text-blue-500 underline'>효빈항</a>에 수장시켜야 됨." }
+                            ]
+                        },
+                        {
+                            nick: "Vote_For_HyoBin", time: "15분 전", like: 69500, dislike: 8, isPunished: false,
+                            content: "이때 두청운수 버스 타고 출퇴근하던 사람인데, 저 갈색 버스는 진짜 시민을 가축 이하로 봤음. 기사들이 쌍욕 하는 건 기본이고 45인승에 75명 쑤셔 박고 문 안 닫히면 발로 찼음. 윤대환 일가가 이 도시를 지옥으로 만들었던 증거임.",
+                            replies: [
+                                { nick: "Binyo_Line_Rider", content: "ㅇㅈ 7000원 뜯어가면서 서비스는 조폭 수준이었지. 내일 선거인데 <span style='color:#0077DD; font-weight:bold;'>파란색 1호선</span> 타고 투표장 가서 윤재훈 무조건 심판한다. 저 피가 흐르는 집안은 영원히 정치 못하게 막아야 함." }
+                            ]
+                        }
+                    ];
+
+                    function renderComments(data, containerId) {
+                        const container = document.getElementById(containerId);
+                        if(!container) return;
+                        container.innerHTML = ""; 
+
+                        data.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 3000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                const replyId = `reply-${containerId}-${idx}`;
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('${replyId}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="${replyId}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="${replyId}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Free") || reply.nick.includes("Yoon") || reply.nick.includes("Camp") || reply.nick.includes("Clean") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+                    }
+
+                    renderComments(commentsData2007, 'comment-list-2007');
+                    renderComments(commentsData, 'comment-list');
+
+                    function toggleReply(id) {
+                        const el = document.getElementById(id);
+                        if (el.style.display === 'block') el.style.display = 'none';
+                        else el.style.display = 'block';
+                    }
+                    
+                    function toggleVote(btn) {
+                        const parent = btn.parentElement;
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                            btn.classList.remove('active');
+                            btn.classList.remove('active-hate');
+                            count--;
+                        } else {
+                            if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                            else btn.classList.add('active');
+                            count++;
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+                    function addComment() { alert("댓글이 등록되었습니다."); }
+                </script>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈광역시 긴급차량 우선 신호 시스템</div>
+                    <div class="text-xs">골든타임, 이제 효빈시가 지킵니다.<br>어떤 생명도 도로 위에서 멈추지 않도록<br><span class="text-[#0055aa] underline mt-1 inline-block">스마트 교통망 확인</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+<div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

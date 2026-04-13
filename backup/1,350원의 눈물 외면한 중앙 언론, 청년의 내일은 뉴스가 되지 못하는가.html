@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[오피니언] '1,350원'의 눈물 외면한 중앙 언론, 청년의 내일은 뉴스가 되지 못하는가 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 (댓글용으로 남겨둠) */
+        .strike { text-decoration: line-through; color: #888; }
+        .drip { font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header">
+        <div id="common-header"></div>
+        </div>
+    </div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">오피니언 > 사설/칼럼</div>
+                <h2 class="article-title">[오피니언] '1,350원'의 눈물 외면한 중앙 언론, 청년의 내일은 뉴스가 되지 못하는가</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">송정론 논설위원</span> (opinion@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2023.04.17. 07:00 | 수정 2023.04.17. 07:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p>최근 효빈광역시 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장이 제기한 '2023년 대학생 튜터링 시급 1,350원 삭감' 사태 비판이 지역 사회를 넘어 전국적인 반향을 일으키고 있다. 박 시장은 시간당 1,350원의 삭감이 2년간 누적될 경우 청년 개인에게 150만 원이라는 치명적인 손실로 돌아온다는 사실을 명확한 수치로 입증하며, 이를 "국가 권력을 동원한 합법적 강도질"이라 규정했다.</p>
+                    
+                    <p>그러나 이토록 뼈아픈 현장의 절규 앞에서도 이른바 '메이저'라 불리는 중앙 언론들의 지면과 화면은 놀랍도록 고요하다. 청년들의 자립을 위한 시드머니가 국가의 일방적인 예산 효율화 논리에 짓밟히고 있음에도 불구하고, 주류 언론들은 마치 약속이라도 한 듯 철저한 침묵의 카르텔을 형성하고 있다.</p>
+
+                    <div class="my-6">
+                        <img src="이미지/중앙언론_침묵비판_칼럼.png" alt="외면받는 청년들의 목소리" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Silent+Media+and+Youth'">
+                        <div class="img-caption">▲ 청년들의 자립을 위한 종잣돈이 삭감된 사태에 대해 기성 언론들은 철저히 외면하고 있다. 사진은 관련 사안에 대해 브리핑을 진행 중인 박효빈 시장. (사진=효빈일보 DB)</div>
+                    </div>
+
+                    <p>중앙 언론이 이 사태를 다루지 않거나 축소 보도하는 이면에는 교묘하고 기만적인 프레임이 숨어 있다. 그들은 내심 "삭감되었다 한들 11,150원이면 최저임금(2023년 기준 9,620원)보다는 높지 않은가"라는 오만한 시선을 거두지 않는다. 이는 교육 서비스라는 특수한 노동 가치를 단순 편의점 아르바이트 수준으로 하향 평준화하려는 권력의 논리를 그대로 대변하는 것에 불과하다.</p>
+
+                    <p>나아가 튜터링 장학금이 소득 산정에 포함되지 않아, 수급자 청년들이 복지 절벽의 공포 없이 자립 자금을 모을 수 있는 유일한 생명줄이라는 '현장의 특수성'은 철저히 배제된다. 책상머리에 앉아 숫자만 내려다보는 기성세대 엘리트 기자들에게, 청년이 맥도날드 패티를 굽고 아이들을 가르치며 억척스럽게 모으려 했던 150만 원의 '자유'는 기삿거리가 되지 못하는 것이다.</p>
+
+                    <p>우리는 묻지 않을 수 없다. 만약 대기업의 법인세율이 단 1%라도 오르거나, 유력 정치인의 밥그릇이 줄어들 위기에 처했다면 언론이 이토록 조용했을까. 대기업의 이윤 감소는 '국가 경제의 위기'로 대서특필하면서, 이 나라를 이끌어갈 청년 수만 명의 주머니에서 103만 원, 150만 원이 강탈당한 사건은 그저 '불가피한 예산 조정'으로 치부하는 것이 대한민국 언론의 현주소다.</p>
+
+                    <p>정권이 '다문화 멘토링' 예산을 유지한다는 핑계로 교묘하게 일반 학생들의 시급을 후려쳐 갈라치기를 시도할 때, 이를 날카롭게 파헤치고 비판해야 할 감시견(Watchdog)의 역할은 마비되었다. 결국 그 빈자리를 채운 것은 "가난하면 자유를 모른다더니 청년들 돈 뺏어 관저 찜질방을 지었느냐"고 외친, 분노한 20대 청년 시장의 고군분투뿐이었다.</p>
+
+                    <p>더욱 참담한 것은, 이러한 언론의 직무유기를 틈타 대학가와 온라인 커뮤니티에 기생하는 맹목적인 '윤석열 옹호론자'들과 극우 인사 '윤대환'의 맹신도들이 판을 치고 있다는 점이다. 이들은 청년들이 피눈물 흘리며 빼앗긴 150만 원의 현실은 철저히 외면한 채, "포퓰리즘을 막고 국가 예산을 지켰다"는 궤변을 늘어놓으며 피해자들을 조롱하고 있다. 사실관계 확인 없이 권력의 입맛에 맞는 기사만 쏟아내는 기성 언론의 침묵이, 결국 이들 '어그로꾼'들에게 확성기를 쥐여준 셈이다.</p>
+
+                    <p>언론의 본분은 권력의 심기를 경호하는 것이 아니라, 목소리 없는 자들의 확성기가 되는 것이다. 1,350원의 삭감을 비웃는 사회, 청년의 150만 원 손실을 뉴스로 다루지 않는 언론에게 미래를 논할 자격은 없다. 효빈광역시가 자체 예산을 투입해 '청년 멘토링 최저 단가 보장제'를 도입하겠다고 선언한 뼈아픈 역설 앞에서, 대한민국 중앙 언론은 부끄러움을 알아야 한다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">19,842</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Media_Watcher", time: "방금 전", like: 48200, dislike: 15, isPunished: false,
+                                content: "속이 뻥 뚫리는 명문 칼럼이다 진짜. 기레기 새끼들 대기업 세금 깎이는 건 나라 망할 것처럼 1면 탑기사로 쓰면서, 힘없는 대학생들 장학금 시급 후려친 건 조중동이고 종편이고 입 꾹 닫은 거 개역겨웠음. 박효빈 시장님이 언론사 데스크보다 백배 천배 낫다.",
+                                replies: [
+                                    { nick: "Fact_Check", content: "최저시급 방패 진짜 소름 돋음. 니네 월급도 최저시급 언저리로 깎아버리면 입에 거품 물 거면서 청년들한텐 가혹함 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Youth", content: "우리 시장님이 분노의 계산기 안 두드렸으면 150만 원 뺏긴 것도 영영 묻힐 뻔했음. 진짜 합법적 강도 정권에 공범 언론들." }
+                                ]
+                            },
+                            {
+                                nick: "Free_Isaiah", time: "5분 전", like: 12, dislike: 72000, isPunished: true,
+                                content: "효빈일보는 선동을 멈추십시오!! 중앙 언론은 공정합니다!! 윤석열 대통령님의 국정 철학을 이해하지 못하는 좌파들의 억지 주장일 뿐입니다!! 국가 예산을 아끼는 게 뭐가 문제입니까!!",
+                                replies: [
+                                    { nick: "Normal_Student", content: "어휴 <a href='이차야.html' class='text-blue-500 underline'>이차야</a> 넌 진짜 투잡 뛰냐? 에타에서 욕먹고 여기서도 댓글 알바하네. 니 돈 150만 원 뺏어가서 사우나 지어줬는데도 찬양하는 니 능지가 레전드다." },
+                                    { nick: "Subway_Driver", content: "이차야 저놈은 당장 <span style='color:#0077DD; font-weight:bold;'>파란색 1호선</span> 태워서 효빈시 밖으로 영구 추방시켜야 함. 시장님 제발 조례 좀 만들어주세요." },
+                                    { nick: "Saya_Fan", content: "사야 이름 더럽히지 말고 걍 닉변해라 진짜. 대광법 권영진 쉴드 칠 때부터 알아봤다만 답이 없네" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Guard_99", time: "7분 전", like: 8, dislike: 85000, isPunished: true,
+                                content: "대통령님께서 다 깊은 뜻이 있어서 시급을 조정한 겁니다!! 청년들이 고생을 해봐야 진정한 자유의 가치를 아는 법!! 박효빈 시장은 반국가세력입니까?!",
+                                replies: [
+                                    { nick: "Logic_Destroyer", content: "왔다 이차야 친구 윤석열 옹호 ㅂㅅ새끼 ㅋㅋㅋ 야 고생해서 자유 알 거면 니가 니 알바비 반납하고 관저 사우나 수건이나 빨아라." },
+                                    { nick: "Hyobin_Youth", content: "깊은 뜻 = 내 돈 뺏어서 지들 골프장 짓기 ㅋㅋㅋ 진짜 지능 수준 실화냐? 뇌가 하이브리드(튀기)로 꼬였나" }
+                                ]
+                            },
+                            {
+                                nick: "Free_Yoon_Daehwan", time: "8분 전", like: 5, dislike: 89000, isPunished: true,
+                                content: "위대하신 애국보수 윤대환 장군님 만세!! 좌파 시장 박효빈은 당장 사퇴하라!! 언론이 침묵하는 게 아니라 니들이 거짓말을 하는 거다!!",
+                                replies: [
+                                    { nick: "Citizen_A", content: "윤대환 빠돌이 또 왔네 ㅋㅋㅋ 니네 장군님 빵에 침 뱉다 걸려서 감방 간 거나 면회 가라 제발 ㅋㅋㅋ" },
+                                    { nick: "Binyo_Line_Rider", content: "이차야 + 윤옹호충 + 윤대환 빠돌이 = 효빈시 쓰레기 3대장 완성 ㅋㅋㅋ 셋 다 묶어서 <a href='효빈항.html' class='text-blue-500 underline'>효빈항</a> 앞바다에 빠뜨리고 싶다 진짜" }
+                                ]
+                            },
+                            {
+                                nick: "Jeonbuk_Tears", time: "10분 전", like: 36000, dislike: 11, isPunished: false,
+                                content: "가난한 사람은 자유를 모른다고 망언하던 놈이 대통령 하고, 그 밑에서 딸랑거리는 김행 같은 놈들이 튀기 운운하는데 언론이 비판을 제대로 하겠냐? <span class='strike'>기레기들도 찜질방 티켓 받았나 봄</span>",
+                                replies: []
+                            },
+                            {
+                                nick: "Welfare_Major", time: "15분 전", like: 31500, dislike: 8, isPunished: false,
+                                content: "복지 절벽 문제 짚어준 게 킬포인트. 수급자들은 일반 알바하면 소득 잡혀서 수급비 깎이니까 멘토링으로 겨우 시드머니 모으는 건데, 그걸 깎은 건 진짜 자립 사다리 대놓고 걷어찬 거임. 현장 뛰어본 박효빈 시장님 아니면 이런 디테일 아무도 모름 ㅠㅠ",
+                                replies: []
+                            },
+                            {
+                                nick: "Binyo_Line_Rider", time: "20분 전", like: 28900, dislike: 7, isPunished: false,
+                                content: "기레기들아 일 좀 해라!! 니들이 입 닫고 있을 때 우리 시장님은 <a href='빈효선광역전철.html' style='color: #6677CC; font-weight: bold; text-decoration: underline;'>연청색 빈효선 광역전철</a> 깔고, 청년 멘토링 시급 시비로 다 보장해 주고 계신다. 나라가 버린 청년들 효빈시가 거두는 중 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Moving_To_Hyobin", content: "솔직히 효빈일보가 조선일보보다 공신력 높음 인정?" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Free") || reply.nick.includes("Yoon") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈광역시 청년 멘토단 모집</div>
+                    <div class="text-xs">전국 최고 수준의 시급 보장!<br>언론이 외면해도 효빈시는 지킵니다<br><span class="text-[#0055aa] underline mt-1 inline-block">지원하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

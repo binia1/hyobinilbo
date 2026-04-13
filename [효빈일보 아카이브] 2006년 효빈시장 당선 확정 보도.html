@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치/선거] [속보] 효빈시장 개표 100%... 윤대환, 단 '3표' 차이로 기적의 당선 확정 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 */
+        .strike { text-decoration: line-through; color: #888; }
+        .archive-badge { background-color: #333; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header">
+        <div id="common-header"></div>
+        </div>
+    </div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <span class="archive-badge">과거 기사 디지털 아카이브 (2026.04.10 디지털화)</span>
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 선거/개표속보</div>
+                <h2 class="article-title">[속보] 효빈시장 개표 100%... 윤대환, 단 '3표' 차이로 기적의 당선 확정</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">선거특별취재팀</span> (election@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2006.06.01. 05:45 | 수정 2006.06.01. 06:10</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">개표율 100% 결과 윤대환 525,599표 vs 박현만 525,596표... 헌정 사상 초유의 '3표 차' 승부<br>윤대환 당선인 "효빈의 잃어버린 품격 되찾겠다... 경박한 문화 정책 전면 백지화" 선언<br>박현만 캠프, 분열된 범여권 표심에 '망연자실'... 효빈시정 거대한 지각변동 예고</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/윤대환_당선확정.png" alt="윤대환 후보 당선 확정 순간 환호하는 캠프" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Yoon+Dae-hwan+Victory'">
+                        <div class="img-caption">▲ 1일 새벽, 제4회 효빈광역시장 선거 개표가 100% 완료된 가운데 한나라당 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 후보가 당선이 확정되자 두 손을 번쩍 들어 환호하고 있다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 선거특별취재팀] 밤새도록 이어진 피 말리는 혈투는 대한민국 헌정 사상 유례를 찾아볼 수 없는 '3표 차'라는 극적인 결과로 막을 내렸다. 제4대 효빈광역시장 선거에서 한나라당 윤대환 후보가 열린우리당 <a href="박현만.html" class="text-blue-600 underline">박현만</a> 후보를 단 3표 차이로 누르고 당선을 확정 지었다.</p>
+
+                    <p>1일 오전 5시 30분, 효빈시 선거관리위원회의 최종 개표 결과(개표율 100%) 윤대환 후보는 525,599표(25.192%)를 얻어, 525,596표를 얻은 박현만 후보를 누르고 극적인 신승을 거뒀다. 그야말로 숨소리조차 낼 수 없는 대역전극의 연속이었다.</p>
+
+                    <p>당선이 확정된 직후 선거사무소에 모습을 드러낸 윤대환 당선인은 지지자들의 열광적인 환호 속에 승리를 선언했다. 윤 당선인은 수락 연설에서 "이번 선거는 정체불명의 만화 캐릭터들로 신성한 효빈의 도로를 더럽히고 시의 격조를 추락시킨 전임 시장에 대한 시민들의 준엄한 심판"이라며, "취임 즉시 품격을 잃은 문화 정책을 전면 백지화하고, 교통 인프라를 '효율적'으로 재편하겠다"고 목소리를 높였다. 그의 발언은 사실상 현재 추진 중인 <a href="효빈6호선.html" style="color: #881188; font-weight: bold; text-decoration: underline;">6호선</a> 등 주요 대형 사업의 전면 재검토를 시사한 것으로 풀이된다.</p>
+
+                    <div class="my-6">
+                        <img src="이미지/박현만_침통.png" alt="침통한 분위기의 박현만 후보 캠프" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Park+Camp+in+Despair'">
+                        <div class="img-caption">▲ 반면, 단 3표 차이로 석패한 열린우리당 박현만 후보 선거사무소는 깊은 침묵과 탄식에 휩싸였다. 지지자들은 믿을 수 없는 결과에 망연자실한 표정을 감추지 못했다.</div>
+                    </div>
+
+                    <p>반면, 박현만 후보 캠프는 무거운 침묵과 비통함 속에 휩싸였다. 밤새 엎치락뒤치락하던 표차가 결국 3표의 열세로 굳어지자 캠프 관계자들은 망연자실한 표정을 지었다. 일각에서는 재검표 요구 가능성도 제기되었으나, 박 후보 측은 "시민들의 뜻을 겸허히 수용하겠다"며 패배를 인정하는 성숙한 모습을 보였다.</p>
+
+                    <p>이번 선거는 범여권의 분열이 어떤 치명적인 결과를 낳는지 보여준 극명한 사례로 기록될 전망이다. 민주당 <a href="강성택.html" class="text-blue-600 underline">강성택</a> 후보(17.19%), 무소속 <a href="지총민.html" class="text-blue-600 underline">지총민</a> 후보(12.28%), 무소속 <a href="서무련.html" class="text-blue-600 underline">서무련</a> 후보(7.26%)가 도합 약 37%의 표를 갈라가면서, 현직 시장의 재선 가도를 완벽하게 차단하는 결과를 낳았다. 특히 박 후보를 지지하려던 청년 및 개혁 성향 유권자들의 표심이 분산된 것이 3표 차 패배의 결정적 패인으로 지목된다.</p>
+
+                    <p>단 3표로 권력이 교체되면서 효빈광역시의 행정 지형에는 거대한 지각변동이 불가피해졌다. 시민 사회 일각에서는 벌써부터 윤 당선인이 예고한 '교통 효율화'가 그의 일가 기업인 운수업체의 이익을 대변하는 방향으로 흐를지 모른다는 우려의 목소리도 조심스럽게 나오고 있다. 효빈의 운명을 가른 이 길고 길었던 밤이 향후 4년의 시정에 어떤 나비효과를 불러올지 주목된다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 (2026년 기준 아카이브 반응) -->
+            <div class="comment-section">
+                <div class="comment-header mb-4">
+                    <span class="text-lg font-bold text-red-600">[복원됨] 2006년 6월 1일 새벽 실시간 반응</span>
+                    <span class="text-xs text-gray-500 ml-2 font-normal">(개표 직후 당시 댓글)</span>
+                </div>
+                <div class="comment-list-container mb-12" id="comment-list-2006"></div>
+
+                <div class="comment-header mt-8 border-t-2 border-gray-200 pt-6">
+                    아카이브 네티즌 반응 <span class="text-[#0055aa]" id="comment-count">14,295</span>
+                    <span class="text-xs text-gray-500 ml-2 font-normal">(현재 시간: 2026년 기준 성지순례)</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list"></div>
+                <script>
+                    const commentsData2006 = [
+                        {
+                            nick: "Park_Supporter", time: "2006.06.01 05:46", like: 4521, dislike: 12, isPunished: false,
+                            content: "아니 씨발 3표 차이가 말이 됨???? 밤새 잠도 안 자고 새로고침 눌렀는데 이게 무슨 날벼락이냐... 강성택 지총민 서무련 이 표도둑놈들아 니들 때문에 도시 망하게 생겼다",
+                            replies: [
+                                { nick: "Angry_Citizen", content: "서무련 7% 지총민 12% ㅋㅋㅋㅋ 진짜 눈치 뒤지게 없네 단일화만 했어도 압승인데 아 개빡친다 진짜" }
+                            ]
+                        },
+                        {
+                            nick: "Line6_Waiting", time: "2006.06.01 05:50", like: 3800, dislike: 5, isPunished: false,
+                            content: "하... 당선 소감 들어보니까 우리 동네 들어오기로 한 <a href='효빈6호선.html' style='color:#881188; font-weight:bold;'>6호선</a> 나가리 될 각인데 어떡하냐... 윤대환 저 인간 두청운수 사장 아빠 아님? 뻔하다 뻔해",
+                            replies: []
+                        },
+                        {
+                            nick: "Clean_Hyobin", time: "2006.06.01 05:52", like: 150, dislike: 5800, isPunished: true,
+                            content: "위대한 효빈 시민들의 탁월한 선택입니다!! 만화 떡칠한 경박한 버스들 꼴도 보기 싫었는데 이제 시의 품격이 살아나겠군요!! 윤대환 시장님 만세!!",
+                            replies: [
+                                { nick: "Otaku_Life", content: "품격 타령하네 ㅋㅋㅋ 래핑 버스 없애고 니들한테 돌아오는 게 가축수송 콩나물 버스일 텐데 맘껏 웃어라 ㅉㅉ" },
+                                { nick: "Realist", content: "품격 챙기다가 니 지갑에서 버스비 털리게 생겼다 빙딱아" }
+                            ]
+                        },
+                        {
+                            nick: "Ji_Camp_Staff", time: "2006.06.01 05:58", like: 20, dislike: 4100, isPunished: true,
+                            content: "비록 당선은 못했지만 지총민 후보님의 12.2% 득표는 새로운 정치의 희망을 보여준 의미 있는 결과입니다. 박현만 후보가 정책을 더 잘 짰어야죠.",
+                            replies: [
+                                { nick: "Furious_Voter", content: "야 이 쳐죽일 놈들아 니들 12% 때문에 윤대환이 당선됐잖아!!! 어디서 남 탓을 하고 있어 양심 뒤진 새끼들" }
+                            ]
+                        },
+                        {
+                            nick: "Sad_Student", time: "2006.06.01 06:05", like: 2900, dislike: 11, isPunished: false,
+                            content: "내일부터 진짜 에반게리온 버스 못 보는 건가요...? ㅠㅠㅠ 시장 하나 바뀌었다고 우리 문화가 다 부정당하는 기분이라 너무 참담합니다...",
+                            replies: []
+                        }
+                    ];
+
+                    const commentsData = [
+                        {
+                            nick: "Hyobin_Dark_Age", time: "방금 전", like: 58200, dislike: 14, isPunished: false,
+                            content: "효빈시 역사상 가장 끔찍했던 지옥문이 열린 날. 저 '교통 효율화'라는 쌉소리(취소선)가 50km에 7,000원 뜯어가는 두청운수 갈색 버스 가축수송의 서막이었지. 단 4명만 맘 바꿨어도 이 지랄은 안 났을 텐데 ㅠㅠ",
+                            replies: [
+                                { nick: "Fact_Check", content: "기사 봐라 '품격을 되찾겠다' ㅋㅋㅋㅋ 지 일가 주머니 채우려고 <a href='효빈6호선.html' style='color:#881188; font-weight:bold;'>6호선</a> 설계도 파쇄기에 넣고 갈아버린 게 품격이냐? 진짜 악마 같은 새끼" },
+                                { nick: "Bus_Survivor_06", content: "저 때 3표 차이로 지고 우리 동네 전철 개통 5년 늦어짐 씨발... 박현만 시장님 침통한 사진 보니까 내 억장이 다 무너진다." }
+                            ]
+                        },
+                            {
+                            nick: "Binyo_Line_Rider", time: "20분 전", like: 28900, dislike: 7, isPunished: false,
+                            content: "저 3표가 윤씨 일가의 배를 불리고 청년들 시급 1350원을 깎아 먹은 나비효과의 시작이었다... 내일 투표일인데 <span style='color:#0077DD; font-weight:bold;'>파란색 1호선</span> 타고 투표장 가서 윤재훈 무조건 심판한다.",
+                            replies: []
+                        }
+                    ];
+
+                    function renderComments(data, containerId) {
+                        const container = document.getElementById(containerId);
+                        if(!container) return;
+                        container.innerHTML = ""; 
+
+                        data.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 3000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                const replyId = `reply-${containerId}-${idx}`;
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('${replyId}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="${replyId}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="${replyId}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Free") || reply.nick.includes("Yoon") || reply.nick.includes("Camp") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+                    }
+
+                    renderComments(commentsData2006, 'comment-list-2006');
+                    renderComments(commentsData, 'comment-list');
+
+                    function toggleReply(id) {
+                        const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈광역시 화해의 날 기념식</div>
+                    <div class="text-xs">2006년의 상처를 넘어 2026년의 미래로.<br>박효빈 시장과 시민들이 함께합니다.<br><span class="text-[#0055aa] underline mt-1 inline-block">참여 신청</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+<div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

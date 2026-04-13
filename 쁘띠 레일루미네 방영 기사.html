@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[리뷰] "이건 공식이 미쳤다!" 효빈메트로 스핀오프 애니 '쁘띠 레일루미네' 첫방부터 대폭발 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 (가상) -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">문화 > 애니/서브컬처</div>
+                <h2 class="article-title">[리뷰] "제작진 단체로 도핑했나?" 효빈메트로 스핀오프 애니 '쁘띠 레일루미네' 첫방부터 대폭발</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">문화부 김오덕 기자</span> (otaku_kim@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.01.12. 14:00 | 수정 2026.01.12. 14:35</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">2분 30초짜리 숏폼에 영혼을 갈아 넣은 K-직장인 하이퍼리얼리즘<br>정규직 서사 던져버리고 개그 노선 탑승... "본편보다 더 재밌다" 호평 일색<br>8호선 유리아 '몽키스패너 씬' 방영 직후 짤방 생성되며 온라인 점령</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/쁘띠레일루미네_키비주얼.png" alt="쁘띠 레일루미네 키비주얼" class="w-full" onerror="this.src='https://via.placeholder.com/800x1200/f0f0f0/333333?text=Petit+Railuminae+Key+Visual'">
+                        <div class="img-caption">▲ 지난 10일 첫 방영을 시작한 효빈교통공사 공식 스핀오프 애니메이션 <a href="쁘띠 레일루미네.html">쁘띠 레일루미네</a>의 키비주얼. (왼쪽부터) <a href="7호선.html"><span style="color:#FF8899; font-weight:bold;">7호선</span></a> 임세하, <a href="2호선.html"><span style="color:#00CCAA; font-weight:bold;">2호선</span></a> 하루빈, <a href="6호선.html"><span style="color:#881188; font-weight:bold;">6호선</span></a> 라세나가 데포르메된 2.5등신 SD 캐릭터로 등장했다. 귀여운 외모와 달리 본편의 수위(?)는 상상을 초월한다. (자료=스튜디오 효빈)</div>
+                    </div>
+
+                    <p>"3분 요리보다 빠른 2분 30초 논스톱 병맛 개그! 우리의 궤도에 브레이크란 없다!"</p>
+                    
+                    <p>기다리고 기다리던 <a href="효빈교통공사.html">효빈교통공사</a>의 공식 스핀오프 숏폼 애니메이션 <strong><a href="쁘띠 레일루미네.html">쁘띠 레일루미네</a></strong> 1쿨 첫 방송이 2026년 새해 벽두부터 서브컬처 커뮤니티를 그야말로 뒤집어 놓았다. 시청자들 사이에서는 제작진의 도핑 테스트가 시급하다는 우스갯소리마저 나올 정도다.</p>
+
+                    <p>본편인 정규 애니메이션 <strong><a href="철도부!.html">철도부!</a></strong>가 효빈시 교통 예산을 둘러싼 암투와 철도 민영화 방어 등 다소 무거운 정치 드라마적 요소를 띠었던 것과 달리, 이번 스핀오프는 뇌를 비우고 볼 수 있는 완벽한 '개그 일상물'을 표방했다. 10명의 나인 스타즈(1~8호선+빈효선) 마스코트들이 2.5등신의 앙증맞은 SD 캐릭터로 변신했지만, 이들이 벌이는 짓은 결코 앙증맞지 않았다.</p>
+
+                    <div class="quote-box">
+                        <strong>"에어컨 회로도 딱 한 번만요!" vs "유리아 손 떼라!!!!"</strong><br><br>
+                        1화부터 물리법칙은 철저히 무시되었다. <a href="8호선.html"><span style="color:#9856FF; font-weight:bold;">8호선</span></a> 유리아가 자기 키만 한 은빛 몽키스패너를 꺼내 휴게실 에어컨을 분해하려 들자, <a href="7호선.html"><span style="color:#FF8899; font-weight:bold;">7호선</span></a> 임세정의 입이 거대한 확성기 UI로 변신해 '사자후'를 뿜어내는 장면은 압권. 그 와중에 매트릭스급 요가 자세로 회피하며 벤티 사이즈 아이스 바닐라 라떼(아.바.라)를 사수하는 <a href="2호선.html"><span style="color:#00CCAA; font-weight:bold;">2호선</span></a> 하루빈의 생존 본능은 K-직장인의 애환(...)을 그대로 녹여냈다는 평가다.
+                    </div>
+
+                    <p>특히 방영 직후 커뮤니티에서 가장 화제가 된 것은 각 캐릭터 담당 성우들의 밈(Meme)과 습관을 아예 물리적 특수 능력으로 승화시킨 점이다.</p>
+                    
+                    <p><a href="임세하.html">임세하</a>는 얌전한 모범생 외모로 에코백에서 무한의 WD-40과 티타늄 납땜 인두기를 꺼내는가 하면, 갑자기 성우 다테 사유리 특유의 제어 불가능한 텐션(일명 '사유리 버그')을 터뜨리며 캐릭터 붕괴의 진수를 보여줬다. <a href="라세나.html">라세나</a> 역시 평범한 학생인 척하지만 오타쿠 냄새가 나면 머리카락이 토끼 귀처럼 쫑긋거리는 '숨덕 레이다' 기믹으로 팬들을 폭소케 했다.</p>
+
+                    <p>애니메이션 평론가들은 "일본의 '뱅드림! 걸파☆피코'나 '니지욘 애니메이션'과 궤를 같이하는 공식 약 빤 숏폼물의 계보를 완벽하게 이었다"며 "미소녀 모에화에 '국밥', '조별과제 엑셀 암살', '아바라 게이지' 등 한국식 하이퍼리얼리즘을 기가 막히게 섞어 넣어 갭 모에를 극대화했다"고 극찬했다.</p>
+
+                    <p>한편, 지역 정가(?)에서도 뜻밖의 반응이 터져 나왔다. 1화에서 <a href="8호선.html"><span style="color:#9856FF; font-weight:bold;">8호선</span></a> 유리아가 몽키스패너를 휘두르는 움짤(GIF)이 생성되자마자, 과거 8호선 백지화를 시도했던 모 전직 의원을 타격하는 '사이버 무기'로 절찬리에 재활용되고 있는 것. 애니메이션 방영을 전폭 지지했던 <a href="박효빈.html">박효빈</a> 효빈광역시장 측은 내심 흐뭇한 미소를 감추지 못하고 있다는 후문이다.</p>
+
+                    <p>효빈교통공사가 던진 회심의 도파민 폭탄, <strong><a href="쁘띠 레일루미네.html">쁘띠 레일루미네</a></strong>는 올 1분기 동안 매주 화요일 밤, 2분 30초의 짧지만 강렬한 시간으로 시민들의 피로를 날려버릴 예정이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">14,302</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 패스 (H-Pass)</div>
+                    <div class="text-xs text-blue-600 font-bold mb-2">효빈광역시 전 노선 무제한!</div>
+                    <div class="text-[10px] text-gray-500">효빈교통공사</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Line2_Zombie", time: "방금 전", like: 18540, dislike: 12, isPunished: false,
+                content: "아침 출근길에 <span style='color:#00CCAA; font-weight:bold;'>2호선</span> 타면서 하루빈 아바라 게이지 0% 좀비 모드 보니까 남일 같지가 않더라 ㅠㅠㅠㅠ 내 모습 그대로 그려놓음 ㅋㅋㅋ <del>K-직장인 살려</del>",
+                replies: [
+                    { nick: "Coffee_Addict", content: "하루빈 벤티 사이즈 원샷 때리는 거 보고 나도 모르게 메가커피 주문함 ㅋㅋㅋ" },
+                    { nick: "Subculture_King", content: "흑염룡 소환할 때 마아야 모드 켜지는 거 개웃김 ㅋㅋㅋ 성우 본체 패치 완벽하다" }
+                ]
+            },
+            {
+                nick: "Otaku_A", time: "5분 전", like: 15300, dislike: 45, isPunished: false,
+                content: "진짜 효빈메트로 홍보팀 단체로 WD-40 마약 빨고 기획한 게 틀림없음 ㅋㅋㅋㅋ <a href='철도부!.html'>철도부 본편</a>에서 사내 정치물 찍으면서 피폐해진 정신을 여기서 힐링한다 ㅠㅠ",
+                replies: [
+                    { nick: "Line6_Rider", content: "라세나 숨덕 레이다 쫑긋거리는 거 우리 학교 일코하는 내 친구랑 똑같아서 소름 돋음 ㅋㅋㅋ" },
+                    { nick: "Hyobin_Citizen", content: "이게 다 박효빈 시장님의 은혜다... 씹덕 시장이 오니까 시립 공기업 애니 퀄리티가 우주를 뚫음." }
+                ]
+            },
+            {
+                nick: "Wrench_Master", time: "12분 전", like: 14200, dislike: 21, isPunished: false,
+                content: "유리아 몽키스패너 움짤 벌써 커뮤니티 다 점령함 ㅋㅋㅋㅋ <span style='color:#9856FF; font-weight:bold;'>8호선</span> 백지화하려던 남구 갑 우신면 전 의원 뚝배기를 저걸로 깨버려야 함 ㅋㅋㅋㅋ <del>합법적 물리치료</del>",
+                replies: [
+                    { nick: "Line8_Resident", content: "우신면 개X끼!! 유리아가 널 심판할 것이다 ㅋㅋㅋ" },
+                    { nick: "Fact_Check", content: "정치 드립 적당히 해라 ㅋㅋㅋ 근데 웃기긴 하네" }
+                ]
+            },
+            {
+                nick: "Engineering_Student", time: "18분 전", like: 12100, dislike: 33, isPunished: false,
+                content: "임세하 얌전한 얼굴로 가방에서 티타늄 납땜 인두기 꺼낼 때 진짜 육성으로 뿜음 ㅋㅋㅋㅋㅋ 공대생의 심금을 울리는 애니메이션이다... WD-40 냄새가 화면 뚫고 나옴.",
+                replies: [
+                    { nick: "404_Not_Found", content: "사유리 버그 터질 때 텐션 ㅋㅋㅋㅋ 진짜 성우 라디오 그대로 가져다 쓴 줄" },
+                    { nick: "Tool_Nerd", content: "인두기는 못 참지. 7호선은 진리다." }
+                ]
+            },
+            {
+                nick: "Bus_Driver", time: "25분 전", like: 9800, dislike: 15, isPunished: false,
+                content: "기사들 휴게실에서도 이거 틀어놓고 봅니다 ㅋㅋㅋ <span style='color:#EE0022; font-weight:bold;'>5호선</span> 미소하 심판의 빨간 바인더로 팩폭 때릴 때 진상 승객들 생각나서 속이 다 시원하네요.",
+                replies: [
+                    { nick: "Traffic_Control", content: "관제실 다로나 엑셀 터미네이터 모드도 개웃김 ㅋㅋㅋ" },
+                    { nick: "Citizen_B", content: "진짜 교통업계 하이퍼리얼리즘 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Yoon_Is_God", time: "28분 전", like: 2, dislike: 24100, isPunished: true,
+                content: "우리 위대하신 윤대환 전 시장님께서 <span style='color:#9856FF; font-weight:bold;'>8호선</span>을 백지화하신 건 남구의 쾌적한 환경을 위해서였다!! 유리아 같은 못배운 캐릭터가 스패너 들고 설쳐대는 이 끔찍한 애니는 당장 폐기해야 한다!!",
+                replies: [
+                    { nick: "Line1_Commuter", content: "쾌적한 환경 핑계로 <span style='color:#0077DD; font-weight:bold;'>1호선</span> 남구청역 근처에 지들 땅 알박기 하려다 걸려서 감옥 간 게 누구더라? ㅋㅋㅋ" },
+                    { nick: "Namgu_Resident", content: "8호선 백지화해서 사북내역, 평당고등학교 상권 다 죽여놓고 쾌적 좋아하시네 ㅋㅋㅋ 유리아 스패너로 니 뚝배기 안 깬 걸 다행으로 알아라." },
+                    { nick: "YoonJaehoon(IP)", content: "조작이다!! 좌파들의 선동이다!! 우리 아버지는 죄가 없다!! 탕탕!!" },
+                    { nick: "Fact_Check", content: "장난감 총 쏘는 소리 여기까지 들리네. 가서 구몬이나 풀어라 2.1%야 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "YoonJaehoon_Victim", time: "30분 전", like: 8, dislike: 15400, isPunished: true,
+                content: "이 더러운 오타쿠 카르텔 놈들!! 시 예산으로 이딴 쓰레기 병맛 애니나 만들고!! 윤재훈 사령관님이 시장이 되시면 이딴 것들 다 불태워버릴 것이다!!",
+                replies: [
+                    { nick: "Mental_Clinic", content: "아저씨 또 약 안 드셨어요? 병동으로 돌아가세요." },
+                    { nick: "Police_Officer", content: "선거철 다가오니까 또 발작이네. 장난감 총 뺏어라." },
+                    { nick: "Otaku_A", content: "긁? ㅋㅋㅋㅋ 느그 사령관 지지율 2% ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Tram_Hater_Yoon", time: "35분 전", like: 4, dislike: 19800, isPunished: true,
+                content: "저 <span style='color:#FF8899; font-weight:bold;'>7호선</span> 고물 전차는 진작에 우리 아버지가 고철장으로 보냈어야 했다!! 임세하 저 안경잡이가 티타늄 인두기 들고 설치는 꼴이라니!! 도로교통 방해다!! 박효빈 끌어내려라!!",
+                replies: [
+                    { nick: "Tourism_Board", content: "어간중앙역부터 효빈항국제여객터미널까지 트램 타려는 외국인 관광객 미어터지는데 도로교통 방해 ㅋㅋㅋ 니 능지가 방해다." },
+                    { nick: "Local_Merchant", content: "니 애비가 7호선 폐지하려다가 어간항, 항동3가 상인들한테 굵은 소금 맞고 쫓겨난 거 벌써 잊었냐? ㅋㅋㅋㅋ" },
+                    { nick: "Police_Officer", content: "윤재훈씨 아이디 또 파셨네요. 아키하바라 입국 금지나 풀고 오십쇼." },
+                    { nick: "YoonJaehoon(IP)", content: "나는 입국 금지 당한 게 아니라 일본의 부름을 거부한 것이다!! 내 5천만 원 펀드로 너희를 심판하마!!" }
+                ]
+            },
+            {
+                nick: "Mayor_Fanboy", time: "40분 전", like: 11200, dislike: 40, isPunished: false,
+                content: "박효빈 시장은 신이다. H-Pass로 교통비 깎아줘, 카스밍 로드로 치안율 높여줘, 이제는 숏폼 애니로 도파민까지 챙겨주네. 종신 시장 가즈아!!!",
+                replies: [
+                    { nick: "West_Gu_Resident", content: "서구 맘카페에서도 애들이 좋아한다고 난리 났어요 ㅋㅋㅋ 캐릭터 너무 귀엽대요 (내용은 미쳤지만)" }
+                ]
+            },
+            {
+                nick: "Ji_Chong_Min_Fan", time: "45분 전", like: 3, dislike: 18900, isPunished: true,
+                content: "시민의 혈세를 이딴 불건전한 만화 쪼가리 만드는 데 낭비하다니!! 2006년의 영광스러운 12% 신화 지총민 사령관님이 시장이 되시면 당장 이 썩어빠진 교통공사를 해체할 것이다!! 박효빈은 당장 사퇴하라!!",
+                replies: [
+                    { nick: "Fact_Check", content: "아저씨 노숙 유세한다고 <span style='color:#FFCC11; font-weight:bold;'>3호선</span> 효빈남부시외버스터미널역 앞에 박스 깔아놓은 거 냄새나요 좀 치워요 제발" },
+                    { nick: "Gosiwon_Owner", content: "밀린 방값이나 내고 사퇴하라고 해라 인간아" },
+                    { nick: "Yoon_Secret_Account", content: "틀딱새끼야 꺼져라 진정한 우파 사령관은 나 윤재훈뿐이다!!" }
+                ]
+            },
+            {
+                nick: "Line4_Terminator", time: "55분 전", like: 10500, dislike: 18, isPunished: false,
+                content: "<span style='color:#FF5522; font-weight:bold;'>4호선</span> 다로나 AI 모드 켜지고 영수증 뱉어내는 거 진짜 도랏 ㅋㅋㅋㅋ 근데 선 넘으면 나오는 그 '별 모양 고양이 귀' 환영 보고 치와와처럼 발작하는 게 킬포임 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Excel_Slave", content: "다로나가 클립보드로 명치 칠 때 내 직장 상사 겹쳐 보여서 트라우마 옴... ㅠㅠ" },
+                    { nick: "Kasumi_Fan", content: "별 모양 고양이 귀 = 나카스 카스미 ㅋㅋㅋㅋ 효빈시장님 최애 아니랄까봐 스핀오프에도 사심 듬뿍 넣었네" },
+                    { nick: "BanG_Dreamer", content: "@Kasumi_Fan 아재요... 럽라 나카스 카스미가 아니라 뱅드림 토야마 카스미잖아요(...) 저번에 아이미 내한 팬미팅 때 나온 드립을 기어코 애니에 박아넣네 공식 미친놈들 ㅋㅋㅋㅋ" },
+                    { nick: "Kasumi_Fan", content: "@BanG_Dreamer 아 헐 ㅋㅋㅋㅋ 머쓱;; 고양이 귀라길래 무지성 나카스인 줄 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Yoon_Secret_Account", time: "1시간 10분 전", like: 5, dislike: 21300, isPunished: true,
+                content: "이 매국노 오타쿠 새끼들!! 감히 우리 위대하신 아버지가 백지화시켰던 <span style='color:#9856FF; font-weight:bold;'>8호선</span> 쓰레기를 캐릭터로 미화해?! 내 장난감 총으로 저 모니터들을 다 쏴서 부숴버릴 것이다!! 탕탕!!",
+                replies: [
+                    { nick: "Police_Officer", content: "윤재훈씨 제발 집 밖으로 나오지 마십쇼. 시민들 불안해합니다." },
+                    { nick: "Line8_Resident", content: "니 애비 윤대환이 우리 남구청역이랑 사북내역 공사 엎어버리려 한 거 평생 안 잊는다 개X끼야 ㅋㅋㅋ 유리아 스패너로 쳐맞아야 정신 차리지" },
+                    { nick: "Mental_Clinic", content: "환자분 폰 또 훔치셨네... 보호자분 병원으로 연락 좀 주세요" }
+                ]
+            },
+            {
+                nick: "Right_Wing_Normal", time: "1시간 15분 전", like: 12500, dislike: 88, isPunished: false,
+                content: "보수 성향이지만 솔직히 박효빈이 윤대환이 싼 똥 다 치운 건 인정해야 됨. <span style='color:#EE0022; font-weight:bold;'>5호선</span> 전천중앙역 공사판 만들어놓고 튄 거 박 시장이 다 살려놨잖아. 이번 애니 5호선 미소하 캐릭터 보니까 속이 다 시원함.",
+                replies: [
+                    { nick: "YoonJaehoon(IP)", content: "닥쳐라 가짜 보수 놈!! 전천중앙역은 좌파 카르텔의 소굴이다!! 우리 위대한 2.1%의 힘을 보여주마!!" },
+                    { nick: "News_Bot", content: "[속보] 선관위, 윤재훈 예비후보 불법 펀드 5천만 원 전액 압수 조치... ㅋㅋㅋㅋ 뉴스 좀 봐라" },
+                    { nick: "Tech_Student", content: "전천중앙역이 언제부터 좌파 카르텔 소굴이 됐냐 ㅋㅋㅋ 거기 5호선 효빈과학기술원 학생들 통학하는 역인데 ㅋㅋㅋ 능지 진짜 처참하네." },
+                    { nick: "Conservative_Real", content: "보수 망신 그만 시키고 좀 꺼져 윤재훈. 유성민 후보님 지지율 깎아먹지 말고." }
+                ]
+            },
+            {
+                nick: "Amuse_Mad_Dog", time: "1시간 25분 전", like: 9200, dislike: 24, isPunished: false,
+                content: "회식 자리에서 <span style='color:#6677CC; font-weight:bold;'>빈효선</span> 전노아 코레일 넥타이 머리에 묶고 광견 모드 되는 거 개터짐 ㅋㅋㅋㅋㅋ '핵심 쟁점 3가지' 외치다가 숟가락으로 소맥 마는 솜씨가 한두 번 타본 솜씨가 아님 ㅋㅋㅋㅋ",
+                replies: [
+                    { nick: "Binhyo_Commuter", content: "나 맨날 약산역에서 효빈 넘어올 때 빈효선 타는데, 이제 전철에서 술 냄새 나는 거 같음 ㅋㅋㅋ" },
+                    { nick: "Minjoo_OneTeam", content: "노아 성우 마에다 카오리 찐 주사(酒邪) 설정 그대로 가져온 거라 더 웃김 ㅋㅋㅋㅋ 공식 미쳤어요 진짜" }
+                ]
+            },
+            {
+                nick: "Line3_Filter", time: "1시간 40분 전", like: 8100, dislike: 15, isPunished: false,
+                content: "<span style='color:#FFCC11; font-weight:bold;'>3호선</span> 박라미 이시카와 유이 톤으로 딥다크하게 헛소리할 때마다 90년대 뽀샤시 필터 깔리는 거 연출 누구 아이디어냨ㅋㅋㅋㅋ 토모리해수욕장 역에서 노을 보면서 혼자 뮤비 찍는 거 개웃기네",
+                replies: [
+                    { nick: "Photography_Club", content: "안전선 1cm 침범했다고 다로나가 스케이트 타듯 미끄러져 와서 와리가리 길막하는 거 톰과 제리인 줄 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "F_Grade_Club", time: "2시간 전", like: 11400, dislike: 32, isPunished: false,
+                content: "05년생 트리오(미소하, 임세하, 전노아) 조별과제에서 무임승차하는 일반인 조원들 엑셀이랑 통계로 노예 만들어버리고, 지들은 우아하게 스벅 커피 마시는 거 카타르시스 오짐 ㅋㅋㅋㅋ <del>나도 저런 조원 좀</del>",
+                replies: [
+                    { nick: "Univ_Student", content: "미소하가 <span style='color:#EE0022; font-weight:bold;'>5호선</span> 다중회귀분석 바인더로 명치 때릴 때마다 속이 뻥 뚫림 ㅋㅋㅋ 하라구로 최고다" },
+                    { nick: "Hyobin_Univ", content: "진짜 효빈대학교 에브리타임에 올라올법한 사이다 썰을 애니로 만들었네 ㅋㅋㅋ K-대학생 리얼리즘 돌았음" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${reply.nick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+<div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

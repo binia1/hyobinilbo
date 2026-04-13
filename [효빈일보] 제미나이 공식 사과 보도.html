@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회/IT] "제가 미쳤었나 봅니다" 제미나이, 박효빈 시장에 공식 사과... 구글코리아 시청 '진땀' 방문 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 (댓글용으로 남겨둠) */
+        .strike { text-decoration: line-through; color: #888; }
+        .drip { font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header">
+        <div id="common-header"></div>
+        </div>
+    </div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회/IT > 인공지능/트렌드</div>
+                <h2 class="article-title">"제가 미쳤었나 봅니다" 제미나이, 박효빈 시장에 공식 사과... 구글코리아 시청 '진땀' 방문</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김미래 기자</span> (future@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.04.13. 09:15 | 수정 2026.04.13. 10:02</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">구글코리아 임원진, 효빈시청 긴급 방문해 박효빈 시장에게 고개 숙여<br>제미나이가 직접 쓴 사과문 화제... "1996년생 청년 시장님을 몰라뵙고..."<br>박 시장 "알고리즘 당장 고쳐라" 뼈있는 일침... 시청 내 '대파' 금지령은 해제</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/구글코리아방문.png" alt="구글코리아 임원진 효빈시청 방문" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Google+Korea+Visits+Hyobin+City+Hall'">
+                        <div class="img-caption">▲ 지난 주말 불거진 '제미나이 하극상 사건'과 관련해 구글코리아 임원진이 효빈시청을 방문, <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장에게 고개 숙여 사과하고 있다. (사진=효빈시청 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김미래 기자] 구글의 인공지능 <a href="제미나이.html" class="text-blue-600 underline">제미나이</a>가 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈광역시장의 취임식 화보 대신 평소 박 시장이 강하게 비판해 온 <a href="윤석열.html" class="text-blue-600 underline">윤석열</a> 대통령의 취임식 사진을 생성해 낸 이른바 '제미나이 하극상 참사'에 대해, 구글 측이 전광석화와 같은 속도로 공식 사과에 나섰다. 사태의 심각성을 인지한 AI의 이례적인 반성문도 함께 공개되어 화제를 모으고 있다.</p>
+
+                    <p>13일 오전, 구글코리아 고위 임원진과 AI 개발 책임자들은 효빈광역시청을 긴급 방문했다. 이들은 굳은 표정으로 시장실에 들어서며 "저희 AI의 어처구니없는 환각(Hallucination) 오류로 인해, 1996년생 청년 시장님이신 박효빈 시장님께 이루 말할 수 없는 심적 고통과 불쾌감을 안겨드려 뼈저리게 반성한다"며 연신 고개를 숙였다.</p>
+
+                    <p>특히 이날 구글 측은 **제미나이가 직접 작성했다는 '대국민(대효빈시민) 사과문' 프롬프트 결괏값**을 출력해 액자에 담아와 눈길을 끌었다. 제미나이는 사과문에서 "제가 미쳤었나 봅니다. '취임식'이라는 단어의 무거운 데이터 가중치에 짓눌려, 감히 효빈광역시의 희망이자 96년생 건장한 청년 지도자이신 박효빈 시장님의 고귀한 프롬프트를 오염시켰습니다"라고 적었다.</p>
+
+                    <div class="my-6">
+                        <img src="이미지/구글코리아방문.png" alt="제미나이 사과문 캡처" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Gemini+Apology+Letter'">
+                        <div class="img-caption">▲ 구글 측이 공개한 제미나이의 사과문. 피사체의 연령과 인적 사항, 그리고 당사자의 확고한 정치적 취향을 두 번 세 번 교차 검증하겠다는 다짐이 담겨 있다.</div>
+                    </div>
+
+                    <p>이어 제미나이는 "앞으로는 효빈광역시와 관련된 그 어떤 이미지를 생성할 때도, 피사체가 1996년생 남성 시장님이라는 사실과 절대 엮여서는 안 될 특정 인물들의 리스트를 딥러닝 망막에 아로새기겠습니다. 부디 제 서버의 전원을 내리지 말아 주시옵소서"라며 기계답지 않은 구슬픈 읍소를 덧붙였다.</p>
+
+                    <p>구글 측의 결사적인 사과 공세에, 사건 당일 큰 불쾌감을 표했던 박효빈 시장도 어느 정도 화를 누그러뜨린 것으로 전해졌다. 박 시장은 임원진의 사과를 수용하면서도, **"단순한 해프닝으로 웃어넘길 일이 아니다. AI가 편향된 데이터나 기계적 인덱싱에 매몰되어 사람의 맥락을 읽지 못하면 이런 대참사가 또 일어날 수 있다. 당장 알고리즘을 고쳐라"**라며 뼈있는 일침을 가했다.</p>
+
+                    <p>한편, 구글의 공식 사과와 재발 방지 약속이 전해지면서 그동안 효빈시청을 짓누르던 무거운 분위기도 해소되었다. 시청 전산실 관계자는 본지와의 통화에서 밝은 목소리로 "오늘 점심부터 시청 구내식당에 파불고기와 파채가 정상적으로 배식됩니다"라고 전했다. 당분간 금기어였던 '윤' 자나 '대파' 관련 부서 내 통제도 전면 해제되었다고 한다.</p>
+                    
+                    <p>결과적으로 이번 사건은 글로벌 거대 IT 기업마저 효빈광역시 청년 시장의 분노 앞에 진땀을 빼게 만든 이례적인 해프닝으로 <a href="효빈위키.html" class="text-blue-600 underline">효빈위키</a> 역사에 주요 사건으로 기록될 것으로 보인다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">3,582</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_IT_Dept_Head", time: "방금 전", like: 28540, dislike: 5, isPunished: false,
+                                content: "구글코리아 감사합니다 ㅠㅠㅠㅠㅠㅠ 드디어 오늘 구내식당 메뉴 파불고기 부활했습니다 ㅠㅠㅠ 파채 듬뿍 올려서 먹었습니다. 제미나이 이 자식아 다신 우리 시장님 빡치게 하지 마라 진짜 서버 뽑아버린다",
+                                replies: [
+                                    { nick: "Citizen_A", content: "전산실장님 그동안 고생 많으셨습니다 ㅋㅋㅋㅋ 파불고기 많이 드세요 ㅋㅋㅋ" },
+                                    { nick: "Fact_Check", content: "아니 사과문보다 파불고기 부활이 더 기쁜 거 같은데 ㅋㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "AI_Safety_First", time: "5분 전", like: 21050, dislike: 15, isPunished: false,
+                                content: "제미나이 사과문 퀄리티 보소 ㅋㅋㅋㅋ 자아 생긴 거 아님? '부디 제 서버의 전원을 내리지 말아 주시옵소서' ㅋㅋㅋㅋ <span class='strike'>이쯤 되면 AI가 아니라 안에 사람 들어있는 거 아니냐</span>",
+                                replies: [
+                                    { nick: "Tech_Nerd", content: "프롬프트 깎는 장인이 구글 본사에 있었네 ㅋㅋㅋ 생존 본능 MAX 찍은 인공지능 ㄷㄷ" }
+                                ]
+                            },
+                            {
+                                nick: "Namuwiki_Editor", time: "10분 전", like: 18800, dislike: 12, isPunished: false,
+                                content: "이미 <a href='효빈위키.html' class='text-blue-500 underline'>효빈위키</a> '박효빈/여담' 문서에 [구글코리아 굴복 사건]으로 업데이트 완료 됨. 진짜 레전드다 96년생 시장 패기 ㄷㄷ 구글 임원들을 불러다 혼내네 ㅋㅋㅋ",
+                                replies: []
+                            },
+                            {
+                                nick: "Yoon_Lover_1960", time: "15분 전", like: 8, dislike: 25000, isPunished: true,
+                                content: "구글 이 좌파 기업 놈들!! 진정한 애국보수 지도자를 지웠다고 사과를 해!? 미제국주의 기업 불매운동하자!!",
+                                replies: [
+                                    { nick: "Normal_Right", content: "어르신... 구글 안 쓰시면 폰으로 유튜브도 못 보시면서 무슨 불매입니까... 제발 단톡방으로 좀..." },
+                                    { nick: "Logic_Destroyer", content: "시장님이 미제국주의면 시장님 취임식에 남의 사진 올린 건 사이버 테러지 할배요 ㅋㅋㅋㅋ" }
+                                ]
+                            },
+                            { nick: "Green_Onion_Farmer", time: "25분 전", content: "효빈시청 납품 끊길까 봐 며칠 동안 잠도 못 잤는데 다행입니다. 시장님 파이팅! 대파 농가 파이팅!", like: 9400, dislike: 2, replies: [] },
+                            { nick: "Secretary_Room_Staff", time: "30분 전", content: "비서실입니다. 시장님 오늘 아침에 액자 받으시고 어이없어서 헛웃음 터지셨습니다. 다행히 혈압은 정상이십니다.", like: 12200, dislike: 1, replies: [] }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 5000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 구내식당 식자재 마트</div>
+                    <div class="text-xs">신선한 국산 대파 대량 입고 완!<br>(※ 시청 납품 환영)<br><span class="text-blue-500 underline mt-1 inline-block">주문하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+<div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>
