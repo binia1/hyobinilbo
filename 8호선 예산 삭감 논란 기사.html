@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치] "우리 동네도 지나갑니다만?" 고정민, 8호선 딴지 건 우신면에 '노선도 팩폭' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">정치 > 선거/정당</div>
+                <h2 class="article-title">[정치] "우리 동네도 지나갑니다만?" 고정민, 8호선 딴지 건 우신면에 '노선도 팩폭'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최기자</span> (choi_politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2022.11.20. 14:00 | 수정 2022.11.20. 15:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">우신면 의원, "남구 을 의원이 왜 남구 갑 사업에 간섭하냐"며 고정민 맹비난<br>고정민 의원 즉각 브리핑 "어간1·3동, 월천동, 평당1동 전부 우리 지역구다"<br>자기 지역구 지리도 모르는 우 의원 헛발질에 남구 민심 '싸늘'<br>맘카페 "조망권 지키려다 능지 수준 들통났다" 조롱 쏟아져</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/8호선_공사중단위기.png" alt="효빈 도시철도 8호선 공사 현장" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/9856FF/FFFFFF?text=Hyobin+Line+8+Construction'">
+                        <div class="img-caption">▲ 교각 설치 작업이 한창 진행 중인 <a href="효빈 도시철도 8호선.html"><span style="color:#9856FF; font-weight:bold;">효빈 8호선</span></a> 공사 현장. 최근 8호선 예산 전액 삭감을 주장한 남구 갑 우신면 국회의원이, 이를 비판한 남구 을 고정민 국회의원을 향해 "남의 지역구 일에 간섭하지 말라"고 날을 세웠다가 '노선도 팩트 폭격'을 맞고 체면을 구겼다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p><a href="효빈 도시철도 8호선.html"><span style="color:#9856FF; font-weight:bold;">효빈 8호선</span></a> 예산 전액 삭감 및 전면 지하화를 주장하며 논란을 빚은 <a href="우신면.html">우신면</a> 남구 갑 국회의원이, 이번에는 엉뚱한 생떼를 부리다 거센 역풍을 맞았다. 자기 지역구 내로 지나가는 철도 노선도조차 제대로 파악하지 못한 채 무리한 정치 공세를 펴다 벌어진 참사다.</p>
+
+                    <p>사건의 발단은 지난 18일, 우 의원의 8호선 백지화 시도에 대해 이웃 지역구인 <a href="고정민.html">고정민</a> 남구 을 국회의원이 "수십만 시민의 발을 펜트하우스 조망권과 맞바꾸려 하느냐"며 강도 높게 비판하면서 시작됐다.</p>
+
+                    <div class="quote-box">
+                        <strong>우신면 "남의 지역구 간섭은 선거법 위반!" vs 고정민 "지도 좀 보십시오"</strong><br><br>
+                        이에 발끈한 우 의원은 19일 긴급 기자회견을 열고 "8호선 고가 철도 문제는 철저히 우리 남구 갑 지역구의 현안"이라며 "본인 지역구도 아니면서 왜 남의 지역구 사업에 왈가왈부하며 숟가락을 얹으려 하느냐. 이는 명백한 사전 선거운동이자 선거법 위반 소지가 있는 얄팍한 정치 공세"라며 고 의원을 향해 맹포화를 퍼부었다.
+                    </div>
+
+                    <p>그러나 우 의원의 당당했던 기세는 단 하루 만에 처참하게 무너졌다. 고정민 의원이 20일 오전, 8호선 계획 노선도가 그려진 대형 패널을 들고 기자회견장에 나타나 우 의원의 주장을 조목조목 반박했기 때문이다.</p>
+
+                    <p>고 의원은 브리핑을 통해 "우신면 의원님께서는 비판을 하시기 전에 제발 효빈시 지도라도 한 번 펴보시길 간곡히 권해드린다"며 포문을 열었다. 이어 "8호선 계획 구간을 보면 어간1동, 어간3동, 월천동(법정동 기준 <a href="신흥역.html">신흥동</a> 및 <a href="박산역.html">박산동</a> 일대), 그리고 평당1동까지 상당수의 구간이 명백하게 저의 지역구인 남구 을 관할에 속해 있다"고 팩트를 짚었다.</p>
+
+                    <p>실제로 8호선은 남구 전체의 내부 순환을 돕는 핏줄 같은 노선으로, 갑과 을 지역구를 절묘하게 관통하도록 설계되어 있다. 고 의원은 "내 지역구 주민들의 삶의 질이 걸린 중대한 인프라 사업이 한 개인의 조망권 탓에 날아갈 판인데, 국회의원이 입을 닫고 있는 것이야말로 직무 유기"라며 우 의원의 '월권행위' 주장을 단칼에 일축했다.</p>
+
+                    <p>자신이 극구 반대하는 국책 사업의 기본 노선도조차 파악하지 못한 우 의원의 촌극이 알려지자, 남구 지역 민심은 조롱을 넘어 분노로 들끓고 있다. 지역 최대 커뮤니티인 '평당맘' 카페에서는 "지하화 타령하더니 지능까지 지하로 뚫고 들어갔다", "자기 동네 어디로 기차가 다니는지도 모르면서 무슨 국회의원을 하느냐"는 원색적인 비난이 쇄도하고 있다.</p>
+
+                    <p>여기에 8호선의 마스코트 캐릭터인 <strong><a href="유리아.html">유리아</a></strong>를 지지하는 서브컬처 팬덤까지 가세하여, 우 의원의 엉성한 행보를 비웃는 밈(Meme) 제작에 열을 올리고 있다. 8호선 예산 삭감이라는 몽니로 시작된 우 의원의 행보가 결국 제 무덤을 파는 치명적인 정치적 자살골이 되고 있다는 분석이 지배적이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">21,942</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 8호선을 지켜주세요!</div>
+                    <div class="text-xs text-[#9856FF] font-bold mb-2">남구의 희망, 연보라색 궤도</div>
+                    <div class="text-[10px] text-gray-500">효빈교통공사 노조</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script>
+        const commentsData = [
+            {
+                nick: "Pyeongdang_Mom", time: "방금 전", like: 18240, dislike: 22, isPunished: false,
+                content: "우신면 진짜 개그맨인가요? ㅋㅋㅋㅋ 평당1동이랑 월천동이 남구 을인 걸 남구 갑 의원이 모른다고요? 이러니까 동네 돌아가는 사정은 1도 모르고 자기 집 거실 창밖만 쳐다보고 있지 ㅋㅋㅋ 고정민 의원님이 노선도 들고 브리핑할 때 진짜 사이다 100병 마신 기분이었습니다.",
+                replies: [
+                    { nick: "Namgu_Citizen", content: "진짜 능지 수준 처참하다... 이런 인간을 뱃지 달아준 내 손가락을 자르고 싶네 진짜" },
+                    { nick: "Map_Viewer", content: "초등학생도 네이버 지도 켜면 아는 걸 국회의원이 ㅋㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Protect_Yuria", time: "5분 전", like: 16100, dislike: 45, isPunished: false,
+                content: "우리 <a href='유리아.html'>유리아</a> 직장 뺏으려는 악당의 최후 ㅋㅋㅋㅋ 몽키스패너로 머리 맞기 전에 제발 헛소리 좀 그만하세요 우신면 씨. 고정민 의원님 진짜 든든합니다! 다음 총선 때 남구 갑으로 넘어와서 자객 출마해 주시면 저희 덕후들이 몰표 드립니다!!",
+                replies: [
+                    { nick: "Wrench_Master", content: "우신면은 유리아가 몽키스패너로 대가리 깨도 무죄다 진짜 ㅋㅋㅋ 지도도 못 읽는 놈이 무슨 정치를 한다고" },
+                    { nick: "Subculture_Fan", content: "애니 4화에 나오는 무인 제어반 부품 이름도 내가 우신면보단 잘 알 듯 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Woo_Supporter_1", time: "12분 전", like: 15, dislike: 21050, isPunished: true,
+                content: "우리 고결하신 우신면 의원님이 큰 정치를 하시느라 동네 자잘한 행정 구역 선 긋기에 잠시 착오가 있으셨을 뿐이다!! 좌파 고정민이 이를 꼬투리 삼아 훌륭하신 의원님을 모욕하는 것은 명백한 흑색선전이다!! 흉물 고가 철도는 남구 집값을 폭락시킬 것이다!!",
+                replies: [
+                    { nick: "Fact_Check", content: "자잘한 행정 구역? ㅋㅋㅋㅋ <a href='신흥역.html'>신흥역</a>이랑 <a href='박산역.html'>박산역</a> 주변 인구가 얼만데 거길 자잘하다고 퉁치네 ㅋㅋㅋ 신흥동 주민들한테 맞아 죽고 싶음?" },
+                    { nick: "Namgu_Merchant", content: "아저씨 우신면 알바죠? 집값 핑계 대지 마쇼. 동네 길 어디로 나는지도 모르는 사람이 무슨 큰 정치를 합니까. 그냥 펜트하우스 뷰 막히기 싫어서 몽니 부리는 거 온 동네가 다 알아요." }
+                ]
+            },
+            {
+                nick: "Yoon_Secret_Account", time: "18분 전", like: 8, dislike: 25200, isPunished: true,
+                content: "이 모든 것은 8호선이라는 불법 고가 철도를 강행한 박효빈 시장과 오타쿠들의 음모다!! 우리 위대한 윤대환 아버지의 두청운수 버스가 다녔어야 남구가 평화로웠을 것이다!! 고가 철도는 즉각 철거하고 버스 노선을 확충하라!! 내 장난감 총으로 공사판의 포크레인을 다 쏴버릴 테다!! 탕탕!!",
+                replies: [
+                    { nick: "Fact_Check", content: "야 2.1% 잼민아 ㅋㅋㅋ 니네 아빠가 빵소에서 콩밥 먹는 동안 효빈시는 평화로워졌단다. 너도 네이버 지도 좀 켜서 우신면 아저씨한테 어디로 지나가는지 좀 알려줘라 ㅋㅋㅋ" },
+                    { nick: "Police_Officer", content: "윤재훈씨. 공공시설물 파손 협박 및 특수협박으로 IP 추적 완료했습니다. 자수하세요." },
+                    { nick: "YoonJaehoon(IP)", content: "조작이다!! 이 모든 건 좌파 언론의 선동이다!! 내 5천만 원 비밀 펀드의 힘을 보여주마!!" }
+                ]
+            },
+            {
+                nick: "Engineering_Bro", time: "25분 전", like: 12400, dislike: 12, isPunished: false,
+                content: "건축/토목 전공자입니다. 애초에 <a href='신흥역.html'>신흥역</a>이랑 <a href='박산역.html'>박산역</a> 지형 조건 때문에 그쪽(남구 을)으로 노선 빼는 게 타당성 제일 높게 나왔는데, 우신면은 그런 기초 타당성 조사 보고서조차 단 한 번도 안 읽어봤다는 뜻이네요. 진짜 소름 돋는 무능함입니다.",
+                replies: [
+                    { nick: "Tax_Payer", content: "이런 인간이 국회에서 내 세금으로 월급 받고 있다니 진짜 피눈물이 난다..." }
+                ]
+            },
+            {
+                nick: "Go_Jeong_Min_Fan", time: "40분 전", like: 16200, dislike: 25, isPunished: false,
+                content: "고정민 의원님 노선도 딱 들고 나와서 '지도 좀 보십시오' 할 때 진짜 개통쾌 ㅋㅋㅋㅋ 우신면 지금 이불 킥하면서 지 지역구 지도 외우고 있을 듯 ㅋㅋㅋㅋ 고정민 의원님 진짜 차기 남구 갑으로 출마해 주십쇼 무조건 찍습니다.",
+                replies: [
+                    { nick: "Vote_Power", content: "이 기세면 다음 총선 때 고정민이 자객 출마해서 우신면 15%대로 쳐발라버릴 듯 ㅋㅋㅋㅋ" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                cmt.replies.forEach(reply => {
+                    const nickClass = reply.nick.includes("Yoon") || reply.nick.includes("Woo_") || reply.nick.includes("Conservative") ? "text-red-600 font-bold" : "text-gray-700 font-bold";
+                    repliesHtml += `
+                        <div class="reply-item bg-gray-50 border border-gray-200">
+                            <span class="${nickClass}">${reply.nick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

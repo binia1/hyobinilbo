@@ -238,7 +238,13 @@ const NEWS_DATABASE = [
     url: "news_2006_election_aftermath.html",
     keywords: "서무련 지총민 최후비교 3표의비극 역사적각성",
     summary: "2006년 선거 이후 두 후보의 삶을 통해 본 정치인의 성찰과 파멸에 대한 기획 기사."
-  }
+  },{ type: '기사', category: '사회', title: '여수원 별세 기사', url: '여수원 별세 기사.html', keywords: '여수원 별세 사망' },
+        { type: '기사', category: '정치', title: '주민우 의원 당선무효 기사', url: '주민우 의원 당선무효 기사.html', keywords: '주민우 의원 당선무효 정치' },
+        { type: '기사', category: '정치', title: '제22대 총선 결과 기사', url: '제22대 총선 결과 기사.html', keywords: '제22대 총선 결과 선거 정치' },
+        { type: '기사', category: '경제', title: '우신면 펜트하우스 집값 폭락 기사', url: '우신면 펜트하우스 집값 폭락 기사.html', keywords: '우신면 펜트하우스 집값 부동산 폭락 경제' },
+        { type: '기사', category: '정치', title: '8호선 예산 삭감 논란 기사', url: '8호선 예산 삭감 논란 기사.html', keywords: '8호선 예산 삭감 논란 효빈 철도 정치' },
+        { type: '기사', category: '사회', title: '우신면 계란 투척 미수 사건 기사', url: '우신면 계란 투척 미수 사건 기사.html', keywords: '우신면 계란 투척 미수 사건 논란 사회' },
+        { type: '기사', category: '사회', title: '8호선 개통 기사', url: '8호선 개통 기사.html', keywords: '8호선 개통 효빈 철도 교통 사회' }
     ];
     // ==========================================
     // 2. 코어 전용 독립 CSS (원래 HTML의 CSS를 완벽히 무시하고 덮어씀)
