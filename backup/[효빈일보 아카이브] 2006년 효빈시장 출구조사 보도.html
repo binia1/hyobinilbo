@@ -68,10 +68,7 @@
 <body>
 
     <!-- 헤더 -->
-    <div id="common-header">
-        <div id="common-header"></div>
-        </div>
-    </div>
+    <div id="common-header"></div>
 
     <div class="article-container">
         <div class="main-content shadow-sm">
@@ -94,7 +91,76 @@
                     <p><span class="text-[#0055aa] font-bold">지상파 3사 출구조사 결과, 한나라당 윤대환 25.3% - 열린우리당 박현만 25.1% 오차범위 내 초박빙<br>민주당 강성택 17.5%, 무소속 지총민 12.2%, 서무련 7.5% 등 여권 표심 분열 심화<br>윤대환 캠프 "시민의 심판" 환호... 박현만 캠프 "개표 끝까지 봐야" 긴장감 고조</span></p>
                     
                     <div class="my-6">
-                        <img src="이미지/지선_출구조사.png" alt="2006년 효빈시장 출구조사 결과 화면" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=2006+Election+Exit+Poll'">
+                        <!-- 가로형 막대그래프 -->
+                        <div class="border border-gray-200 rounded-md bg-[#f8f9fa] p-4 sm:p-8 shadow-inner select-none font-sans">
+                            <div class="text-center mb-6 border-b border-gray-300 pb-3">
+                                <h3 class="font-extrabold text-xl md:text-2xl text-gray-900 tracking-tighter">제4대 효빈광역시장 선거 출구조사</h3>
+                                <span class="text-xs text-gray-500 mt-1 inline-block bg-gray-200 px-2 py-1 rounded-full">지상파 3사 공동</span>
+                            </div>
+                            
+                            <div class="flex flex-col gap-4 mt-6">
+                                <!-- 1위 윤대환 -->
+                                <div class="flex items-center gap-2 sm:gap-4 w-full">
+                                    <div class="w-16 sm:w-20 text-right shrink-0 border-r-2 border-gray-300 pr-2 sm:pr-3 py-1">
+                                        <div class="font-bold text-gray-900 text-[14px] sm:text-[16px] leading-tight">윤대환</div>
+                                        <div class="text-[10px] sm:text-[12px] text-[#184B9F] font-black tracking-tighter mt-0.5">한나라당</div>
+                                    </div>
+                                    <div class="flex-grow flex items-center pr-12"> 
+                                        <div class="h-6 sm:h-8 bg-gradient-to-r from-[#0e2c5c] to-[#184B9F] shadow-sm rounded-r-sm" style="width: 84.3%;"></div>
+                                        <span class="ml-2 font-black text-[#184B9F] text-[14px] sm:text-[16px]">25.3<span class="text-[10px] font-normal">%</span></span>
+                                    </div>
+                                </div>
+
+                                <!-- 2위 박현만 -->
+                                <div class="flex items-center gap-2 sm:gap-4 w-full">
+                                    <div class="w-16 sm:w-20 text-right shrink-0 border-r-2 border-gray-300 pr-2 sm:pr-3 py-1">
+                                        <div class="font-bold text-gray-900 text-[14px] sm:text-[16px] leading-tight">박현만</div>
+                                        <div class="text-[10px] sm:text-[12px] text-[#F39800] font-black tracking-tighter mt-0.5">열린우리당</div>
+                                    </div>
+                                    <div class="flex-grow flex items-center pr-12">
+                                        <div class="h-6 sm:h-8 bg-gradient-to-r from-[#b57100] to-[#F39800] shadow-sm rounded-r-sm" style="width: 83.6%;"></div>
+                                        <span class="ml-2 font-black text-[#F39800] text-[14px] sm:text-[16px]">25.1<span class="text-[10px] font-normal">%</span></span>
+                                    </div>
+                                </div>
+
+                                <!-- 3위 강성택 -->
+                                <div class="flex items-center gap-2 sm:gap-4 w-full">
+                                    <div class="w-16 sm:w-20 text-right shrink-0 border-r-2 border-gray-300 pr-2 sm:pr-3 py-1">
+                                        <div class="font-bold text-gray-900 text-[14px] sm:text-[16px] leading-tight">강성택</div>
+                                        <div class="text-[10px] sm:text-[12px] text-[#008000] font-black tracking-tighter mt-0.5">민주당</div>
+                                    </div>
+                                    <div class="flex-grow flex items-center pr-12">
+                                        <div class="h-6 sm:h-8 bg-gradient-to-r from-[#004d00] to-[#008000] shadow-sm rounded-r-sm" style="width: 58.3%;"></div>
+                                        <span class="ml-2 font-black text-[#008000] text-[14px] sm:text-[16px]">17.5<span class="text-[10px] font-normal">%</span></span>
+                                    </div>
+                                </div>
+
+                                <!-- 4위 지총민 -->
+                                <div class="flex items-center gap-2 sm:gap-4 w-full">
+                                    <div class="w-16 sm:w-20 text-right shrink-0 border-r-2 border-gray-300 pr-2 sm:pr-3 py-1">
+                                        <div class="font-bold text-gray-900 text-[14px] sm:text-[16px] leading-tight">지총민</div>
+                                        <div class="text-[10px] sm:text-[12px] text-gray-600 font-black tracking-tighter mt-0.5">무소속</div>
+                                    </div>
+                                    <div class="flex-grow flex items-center pr-12">
+                                        <div class="h-6 sm:h-8 bg-gradient-to-r from-gray-500 to-gray-400 shadow-sm rounded-r-sm" style="width: 40.6%;"></div>
+                                        <span class="ml-2 font-black text-gray-600 text-[14px] sm:text-[16px]">12.2<span class="text-[10px] font-normal">%</span></span>
+                                    </div>
+                                </div>
+
+                                <!-- 5위 서무련 -->
+                                <div class="flex items-center gap-2 sm:gap-4 w-full">
+                                    <div class="w-16 sm:w-20 text-right shrink-0 border-r-2 border-gray-300 pr-2 sm:pr-3 py-1">
+                                        <div class="font-bold text-gray-900 text-[14px] sm:text-[16px] leading-tight">서무련</div>
+                                        <div class="text-[10px] sm:text-[12px] text-gray-600 font-black tracking-tighter mt-0.5">무소속</div>
+                                    </div>
+                                    <div class="flex-grow flex items-center pr-12">
+                                        <div class="h-6 sm:h-8 bg-gradient-to-r from-gray-500 to-gray-400 shadow-sm rounded-r-sm" style="width: 25.0%;"></div>
+                                        <span class="ml-2 font-black text-gray-600 text-[14px] sm:text-[16px]">7.5<span class="text-[10px] font-normal">%</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="img-caption">▲ 31일 오후 6시 투표 마감 직후 발표된 지상파 3사(KBS, MBC, SBS) 공동 출구조사 결과, 제4대 효빈광역시장 선거에서 한나라당 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 후보와 열린우리당 <a href="박현만.html" class="text-blue-600 underline">박현만</a> 후보가 오차범위 내 초접전을 벌이고 있는 것으로 나타났다.</div>
                     </div>
 
@@ -122,7 +188,7 @@
             <!-- 댓글창 영역 (2026년 기준 아카이브 반응) -->
             <div class="comment-section">
                 <div class="comment-header">
-                    아카이브 네티즌 반응 <span class="text-[#0055aa]" id="comment-count">3,592</span>
+                    아카이브 네티즌 반응 <span class="text-[#0055aa]" id="comment-count">4,128</span>
                     <span class="text-xs text-gray-500 ml-2 font-normal">(현재 시간: 2026년 기준)</span>
                 </div>
                 
@@ -142,7 +208,7 @@
                     <script>
                         const commentsData = [
                             {
-                                nick: "History_Watcher", time: "방금 전", like: 12500, dislike: 15, isPunished: false,
+                                nick: "History_Watcher", time: "1시간 전", like: 15200, dislike: 21, isPunished: false,
                                 content: "효빈위키 링크 타고 성지순례 왔습니다... 이 기사가 바로 그 전설의 시작이었구나. 저때 '수십 표 차이'라고 예측한 기자님, 당신은 틀렸어. 단 **3표** 차이로 지옥문이 열렸거든 ㅠㅠ",
                                 replies: [
                                     { nick: "Fact_Check", content: "진짜 기사 읽는데 소름이 돋는다. 저 출구조사 발표될 때 나 초딩이었는데 우리 아빠가 TV 보면서 담배만 세 갑 피우셨음." },
@@ -150,46 +216,47 @@
                                 ]
                             },
                             {
-                                nick: "Free_Isaiah", time: "5분 전", like: 8, dislike: 48000, isPunished: true,
+                                nick: "Rainy_Vote_06", time: "50분 전", like: 11400, dislike: 34, isPunished: false,
+                                content: "저 날 비 와서 귀찮다고 투표하러 안 간 내 자신을 20년째 저주하는 중입니다... 나랑 내 동생, 엄마 셋이서 투표만 했어도 딱 3표 채워서 재검표 가는 건데... (...) 그 스노우볼이 효빈시 시내버스 요금 7000원으로 굴러갈 줄은 상상도 못했음 ㅠㅠ",
+                                replies: [
+                                    { nick: "Angry_Citizen", content: "네 이놈!!!! 네가 효빈시를 지옥으로 몰아넣었구나!!!! <span class='strike'>(농담입니다)</span>" },
+                                    { nick: "BlueLine_Rider", content: "진짜 저 날 이후 트라우마 생겨서 비가 오든 눈이 오든 투표날엔 무조건 <a href='파란색1호선.html' style='color:#0077DD; font-weight:bold;'>1호선</a> 타고 투표소 뛰어나감 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Gosong_Resident", time: "45분 전", like: 9800, dislike: 12, isPunished: false,
+                                content: "아직도 생생하다. 출구조사 동률 뜨고 다음날 아침 윤대환 당선 확정 뉴스 보면서, 우리 동네에 걸려있던 <a href='효빈6호선.html' style='color:#881188; font-weight:bold;'>보라색 6호선</a> <a href='고송.html' class='text-blue-500 underline'>고송역</a> 착공식 현수막 철거되던 거... 내 집값 돌려내 이 악마야 ㅠㅠ <span class='strike'>덕분에 10년을 45인승 버스에 75명씩 낑겨타는 가축수송 난민으로 살았지</span>",
+                                replies: [
+                                    { nick: "Majap_Sad", content: "ㅇㅈ... <a href='마잡.html' class='text-blue-500 underline'>마잡역</a>부터 <a href='전덕.html' class='text-blue-500 underline'>전덕역</a> 구간은 윤대환이 아예 설계도 파쇄기에 넣고 갈아버려서 백지화 시켰었잖아 ㅋㅋㅋ 미친놈인줄" },
+                                    { nick: "Hyobin_Love_96", content: "그때 갈갈이 찢긴 설계도 다시 주워 모아서 기어코 6호선 완성시킨 게 현직 <a href='박효빈.html' class='text-blue-500 underline'>박효빈</a> 시장님임 ㄹㅇ 갓효빈 찬양해" }
+                                ]
+                            },
+                            {
+                                nick: "Free_Isaiah", time: "30분 전", like: 8, dislike: 52000, isPunished: true,
                                 content: "2006년은 위대한 윤대환 시장님이 부패한 좌파 카르텔을 박살내고 당선되신 자랑스러운 해입니다!! 효빈의 품격을 되찾은 날을 기억합시다!! 저 출구조사는 천심이었습니다!!",
                                 replies: [
-                                    { nick: "Normal_Student", content: "왔다 <a href='이차야.html' class='text-blue-500 underline'>이차야</a> ㅋㅋㅋㅋ 야 품격 찾다가 니 지갑 7000원 털린 건 기억 안 나냐? 넌 진짜 <a href='효빈6호선.html' style='color:#881188; font-weight:bold;'>보라색 6호선</a> 평생 타지 마라 양심이 있으면" },
-                                    { nick: "Subway_Driver", content: "천심은 개뿔 ㅋㅋㅋ 3표 차이로 당선돼서 시장실에서 술판 벌이던 게 니들 품격이냐? ㅉㅉ" }
+                                    { nick: "Normal_Student", content: "왔다 <a href='이차야.html' class='text-blue-500 underline'>이차야</a> ㅋㅋㅋㅋ 야 품격 찾다가 니 지갑 7000원 털린 건 기억 안 나냐? 넌 양심 있으면 <a href='효빈6호선.html' style='color:#881188; font-weight:bold;'>6호선</a> 평생 타지 마라 진짜" },
+                                    { nick: "Subway_Driver", content: "천심은 개뿔 ㅋㅋㅋ 3표 차이로 당선돼서 시장실에 지 전용 찜질방이랑 스크린 골프장 만든 게 니들이 말하는 품격이냐? ㅉㅉ" }
                                 ]
                             },
                             {
-                                nick: "Free_Yoon_Daehwan", time: "8분 전", like: 5, dislike: 89000, isPunished: true,
-                                content: "위대하신 애국보수 윤대환 시장님 만세!! 7000원 버스는 효빈의 교통 질서를 잡기 위한 위대한 결단이었습니다!! 좌파 시장 박효빈은 당장 사퇴하라!!",
+                                nick: "Hyobin_Otaku_Club", time: "25분 전", like: 8700, dislike: 45, isPunished: false,
+                                content: "본문에서 '경박한 문화' 운운하는 거 보니까 또 피꺼솟하네... 저때 시내에 다니던 에반게리온 래핑 버스 싹 다 불건전하다고 회색 페인트로 덮어버렸잖아;; <span class='strike'>그러고 그 자리에 지 얼굴 대문짝만하게 박은 7000원짜리 버스 굴림</span> 진짜 단체로 <a href='효빈항.html' class='text-blue-500 underline'>효빈항</a> 앞바다에 다이빙 마렵던 암흑기였다.",
                                 replies: [
-                                    { nick: "Fact_Check", content: "야 이 빡통아 ㅋㅋㅋ 니 지갑에서 7천원씩 뜯어가서 지 관저에 찜질방 짓고 스크린 골프장 만든 건 까먹었냐? 호구 인증 지대로네 ㅋㅋㅋ" },
-                                    { nick: "Citizen_A", content: "빵에 침 뱉다 걸려서 감방 간 니네 장군님 면회나 가라 제발 ㅋㅋㅋ <a href='효빈6호선.html' style='color:#881188; font-weight:bold;'>보라색 6호선</a> 설계도 파쇄해서 시민들 개고생시킨 주범을 찬양하네 진짜 종교다 종교" }
+                                    { nick: "Logic_Destroyer", content: "일본 오다이바 가서 판넬에 래커칠하다 체포당해서 영구 입국 금지 당한 놈을 보수라고 빨아주던 시절 ㅋㅋㅋ 유성민 후보가 쓰레기라고 손절 친 이유가 다 있다니까" }
                                 ]
                             },
                             {
-                                nick: "Yoon_Guard_99", time: "10분 전", like: 8, dislike: 85000, isPunished: true,
-                                content: "윤재훈 후보님께서 토론회에서 팩트를 짚어주신 겁니다!! 씹덕후(오타쿠)들이 효빈의 품격을 망치고 있습니다!! 윤 후보님의 쇠파이프 투쟁을 지지합니다!!",
-                                replies: [
-                                    { nick: "Logic_Destroyer", content: "투쟁 ㅇㅈㄹ ㅋㅋㅋ 지가 학폭 가해자 새끼면서 피해자 조롱하고, 쇠파이프 들고 나댔는데 근력이 딸려서 전치 2주도 못 낸 씹멸치 난동꾼을 빠네 ㅋㅋㅋ" },
-                                    { nick: "Anti_Villain", content: "일본 오다이바 가서 판넬에 래커칠하다 체포당해서 영구 입국 금지 당한 국제적 망신 덩어리 빠는 수준 ㅋㅋㅋ 유성민 후보가 쓰레기라고 손절 친 이유가 있다. 니들도 <a href='효빈항.html' class='text-blue-500 underline'>효빈항</a> 앞바다에 같이 좀 빠져라." }
-                                ]
-                            },
-                            {
-                                nick: "Line6_Forever", time: "15분 전", like: 9800, dislike: 22, isPunished: false,
-                                content: "저 기사 뜨고 다음 날 눈 떠보니까 윤대환 당선 확정... 그리고 일주일 뒤에 우리 동네에 뚫리기로 했던 <a href='효빈6호선.html' style='color:#881188; font-weight:bold;'>6호선</a> 설계도 갈갈이 찢겨나감 ㅋㅋㅋㅋ 아직도 트라우마 남아서 개표방송은 안 본다 ㅆㅂ",
-                                replies: [
-                                    { nick: "Saya_Fan", content: "서무련 이사장님이 7.5% 가져간 게 진짜 뼈아팠지... 그래도 이사장님은 재단이라도 세웠지, 지총민 12.2% 저 새끼는 끝까지 남 탓 ㅋㅋㅋㅋ" }
-                                ]
-                            },
-                            {
-                                nick: "Hyobin_Youth_881188", time: "18분 전", like: 8500, dislike: 10, isPunished: false,
-                                content: "기사 본문에 '경박한 문화 정책으로 시의 품격을 떨어뜨린' ㅋㅋㅋㅋ 에반게리온 래핑 버스 보고 발작하던 그 시절 보수 틀딱들 논리 그대로 박혀있네. <span class='strike'>저러고 윤대환 찍은 대가가 45인승 버스 75명 가축 수송이었지</span>",
+                                nick: "Seo_Muryeon_Fan", time: "20분 전", like: 4500, dislike: 80, isPunished: false,
+                                content: "솔직히 지총민 12.2%는 진짜 순수 분탕 목적이었고... 서무련 후보님 7.5%가 좀 아쉽긴 했음. 그래도 서무련 이사장님은 나중에 장학재단이라도 세우셔서 지역사회에 공헌하셨지, 강성택은 저러고 잠적해버렸잖아 ㅋㅋㅋㅋ",
                                 replies: []
                             },
                             {
-                                nick: "Vote_For_HyoBin", time: "20분 전", like: 10200, dislike: 5, isPunished: false,
-                                content: "20년 전 기사 보니까 우리가 2022년에 왜 <a href='박효빈.html' class='text-blue-500 underline'>박효빈</a> 시장님한테 77.9% 몰표를 줬는지 다시 한번 증명됨. 분열하면 또 우리 지갑이 윤씨 일가한테 털린다 명심해라.",
+                                nick: "Vote_For_HyoBin_2022", time: "10분 전", like: 13000, dislike: 12, isPunished: false,
+                                content: "저렇게 3표 차이로 간당간당했던 도시가 2022년 지선에서 96년생 젊은 <a href='박효빈.html' class='text-blue-500 underline'>박효빈</a> 시장님(남자임! 창조주 아님!)한테 무려 **77.9%** 몰표 준 거 보면 시민들 정치 수준이 엄청 올라간 거임. 부임하자마자 관저 찜질방 싹 다 밀어버리고 시민공원 만든 건 진짜 쾌감 쩔었다 ㅋㅋㅋ",
                                 replies: [
-                                    { nick: "Binyo_Line_Rider", content: "ㄹㅇ 3표의 비극 절대 잊지 말자. <span style='color:#0077DD; font-weight:bold;'>파란색 1호선</span> 타고 투표장 꼭 가라 진짜" }
+                                    { nick: "Binhyo_Commuter", content: "ㅇㅈ 시장님 부임하고 <a href='빈효선.html' style='color:#6677CC; font-weight:bold;'>연청색 빈효선</a> 광역전철 연장된 거 개꿀임. 우리 집 <a href='동신.html' class='text-blue-500 underline'>동신역</a>인데 <a href='효빈항물류지구.html' class='text-blue-500 underline'>효빈항물류지구</a>까지 출퇴근 순식간에 감 ㄹㅇ" },
+                                    { nick: "Worried_Citizen", content: "근데 96년생 시장님 진짜 일중독 아니냐? 저번에 <a href='시청.html' style='color:#881188; font-weight:bold;'>6호선 시청역</a>에서 막차 타고 퇴근하시는 거 봤는데 다크서클이 턱까지 내려오셨던데 (...) 제발 건강 좀 챙기시길 ㅠㅠ" }
                                 ]
                             }
                         ];
@@ -217,7 +284,7 @@
 
                                 cmt.replies.forEach(reply => {
                                     const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
-                                    const nickClass = reply.nickClass || (reply.nick.includes("Free") || reply.nick.includes("Yoon") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Free") || reply.nick.includes("Yoon") || reply.nick.includes("Angry") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
 
                                     repliesHtml += `
                                         <div class="reply-item ${styleClass}">
@@ -289,6 +356,10 @@
     <div id="common-footer"></div>
 
     <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+<div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
     <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

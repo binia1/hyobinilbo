@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문화/관광] 효빈시-누마즈시, 바다와 애니메이션으로 맺어진 '운명적 자매결연' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        strike { color: #888; text-decoration: line-through; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">문화 > 관광/지방행정</div>
+                <h2 class="article-title">효빈시-누마즈시, 바다와 애니메이션으로 맺어진 '운명적 자매결연'</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">문화부 김기자</span> (culture@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2018.07.26. 16:30 | 수정 2018.07.26. 17:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">26일, 효빈시청서 공식 자매결연 협약식 개최<br>해안 관광 및 항만 인프라 개발 공동 연구 추진<br>지역 특화 IP(러브라이브! 선샤인!!) 활용한 상권 활성화 및 성지순례 전략 벤치마킹</span></p>
+                    
+                    <div class="my-6">
+                        <img src="김성민_요리시게_협약식.png" alt="김성민 시장과 요리시게 슈이치 누마즈 시장의 자매결연 협약식" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/003399/FFFFFF?text=Hyobin+%26+Numazu+Agreement'">
+                        <div class="img-caption">▲ 26일 효빈시청에서 열린 자매결연 협약식에서 <a href="김성민.html" class="text-blue-600 underline">김성민</a> 효빈광역시장(왼쪽)과 <a href="요리시게슈이치.html" class="text-blue-600 underline">요리시게 슈이치</a> 누마즈 시장이 협약서에 서명한 뒤 기념 촬영을 하고 있다. (사진=효빈시청 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김기자] 효빈광역시와 일본 시즈오카현 <a href="누마즈시.html" class="text-blue-600 underline">누마즈시</a>가 26일 공식 자매결연을 체결했다. 양 도시는 바다를 인접하고 있는 항구 도시라는 공통점을 바탕으로 향후 해양·관광 산업 및 지역 특화 IP(지식재산권) 연계 사업에서 긴밀한 협력을 이어갈 예정이다.</p>
+
+                    <p>이날 효빈시청 대강당에서 열린 협약식에는 <a href="김성민.html" class="text-blue-600 underline">김성민</a> 효빈광역시장과 최근 취임한 <a href="요리시게슈이치.html" class="text-blue-600 underline">요리시게 슈이치</a> 누마즈 시장을 비롯해 양측 관계자 50여 명이 참석했다. 요리시게 시장은 임기를 시작하자마자 첫 해외 공식 일정으로 효빈시를 방문하며 이번 결연에 대한 강한 의지를 드러냈다.</p>
+
+                    <p>이번 협약의 핵심은 **'해안 관광 및 항만 인프라 개발 공동 연구'**와 **'지역 특화 애니메이션 IP를 활용한 상권 활성화 전략 벤치마킹'**이다. 누마즈시는 인기 애니메이션 '러브라이브! 선샤인!!'의 실제 배경이 된 도시로, 전 세계에서 수많은 팬들이 방문하는 이른바 '성지순례'를 통해 성공적인 지역 경제 활성화를 이뤄낸 모범 사례로 꼽힌다.</p>
+
+                    <div class="my-6">
+                        <img src="누마즈_전경.png" alt="누마즈시 전경" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/444444/FFFFFF?text=Numazu+City+View'">
+                        <div class="img-caption">▲ 일본 시즈오카현 누마즈시의 전경. 애니메이션 IP를 지역 관광 자원으로 훌륭하게 융합시킨 사례로 평가받고 있다.</div>
+                    </div>
+
+                    <p>효빈시 역시 자체적인 철도 마스코트(1호선 고나미, 6호선 라세나 등)를 보유하고 있으며, 문화·예술 콘텐츠를 접목한 원도심 재생 사업을 추진 중이다. 김성민 시장은 "누마즈시가 보여준 IP 기반의 관광 거점화 전략은 효빈시가 나아가야 할 방향성에 큰 영감을 준다"며 "앞으로 두 도시가 단순한 행정 교류를 넘어, 문화 콘텐츠와 해양 산업 전반에서 실질적인 시너지를 낼 수 있도록 최선을 다하겠다"고 밝혔다.</p>
+
+                    <p>요리시게 슈이치 누마즈 시장 또한 "따뜻하게 환대해 주신 효빈 시민들과 김성민 시장님께 깊은 감사를 드린다"며 "활기찬 해양 도시 효빈과 누마즈가 서로의 장점을 배우고 발전하는 든든한 동반자가 되기를 희망한다"고 화답했다.</p>
+
+                    <p>양 도시는 이번 자매결연을 계기로 민간 차원의 문화 교류 프로그램 신설, 양 도시 관광객 대상 특별 프로모션 기획 등 구체적인 실무 논의에 착수할 계획이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 의견 <span class="text-[#0055aa]" id="comment-count">1,829</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Prophet_of_Subway", time: "2018.07.26 16:45", like: 38500, dislike: 12, isPunished: false,
+                                content: "설마 이거 벤치마킹 한답시고 자매결연 맺고 바로 6호선 같은 데에 랩핑열차 굴리려는 큰 그림 아님? ㅋㅋㅋ 에이 설마 일개 지자체가 그렇게 덕력 높게 속전속결로 하겠어? ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Holy_Pilgrim_01", content: "성지순례 왔습니다. 네, 그 '설마'가 진짜로 일어났습니다. 6호선 보라색 랩핑열차 개통 축하!" },
+                                    { nick: "Holy_Pilgrim_02", content: "성지순례 왔습니다. 작성자님 예지력 미치셨네요. 이번 학기 학점 올A 맞게 해주세요!" },
+                                    { nick: "Holy_Pilgrim_03", content: "성지순례 왔습니다. 김성민 시장님의 치밀한 덕업일치 계획을 꿰뚫어보시다니 ㄷㄷ 로또 1등 당첨되게 해주세요." },
+                                    { nick: "Holy_Pilgrim_04", content: "성지순례 왔습니다. 다음 주 효빈교통공사 면접인데 꼭 합격하게 해주세요ㅠㅠ 라세나 충성충성!" },
+                                    { nick: "Holy_Pilgrim_05", content: "성지순례 왔습니다. 올해는 여친 생기게 해주세요 (제발)" },
+                                    { nick: "Holy_Pilgrim_06", content: "성지순례 왔습니다. 가챠 픽뚫 안 당하고 천장 전에 최애 뽑게 해주세요!!" },
+                                    { nick: "Holy_Pilgrim_07", content: "성지순례 왔습니다. 우리 효빈시 주말 상권 300% 떡상 실화냐 가슴이 웅장해진다..." },
+                                    { nick: "Patriot_Yoon_Supporter", content: "성지순례는 무슨 얼어죽을!! 쪽바리 열차 만든 김성민 사퇴하라!! 두청운수 갈색 버스가 그립다!!" },
+                                    { nick: "Holy_Pilgrim_08", content: "성지순례 왔습니다. 윗댓 찌질이 악플러 대머리 되게 해주세요." },
+                                    { nick: "Holy_Pilgrim_09", content: "성지순례 왔습니다. 내일 누마즈로 3박 4일 여행갑니다. 안전하게 다녀오게 해주세요 요소로!" },
+                                    { nick: "Holy_Pilgrim_10", content: "성지순례 왔습니다. 앞으로도 효빈시 꽃길만 걷자! 박효빈 화이팅 김성민 화이팅!" }
+                                ]
+                            },
+                            {
+                                nick: "Patriot_Yoon", time: "2018.07.26 16:50", like: 45, dislike: 15800, isPunished: true,
+                                content: "어디 쪽바리들 원숭이 만화 쪼가리에 우리 위대한 효빈시의 피 같은 혈세를 낭비하느냐!! 윤대환 전 시장님 시절에는 이런 근본 없고 천박한 짓거리는 절대 안 했다!! 당장 자매결연 취소하고 김성민은 사퇴하라!!",
+                                replies: [
+                                    { nick: "Bus_Survivor", content: "아재요, 윤대환 시절에 멀쩡한 버스 똥색(두청운수 갈색)으로 칠해서 시민들 멀미나게 하고 플라스틱 의자 앉힌 건 근본 있는 행정이냐? ㅋㅋㅋ" },
+                                    { nick: "Fact_Check", content: "어르신, 윤대환이 말아먹은 효빈시 상권 김성민 시장님이 멱살 잡고 살리려는 중입니다. 제발 딴 데 가서 노세요." },
+                                    { nick: "Subway_Commuter", content: "6호선 중전철 사수해준 갓성민 건드리지 마라. 윤대환이 싼 똥 치우는 구원 투수다." }
+                                ]
+                            },
+                            { 
+                                nick: "Citizen_A", time: "2018.07.26 17:02", content: "기사 사진 보니까 두 시장님 표정 진짜 밝으시네 ㅋㅋㅋ 특히 김성민 시장님, 저 표정은 그냥 정치적 미소가 아니라 진짜 <strike>최애캐 영접한</strike> 찐텐 행복 미소다 ㅋㅋㅋ", like: 12100, dislike: 8, 
+                                replies: [
+                                    {nick:"Old_Man_Yoon", content:"시장이란 작자가 진중하지 못하고 실실 쪼개기나 하다니! 윤대환 시장님의 근엄한 카리스마가 그립다!"},
+                                    {nick:"Citizen_A", content:"카리스마 좋아하시네, 불통이랑 카리스마 구분 못하시죠 할아버지?"}
+                                ] 
+                            },
+                            { 
+                                nick: "Rail_Fan_01", time: "2018.07.26 17:15", content: "누마즈 벤치마킹할 거면 효빈시도 6호선 보라색(#881188)에 길티키스 같은 거 랩핑해주면 안 되나? 라세나랑 엮으면 진짜 대박날 텐데 ㅠㅠ (행시 출신 오타쿠 시장님 제발 추진 좀...)", like: 8200, dislike: 15, 
+                                replies: [
+                                    {nick:"True_Conservative", content:"전철에 만화 쪼가리 색칠하는 게 제정신이냐!! 철도는 쇠창살 맛 나는 묵직함이 있어야지!! 예산 낭비다!!"}, 
+                                    {nick:"Rail_Fan_01", content:"으휴 또 두청운수 알바 왔네. 75명 쑤셔 타는 똥색 버스나 타러 가십쇼."}
+                                ] 
+                            },
+                            { 
+                                nick: "Local_Merchant", time: "2018.07.26 17:20", content: "역전 상인입니다. 누마즈가 애니메이션 하나로 상권이 살아났다고 하니 우리도 기대가 큽니다. 관광객들 많이 오면 좋겠네요. 누마즈 귤도 들여놔야 하나 ㅎㅎ", like: 6500, dislike: 8, 
+                                replies: [
+                                    {nick:"Patriot_Yoon", content:"상인 정신이 썩어빠졌네! 일본 귤을 왜 파냐! 우리 신토불이 배추나 팔아라!! 윤대환 시장님은 우리 농산물만 드셨다!!"},
+                                    {nick:"Local_Merchant", content:"장사 안 해보셨죠? 손님이 찾는 걸 파는 게 장사입니다. 영업 방해하지 마쇼."}
+                                ] 
+                            },
+                            { 
+                                nick: "Numazu_Citizen", time: "2018.07.26 17:25", content: "요리시게 시장님 취임하시자마자 효빈시로 달려가신 거 진짜 멋짐. 두 분 다 추진력 장난 아니시네요. 효빈시도 매력적인 도시던데, 앞으로 문화 교류 많이 했으면 좋겠습니다! (번역기 돌림)", like: 5800, dislike: 5, 
+                                replies: [
+                                    {nick:"Welcome_Friend", content:"요소로!! 효빈시에 오신 걸 환영합니다! 자주 교류해요!"},
+                                    {nick:"Yoon_Fanclub", content:"쪽바리는 니네 나라로 돌아가라!! 위대한 윤대환 수령님 만세!!"},
+                                    {nick:"Welcome_Friend", content:"아 부끄럽다 진짜;; 대신 사과드립니다 ㅠㅠ 저런 이상한 사람 효빈시민 0.01%도 안 돼요 ㅠㅠ"}
+                                ] 
+                            },
+                            { 
+                                nick: "Otaku_Life", time: "2018.07.26 17:35", content: "행시 출신 시장님의 합법적 덕질이 시작되는 건가 ㅋㅋㅋ 아내분인 이한선 여사님(한센츄)이 집에서 결재 서류에 사인해줬을 듯 ㅋㅋㅋ 부부 동반 성지순례 각이다.", like: 4900, dislike: 10, 
+                                replies: [
+                                    {nick:"Old_Guard", content:"시장이란 자가 아녀자 치맛바람에 휘둘리다니!! 나라 꼴이 말이 아니구나!!"},
+                                    {nick:"Otaku_Life", content:"아녀자 이지랄 ㅋㅋㅋ 조선시대에서 오셨어요? 쉰내 나니까 창문 좀 엽시다."}
+                                ] 
+                            },
+                            { 
+                                nick: "Hyobin_Pride", time: "2018.07.26 17:40", content: "솔직히 윤대환이 버스 똥색으로 칠해놓고 대중교통 다 박살 내놓은 거 김성민 시장님이 멱살 잡고 캐리하는 중임. 누마즈 벤치마킹해서 우리 효빈시도 관광 대박 터트려보자!", like: 4100, dislike: 45, 
+                                replies: [
+                                    {nick:"Patriot_Yoon", content:"이 놈!! 위대한 윤대환 시장님의 업적을 모독하다니!! 너 간첩이지!! 국정원에 신고하겠다!!"},
+                                    {nick:"Hyobin_Pride", content:"신고해라 ㅋㅋㅋ 똥색 버스 만든 게 업적이면 난 기꺼이 간첩 할란다 ㅋㅋㅋ"}
+                                ] 
+                            },
+                            { 
+                                nick: "Aqours_Forever", time: "2018.07.26 17:45", content: "효빈시청 대강당에서 러브라이브 브금 틀었으면 완벽했을 텐데 아쉽다 ㅋㅋㅋ 암튼 효빈-누마즈 자매결연 대환영! 요소로!", like: 3500, dislike: 20, 
+                                replies: [] 
+                            },
+                            { 
+                                nick: "Tax_Payer", time: "2018.07.26 17:50", content: "자매결연 좋은데 제발 실효성 있는 정책으로 이어지길. 허공에 세금 날리는 전시행정은 윤대환 하나로 족함. 이번 벤치마킹은 진짜 결과물로 보여주길.", like: 3200, dislike: 15, 
+                                replies: [
+                                    {nick:"Admin_Geek", content:"김성민 시장 일처리 깐깐하기로 유명함. 철도공사 분리할 때 결재판 날리던 양반이라 세금 허투루 안 쓸 듯."}
+                                ] 
+                            },
+                            { 
+                                nick: "Hyobin_Metro_Official", time: "2018.07.26 17:55", content: "아... 뭔가 불길하다... 시장님 눈빛 보니까 조만간 우리한테 엄청난 오더(일거리)가 떨어질 것 같은 불길한 예감이 든다... 야근 확정이네 ㅠㅠ", like: 2800, dislike: 5, 
+                                replies: [
+                                    {nick:"Cheer_Up", content:"공기업 직원이면 까라면 까야지 ㅋㅋㅋ 라세나 누마즈 콜라보 가즈아!"}
+                                ] 
+                            },
+                            { 
+                                nick: "Tourism_Student", time: "2018.07.26 18:05", content: "관광학과 학생입니다. 누마즈 사례는 전공 수업에서도 다룰 만큼 전설적인 IP 지역상생 모델인데, 이걸 시장님이 직접 물고 오시다니 안목 대박이네요. 졸작 주제 이걸로 잡아야겠습니다.", like: 2500, dislike: 8, 
+                                replies: [
+                                    {nick:"Old_Man_Yoon", content:"대학생이 공부는 안 하고 만화 쪼가리나 분석하고 앉았네!! 나 때는 공장에서 미싱 돌리면서 야학 다녔다!!"},
+                                    {nick:"Tourism_Student", content:"네 할아버지 연세엔 그러셨겠죠. 시대가 변했습니다. IP 산업이 조 단위 매출을 내는 시대에요."}
+                                ] 
+                            },
+                            { 
+                                nick: "Color_Match", time: "2018.07.26 18:15", content: "근데 우리 6호선은 보라색(#881188)이고 1호선은 파란색(#0077DD)이잖아? 이거 색깔 맞춰서 콜라보하면 진짜 예쁘겠다. 제발 철덕 살려...", like: 2100, dislike: 12, 
+                                replies: [] 
+                            },
+                            { 
+                                nick: "Yoon_Jaehoon_Fan", time: "2018.07.26 18:25", content: "우리 재훈 오빠가 시장 아들로 있을 때가 좋았는데... 이런 근본 없는 일본 만화 결연이나 맺고 ㅉㅉ 재훈 오빠 돌아와요~", like: 15, dislike: 4500, isPunished: true,
+                                replies: [
+                                    {nick:"Police", content:"너 윤재훈 본인이지? 아이피 추적 들어간다."},
+                                    {nick:"Fact_Check", content:"득표율 0.01%(146표) 따리한테 팬클럽이 있다고? ㅋㅋㅋ 지나가던 개가 웃겠다."}
+                                ] 
+                            },
+                            { 
+                                nick: "Traveler_Kim", time: "2018.07.26 18:30", content: "아 기사 보니까 누마즈 마렵다 ㅠㅠ 효빈국제공항에서 누마즈(시즈오카 공항) 직항 좀 뚫어주세요 시장님!!", like: 1900, dislike: 3, 
+                                replies: [] 
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            // 첫번째(성지순례), 두번째, 열네번째(악플) 강조 처리
+                            const isVillainComment = cmt.isPunished;
+                            const isBestComment = cmt.like > 10000;
+                            
+                            const div = document.createElement('div');
+                            div.className = isVillainComment ? "best-comment border-red-300 bg-red-50" : (isBestComment ? "best-comment border-blue-200 bg-blue-50" : "comment-item");
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                // 예언 성지순례 댓글과 악플은 기본적으로 펼쳐두기
+                                if(idx === 0 || isVillainComment) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`; 
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const isVillain = reply.nick.includes("Patriot") || reply.nick.includes("Yoon") || reply.nick.includes("True_Conservative") || reply.nick.includes("Old_Man") || reply.nick.includes("Old_Guard");
+                                    const isPilgrim = reply.nick.includes("Pilgrim");
+                                    
+                                    let nickClass = "text-gray-700 font-bold";
+                                    if (isVillain) nickClass = "text-red-600 font-bold";
+                                    if (isPilgrim) nickClass = "text-blue-600 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${isVillainComment ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${isVillainComment ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner bg-white border border-gray-200 p-4 rounded text-center">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈투어 기획전</div>
+                    <div class="text-xs text-gray-600">일본 시즈오카/누마즈 관광 상품<br><span class="text-blue-500 font-bold">얼리버드 예약 할인</span></div>
+                </div>
+            </div>
+            <div class="ad-banner p-4 rounded text-center" style="background: #f0f0f0; border: 1px solid #ccc;">
+                <div>
+                    <div class="font-bold text-gray-800 mb-1">효빈교통공사 (HYOBIN METRO)</div>
+                    <div class="text-xs text-gray-700">시민의 쾌적한 발이 되겠습니다.<br>1호선~6호선 정상 운행 중</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>
