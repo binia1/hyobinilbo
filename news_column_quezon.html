@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[기자수첩] 케손시티에서 날아온 '형제애', 그리고 우리의 부끄러움 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) {
+            .article-container { flex-direction: row; }
+        }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">오피니언 > 기자수첩</div>
+                <h2 class="article-title">[기자수첩] 케손시티에서 날아온 '형제애', 그리고 우리의 부끄러움</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">이특파원 기자</span> (reporter@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.07 23:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">박효빈 시장의 혈통을 공격하던 이들의 무지는 국제적 망신을 샀다.<br>하지만 케손시티 시장의 따뜻한 제안은 우리에게 '진정한 품격'이 무엇인지 가르쳐주었다.<br>혐오의 짱돌을 포용의 꽃바구니로 맞받아친 성숙한 연대 의식</span></p>
+                    
+                    <div class="my-6">
+                        <img src="케손시티_효빈시_연대.png" alt="필리핀 케손시티와 효빈시의 연대를 상징하는 이미지" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Solidarity+with+Quezon+City'">
+                        <div class="img-caption">▲ 필리핀 케손시티와 자매결연을 맺고 있는 효빈광역시청에 게양된 양 도시의 깃발. 최근 혐오 세력의 인종차별적 테러에도 불구하고, 케손시티는 흔들림 없는 연대와 지지를 보내왔다. (사진=효빈일보 DB)</div>
+                    </div>
+
+                    <p>얼마 전 효빈시청 문화관광과에서 벌어진 이른바 '탕쿠쿠 파일 폭행 사건'의 파장은 국내를 넘어 바다 건너 필리핀까지 뒤흔들었다. 가해자인 전직 팀장이 부하 직원을 폭행하며 내뱉은 "똥남아 시장"이라는 인종차별적 망언은, ABS-CBN과 GMA 등 필리핀 주요 언론의 메인 뉴스를 장식했다. 대한민국의 헌정 사상 최연소 광역시장이자, 가난을 딛고 일어선 다문화 가정 출신의 청년 시장을 향한 비열한 공격은 고스란히 국가적 망신으로 돌아왔다.</p>
+
+                    <p>취재 과정에서 외신 기자들의 질문을 받을 때마다 밀려오는 것은 해명할 수 없는 '부끄러움'이었다. 효빈시는 그동안 'HAF 2025'의 성공과 'L-Project'를 통해 전 세계의 서브컬처와 취향을 포용하는 글로벌 문화 도시로 도약했다고 자부해 왔다. 그러나 구태 정치의 찌꺼기인 혐오 세력들은 여전히 다문화에 대한 천박한 우월주의와 배타성에 갇혀 있었고, 그 무지는 결국 우리의 민낯을 세계에 생중계하는 참사를 낳았다.</p>
+
+                    <p>하지만 이 부끄러운 사태 속에서 우리가 진정으로 배워야 할 것은, 그들이 우리에게 보여준 상상 이상의 '품격'이었다. 박효빈 시장의 어머니인 안다야 마리벨 아벨라 여사의 고향이자, 지난 1998년부터 효빈시와 자매결연을 맺어온 필리핀 케손시티(Quezon City)의 대처는 혐오에 맞서는 가장 완벽한 모범 답안을 제시했다.</p>
+
+                    <p>분노와 반한(反韓) 감정이 들끓을 법한 상황임에도, 케손시티 시장은 박효빈 시장에게 공식 서한을 보내 "자랑스러운 우리의 아들(Son of Quezon)과 효빈시의 단호한 대처를 전폭적으로 지지한다"며 오히려 굳건한 연대를 약속했다. 국내에 거주하는 필리핀 교민 사회 역시 피해를 입은 주무관에게 꽃바구니를 보내며 필리핀 특유의 공동체 상부상조 정신인 '바야니한(Bayanihan)'을 몸소 실천했다. 혐오 세력이 던진 짱돌을, 그들은 따뜻한 형제애와 성숙한 위로로 맞받아친 것이다.</p>
+
+                    <p>박효빈 시장은 사건 직후 "어머니와 핏줄을 욕보인 자에게 자비는 없다"며 즉각적이고 단호한 무관용 파면 조치를 내렸다. 그리고 시민들은 '쿠쿠스 배리어(문화예술인 보호 및 혐오 범죄 무관용 조례)'를 통해 혐오 세력이 더 이상 이 도시에 발붙이지 못하도록 든든한 제도적 방패를 세웠다. 비 온 뒤에 땅이 굳듯, 치졸한 인종차별 테러는 역설적으로 효빈시와 케손시티의 관계를 단순한 교류를 넘어선 '혈맹' 수준으로 격상시켰다.</p>
+
+                    <p>'다름'을 인정하는 것은 글로벌 도시의 기본 소양이다. 내 취향이 존중받기를 원한다면 타인의 출신과 문화 역시 존중해야 한다. 케손시티에서 날아온 따뜻한 연대의 메시지는, 아직 혐오의 잔재를 완전히 털어내지 못한 우리 사회에 묵직한 숙제를 던졌다. 효빈시가 진정한 '아시아의 문화 심장'으로 박동하기 위해서는, 이번 사건을 거울삼아 우리 안의 무지와 차별을 뼈를 깎는 심정으로 도려내야 할 것이다. 형제 도시가 보여준 진정한 품격에, 이제는 우리가 성숙한 시민의식으로 응답할 차례다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">19,850</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_Pride", time: "방금 전", like: 31200, dislike: 14, isPunished: false,
+                                content: "진짜 기사 읽으면서 부끄러움과 감동이 동시에 밀려옵니다. 가해자가 던진 차별과 모욕을 '바야니한(상부상조)' 정신으로 덮어준 필리핀 교민분들, 그리고 '우리의 아들'이라고 지지해준 케손시티 시장님 진짜 멋있습니다 ㅠㅠ",
+                                replies: [
+                                    { nick: "Global_Citizen", content: "꽃바구니 보냈다는 대목에서 눈물 핑 돌았습니다 ㅠㅠ 폭력에 사랑으로 응답하시다니..." },
+                                    { nick: "Son_of_Quezon", content: "Son of Quezon 이라는 단어가 왜 이렇게 뭉클할까요. 박 시장님 진짜 든든하시겠습니다." },
+                                    { nick: "Respect_Diversity", content: "이게 진짜 글로벌 마인드죠. 혐오 세력들은 평생 가도 모를 품격입니다." },
+                                    { nick: "Hyobin_Pride", nickClass: "text-[#0055aa] font-bold", content: "맞습니다. 이번 기회에 우리 안의 혐오를 싹 다 청산하고 진짜 글로벌 도시로 거듭납시다!" }
+                                ]
+                            },
+                            {
+                                nick: "Pure_Blood_Only", time: "5분 전", like: 12, dislike: 48900, isPunished: true,
+                                content: "필리핀 외노자 새끼들이 감히 우리나라 시정에 참견이야!! 시장이 튀기니까 아주 동남아 카르텔이 도시를 장악하려고 하네!! 내일 당장 다문화센터 쳐들어가서 불지르고 싹 다 쫓아낼 거다!! 대한민국은 단일민족 국가다!!",
+                                replies: [
+                                    { nick: "Xenophobe_Out", content: "아저씨 언제적 단일민족 타령입니까? 21세기에 혼자 조선시대 사세요? 방화 테러 예고는 덤이네 미친건가" },
+                                    { nick: "Report_Master", content: "다문화센터 방화 테러 예고, 경찰청 사이버수사대에 캡처해서 넘겼습니다. 콩밥 맛있게 드세요~" },
+                                    { nick: "Pure_Blood_Only", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 경찰도 다 내 편이다 ㅋㅋㅋ 내일 아침에 화염병 10개 만들어서 갈 테니까 뉴스나 봐라 이 매국노 새끼들아!!" },
+                                    { nick: "Are_You_Insane", content: "화염병 10개 ㄷㄷ 이건 진짜 빼박 테러리스트네;; 당장 잡아가라!!" },
+                                    { nick: "Pure_Blood_Only", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 겁먹을 줄 아냐? 외국인 노동자들 싹 다 불태워버릴 거다!!" },
+                                    { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 다문화지원센터 및 외국인 거주 구역을 향한 연쇄 방화 및 살인 테러 예고를 1급 안보 위협으로 간주하여 비상 대응 체제로 전환했습니다. 현재 은신처를 완전히 포위하였으며 특공대원이 진입합니다. 화염병 등 인화물질 소지 확인 시 현장에서 즉각 물리력이 행사됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Sorry_For_That", time: "12분 전", like: 25400, dislike: 8, isPunished: false,
+                                content: "대한민국 국민의 한 사람으로서 그 공무원의 망언이 너무 부끄럽습니다. 하지만 그건 그 무식한 범죄자 개인의 일탈일 뿐, 대부분의 효빈 시민들은 다문화와 서브컬처를 진심으로 존중합니다. 필리핀분들 상처받지 않으셨으면 좋겠습니다.",
+                                replies: [
+                                    { nick: "Individual_Fault", content: "맞습니다. 미꾸라지 한 마리가 맑은 물을 흐려놓은 격이죠. 파면 당해서 다행입니다." },
+                                    { nick: "Zero_Tolerance", content: "박 시장님이 무관용 원칙으로 바로 잘라버린 게 그나마 국가 망신을 최소화한 겁니다." },
+                                    { nick: "Diplomatic_Win", content: "케손시티 시장님이 오히려 지지 서한 보내준 게 진짜 외교의 정석이네요." },
+                                    { nick: "Sorry_For_That", nickClass: "text-[#0055aa] font-bold", content: "네, 이번 일로 쿠쿠스 배리어 조례도 더 강화되고, 오히려 전화위복이 되길 바랍니다 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_True_Hero", time: "18분 전", like: 8, dislike: 51200, isPunished: true,
+                                content: "김 팀장님은 애국자다!! 튀기 시장 몰아내려다 억울하게 당한 건데 이특파원 이 좌파 기레기 새끼 낼 신문사 앞에서 칼로 쑤셔버린다!! 어디 감히 위대하신 윤대환 시장님 세력을 모욕해!!",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "부하직원 폭행하고 시장한테 욕박은 게 애국자? ㅋㅋㅋ 능지 수준 실화냐? 살인 예고까지 ㄷㄷ" },
+                                    { nick: "Cyber_Police_Call", content: "기자 살해 협박으로 방금 사이버수사대에 고발장 접수했습니다. 윤대환 옆방으로 가시길 기원합니다." },
+                                    { nick: "Yoon_True_Hero", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내일 아침 출근길에 뒤통수 조심해라 ㅋㅋㅋ 내가 사시미 칼 아주 날카롭게 갈아놨다!! 효빈일보 기자들 다 배때지를 쑤셔주마!!" },
+                                    { nick: "Citizen_Safety", content: "사시미 칼 ㄷㄷ;; 이거 장난 아닌 거 같은데 빨리 효빈일보 본사에 경찰력 배치해야 할 듯;;" },
+                                    { nick: "Yoon_True_Hero", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 못할 줄 아냐? 윤대환 시장님의 이름을 걸고 심판해주마 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Violent_Crime", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 강력범죄수사대] 언론인(기자) 및 언론사를 향한 흉기 난동 및 살인 예고를 인지하여 즉각 수사에 착수했습니다. IP 역추적으로 피의자의 거주지를 확보하여 현재 자택 문을 강제 개방 중입니다. 흉기를 버리고 양손을 머리 위로 올리십시오. 불응 시 테이저건 등 진압 장비가 사용됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "TangKuku_Fan", time: "25분 전", like: 18900, dislike: 11, isPunished: false,
+                                content: "맞은 주무관님 너무 불쌍해요 ㅠㅠ 탕쿠쿠 굿즈 박살난 것도 속상할 텐데... 그래도 필리핀 교민분들이 꽃바구니 보내주셨다니 정말 따뜻하네요. 주무관님 빨리 트라우마 극복하셨으면 좋겠습니다!",
+                                replies: [
+                                    { nick: "Mental_Care", content: "시청에서 심리 치료 전폭 지원해준다고 하더라고요. 천만다행입니다." },
+                                    { nick: "Compensation_Must", content: "가해자 그 팀장 놈한테 굿즈값 100배로 징벌적 손해배상 청구해야 합니다 ㅡㅡ" },
+                                    { nick: "Flower_Power", content: "필리핀 분들 진짜 스윗하시네요 ㅠㅠ 저도 주무관님 힘내시라고 응원 편지 하나 보내야겠어요." },
+                                    { nick: "TangKuku_Fan", nickClass: "text-[#0055aa] font-bold", content: "진짜 쿠쿠스 배리어 조례 꽉꽉 적용해서 영혼까지 탈탈 털어버렸으면 좋겠습니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Donation_Angel_Not", time: "32분 전", like: 5, dislike: 38400, isPunished: true,
+                                content: "ㅋㅋ 불쌍한 필리핀 교민들 돕고 싶으신 분들? 제가 후원 계좌 열었으니까 이쪽으로 돈 쏘세요 [효빈은행 123-456-7890] 제가 다 모아서 전달해 드릴게요 ^^ (사실 내가 다 먹고 필리핀으로 나를거임 ㅅㄱ 호구들아 ㅋㅋ)",
+                                replies: [
+                                    { nick: "Scam_Alert", content: "이 와중에 사기를 치네 ㅋㅋㅋ 본심 괄호 치고 다 적어놓는 건 능지가 처참한 건가?" },
+                                    { nick: "Report_Fraud", content: "대놓고 기부금 사기 치네;; 바로 금융감독원이랑 경찰에 계좌번호 신고 넣었습니다 수고~" },
+                                    { nick: "Donation_Angel_Not", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "대포통장이라 절대 안 잡혀 빙신들아 ㅋㅋㅋ 벌써 눈먼 돈 10만 원 들어왔네 개꿀 ㅋㅋㅋ 니들은 평생 찌질하게 살아라 난 마닐라 가서 호캉스 할 거니까 ㅋㅋㅋ" },
+                                    { nick: "Stupid_Criminal", content: "요즘 세상에 대포통장 쓰면 1시간 안에 지급정지 걸리는데 마닐라 타령 ㅋㅋㅋ 잘 가라" },
+                                    { nick: "Donation_Angel_Not", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "아 씨발 왜 인터넷 뱅킹 출금 정지됐냐?? 야 장난해?? 내 돈 내놔!!" },
+                                    { nick: "Hyobin_Cyber_Finance", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[경찰청 지능범죄수사대 및 금융감독원] 불법 기부금품 모집 사기 및 범죄수익은닉 정황을 포착하여 금융결제원과 공조, 해당 대포통장 및 연계 계좌를 즉각 전면 동결(Freezing) 조치했습니다. 필리핀행 항공권은 출국 금지 조치되었으며, 마닐라 호캉스 대신 효빈구치소 독방을 제공해 드리겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Son_Of_Quezon_Fan", time: "40분 전", like: 14200, dislike: 4, isPunished: false,
+                                content: "'우리의 아들(Son of Quezon)' 이라는 표현에서 진짜 소름 돋았습니다. 시장님이 평소에 얼마나 시정을 잘 이끌고 외교적으로도 노력하셨으면 저런 굳건한 지지가 나올까요. 진짜 전화위복입니다.",
+                                replies: [
+                                    { nick: "Diplomatic_Master", content: "국제적 위기를 오히려 글로벌 연대로 승화시킨 갓효빈 행정력 ㄷㄷ" },
+                                    { nick: "Zero_Tolerance_Win", content: "폭행 사건 터지자마자 좌고우면 안 하고 바로 파면 때려버린 게 신의 한 수였죠." },
+                                    { nick: "Hyobin_Future", content: "이런 리더십을 가진 시장님이 있는 한 효빈시는 아시아 최고의 문화 도시가 될 겁니다." },
+                                    { nick: "Son_Of_Quezon_Fan", nickClass: "text-[#0055aa] font-bold", content: "맞습니다! 이번 HAF 2026 축제 때 필리핀 교민분들 오시면 진짜 환영해 드리고 싶네요!" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Otaku_Bomber", time: "48분 전", like: 15, dislike: 41200, isPunished: true,
+                                content: "오타쿠 시장에 필리핀 튀기 시장이니까 도시가 이 모양이지. 아주 씹덕 새끼들이랑 외노자들이 도시를 점령했네. 이번 주말 HAF 축제 때 중앙광장에 사제 폭탄 터트려서 오타쿠들 싹 다 날려버릴 거다!! 폭탄 제조 이미 다 끝났다 각오해라!!",
+                                replies: [
+                                    { nick: "Mad_Terrorist", content: "사제 폭탄 테러 예고? 와 진짜 미쳤다;; 이건 경찰청장 직속으로 수사 들어가야 할 사안인데??" },
+                                    { nick: "Call_111", content: "방금 국정원이랑 112 테러대응센터에 긴급 전화로 신고했습니다. 축제 망치려고 작정을 했네" },
+                                    { nick: "Anti_Otaku_Bomber", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "다 죽여버릴거야!! 내일 중앙광장 피바다 될 줄 알아라!! 씹덕들은 사회의 악이다!!" },
+                                    { nick: "Ruining_Nation", content: "니 같은 테러리스트가 국가 이미지 망치고 사회의 악인 건 모르냐? 감방 가서 썩어라 제발" },
+                                    { nick: "Anti_Otaku_Bomber", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "알빠노 ㅋㅋㅋ 내일 시체 조각 흩날리는 거나 구경해라 ㅋㅋㅋ 난 이미 잃을 게 없다" },
+                                    { nick: "NIS_Anti_Terror", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 및 효빈지방경찰청 대테러특수기동대] 다중 밀집 행사(HAF)를 겨냥한 사제 폭발물 테러 예고를 국가 최상위 안보 위협으로 간주하여 대테러 작전을 개시했습니다. 딥웹 우회 경로를 추적하여 은신처를 확보했으며, 현 시간부로 폭발물 처리반(EOD)과 저격수가 배치된 가운데 진입 작전을 실시합니다. 저항 시 즉각 사살될 수 있습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Future_Hyobin", time: "55분 전", like: 11500, dislike: 6, isPunished: false,
+                                content: "기자님 말씀대로 '다름'을 인정하는 게 글로벌 도시의 기본입니다. 우리 효빈시가 L-Project로 서브컬처를 품었듯이, 국적과 혈통도 포용하는 진짜 1류 도시가 됩시다. 이번 HAF 축제 때 전 세계에 성숙한 시민의식을 보여줍시다!",
+                                replies: [
+                                    { nick: "Culture_Heart", content: "아시아의 문화 심장이라는 타이틀에 걸맞은 시민이 되어야죠!" },
+                                    { nick: "L_Project_Success", content: "L-Project가 단순한 경제 사업이 아니라 시민 의식을 한 단계 끌어올리는 계기가 된 것 같아요." },
+                                    { nick: "Show_Them", content: "이번 HAF에 해외 관광객 엄청 온다던데, 쓰레기도 잘 줍고 질서도 완벽하게 지켜서 효빈시의 품격을 보여줍시다!" },
+                                    { nick: "Future_Hyobin", nickClass: "text-[#0055aa] font-bold", content: "다들 같은 마음이시네요 ㅠㅠ 주말에 축제 현장에서 뵙겠습니다! 화이팅!" }
+                                ]
+                            },
+                            {
+                                nick: "True_Journalism", time: "1시간 전", like: 13200, dislike: 9, isPunished: false,
+                                content: "이특파원 기자님 촌철살인 오지네요. 혐오 세력의 천박함과 케손시티의 품격을 대비시킨 글 전개가 진짜 예술입니다. 이 기사 당장 영어랑 따갈로그어로 번역해서 전 세계로 퍼트려야 합니다.",
+                                replies: [
+                                    { nick: "Share_SNS", content: "저도 방금 트위터(X)랑 레딧에 번역해서 공유했습니다 ㅋㅋㅋ 반응 엄청 좋아요!" },
+                                    { nick: "Pen_Is_Mighty", content: "이런 기사가 진짜 펜의 힘을 보여주는 거죠. 기레기들 가짜뉴스 사이에서 빛나는 참언론입니다." },
+                                    { nick: "Good_Article", content: "오랜만에 정말 생각할 거리를 던져주는 좋은 수첩이었습니다. 기자님 응원합니다!" },
+                                    { nick: "True_Journalism", nickClass: "text-[#0055aa] font-bold", content: "효빈일보 정기구독 하길 잘했네요 ㅋㅋㅋ 앞으로도 팩트 폭격 기사 많이 부탁드립니다!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // Punished threads are open by default to show the "cider" resolution
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Crime") || reply.nick.includes("Finance") || reply.nick.includes("NIS") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">진실을 전하는 효빈일보</div>
+                <div class="text-xs text-gray-500">
+                    세상을 보는 맑은 창<br>
+                    정기 구독 신청 시 사은품 증정<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">구독 신청하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

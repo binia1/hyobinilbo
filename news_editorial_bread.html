@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사설] 혐오가 빵을 짓밟을 때, 시민은 '인간의 품격'을 증명했다 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        /* 명시적인 기본 라이트 모드 테마 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        /* 기사 본문 스타일 */
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 하이라이트 댓글 스타일 (베스트/빌런) */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        /* 토스트 알림 (alert 대체) */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">오피니언 > 사설</div>
+                <h2 class="article-title">[사설] 혐오가 빵을 짓밟을 때, 시민은 '인간의 품격'을 증명했다</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">효빈일보 논설위원실</span> (opinion@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.07 23:50</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">윤재훈 일당이 결식아동의 빵에 가한 침 뱉기 테러는 단순한 범죄를 넘어선 반인륜적 행태였다.<br>그러나 그보다 더 빛난 것은 3천 명 효빈 시민이 만든 '인간 방어막'이었다.<br>혐오는 결코 연대를 이길 수 없음을, 우리는 똑똑히 목격했다.</span></p>
+                    
+                    <div class="my-6">
+                        <img src="시민_인간방어막.png" alt="효빈시 제과점 앞을 지키는 3천 명의 시민들" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Citizens+Human+Barricade'">
+                        <div class="img-caption">▲ 윤재훈 일당의 혐오 테러 소식이 전해진 직후, 효빈시 제과점 앞으로 모여든 3천여 명의 시민들이 팔을 걸고 인간 방어막을 형성하여 결식아동과 제과점을 보호하고 있다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>최근 효빈광역시에서 벌어진 일련의 혐오 범죄가 마침내 인간이 지켜야 할 최소한의 금도마저 넘어서고 말았다. 과거 구태 정치의 상징인 윤대환 전 시장의 아들 윤재훈과 그 추종 세력이 지역 제과점을 덮쳐, 결식아동에게 전달될 예정이었던 빵에 침을 뱉고 짓밟는 끔찍한 테러를 자행한 것이다. 이는 단순한 기물 파손이나 업무 방해가 아니다. 사회의 가장 연약한 보호망 아래 있는 아동의 생존과 존엄을 모독한, 명백한 반인륜적 폭거다.</p>
+
+                    <p>이들 혐오 세력은 그동안 효빈시의 서브컬처 친화 정책인 'L-Project'와 시민들의 자발적인 문화 활동을 맹목적으로 비난해 왔다. 자신들의 낡은 정치적 입지가 좁아지자, 이를 '문화 침략'이라는 허황된 프레임으로 포장하며 폭력을 정당화하려 했다. 그러나 이번 '결식아동 빵 테러' 사건을 통해 그들의 민낯은 명백히 드러났다. 그들이 부르짖던 알량한 대의의 본질은, 그저 약자를 향한 비열한 화풀이이자 자신들과 다른 취향을 가진 이들을 향한 맹목적인 증오일 뿐이었다.</p>
+
+                    <p>하지만 이 절망적인 폭력의 현장에서 우리가 목격한 것은 혐오의 승리가 아니었다. 테러 소식이 전해지자마자 거리에 모여든 3천여 명의 효빈 시민들은 그 어떤 무력보다도 강력한 '인간 방어막'을 형성했다. 서브컬처 성지순례를 온 관광객, 인근 구도심의 상인들, 그리고 소식을 듣고 달려온 평범한 이웃들이 서로 팔을 걸고 제과점과 아이를 지켜냈다. 폭력에 폭력으로 맞서는 대신, 침묵의 연대와 거대한 인간 바리케이드를 통해 혐오 세력이 더 이상 한 발자국도 내디딜 수 없게 막아선 것이다.</p>
+
+                    <p>이 3천 명의 시민이 보여준 연대는 효빈시가 지난 수년간 뼈를 깎는 노력으로 쌓아 올린 '인간의 품격'이 무엇인지 정확히 증명했다. 편견 없는 문화적 포용력이 어떻게 타인에 대한 깊은 공감과 약자를 향한 보호 본능으로 확장될 수 있는지 보여준 위대한 시민의식의 승리다. 과거 가난과 차별의 아픔을 누구보다 잘 아는 박효빈 시장이 시정의 최우선 가치로 삼아온 '상생'과 '복지'의 철학이, 시민들의 자발적인 행동으로 거리에 뿌리내렸음을 확인하는 순간이기도 했다.</p>
+
+                    <p>이제 공은 다시 행정과 사법 기관으로 넘어갔다. 효빈시는 앞서 시행한 '쿠쿠스 배리어(문화예술인 보호 및 혐오 범죄 무관용 조례)'의 원칙을 이번 사건에도 엄격하게 적용해야 한다. 약자의 일용할 양식을 짓밟고 공동체의 평화를 위협한 혐오 카르텔에 대해서는 그 어떠한 정치적 타협이나 선처도 있어서는 안 된다. 형사적 처벌은 물론, 행정이 동원할 수 있는 모든 징벌적 손해배상을 청구하여 증오 범죄의 대가가 얼마나 참혹한지 역사에 남겨야 할 것이다.</p>
+
+                    <p>혐오는 요란하고 파괴적이지만, 결코 연대를 이길 수 없다. 짓밟힌 빵 위로 수천 명의 체온이 덮이던 그날, 효빈시는 가장 아픈 상처를 가장 위대한 품격으로 이겨냈다. 타인의 취향과 존엄을 존중하는 도시, 효빈의 연대는 혐오보다 강하다. 우리는 그것을 똑똑히 목격했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">24,591</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Humanity_First", time: "방금 전", like: 45200, dislike: 14, isPunished: false,
+                                content: "사설 읽으면서 눈물이 멈추질 않네요. 저도 어제 현장에 있었는데, 처음엔 무서워서 떨리다가도 주변 사람들이 하나둘씩 팔을 걸고 스크럼을 짜니까 엄청난 용기가 생겼습니다. 그날 그 제과점 앞은 혐오가 범접할 수 없는 성역이었습니다.",
+                                replies: [
+                                    { nick: "Citizen_Hero", content: "현장에 계셨군요 ㅠㅠ 정말 고생 많으셨습니다. 당신이 영웅입니다!" },
+                                    { nick: "Respect_All", content: "폭력에 폭력으로 대응하지 않고 침묵과 평화로 막아낸 게 진짜 시민의식의 끝판왕인 듯." },
+                                    { nick: "Bakery_Fan", content: "그 빵집 내일 무조건 돈쭐 내러 갑니다. 결식아동 후원금도 빵집에 같이 맡기고 올게요!" },
+                                    { nick: "Humanity_First", nickClass: "text-[#0055aa] font-bold", content: "따뜻한 말씀 감사합니다! 효빈 시민이라서 정말 다행이고 자랑스럽습니다 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "Child_Protector", time: "5분 전", like: 39500, dislike: 8, isPunished: false,
+                                content: "애들 먹을 빵에 침을 뱉고 짓밟아? 윤재훈 저 인간은 진짜 짐승만도 못하네. 애초에 정치적 불만이 있으면 시청 가서 따지든가 왜 애먼 결식아동 빵을 건드리냐? 악마도 저런 짓은 안 하겠다.",
+                                replies: [
+                                    { nick: "Devil_Hunter", content: "지들보다 약한 상대 골라서 분풀이하는 전형적인 쓰레기들 종특이죠 ㅉㅉ" },
+                                    { nick: "Law_and_Order", content: "저거 재물손괴에 아동학대 방조, 업무방해 다 걸립니다. 쿠쿠스 배리어 조례까지 적용되면 징역 낭낭하게 살 듯." },
+                                    { nick: "Dad_of_Two", content: "자식 키우는 입장에서 기사 읽다가 피가 거꾸로 솟았습니다. 저것들은 평생 사회에서 격리시켜야 합니다." },
+                                    { nick: "Justice_Blind", content: "진짜 구역질 난다... 법정 최고형 때려서 본보기를 확실히 보여줘야 함." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_True_Patriot", time: "12분 전", like: 12, dislike: 82400, isPunished: true,
+                                content: "윤재훈 대표님은 진정한 애국자다!! 저 빵 속에 좌파 오타쿠들이 독극물을 타서 애들 세뇌시키려고 한 걸 대표님이 몸 바쳐 막아내신 거다!! 내일 아침에 내가 굴삭기 몰고 가서 저 불결한 제과점 싹 다 밀어버릴 테니까 딱 기다려라!!",
+                                replies: [
+                                    { nick: "Fact_Check_King", content: "독극물은 무슨 ㅋㅋㅋ 망상이 아주 도를 넘었네. 제과점 사장님이 새벽 4시부터 유기농 밀가루로 구운 건데 헛소리 작작 좀요." },
+                                    { nick: "Are_You_Crazy", content: "굴삭기 테러 예고? 이거 완전 돌았네;; 제정신이 아니구만 진짜" },
+                                    { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 어린놈의 새끼들이 말대꾸야!! 내 포크레인 삽날에 니들 대가리도 같이 찍혀봐야 정신 차리지!! 내일 오전 9시다 각오해라!!" },
+                                    { nick: "Citizen_Guard", content: "방금 112랑 효빈경찰서에 살인 및 특수재물손괴 테러 예고로 캡처해서 신고 넣었습니다. 수고하세요." },
+                                    { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 빨갱이들아!! 경찰이 오기 전에 내가 먼저 다 부숴버릴 거다!! 애국 보수의 맛을 보여주마!!" },
+                                    { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대(SWAT)] 다중이용시설(제과점)에 대한 중장비(굴삭기) 동원 파괴 및 인명 살상 테러 예고를 국가 안보 위협으로 간주, 즉각 비상 체제로 전환했습니다. 현 시간부로 IP 추적을 통해 거주지가 특정되어 무장 특공대원이 진입합니다. 중장비 면허는 취소 절차에 돌입했으며, 불응 시 물리력이 행사됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Mayor_Park_Supporter", time: "18분 전", like: 31200, dislike: 15, isPunished: false,
+                                content: "시장님이 취임 초기에 '쿠쿠스 배리어' 조례 만들 때 오바하는 거 아니냐는 말도 있었는데, 진짜 선구안 미쳤음. 혐오 범죄에는 징벌적 손해배상 청구해서 파산시켜버리는 게 정답임. 박효빈 시장님의 강력한 대처 응원합니다!",
+                                replies: [
+                                    { nick: "Lawyer_Kim", content: "쿠쿠스 배리어 조례는 진짜 서브컬처 팬들뿐만 아니라 모든 소수자와 약자를 보호하는 완벽한 법적 방패입니다." },
+                                    { nick: "Zero_Tolerance", content: "관용은 사람한테나 베푸는 거지 저런 금수만도 못한 혐오 테러범들한테 베푸는 게 아님." },
+                                    { nick: "Future_Hyobin", content: "이런 시장님이 있는 도시라면 평생 세금 내면서 살 맛 나죠 ㅠㅠ 효빈시티 최고!" },
+                                    { nick: "Action_Now", content: "지금 당장 가압류 신청해서 윤재훈 일당 재산 싹 다 동결해야 함. 피해 보상 확실히 받읍시다!" }
+                                ]
+                            },
+                            {
+                                nick: "Smart_Reseller_99", time: "25분 전", like: 5, dislike: 65100, isPunished: true,
+                                content: "ㅋㅋㅋ 멍청한 놈들 감성팔이 할 때 나는 어제 바닥에 짓밟힌 빵 10개 주워왔지롱. 이거 당근에 '윤재훈 테러 역사적 유물 빵'이라고 올렸더니 개당 50만 원에 사겠다는 흑우들 줄 섰다 ㅋㅋㅋ 난 이거 팔아서 500만 원 벌고 필리핀으로 뜬다~ ㅅㄱ",
+                                replies: [
+                                    { nick: "Disgusting_Human", content: "결식아동 줄 빵을 주워서 되판다고? 진짜 인간이길 포기했네;; 바닥에 떨어진 걸 팔 양심이냐?" },
+                                    { nick: "Report_To_Karrot", content: "당근마켓 고객센터에 비위생 식품 판매 및 장물 취득으로 신고 완료. 넌 계정 영정이다." },
+                                    { nick: "Smart_Reseller_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "응~ 이미 텔레그램 비밀 거래로 차명 계좌로 입금 다 받았어 ㅋㅋㅋ 니들이 백날 신고해봐라 내가 잡히나 ㅋㅋㅋ 가난한 거지 새끼들 열폭 오지죠?" },
+                                    { nick: "Trace_Expert", content: "차명 계좌 ㅋㅋㅋ 요즘 은행 금융망이 동네 구멍가게인 줄 아나 보네. 능지 수준..." },
+                                    { nick: "Smart_Reseller_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내 걱정 말고 니들 텅장 잔고나 걱정해라 ㅋㅋㅋ 난 내일 마닐라 간다~" },
+                                    { nick: "Hyobin_Tax_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국세청 첨단탈세방지담당관실 합동단속반] 귀하의 장물(오염 식품) 유통, 전자상거래법 위반, 차명 계좌를 이용한 범죄수익 은닉 정황을 포착했습니다. 금융결제원과 공조하여 해당 차명 계좌 2개를 즉시 동결(Freezing) 조치하였으며, 마닐라행 항공편은 출국 금지 조치되었습니다. 효빈구치소로의 안전한 탑승을 도와드리겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Tears_of_Hyobin", time: "32분 전", like: 28400, dislike: 6, isPunished: false,
+                                content: "기사 읽으면서 진짜 오열했습니다 ㅠㅠ 무장한 일당들 앞에서 평범한 상인, 덕후, 학생 3천 명이 팔을 걸고 섰다는 게 영화보다 더 영화 같네요. 효빈시 시민분들 정말 존경스럽습니다.",
+                                replies: [
+                                    { nick: "Movie_Scene", content: "진짜 다큐멘터리나 영화로 만들어져도 손색이 없는 감동 실화입니다 ㅠㅠ" },
+                                    { nick: "We_Are_One", content: "평소엔 각자 자기 취미 즐기고 살지만, 선 넘는 짓거리엔 이렇게 뭉치는 게 효빈시민 종특이죠!" },
+                                    { nick: "Warm_Heart", content: "그 자리에 있던 3천 명 모두가 진정한 어른이었습니다. 감사합니다." },
+                                    { nick: "Tears_of_Hyobin", nickClass: "text-[#0055aa] font-bold", content: "맞아요, 어른이란 이런 거라는 걸 확실히 보여준 사건이었습니다 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "Apathy_Troll", time: "40분 전", like: 8, dislike: 71200, isPunished: true,
+                                content: "아니 애초에 고아원 애새끼들한테 왜 세금으로 빵을 먹이냐? 그냥 굶겨 죽이든가 ㅋㅋㅋ 저런 애들한테 비싼 빵 주니까 배가 불러서 노력을 안 하는 거다. 내일 내가 그 보육원 찾아가서 애들 얼굴에 쓰레기 봉투 던지고 올 테니까 구경이나 해라 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "No_Empathy", content: "와 이새끼는 윤재훈보다 더한 악마 소시오패스네;; 고아원 애들한테 쓰레기를 던진다고? 넌 인간이 아니다." },
+                                    { nick: "Child_Abuse_Report", content: "아동학대 예고 범죄입니다. 당장 경찰청 112로 화면 캡처해서 넘겼습니다." },
+                                    { nick: "Apathy_Troll", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 버러지들아 ㅋㅋㅋ 가난한 쓰레기들은 싹 다 청소해야 나라가 발전한다! 쓰레기봉투 말고 염산 한 통 사서 애들 면상에 부어버릴 테니까 내일 뉴스 기대해라 ㅋㅋㅋ" },
+                                    { nick: "Absolute_Evil", content: "염산 테러 예고? 와 진짜 미쳤다;; 제발 이새끼 당장 잡아가주세요 경찰관님들!!" },
+                                    { nick: "Apathy_Troll", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 VPN 돌렸는데 경찰이 어떻게 잡냐 ㅋㅋㅋ 내일 보육원 애들 피눈물 흘리는 거나 감상해라 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Police_Violent", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 강력계] 영유아 보호시설(보육원)에 대한 황산/염산 묻지마 테러 및 살인미수 예고를 확인하여 즉각 1급 비상사태로 전환했습니다. 3중 우회 VPN 디코딩을 통해 피의자의 모텔 IP를 확보했으며, 현 시간부로 방문 강제 개방 후 현행범 체포를 진행합니다. 유해화학물질관리법 위반 및 테러 혐의로 사회로부터 영구 격리될 것입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Donzzul_Action", time: "48분 전", like: 25100, dislike: 11, isPunished: false,
+                                content: "내일 아침 일찍 그 빵집 무조건 돈쭐(Buycott) 내러 갑니다. 사장님 빵 다 털어서 보육원에 다시 기부할 거예요!! 혹시 같이 동참하실 분들 계시면 7호선 트램역 앞에서 만나요!",
+                                replies: [
+                                    { nick: "Me_Too", content: "저도 갑니다!! 내일 아침 8시에 역 앞에서 뵐게요! 지갑 장전 완료!" },
+                                    { nick: "Local_Merchant", content: "주변 상인입니다. 내일 그 빵집 오시는 분들께 저희 카페에서 무료로 커피 쏘겠습니다!!" },
+                                    { nick: "Good_Influence", content: "선한 영향력 미쳤다 ㅠㅠ 이게 바로 상생이죠 ㅠㅠ" },
+                                    { nick: "Donzzul_Action", nickClass: "text-[#0055aa] font-bold", content: "와 카페 사장님까지!! 내일 정말 따뜻한 하루가 되겠네요. 다들 내일 뵙겠습니다!!" }
+                                ]
+                            },
+                            {
+                                nick: "Truth_Revealer", time: "55분 전", like: 14, dislike: 88900, isPunished: true,
+                                content: "이 기사 100% 가짜뉴스다!! 3천 명 시민? 그거 다 박효빈 시장이 일당 5만 원씩 주고 동원한 알바생들이다!! 나 윤재훈 대표님 최측근인데 이거 다 좌파 언론의 조작극임!! 내일 시청에 사냥총 들고 가서 이딴 가짜뉴스 쉴드치는 놈들 다 쏴 죽여버릴 거다!!",
+                                replies: [
+                                    { nick: "Live_Stream_Viewer", content: "알바생 같은 소리 하네 ㅋㅋㅋ 어제 유튜브 라이브로 생중계된 것만 10개가 넘고 틱톡 영상이 수백 갠데 무슨 일당 5만 원 ㅋㅋㅋ 뇌가 우동사리냐?" },
+                                    { nick: "Crazy_Gunman", content: "사냥총으로 쏴 죽인다고? 와;; 살인 예고에 총기 난동 예고까지;; 진짜 갈 데까지 갔네 이 세력들" },
+                                    { nick: "Truth_Revealer", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 말대꾸야!! 내 할아버지가 쓰던 엽총 지금 장전 다 끝났다!! 박효빈 시장실 쳐들어가서 바람구멍 내줄 테니까 기대해라!!" },
+                                    { nick: "Citizen_Safety", content: "진짜 큰일 나기 전에 빨리 경찰에 신고해야 함;; 이거 단순 장난이 아닌 거 같음" },
+                                    { nick: "Truth_Revealer", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "지금 시청 앞 광장 도착했다!! 조준경으로 다 보고 있으니까 깝치면 바로 방아쇠 당긴다!!" },
+                                    { nick: "Hyobin_SWAT_Sniper", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 관공서(시청)를 향한 불법 총기(엽총) 소지 및 대량 살상(Mass Shooting) 테러 시도를 포착하여 즉각 작전에 돌입했습니다. 현 시간부로 시청 옥상 및 주변 건물에 저격수(Sniper) 배치가 완료되었으며, 피의자의 이마에 레이저 포인터 조준이 완료되었습니다. 무기를 바닥에 버리고 양손을 머리 위로 올리십시오. 10초 내 불응 시 즉각 사살합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Pride_Forever", time: "1시간 전", like: 21400, dislike: 9, isPunished: false,
+                                content: "혐오는 요란하고 파괴적이지만, 결코 연대를 이길 수 없다... 이 마지막 문장이 모든 걸 요약해주네요. 아무리 악당들이 발악해도 우리는 서로를 지킬 겁니다. 효빈시의 품격을 보여준 3천 명의 시민 여러분, 정말 자랑스럽습니다.",
+                                replies: [
+                                    { nick: "Dignity_of_City", content: "진정한 인간의 품격이 무엇인지 보여준 사건이었습니다. 잊지 않겠습니다." },
+                                    { nick: "Love_Hyobin", content: "이런 도시에 살고 있다는 게 제 평생의 자랑입니다 ㅠㅠ" },
+                                    { nick: "Never_Defeated", content: "혐오 세력들은 이번 일로 완전히 뿌리 뽑혔으면 좋겠네요. 다신 얼씬도 못하게!" },
+                                    { nick: "Hyobin_Pride_Forever", nickClass: "text-[#0055aa] font-bold", content: "맞습니다. 우리가 연대하는 한 그들은 절대 승리할 수 없습니다. 효빈 화이팅!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // 제재받은 빌런 글은 사이다 결말을 보여주기 위해 기본적으로 펼쳐둠
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Police") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">연대하는 시민의 힘, 효빈일보</div>
+                <div class="text-xs text-gray-500">
+                    진실을 밝히는 바른 언론<br>
+                    정기 구독 이벤트 진행 중<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">구독 신청하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

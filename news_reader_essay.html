@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[독자투고] 트램 타는 엠마 빵을 먹으며: 공존의 맛 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .strike { text-decoration: line-through; color: #888; }
+        
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">오피니언 > 독자투고</div>
+                <h2 class="article-title">[독자투고] 트램 타는 엠마 빵을 먹으며: 공존의 맛</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">김시민 효빈대 학생</span> (opinion@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2025.08.08 20:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">A씨가 그토록 부수고 싶어 했던 그 빵을 샀다.<br>달콤한 팥앙금 속에는 구도심 상인의 웃음과 트램의 편리함이 녹아 있었다.<br>혐오는 결코 이 맛을 알 수 없을 것이다.</span></p>
+                    
+                    <div class="my-6">
+                        <img src="트램 타는 엠마 빵을 먹으며.png" alt="김시민 효빈대학교 재학생" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Hyobin+Univ+Student'">
+                        <div class="img-caption">▲ 김시민 효빈대학교 재학생</div>
+                    </div>
+
+                    <p>오랜만에 분홍색 7호선 트램을 타고 학교로 향하는 길, 6호선과의 환승 통로에 위치한 협업 카페에 들렀다. 진열장 한구석에 수북이 쌓인 '엠마의 트램 탑승 팥빵'이 눈에 띄었다. 고소한 빵 냄새를 맡으며 문득 작년 여름의 씁쓸했던 기억이 떠올랐다.</p>
+
+                    <p>불과 1년 전, 나와 같은 대학교에 다니던 A씨는 이 카페에 난입해 빵을 훼손하며 난동을 부렸다. 그는 이 빵이 '외국 문화의 침략'이며 도시의 격을 떨어뜨린다고 소리쳤다. 결국 그는 학교에서 영구 제명되었고, 엠마 베르데의 목소리를 맡은 성우에게 "경제학과 인성 교육이 시급하다"는 뼈아픈 일침을 들으며 국제적인 조롱거리로 전락했다.</p>
+
+                    <p>그가 그토록 부수고 싶어 했던 그 빵을 사서 한 입 베어 물었다. 묵직하고 달콤한 팥앙금이 입안 가득 퍼졌다. 이 달콤함 속에는 단지 만화 캐릭터의 귀여움만 들어있는 것이 아니었다. 침체되었던 구도심 상권을 다시 살려보겠다며 새벽부터 밀가루 반죽을 치댄 동네 제빵사의 땀방울이 배어 있었고, 낡은 골목을 이어주며 사람들의 발이 되어주는 7호선 트램의 따뜻한 활기가 녹아 있었다.</p>
+
+                    <p>혐오 세력은 이해하지 못할 것이다. 그들은 서브컬처를 그저 쓸데없는 '만화 쪼가리'로 치부하며 배척하려 했지만, 이 문화는 이미 우리 효빈광역시의 일상 깊숙이 뿌리내려 훌륭한 경제적, 사회적 윤활유 역할을 하고 있다. 캐릭터가 그려진 빵 하나가 무너져가던 골목 상권의 매출을 견인하고, 타 지역 관광객들의 발걸음을 이끌며, 세대와 국적을 초월한 대화의 주제가 된다는 사실을 그들의 좁은 시야로는 도저히 품을 수 없었을 것이다.</p>
+
+                    <p>우리가 지켜낸 것은 단순한 애니메이션 굿즈나 빵 한 조각이 아니다. 다름을 인정하고, 새로운 문화를 포용하며, 그것을 통해 지역 사회가 함께 상생하는 '공존의 가치'를 지켜낸 것이다. 폭력과 비하로 무장한 혐오는 스스로를 갉아먹으며 감옥이라는 고립된 공간으로 향했지만, 연대와 포용을 선택한 시민들의 문화는 이 도시를 전 세계가 주목하는 가장 활기찬 무대로 만들었다.</p>
+
+                    <p>창밖으로 종종걸음을 치며 지나가는 분홍색 트램을 바라본다. 그리고 손에 들린 달콤한 팥빵을 다시 한번 베어 문다. 타인을 깎아내리는 데 혈안이 되어있는 자들은 평생가도 이 풍성하고 따뜻한 공존의 맛을 알지 못할 것이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">12,410</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Emma_Bread_Lover", time: "방금 전", like: 21300, dislike: 12, isPunished: false,
+                                content: "글 진짜 너무 잘 쓰셨네요. 엠마 빵 먹어본 사람으로서 팥앙금 가득 찬 그 묵직한 단맛 잊을 수 없습니다. A씨는 그 맛있는 걸 부수려고 했다니 미각마저 잃어버린 불쌍한 인생이네요. 내일 퇴근길에 7호선 환승하면서 빵 하나 사가야겠습니다.",
+                                replies: [
+                                    { nick: "Bread_Master", content: "맞아요 거기 제빵사님이 진짜 명장이심. 반죽이 엄청 쫄깃해서 만화 콜라보 떼고 봐도 맛집 인정입니다." },
+                                    { nick: "Tram_Commuter", content: "7호선 환승로에 달콤한 빵 냄새 퍼질 때마다 진짜 힐링됩니다 ㅠㅠ" },
+                                    { nick: "Local_Resident", content: "저희 어머니도 엠마는 모르시는데 그 팥빵은 엄청 좋아하세요 ㅋㅋㅋ 남녀노소 호불호 없는 맛!" },
+                                    { nick: "Emma_Bread_Lover", nickClass: "text-[#0055aa] font-bold", content: "맞습니다 ㅎㅎ 부모님 사다 드려도 엄청 좋아하시더라고요. 이게 진짜 세대 통합이죠!" }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "5분 전", like: 18950, dislike: 8, isPunished: false,
+                                content: "A씨 지금 효빈교도소에서 노역으로 엠마 굿즈 포장하고 있을 텐데 이 글 보면 피눈물 흘리겠네 ㅋㅋㅋㅋ 경제학도 인성도 없다고 사시데 마리아 성우님한테 팩폭 맞고 국제적 망신당한 건 진짜 평생 박제되어야 함.",
+                                replies: [
+                                    { nick: "Justice_Served", content: "진짜 통쾌 ㅋㅋㅋㅋ 교도소에서 굿즈 포장하면서 자아성찰 좀 했으면 좋겠네요." },
+                                    { nick: "Global_Shame", content: "BBC랑 CNN 아시아판에 '빵 부수다 징역 간 혐오주의자'로 뉴스 탄 거 아직도 웃김 ㅋㅋㅋ" },
+                                    { nick: "Sashide_Maria_Fan", content: "마리아 성우님이 직접 일침 날리신 건 진짜 서브컬처 역사에 남을 사이다였죠 ㅋㅋㅋ" },
+                                    { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "그 성우분 진짜 갓벽합니다 ㅠㅠ 내년 HAF 때 내한 한 번 더 해주셨으면 좋겠네요!" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Univ_Student", time: "12분 전", like: 15200, dislike: 11, isPunished: false,
+                                content: "같은 효빈대 학생으로서 A씨 출교당했을 때 속이 다 시원했습니다. 우리 학교의 수치였음. 글쓴이 학우님 필력 보니까 효빈의 미래가 밝네요! 혐오는 공존의 맛을 절대 알 수 없다는 문장, 마음에 새기고 갑니다.",
+                                replies: [
+                                    { nick: "Economics_Major", content: "경제학과 재학생입니다. 그 인간 때문에 저희 과 교수님들 단체로 사과문 쓰시고 분위기 최악이었어요 ㅠㅠ 제명돼서 다행입니다." },
+                                    { nick: "Alumni_Pride", content: "효빈대 졸업생입니다. 후배님 글 솜씨가 대단하네요. 자랑스럽습니다!" },
+                                    { nick: "Student_Council", content: "총학생회에서도 저 사건 이후로 교내 혐오 범죄 예방 캠페인 엄청 빡세게 하고 있죠. 다신 저런 인간 나오면 안 됩니다." },
+                                    { nick: "Writer_Fan", content: "문장 하나하나가 주옥같네요. 나중에 기자 하셔도 될 듯!" }
+                                ]
+                            },
+                            {
+                                nick: "Hater_Out", time: "18분 전", like: 18, dislike: 24100, isPunished: true,
+                                content: "애들 만화 빵 쪼가리 하나 먹으면서 무슨 상생이니 공존이니 거창하게 포장하네 ㅋㅋㅋ 아주 오타쿠들 신나서 소설을 써라 소설을 써!! 빵 하나 엎은 게 무슨 큰 죄라고 A씨 인생을 망쳐놓냐 마녀사냥 쩔어 진짜.",
+                                replies: [
+                                    { nick: "Logic_Cutter", nickClass: "text-[#0055aa] font-bold", content: "그 '만화 빵 쪼가리' 덕분에 동네 상인들 월매출이 몇 배로 뛰고, 지자체 세수가 늘어나서 님 걷는 보도블록 고쳐주는 겁니다. 경제 관념이 없으시면 책을 좀 읽으세요." },
+                                    { nick: "Local_Merchant", content: "소조동에서 장사하는 사람입니다. 축제 때마다 학생들 와서 빵 사가고 상권 살려주는 게 얼마나 큰 힘이 되는지 당신은 모를 겁니다. 방구석에서 악플 달 시간에 남한테 도움 되는 일 하나라도 해보시죠." },
+                                    { nick: "Hater_Out", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 말대꾸야 천박한 장사꾼 주제에!! 내가 내일 니네 빵집 찾아가서 다 엎어버리고 불질러버릴 테니까 딱 기다려!! 오타쿠들 싹 다 죽여버릴거야!!" },
+                                    { nick: "Citizen_Report", content: "방금 영업방해 및 방화 테러 예고로 사이버수사대에 캡처해서 신고 넣었습니다. 수고하세요 ^^" },
+                                    { nick: "Hater_Out", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 쫄보 새끼들아 ㅋㅋㅋ 내가 VPN 돌려서 썼는데 잡힐 줄 아냐?? 내일 뉴스에 불타는 빵집 나오면 내 작품인 줄 알아라 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Police_Cyber", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 사이버수사대] 지역 상인을 향한 다중 방화 테러 및 특수재물손괴 예고를 국가 안보 위협으로 간주하여 즉각 수사에 착수했습니다. VPN 3중 우회 경로 디코딩 결과 사능동 모 PC방으로 위치가 특정되었으며, 현 시간부로 강력계 형사들이 진입하여 현행범으로 체포 중입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Pink_Tram_7", time: "25분 전", like: 12800, dislike: 5, isPunished: false,
+                                content: "임세정 대리님(7호선)이 트램 안 지켜주셨으면 지금쯤 그 자리엔 매연 뿜는 버스 차고지나 들어서 있었겠죠. 쾌적한 7호선 타고 가면서 달콤한 빵 먹는 이 일상이 진짜 효빈 시민의 소확행입니다 🌸",
+                                replies: [
+                                    { nick: "Tram_Lover", content: "진짜 임세정 대리님은 7호선의 구세주임 ㅠㅠ 그 난리통에 트램 지켜내신 거 생각하면 아직도 눈물 납니다." },
+                                    { nick: "Eco_City", content: "매연 없고 소음 없는 트램이 도심에 깔리니까 도시 공기 자체가 달라졌어요. 효빈시 행정력 진짜 인정함." },
+                                    { nick: "Window_View", content: "트램 창밖으로 벚꽃 날리는 거 보면서 엠마 빵 먹으면 그곳이 무릉도원이죠 ㅋㅋㅋ" },
+                                    { nick: "Pink_Tram_7", nickClass: "text-[#0055aa] font-bold", content: "다들 공감하시네요 ㅎㅎ 효빈시는 진짜 대중교통 인프라가 사기급으로 좋습니다 ㅠㅠ 평생 살고 싶어요!" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Otaku_Dad", time: "32분 전", like: 14, dislike: 31200, isPunished: true,
+                                content: "나잇살 쳐먹고 만화 캐릭터 빵이나 줄 서서 사 먹고... 쯧쯧. 나라의 미래가 어둡다 어두워! 저런 일본 오타쿠 문화 당장 불도저로 밀어버려야지 우리 세금으로 저런 거나 밀어주고 앉아있네. 박효빈 시장 당장 사퇴해라!!",
+                                replies: [
+                                    { nick: "Youth_Power", content: "어르신, 그 만화 빵 하나 사겠다고 주말에 전국에서 수십만 명이 몰려와서 효빈시에 돈을 뿌리고 갑니다. 경제 활성화가 뭔지도 모르시면서 세금 타령 좀 그만하시죠." },
+                                    { nick: "Legal_Mind", content: "합법적으로 진행되는 문화 사업을 불도저로 민다고 협박하시는 건가요? 꼰대 마인드도 범죄입니다 아저씨." },
+                                    { nick: "Anti_Otaku_Dad", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어린 놈의 새끼들이 어디서 말대꾸야!! 내일 아침 출근길에 내가 직접 7호선 트램 선로에 드러누워서 운행 막아버릴 거다!! 더러운 오타쿠 열차 꼴도 보기 싫어!!" },
+                                    { nick: "Rational_Citizen", content: "와 진짜 미쳤네;; 대중교통 선로 점거는 단순 떼쓰기가 아니라 중범죄입니다 할배요 제발 정신 차리세요" },
+                                    { nick: "Anti_Otaku_Dad", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 목숨 걸고 구국 운동 하겠다는데 니들이 뭔 상관이야!! 내일 아침 7호선은 지옥철이 될 거다 각오해라 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Metro_Legal", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈교통공사 법무팀] 귀하의 게시글은 철도안전법 제48조(철도 보호 및 질서유지)를 심각하게 위반하는 운행 방해 및 테러 예고입니다. IP 추적을 통해 신원을 확보하였으며, 내일 오전 7호선 전 구간에 청원경찰 및 관할 경찰서를 배치했습니다. 선로 난입 시도 시 즉시 구속 수사되며 막대한 민사상 손해배상이 청구됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Bakery_Owner_A", time: "40분 전", like: 16500, dislike: 8, isPunished: false,
+                                content: "효빈대 앞 빵집 사장입니다. 학생분 글 읽고 가게에서 몰래 눈물 훔쳤습니다 ㅠㅠ 작년에 A학생 난동 부렸을 때 폐업까지 생각했는데, 시민분들이 돈쭐 내주시고 시장님이 전폭적으로 지원해주셔서 엠마 빵으로 기사회생했습니다. 받은 사랑 돌려드리기 위해 매달 보육원에 빵 500개씩 기부하고 있습니다. 감사합니다 효빈 시민 여러분!",
+                                replies: [
+                                    { nick: "Heartwarming", content: "아 ㅠㅠ 사장님 진짜 멋지십니다! 기부까지 하시다니 돈쭐 더 맞으셔야겠네요 ㅠㅠ" },
+                                    { nick: "Will_Visit", content: "주말에 여자친구랑 엠마 빵 10개 사러 가겠습니다! 장사 번창하세요!!" },
+                                    { nick: "Bread_Reservation", content: "혹시 전화 예약도 되나요? 오후에 가면 항상 품절이라 ㅠㅠ" },
+                                    { nick: "Bakery_Owner_A", nickClass: "text-[#0055aa] font-bold", content: "댓글 감사합니다 ㅠㅠ 이번 주말 HAF 축제 대비해서 알바생 3명 더 뽑고 밤새워 빵 굽겠습니다! 예약은 매장으로 전화 주시면 빼놓을게요!" }
+                                ]
+                            },
+                            {
+                                nick: "Bread_Reseller", time: "48분 전", like: 2, dislike: 38400, isPunished: true,
+                                content: "ㅋㅋ 엠마 빵 초판 한정판 띠부씰 들어있는 거 10개 싹 다 매점매석했다. 당근에 개당 10만 원에 올렸으니 돈 없는 거지 새끼들은 구경이나 해라 ㅋㅋㅋ 난 이거 팔아서 오마카세나 먹으러 가야지 꿀꺽~",
+                                replies: [
+                                    { nick: "No_Scalping", content: "와 3천 원짜리 빵을 10만 원에 되파는 쓰레기가 여깄네;; 제발 사주지 맙시다 여러분." },
+                                    { nick: "Tax_Report", content: "그거 전문적으로 되팔면 사업자 등록해야 하고 세금 내야 하는 거 아시죠? 바로 국세청에 탈세로 신고 넣겠습니다." },
+                                    { nick: "Bread_Reseller", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 빙시들아 ㅋㅋㅋ 내가 차명 계좌로 돈 받는데 국세청이 퍽이나 잡겠다 ㅋㅋㅋ 니들은 찌질하게 빵이나 못 먹고 손가락이나 빨아라 ㅋㅋㅋ" },
+                                    { nick: "Smart_Consumer", content: "빵 유통기한 3일인데 니가 10만 원에 올려놓은 거 누가 사냐 ㅋㅋㅋ 결국 재고 다 떠안고 상해서 버리겠네 능지 처참하다 진짜" },
+                                    { nick: "Bread_Reseller", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어차피 돈 많은 흑우들은 다 사게 돼 있어~ 내 걱정 말고 니들 통장 잔고나 걱정해라 거지들아 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Tax_Agency", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국세청 첨단탈세방지담당관실 합동단속반] 귀하의 부당한 매점매석 및 차명 계좌를 이용한 탈세, 전자상거래법 위반 혐의를 인지하였습니다. 당근마켓 및 금융결제원과 공조하여 해당 차명 계좌를 즉각 동결(Freezing) 조치하였으며, 현 시간부로 자택 압수수색 및 세무조사에 착수합니다. 오마카세 대신 취조실 국밥을 대접해 드리겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Global_Otaku", time: "55분 전", like: 14200, dislike: 15, isPunished: false,
+                                content: "일본에서 유학 중인 학생입니다! 일본 현지 덕후 친구들도 엠마 빵 사건 다 알고 있어요 ㅋㅋㅋ A학생은 진짜 세계적인 망신임... 친구들이 HAF 때 효빈시 놀러 가서 그 '승리의 엠마 빵' 꼭 먹어보고 싶다고 비행기표 끊었습니다! 효빈시 글로벌 위상 미쳤네요 진짜",
+                                replies: [
+                                    { nick: "Welcome_Friends", content: "오 일본 현지 반응도 뜨겁군요 ㅋㅋㅋ 승리의 엠마 빵이라니 네이밍 찰지네요!" },
+                                    { nick: "Translation_God", content: "마리아 성우님이 직접 샤라웃 해주셔서 글로벌하게 유명해짐 ㅋㅋㅋ 친구분들 오시면 재밌게 놀다 가시길!" },
+                                    { nick: "Guide_Offer", content: "혹시 일본 친구분들 오시면 제가 1호선부터 7호선까지 맛집 가이드 해드릴 수 있습니다! 환영해요!" },
+                                    { nick: "Global_Otaku", nickClass: "text-[#0055aa] font-bold", content: "와 가이드까지 ㅠㅠ 감사합니다! 효빈 시민분들 진짜 인심 최고네요 ㅠㅠ 기대하고 가겠습니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Fanatic", time: "1시간 전", like: 8, dislike: 42100, isPunished: true,
+                                content: "A학생은 윤대환 전 시장님의 참뜻을 이어받은 애국 청년이다!! 더러운 일본 만화 캐릭터가 우리 전통문화를 오염시키는 걸 막으려 했던 독립투사라고!! 박효빈 이 빨갱이 시장이 무고한 청년을 감옥에 쳐넣었어!!",
+                                replies: [
+                                    { nick: "Citizen_Guard", content: "빵집 가서 영업 방해하고 남의 재산 부순 게 독립운동이냐? 뇌 구조가 어떻게 된 거임 진짜;; 윤대환 지지자들 수준 딱 나오네" },
+                                    { nick: "Stop_Hate", content: "다문화, 서브컬처 포용하는 게 글로벌 트렌드인데 혼자 1970년대에 살고 계시네요. 억지 좀 적당히 부리세요." },
+                                    { nick: "Yoon_Fanatic", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 말대꾸야 십덕 새끼들이!! 내일 HAF 개막식 열리는 중앙광장 환승역에 식칼 들고 가서 코스프레 한 놈들 싹 다 찔러 죽여버릴 거다!! 피바람이 불 거다 각오해라!!" },
+                                    { nick: "Normal_Person", content: "헐;; 이건 진짜 선 넘었네;; 빵집 방화 테러 예고에 이어서 흉기 난동 예고라니;; 바로 112 긴급 신고 넣었습니다." },
+                                    { nick: "Yoon_Fanatic", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 빨갱이들아!! 경찰이 오기 전에 내가 먼저 다 썰어버릴 거니까 ㅋㅋㅋ 엠마고 뭐고 다 끝장내주마!!" },
+                                    { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대(SWAT)] 다중 밀집 구역인 HAF 중앙광장에 대한 흉기 난동 및 살인 예고를 1급 테러 위협으로 간주, 최고 수준의 비상 대응 체제로 전환했습니다. 현 시간부로 통신사 기지국 역추적을 통해 은신처를 완벽히 포위하였으며, 특공대원들이 진입합니다. 무기를 버리고 양손을 머리 위로 올리십시오. 불응 시 즉각 물리력이 행사됩니다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // Light mode styling for punished vs best comments
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // Punished threads are open by default to show the "cider" resolution
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Legal") || reply.nick.includes("Police") || reply.nick.includes("Agency") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">소조동 엠마 빵 한정 판매!</div>
+                <div class="text-xs text-gray-500">
+                    지역 상권 상생 프로젝트<br>
+                    7호선 환승로 팝업스토어 오픈<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">위치 안내 보기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

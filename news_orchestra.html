@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[공연] "지브리부터 마코토까지"... 효빈 필하모닉 '애니송의 밤' 1분 만에 매진 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        /* 기본 모드(라이트 모드) 스타일 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; } 
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 댓글 영역 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 라이트모드 댓글 특수 배경색 설정 */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .strike { text-decoration: line-through; color: #888; }
+        
+        /* Custom Toast Alert Style */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">문화/예술 > 공연/전시</div>
+                <h2 class="article-title">[공연] "지브리부터 마코토까지"... 효빈 필하모닉 '애니송의 밤' 1분 만에 매진</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">박클래식 기자</span> (classic@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2025.08.08 19:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">HAF 2025 연계 특별 기획... 1,500석 규모 효빈문화회관 예매 오픈 동시 '광클' 대란<br>'너의 이름은.', '러브 라이브!', '뱅드림!' 명곡들 80인조 오케스트라 사운드로 재탄생<br>암표 거래 엄단 경고 속 "야외 대형 스크린 생중계 추진해 달라" 시민들 요청 쇄도</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈문화회관 오케스트라.png" alt="효빈문화회관 대공연장에서 리허설 중인 효빈 시립 교향악단" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Hyobin+Philharmonic+Orchestra'">
+                        <div class="img-caption">▲ 오는 주말 효빈문화회관에서 열리는 '애니송의 밤' 특별 공연을 위해 효빈 필하모닉 오케스트라가 리허설에 매진하고 있다. 이번 공연은 예매 시작 1분여 만에 전석 매진을 기록하며 클래식과 서브컬처 융합의 폭발적인 파급력을 입증했다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박클래식 기자] "지브리부터 마코토까지"... 효빈문화회관에서 열리는 시립 교향악단의 특별 기획 공연이 예매 시작과 동시에 전석 매진되는 기염을 토했다. 클래식과 서브컬처의 파격적인 만남에 시민들은 "이게 바로 효빈 스타일"이라며 환호하고 있다.</p>
+
+                    <p>8일 효빈문화재단에 따르면, 이날 오후 2시 티켓링크를 통해 단독 오픈된 효빈 필하모닉 오케스트라의 '애니송의 밤(Night of Ani-Songs)' 공연 티켓 1,500장이 예매 창이 열린 지 불과 1분 12초 만에 모두 동났다. 순간적으로 5만 명이 넘는 동시 접속자가 몰리며 예매 사이트 서버가 일시적으로 마비되는 소동까지 빚어졌다.</p>
+
+                    <p>이번 공연은 8월의 찜통더위를 날려버릴 효빈 애니메이션 페스티벌(HAF) 2025 개막을 기념하여 시립 교향악단이 야심 차게 준비한 스페셜 무대다. 스튜디오 지브리의 명곡 메들리와 신카이 마코토 감독의 '너의 이름은.', '스즈메의 문단속' OST를 비롯해, 효빈교통공사 캐릭터 세계관의 모티브가 된 '러브 라이브!(Snow halation 등)'와 '뱅드림!'의 대표 밴드 곡들이 80인조 풀 편성 오케스트라의 장엄한 선율로 연주될 예정이다.</p>
+
+                    <p>특히 만화애니메이션의전당 민유나 원장이 공연의 음향 자문으로 전격 참여해 팬들의 기대를 한 몸에 받고 있다. "타협 없는 완벽한 사운드"를 추구하는 민 원장의 지휘 아래, 문화회관 대공연장의 음향 반사판이 애니송 특유의 밴드 비트와 클래식 현악기의 웅장함이 완벽하게 조화되도록 재조정되었다.</p>
+
+                    <p>티켓을 구하지 못한 팬들의 아우성이 빗발치는 가운데, 온라인 중고 거래 사이트에서는 티켓 원가의 5배가 넘는 프리미엄이 붙은 암표가 등장하기도 했다. 이에 주최 측은 "불법 매크로 및 암표 거래 적발 시 예매를 즉각 취소하고, 형사 고발 등 영구 예매 제한 조치를 취하겠다"고 엄중 경고했다.</p>
+
+                    <p>박효빈 시장은 이번 예매 대란에 대해 "정통 클래식과 대중적인 서브컬처가 만나 폭발적인 문화적, 경제적 시너지를 낼 수 있다는 것을 증명한 쾌거"라며, "미처 티켓을 구하지 못한 시민들과 축제 관람객들을 위해 공연 당일 야외 광장 대형 스크린을 통한 실시간 생중계(Live Viewing)를 적극 검토하겠다"고 밝혔다.</p>
+
+                    <p>'애니송의 밤' 공연은 이번 주말, 파란색(<span class="text-[#0055aa] font-bold">#0077DD</span>) 전동차가 달리는 효빈 도시철도 1호선 신거역 인근에 위치한 효빈문화회관에서 화려한 막을 올린다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">12,419</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        // 10개의 댓글 타래, 각 최소 4개 이상의 답글, 빌런의 추태와 사이다 결말 반영
+                        const commentsData = [
+                            {
+                                nick: "Snow_Halation_Fan", time: "방금 전", like: 18200, dislike: 12, isPunished: false,
+                                content: "피켓팅 실패하고 오열 중입니다... ㅠㅠ 80인조 오케스트라가 연주하는 스노하레라니 상상만 해도 눈물 날 것 같은데 취소표 안 풀리나요? 시장님 제발 야외 생중계 열어주세요!! 돗자리 깔고 밖에서라도 듣겠습니다 ㅠㅠ",
+                                replies: [
+                                    { nick: "Me_too_crying", content: "저도 대기열 3만명 뜨는 거 보고 눈 비볐습니다 ㅠㅠ 효빈 시민들 덕력 장난 아니네요..." },
+                                    { nick: "Outdoor_Picnic", content: "야외 생중계 열리면 돗자리랑 캔맥주 들고 무조건 갑니다 ㅠㅠ 제발 열어주세요!" },
+                                    { nick: "Hyobin_Culture_Foundation", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈문화재단] 시민 여러분의 뜨거운 성원에 감사드립니다! 현재 박효빈 시장님의 긴급 지시에 따라 신거역 야외 광장에 500인치 대형 LED 스크린 설치를 확정지었으며, 고품질 스피커 시스템을 세팅 중입니다. 주말에 야외 광장에서 뵙겠습니다! ^^" },
+                                    { nick: "Snow_Halation_Fan", nickClass: "text-blue-600 font-bold", content: "와 미쳤다 일처리 속도 봐 ㄷㄷㄷ 효빈시 진짜 사랑합니다!! 당장 돗자리 사러 갑니다!!!" }
+                                ]
+                            },
+                            {
+                                nick: "Acoustic_Master", time: "5분 전", like: 15400, dislike: 8, isPunished: false,
+                                content: "만화애니메이션의전당 민유나 원장님이 음향 자문으로 참여하셨다니 게임 끝이네요. 그분 사운드 튜닝엔 진짜 광기가 서려 있음 ㅋㅋㅋ 뱅드림 노래 오케스트라 편곡 어떻게 빠졌을지 진짜 기대됩니다. 1호선 타고 퇴근하는 길에 티켓팅 성공해서 소리 질렀습니다!",
+                                replies: [
+                                    { nick: "Sound_Nerd", content: "민유나 원장님 귀 엄청 예민하시기로 유명하잖아요 ㅋㅋ 이번 공연 음향은 절대 믿고 들어도 될 듯." },
+                                    { nick: "Orchestra_Player", content: "필하모닉 단원입니다... 민 원장님 리허설 때 음향 반사판 각도 1도 틀어졌다고 다시 세팅하셨습니다... 진짜 죽는 줄 알았지만 소리는 예술이더군요..." },
+                                    { nick: "Min_Yuna_Fan", content: "단원님 살아계십니까 ㅋㅋㅋ 역시 광기의 완벽주의자 갓유나 ㄷㄷㄷ" },
+                                    { nick: "Audiophile_Life", content: "문화회관 대공연장 원래도 잔향 좋은데 튜닝까지 거쳤으면 황홀하겠네요 ㅠㅠ 티켓팅 성공하신 거 축하드립니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Classic_Purist", time: "12분 전", like: 24, dislike: 24100, isPunished: true,
+                                content: "무슨 근본도 없는 만화 주제가를 시립 교향악단이 연주하냐!! 베토벤이랑 모차르트가 무덤에서 통곡하겠다!! 세금으로 월급 받는 교향악단이 아주 오타쿠들 딴따라로 전락했네 ㅉㅉ 저딴 천박한 공연 당장 취소해라!!",
+                                replies: [
+                                    { nick: "Fact_Checker_79", nickClass: "text-blue-600 font-bold", content: "아저씨, 도쿄 필하모닉이나 런던 심포니 오케스트라도 애니메이션이나 게임 OST 연주회 자주 엽니다. 근본 타령하기 전에 요즘 세계 문화 트렌드 공부나 좀 하시죠." },
+                                    { nick: "Economy_First", nickClass: "text-blue-600 font-bold", content: "표 1분 만에 다 팔려서 시 재정 흑자 보는데 세금 낭비 타령은 왜 나옵니까? 오히려 만년 적자이던 교향악단이 이번 기획으로 돈 쓸어 담고 있는 건데요." },
+                                    { nick: "Classic_Purist", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 감히 벌레 같은 오타쿠 놈들이 고상한 클래식을 논해!! 니들이 뽕짝이랑 다를 게 뭐냐!! 천박하고 미개한 것들! 예매한 놈들 다 정신병원에 가둬야 한다!!" },
+                                    { nick: "Music_Student", content: "저기요 저 음대생인데, 요즘 클래식 악단들 이런 대중문화 콜라보 없으면 자생하기 힘들어요. 제발 시대착오적인 선민의식 좀 버리세요 ㅉㅉ" },
+                                    { nick: "Classic_Purist", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "네년이 음대생이면 난 지휘자다 이년아!! 싸가지없이 어디서 어른한테 훈계질이야!! 너 이년 신상 털어서 학교에 매장시켜버릴 테니까 딱 기다려!!" },
+                                    { nick: "Admin_Justice", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[관리자] 특정 집단을 향한 근거 없는 비하 및 타 이용자에 대한 노골적인 협박 정황이 확인되었습니다. 해당 계정은 '효빈일보 클린봇'에 의해 영구 차단되었으며, 협박성 댓글은 피해자 요청 시 수사기관에 즉각 제공됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Scalper_King", time: "18분 전", like: 2, dislike: 32500, isPunished: true,
+                                content: "S석 3열 연석 2장 일괄 150만원에 팝니다. 쿨거시 140. 돈없는 거지새끼들은 찔러보지 말고 꺼지세요~ 암표 단속한다고? ㅋㅋㅋ 매크로 아이피 다 우회했는데 니들이 어쩔건데 ㅋㅋ",
+                                replies: [
+                                    { nick: "Ticket_Hunter", content: "플미충 극혐이네 진짜 ㅡㅡ 15만 원짜리를 10배를 튀겨먹냐? 양심 어디감?" },
+                                    { nick: "Report_Master", content: "방금 효빈문화재단 암표 신고 센터에 해당 닉네임이랑 좌석 번호 캡처해서 신고 완료했습니다. 수고하세요~" },
+                                    { nick: "Scalper_King", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 빙시들아 ㅋㅋㅋ 어차피 대포통장이라 나 누군지 특정도 못해~ 꼬우면 니들도 매크로 돌리든가 ㅋㅋㅋ 돈 없어서 못 가는 방구석 찐따들 열폭 오지네 ㅋㅋㅋ" },
+                                    { nick: "Normal_Buyer", content: "진짜 인성 쓰레기네... 이런 애들은 왜 안 잡혀가는 거임?" },
+                                    { nick: "Scalper_King", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "경찰이 나 하나 잡겠다고 인력 낭비하겠냐? ㅋㅋㅋ 대한민국 견찰 수준 모름? 난 오늘도 꿀빨면서 돈 번다 꺼억~" },
+                                    { nick: "Hyobin_Police_Cyber", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 사이버수사대] 귀하의 게시글과 IP 접속 기록을 바탕으로 현재 다중 접속 우회(VPN) 로그를 역추적하여 실거주지 특정에 성공하였습니다. 개정된 공연법 제10조의4(매크로 이용 금지) 위반 및 형법상 업무방해 혐의로 즉시 체포 영장을 청구할 예정입니다. 대포통장 수사는 저희 전문 분야이니 안심하고 문 열어두시기 바랍니다." }
+                                ]
+                            },
+                            {
+                                nick: "Blue_Line_1", time: "25분 전", like: 9800, dislike: 5, isPunished: false,
+                                content: "신거역(1호선) 내리면 문화회관 바로 앞이라 접근성도 좋네요. 토요일에 파란색 열차 타고 느긋하게 가서 근처에서 밥 먹고 생중계라도 봐야겠습니다. 야외에 굿즈 부스 열리면 거기도 지갑 털러 갑니다 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Metro_Commuter", content: "저도 1호선 타고 갈 예정입니다! 파란색 옷 맞춰 입고 갈까요? ㅋㅋ" },
+                                    { nick: "Sangeo_Station_Lover", content: "신거역 지하에 맛집 엄청 많습니다. 돈가스집 추천이요!" },
+                                    { nick: "Line_1_Driver", nickClass: "text-[#0055aa] font-bold", content: "이번 주말 1호선 기관사입니다! HAF 축제 기간 동안 쾌적하게 모시겠습니다. 안전하게 오세요!" },
+                                    { nick: "Blue_Line_1", nickClass: "text-[#0055aa] font-bold", content: "헐 기관사님 등장 ㄷㄷ 감사합니다 덕분에 편하게 즐기겠네요! 1호선 화이팅!!" }
+                                ]
+                            },
+                            {
+                                nick: "Ghibli_Nostalgia", time: "32분 전", like: 8700, dislike: 6, isPunished: false,
+                                content: "스튜디오 지브리 메들리라니... 저의 어린 시절을 책임졌던 곡들을 대형 오케스트라로 듣게 되다니 꿈만 같습니다. 하울의 움직이는 성 '인생의 회전목마' 나올 때 오열할 준비 완.",
+                                replies: [
+                                    { nick: "Totoro_Fan", content: "저도요 ㅠㅠ 인생의 회전목마 첫 피아노 선율 나오면 무조건 소름 돋을 듯..." },
+                                    { nick: "Castle_In_The_Sky", content: "천공의 성 라퓨타 '너를 태우고'도 제발 해줬으면 좋겠네요 ㅠㅠ 트럼펫 솔로 듣고 싶어요." },
+                                    { nick: "Orchestra_Timpani", content: "팀파니 주자입니다. 스포일러 방지를 위해 곡명은 비밀이지만, 수건 꼭 챙겨오세요... 벅차오름 장난 아닙니다 ㅠㅠ" },
+                                    { nick: "Ghibli_Nostalgia", nickClass: "text-[#0055aa] font-bold", content: "단원분들 왤케 많이 등판하시나요 ㅋㅋㅋ 스포 안 하신다니 더 기대됩니다! 수건 두 개 챙겨가겠습니다 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "No_Anime_Allowed", time: "40분 전", like: 11, dislike: 19800, isPunished: true,
+                                content: "아니 애초에 효빈시는 왜 이런 불결한 오타쿠 축제를 허가해 준 거임?? 도시 전체가 아주 씹덕 냄새로 진동을 하네. 멀쩡한 시민들은 불쾌해서 밖을 나갈 수가 없잖아!! 축제 당장 취소해라!!",
+                                replies: [
+                                    { nick: "Festival_Goer", content: "불결하긴요? HAF 축제 오시는 분들 다들 질서 엄청 잘 지키고 주변 쓰레기도 다 주워가십니다. 본인 인성이나 좀 청소하시죠?" },
+                                    { nick: "Hyobin_Citizen", content: "이 축제 하나로 외부에서 관광객 수십만 명 몰려와서 지역 상권 대박 나고 있는데 불만이면 님이 다른 도시로 이사 가세요 ㅋㅋㅋ" },
+                                    { nick: "No_Anime_Allowed", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 말대꾸야 미개한 놈들이!! 내일 신거역 광장에 휘발유 뿌리고 다 불태워버려야 정신 차리지!! 더러운 오타쿠 새끼들 싹 다 청소해주마!!" },
+                                    { nick: "Safety_Guard", content: "방금 휘발유 방화 테러 예고하신 거 맞죠? 바로 국민신문고랑 112 경찰에 테러 협박으로 캡처해서 신고 넣었습니다. 수고하세요." },
+                                    { nick: "No_Anime_Allowed", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 쫄보 새끼야 ㅋㅋㅋ 내가 말로만 할 줄 아냐? 이미 주유소에서 통에 다 담아놨다 ㅋㅋㅋ 내일 두고 봐라 다 통구이로 만들어줄게!!" },
+                                    { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 불특정 다수를 향한 대형 방화 테러 예고를 중대 범죄로 간주하여 즉각 비상 대응 체제로 전환했습니다. 현재 통신사 기지국 조회를 통해 용의자 위치를 파악하였으며, 특공대원들이 출동 중입니다. 문 뒤로 물러서 계십시오. 곧 강제 개방합니다." }
+                                ]
+                            },
+                            {
+                                nick: "BangDream_Rocker", time: "48분 전", like: 7600, dislike: 4, isPunished: false,
+                                content: "뱅드림 곡들은 밴드 사운드가 핵심인데 오케스트라로 편곡하면 일렉기타랑 드럼은 어떻게 섞일지 엄청 궁금하네요. 클래식 악기들이랑 락 사운드 배틀하는 느낌일 듯? 완전 기대 중!!",
+                                replies: [
+                                    { nick: "Guitar_Solo", content: "오케스트라 무대 뒤에 풀세션 밴드도 같이 올라간다는 소문이 있더라고요 ㄷㄷ" },
+                                    { nick: "Roselia_Fan", content: "로젤리아 곡들 파이프 오르간 소리 섞여서 웅장하게 나오면 진짜 지릴 것 같습니다 ㅠㅠㅠ" },
+                                    { nick: "Bassist_Guy", content: "현악기들이 베이스 슬랩라인 따라가면 엄청 멋있을 듯... 편곡자 분 누구신지 진짜 존경합니다." },
+                                    { nick: "Drummer_Girl", content: "드럼 비트랑 팀파니가 듀엣으로 치고받는 거 상상하니까 벌써 아드레날린 폭발함 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Elite_Citizen_01", time: "55분 전", like: 9, dislike: 21200, isPunished: true,
+                                content: "하아... 주말에 문예회관 쪽으로 차 끌고 나가면 안 되겠네요. 길거리에 이상한 옷 입은 오타쿠들 득실거려서 도로 다 막히고 동네 물 다 흐리겠네. 저급한 서브컬처 좀 도시 중심에서 치워버릴 수 없나?",
+                                replies: [
+                                    { nick: "Local_Business", content: "신거역 상인입니다. 그 '저급한 서브컬처' 즐기시는 분들 덕분에 이번 주말 매출 평소 3배 찍게 생겼습니다. 상인들 입장에선 구세주나 다름없으니 불만이면 집에서 쉬세요." },
+                                    { nick: "Clean_Squad", content: "행사 때마다 코스어 분들이 자발적으로 쓰레기 줍고 거리 청소하는 거 모르시죠? 편견에 찌든 본인 마음이나 치우세요." },
+                                    { nick: "Elite_Citizen_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "천박한 장사치들이랑 수준 똑같네 ㅋㅋㅋ 돈 몇 푼 쥐여주면 아주 굽신거리지? 내일 내 벤츠 S클래스 끌고 가서 도로 막고 있는 오타쿠들 다 밀어버릴까 보다. 벌금 내면 그만이지 뭐~" },
+                                    { nick: "Driver_Kim", content: "와 이 사람 마인드 진짜 소시오패스급이네;; 차로 사람을 밀어버리겠다고? 살인 예고 아님 이거?" },
+                                    { nick: "Elite_Citizen_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어차피 저런 잉여 인간들 사회에 도움도 안 되는데 차로 좀 치어주면 내가 오히려 사회정화 하는 거지 ㅋㅋㅋ 벤츠 기스나는 게 더 아깝긴 하다 ㅋㅋㅋ" },
+                                    { nick: "Traffic_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 교통안전과] 다중 밀집 지역을 대상으로 한 차량 돌진(특수상해 및 살인미수) 예고 게시물을 확인하여 채증 및 피의자 입건 절차를 개시했습니다. 해당 차량의 번호판을 특정하여 주말 간 효빈시 진입 차단 조치를 시행하며, 즉시 소환 조사할 예정입니다. 벤츠 수리비 대신 막대한 합의금과 변호사 선임 비용을 준비하시기 바랍니다." }
+                                ]
+                            },
+                            {
+                                nick: "Mayor_Fan_Club", time: "1시간 전", like: 14500, dislike: 22, isPunished: false,
+                                content: "박효빈 시장님 진짜 열린 행정의 끝판왕이심. 다른 지자체면 오타쿠 행사라고 무시하거나 외곽으로 쫓아냈을 텐데, 시립 교향악단을 붙여서 문화적 가치를 끌어올리는 안목... 진정한 갓효빈!",
+                                replies: [
+                                    { nick: "Young_Voter", content: "진짜 효빈시 살맛 납니다. 서브컬처도 문화로 인정해주고 전폭적으로 밀어주는 시장님 최고 ㅠㅠ" },
+                                    { nick: "Culture_Enjoyer", content: "이게 바로 포용력이죠. 클래식이랑 애니가 만나서 시너지가 날 줄 누가 알았겠어요. 기획력 미쳤음." },
+                                    { nick: "Supporter_1", content: "다음 선거 때 무조건 찍어드립니다 시장님!! 평생 종신 시장 해주세요 ㅋㅋㅋ" },
+                                    { nick: "Supporter_2", content: "티켓팅 실패해서 우울했는데 야외 생중계 열어준다는 소식 듣고 바로 광명 찾았습니다! 시장님 사랑합니다!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // 라이트 모드 기준 빌런 댓글 스타일링
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Police") || reply.nick.includes("Admin") || reply.nick.includes("SWAT") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 배너 -->
+            <div class="ad-banner rounded shadow-sm flex-col">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">HAF 2024 공식 굿즈샵 오픈!</div>
+                <div class="text-xs text-gray-500">
+                    레일루미네 한정판 굿즈 대방출<br>
+                    온라인 스토어 단독 혜택<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">지금 바로 확인하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

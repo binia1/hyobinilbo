@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문화산책] '니나관' 20층에서 바라본 효빈의 스카이라인 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        /* 기본 라이트 모드 스타일 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; } 
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">오피니언 > 문화산책</div>
+                <h2 class="article-title">[문화산책] '니나관' 20층에서 바라본 효빈의 스카이라인</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">이건축 평론가</span> (architecture@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 10:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">초고층 빌딩의 숲이 아닌, 평원 위로 뻗어 나가는 다채로운 궤적의 미학<br>붉은 벽돌의 충승당과 20층 니나관이 빚어내는 과거와 현재의 완벽한 조화<br>효빈의 진정한 스카이라인은 건물의 높이가 아닌 문화의 깊이가 결정한다</span></p>
+                    
+                    <div class="my-6">
+                        <img src="'니나관' 20층에서 바라본 효빈의 스카이라인.png" alt="효빈대학교 아파트형 기숙사 '니나관' 20층 뷰" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Hyobin+Skyline'">
+                        <div class="img-caption">▲ 효빈대학교 아파트형 기숙사 '니나관' 20층에서 내려다본 캠퍼스와 효빈광역시 도심의 전경. 끝없이 펼쳐진 평지 위로 초록색 2호선 전동차와 교내 트램이 조화로운 궤적을 그리고 있다.</div>
+                    </div>
+
+                    <p>건축 평론가로서 낯선 도시를 방문할 때면 항상 그 도시의 가장 상징적인 뷰포인트(Viewpoint)를 찾는다. 대개는 전망대나 마천루의 꼭대기를 향하지만, 효빈광역시에서는 조금 다른 선택을 했다. 언덕 하나 없는 광활한 대평원 위에 지어진 효빈대학교 캠퍼스, 그중에서도 20층 높이로 우뚝 솟은 아파트형 기숙사 '니나관'의 최고층에 올랐다.</p>
+
+                    <p>창밖으로 펼쳐진 풍경은 숨을 멎게 했다. 1925년 개교 당시의 붉은 벽돌을 그대로 간직한 충승당의 묵직한 질감 위로, 18층 규모의 법학전문대학원이 현대적인 유리 파사드를 반짝이며 서 있었다. 과거와 현재가 서로의 영역을 침범하지 않고 넉넉한 평지 위에서 우아하게 공존하는 모습이었다.</p>
+
+                    <p>하지만 니나관 20층에서 바라본 효빈 스카이라인의 진짜 백미는 정지된 건물들이 아니라 '움직이는 선'들에 있었다. 캠퍼스 남쪽 대동맥을 관통하는 트램(A선)이 느릿하게 미끄러지듯 나아가고, 그 너머 효빈대역으로 진입하는 2호선의 쾌활한 초록색(#00CCAA) 전동차가 도심의 생기를 더하고 있었다. 어디선가 일렉트릭 기타 소리가 은은하게 들려오는 듯한 착각마저 드는, 참으로 역동적이고 청춘다운 풍경이었다.</p>
+
+                    <p>스카이라인(Skyline)이라는 단어는 흔히 마천루들이 빚어내는 수직적인 윤곽선을 의미한다. 그러나 효빈시는 우리에게 새로운 건축적 질문을 던진다. 훌륭한 스카이라인이란 무조건 하늘을 찌를 듯이 높아야만 하는가? 과거 이 도시를 다스렸던 한 시장은 낡은 구도심과 노면전차를 모두 밀어버리고 획일화된 아스팔트와 고층 건물을 세우려 했다. 만약 그 오만한 계획이 실현되었다면, 효빈의 윤곽은 지금처럼 다채롭지 못했을 것이다.</p>
+
+                    <p>지금의 효빈을 보라. 오래된 골목 상권을 관통하는 분홍색 7호선 트램, 전 세계의 청년들이 각자의 문화를 뽐내며 모여드는 베르데 홀, 그리고 철도와 애니메이션이라는 서브컬처를 융합해 도시의 정체성으로 승화시킨 행정의 유연함까지. 이것들이 모여 효빈만의 독보적인 '문화적 스카이라인'을 완성했다.</p>
+
+                    <p>니나관 20층의 창문을 닫으며 생각했다. 훌륭한 건축과 도시는 단순히 공간을 채우는 하드웨어가 아니라, 그 안을 살아가는 사람들의 삶과 문화를 포용하는 소프트웨어로 완성된다고. 다양성을 존중하고 편견을 허물며 평원 위로 넓게 뻗어 나가는 효빈의 스카이라인은, 대한민국 그 어느 도시의 화려한 마천루보다도 깊고 단단했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">12,514</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        // 10 Comment Threads, 4+ replies each, 4 villain threads ending in cider.
+                        const commentsData = [
+                            {
+                                nick: "Nina_Hall_Resident", time: "방금 전", like: 11200, dislike: 8, isPunished: false,
+                                content: "니나관 18층 사는 학생입니다! 평론가님이 보신 풍경 저도 매일 아침 창문 열고 보는데 진짜 가슴 뻥 뚫립니다. 1층에서 커피 하나 사서 올라와서 캠퍼스에 굴러가는 초록색 2호선이랑 트램 보고 있으면 과제 스트레스 다 날아갑니다. 아 참고로 락 음악 소문은 사실입니다 밤에 어디선가 들려와요.",
+                                replies: [
+                                    { nick: "Freshman_01", content: "우와 18층 뷰 부럽네요... 저는 3층이라 방 창문 열면 나무밖에 안 보임 ㅠㅠ" },
+                                    { nick: "Campus_Tour", content: "기숙사에 20층짜리 아파트가 있다니 효빈대 스케일 ㄷㄷ 부럽습니다" },
+                                    { nick: "Band_Club", content: "밤에 들리는 락 음악 혹시... 베르데 홀 쪽에서 밴드 동아리 연습하는 소리 아닐까요? ㅋㅋ" },
+                                    { nick: "Nina_Hall_Resident", nickClass: "text-[#0055aa] font-bold", content: "작성자입니다! 맞아요 ㅋㅋ 가끔 베이스 둥둥거리는 소리 들리는데 은근 자장가 같습니다 ㅋㅋ 효빈대 최고!" }
+                                ]
+                            },
+                            {
+                                nick: "Architecture_Student", time: "5분 전", like: 8950, dislike: 12, isPunished: false,
+                                content: "효빈대 건축학과 재학생으로서 이 칼럼에 100% 공감합니다. 우리 학교가 평지라서 걷기는 힘들지만 건물의 스카이라인이 정말 예뻐요. 무작정 높게 짓는 것보다 과거(충승당)랑 현재(법전원)가 어우러지는 수평적 스카이라인이 진짜 도시의 품격을 보여주는 것 같습니다.",
+                                replies: [
+                                    { nick: "Engineering_Life", content: "건축과 화이팅! 설계실에서 맨날 밤새시죠? ㅠㅠ 불 꺼진 걸 본 적이 없음" },
+                                    { nick: "Classic_Modern", content: "충승당 붉은 벽돌이랑 법전원 유리 파사드 조합은 진짜 신구의 완벽한 조화죠. 건축 잡지에도 자주 나옴." },
+                                    { nick: "Walking_Hell", content: "평지캠퍼스 최고 장점: 자전거 타기 천국. 단점: 걷다 보면 끝이 안 보임 ㅋㅋㅋ" },
+                                    { nick: "Architecture_Student", nickClass: "text-[#0055aa] font-bold", content: "작성자입니다 ㅋㅋ 맞아요 우리 학교 스카이라인은 건물이 아니라 조경이랑 트램 선이 완성하는 듯. 낭만 있습니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "12분 전", like: 6800, dislike: 15, isPunished: false,
+                                content: "윤대환 전 시장이 트램 밀어버리고 죄다 성냥갑 아파트 지으려고 했던 거 생각하면 아찔하네요. 평론가님 말씀대로 스카이라인은 건물의 높이가 아니라 문화의 깊이가 결정하는 게 맞습니다. 박효빈 시장님이 그 깊이를 완벽하게 채워주셨죠.",
+                                replies: [
+                                    { nick: "Citizen_A", content: "진짜 윤대환 시절 생각하면... 역사적인 붉은 벽돌 다 밀고 콘크리트 성냥갑 세울 뻔했죠. 상상만 해도 끔찍함." },
+                                    { nick: "Tram_Lover", content: "트램 노선 지켜낸 게 진짜 신의 한 수 였습니다. 지금 효빈시의 상징이 되었으니까요." },
+                                    { nick: "Deep_Culture", content: "도시의 깊이는 문화가 결정한다는 평론가님 말씀 진짜 뼈에 새깁니다." },
+                                    { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "맞습니다. 박 시장님 재선 무조건 지지합니다. 문화 인프라는 하루아침에 안 만들어지거든요." }
+                                ]
+                            },
+                            {
+                                nick: "Green_Moca_Train", time: "18분 전", like: 5420, dislike: 5, isPunished: false,
+                                content: "높은 곳에서 2호선 초록색 열차 달리는 거 보면 애벌레가 기어가는 것 같아서 엄청 귀엽습니다. 평론가님도 그 풍경에 반하셨군요! 다음에는 8호선 운양중앙역 2층 굿즈샵에서 바라보는 시내 뷰도 추천해 드립니다. 채광 맛집이거든요.",
+                                replies: [
+                                    { nick: "Caterpillar_Lol", content: "애벌레 ㅋㅋㅋㅋ 비유 찰떡이네요. 초록색이라 진짜 그래 보임 ㅋㅋ" },
+                                    { nick: "Line2_Color", content: "2호선 초록색이랑 캠퍼스 잔디밭 색감이 너무 잘 어울려요 ㅠㅠ 힐링 그 자체" },
+                                    { nick: "Goods_Shop_View", content: "운양중앙역 2층 굿즈샵 뷰 메모해갑니다! 이번 주말에 꼭 가봐야지" },
+                                    { nick: "Green_Moca_Train", nickClass: "text-[#0055aa] font-bold", content: "채광 쫙 들어올 때 역명판이랑 아크릴 스탠드 세워두고 사진 찍으면 인생샷 나옵니다 강추!!" }
+                                ]
+                            },
+                            {
+                                nick: "Urban_Planner", time: "25분 전", like: 4900, dislike: 6, isPunished: false,
+                                content: "건축과 도시 행정의 본질을 꿰뚫는 명문입니다. 효빈시가 서브컬처 성지로 불리는 이유는 단순히 만화를 좋아해서가 아니라, 다름을 인정하고 수용하는 수평적이고 포용적인 인프라를 잘 구축했기 때문이죠. 이런 시각의 문화 칼럼이 더 많아졌으면 좋겠습니다.",
+                                replies: [
+                                    { nick: "Soft_Power", content: "하드웨어가 아니라 소프트웨어로 완성된다는 문장이 예술이네요. 포용력의 승리!" },
+                                    { nick: "Global_Standard", content: "해외 유명 건축가들도 효빈시 도시계획 엄청 칭찬하더라고요. 자연 친화적이라고." },
+                                    { nick: "Connection_City", content: "서브컬처 인프라를 도시 전체의 수평적 연결로 풀어낸 게 대단한 거임. 그 중심에 트램이 있고요." },
+                                    { nick: "Urban_Planner", nickClass: "text-[#0055aa] font-bold", content: "맞습니다. 다른 지자체들도 무작정 산 깎아서 고층 빌딩만 올릴 게 아니라 효빈시 사례를 좀 배웠으면 좋겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Camera_Master_1", time: "32분 전", like: 14, dislike: 32100, isPunished: true,
+                                content: "니나관 20층 뷰 탐나네. 기숙사 외부인 출입 금지라던데, 내일 내 개인용 드론 띄워서 20층 창문 앞까지 날려보낸 다음에 4K 해상도로 여학생들 방안까지 싹 다 불법 촬영해서 커뮤니티에 뿌려야지 ㅋㅋㅋ 뷰 맛집 개꿀~ 다들 기대해라 ㅋㅋ",
+                                replies: [
+                                    { nick: "Are_You_Crazy", content: "미친놈인가 기숙사 창문을 드론으로 찍는다고? 완전 범죄 예고네;; 뇌가 우동사리냐?" },
+                                    { nick: "Report_Done", content: "방금 효빈대 총학생회랑 사이버수사대에 불법촬영 및 주거침입 예고로 캡처해서 신고했습니다. 콩밥 먹을 준비 하세요." },
+                                    { nick: "Camera_Master_1", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "ㅋㅋㅋㅋ 신고해라 드론 등록번호 다 지워서 날릴 건데 경찰이 절대 못 잡는다 찐따들아 ㅋㅋㅋ 내일 밤 기대해라~" },
+                                    { nick: "Drone_Law", content: "대학 캠퍼스는 비행 제한 구역이라 띄우자마자 전파 감지돼서 걸리는데 무식하면 용감하다 진짜 ㅋㅋㅋ" },
+                                    { nick: "Camera_Master_1", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "알빠노? 내 컨트롤 실력이면 안 걸리고 다 찍고 튈 수 있다 ㅋㅋㅋ 방구석 도덕군자들 풀발기하는 거 존웃이네 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Aviation_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 드론테러대응팀] 효빈대학교 기숙사 일대는 비행금지구역으로 설정되어 있으며, 성폭력범죄의 처벌 등에 관한 특례법 위반(카메라 등 이용 촬영) 예고를 엄중히 인지하였습니다. 현재 IP 역추적으로 귀하의 거주지를 특정하였으며, 내일 현장에서 드론 비행 시도 시 전파 차단(재밍 건)으로 격추 후 즉각 현행범 체포할 예정입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Forever_99", time: "41분 전", like: 8, dislike: 41200, isPunished: true,
+                                content: "무슨 놈의 스카이라인이야! 도시 한복판에 애들 장난감 기차나 굴러다니고 낡아빠진 벽돌 건물이나 놔두니까 효빈시가 발전이 없는 거다!! 당장 포크레인 몰고 가서 저 흉물스러운 충승당이랑 트램 선로 다 박살 내버릴 거다!! 윤대환 시장님 그립습니다!!",
+                                replies: [
+                                    { nick: "History_Defender", content: "충승당이 1925년에 지어진 근대문화유산인데 포크레인으로 밀겠다고요? 문화재 훼손은 징역형입니다 아저씨." },
+                                    { nick: "Crazy_Oldman", content: "선로 파괴 예고까지 ㄷㄷ 이 아저씨들 진짜 선 넘네;; 윤대환 지지자들 수준 딱 나옴" },
+                                    { nick: "Yoon_Forever_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "문화유산은 무슨 개뿔! 좌파 빨갱이 시장이 아끼는 건물 싹 다 불태워버릴 테니까 말리지 마라!! 내일 아침 출근길에 트램 선로에 드러눕는다!!" },
+                                    { nick: "Citizen_Safety", content: "트램 선로에 드러눕고 불태운다고요? 완전 테러범이네 이거;; 바로 112 긴급 출동 신고 넣었습니다." },
+                                    { nick: "Yoon_Forever_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 빨갱이들아!! 경찰 오기 전에 내가 오함마 들고 가서 다 부숴놓을 거니까!! 멸공!!" },
+                                    { nick: "Hyobin_Metro_Security", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈교통공사 보안대응팀] 철도안전법 제48조(철도 보호) 및 문화재보호법 위반 예고를 중대 테러 위협으로 간주하여 즉시 비상 체제로 전환했습니다. 관할 경찰서와 공조하여 작성자의 신원을 확보하였으며, 내일 오전 7호선 모든 선로 및 충승당 주변에 경찰 기동대를 배치합니다. 선로 접근 시 물리력이 행사될 수 있음을 강력히 경고합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Rock_Spirit_Nina", time: "50분 전", like: 8500, dislike: 4, isPunished: false,
+                                content: "아니 '니나관'이라는 이름부터 락 밴드 감성 충만한 거 아님? ㅋㅋ 밤마다 어디선가 락 기타 소리 들려온다니 낭만 미쳤네 ㅋㅋㅋ 나도 저기서 살면서 앰프 꽂고 기타 치고 싶다 ㅠㅠ",
+                                replies: [
+                                    { nick: "Girls_Band_Cry", content: "진짜 기숙사 이름이 니나라니 ㅋㅋㅋ 학교 측 네이밍 센스 보소 완전 락스피릿이네 ㅋㅋㅋ" },
+                                    { nick: "Band_Room_Rumor", content: "기숙사 지하에 방음 밴드 연습실 있다는 썰이 있던데 진짜인가요? 궁금하네요" },
+                                    { nick: "Hyobin_Univ_Council", nickClass: "text-[#0055aa] font-bold", content: "효빈대 총학생회입니다. 네! 니나관 지하 1층에 밴드 동아리 전용 방음 연습실 있습니다 ㅋㅋ 방음 완벽해서 맘껏 쳐도 됩니다!" },
+                                    { nick: "Rock_Spirit_Nina", nickClass: "text-[#0055aa] font-bold", content: "헐 대박... 오피셜이네 ㄷㄷ 당장 내년에 효빈대 편입 준비합니다 딱 기다리세요!! 내 기타가 울부짖는다!!" }
+                                ]
+                            },
+                            {
+                                nick: "Rich_Landlord", time: "1시간 전", like: 12, dislike: 38900, isPunished: true,
+                                content: "오타쿠 시장이 도시를 씹덕 소굴로 만들어서 효빈시 아파트값 다 떨어지고 있다!! 대학생 나부랭이들이 무슨 스카이라인 타령이야! 내일 우리 아파트 부녀회 다 끌고 가서 효빈대 정문 막아버리고 트램 창문에 돌 던질 거니까 각오해라!!",
+                                replies: [
+                                    { nick: "Fact_Check_King", content: "효빈시 집값 지금 관광객 몰려서 상권 대박나고 역대 최고치 경신 중인데 무슨 헛소리시죠? 팩트 체크 좀 ㅋㅋㅋ 뇌내 망상 오지네" },
+                                    { nick: "Murder_Threat", content: "운행 중인 트램에 돌을 던져요? 살인미수 아닙니까 그거? 집값에 미쳐서 진짜 제정신 아니네 이 아줌마" },
+                                    { nick: "Rich_Landlord", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 없는 것들이 말대꾸야!! 내 집값 떨어지면 니들이 책임질 거냐!! 당장 내일 돌멩이 한 트럭 싣고 가서 트램 유리창 다 박살 내줄게!!" },
+                                    { nick: "Report_To_Police", content: "부동산 카페에 좌표 찍고 온 거 같은데 ㅋㅋㅋ 경찰서 가서도 그 당당함 유지하시길 바랍니다~ 다 캡처함" },
+                                    { nick: "Rich_Landlord", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "경찰이 나 하나 잡겠냐? 우리 부녀회 파워를 좆으로 보네 ㅋㅋㅋ 내일 뉴스에 트램 유리창 박살 난 거 나오면 내 작품인 줄 알아라!!" },
+                                    { nick: "Hyobin_Police_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 강력계] 운행 중인 대중교통(트램)을 향한 투석 및 특수재물손괴, 살인미수 예고를 확인하였습니다. IP 추적 결과 모 아파트 부녀회장 자택으로 위치를 특정하여 즉시 관할 지구대원들이 출동했습니다. 철도 차량에 대한 물리적 테러는 특정범죄 가중처벌 등에 관한 법률에 의해 엄단됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Elite_Seoul_Resident", time: "1시간 15분 전", like: 5, dislike: 51200, isPunished: true,
+                                content: "지방 지잡대 주제에 무슨 문화 타령이고 스카이라인 타령이냐 ㅋㅋㅋ 서울에 비하면 그냥 촌구석 시골 바닥에 장난감 기차 굴러다니는 수준이구만. 평론가라는 놈도 돈 받고 기사 썼나 보네 역겹다 역겨워~",
+                                replies: [
+                                    { nick: "Inferiority_Complex", content: "지방 비하에 특정 대학 비하까지... 님 인생 앰생인 걸 왜 여기서 화풀이하심? 열등감 덩어리신가 보네요." },
+                                    { nick: "University_Rank", content: "효빈대는 전국 톱텐 안에 드는 글로벌 명문대인데 지잡대 타령 ㅋㅋㅋ 님 대학은 어딘데요? 인증 가능?" },
+                                    { nick: "Elite_Seoul_Resident", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "나 인서울 명문대 출신이야 이 촌구석 벌레들아 ㅋㅋㅋ 꼬우면 니들도 인서울 하든가~ 이 기레기 기자 놈 내가 내일 효빈일보 본사 찾아가서 칼로 찔러 죽여버릴 테니까 딱 기다려라 ㅋㅋㅋ" },
+                                    { nick: "Stop_Knife_Threat", content: "와;; 말 밀리니까 바로 칼부림 살인 예고 시전하네;; 이건 찐 범죄다 바로 사이버수사대에 고발장 넣음." },
+                                    { nick: "Elite_Seoul_Resident", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "넣어라 병신아 ㅋㅋㅋ 내가 식칼 들고 효빈일보 로비 다 쑤셔놓을 거니까 내일 피바람 불 거다 ㅋㅋㅋ" },
+                                    { nick: "Admin_Justice", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[관리자] 지역 비하, 타인 비방 및 기자에 대한 구체적인 흉기 난동/살인 예고 게시글을 확인했습니다. 해당 계정은 '효빈일보 클린봇'에 의해 즉각 영구 차단되었으며, 해당 살인 예고 건은 형법 제283조(협박)에 의거하여 효빈지방경찰청 사이버수사대에 고발 조치 및 IP 로그 일체가 제공되었습니다. 무관용 원칙으로 대응합니다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Police") || reply.nick.includes("Security") || reply.nick.includes("Admin") || reply.nick.includes("Council") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">효빈대학교 편입학 안내</div>
+                <div class="text-xs text-gray-500">
+                    글로벌 서브컬처 인프라의 중심<br>
+                    수평적 캠퍼스 라이프의 시작<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">입학처 바로가기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

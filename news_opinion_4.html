@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[발언대] '4호선(주황색)' 연장, 약산시 교통 혁명의 시작 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        /* 명시적인 기본 라이트 모드 테마 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        /* 기사 본문 스타일 */
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 하이라이트 댓글 스타일 (베스트/빌런) */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        /* 토스트 알림 (alert 대체) */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">오피니언 > 발언대</div>
+                <h2 class="article-title">[발언대] '4호선(주황색)' 연장, 약산시 교통 혁명의 시작</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">최교통 연구원</span> (transport_lab@hyobin.re.kr)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 10:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#FF5522] font-bold">기존 동서축 철도망의 한계 극복... 남북을 잇는 '주황색' 동력 필요<br>천가~약산 연장, 단순한 통근로 넘어 '레일루미네' 문화권 통합의 핵심<br>'카스미'의 활력과 '니지카'의 성지가 만나는 시너지... 인구 30만 약산의 도약</span></p>
+                    
+                    <div class="my-6">
+                        <img src="4호선 연장 조감도.png" alt="효빈 도시철도 4호선의 상징색인 주황색 전동차가 천가역을 지나 약산 방면 연장 예정지로 향하는 가상 조감도" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Line+4+Extension+Plan'">
+                        <div class="img-caption">▲ 효빈 도시철도 4호선의 상징색인 주황색(#FF5522) 전동차가 현재의 종점인 천가역을 지나 약산시 방면으로 연장되는 구간의 가상 주행 모습. 4호선 연장은 인구 32만의 약산시를 효빈권 핵심 경제·문화권으로 편입시킬 '교통 혁명'으로 기대를 모은다. (사진=효빈교통공사 제공)</div>
+                    </div>
+
+                    <p>현재 인구 30만 명을 돌파하며 덕빈북도의 거점 도시로 성장한 약산시는 역사적인 전환점에 서 있다. 이미 효빈 1호선과 빈효선 광역전철이 지나고 있지만, 이들은 모두 동서로 길게 뻗은 선형이다. 약산 시민들이 효빈광역시 남구의 공단이나 안천구의 상권으로 이동하기 위해서는 여전히 버스에 의존하거나 복잡한 환승을 거쳐야 한다. 이러한 갈증을 한 번에 해소할 치트키가 바로 효빈 도시철도 4호선의 약산 연장이다.</p>
+
+                    <p><strong>🚀 동서축을 넘어 남북축으로: 약산의 입체적 교통망 완성</strong><br>
+                    4호선 연장은 단순히 선로 몇 킬로미터를 늘리는 사업이 아니다. 현재 천가역에서 멈춰 있는 주황색 궤적을 약산시청과 역석동 일대까지 연결함으로써, 약산은 격자형의 입체적인 철도 네트워크를 보유하게 된다. 이는 약산산업단지 근로자들의 출퇴근 시간을 획기적으로 단축할 뿐만 아니라, 효빈 도심으로의 접근성을 극대화하여 두 도시를 하나의 생활권으로 묶는 강력한 접착제 역할을 할 것이다.</p>
+
+                    <p><strong>✨ '키라키라'와 '니지카'가 만나는 문화적 융합</strong><br>
+                    효빈교통공사의 레일루미네(Rail-Lumine) 세계관에서 4호선은 '토야마 카스미'의 주황색 활력을 상징한다. 한편, 약산시는 최근 홍하면 니지리 일대가 『봇치 더 락!』의 성지로 떠오르며 전국적인 주목을 받고 있다. 4호선의 연장은 4호선 마스코트 다로나의 "안 됩니다!"라는 단호한 질서 의식과 약산의 새로운 서브컬처 밈이 만나 폭발적인 관광 수요를 창출할 절호의 기회다. '주황색 열차를 타고 니지카를 보러 가는 길'이라는 스토리텔링은 철도 동호인뿐만 아니라 전 세계 서브컬처 팬들의 가슴을 뛰게 하기에 충분하다.</p>
+
+                    <p><strong>📈 인구 30만 대도시의 위상에 걸맞은 인프라</strong><br>
+                    단순히 인구만 많은 도시를 넘어, 살기 좋은 도시가 되기 위해서는 쾌적한 정시성이 보장되는 궤도 교통이 필수적이다. 박효빈 시장의 '교통=생존권'이라는 철학이 약산시까지 뻗어 나갈 때, 우리는 진정한 의미의 효빈-약산 광역 경제권의 완성을 목격하게 될 것이다.</p>
+
+                    <p>4호선 연장은 단순한 토목 사업이 아니다. 그것은 효빈의 빛나는 궤도 문화를 약산으로 이식하고, 시민들의 일상에 '반짝반짝 두근두근'한 변화를 가져다줄 교통 혁명의 시작이다. 관계 당국은 이 주황색 희망의 궤적을 잇는 데 행정력을 집중해야 할 것이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#FF5522]" id="comment-count">6,520</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#FF5522]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#FF5522] text-white px-6 py-2 font-bold text-sm hover:bg-[#e04411] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        // 10 Comment Threads, 4+ replies each, 4 villain threads ending in cider.
+                        const commentsData = [
+                            {
+                                nick: "Orange_Star_Kasumi", time: "방금 전", like: 18200, dislike: 5, isPunished: false,
+                                content: "드디어 4호선 연장 발언대가 떴군요!! 🧡 천가에서 끊겨서 항상 아쉬웠는데, 약산까지 주황색 열차 타고 니지카 성지순례 갈 생각 하니까 벌써부터 '키라키라 도키도키' 합니다 ㅋㅋㅋ 다로나 주임님 약산역에서도 '무단횡단 안 됩니다!' 외쳐주세요!",
+                                replies: [
+                                    { nick: "Rail_Lumine_Fan", content: "와 진짜 카스미 열차 타고 니지카 동네로 가는 거 상상만 해도 낭만 오지네요 ㅋㅋㅋ 노선 색깔도 주황색이라 찰떡임" },
+                                    { nick: "Darona_Love", content: "다로나 주임님 약산지사 파견 나가시는 건가요? ㅋㅋㅋ 안내방송 기대됩니다!" },
+                                    { nick: "Subway_Otaku", content: "천가역 회차선 남는 부지 잘 활용하면 연장 공사 그렇게 오래 안 걸릴 수도 있습니다. 빨리 삽 떴으면 좋겠네요." },
+                                    { nick: "Orange_Star_Kasumi", nickClass: "text-[#FF5522] font-bold", content: "맞아요! 철덕 커뮤니티에서도 천가역 선형 설계가 처음부터 연장을 염두에 둔 거라고 하더라고요. 무조건 존버합니다 🧡" }
+                                ]
+                            },
+                            {
+                                nick: "Yaksan_Citizen_No1", time: "5분 전", like: 15400, dislike: 12, isPunished: false,
+                                content: "역석동 주민입니다... 출퇴근 시간에 1호선 타러 가는 것도 일이었는데 4호선 들어오면 진짜 교통 혁명 맞습니다. 버스 안 타고 바로 남구청이나 도변 쪽으로 쏠 수 있는 게 대박임 ㅠㅠ 시장님 믿고 있습니다!!",
+                                replies: [
+                                    { nick: "South_Hyobin_Worker", content: "남구 공단으로 출퇴근하는 약산 시민들 엄청 많은데 진짜 숨통 트일 겁니다 ㅠㅠ 버스 환승 너무 지옥이에요" },
+                                    { nick: "Traffic_Hell", content: "아침마다 약산대로 막히는 거 생각하면 지하철 연장이 유일한 답이죠." },
+                                    { nick: "City_Integration", content: "이게 진짜 광역 생활권 통합이지. 박 시장님 추진력이면 임기 내에 예타 통과 쌉가능할 듯." },
+                                    { nick: "Yaksan_Citizen_No1", nickClass: "text-[#FF5522] font-bold", content: "진짜 제발 ㅠㅠ 4호선 뚫리면 차 팔고 지하철만 타고 다닐 겁니다 ㅋㅋㅋ 대중교통 만세!" }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "12분 전", like: 12100, dislike: 24, isPunished: false,
+                                content: "윤대환이랑 그 일당들은 약산 연장 예산 낭비라고 쇠파이프 들고 난리 칠 듯 ㅋㅋㅋ 정작 지들은 필리핀에서 망고나 구걸하면서 효빈권 발전을 시기 질투하겠죠? 4호선 연장은 약산산업단지 경제 효과만 봐도 무조건 해야 하는 사업입니다.",
+                                replies: [
+                                    { nick: "Yoon_Hater", content: "윤대환은 시장 시절에 철도 다 없애버리려고 했던 놈인데 깜빵에서 이 뉴스 보면 피눈물 흘리겠네요 ㅋㅋㅋ" },
+                                    { nick: "Economy_Analyst", content: "약산산단 물류망이랑 출퇴근 인구 경제 유발 효과만 계산해도 B/C(비용편익비율) 1.2 가뿐히 넘길 겁니다." },
+                                    { nick: "Fact_Nerd", content: "과거 적폐들이 막았던 사업을 갓효빈 시장님이 뚫어내시네요. 속이 다 시원합니다." },
+                                    { nick: "Fact_Checker_79", nickClass: "text-blue-600 font-bold", content: "어차피 그 쇠파이프 일당들 এখন 다 감방 가거나 해외 도피 중이라 반대할 힘도 없습니다 ㅋㅋㅋ 연장 가즈아!!" }
+                                ]
+                            },
+                            {
+                                nick: "Nijika_Shimobe", time: "18분 전", like: 9800, dislike: 11, isPunished: false,
+                                content: "홍하면 니지카 성지랑 4호선 카스미 라인이 연결된다니... 이건 뱅드림과 봇치더락의 역사적인 콜라보 노선 아닙니까? ㅋㅋㅋ 연장 확정되는 날 홍하역에서 드럼 치겠습니다. 박효빈 시장님 행정 센스는 진짜 세계 제일인 듯.",
+                                replies: [
+                                    { nick: "Bocchi_The_Subway", content: "아 ㅋㅋㅋㅋ 진짜 지하철역 이름에 (니지카 성지) 부역명으로 붙여주면 좋겠네요 ㅋㅋㅋ" },
+                                    { nick: "Drum_Solo", content: "홍하역 광장에서 결속밴드 노래 버스킹하면 진짜 분위기 미칠 듯 ㅠㅠ" },
+                                    { nick: "Anime_Tourism", content: "서브컬처 팬들한테는 진짜 이만한 관광 상품이 없죠. 일본 부럽지 않은 성지가 될 겁니다." },
+                                    { nick: "Nijika_Shimobe", nickClass: "text-[#FF5522] font-bold", content: "맞습니다! 스탬프 랠리 같은 거 기획하면 전국의 씹덕들 약산으로 다 모일 겁니다 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Subculture_01", time: "25분 전", like: 12, dislike: 32500, isPunished: true,
+                                content: "지하철 연장에 무슨 만화 캐릭터 타령이냐!! 세금 써서 짓는 건데 전문적으로 분석해라!! 연구원이라는 사람도 오타쿠 시장한테 물든 거냐?? 당장 이런 쓰레기 기사 내려라!!",
+                                replies: [
+                                    { nick: "Policy_Genius", content: "아저씨, 기사 좀 읽으세요. 전반부에 경제 효과랑 교통망 분석 다 되어 있잖아요. 문화랑 엮어서 수익성(굿즈 매출 등) 극대화하는 게 효빈교통공사 흑자 비결인 거 모르심?" },
+                                    { nick: "Metro_Master", content: "4호선 흑자 전환에 레일루미네 IP 사업이 기여한 비중이 얼만 줄 알면 이런 소리 못 함 ㅉㅉ 가서 버스나 타보쇼 쾌적하고 좋습니다." },
+                                    { nick: "Anti_Subculture_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 말대꾸야 십덕 새끼들이!! 내가 내일 연구소 찾아가서 불질러버릴 테니까 딱 기다려라!! 세금 축내는 버러지들 다 태워죽여주마!!" },
+                                    { nick: "Report_User", content: "와;; 팩트로 맞으니까 바로 방화 테러 예고 ㄷㄷ 바로 국정원이랑 경찰청에 캡처해서 넘겼습니다 수고하세요~" },
+                                    { nick: "Anti_Subculture_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 쫄보들아 ㅋㅋㅋ 내가 VPN 돌려서 쓴 거라 절대 못 잡는다!! 내일 효빈연구원 잿더미 될 준비나 해라!!" },
+                                    { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 국가 핵심 연구시설(효빈연구원)에 대한 방화 및 테러 예고를 국가 안보 위협으로 간주, 최고 수준의 비상 대응 체제로 전환했습니다. VPN 3중 우회 경로 디코딩 결과 거주지가 특정되었으며, 현 시간부로 무장 특공대원이 자택에 진입 중입니다. 문 뒤로 물러서십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Real_Estate_King", time: "32분 전", like: 8, dislike: 41200, isPunished: true,
+                                content: "야 이 미친놈들아 지하철 노선을 왜 니들 맘대로 정하냐!! 우리 아파트 단지 앞으로 노선 틀어라!! 안 그러면 우리 부녀회 다 동원해서 시청 무단 점거하고 트랙터로 4호선 공사판 다 밀어버릴 거다!!",
+                                replies: [
+                                    { nick: "City_Planner_Wannabe", content: "아저씨 노선은 타당성 조사 다 끝난 건데요? 떼쓴다고 바뀌는 거 아닙니다 ㅋㅋㅋ 님 아파트값 올리려고 핌피(PIMFY) 짓 하는 거 다 티 나요." },
+                                    { nick: "Law_Student", content: "공사현장 트랙터로 민다고요? 그거 특수재물손괴에 업무방해입니다. 경찰서 가고 싶으신가 보네요." },
+                                    { nick: "Real_Estate_King", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "법이 밥 먹여주냐!! 내 재산 내가 지키겠다는데!! 내일 아침에 진짜 굴삭기 몰고 가서 천가역 선로 다 파버릴 테니까 뉴스나 봐라 이 거지 새끼들아!!" },
+                                    { nick: "Angry_Commuter", content: "선로 파괴 예고? 진짜 돌았네;; 이거 테러방지법 위반 아닌가요? 수만 명 타는 전철 선로를 부순다고?" },
+                                    { nick: "Real_Estate_King", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "니들 목숨보다 내 아파트값이 더 중요해 ㅋㅋㅋ 내일 오전 4호선 운행 중단될 거니까 딴 거 타라 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Metro_Security", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈교통공사 보안대응팀 및 관할경찰서] 도시철도 운행 시설물에 대한 물리적 파괴(궤도손괴) 및 중대 테러 예고를 확인했습니다. 철도안전법 제48조 위반 현행범으로 자택에 강력팀이 출동했으며, 귀하의 건설장비(굴삭기/트랙터)는 범행 도구로 간주하여 즉각 압수 조치됩니다. 막대한 손해배상 청구를 준비하시기 바랍니다." }
+                                ]
+                            },
+                            {
+                                nick: "Line4_Driver", time: "40분 전", like: 11500, dislike: 4, isPunished: false,
+                                content: "현재 4호선 주황색 열차 운행 중인 기관사입니다. 종점인 천가역에서 회차할 때마다 앞이 꽉 막혀 있어서 답답했는데, 약산까지 시원하게 달릴 수 있다니 벌써부터 설렙니다! 시민 여러분 안전하게 모시겠습니다!",
+                                replies: [
+                                    { nick: "Thanks_Driver", content: "오 기관사님 등판 ㄷㄷ 항상 안전 운행해주셔서 감사합니다!!" },
+                                    { nick: "Orange_Train_Fan", content: "기관사님! 주황색 전동차 너무 예뻐요 ㅠㅠ 약산까지 달리는 모습 꼭 사진으로 남길 겁니다!" },
+                                    { nick: "Subway_Hero", content: "시민들의 발이 되어주셔서 감사합니다. 연장 개통식 날 꼭 타러 갈게요!" },
+                                    { nick: "Line4_Driver", nickClass: "text-[#FF5522] font-bold", content: "응원 감사합니다! 레일루미네 카스미 방송 들으면서 기분 좋게 퇴근하겠습니다 ㅎㅎ 좋은 하루 보내세요!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Loyalist", time: "48분 전", like: 5, dislike: 58900, isPunished: true,
+                                content: "4호선 연장 그거 원래 윤대환 시장님이 기획하신 건데 박효빈 이 도둑놈이 지 업적인 양 가로채네!! 비열한 좌파 시장 당장 사퇴하라!! 우리 위대하신 윤 시장님을 당장 감옥에서 석방하라!!",
+                                replies: [
+                                    { nick: "Fact_Cutter", content: "윤대환이 4호선 연장 예산 전액 삭감하고 자기 친척 땅 있는 곳으로 버스 노선 억지로 만들려다 걸려서 감방 간 건데요? 치매 오셨음? 제발 팩트체크 좀 ㅋㅋㅋ" },
+                                    { nick: "History_Teacher", content: "역사를 왜곡하려고 하시네;; 시민들이 바보인 줄 압니까? 윤대환 시절 철도 예산 어떻게 토막 났는지 기록이 다 남아있습니다." },
+                                    { nick: "Yoon_Loyalist", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 감히 가짜뉴스를 퍼트려!! 이 기사 쓴 최교통 연구원 이 빨갱이 새끼 내가 내일 연구원 출근길에 사시미로 찔러 죽여버릴 거다!! 피바람이 불 거다!!" },
+                                    { nick: "Normal_Citizen", content: "와 진짜 정신병자네;; 말 막히니까 바로 살인 예고 시전;; 캡처해서 사이버수사대에 바로 넣었습니다. 감방 가서 윤대환이랑 면회나 하세요." },
+                                    { nick: "Yoon_Loyalist", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "찔러 죽인다니까!! 내 칼이 니들 목구멍을 뚫을 거다!! 애국 보수의 맛을 보여주마!!" },
+                                    { nick: "Hyobin_Cyber_Cop", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 강력계] 언론인 및 연구원을 지목한 흉기 난동 및 살인 예고를 인지하여 즉각 비상 대응 체제로 전환했습니다. IP 추적 결과 피의자 신원을 확보하였으며, 현재 자택 문을 강제 개방 중입니다. 흉기를 버리고 투항하십시오. 불응 시 물리력이 행사됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Darona_Fanclub", time: "55분 전", like: 8200, dislike: 3, isPunished: false,
+                                content: "약산 연장선 개통되면 다로나 목소리 새로 녹음하는 건가요? 역석동 지나갈 때 특유의 엄격한 톤으로 '출입문 닫습니다! 기대지 마십시오!' 하는 거 듣고 싶어요 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Voice_Actor_Fan", content: "무조건 새로 녹음해야죠! 역 이름이 추가되는데 ㅋㅋㅋ 성우님 열일해주시길!" },
+                                    { nick: "Strict_Darona", content: "다로나는 앙칼지게 화내는 톤이 매력이죠 ㅋㅋㅋ 무단횡단 절대 안 할게요 ㅠㅠ" },
+                                    { nick: "Station_Announcer", content: "약산역 도착할 땐 '니지카의 성지에 오신 것을 환영합니다' 이런 이스터에그 멘트 하나 넣어주면 좋겠습니다 ㅋㅋ" },
+                                    { nick: "Darona_Fanclub", nickClass: "text-[#FF5522] font-bold", content: "오 이스터에그 대박 ㅋㅋㅋ 효빈교통공사라면 진짜 하고도 남을 듯요! 기대해봅니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Ticket_Scalper_02", time: "1시간 5분 전", like: 1, dislike: 48200, isPunished: true,
+                                content: "ㅋㅋ 4호선 연장 기념 역석동 역세권 조합원 로열층 딱지 1억에 팝니다. 맹지인데 곧 상업지구로 풀린다고 시청 내부자한테 소스 들음. 돈 벌고 싶은 흑우들은 계좌로 계약금 2천 먼저 쏴라 ㅋㅋ",
+                                replies: [
+                                    { nick: "Real_Estate_Pro", content: "전형적인 기획부동산 사기 수법이네 ㅋㅋㅋ 지하철 연장된다고 아무 땅이나 다 상업지구로 오르는 줄 아냐? 게다가 조합원 딱지 불법거래임." },
+                                    { nick: "Report_Scam", content: "시청 내부자 소스 운운하는 거 보니까 공인중개사법 위반에 사기 미수네요. 금감원이랑 국토부, 효빈시청 감사실에 싹 다 캡처해서 넘겼습니다." },
+                                    { nick: "Ticket_Scalper_02", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "ㅋㅋㅋ 병신들 신고해봐라 대포통장이라 절대 못 잡음 ㅅㄱ 난 이 돈 챙겨서 필리핀으로 뜰 거다~ 니들은 평생 뚜벅이로 전철이나 타라 ㅋㅋㅋ" },
+                                    { nick: "Smart_Citizen", content: "진짜 능지가 처참하네 ㅋㅋㅋ 요즘 대포통장도 계좌 지급정지 1분이면 되는데 필리핀 타령 ㅋㅋㅋ 잘 가라" },
+                                    { nick: "Ticket_Scalper_02", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "아 왜 인터넷 뱅킹 출금 정지됐냐?? 야 씨발 은행 놈들아 내 돈 내놔!! 장난해??" },
+                                    { nick: "Hyobin_Tax_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국세청 첨단탈세방지담당관실 및 경찰청 지능범죄수사대] 기획부동산 사기 및 범죄수익은닉 정황을 포착하여 금융결제원과 공조, 귀하의 차명 계좌(대포통장) 3개를 즉각 동결(Freezing) 조치했습니다. 필리핀행 항공편 취소 수수료는 걱정하지 마시고 효빈구치소로 출국 준비하시기 바랍니다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // 제재받은 빌런 글은 답글(응징 과정)을 기본으로 펼쳐둠
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Cop") || reply.nick.includes("SWAT") || reply.nick.includes("Security") || reply.nick.includes("Police") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#FF5522] mb-1 text-sm">약산시 도시개발공사</div>
+                <div class="text-xs text-gray-500">
+                    4호선 연장, 광역 교통망의 완성<br>
+                    살기 좋은 도시 약산으로 오세요<br>
+                    <span class="text-[#FF5522] mt-2 inline-block cursor-pointer underline">약산 소식지 구독하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

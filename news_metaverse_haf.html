@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[게임] "집에서도 성지순례"... 효빈시, HAF 메타버스 플랫폼 전 세계 오픈 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .strike { text-decoration: line-through; color: #888; }
+        
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">IT/과학 > SW/게임</div>
+                <h2 class="article-title">[게임] "집에서도 성지순례"... 효빈시, HAF 메타버스 플랫폼 전 세계 오픈</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">김가상 기자</span> (virtual@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 09:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">물리적 거리 제약 없는 글로벌 놀이터... 언리얼 엔진 5로 효빈시 주요 성지 완벽 구현<br>메타버스 내에서 도시철도 탑승, 디지털 굿즈 구매, 실시간 라이브 뷰잉 관람까지<br>박효빈 시장 "국경과 언어 장벽 뛰어넘는 진정한 글로벌 서브컬처 대통합 이룰 것"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="HAF_메타버스_오픈.png" alt="HAF 월드 가상 화면 모습" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=HAF+Metaverse+World'">
+                        <div class="img-caption">▲ 8일 전 세계 공식 서버를 오픈한 효빈 애니메이션 페스티벌(HAF) 전용 3D 메타버스 플랫폼 'HAF 월드(HAF World)'의 가상 화면. 물리적 제약으로 축제 현장을 찾지 못하는 글로벌 팬들에게 생생한 디지털 성지순례 경험을 제공한다. (사진=효빈정보산업진흥원 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김가상 기자] 역대 최대 규모로 꼽히는 글로벌 서브컬처 축제 효빈 애니메이션 페스티벌(HAF) 2026 개막을 앞두고, 효빈광역시가 전 세계 팬들을 위한 공식 메타버스 플랫폼 'HAF 월드(HAF World)'를 전격 오픈했다. 비행기표를 구하지 못했거나 일상에 치여 축제 현장을 방문하지 못하는 이른바 '방구석 팬'들에게도 효빈시의 생생한 덕력을 체험할 수 있는 '디지털 성지순례'의 길이 열린 것이다.</p>
+
+                    <p>8일 효빈정보산업진흥원은 HAF 조직위원회와 공동 개발한 3D 메타버스 플랫폼 'HAF 월드'의 글로벌 서버를 공식 가동했다고 밝혔다. 이 플랫폼은 효빈시의 주요 랜드마크와 만화애니메이션의전당, 그리고 효빈 도시철도 거점 환승역들을 언리얼 엔진 5(Unreal Engine 5)를 기반으로 정교하게 복제해 냈다.</p>
+
+                    <p>접속한 유저들은 자신만의 아바타를 생성해 가상 공간에 구현된 효빈시를 자유롭게 누빌 수 있다. 유저들 사이에서 가장 폭발적인 호응을 얻고 있는 콘텐츠는 단연 '가상 철도 주행'이다. 가상의 효빈 패스를 발급받아 톡톡 튀는 <span class="text-[#FF5522] font-bold">주황색(#FF5522) 전동차가 달리는 4호선 맵</span>에 접속하면, 마스코트 '다로나' NPC가 등장해 유저들을 주요 메인 스테이지와 부스로 친절하게 안내한다. 또한, <span class="text-[#FF8899] font-bold">분홍색(#FF8899) 7호선 트램 라인</span>을 타고 가상의 중앙로를 누비며 길거리 코스프레 행렬을 구경하는 등 현실과 똑같은 동선의 성지순례가 가능하다.</p>
+
+                    <p>단순한 공간 구현을 넘어 실시간 상호작용 요소도 대폭 강화됐다. 이번 주말 HAF 본행사 기간 동안 메타버스 내 '가상 만화애니메이션의전당'의 대형 스크린을 통해 실제 메인 무대의 라이브 뷰잉이 생중계된다. 아울러 디지털 팝업 스토어에서는 한정판 아바타 코스튬과 디지털 굿즈를 구매할 수 있어, 시공간을 초월해 팬들의 지갑을 공략하는 효빈교통공사의 치밀한 수익 창출 전략도 엿보인다.</p>
+
+                    <p>박효빈 시장은 이날 오전 오픈 기념 온라인 환영사에서 "항공권과 숙박 문제, 혹은 바쁜 일상 때문에 이번 HAF 2026에 직접 발걸음하지 못하는 해외 팬들과 타 지역 시민들의 아쉬움을 달래기 위해 메타버스 플랫폼을 구축했다"며, "오프라인 현장의 뜨거운 열기를 가상 공간으로 고스란히 확장하여 국경과 언어의 장벽이 없는 진정한 글로벌 서브컬처 대통합을 이루어내겠다"고 밝혔다.</p>
+
+                    <p>'HAF 월드'는 PC와 모바일, VR 기기를 통해 전 세계 어디서나 무료로 접속할 수 있으며, 다국어(한국어, 영어, 일본어, 중국어) 실시간 AI 번역 채팅 기능을 지원해 글로벌 팬들 간의 원활한 소통을 돕는다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">15,402</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        // 10개의 상세한 댓글과 각 4개 이상의 티키타카/응징 답글 데이터
+                        const commentsData = [
+                            {
+                                nick: "Metaverse_Otaku", time: "방금 전", like: 21500, dislike: 12, isPunished: false,
+                                content: "와 디테일 미쳤다 ㅋㅋㅋ 방금 접속해서 4호선 주황색 열차 타고 왔는데 다로나 NPC가 다가오더니 '선로 무단 횡단은... 안 됩니다!' 하고 엄격하게 말 거는 거 보고 소름 돋음 ㅋㅋㅋ 고증 진짜 완벽하네요.",
+                                replies: [
+                                    { nick: "Orange_Line_Lover", content: "다로나 평소엔 맹해 보여도 안전 문제엔 칼같죠 ㅋㅋㅋ NPC 성격 구현도 대박이네요." },
+                                    { nick: "Hidden_Easter_Egg", content: "신거역 지하 화장실 맵 들어가면 쓰레기 무단투기 단속하는 숨겨진 NPC도 있음 ㅋㅋㅋ 한 번 찾아보세요!" },
+                                    { nick: "Subway_Commuter", content: "열차 구동음도 현실 4호선 인버터 소리 그대로 따왔던데요? 진심 교통공사에 철덕들 엄청 많은 게 분명함 ㄷㄷ" },
+                                    { nick: "Metaverse_Otaku", nickClass: "text-[#0055aa] font-bold", content: "화장실 NPC 당장 찾아보러 갑니다 ㅋㅋㅋ 아 진짜 할 거 너무 많아서 시간 순삭이네요!" }
+                                ]
+                            },
+                            {
+                                nick: "Global_Fan_99", time: "5분 전", like: 18250, dislike: 8, isPunished: false,
+                                content: "이번 주말에 알바 시프트 도저히 못 빼서 HAF 못 가는 거 때문에 3일 내내 울었는데 ㅠㅠ 메타버스 라이브 뷰잉으로 가상 광장에 아바타들끼리 모여서 응원봉 흔들 수 있다니 시장님 진짜 사랑합니다 ㅠㅠㅠ 방구석 1열 대기 중!",
+                                replies: [
+                                    { nick: "Cheer_Up_Friend", content: "저도 지방러라 못 가서 아쉬웠는데 메타버스에서 뵈면 되겠네요! 토요일 오후 2시에 중앙광장 분수대 앞에서 봬요 ㅠㅠ" },
+                                    { nick: "Lightstick_User", content: "디지털 굿즈샵에서 파는 응원봉 사면 뷰잉 때 노래 박자에 맞춰서 색깔 자동으로 바뀝니다! 진짜 현장감 오져요!" },
+                                    { nick: "Worker_Ant", content: "저도 주말 출근이라 몰래 폰 켜두고 눈팅할 예정입니다... K-직장인 화이팅 ㅠㅠ" },
+                                    { nick: "Hyobin_City_Fan", content: "박효빈 시장님이 진짜 소외되는 팬들 없게 챙기는 건 최고인 듯. 같이 재밌게 즐겨봐요!" }
+                                ]
+                            },
+                            {
+                                nick: "Wallet_Breaker", time: "12분 전", like: 14900, dislike: 15, isPunished: false,
+                                content: "ㅋㅋㅋ 효빈교통공사 놈들 현실에서 굿즈 팔아먹는 걸로 모자라서 메타버스 안에서도 가상 굿즈 팔고 있는 거 진짜 광기다 ㅋㅋㅋ 디지털 역명판 키링 아바타 가방에 달아주느라 벌써 3만 원 썼네 아 내 지갑...",
+                                replies: [
+                                    { nick: "Capitalism_Monster", content: "효빈교통공사가 이쪽 바닥 돈 냄새 기가 막히게 잘 맡죠 ㅋㅋㅋ 캐릭터 장사 진짜 영악하게 잘함" },
+                                    { nick: "Digital_Flex", content: "현실 굿즈는 품절돼서 못 샀는데 디지털은 무한대라 바로 질렀습니다 ㅋㅋㅋ 내 아바타 풀세트 맞추니까 쾌감 쩌네요" },
+                                    { nick: "Rail_Lumine_Fan", content: "하루빈(초록색) 한정판 모자 언제 또 나오나요 ㅠㅠ 오늘 오픈하자마자 한정판은 다 나갔던데..." },
+                                    { nick: "Hyobin_Metro_Biz", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈교통공사 사업팀] 고객님의 뜨거운 성원에 감사드립니다! 디지털 굿즈 판매 수익 전액은 HAF 축제 운영비와 도시철도 안전 시설물 보강에 재투자됩니다. 다음 주 스페셜 스킨이 추가될 예정이니 많은 기대 부탁드립니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "18분 전", like: 11200, dislike: 24, isPunished: false,
+                                content: "작년에 혐오 세력들이 사이버 테러한다고 난리 치더니, 이번엔 AI 보안 시스템 빡세게 적용해서 비속어나 인종차별 발언 채팅 치면 아바타가 강제로 7호선(분홍색) 트램 차고지 세차장으로 끌려가서 청소 알바 해야 풀려난다고 함 ㅋㅋㅋㅋ 갓치행정 폼 미쳤다 진짜!!",
+                                replies: [
+                                    { nick: "Cleaning_Duty", content: "방금 제 눈앞에서 쌍욕 치던 어그로 유저 하나 분홍색 봉고차(?)에 납치돼서 사라짐 ㅋㅋㅋㅋ 진짜 대폭소했네요" },
+                                    { nick: "AI_Justice", content: "세차장 끌려가면 미니게임으로 트램 10대 닦아야 본진으로 돌아올 수 있습니다 ㅋㅋㅋㅋ 어떻게 이런 기발한 페널티를 만들 생각을 했지?" },
+                                    { nick: "Curiosity_Kills", content: "아... 청소하는 애니메이션 보고 싶어서 일부러 금칙어 쳐보고 싶은 욕구가 솟구치네요 ㅋㅋㅋ" },
+                                    { nick: "Fact_Checker_79", nickClass: "text-blue-600 font-bold", content: "절대 하지 마세요 ㅋㅋㅋ 청소 끝나면 이마에 '요주의 인물' 딱지 24시간 붙고 다녀야 함 ㅋㅋㅋ 사회적 매장 지름길입니다" }
+                                ]
+                            },
+                            {
+                                nick: "Foreign_Friend", time: "25분 전", like: 9850, dislike: 11, isPunished: false,
+                                content: "미국에서 접속 중인데 실시간 번역 기능 엄청 잘 되어 있어서 일본, 한국 유저들이랑 아논타워 앞에서 수다 떨고 놀고 있습니다! 방구석에서 전 세계 덕후들이랑 소통하니까 신기하네요. 내년엔 꼭 비행기표 예매해서 진짜 효빈시로 직접 갈게요!!",
+                                replies: [
+                                    { nick: "Welcome_To_Korea", content: "Welcome to Hyobin City! 가상으로라도 오신 걸 환영합니다 ㅎㅎ 내년엔 오프라인에서 꼭 봬요!" },
+                                    { nick: "Translation_God", content: "언어 장벽 무너진 거 진짜 낭만 미쳤다... 어제 밤에 스페인 분이랑 2시간 동안 애니메이션 얘기함 ㅋㅋㅋ" },
+                                    { nick: "HAF_Global", content: "진정한 글로벌 대통합이네요. 시장님이 말한 국경 없는 서브컬처가 이거였구나 ㄷㄷ" },
+                                    { nick: "Tour_Guide", content: "내년에 오시면 제가 1호선부터 7호선까지 맛집 코스 쫙 가이드 해드리겠습니다! 즐겜하세요~" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Waste_Hunter", time: "32분 전", like: 14, dislike: 29800, isPunished: true,
+                                content: "애들 장난 같은 플스2 그래픽 게임 쪼가리 만드는데 내 피 같은 세금이 얼마나 들어간 거냐?? 차라리 그 돈으로 도로 포장이나 똑바로 해라!! 오타쿠들 환상 속에 살라고 도시 예산을 다 부어버리네 제정신이냐??",
+                                replies: [
+                                    { nick: "UE5_Master", content: "아저씨 언리얼 엔진 5 렌더링 된 거 보고 플스2 타령하는 거 보니까 그래픽 볼 줄 하나도 모르시네요 ㅋㅋㅋ 본인 똥컴으로 돌리니까 찰흙으로 보이지 ㅉㅉ" },
+                                    { nick: "Economy_Logic", content: "메타버스 굿즈 판매로 하루 만에 개발비 다 뽑고 흑자 전환했다는 기사 방금 떴습니다. 님 세금 한 푼도 안 들어갔으니 안심하고 주무세요." },
+                                    { nick: "Tax_Waste_Hunter", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 말대꾸야 십덕 새끼들이!! 숫자로 사기 치는 거 하루 이틀이냐? 당장 효빈시청에 민원 폭탄 넣어서 저 쓰레기 서버 내리게 만들 거다!!" },
+                                    { nick: "Logical_Citizen", content: "민원 넣으시든가요 ㅋㅋㅋ 어차피 님 혼자 백날 넣어봤자 동시 접속자 30만 명이 즐기고 있는데 시청이 퍽이나 내리겠네요." },
+                                    { nick: "Tax_Waste_Hunter", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "이게 아주 눈알이 돌았나!! 내가 니들 아바타 아이디 싹 다 추적해서 현실에서 만나면 칼로 다 쑤셔버릴테니까 기다려라!!" },
+                                    { nick: "Hyobin_Cyber_Cop", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 사이버수사대] 불특정 다수를 향한 흉기 난동 및 살인 예고를 인지하여 즉각 비상 대응 체제로 전환했습니다. 현재 IP 추적을 통해 거주지를 특정하였으며 강력팀이 출동 중입니다. 흉기 소지 여부와 관계없이 테러방지법 위반으로 엄중 처벌될 수 있습니다." }
+                                ]
+                            },
+                            {
+                                nick: "VR_Pioneer_01", time: "40분 전", like: 13200, dislike: 9, isPunished: false,
+                                content: "메타 퀘스트3 끼고 VR 모드로 접속했는데 공간감 장난 아닙니다. 실제로 만화애니메이션의전당 건물 쳐다보면 목 꺾일 정도로 웅장함 그대로 느껴져요. 방안에서 의자 돌리면서 구경하느라 시간 가는 줄 몰랐네요.",
+                                replies: [
+                                    { nick: "Jealous_PC_User", content: "와 부럽다... 전 그냥 모니터로 보는데도 예쁜데 VR로 보면 진짜 그 공간에 있는 기분이겠네요 ㅠㅠ" },
+                                    { nick: "Motion_Sickness", content: "저도 VR로 했는데 혹시 멀미 안 나시나요? 전 4호선 열차 타니까 쪼끔 어지럽던데 ㅋㅋㅋ" },
+                                    { nick: "VR_Pioneer_01", nickClass: "text-[#0055aa] font-bold", content: "설정 가시면 '이동 시 블라인더 효과' 켤 수 있어요! 그거 켜면 멀미 확 줄어듭니다 꿀팁이에요 ㅎㅎ" },
+                                    { nick: "VR_Meetup", content: "오늘 저녁 8시에 VR 유저들끼리 7호선 트램 정류장 앞에서 정모하기로 했습니다! 오셔서 같이 춤춰요 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Griefer_King", time: "48분 전", like: 2, dislike: 34200, isPunished: true,
+                                content: "ㅋㅋ 오늘 저녁에 매크로 부대 풀어서 4호선 지하철 문 앞 다 막아버린다~ 그리고 게시판에 야짤 도배해서 서버 터트릴거임 ㅋㅋㅋ 오타쿠 새끼들 축제 못 즐기게 깽판 치는 게 내 인생 유일한 낙이지 꿀잼 예약~",
+                                replies: [
+                                    { nick: "Peaceful_Gamer", content: "현실에서 얼마나 앰생이면 가상현실 축제에서까지 남들 괴롭히면서 쾌감을 느끼냐... 진짜 불쌍하다" },
+                                    { nick: "Report_Master", content: "방금 HAF 월드 고객센터랑 효빈시 사이버 테러 대응팀에 캡처해서 다 신고 넣었습니다. 수고하세요." },
+                                    { nick: "Griefer_King", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "응~ 나 VPN 써서 우회 접속이라 절대 못 잡아 빙시들아 ㅋㅋㅋ 니들이 신고 백날 해봐라 내가 잡히나 ㅋㅋㅋ 경찰도 못 잡는 게 나다!!" },
+                                    { nick: "Tech_Guru", content: "요즘 VPN 쓴다고 못 잡는 줄 아나 보네 ㅋㅋㅋ 통신사 로그랑 클라이언트 접속 기록 교차 검증하면 바로 특정되는데 방구석 여포들 특유의 무식함 또 나오죠?" },
+                                    { nick: "Griefer_King", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어쩌라고 아는 척 하지 마 찐따야 ㅋㅋㅋ 오늘 밤 8시에 서버 폭파쇼나 감상해라 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Info_Agency", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈정보산업진흥원 보안대응팀] 귀하의 클라이언트 변조 및 디도스(DDoS) 공격 예고 행위는 명백한 정보통신망법 위반(업무방해)입니다. 이미 VPN 우회 전 원래의 MAC 주소와 통신사 IP를 확보하여 관할 경찰서에 고발장을 접수했습니다. 수천만 원의 민사상 손해배상 청구 소장도 자택으로 송달될 예정이니 재판 준비에 만전을 기하시기 바랍니다." }
+                                ]
+                            },
+                            {
+                                nick: "Pink_Tram_Lover", time: "55분 전", like: 12100, dislike: 4, isPunished: false,
+                                content: "7호선 분홍색 트램 심야 맵 진짜 미치도록 예쁘네요 ㅠㅠ 벚꽃 흩날리는 거랑 트램 내부 조명 은은하게 비치는 거 감성 폭발함... 1시간째 내리지도 않고 창밖만 보면서 스크린샷 100장 넘게 찍었습니다.",
+                                replies: [
+                                    { nick: "Screenshot_Pro", content: "맞아요 밤 시간대 맵 그래픽 미쳤음. 카메라 모드 켜고 피사계 심도 조절해서 찍으면 걍 화보 그 자체임." },
+                                    { nick: "Tram_Romantic", content: "저도 트램 맨 뒷자리 앉아서 음악 들으면서 가고 있는데 힐링 제대로 되네요... 현실 피로가 싹 풀림 ㅠㅠ" },
+                                    { nick: "Line7_Driver", content: "트램 노선 중간에 아주 가끔씩 숨겨진 벚꽃 요정 NPC 날아다니는 거 보신 분?? 찰나에 지나가서 찍기 엄청 힘든데" },
+                                    { nick: "Pink_Tram_Lover", nickClass: "text-[#0055aa] font-bold", content: "헐 그런 게 있어요?! 헉 당장 다시 타서 눈 부릅뜨고 찾아보겠습니다 정보 감사해요!!!" }
+                                ]
+                            },
+                            {
+                                nick: "Digital_Reseller_01", time: "1시간 전", like: 1, dislike: 45000, isPunished: true,
+                                content: "사전예약 1만 명 한정으로 줬던 '황금 다로나 날개' 아바타 아이템 계정 통째로 50만 원에 팝니다. 메타버스 안에서도 희귀템 끼고 플렉스 하실 분만 연락주세요. 쿨거 원함 찔러보기 차단.",
+                                replies: [
+                                    { nick: "No_Scalping", content: "가상 데이터 쪼가리에 50만 원을 태우라고? ㅋㅋㅋ 폰지 사기꾼이냐 진짜 양심 뒤졌네" },
+                                    { nick: "System_Warning", content: "저거 어차피 계정 귀속 아이템이라 남한테 주지도 못해요. 계정 거래하다 걸리면 영구 정지인데 속지 마세요 여러분." },
+                                    { nick: "Digital_Reseller_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "거지 새끼들이 돈 없으니까 시기질투 오지네 ㅋㅋㅋ 어차피 돈 많은 큰손들은 50 턱턱 내고 산다~ 니들은 평생 기본 옷이나 입고 살아라 ㅋㅋㅋ" },
+                                    { nick: "Smart_Consumer", content: "큰손이 능지가 박살났냐 니한테 50을 주게? ㅋㅋㅋ 계정 회수해가면 그만인데 누가 삼? 되팔이 수준 떨어지는 거 보소" },
+                                    { nick: "Digital_Reseller_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "입 조심해라 캡처 다 해놨다 ㅋㅋㅋ 내가 이거 팔아서 번 돈으로 내일 변호사 사서 싹 다 명예훼손으로 고소해줄게 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Metro_Legal", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈교통공사 법무팀] 당사의 메타버스 플랫폼 내 한정판 디지털 재화를 약관에 위배되는 현금 거래(RMT)로 유통하려는 시도가 확인되었습니다. 해당 글을 작성한 계정은 운영정책 제8조에 따라 즉각 [영구 정지 및 자산 몰수] 처리되었으며, 반복적인 부당 수익 창출 시 영업방해로 형사 고발 조치됩니다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // 제재받은 빌런 글은 답글(사이다 응징 과정)을 기본적으로 펼쳐둠
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Cop") || reply.nick.includes("Legal") || reply.nick.includes("Agency") || reply.nick.includes("Biz") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">HAF 월드 사전 예약 이벤트!</div>
+                <div class="text-xs text-gray-500">
+                    접속자 전원 한정판 이모티콘 증정<br>
+                    PC / 모바일 / VR 지원 완비<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">지금 바로 접속하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

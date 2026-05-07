@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[건강] "두꺼운 코스프레 의상 위험해요"... 효빈소방서, 온열질환 예방 캠페인 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) {
+            .article-container { flex-direction: row; }
+        }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; text-align: center; }
+        
+        .strike { text-decoration: line-through; color: #888; }
+        .drip { font-size: 0.9em; color: #777; }
+        
+        /* Custom Toast Alert Style */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">건강/생활 > 보건/안전</div>
+                <h2 class="article-title">"두꺼운 코스프레 의상 위험해요"... 효빈소방서, 온열질환 예방 캠페인</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">박닥터 기자</span> (doctor@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2025.08.08. 17:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">주말 HAF 2025 한낮 기온 32도 육박 폭염... 통풍 안 되는 털옷·갑옷 착용자 '주의보'<br>효빈소방서, 행사장 곳곳에 '쿨링 존(Cooling Zone)' 운영 및 구급차 전진 배치<br>"수분 섭취 필수, 어지러우면 즉시 쾌적한 냉방 완비된 지하철 역사로 대피해야"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="온열질환 예방 캠페인.png" alt="효빈소방서 온열질환 예방 캠페인" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=HAF+Cooling+Campaign'">
+                        <div class="img-caption">▲ 8일 오후 효빈소방서 대원들이 효빈 애니메이션 페스티벌(HAF) 야외 행사장 일대에서 두꺼운 특수 의상을 입은 코스프레 참가자들을 대상으로 온열질환 예방 캠페인을 진행하고 있다. 주말 동안 한낮 기온이 32도에 육박하는 찜통더위가 예보되어 각별한 주의가 요구된다. (사진=효빈소방서 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박닥터 기자] 전 세계 서브컬처 팬들의 이목이 집중된 효빈 애니메이션 페스티벌(HAF) 2025가 무더운 8월의 폭염 속에 진행 중인 가운데, 보건 당국이 '온열질환 주의보'를 발령했다. 특히 가발과 두꺼운 특수 재질의 의상을 착용하는 코스튬 플레이어(Cosplayer)들의 안전에 비상이 걸렸다.</p>
+
+                    <p>8일 효빈소방서와 효빈시 보건행정과에 따르면, 이번 주말 효빈광역시 일대의 낮 최고기온은 32도까지 오르며 한여름 찜통더위를 보일 전망이다. 일반 관람객에게도 벅찬 뙤약볕이지만, 전신을 덮는 인형 탈(퍼슈트), 통풍이 전혀 되지 않는 가죽 재질의 갑옷, 무거운 특수 장비를 착용한 참가자들에게는 자칫 심각한 탈수와 열사병을 유발할 수 있는 대단히 위험한 환경이다.</p>
+
+                    <p>이에 효빈소방서는 HAF 기간 동안 주요 야외 무대와 백합공원, 고송해안교차로 등 코스프레 인파가 밀집하는 거점 10곳에 '임시 쿨링 존(Cooling Zone)'을 설치하고 본격적인 가동에 들어갔다. 쿨링 존에는 대형 냉풍기와 얼음물, 식염 포도당이 비치되어 있으며, 응급구조사가 상주해 실시간으로 참가자들의 건강 상태를 체크한다.</p>
+
+                    <p>효빈소방서 119구급대 관계자는 "자신의 캐릭터를 완벽하게 구현하려는 열정은 멋지지만, 한여름 직사광선 아래 통풍이 안 되는 의상을 입고 장시간 서 있는 것은 사우나 안에서 땀복을 입고 있는 것과 같다"며, "최소 40분마다 그늘에서 휴식을 취하고 갈증이 나지 않더라도 규칙적으로 수분을 섭취해야 한다"고 거듭 당부했다.</p>
+
+                    <p>특히 소방 당국과 효빈교통공사는 약간의 어지러움이나 메스꺼움을 느낄 경우, 즉시 인근 도시철도 역사로 대피할 것을 강력히 권고하고 있다. 행사장과 밀접하게 연결된 효빈 도시철도 <span class="text-green-600 font-bold">2호선(초록색)</span>과 <span class="text-orange-500 font-bold">4호선(주황색)</span> 등은 현재 강력한 냉방 시스템을 가동 중이며, 각 역무실마다 온열질환자를 위한 응급 키트와 휴식 공간이 마련되어 있다.</p>
+
+                    <p>박효빈 시장은 이날 오전 재난안전대책회의에서 "가장 훌륭한 축제는 단 한 명의 부상자도 발생하지 않는 안전한 축제"라며, "소방서뿐만 아니라 시청, 병원, 교통 당국이 혼연일체가 되어 8월 폭염 속 관람객들의 건강을 최우선으로 지켜달라"고 지시했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">9,104</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Armor_Cosplayer", time: "방금 전", like: 14200, dislike: 11, isPunished: false,
+                                content: "일요일에 풀 플레이트 갑옷 입고 나갈 예정인데 8월 폭염이라 소방서 쿨링 존 진짜 사막의 오아시스 같은 소식이네요 ㅠㅠ 저번 행사 때 더워서 쓰러질 뻔했는데 이번엔 식염 포도당 챙겨 먹고 쉬엄쉬엄 해야겠습니다. 구급대원분들 감사합니다!",
+                                replies: [
+                                    { nick: "Safety_Guard", content: "진짜 조심하세요 ㅠㅠ 더울 땐 무조건 투구 벗고 쉬셔야 합니다!" },
+                                    { nick: "Cos_Newbie", content: "식염포도당 꿀팁 감사합니다. 저도 내일 챙겨가야겠네요." },
+                                    { nick: "Knight_of_Sun", content: "저도 내일 중세 기사 풀장비로 가는데 같이 화이팅합시다 ㅋㅋㅋ 무사귀환 기원!" },
+                                    { nick: "Armor_Cosplayer", nickClass: "text-[#0055aa] font-bold", content: "원댓 작성자입니다 다들 응원 감사합니다! 내일 백합공원에서 뵙겠습니다 다들 안전하게 즐겨요~" }
+                                ]
+                            },
+                            {
+                                nick: "Moca_Line_Fan", time: "5분 전", like: 11500, dislike: 8, isPunished: false,
+                                content: "야외에서 사진 찍다가 땀 폭발하면 무조건 2호선(초록색) 고송교차로역 지하로 내려가세요 ㅋㅋㅋ 밖은 32도인데 지하는 에어컨 진짜 북극 수준으로 빵빵합니다. 하루빈(2호선 마스코트)이 왜 맨날 지하철 안에서 능글맞게 웃고 있는지 알 수 있음. 역무원분들도 엄청 친절하십니다.",
+                                replies: [
+                                    { nick: "Subway_Lover", content: "2호선 지하철역이 진짜 천국이죠 ㅋㅋㅋ 내려가는 순간 극락 경험함" },
+                                    { nick: "Green_Light", content: "역무원분들도 이젠 익숙하신지 비틀거리는 분 보이면 바로 다가가서 시원한 물 주시더라고요 ㅠㅠ 천사들" },
+                                    { nick: "Harubin_Haha", content: "하루빈 그 특유의 능글맞은 표정 ㅋㅋㅋㅋ 밖에서 고생하는 사람들 구경하는 표정이었음" },
+                                    { nick: "Cos_Photographer", content: "아까 밖에서 탈수와서 죽다 살아났는데 지하철 들어가자마자 진짜 살았습니다. 교통공사 사랑해요" }
+                                ]
+                            },
+                            {
+                                nick: "Safety_First", time: "12분 전", like: 8900, dislike: 15, isPunished: false,
+                                content: "퍼슈트(인형탈) 입으시는 분들은 진짜 조심하셔야 해요. 안 그래도 한여름인데 안에서 땀 비 오듯 쏟아지면서 탈수 오기 딱 좋습니다. 옆에 같이 다니는 서포터(헬퍼) 분들이 물 수시로 챙겨주셔야 함. 다들 즐겁자고 하는 축제인데 건강 상하면 안 되잖아요~",
+                                replies: [
+                                    { nick: "Furry_Friend", content: "진짜 헬퍼 없으면 생명이 위험함. 퍼슈트는 시야도 좁아서 어지러워도 잘 몰라요 ㅠㅠ" },
+                                    { nick: "Cool_Fan", content: "안에 목걸이형 선풍기 달아도 32도 폭염엔 뜨거운 바람만 돌아서 한계가 있더라고요. 무조건 그늘에서 자주 쉬어야함." },
+                                    { nick: "Eye_Witness", content: "작년 축제때 큰 인형탈 입고 쓰러지신 분 119 실려가는 거 봤는데 진짜 아찔했습니다. 제발 무리하지 마세요." },
+                                    { nick: "Support_Hero", content: "어제 헬퍼로 뛰어본 입장에서 말씀드리면... 코스어보다 헬퍼가 먼저 지침 ㅋㅋㅋ 그래도 안전이 최고죠!" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Waste_Stop", time: "18분 전", like: 18, dislike: 21300, isPunished: true,
+                                content: "지들 좋아서 한여름에 만화 옷 껴입고 더워하는 걸 왜 내 세금으로 구급대원까지 배치해서 챙겨줘야 하냐?? 오타쿠들 열사병 걸리든 말든 내버려둬라!! 소방서가 무슨 베이비시터냐!!",
+                                replies: [
+                                    { nick: "Fact_Checker_79", nickClass: "text-blue-600 font-bold", content: "아저씨, 수백만 명이 모이는 대형 지역 축제에 폭염 대비해서 구급차랑 쿨링 존 배치하는 건 지자체의 기본 의무입니다. 마라톤 대회나 여름 록 페스티벌 할 때도 다 똑같이 해요. 세금 타령하기 전에 상식부터 좀 챙기세요." },
+                                    { nick: "Medical_Saver", nickClass: "text-blue-600 font-bold", content: "이런 마인드 가진 인간들이 정작 본인 밖에서 더위 먹고 쓰러지면 제일 먼저 119 부르고 진상 피우더라 ㅉㅉ" },
+                                    { nick: "Tax_Waste_Stop", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 내는 피같은 세금이 얼만데 이딴 소릴 들어야 해? 니들은 쥐꼬리만한 월급 받으면서 세금 한 푼이라도 제대로 내봤냐? 오타쿠들 주제에 으스대기는 ㅉㅉ" },
+                                    { nick: "Angry_Citizen", content: "어휴 찌질아 방구석에서 인터넷 할 전기세 낼 돈은 있고? 본인 주민세나 밀리지 말고 내시길 ㅋㅋㅋ 인증도 못하는 놈이 입만 살아서는" },
+                                    { nick: "Tax_Waste_Stop", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "너 같은 알바생한테 인증해서 뭐하게? 알바 아니니까 참견 마쇼. 꼬우면 니들이 사비 털어서 구급차 비용 대든가!! 무논리 집단 ㅉㅉ" },
+                                    { nick: "Admin_Justice", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[관리자] 해당 댓글 작성자는 IP 조회 결과 타 기사에서도 반복적인 악성 도배 및 혐오 조장 패턴이 확인되었습니다. 운영원칙 위반으로 해당 계정은 영구 차단 조치되었습니다." }
+                                ]
+                            },
+                            { 
+                                nick: "Darona_Orange", time: "25분 전", like: 7850, dislike: 5, isPunished: false,
+                                content: "4호선 다로나(주황색) 에코백에 얼음물 가득 채워서 출동합니다! 덥다고 무리하지 마시고 혹시 주변에 코스어분들 비틀거리는 거 보이면 바로 소방대원이나 스태프한테 알려주자고요. HAF는 성숙한 시민의식으로 완성되는 거 다들 아시죠?", 
+                                replies: [
+                                    { nick: "Orange_Lover", content: "오! 저도 다로나 에코백 메고 가고 있었는데 ㅋㅋ 마주치면 인사해요!" },
+                                    { nick: "Ice_Water_Angel", content: "사비로 얼음물까지... 진짜 천사시네요 ㅠㅠ 복받으실 겁니다." },
+                                    { nick: "Line4_Best", content: "역시 4호선 마스코트 다로나 팬들은 다들 착한듯 ㅋㅋㅋ 4호선 최고!" },
+                                    { nick: "Saved_Life", content: "헐 저 아까 그 주황색 에코백 메신 분한테 물 하나 받았어요 ㅠㅠ 너무 급해서 감사하단 말도 제대로 못했는데 진짜 생명의 은인이십니다!!" }
+                                ] 
+                            },
+                            {
+                                nick: "HAF_Newbie", time: "30분 전", like: 4200, dislike: 10, isPunished: false,
+                                content: "이번에 HAF 처음 가보는데 기사에 나온 쿨링존 위치는 어디어디 있나요? 넓어서 길 잃어버릴 것 같은데 가이드맵 앱 같은 거 깔면 다 나오나요? 더위를 많이 타서 걱정이네요 ㅠㅠ",
+                                replies: [
+                                    { nick: "Hyobin_Guide", content: "네! 앱스토어에서 '효빈시 공식 가이드' 앱 깔으시면 HAF 지도에 쿨링존이랑 의무실 위치 실시간으로 다 표시돼요!" },
+                                    { nick: "Center_Stage", content: "백합공원 메인 입구랑 중앙 야외 무대 오른쪽이 시설이 제일 큽니다. 에어컨 엄청 빵빵해요." },
+                                    { nick: "Map_Helper", content: "길치시면 헤매지 마시고 길가에 파란 조끼 입은 효빈시 자원봉사자 스태프 분들한테 물어보세요. 바로 안내해주십니다~" },
+                                    { nick: "HAF_Newbie", nickClass: "text-[#0055aa] font-bold", content: "오 앱 바로 깔았습니다. 스태프 분들 복장도 알려주셔서 감사합니다! 덕분에 안심하고 갈 수 있겠네요 ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "Real_Adult_99", time: "42분 전", like: 12, dislike: 15400, isPunished: true,
+                                content: "나잇살 쳐먹고 만화 캐릭터 옷이나 입고 돌아다니고... 쯧쯧. 효빈시 망신 다 시키네. 저런 애들 취업이나 제대로 하겠냐? 방구석에 쳐박혀 있다가 기어나와서 세금 축내는 거 보니까 에휴 한심하다 한심해.",
+                                replies: [
+                                    { nick: "Boomer_Detector", content: "어디서 쉰내가 나나 했더니 꼰대 아저씨 등판하셨네;; 취미생활 존중 좀 하시죠." },
+                                    { nick: "Respect_Hobby", content: "코스어분들 중에 직장인, 전문직, 사장님도 엄청 많습니다. 축제 즐기는 걸로 사람 함부로 매도하지 마세요." },
+                                    { nick: "Real_Adult_99", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "전문직이 뭐 자랑이라고 ㅉㅉ 나때는 말이야 주말에도 산업역군으로 공장에서 땀흘려 일했어! 요즘 젊은 것들은 배가 불렀지 배가 불렀어!" },
+                                    { nick: "MZ_Punch", content: "ㅋㅋㅋㅋ 긁? 틀딱 특) 팩트로 반박 못하고 무지성 '나때는' 시전함 ㅋㅋㅋㅋ 어르신 여기서 이러지 마시고 탑골공원이나 가셔서 바둑이나 두세요 ㅋㅋㅋ" },
+                                    { nick: "Real_Adult_99", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어린놈의 쉐끼가 어디서 어른한테 말대꾸를... 내일 백합공원 입구로 나와라 콱 그냥 혼쭐을 내줄테니!! 요즘 애들은 예의가 없어!!" },
+                                    { nick: "MZ_Punch", nickClass: "text-blue-600 font-bold", content: "아저씨 방금 '특수협박죄'로 경찰청 스마트 국민제보 앱으로 신고 접수 완료했습니다~ 내일 백합공원 입구에 저 대신 경찰 아저씨들 대기시켜 놓을 테니까 거기서 경찰분들한테 훈계하시든가요 ㅋㅋㅋㅋ PDF 다 땄습니다 내일 서에서 봬요!" }
+                                ]
+                            },
+                            {
+                                nick: "ThankYou_119", time: "55분 전", like: 18900, dislike: 22, isPunished: false,
+                                content: "오늘 행사장에서 구급대원분들 땀 뻘뻘 흘리면서 어지러워하는 환자들 돌보시는 거 보고 진짜 감동받았습니다. 시원한 커피라도 사드리고 싶었는데 김영란법 때문에 안된대서 마음으로만 응원하고 왔네요 ㅠㅠ 늘 고생하십니다!",
+                                replies: [
+                                    { nick: "Law_Info", content: "헐 캔커피 하나 드리는 것도 안 되나요? 그건 몰랐네요 ㅠㅠ 빡세네" },
+                                    { nick: "Civil_Servant", content: "공무원분들은 원래 법 때문에 아주 작은 선물도 받기 힘들어하시더라고요. 마음만으로도 충분히 힘 나셨을 겁니다!" },
+                                    { nick: "Respect_119", content: "진짜 오늘 날씨 미쳤는데 그 무거운 응급장비 메고 뛰어다니시는 거 보고 뭉클했습니다 ㅠㅠ" },
+                                    { nick: "Hyobin_Citizen", content: "효빈소방서 대원님들 폭염 속에 정말 고생 많으십니다. 항상 감사합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Subway_Hater_12", time: "1시간 전", like: 45, dislike: 8900, isPunished: true,
+                                content: "아니 지하철 역에 에어컨 빵빵하게 틀어주면 뭐함? 오타쿠들 땀냄새 찌들어서 역 안에 냄새 진동을 하던데. 진짜 출퇴근 하는 일반 시민들은 생각 안하냐? 효빈교통공사 일 똑바로 안함? 불쾌해서 지하철을 못타겠네",
+                                replies: [
+                                    { nick: "Weekend_Worker", content: "주말 오후에 무슨 출퇴근 타령 ㅋㅋㅋㅋ 방구석 백수 검거 완료" },
+                                    { nick: "Subway_Hater_12", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "나 주말 편의점 알바 가거든? 니들처럼 부모 등골 빼먹으면서 한가하게 놀러 다니는 줄 아냐? 일반화 오지네 진짜" },
+                                    { nick: "Clean_Hyobin", content: "오늘 2호선 계속 탔는데 역무원들이 환풍기 최대로 틀고 계속 관리하셔서 냄새 하나도 안 났음. 억까 좀 적당히 해라 ㅉㅉ" },
+                                    { nick: "Subway_Hater_12", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내 코가 막코냐? 분명 코 찌르는 땀냄새 났다고!! 니들 코가 마비된 거겠지 ㅉㅉ 방구석 여포들 몰려와서 쉴드치는 거 극혐이네;;" },
+                                    { nick: "Subway_Hater_12", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "아 몰라 짜증나!! 낼 편의점 출근길에 지하철에서 씹덕들 보이면 면상에 대고 쌍욕 박아줄테니까 기다려라 ㅉㅉ" },
+                                    { nick: "Logic_King", content: "편의점 알바 출근길에 냄새 한번 맡았다고 수만명 모이는 축제 통째로 비난하는 인성 수준 ㅋㅋㅋ 평생 그렇게 꼬여서 살아라" },
+                                    { nick: "Hyobin_Metro_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 지하철경찰대] 특정 승객을 대상으로 한 폭언 및 위해 예고를 인지하여 채증 완료했습니다. 주말 간 2호선 전 구간 사복 순찰을 강화하며, 실제 행위 적발 시 철도안전법 위반 및 모욕죄로 즉각 현장 체포될 수 있음을 엄중 경고합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Pro_Photographer", time: "1시간 20분 전", like: 6700, dislike: 12, isPunished: false,
+                                content: "코스어 분들 찍으시는 진사(사진사)님들도 조심합시다. 카메라 장비 메고 뙤약볕에 계속 서서 찍다보면 은근히 탈수 엄청 빨리 와요. 저도 아까 어지러워서 쿨링존에서 한참 누워있었네요 ㅠㅠ 코스어분들 못지않게 찍사들도 안전 무조건 챙겨야 합니다!",
+                                replies: [
+                                    { nick: "Camera_Man", content: "100% 공감합니다. 망원렌즈에 백팩까지 장비 무게만 10키로 넘어가는데 더위 먹기 딱 좋은 조건이죠." },
+                                    { nick: "Photo_Life", content: "저도 아까 쿨링존에서 식염포도당 2알 먹고 살아났습니다... 진짜 신의 한 수였음..." },
+                                    { nick: "Hobby_First", content: "맞아요 다들 건강하게 덕질하고 취미생활 즐깁시다 화이팅!" },
+                                    { nick: "Cos_Model", content: "진사님들 땀 흘리면서 멋진 사진 남겨주셔서 항상 감사합니다 ㅠㅠ 진사님들도 제발 몸 챙기면서 찍어주세요!!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Fact_Check") || reply.nick.includes("Medical") ? "text-blue-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner rounded shadow-sm flex-col">
+                <div class="font-bold text-[#0055aa] mb-1">여름철 온열질환 주의!</div>
+                <div class="text-xs">
+                    폭염 시 야외활동 자제<br>
+                    규칙적으로 물 마시기<br>
+                    <span class="text-gray-500 mt-2 inline-block">효빈시 보건행정과</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>
