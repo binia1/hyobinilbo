@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[의료] 대학병원 노사 협상 타결... "축제 기간 의료 공백 없다" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #cce5ff 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 의료/보건</div>
+                <h2 class="article-title">[의료] 대학병원 노사 협상 타결... "축제 기간 의료 공백 없다"</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">박건강 기자</span> (health@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.07 11:17</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈대병원 노사, 임금 5.2% 인상 및 간호 인력 충원안 극적 합의<br>역대 최대 규모 HAF 2026 개막 직전 파업 위기 넘겨... 권역응급의료센터 정상 가동<br>김의룡 병원장 "환자 생명과 수백만 방문객 안전이 최우선... 대승적 결단에 감사"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈대병원_노사타결.png" alt="효빈대병원 노사 합의" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Hospital+Labor+Agreement'">
+                        <div class="img-caption">▲ 7일 오전 밤샘 교섭 끝에 극적 타결을 이룬 효빈대학교병원 노사 대표가 합의문에 서명한 뒤 악수를 나누고 있다. 다가오는 대규모 축제를 앞두고 우려되었던 의료 공백 사태가 완전히 해소되었다. (사진=효빈대학교병원 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박건강 기자] 지역 최대 의료기관인 효빈대학교병원의 노사 임금 및 단체협약(임단협) 교섭이 파업 예고일을 하루 앞두고 극적으로 타결됐다. 이로써 이번 주말 역대 최대 규모로 개최되는 효빈 애니메이션 페스티벌(HAF) 기간 동안 우려되었던 '의료 공백' 사태를 피하게 됐다.</p>
+
+                    <p>7일 효빈대학교병원 노사는 전날 오후부터 시작된 밤샘 마라톤 교섭 끝에 오전 8시경 잠정 합의안 도출에 성공했다고 밝혔다. 주요 합의 내용으로는 <strong>▲기본급 5.2% 인상 ▲야간 및 교대 근무자 수당 현실화 ▲응급실 및 중환자실 간호 인력 120명 추가 충원</strong> 등이 포함됐다.</p>
+
+                    <p>당초 노조 측은 만성적인 인력 부족으로 인한 의료진의 '번아웃'을 호소하며 파업을 예고했으나, 수백만 명의 인파가 모이는 HAF 2026 개막을 앞두고 자칫 대형 재난이나 응급 상황 발생 시 시민과 관람객의 안전이 심각하게 위협받을 수 있다는 데 노사가 공감대를 형성하며 한 발씩 양보한 것으로 전해졌다.</p>
+
+                    <p>김의룡 효빈대학교병원장은 이날 담화문을 통해 "밤낮없이 헌신하는 의료진의 노고에 깊이 공감하며, 병원의 발전과 시민 안전을 위해 대승적인 결단을 내려준 노동조합 측에 진심으로 감사드린다"며, "특히 전 세계에서 수백만 명이 우리 시를 찾는 HAF 기간 동안, 단 한 건의 의료 공백도 발생하지 않도록 1,350병상 본원과 권역응급의료센터를 24시간 철저히 비상 가동할 것"이라고 밝혔다.</p>
+
+                    <p>노조 관계자 역시 "우리의 노동권도 중요하지만, 2007년 '효빈의 붉은 겨울' 당시 도로가 막혀 환자가 목숨을 잃었던 참사를 병원 구성원 모두가 뼈저리게 기억하고 있다"며, "시민들이 안심하고 세계적인 축제를 즐길 수 있도록 현장을 든든하게 지키겠다"고 화답했다.</p>
+
+                    <p>효빈시는 이번 노사 타결에 즉각 환영의 뜻을 표했다. 효빈시 보건행정과 관계자는 "HAF 행사장과 캠퍼스가 인접한 효빈대학교병원은 축제 기간 중 발생할 수 있는 온열질환자나 외상 환자 처치에 있어 핵심적인 역할을 담당한다"며, "파업 위기 극복을 계기로 시청-소방-병원 간 핫라인을 더욱 강화해 완벽한 응급 의료 지원 체계를 유지하겠다"고 말했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">9,842</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Emergency_Saver", time: "방금 전", like: 15200, dislike: 24, isPunished: false,
+                                content: "와 진짜 다행이다... 이번 주말에 효빈에 사람 수백만 명 몰리는데 지역 거점 1짱 병원이 파업하면 어쩌나 조마조마했음. 노사 양측 다 고생하셨고 양보해 주셔서 감사합니다! ㅠㅠ",
+                                replies: [
+                                    { nick: "Citizen_Life", content: "진짜 효빈대병원 응급실은 부울경 남부권 최후의 보루임. 타결 안됐으면 아찔했다." },
+                                    { nick: "HAF_Ready", content: "수백만 명 모이는데 큰 병원 하나 셧다운되면 그게 바로 재난이죠 ㅠㅠ 다행입니다!" },
+                                    { nick: "Good_Deal", content: "양보해준 노조도, 결단 내린 원장님도 모두 승자입니다. 멋져요!" },
+                                    { nick: "Safe_Festival", content: "이번 주말 안심하고 축제 즐길 수 있겠네요. 의료진분들 화이팅!" }
+                                ]
+                            },
+                            {
+                                nick: "HAF_Run", time: "5분 전", like: 12950, dislike: 18, isPunished: false,
+                                content: "\"시민들이 안심하고 세계적인 축제를 즐길 수 있도록 현장을 지키겠다\" ← 노조 관계자님 멘트 진짜 감동 ㅠㅠ 2007년 윤대환 때 의료 참사 겪었던 병원이라 그런지 생명과 축제 안전에 대한 책임감이 남다르시네요.",
+                                replies: [
+                                    { nick: "Trauma_Past", content: "2007년 붉은 겨울... 그때 진짜 구급차 막혀서 사람 죽었던 거 생각하면 아직도 끔찍함 ㅠㅠ" },
+                                    { nick: "Good_Admin", content: "전임 시장 뻘짓으로 트라우마 남은 병원이라 그런지 위기 대처 마인드가 다릅니다. 멋지네요." },
+                                    { nick: "Respect_Medics", content: "생명을 지킨다는 사명감이 돋보이는 인터뷰네요 ㅠㅠ 진짜 존경합니다." },
+                                    { nick: "Right_Wing_Troll", nickClass: "text-red-600 font-bold", content: "그놈의 붉은 겨울 타령 좀 그만해라 좌빨들아!! 언제적 윤대환이야 징글징글하네" },
+                                    { nick: "Fact_Check_Bot", content: "또 시작이네 이 아저씨는 ㅋㅋㅋ 구급차 막혀서 억울하게 시민이 죽은 게 팩트인데 좌빨이 왜 나와? 지능 레전드네." }
+                                ]
+                            },
+                            {
+                                nick: "General_Doctor", time: "12분 전", like: 8840, dislike: 35, isPunished: false,
+                                content: "여기 병원 의사, 간호사들도 다 덕후라서 축제 기간에 파업하면 본인들도 HAF 2026 못 가니까 빨리 타결한 거 아님? ㅋㅋㅋ 암튼 효빈대병원 응급실은 진짜 전쟁터인데 인력 충원 합의돼서 다행입니다! 에이선(트램) 타고 퇴근길에 푹 쉬시길.",
+                                replies: [
+                                    { nick: "Nurse_Life", content: "효빈대병원 간호사입니다 ㅋㅋㅋ 정답이네요. 타결 안 됐으면 우린 무기한 농성이고 뭐고 축제도 못 볼 뻔했습니다. 이제 마음 편히 행사 부스 구경 갈 수 있겠네요!" },
+                                    { nick: "Doctor_A", content: "ㅋㅋㅋㅋ 의사 쌤들도 덕질은 못 참지~ 에이선 타고 슝슝 가십쇼!" },
+                                    { nick: "Festival_Power", content: "아 웃겨 ㅋㅋㅋ HAF는 효빈 시민 전체의 명절이니까요. 파업도 멈추게 하는 덕력!" },
+                                    { nick: "Thanks_Medics", content: "의료진 선생님들 덕분에 저희가 안전하게 놉니다! HAF 굿즈 많이 털어가시길 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Labor_Hater", time: "18분 전", like: 12, dislike: 24100, isPunished: true,
+                                content: "귀족 노조 배부른 소리 하네!! 의사 간호사들 돈도 많이 받으면서 무슨 맨날 파업 타령이야. 축제 볼모로 잡고 협박해서 월급 올렸네ㅉㅉ",
+                                replies: [
+                                    { nick: "Fact_Checker_79", content: "기사 좀 읽어라 아저씨야. 축제 볼모로 잡은 게 아니라 축제 때문에 오히려 노조가 양보해서 파업 철회한 거잖아. 대학병원 3교대 간호사들 뼈 갈아서 일하는 건 알고 귀족 타령하냐?" },
+                                    { nick: "Medical_Student", content: "1350병상 커버 치느라 교수님들이랑 간호사 쌤들 맨날 응급실에서 밤새시는데 귀족 노조라니... 타결돼서 천만다행인데 악플 다는 수준 참 ㅉㅉ" },
+                                    { nick: "Karma_Is_Real", content: "너 같은 놈은 나중에 아파서 응급실 실려가도 120명 부족한 텅텅 빈 병원에서 10시간 대기해봐야 정신 차리지." },
+                                    { nick: "Labor_Law", content: "간호사 120명 충원합의면 진짜 그동안 얼마나 사람 갈아넣은건지 사이즈 딱 나오는데 귀족노조 타령 ㅋㅋㅋ 평생 알바만 해봐서 노동법을 모르나?" }
+                                ]
+                            },
+                            {
+                                nick: "Medical_Park", time: "25분 전", like: 10200, dislike: 11, isPunished: false,
+                                content: "효빈대병원 시설 엄청 크고 좋던데, 이번에 노사 타결까지 깔끔하게 되니까 더 믿음이 가네요. 저번 HAF 때 탈수와서 응급실 실려 갔었는데 의료진분들 진짜 친절하게 링거 놔주셨음 ㅠㅠ 다들 이번 축제 땐 안 다치게 조심해서 놉시다!",
+                                replies: [
+                                    { nick: "Trust_Hospital", content: "여기 응급실 진짜 친절하고 빠름. 병상도 많아서 든든해요." },
+                                    { nick: "Safety_First", content: "축제 때 다치면 안 되지만, 혹시나 다쳐도 효빈대병원이 있으니 진짜 안심되네요." },
+                                    { nick: "Water_Please", content: "탈수 안 오게 물 많이 드세요! 이번 HAF도 폭염 예상되던데 ㅠㅠ" },
+                                    { nick: "Good_System", content: "효빈시 핫라인 구축도 일 잘하네요. 소방이랑 병원 연계가 제일 중요함." }
+                                ]
+                            },
+                            {
+                                nick: "Old_Politician", time: "30분 전", like: 9, dislike: 31000, isPunished: true,
+                                content: "병원장이 노조한테 질질 끌려다니니까 기강이 무너지는 거다!! 빨갱이 노조들 다 짤라버리고 새로 뽑아라!! 1350병상이면 돈도 엄청 벌면서 무슨 기본급을 5%나 올려주냐!!",
+                                replies: [
+                                    { nick: "Leadership_101", content: "사람 목숨 다루는 직업인데 파업 막고 원만하게 합의한 게 리더십이지, 무조건 짤라버리라는 건 어느 쌍팔년도 독재 마인드냐?" },
+                                    { nick: "Skill_Matters", content: "너 나중에 수술받을 때 '새로 뽑은 초짜'한테 수술받아라 ㅋㅋㅋ 기존 숙련된 인력들 대우해주는 게 환자한테도 이득이다 빡통아." },
+                                    { nick: "Economy_Fail", content: "5% 올려줘봤자 물가상승률 감안하면 현상유지 수준이다. 경제관념 1도 없는 틀딱 아재요." },
+                                    { nick: "Mirror_Therapy", content: "병원 기강 타령하기 전에 본인 집안 기강이나 잡으세요. 여기서 악플 다는 거 자식들이 알면 부끄러워할 듯." }
+                                ]
+                            },
+                            {
+                                nick: "Nursing_Student", time: "35분 전", like: 28400, dislike: 15, isPunished: false,
+                                content: "간호대생인데 인력 120명 충원 진짜 눈물 나게 기쁩니다 ㅠㅠ 매번 태움에 3교대 번아웃으로 퇴사율 엄청난데, 이번 합의가 다른 병원들한테도 좋은 선례가 됐으면 좋겠어요!",
+                                replies: [
+                                    { nick: "Cheer_Up", content: "학생분도 나중에 훌륭한 간호사 되시길 응원합니다! 노동 환경이 더 좋아져야 해요." },
+                                    { nick: "Good_Precedent", content: "효빈대병원이 확실히 지역 거점이라 총대 메고 좋은 선례 만들어주네요. 120명 충원이면 진짜 숨통 트일 듯." },
+                                    { nick: "My_Sister", content: "저희 누나도 간호사인데 맨날 인력 부족해서 밥도 못 먹고 일해요 ㅠㅠ 120명 증원 진짜 대박적 합의입니다." },
+                                    { nick: "Patient_Benefit", content: "환자 입장에서도 간호사 1명이 담당하는 환자 수 줄어드는 게 의료 질 향상으로 직결됨. 완전 환영!" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_HAF_Troll", time: "40분 전", like: 6, dislike: 52000, isPunished: true,
+                                content: "무슨 씹덕 만화 축제 하나 한다고 온 도시가 굽실대면서 파업까지 취소해주냐? ㅋㅋㅋ 아주 시장이 오타쿠니까 나라가 씹덕들 비위 맞추느라 미쳐 돌아가는구나!! HAF 당장 폐지해라!!",
+                                replies: [
+                                    { nick: "Capitalism_Win", content: "그 '씹덕 만화 축제'에 전 세계에서 수백만 명이 오고 수천억 원 경제효과가 터지는데 비위를 안 맞추고 배기냐? 자본주의 사회에서 돈 벌어주는 효자가 최고다 이 백수야." },
+                                    { nick: "Read_Correctly", content: "파업 취소한 게 아니라 '노사 합의'를 한 거다 난독증아 ㅋㅋㅋ 병원 노사가 시민 안전 생각해서 양보한 걸 씹덕 비위 맞추기로 후려치네." },
+                                    { nick: "Tax_Provider", content: "방구석에서 컵라면이나 씹으며 키보드 치는 너보다 HAF 와서 돈 쓰고 가는 관람객들이 효빈시 세수에 100배는 더 도움 됨." },
+                                    { nick: "City_Economy", content: "너 같은 놈들이 꼭 나중에 지자체 파산하면 시장 탓함 ㅋㅋㅋ 돈 벌어올 때 박수 쳐라 억까하지 말고." }
+                                ]
+                            },
+                            {
+                                nick: "City_Admin_Fan", time: "45분 전", like: 24100, dislike: 8, isPunished: false,
+                                content: "시청-소방-병원 핫라인 강화한다는 막줄이 진짜 행정의 디테일이다. 단순히 파업 막고 끝! 이게 아니라 축제 때 발생할 응급 상황 매뉴얼까지 싹 다 점검한다는 거잖아. 박효빈 시장 일처리 진짜 깔끔함.",
+                                replies: [
+                                    { nick: "Detail_Matters", content: "맞아요 행정은 저런 디테일에서 급이 나뉘죠. HAF 기간엔 진짜 온열질환자 많이 나올 텐데 대비 완벽하네요." },
+                                    { nick: "Feel_Safe", content: "다치면 안 되겠지만 만약 다쳐도 효빈시 시스템 믿고 안심할 수 있겠음." },
+                                    { nick: "Learn_From_Past", content: "타 지자체는 축제 열어놓고 안전관리는 나몰라라 하는 경우 많은데, 효빈시는 2007년 참사 교훈 삼아서 진짜 철저하게 하네요." },
+                                    { nick: "Thanks_Admin", content: "안전총괄과 공무원분들 이번 주말에 고생 엄청 하시겠네 ㅠㅠ 다들 무사히 축제 끝마치길 기원합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Waster_K", time: "50분 전", like: 14, dislike: 48000, isPunished: true,
+                                content: "노조 요구 다 들어주면 그 돈이 다 어디서 나오겠냐!! 결국 병원비 올리고 건강보험료 뜯어가서 우리 세금으로 메꾸겠다는 수작이지!! 좌파 시장에 귀족 노조 환상의 콜라보네 퉤!!",
+                                replies: [
+                                    { nick: "Private_Hospital", content: "효빈대병원은 사립 대학병원인데 무슨 세금으로 메꿔 빡통아 ㅋㅋㅋ 지갑에서 돈 나가는 소리만 들리면 다 세금인 줄 아냐?" },
+                                    { nick: "Healthcare_Need", content: "간호사 120명 늘려서 응급실 제대로 돌아가게 만드는 게 세금 낭비면, 넌 평생 아파도 병원 가지 말고 집에서 된장이나 발라라 ㅋㅋㅋ" },
+                                    { nick: "Labor_Right", content: "의료진들 정당한 대우받는 게 꼬우면 무인도 가서 살든가 ㅋㅋㅋ 자본주의 사회에서 정당한 교섭으로 임금 올린 게 왜 좌파냐?" },
+                                    { nick: "Logic_Absent", content: "기승전 좌파 타령 ㅋㅋㅋ 뇌가 2진법으로만 돌아가나 봐 불쌍하다 진짜. 팩트는 노사 합의로 시민 안전 지켰다는 거다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner" style="background-color: #e8f0fe; border-color: #8ab4f8;">
+                <div>
+                    <div class="font-bold text-[#0055aa] mb-1">효빈대학교병원 간호 인력 대규모 채용</div>
+                    <div class="text-xs text-gray-700">업계 최고 대우 보장, 3교대 근무 환경 획기적 개선!<br>환자의 생명을 지키는 든든한 날개가 되어주세요.<br><span class="text-[#0055aa] underline mt-1 inline-block font-bold">채용 공고 바로가기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

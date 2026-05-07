@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>"낡은 패딩 대신 '신상' 입혀주고 싶었다"... 자존감 선물하는 '쿠쿠 클로젯' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">"낡은 패딩 대신 '신상' 입혀주고 싶었다"... 자존감 선물하는 '쿠쿠 클로젯'</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">이복지 기자</span><br>
+                        <span class="text-xs text-gray-400">2023.12.26</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#0055aa] font-bold">박효빈 시장 "옷은 단순한 천 조각이 아니라 아이들의 자존감"<br/>월드비전 '자기돌봄비' 지원받던 대학생 시절 경험이 정책 모태<br/>성우 사가라 마유 "귀여움은 정의... 자신을 사랑하는 법 알려주는 정책" 찬사</span></p>
+<div class="my-6">
+<img alt="백화점에서_옷_고르는_아이들.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/FFD700/333333?text=Children+Shopping+with+Vouchers'" src="쇼핑하는_아이들.png"/>
+<div class="img-caption">▲ 26일 효빈시의 한 백화점 의류 매장에서 '쿠쿠 클로젯' 바우처를 소지한 청소년들이 겨울 패딩을 고르며 즐거워하고 있다.</div>
+</div>
+<p>[효빈일보 = 이복지 기자] "작년 겨울엔 사이즈가 작아진 낡은 패딩을 입고 다녔는데, 올해는 친구들이랑 똑같은 브랜드 패딩을 샀어요. 학교 가는 게 부끄럽지 않아요."</p>
+<p>효빈시가 저소득층 아동·청소년을 위해 내놓은 의류 지원 사업 **'쿠쿠 클로젯(Keke Closet)'**이 수혜 학생들의 뜨거운 반응을 얻고 있다. 단순한 피복비 지원을 넘어, 아이들이 원하는 브랜드 매장에서 직접 옷을 고를 수 있는 '전용 상품권'을 지급하여 낙인효과를 없애고 자존감을 높인 것이 특징이다.</p>
+<p>이 정책은 <a class="text-blue-600 underline" href="박효빈.html">박효빈</a> 시장의 뼈아픈 경험에서 비롯됐다. 대학 시절 극심한 생활고를 겪었던 박 시장은 "면접을 보려 해도 입고 갈 셔츠 한 장이 없었다"고 회고했다. 당시 **월드비전**의 '자립준비청년 자기돌봄비'를 지원받아 처음으로 백화점에서 새 옷을 사 입었을 때 느꼈던 '나도 괜찮은 사람이다'라는 감각을 아이들에게 돌려주고 싶었다는 것이다.</p>
+<div class="policy-box">
+<div class="policy-visual">👔</div>
+<div class="policy-info">
+<div class="policy-title">쿠쿠 클로젯 (Keke Closet)</div>
+<div class="policy-desc">
+                                • <b>대상:</b> 관내 저소득층 및 한부모 가정 초·중·고교생.<br/>
+                                • <b>지원:</b> 연 40만 원 상당의 의류 구입 전용 바우처(백화점/브랜드 매장 사용 가능).<br/>
+                                • <b>철학:</b> "옷은 날개다. 가난하다고 해서 유행에 뒤처지거나 위축되어선 안 된다."<br/>
+                                • <b>유래:</b> '러브라이브'의 패셔니스타 탕쿠쿠의 이름과 시장의 경험(자기돌봄)을 결합.
+                            </div>
+</div>
+</div>
+<p>이 소식은 바다 건너 일본까지 전해졌다. '러브라이브! 니지가사키 학원 스쿨 아이돌 동호회'의 나카스 카스미 역을 맡은 성우 <b>사가라 마유</b>는 개인 방송을 통해 "귀여운 옷을 입으면 마음이 강해진다는 건 카스밍의 철학!"이라며 "아이들에게 자신을 사랑하는 법을 알려주는 멋진 정책"이라고 찬사를 보냈다.</p>
+<p>한편, 구치소에 수감 중인 <a class="text-blue-600 underline" href="윤재훈.html">윤재훈</a>(2023년 사면복권 전) 등 일부 혐오 세력은 "세금으로 아이들에게 메이커 옷을 입히냐"며 비난했으나, 시민들은 "아이들 기 죽이는 것보다 훨씬 낫다", "이게 진정한 복지"라며 옹호하고 있다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "\uc911\ud559\uc0dd \ub538\uc544\uc774\uac00 \uce5c\uad6c\ub4e4\uc740 \ub2e4 \uc788\ub294 \ub871\ud328\ub529 \uc0ac\ub2ec\ub77c\uace0 \ud588\uc744 \ub54c \ub3c8\uc774 \uc5c6\uc5b4\uc11c \uac00\uc2b4\uc774 \ucc22\uc5b4\uc84c\uc5b4\uc694. \uc774\ubc88\uc5d0 \uc9c0\uc6d0\uae08\uc73c\ub85c \uc0ac\uc92c\ub294\ub370, \uc544\uc774\uac00 \ud559\uad50 \uac00\uba74\uc11c \u0027\uc5c4\ub9c8 \ub098 \uc774\uc81c \uc548 \ucd94\uc6cc!\u0027 \ud558\uace0 \uc6c3\ub294\ub370 \ub208\ubb3c\uc774 \ud551 \ub3cc\uc558\uc2b5\ub2c8\ub2e4. \uc2dc\uc7a5\ub2d8, \uc815\ub9d0 \uac10\uc0ac\ud569\ub2c8\ub2e4.", "dislike": 5, "isPunished": false, "like": 3500, "nick": "Grateful_Mom", "replies": [{"content": "\uc5b4\uba38\ub2d8, \ub530\ub2d8\uc758 \uaca8\uc6b8\uc774 \ub530\ub73b\ud588\uc73c\uba74 \uc88b\uaca0\uc2b5\ub2c8\ub2e4. \uc637 \ud55c \ubc8c\uc774 \uc8fc\ub294 \ud798\uc744 \uc800\ub3c4 \uc798 \uc555\ub2c8\ub2e4. \ud798\ub0b4\uc138\uc694!", "isOfficial": true, "nick": "Mayor_Hyobin"}, {"content": "\uc2dc\uc7a5\ub2d8 \ub610 \ub4f1\ud310\ud558\uc168\ub124 \u3160\u3160 \uc9c4\uc9dc \uc774\ubd84\uc740 \ucc10\uc774\ub2e4.", "nick": "Citizen_A"}, {"content": "\ud559\uad50\uc5d0\uc11c\ub3c4 \uc544\uc774\ub4e4 \uc637\ucc28\ub9bc \ub54c\ubb38\uc5d0 \uc704\ucd95\ub418\ub294 \uacbd\uc6b0\uac00 \ub9ce\uc740\ub370, \uc815\ub9d0 \uc88b\uc740 \uc815\ucc45\uc785\ub2c8\ub2e4.", "nick": "Teacher"}], "time": "\ubc29\uae08 \uc804"}, {"content": "\uc637\uc774 \ub0a0\uac1c\ub0d0! \ud5dd\uadf8\ub9ac \uc815\uc2e0\uc774 \uc5c6\uc5b4\uc11c \uc694\uc998 \uc560\ub4e4\uc774 \uc57d\ud574\ube60\uc9c4 \uac70\uc57c! \ub77c\ub5bc\ub294 \ud615\uc774 \uc785\ub358 \ub0b4\ubcf5 \uae30\uc6cc \uc785\uace0\ub3c4 \uc11c\uc6b8\ub300 \uac14\ub2e4! \uc138\uae08\uc73c\ub85c \uba54\uc774\ucee4 \uc637\uc744 \uc0ac\uc918? \ub098\ub77c \ub9dd\ud55c\ub2e4! \ubc15\ud6a8\ube48 \ud0c4\ud575\ud558\ub77c!", "dislike": 4200, "isPunished": true, "like": 2, "nick": "YoonJaehoon(IP)", "replies": [{"content": "\uc637\uc740 \uc790\uc874\uac10\uc785\ub2c8\ub2e4 \uc544\uc800\uc528. \ub0a8\ub8e8\ud558\uac8c \uc785\uace0 \ub2e4\ub2c8\ub294 \uac8c \uc790\ub791\uc785\ub2c8\uae4c? \uaf30\ub300 \uc18c\ub9ac \uadf8\ub9cc\ud558\uc138\uc694.", "nick": "Fashion_Design"}, {"content": "\ub2d8 \uc11c\uc6b8\ub300 \ubabb \uac00\uc168\uc796\uc544\uc694... \uadf8\ub9ac\uace0 \uc9c0\uae08 2023\ub144\uc785\ub2c8\ub2e4. 1970\ub144\ub300 \uc544\ub2c8\uc5d0\uc694.", "nick": "Fact_Check"}, {"content": "2805\ubc88, \uc870\uc6a9\ud788 \ud574. \ub108\ub3c4 \uc601\uce58\uae08 \uc5c6\uc5b4\uc11c \uc0ac\uc81c \uc18d\uc637 \ubabb \uc0ac \uc785\uc796\uc544. \ubd80\ub7ec\uc6b0\uba74 \ubd80\ub7fd\ub2e4\uace0 \ud574.", "nick": "Prison_Guard"}], "time": "3\ubd84 \uc804"}, {"content": "\uadc0\uc5ec\uc6b4 \uc637\uc740 \ub9c8\ubc95\uc758 \uac11\uc637\uc774\uc5d0\uc694! \uc544\uc774\ub4e4\uc774 \uc790\uc2e0\uc744 \ub354 \uc0ac\ub791\ud558\uac8c \ub418\uae38 \ubc14\ub77c\uc694. \uce74\uc2a4\ubc0d\uc774 \uc751\uc6d0\ud569\ub2c8\ub2e4! \ud83d\udc51\ud83d\udc9b (\u53ef\u611b\u3044\u670d\u306f\u9b54\u6cd5\u306e\u93a7\u3067\u3059\uff01\u5b50\u4f9b\u305f\u3061\u304c\u81ea\u5206\u3092\u3082\u3063\u3068\u611b\u305b\u308b\u3088\u3046\u306b\u306a\u308a\u307e\u3059\u3088\u3046\u306b\u3002\u304b\u3059\u307f\u3093\u304c\u5fdc\u63f4\u3057\u307e\u3059\uff01)", "dislike": 0, "isOfficial": true, "isPunished": false, "like": 15000, "nick": "Sagara_Mayu_Official", "replies": [{"content": "\ub9c8\uc720\uce58! \ud6a8\ube48\uc2dc\uae4c\uc9c0 \ubcf4\uace0 \uacc4\uc168\uad70\uc694. \uc2dc\uc7a5\ub2d8 \uc131\ub355\ub825 \ubb34\uc5c7...", "nick": "Kasumin_Fan"}, {"content": "\ub9c8\uc720 \uc0c1\uc758 \ub9d0\uc500\ucc98\ub7fc, \uc6b0\ub9ac \uc544\uc774\ub4e4\uc5d0\uac8c \ub9c8\ubc95\uc744 \uc120\ubb3c\ud558\uaca0\uc2b5\ub2c8\ub2e4! \uac10\uc0ac\ud569\ub2c8\ub2e4!", "isOfficial": true, "nick": "Mayor_Hyobin"}], "time": "10\ubd84 \uc804"}, {"content": "\ub2e4 \uc1fc\ub2e4! \uac10\uc131\ud314\uc774\ub2e4! \uc637 \uc0ac\uc904 \ub3c8\uc73c\ub85c \ube5a\uc774\ub098 \uac1a\uc544\ub77c \ud6a8\ube48\uc2dc! \ub0b4\uac00 \ub098\uac00\uba74 \ub2e4 \uc5ce\uc5b4\ubc84\ub9b4 \uac70\uc57c!", "dislike": 3800, "isPunished": true, "like": 0, "nick": "Villain_A(IP)", "replies": [{"content": "\ud6a8\ube48\uc2dc \uc7ac\uc815 \uac74\uc804\uc131 \uc804\uad6d 1\uc704\uc785\ub2c8\ub2e4. \ub2d8 \ud1b5\uc7a5 \uc794\uace0\ub098 \uac71\uc815\ud558\uc138\uc694.", "nick": "Budget_Team"}, {"content": "\ub098\uac00\uba74? \ud615\ub7c9 \ub298\uc5b4\uc11c \ubabb \ub098\uc624\uc2e4 \ud150\ub370\uc694 ^^ \ud1b5\ub9e4\uc74c \ucd94\uac00 \uae30\uc18c\ub41c \uac70 \uc78a\uc73c\uc168\ub098\uc694?", "nick": "Law_Student"}], "time": "15\ubd84 \uc804"}, {"content": "\uc624\ub798\uc804 \uc800\ud76c\uac00 \uc9c0\uc6d0\ud588\ub358 \uccad\ub144\uc774 \uc774\ub807\uac8c \ud6cc\ub96d\ud55c \uc2dc\uc7a5\ub2d8\uc774 \ub418\uc5b4 \ub354 \ud070 \ub098\ub214\uc744 \uc2e4\ucc9c\ud558\uace0 \uacc4\uc2dc\ub124\uc694. \uac10\uac1c\ubb34\ub7c9\ud569\ub2c8\ub2e4. \ud56d\uc0c1 \uc751\uc6d0\ud558\uaca0\uc2b5\ub2c8\ub2e4.", "dislike": 0, "isPunished": false, "like": 8000, "nick": "World_Vision", "replies": [{"content": "\uc640... \uc774 \uc11c\uc0ac \uc9c4\uc9dc \ub208\ubb3c \ub09c\ub2e4. \ud6c4\uc6d0\ud55c \ubcf4\ub78c\uc774 \uc788\ub124\uc694.", "nick": "Donor"}], "time": "20\ubd84 \uc804"}, {"content": "\uc194\uc9c1\ud788 \uc6b0\ub9ac \uc9d1 \uae30\ucd08\uc218\uae09\uc790\uc778 \uac70 \uc228\uae30\uace0 \ub2e4\ub154\ub294\ub370, \ucfe0\ucfe0 \ud074\ub85c\uc82f \uce74\ub4dc\ub294 \ub514\uc790\uc778\uc774 \uc608\ubed0\uc11c \uadf8\ub0e5 \uba64\ubc84\uc2ed \uce74\ub4dc\uc778 \uc904 \uc54c\uc544\uc694. \uce5c\uad6c\ub4e4\uc774\ub791 \uac19\uc774 \uc1fc\ud551 \uac00\uc11c \ucc98\uc74c\uc73c\ub85c \ub2f9\ub2f9\ud558\uac8c \uae01\uc5c8\uc2b5\ub2c8\ub2e4. \uc2dc\uc7a5\ub2d8 \uc0ac\ub791\ud574\uc694.", "dislike": 0, "isPunished": false, "like": 2200, "nick": "High_School_Student", "replies": [{"content": "\ub514\uc790\uc778\ud300\uc785\ub2c8\ub2e4. \uc77c\ubc18 \uce74\ub4dc\ub791 \ub611\uac19\uc774 \ubcf4\uc774\uac8c \ud558\ub824\uace0 \ubc24\uc0c8 \uace0\ubbfc\ud588\uc2b5\ub2c8\ub2e4. \uc54c\uc544\ubd10 \uc8fc\uc154\uc11c \uac10\uc0ac\ud569\ub2c8\ub2e4!", "nick": "Design_Team"}], "time": "25\ubd84 \uc804"}, {"content": "\ub0b4 \uc138\uae08\uc774 \uc724\uc7ac\ud6c8 \ubc25\uac12\uc774 \uc544\ub2c8\ub77c \uc544\uc774\ub4e4 \ud328\ub529 \uac12\uc73c\ub85c \uc4f0\uc778\ub2e4\ub2c8 \uae30\ubd84 \uc88b\ub124. \uc560\ub4e4 \uae30\uc8fd\uc9c0 \ub9d0\uace0 \ucee4\ub77c.", "dislike": 1, "isPunished": false, "like": 2500, "nick": "Tax_Payer", "replies": [], "time": "30\ubd84 \uc804"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

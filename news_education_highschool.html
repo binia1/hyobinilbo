@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[교육] 효빈 애니메이션 특성화고 경쟁률 15:1... 역대 최고 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">교육/사회 > 진로/입시</div>
+                <h2 class="article-title">[교육] 효빈 애니메이션 특성화고 경쟁률 15:1... 역대 최고</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김교육 기자</span> (edu@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.07 13:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">서구 내죽고등학교 신입생 모집 마감... 디지털애니메이션과 등 지원자 쇄도<br>HAF 성공·L-Project 시너지로 서브컬처 산업 호황... '덕업일치' 유망 직종 급부상<br>"단순 취미 넘어선 고부가가치 전문직"... 전국 각지 우수 인재 효빈으로 몰려</span></p>
+                    
+                    <div class="my-6">
+                        <img src="내죽고_실습실.png" alt="내죽고등학교 디지털애니메이션과 실습실 풍경" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Naejuk+High+School+Animation+Class'">
+                        <div class="img-caption">▲ 효빈광역시 서구에 위치한 <a href="내죽고등학교.html" class="text-blue-600 underline">내죽고등학교</a> 디지털애니메이션과 학생들이 최신형 액정 태블릿을 활용해 포트폴리오 실습에 매진하고 있다. 내년도 입시에서 이 학교는 역대 최고인 15대 1의 경쟁률을 기록했다. (사진=효빈시교육청 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김교육 기자] 효빈광역시의 서브컬처 산업 호황이 지역 교육계의 지형도마저 완전히 바꿔놓고 있다. 효빈시를 대표하는 IT·콘텐츠 특성화고등학교인 서구 소재 내죽고등학교의 신입생 모집 경쟁률이 역대 최고치인 15대 1을 기록하며, 애니메이션 및 게임 산업에 대한 청소년들의 폭발적인 관심을 입증했다.</p>
+
+                    <p>7일 효빈광역시교육청과 내죽고등학교에 따르면, 최근 마감된 2027학년도 신입생 일반 및 특별전형 원서접수 결과 전체 모집정원 200명에 3,000여 명의 지원자가 몰려 평균 15대 1의 경쟁률을 기록했다. 특히 학교의 핵심 학과인 <strong>'디지털애니메이션과'</strong>와 <strong>'스마트게임개발과'</strong>는 일찌감치 전공 포트폴리오를 철저히 준비해 온 전국 각지의 우수 인재들이 대거 지원하며 그 어느 때보다 치열한 입시 전쟁을 예고했다.</p>
+
+                    <p>과거 전통적인 공업고등학교였던 내죽고등학교는 시대 흐름에 발맞춰 미디어, 게임, 애니메이션 등 첨단 지식 콘텐츠 중심으로 학과를 전면 개편하며 환골탈태한 바 있다. 이번 입시 대흥행의 가장 큰 요인은 단연 효빈시가 주도하고 있는 <strong>'L-Project(서브컬처 연계망 사업)'</strong>와 대규모 축제인 <a href="HAF.html" class="text-blue-600 underline">'HAF(효빈 애니메이션 페스티벌)'</a>의 연이은 성공이 꼽힌다.</p>
+
+                    <div class="my-6">
+                        <img src="칠천역_서브컬처.png" alt="내죽고 인근 칠천역 애니메이션 상권" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Chilcheon+Station+Subculture+Zone'">
+                        <div class="img-caption">▲ 내죽고등학교와 인접한 효빈도시철도 <a href="2호선.html" class="text-blue-600 underline">2호선</a> 칠천역 일대의 거대 서브컬처 상권. 학생들은 학교 주변에서 최신 트렌드를 실시간으로 체감하며 실무 감각을 익히고 있다.</div>
+                    </div>
+
+                    <p>효빈시 전체가 거대한 서브컬처 생태계로 진화하고, 관련 IP(지식재산권) 산업이 지역 내총생산(GRDP) 역대 최고치를 견인하는 막대한 경제적 부가가치를 창출하면서 학생과 학부모들의 인식이 크게 변화한 것이다. 과거에는 '단순한 취미'나 '비주류 분야'로 치부되던 애니메이션과 게임 개발이, 이제는 뚜렷한 수요를 자랑하는 고소득 전문직이자 도시의 핵심 미래 유망 산업으로 확고히 자리 잡았음을 시사한다.</p>
+
+                    <p>뛰어난 지리적 이점과 실무 중심의 교육 환경도 한몫했다. 서구 칠천동에 위치한 내죽고등학교는 도시철도 2호선 칠천역 일대의 거대 서브컬처 상권(애니메이션 굿즈 샵, 대형 레트로 게임 센터 등)과 인접해 있어, 학생들이 최신 문화 트렌드를 직접 체감하고 실무 감각을 익히기에 최적화된 입지 조건을 자랑한다.</p>
+
+                    <p>또한 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장이 적극 추진 중인 '덕업일치 창업 지원센터' 등 다양한 청년 취·창업 인프라와 맞물려, 강도 높은 포트폴리오 실습을 마친 졸업생들이 지역 내 우수 콘텐츠 제작사 및 스튜디오로 매끄럽게 취업 연계가 이루어지고 있다는 점도 지원자들을 끌어모은 킬러 콘텐츠가 되었다.</p>
+
+                    <p>효빈시교육청 관계자는 "내죽고등학교의 이례적인 입시 경쟁률은 맹목적인 대학 진학의 굴레에서 벗어나, 자신의 확고한 적성과 취향을 바탕으로 일찌감치 전문성을 확보하려는 학생들의 실용주의적 진로 선택이 주류가 되고 있음을 보여준다"며, "효빈시의 탄탄한 서브컬처 산업 인프라와 학교의 수준 높은 실무 교육이 시너지를 극대화할 수 있도록, 교육청 차원에서도 최신형 액정 태블릿 지원 등 첨단 실습 장비 확충과 산학 협력 프로그램을 전폭적으로 확대할 계획"이라고 밝혔다.</p>
+
+                    <p>문화 자본이 곧 가장 강력한 경제 자본이 되는 시대, 효빈시의 청소년들은 이미 자신들이 열광하는 서브컬처를 바탕으로 가장 확실하고 주도적인 미래를 설계해 나가고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">19,852</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Naejuk_Alumni", time: "방금 전", like: 41200, dislike: 15, isPunished: false,
+                                content: "내죽고 디지털애니과 3기 졸업생입니다. 학교 다닐 때 칠천역 굿즈샵 다니면서 영감 얻고, 학교 실습실에서 액타로 밤새 그림 그렸던 게 진짜 도움 많이 됐습니다. 지금은 지역 게임사에 취업해서 초봉 5천 받고 있어요. 후배님들 진짜 오면 후회 안 합니다!",
+                                replies: [
+                                    { nick: "Dreaming_Student", content: "와 선배님 초봉 5천이요?? 진짜 대박이네요 ㅠㅠ 저 이번에 원서 넣었는데 기운 받아갑니다!!" },
+                                    { nick: "Jealous_Guy", nickClass: "text-red-600 font-bold", content: "고졸 주제에 초봉 5천? 어디서 구라를 치고 있어 ㅋㅋㅋ 중소기업 들어가서 최저시급이나 받겠지" },
+                                    { nick: "Fact_Check", content: "요즘 효빈시 게임사들 개발자 모자라서 모셔가는 판국인데 니가 방구석 백수라고 남들도 쥐꼬리만큼 받는 줄 아냐 열폭 추하다 ㅋㅋ" },
+                                    { nick: "Game_Dev_HR", content: "현직 인사담당자입니다. 내죽고 출신분들 포트폴리오 보면 웬만한 대졸자보다 실무 능력 압도적이라서 우대 채용하고 있습니다. 사실입니다." },
+                                    { nick: "Naejuk_Pride", content: "특성화고 차별하던 시대는 끝났다. 전문 기술이 짱임." }
+                                ]
+                            },
+                            {
+                                nick: "Middle_School_Mom", time: "5분 전", like: 35000, dislike: 21, isPunished: false,
+                                content: "우리 아이가 중학교 내내 웹툰 작가 한다고 해서 처음엔 반대했는데, 효빈시 분위기 보고 전폭 지지하기로 했습니다. 근데 내죽고 경쟁률이 15대 1이라니 ㅠㅠ 미술학원 특강까지 돌리는데도 너무 불안하네요.",
+                                replies: [
+                                    { nick: "Cheer_Up", content: "어머니 아이 믿어주셔서 대단하십니다. 요즘은 좋아하는 일 해야 성공하는 시대예요. 꼭 합격할 겁니다!" },
+                                    { nick: "Boomer_Parent", nickClass: "text-red-600 font-bold", content: "애를 무슨 딴따라 그림 그리는 학교를 보냅니까? 당장 국영수 학원 끊어서 인서울 대학을 보내야 사람 구실을 하죠!!" },
+                                    { nick: "Trend_Reader", content: "아재요... 요즘 그 그림 그려서 외화 수백억씩 벌어오는 게 K-콘텐츠입니다. 시대 흐름 좀 읽으세요 우물 안 개구리 꼰대야." },
+                                    { nick: "Real_Economy", content: "국영수 죽어라 파서 인서울 나와봤자 지금 문과 취업률 30%도 안 나오는 거 모르시나? 기술이랑 전문성이 최고예요." },
+                                    { nick: "Future_Artist", content: "저희 부모님도 어머니처럼 절 지지해주셨으면 좋겠어요 ㅠㅠ 부럽습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Academic_Supremacy", time: "10분 전", like: 12, dislike: 68000, isPunished: true,
+                                content: "고등학생들이 펜 잡고 공부는 안 하고 만화 쪼가리나 그리고 게임이나 쳐만드니까 나라 근간이 흔들리는 거다!! 무조건 책상에 앉아서 수능 공부를 해야 훌륭한 인재가 나오지 효빈시는 교육부터 썩었어!! 박효빈 시장 사퇴해라!!",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "니가 말하는 그 만화 쪼가리랑 게임이 1년에 대한민국에 벌어다 주는 수출액이 수십조 원이다 빡통아 ㅋㅋㅋ 니가 평생 내는 세금보다 걔네가 하루에 버는 돈이 더 많음." },
+                                    { nick: "Fact_Bomber", content: "수능 공부만 죽어라 한 결과가 지금 니 꼬라지냐? 악플이나 달고 있는 인재 참 훌륭하네 ㅋㅋㅋㅋ" },
+                                    { nick: "Academic_Supremacy", nickClass: "text-red-600 font-bold", content: "어디서 버르장머리 없이 어른한테 대들어!! 니들 부모가 그렇게 가르치더냐!!" },
+                                    { nick: "Laughing_Machine", content: "말문 막히면 나오는 필살기 '어른한테 대들어' ㅋㅋㅋㅋ 진짜 레퍼토리가 단 한 치도 안 변하네 애잔하다." },
+                                    { nick: "Wake_Up", content: "이런 구시대적 마인드 가진 틀딱들 때문에 나라가 발전이 안 되는 거임. 평생 그렇게 사십쇼." }
+                                ]
+                            },
+                            {
+                                nick: "City_Policy_Good", time: "15분 전", like: 28400, dislike: 8, isPunished: false,
+                                content: "내죽고 위치가 진짜 신의 한 수임. 칠천동이 효빈시 서브컬처 중심지인데, 학교 앞이 바로 덕질 상권 ㅋㅋㅋ 학교 끝나고 애니 굿즈샵 투어하면서 시장조사 핑계로 덕질 쌉가능 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Subway_Commuter", content: "2호선 칠천역 내리면 바로 앞이잖아요 ㅋㅋ 접근성 진짜 미쳤음. 요즘 칠천동 상권 진짜 엄청 커졌던데." },
+                                    { nick: "Real_Estate_Bro", content: "내죽고 뜨고 나서 칠천동 원룸 월세도 올랐음 ㅋㅋㅋ 학군지 파워 ㄷㄷ 효빈시는 이제 애니메이션 학군이 대세다." },
+                                    { nick: "Otaku_Student", content: "저희 학교 애들 맨날 하교하고 칠천역 애니플러스 감 ㅋㅋㅋ 진짜 덕업일치의 성지입니다." },
+                                    { nick: "Perfect_Environment", content: "인프라랑 실무 교육이 딱 맞아떨어지는 완벽한 환경이네요. 효빈시 행정력 인정합니다." },
+                                    { nick: "HAF_Fan", content: "HAF 열릴 때면 저 동네 완전 축제 분위기겠네요. 부럽다 진짜 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "Conspiracy_Guy", time: "20분 전", like: 8, dislike: 51000, isPunished: true,
+                                content: "경쟁률 15대 1? 저거 다 교육청이랑 학교가 짜고 친 언론 플레이지 ㅋㅋㅋ 요즘 저출산이라 애들 없어서 지방 고등학교들 싹 다 미달 나고 폐교하는 마당에 무슨 지원자가 3천 명이야!! 국민들을 바보로 아냐!!",
+                                replies: [
+                                    { nick: "Fact_Check_Bot", content: "일반 인문계는 미달 나도, 취업 잘 되는 1티어 특성화고나 마이스터고는 전국에서 몰려와서 터져 나간다 이 방구석 우물안 개구리야." },
+                                    { nick: "Data_Is_King", content: "교육청 공식 통계청 자료도 안 믿으면 도대체 뭘 믿고 삼? 너 뇌내망상? 조현병이냐?" },
+                                    { nick: "Conspiracy_Guy", nickClass: "text-red-600 font-bold", content: "정부 통계는 다 조작된 거다!! 좌빨 언론의 선동 기사에 낚이는 개돼지들 ㅉㅉ 내 눈으로 보기 전까진 안 믿는다!!" },
+                                    { nick: "Mental_Hospital", content: "니 눈으로 직접 학교 원서 접수처 가서 확인하고 오든가 ㅋㅋㅋ 방구석에서 타자만 치는 놈이 입은 살았네." },
+                                    { nick: "Sigh_Deeply", content: "저런 애들은 지구가 둥글다는 것도 지 눈으로 우주 가서 안 봤다고 안 믿을 놈임. 병먹금이 답." }
+                                ]
+                            },
+                            {
+                                nick: "Industry_Pro", time: "25분 전", like: 31000, dislike: 11, isPunished: false,
+                                content: "효빈시 소재 게임사 현업 개발자인데, 작년에 내죽고에서 산학협력으로 실습 온 학생들 보고 진짜 깜짝 놀랐습니다. 코딩 센스나 툴 다루는 솜씨가 어설픈 학원 출신들보다 훨씬 나아요. 15대 1 납득 갑니다.",
+                                replies: [
+                                    { nick: "Recruit_Team", content: "저희 회사도 이번에 내죽고 졸업생 2명 뽑았는데 바로 실무 투입해도 손색없을 정도였습니다. 인재의 산실이네요." },
+                                    { nick: "Jealousy_Hater", nickClass: "text-red-600 font-bold", content: "현업은 무슨 ㅋㅋ 시청 알바가 댓글 작업하네. 고딩들이 잘해봤자 얼마나 잘하겠냐 좆소 수준 보소" },
+                                    { nick: "Industry_Pro", content: "넥슨, 엔씨 같은 대기업에서도 효빈시 인재들 싹쓸이해가려고 혈안인데 업계 돌아가는 거 1도 모르는 백수 인증하네요 ^^" },
+                                    { nick: "True_Talent", content: "어릴 때부터 본인이 꽂힌 분야 1만 시간의 법칙으로 파고든 애들을 무시하면 안 됨. 걔네가 진짜 프로임." },
+                                    { nick: "Envying_City", content: "진짜 효빈시 인프라 부럽다. 우리 지역은 맨날 공단만 짓고 문화 콘텐츠는 1도 없어서 청년들 다 떠나는데 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "HAF_Synergy", time: "30분 전", like: 26800, dislike: 14, isPunished: false,
+                                content: "L-Project랑 HAF 성공이 나비효과를 제대로 일으켰네. 단순히 축제 한 번 하고 끝나는 게 아니라, 그 파급력으로 관련 학교 경쟁률이 치솟고 기업들이 몰려드는 선순환 구조. 박효빈 시장 진짜 정책 설계 능력 천재적인 듯.",
+                                replies: [
+                                    { nick: "Smart_Admin", content: "단순히 소비하는 문화를 넘어서 생산하는 산업으로 레벨업 시킨 게 신의 한 수죠. 이러니 청년들이 모일 수밖에." },
+                                    { nick: "Other_Mayor_Watch", content: "타 지자체 시장들은 진짜 효빈시 보고 반성해야 함. 허구한 날 지역 축제에 트로트 가수만 수억 주고 부를 줄 알지, 산업이랑 연계할 생각은 죽어도 못함." },
+                                    { nick: "Vote_For_Hyo", content: "96년생 젊은 피가 확실히 다릅니다. 이래서 정치인 세대교체가 필요한 거임. 시장님 종신해!!" },
+                                    { nick: "Economic_Effect", content: "GRDP 역대 최고치 찍은 게 빈말이 아니구나. 교육계까지 흔들 정도면 진짜 대박 난 거네." }
+                                ]
+                            },
+                            {
+                                nick: "Troll_King", time: "35분 전", like: 5, dislike: 42000, isPunished: true,
+                                content: "씹덕 고등학교 ㅋㅋㅋㅋ 교복 대신 애니 코스프레 입고 등교하냐? 교실 들어가면 안 씻어서 쉰내 쩔듯 으으 진짜 상상만 해도 역겹네 저런 데를 왜 가냐",
+                                replies: [
+                                    { nick: "Fashion_Check", content: "내죽고 교복 전국에서 예쁘기로 유명한데 알못 새끼가 아는 척은 ㅋㅋㅋ 니 방에서 나는 홀아비 냄새나 빼라" },
+                                    { nick: "Troll_King", nickClass: "text-red-600 font-bold", content: "씹덕들 팩트 쳐맞고 풀발기 하는 거 보소 ㅋㅋㅋㅋ 농담도 못하냐 씹선비 새끼들아 ㅋㅋㅋㅋ" },
+                                    { nick: "Law_Hammer", content: "특정 학교와 학생들을 향한 모욕성 발언, 내죽고 교무처에 캡처해서 메일 보냈습니다. 농담인지 아닌지 경찰서 가서 해명해 보세요 ^^" },
+                                    { nick: "Loser_Mind", content: "현실에서 아무것도 이룬 게 없는 루저들이 꼭 남의 열정과 노력을 깎아내림. 지 인생이 시궁창이니까 남들도 시궁창이길 바라는 거지." },
+                                    { nick: "Clean_Up", content: "이런 애들 제발 댓글 못 달게 법 좀 바꿨으면 좋겠다. 더러워서 진짜." }
+                                ]
+                            },
+                            {
+                                nick: "Middle3_Applicant", time: "40분 전", like: 21000, dislike: 8, isPunished: false,
+                                content: "중3인데 내죽고 스마트게임개발과 너무 가고 싶어서 중학교 1학년 때부터 C언어 파고 유니티로 미니게임 만들어서 포폴 준비했어요 ㅠㅠ 제발 합격했으면 좋겠습니다!!",
+                                replies: [
+                                    { nick: "Good_Luck", content: "와 중1 때부터 준비했으면 무조건 합격일 겁니다! 응원할게요 후배님!!" },
+                                    { nick: "Senior_Tip", content: "내죽고 선배입니다. 포폴도 중요하지만 면접 때 본인이 만든 게임의 수익 구조나 타겟층 분석 같은 거 어필하면 점수 확 올라가요. 화이팅!" },
+                                    { nick: "Awesome_Kid", content: "어린 나이에 벌써 진로 확고하게 정하고 실행하는 모습 진짜 멋지네요. 아저씨가 응원합니다." },
+                                    { nick: "Fellow_Applicant", content: "헐 저도 게임과 지원했는데 ㅠㅠ 님 댓글 보니까 쫄리네요... 같이 합격해서 동기로 만납시다!!" }
+                                ]
+                            },
+                            {
+                                nick: "Future_Vision", time: "45분 전", like: 19800, dislike: 10, isPunished: false,
+                                content: "과거엔 기술 배우면 공돌이라고 무시당하고, 그림 그리면 환쟁이라고 무시당했는데, 이젠 그 공돌이랑 환쟁이들이 세상을 지배하는 4차 산업혁명 시대임. 내죽고 경쟁률 15:1은 대한민국의 미래가 올바른 방향으로 가고 있다는 증거다.",
+                                replies: [
+                                    { nick: "Masterpiece", content: "진짜 명문이다. 직업에 귀천을 따지던 조선시대 마인드를 버려야 나라가 삼." },
+                                    { nick: "Real_Value", content: "콘텐츠 산업이 제조업 뺨치는 고부가가치 산업이라는 걸 효빈시가 증명하고 있죠. 자랑스럽습니다." },
+                                    { nick: "Change_The_World", content: "우리 세대 때는 무조건 대학 간판이 전부였는데, 요즘 애들 자기 주관 뚜렷한 거 보면 진짜 멋있어요." },
+                                    { nick: "Hyobin_Standard", content: "효빈시의 교육 모델이 대한민국 전체의 스탠다드가 되기를 바랍니다!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner" style="background-color: #fff8e1; border-color: #fbc02d;">
+                <div>
+                    <div class="font-bold text-[#f57f17] mb-1">효빈 최고 입시율! 파랑새 미술학원</div>
+                    <div class="text-xs text-gray-700">내죽고 디지털애니메이션과 완벽 대비반 모집<br>액정 태블릿 전 좌석 완비, 합격 포트폴리오의 비밀<br><span class="text-[#f57f17] underline mt-1 inline-block font-bold">무료 입시 상담 예약하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

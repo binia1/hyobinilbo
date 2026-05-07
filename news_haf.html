@@ -147,7 +147,7 @@
 
     <script>
         // 초기 댓글 데이터 (리얼한 반응 포함 - 데이터 대폭 증가)
-        const initialComments = [
+        const commentsData = [
             {
                 nick: "PoppinParty", time: "14:10", content: "와 사능빵집 미쳤다... 초코소라빵 퀄리티 대박임. 사장님이 앞치마 두르고 '이らっしゃ이마세(어서오세요)' 하는데 진짜 사아야네 빵집 온 줄 ㅋㅋㅋ 박효빈 시장님 덕분에 성불합니다.", 
                 like: 4500, dislike: 15, isBest: true,
@@ -220,8 +220,8 @@
         // 페이지 로드 시 실행 (확실한 로딩을 위해)
         document.addEventListener('DOMContentLoaded', function() {
             // 댓글 렌더링
-            renderComments(initialComments);
-            document.getElementById('comment-count').innerText = initialComments.length;
+            renderComments(commentsData);
+            document.getElementById('comment-count').innerText = commentsData.length;
             
             // 랭킹 렌더링
             renderRanking();
@@ -327,17 +327,6 @@
     </script>
     <!-- 효빈일보 코어 스크립트 -->
     <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
 
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
-
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
-
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

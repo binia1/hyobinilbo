@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] 윤재훈, 구치소 내 필리핀계 수감자에게 '망고 구걸' 굴욕 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 사건/사고</div>
+                <h2 class="article-title">[사회] 윤재훈, 구치소 내 필리핀계 수감자에게 '망고 구걸' 굴욕</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">나정의 기자</span> (justice@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2023.05.08 09:20</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">"필리핀은 정글" 비하하더니... 구치소 실세 필리핀계 수감자에게 "망고 하나만"<br>공범 A씨, 비굴하게 접근했다가 '깍두기 국물' 세례... 화장실 청소 전담 신세<br>윤재훈 "나 각하 측근이야, 망고 빙수 내놔" 징징대다 징벌방행... 네티즌 "인과응보"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="윤재훈_구치소.png" alt="구치소 수감 중인 윤재훈 자료사진" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Inmate+Yoon+Jae-hoon'">
+                        <div class="img-caption">▲ 과거 박효빈 시장을 향해 인종차별적 망언을 쏟아내다 구속된 윤재훈 전 후보와 그 일당들이 구치소 내에서도 필리핀계 수감자들에게 비굴한 태도를 보이다 조롱거리로 전락했다는 소식이 전해졌다. (사진=효빈일보 자료사진)</div>
+                    </div>
+
+                    <p>[효빈일보 = 나정의 기자] 효빈광역시장 선거 과정에서 폭행 미수와 인종차별 발언으로 구속된 윤재훈 전 후보와 그의 공범들이 구치소 내에서 비참한 근황을 이어가고 있다. 평소 필리핀을 "미개한 정글"이라 비하하던 이들이, 정작 구치소 안에서는 필리핀계 수감자에게 망고를 구걸하다 망신을 당한 것으로 확인됐다.</p>
+
+                    <p>8일 법조계와 교정 당국 관계자에 따르면, 효빈구치소에 수감 중인 윤재훈의 최측근 공범 A씨(21)는 최근 같은 방에 수감된 필리핀계 수감자 C씨에게 비굴하게 접근했다가 큰 굴욕을 당했다. 사건의 발단은 C씨가 외부에서 반입된 말린 망고를 먹고 있을 때 발생했다.</p>
+
+                    <p>평소 윤재훈과 함께 "동남아 튀기"라며 혐오 발언을 일삼던 A씨는, C씨가 구치소 내 실세라는 사실을 눈치채자 태도를 급변했다. A씨는 C씨에게 다가가 "제가 원래 필리핀을 좋아한다. 형님네 나라는 망고가 길바닥에 굴러다닌다던데 저 하나만 달라"며 칭찬을 빙자한 미개한 비하 발언을 던졌다.</p>
+
+                    <p>이에 격분한 방장과 C씨는 "길바닥에 구르는 게 좋아 보이면 이거라도 먹어라"며 A씨의 식판에 망고 대신 깍두기 국물을 들이부었다. 이 사건 이후 A씨는 해당 사동에서 '불가촉천민'으로 찍혀 화장실 청소를 도맡는 등 왕따 신세가 된 것으로 전해졌다.</p>
+
+                    <p>주범인 윤재훈 역시 '안하무인' 태도로 일관하다 자폭 중이다. 윤 씨는 교도관들에게 "내가 누군지 아느냐, 대통령 각하의 최측근이니 특식을 내놔라", "덥다, 망고 빙수를 대령하라"며 억지를 쓰다 징벌방에 수감되기도 했다.</p>
+
+                    <p>특히 윤 씨가 필리핀 인프라를 무시하는 발언을 하자, 수감자 C씨가 "마닐라 지하철 1호선은 1984년에 개통해 서울 지하철보다 먼저 다녔다. 무식하면 가만히나 있어라"라고 팩트 폭격을 날려 윤 씨가 꿀 먹은 벙어리가 되었다는 일화는 이미 구치소 내 전설로 통한다.</p>
+
+                    <p>이 소식을 접한 효빈 시민들은 실소를 금치 못하고 있다. 최근 발생한 '탕쿠쿠 파일 폭행 및 인종차별 사건'으로 시민들의 분노가 극에 달한 상황에서, 가해자들의 비참한 근황이 일종의 '인과응보'로 받아들여지는 모양새다.</p>
+
+                    <p>한편, 윤재훈 측은 최근 '루트 M' 작전이라는 명목 아래 박효빈 시장을 상대로 13억 원 규모의 손해배상 청구 소송을 준비 중인 것으로 알려졌으나, 법조계에서는 "허무맹랑한 소리"라며 일축하고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">32,104</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment(this)">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Justice_Served", time: "방금 전", like: 52100, dislike: 12, isPunished: false,
+                                content: "와 진짜 개그가 따로 없네 ㅋㅋㅋㅋ 밖에서는 튀기라고 욕하더니 감옥 들어가니까 망고 하나에 자존심 다 팔고 깍두기 국물이나 처먹고 있냐 ㅋㅋㅋㅋ 진짜 찌질함의 극치다 윤재훈 일당들.",
+                                replies: [
+                                    { nick: "Citizen_A", content: "깍두기 국물 ㅋㅋㅋㅋ 방장님이 센스가 있으시네 망고색이랑 비슷하긴 하쥬? ㅋㅋㅋ" },
+                                    { nick: "Law_Student", content: "특수폭행으로 들어가서 화장실 청소 당번이라니 진짜 인생 스펙타클하네" },
+                                    { nick: "Karma_Is_Real", content: "뿌린 대로 거두는 겁니다. 밖에서 하던 짓 그대로 하다가 진짜 임자 만났네요." },
+                                    { nick: "HAF_Fan", content: "저런 인간들이 효빈시를 지배할 뻔했다는 게 진짜 소름 돋는다 ㄷㄷ" }
+                                ]
+                            },
+                            {
+                                nick: "Manila_LRT_Fan", time: "5분 전", like: 45000, dislike: 8, isPunished: false,
+                                content: "필리핀 수감자 C씨 팩트 폭격 지리네요 ㅋㅋㅋ 마닐라 LRT 1호선 84년 개통 맞음. 서울 3, 4호선보다 빠름. 무식한 놈들이 정글 타령하다가 제대로 임자 만났네 ㅋㅋㅋ 역시 효빈구치소는 교육의 장입니다.",
+                                replies: [
+                                    { nick: "Transit_Nerd", content: "맞아요 저도 그거 듣고 찾아봤는데 필리핀 철도 역사 꽤 깊습니다. 윤재훈은 걍 뇌가 텅텅 빈 거임" },
+                                    { nick: "Subway_Commuter", content: "우리 코레일이 거기 MRT-7 운영권도 따냈잖아요 ㅋㅋ 윤재훈 혼자만 시대에 뒤떨어져서 정글 타령 중임" },
+                                    { nick: "Metro_Master", content: "C씨 형님 철잘알 인정합니다 ㅋㅋㅋ 윤재훈 꿀먹벙 된 거 상상하니까 개웃기네" },
+                                    { nick: "History_Buff", content: "무식하면 용감하다더니, 감옥 가서 철도 역사 과외받고 있네 ㅋㅋㅋ 수강료는 화장실 청소로 내는 건가?" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Jaehoon_Fanclub", time: "10분 전", like: 14, dislike: 82000, isPunished: true,
+                                content: "우리 재훈 도련님은 억울하게 죄를 뒤집어쓰고 들어가신 거다!! 저거 다 좌파 교도관들이 재훈님 괴롭히려고 꾸며낸 소설이다!! 구치소에 외국인 수감자가 웬 말이냐 당장 추방해라!!",
+                                replies: [
+                                    { nick: "Fact_Bomber", content: "도련님 이지랄 ㅋㅋㅋ 범죄자 새끼를 도련님이라고 부르는 니 노비 근성이 더 레전드다" },
+                                    { nick: "Logic_Cutter", content: "구치소에 외국인 수감자가 있는 게 왜 문제야 범죄를 저질렀으니까 감방에 간 거지 빡통아 ㅋㅋ 니네 도련님도 그래서 간 거고" },
+                                    { nick: "Prison_Guard", content: "꾸며낸 소설 같은 소리 하네 ㅋㅋㅋ 구치소 CCTV에 다 찍혀있는데 무슨 소설? 꼬우면 영치금이나 넉넉하게 넣어주든가" },
+                                    { nick: "Reality_Check", content: "4.8% 득표율의 기적 윤재훈! 망고 구걸의 기적 윤재훈! ㅋㅋㅋㅋ 평생 징벌방에서 썩어라" }
+                                ]
+                            },
+                            {
+                                nick: "Mango_Lover", time: "12분 전", like: 38900, dislike: 15, isPunished: false,
+                                content: "윤재훈 \"망고 빙수 내놔\" ㅋㅋㅋㅋ 여기가 신라호텔인 줄 아나 보네. 징벌방 가서 벽이나 보고 반성해라. 아, 징벌방 벽지도 뱅드림으로 래핑 해주면 효과 직빵일 듯 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Shilla_Hotel", content: "각하 최측근 ㅋㅋㅋㅋ 언제적 각하 타령이야 진짜 80년대에서 타임머신 탔나" },
+                                    { nick: "Anime_Fan", content: "징벌방에 하루종일 럽라이브 노래 틀어놓으면 윤재훈 발작할 듯 ㅋㅋㅋ 제발 도입 시급" },
+                                    { nick: "Ice_Flasher", content: "망고빙수 대신 깍두기 빙수나 말아줘라 ㅋㅋㅋ A씨랑 나눠먹으면 딱이겠네" },
+                                    { nick: "Justice_Blind", content: "지가 아직도 시장 아들인 줄 알고 갑질하려 드네. 저런 놈은 징벌방이 아니라 독방 평생형이 답이다." }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "18분 전", like: 31200, dislike: 9, isPunished: false,
+                                content: "공범 A씨 02년생이라면서 벌써부터 저렇게 비굴하게 사냐... 용접 배우겠다더니 화장실 청소부터 마스터하게 생겼네. 박 시장님 건드린 대가가 깍두기 국물 샤워라니 진짜 가성비 넘치는 참교육이다.",
+                                replies: [
+                                    { nick: "Welding_Master", content: "용접은 무슨 ㅋㅋㅋ 변기통이나 닦다가 인생 종치게 생겼네" },
+                                    { nick: "Youth_Wasted", content: "21살에 전과자 달고 교도소 짬통 취급받는 거 진짜 인생 하드모드 자처하네 ㅋㅋㅋ" },
+                                    { nick: "Lesson_Learned", content: "혐오 세력의 말로가 얼마나 비참한지 보여주는 훌륭한 시청각 자료입니다." },
+                                    { nick: "Hyobin_Citizen", content: "박효빈 시장님이 굳이 손 안 대도 알아서 감옥에서 참교육 당하고 있네 ㅋㅋㅋ 이게 인과응보지" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Payer_Angry", time: "22분 전", like: 8, dislike: 65000, isPunished: true,
+                                content: "왜 우리 낸 세금으로 범죄자 외국인한테 밥을 멕이냐!! 구치소에 필리핀 놈들이 왜 있냐 당장 추방 안 시키고 뭐해!! 박효빈 시장이 뒤에서 봐주는 거 아니냐!!",
+                                replies: [
+                                    { nick: "Read_The_Law", content: "외국인이 한국에서 죄지으면 한국 감옥에서 형 살고 추방당하는 게 원칙이다 무식아... 법 좀 읽고 살아라" },
+                                    { nick: "Logic_Police", content: "니가 낸 세금으로 윤재훈 밥 먹이는 건 안 아깝디? ㅋㅋㅋ 논리 수준 진짜 개박살났네" },
+                                    { nick: "Anti_Hate", content: "박 시장님이 구치소 수감자 관리까지 하냐? ㅋㅋㅋ 진짜 기승전 박효빈 탓 오지네 병이다 병" },
+                                    { nick: "Touch_Grass", content: "세금 타령하는 놈들 치고 세금 제대로 내는 놈 본 적이 없다. 방구석에서 컵라면이나 먹고 자라." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Pride", time: "25분 전", like: 28400, dislike: 11, isPunished: false,
+                                content: "이게 바로 박효빈 시장님이 말한 '혐오의 대가'죠. 남을 깎아내리며 얻은 우월감은 결국 더 큰 굴욕으로 돌아오는 법. 케손시티랑 MOU 체결되면 윤재훈은 필리핀 근처에도 못 가게 법으로 막아버려야 함.",
+                                replies: [
+                                    { nick: "Global_Mind", content: "이미 윤재훈은 필리핀 갱단한테 찍혀서 자의로라도 못 갈 겁니다 ㅋㅋㅋ 가면 진짜 뼈도 못 추릴 듯" },
+                                    { nick: "Respect_Mayor", content: "박 시장님이 다문화 포용 정책 펴면서 도시 품격은 올라가고, 혐오충들은 감방에서 깍두기 국물 뒤집어쓰고. 완벽한 결말이네요." },
+                                    { nick: "MOU_Support", content: "케손시티 MOU 체결식 때 망고 빙수 돌리면 개웃기겠다 ㅋㅋㅋㅋ 윤재훈 보라고" },
+                                    { nick: "True_Words", content: "혐오의 대가는 스스로 자초한 지옥이죠. 윤재훈 일당은 평생 거기서 살길." }
+                                ]
+                            },
+                            {
+                                nick: "Line1_Gonami_Fan", time: "30분 전", like: 25100, dislike: 14, isPunished: false,
+                                content: "솔직히 윤재훈 저 인간이 우리 파란색 1호선 탔으면 1호선 주민들한테 뼈도 못 추렸음 ㅋㅋㅋ 감옥에 들어간 게 오히려 다행인 줄 알아라. 고나미쨩 래핑 찢은 죄는 영원히 잊지 않는다.",
+                                replies: [
+                                    { nick: "Line4_Darona", content: "ㄹㅇ 주황색 4호선 다로나 에코백으로 뚝배기 한 대 쳐맞아야 정신 차림 ㅋㅋㅋ" },
+                                    { nick: "Line6_Rasena", content: "보라색 6호선 안심 스카우트 대원들이 윤재훈 보면 바로 메다꽂아버릴 듯 ㅋㅋㅋ 감옥이 제일 안전한 곳이다 쟤한텐" },
+                                    { nick: "Transit_Love", content: "효빈시민 건드리면 아주 ㅈ되는 거야~ 철도 인프라 무시한 대가 톡톡히 치러라!" },
+                                    { nick: "BinHyo_Rider", content: "빈효선 타고 마닐라까지 도망가라 ㅋㅋㅋ 아 마닐라도 코레일이 먹었지? ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Right_Wing_Warrior", time: "35분 전", like: 6, dislike: 91000, isPunished: true,
+                                content: "이거 다 조작된 가짜뉴스다!! 조중동 메이저 언론에는 이런 기사 하나도 안 올라왔다!! 효빈일보는 좌파 선동 언론이다!! 윤재훈 후보님은 감옥에서도 당당하게 투쟁하고 계신다!!",
+                                replies: [
+                                    { nick: "Fact_Check_Pro", content: "조선일보 영문판에서 정정보도 내고 도게자 박은 거 기억 안 나냐 붕어 대가리야? ㅋㅋㅋ 메이저 언론 타령하네" },
+                                    { nick: "Delusion_Max", content: "당당하게 투쟁 = 망고 하나만 달라고 구걸하다 깍두기 국물 쳐맞음 ㅋㅋㅋㅋ 진짜 눈물겨운 투쟁이네요" },
+                                    { nick: "Law_Abider", content: "가짜뉴스 유포로 고소당하기 전에 댓글 지우는 게 좋을걸? 교정 당국에서 다 확인해 준 팩트다." },
+                                    { nick: "Sigh_Machine", content: "아저씨 제발 약 좀 챙겨 드세요. 현실 부정도 병입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Alpha_Male_Andrew", time: "40분 전", like: 11, dislike: 85000, isPunished: true,
+                                content: "솔직히 감옥에서 과일 좀 먹고 싶어서 달라고 할 수도 있는 거 아님? 그걸 깍두기 국물을 부어버리네 외국인 인성 ㅉㅉ 그리고 윤재훈이 틀린 말 했냐 필리핀 인프라 후진 건 팩트잖아 좌파들 또 선동하네",
+                                replies: [
+                                    { nick: "Logic_God", content: "평소에 튀기라고 쌍욕 박고 인종차별하던 놈이, 지 아쉬울 때만 실세한테 굽신거리며 망고 달라고 하는 게 찌질한 거지 ㅋㅋㅋ 그걸 또 쉴드치네" },
+                                    { nick: "Fact_Bomber_2", content: "깍두기 국물 부은 건 필리핀 수감자가 아니라 한국인 방장님이 부으신 거란다 난독증아 ㅋㅋㅋ" },
+                                    { nick: "Alpha_Male_Hunter", content: "알파메일 호소인 또 등판했네 ㅋㅋ 현실은 망고 구걸하는 윤재훈한테 자아의탁하는 베타메일 ㅠㅠ" },
+                                    { nick: "No_Sympathy", content: "인종차별 발언을 '틀린 말 안 했다'고 옹호하는 니 인성 수준이 제일 처참하다. 너도 감옥 가서 똑같이 당해봐라." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment(btn) { 
+                            const input = document.getElementById('cmt-content');
+                            if(!input.value.trim()) return;
+                            const originalText = btn.innerText;
+                            btn.innerText = "등록 완료!";
+                            btn.classList.add("bg-green-600");
+                            btn.classList.remove("bg-[#0055aa]", "hover:bg-[#004499]");
+                            
+                            setTimeout(() => {
+                                btn.innerText = originalText;
+                                btn.classList.remove("bg-green-600");
+                                btn.classList.add("bg-[#0055aa]", "hover:bg-[#004499]");
+                                input.value = '';
+                            }, 1500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner" style="background-color: #fff9c4; border-color: #fbc02d;">
+                <div>
+                    <div class="font-bold text-[#f57f17] mb-1">효빈 청과시장 프리미엄 생망고 특가!</div>
+                    <div class="text-xs text-gray-700">구치소에서는 못 먹는 달콤한 필리핀산 생망고<br>시민 여러분은 집에서 편하게 드세요!<br><span class="text-[#f57f17] underline mt-1 inline-block font-bold">특가 상품 주문하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

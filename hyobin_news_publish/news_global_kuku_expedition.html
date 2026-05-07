@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>"여권이 제 보물 1호예요"... '글로벌 쿠쿠 원정대' 1기, 꿈을 안고 귀국 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">"여권이 제 보물 1호예요"... '글로벌 쿠쿠 원정대' 1기, 꿈을 안고 귀국</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">이복지 기자</span><br>
+                        <span class="text-xs text-gray-400">2024.08.20</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#0055aa] font-bold">효빈시 취약계층 청소년 30명, 상하이·도쿄 4박 5일 탐방 성료<br/>박효빈 시장 "아픈 가족 돌보느라 자신을 지운 아이들에게 '세상'을 보여주고 싶었다"<br/>대학생 '블루 버드 멘토단' 동행... 멘토-멘티 동반 성장 모델 호평</span></p>
+<div class="my-6">
+<img alt="인천공항_입국장_원정대.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/bae6fd/333333?text=Global+Kuku+Expedition+Team'" src="공항_귀국_아이들.png"/>
+<div class="img-caption">▲ 20일 오전 인천국제공항을 통해 귀국한 '글로벌 쿠쿠 원정대' 1기 청소년들이 파스텔 블루 캐리어를 끌며 환하게 웃고 있다.</div>
+</div>
+<p>[효빈일보 = 이복지 기자] "비행기를 처음 타봤어요. 상하이 와이탄의 야경을 보면서 생각했어요. 내 꿈도 저 건물들처럼 높이 올라갈 수 있겠구나 하고요."</p>
+<p>효빈시가 저소득층 및 취약계층 청소년을 위해 야심 차게 기획한 **'글로벌 쿠쿠 원정대(Global Kuku Expedition)'** 1기 30명이 4박 5일간의 상하이·도쿄 탐방을 마치고 20일 무사히 귀국했다. 이번 프로젝트는 가정 형편상 해외 경험을 하기 어려운 청소년들에게 여권 발급부터 항공, 체류비 전액을 시비로 지원하는 파격적인 복지 정책이다.</p>
+<p>이번 정책의 이면에는 <a class="text-blue-600 underline" href="박효빈.html">박효빈</a> 시장의 가슴 아픈 개인사가 담겨 있다. 박 시장은 대학 시절 아픈 아버지와 어린 동생을 돌보며 쓰리잡을 뛰던 '가족돌봄청년(Young Carer)'이었다. 그는 해단식에서 "당시 **월드비전**의 도움으로 생애 처음 나를 위한 여행을 떠났을 때의 전율을 잊지 못한다"며 "그때의 경험이 지금의 저를 만들었듯, 우리 아이들에게도 '세상은 넓고 기회는 많다'는 것을 알려주고 싶었다"고 눈시울을 붉혔다.</p>
+<div class="course-box">
+<div class="course-title">✈️ 글로벌 쿠쿠 원정대 주요 코스</div>
+<div class="course-grid">
+<div class="course-item">
+<div class="course-header">🇨🇳 상하이 (The Origin)</div>
+<div class="course-desc">탕쿠쿠의 고향. 와이탄 야경을 보며 '도전 정신' 함양. 박 시장이 대학 시절 쿠쿠 인형을 들고 서서 꿈을 다짐했던 바로 그 장소에서 멘토와 멘티가 단체 사진을 촬영했다.</div>
+</div>
+<div class="course-item">
+<div class="course-header">🇯🇵 도쿄 (The Dream)</div>
+<div class="course-desc">하라주쿠 패션 거리와 아키하바라 탐방. 아이들이 직접 고른 최신형 '파스텔 탭'으로 현장 드로잉 및 브이로그 제작 미션을 수행하며 창작의 꿈을 키웠다.</div>
+</div>
+</div>
+</div>
+<p>이번 원정대에는 효빈대학교 7개 학과 학생들로 구성된 **'블루 버드 멘토단'**이 동행했다. 필리핀어학과 학생은 유창한 영어로 현지 통역을 도왔고, 만화애니메이션학과 학생은 웹툰 작가를 꿈꾸는 멘티에게 현장 지도를 하는 등 전공을 살린 재능 기부가 빛을 발했다.</p>
+<p>참가 학생 김 모군(15)은 "시장님이 선물해 주신 파스텔 색깔 여권이 제 보물 1호가 됐다"며 "나중에 꼭 성공해서 저도 어려운 후배들을 돕는 사람이 되겠다"고 소감을 전했다. 이 소식을 접한 탕쿠쿠 성우 **Liyuu**는 SNS를 통해 "상하이와 도쿄라니, 저와 쿠쿠의 추억이 담긴 곳이네요. 아이들의 꿈을 응원합니다!"라는 메시지를 보내왔다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "\uc190\uc8fc \ub140\uc11d\uc774 \ubd80\ubaa8\ub3c4 \uc5c6\uc774 \uc800\ub791 \uc0ac\ub290\ub77c \uae30 \ud55c \ubc88 \ubabb \ud3b4\uace0 \uc0b4\uc558\ub294\ub370... \uc2dc\uc7a5\ub2d8 \ub355\ubd84\uc5d0 \ube44\ud589\uae30\ub3c4 \ud0c0\ubcf4\uace0 \ud638\uac15\ud558\uace0 \uc654\ub124\uc694. \uacf5\ud56d\uc5d0\uc11c \ud30c\ub780 \uce90\ub9ac\uc5b4 \ub04c\uace0 \ub098\uc624\ub294 \ubaa8\uc2b5 \ubcf4\ub2c8 \ub208\ubb3c\uc774 \uc55e\uc744 \uac00\ub9bd\ub2c8\ub2e4. \uc8fd\uc5b4\ub3c4 \uc5ec\ud55c\uc774 \uc5c6\uc2b5\ub2c8\ub2e4.", "dislike": 10, "isPunished": false, "like": 4500, "nick": "Grandma_Lee", "replies": [{"content": "\uc5b4\ub974\uc2e0, \uc190\uc790\ubd84\uc774 \uacf5\ud56d\uc5d0\uc11c \uc815\ub9d0 \uc758\uc813\ud588\uc2b5\ub2c8\ub2e4. \uc55e\uc73c\ub85c \ub354 \ud070 \uc138\uc0c1\uc744 \ubcf4\uc5ec\uc8fc\uaca0\uc2b5\ub2c8\ub2e4. \uac74\uac15\ud558\uac8c \uc624\ub798 \uc0ac\uc154\uc11c \uc190\uc790\ubd84 \uc131\uacf5\ud558\ub294 \uac70 \ubcf4\uc154\uc57c\uc8e0!", "isOfficial": true, "nick": "Mayor_Hyobin"}, {"content": "\uc640 \uc2dc\uc7a5\ub2d8 \ub313\uae00... \uc9c4\uc9dc \uac10\ub3d9\uc774\ub2e4. \uc5b4\ub974\uc2e0 \uac74\uac15\ud558\uc138\uc694!", "nick": "Citizen_A"}, {"content": "\ud560\uba38\ub2c8, \uc190\uc790\ubd84 \ubbf8\uc220 \uc7ac\ub2a5 \uc788\uc5b4\uc694. \uc800\ud76c \ubcf5\uc9c0\uad00\uc5d0\uc11c\ub3c4 \uacc4\uc18d \uc9c0\uc6d0\ud560\uac8c\uc694.", "nick": "Social_Worker"}], "time": "\ubc29\uae08 \uc804"}, {"content": "\uad6d\ubd80 \uc720\ucd9c\uc774\ub2e4! \uc2dc\ubbfc \ud608\uc138\ub85c \uc560\ub4e4 \ud574\uc678\uc5ec\ud589\uc744 \ubcf4\ub0b4? \uc774\uac8c \ubcf5\uc9c0\ub0d0 \ub0ad\ube44\uc9c0! \ub0b4\uac00 \uc9c0\ub09c 4\uc6d4 \ucd1d\uc120\uc5d0\uc11c 2.2% \ubc1b\uc740 \uac74 \ub2e4 \uc774\ub7f0 \ud3ec\ud4f0\ub9ac\uc998\uc5d0 \uc18d\uc740 \uac1c\ub3fc\uc9c0\ub4e4 \ub54c\ubb38\uc774\ub2e4! \uc0c1\ud558\uc774? \ub3c4\ucfc4? \uacf5\uc0b0\ub2f9\uc774\ub791 \uce5c\uc77c\ud30c \uc591\uc131\uc18c\ub0d0! \ub0b4\uac00 \uad6d\ud68c \uac14\uc73c\uba74 \ub2e4 \ub9c9\uc558\ub2e4!", "dislike": 5200, "isPunished": true, "like": 5, "nick": "Yoon_Jaehoon_2.2%", "replies": [{"content": "\uccad\uc18c\ub144\uc758 \uae00\ub85c\ubc8c \uacbd\ud5d8\uc740 \ube44\uc6a9 \ub300\ube44 \uc218\uc775\uc774 \ubb34\ud55c\ub300\uc778 \u0027\uc778\uc801 \uc790\ubcf8 \ud22c\uc790\u0027\uc785\ub2c8\ub2e4. \ub099\uc120\ud558\uc2dc\uace0 \ud560 \uc77c \uc5c6\uc73c\uc2dc\uba74 \uacbd\uc81c \uacf5\ubd80\ub098 \ud558\uc138\uc694.", "nick": "Economics_Prof"}, {"content": "\uae00\ub85c\ubc8c \uc2dc\ub300\uc5d0 \uc1c4\uad6d\uc815\ucc45\uc774\ub77c\ub2c8... \ud765\uc120\ub300\uc6d0\uad70 \ub0a9\uc168\ub124. 2.2%\ub3c4 \ub9ce\uc774 \ubc1b\uc73c\uc2e0 \uac81\ub2c8\ub2e4.", "nick": "History_Major"}, {"content": "\uc544\uc800\uc528... \uc120\uac70 \ub05d\ub09c \uc9c0\uac00 \uc5b8\uc820\ub370 \uc544\uc9c1\ub3c4 \uc774\ub7ec\uc138\uc694. \ucd94\ud569\ub2c8\ub2e4. \ubc1c \ub2e6\uace0 \uc8fc\ubb34\uc138\uc694.", "nick": "Citizen_B"}, {"content": "\ub2d8 \uc120\uac70\ube44\uc6a9 \ubcf4\uc804\ub3c4 \ubabb \ubc1b\uc544\uc11c \ube5a\ub354\ubbf8\ub77c\uba74\uc11c\uc694? \ub0a8 \uac71\uc815 \ub9d0\uace0 \ubcf8\uc778 \uc778\uc0dd\uc774\ub098 \ucc59\uae30\uc138\uc694.", "nick": "Fact_Check"}], "time": "3\ubd84 \uc804"}, {"content": "\uc544\uc774\ub4e4\uc774 \uc0c1\ud558\uc774 \uc640\uc774\ud0c4\uc5d0\uc11c \ucc0d\uc740 \uc0ac\uc9c4 \ubd24\uc5b4\uc694! \ub108\ubb34 \uc608\uc058\ub124\uc694. \ucfe0\ucfe0\uc758 \uace0\ud5a5\uc744 \uc88b\uc544\ud574 \uc918\uc11c \uace0\ub9c8\uc6cc\uc694! \ubaa8\ub450\uc758 \uafc8\uc774 \uc774\ub8e8\uc5b4\uc9c0\uae38! \ud83d\udc99 (\u5b50\u4f9b\u305f\u3061\u304c\u4e0a\u6d77\u306e\u5916\u7058\u3067\u64ae\u3063\u305f\u5199\u771f\u898b\u307e\u3057\u305f\uff01\u3068\u3066\u3082\u7dba\u9e97\u3067\u3059\u306d\u3002\u30af\u30af\u306e\u6545\u90f7\u3092\u597d\u304d\u306b\u306a\u3063\u3066\u304f\u308c\u3066\u3042\u308a\u304c\u3068\u3046\uff01)", "dislike": 0, "isOfficial": true, "isPunished": false, "like": 18000, "nick": "Liyuu_Official", "replies": [{"content": "\ub9ac\uc720 \uc5b8\ub2c8! \uc5b8\ub2c8 \ub355\ubd84\uc5d0 \uc6a9\uae30 \ub0c8\uc5b4\uc694. \uc800\ub3c4 \uc5b8\ub2c8\ucc98\ub7fc \uba4b\uc9c4 \uc0ac\ub78c \ub420\uac8c\uc694!", "nick": "Participant_Student"}, {"content": "Liyuu \ub2d8\uc758 \uc751\uc6d0\uc774 \uc544\uc774\ub4e4\uc5d0\uac8c \uac00\uc7a5 \ud070 \uc120\ubb3c\uc785\ub2c8\ub2e4. \uac10\uc0ac\ud569\ub2c8\ub2e4!", "isOfficial": true, "nick": "Mayor_Hyobin"}, {"content": "\u6b22\u8fce\u6765\u5230\u4e0a\u6d77! (\uc0c1\ud558\uc774\uc5d0 \uc628 \uac78 \ud658\uc601\ud574!) \uc544\uc774\ub4e4\uc774 \uc990\uac70\uc6cc\ud574\uc11c \ub2e4\ud589\uc774\ub2e4.", "nick": "Shanghai_Fan"}], "time": "10\ubd84 \uc804"}, {"content": "\uba58\ud1a0\ub85c \ub2e4\ub140\uc628 \ub300\ud559\uc0dd\uc785\ub2c8\ub2e4. \uc544\uc774\ub4e4\uc774 \ucc98\uc74c\uc5d4 \ucb48\ubf1b\uac70\ub9ac\ub2e4\uac00 \ub3c4\ucfc4\uc5d0\uc11c \ud30c\uc2a4\ud154 \ud0ed\uc73c\ub85c \uadf8\ub9bc \uadf8\ub9ac\uba74\uc11c \ub208\ube5b\uc774 \ubcc0\ud558\ub294 \uac78 \ubd24\uc5b4\uc694. \uc800\ub3c4 \uc54c\ubc14 \uc9c0\uc625\uc5d0\uc11c \ubc97\uc5b4\ub098 \uc7a5\ud559\uae08 \ubc1b\uace0 \ubcf4\ub78c\ucc2c \uc2dc\uac04 \ubcf4\ub0c8\uc2b5\ub2c8\ub2e4. \ud6a8\ube48\uc2dc \ucd5c\uace0!", "dislike": 0, "isPunished": false, "like": 3200, "nick": "Bluebird_Mentor_Kim", "replies": [{"content": "\uba58\ud1a0\ub2d8 \uace0\uc0dd\ud558\uc168\uc2b5\ub2c8\ub2e4. \uc2dc\uccad \uc778\ud134 \uc9c0\uc6d0 \uc2dc \uac00\uc0b0\uc810 \uc788\uc2b5\ub2c8\ub2e4 ^^", "nick": "HR_Dept"}, {"content": "\ud615 \uc9c4\uc9dc \uba4b\uc9c0\ub2e4. \ub098\ub3c4 \ub0b4\ub144\uc5d0 \uc9c0\uc6d0\ud574\uc57c\uc9c0. \ubd88\ud310 \ub2e6\uae30 \uc2eb\uc5b4 \u3160\u3160", "nick": "Univ_Student"}], "time": "15\ubd84 \uc804"}, {"content": "\uc774\uac70 \ub2e4 \ubcf4\uc5ec\uc8fc\uae30 \uc2dd\uc774\ub2e4! \ud759\uc218\uc800\ub4e4\ud55c\ud14c \ud0dc\ube14\ub9bf \uc918\ubd24\uc790 \uac8c\uc784\uc774\ub098 \ud558\uaca0\uc9c0! \ub098\ub3c4 \uc544\uc774\ud328\ub4dc \uc5c6\ub294\ub370 \uc5ed\ucc28\ubcc4\uc774\ub2e4! \uc2dc\uc7a5 \ubb3c\ub7ec\uac00\ub77c! \uc724\uc7ac\ud6c8 \uc758\uc6d0\ub2d8\uc774 \uc633\uc558\ub2e4!", "dislike": 4500, "isPunished": true, "like": 2, "nick": "Villain_A(IP)", "replies": [{"content": "\uc560\ub4e4\uc774 \uadf8\ub9b0 \uadf8\ub9bc \ud004\ub9ac\ud2f0 \ubcf4\uace0 \ub9d0\ud574\ub77c. \ub108\ubcf4\ub2e4 \uc0dd\uc0b0\uc801\uc774\ub2e4. \uadf8\ub9ac\uace0 \uc724\uc7ac\ud6c8\uc740 \uc758\uc6d0\uc774 \uc544\ub2c8\ub77c \ub099\uc120\uc790\ub2e4.", "nick": "Fact_Check"}, {"content": "\ubd80\ub7ec\uc6b0\uba74 \ub108\ub3c4 \ubd09\uc0ac\ud65c\ub3d9 \ud574\uc11c \uc810\uc218 \ub530\ub4e0\uac00. \ubc29\uad6c\uc11d \uc5f4\ud3ed\ub0a8. \ubd80\ubaa8\ub2d8 \ub4f1\uace8\uc774\ub098 \uadf8\ub9cc \ube7c\uba39\uc5b4\ub77c.", "nick": "Citizen_B"}, {"content": "\ub108 \ub610 \ub2e4\ubb38\ud654 \uac00\uc815 \ube44\ud558 \ubc1c\uc5b8 \ud558\ub824\ub2e4 \ucc38\uc558\uc9c0? \uc870\uc2ec\ud574\ub77c.", "nick": "Half_Blood_C"}], "time": "20\ubd84 \uc804"}, {"content": "\ud544\ub9ac\ud540\uc5b4\uacfc \uba58\ud1a0\uc785\ub2c8\ub2e4. A\uc528\uac00 \uc6b0\ub9ac \uacfc \ubb34\uc2dc\ud588\ub2e4\uba74\uc11c\uc694? \u314b\u314b \ud604\uc9c0\uc5d0\uc11c \uc601\uc5b4\ub85c \uae38 \ub6ab\uace0 \uc560\ub4e4 \ucc59\uae34 \uac74 \uc811\ub2c8\ub2e4. \ub2e4\uc591\uc131 \uc874\uc911 \ubabb \ud558\ub294 \uc0ac\ub78c\uc740 \ud3c9\uc0dd \ubc29\uad6c\uc11d\uc774 \ub531\uc774\uc8e0.", "dislike": 0, "isPunished": false, "like": 2800, "nick": "Phil_Dept_Student", "replies": [{"content": "\uba4b\uc9c0\uc2ed\ub2c8\ub2e4! \uae00\ub85c\ubc8c \uc778\uc7ac\ub294 \ubc14\ub85c \ub2f9\uc2e0! \uc601\uc5b4 \uc9c4\uc9dc \uc798\ud558\uc2dc\ub354\ub77c.", "nick": "Respect"}, {"content": "\uc790\ub124 \ub355\ubd84\uc5d0 \uc6b0\ub9ac \ud559\uacfc \uc704\uc0c1\uc774 \uc62c\ub77c\uac14\ub124. \uc218\uace0\ud588\uc5b4.", "nick": "Professor"}], "time": "25\ubd84 \uc804"}, {"content": "\ub0b4 \uc138\uae08\uc774 \uc724\uc7ac\ud6c8 \uc120\uac70 \uc720\uc138 \ucc28\ub7c9 \uae30\ub984\uac12\uc774 \uc544\ub2c8\ub77c \uc544\uc774\ub4e4 \ube44\ud589\uae30 \ud45c\ub85c \uc4f0\uc600\ub2e4\ub2c8 \ubfcc\ub4ef\ud558\ub2e4. \uc598\ub4e4\uc544, \ub354 \ub113\uc740 \uc138\uc0c1 \ubcf4\uace0 \ud6cc\ub96d\ud558\uac8c \ucee4\ub77c.", "dislike": 1, "isPunished": false, "like": 3500, "nick": "Tax_Payer", "replies": [{"content": "\ub9d0 \uc870\uc2ec\ud574\ub77c! \uc724\uc7ac\ud6c8 \ub2d8\uc740 4\ub144 \ub4a4\uc5d0 \ub3cc\uc544\uc624\uc2e0\ub2e4!", "nick": "Yoon_Supporter"}, {"content": "4\ub144 \ub4a4\uc5d0\ub3c4 2.2% \ubc1b\uc73c\uc2dc\ub77c\uace0 \uc804\ud574\ub4dc\ub824\ub77c ^^", "nick": "Tax_Payer"}], "time": "30\ubd84 \uc804"}, {"content": "\uc6d0\uc815\ub300 \ub2e4\ub140\uc628 \uc6b0\ub9ac \ubc18 \ud559\uc0dd\uc774 \uadf8\ub9bc \uc2e4\ub825\uc774 \ud655 \ub298\uc5c8\uc5b4\uc694. \ud30c\uc2a4\ud154 \ud0ed\uc73c\ub85c \uc6f9\ud230 \uadf8\ub824\uc11c \uacf5\ubaa8\uc804 \ub0b8\ub2e4\ub124\uc694. \uc2dc\uc7a5\ub2d8 \ub355\ubd84\uc5d0 \uc544\uc774 \uafc8\uc774 \uad6c\uccb4\ud654\ub418\uc5c8\uc2b5\ub2c8\ub2e4.", "dislike": 0, "isPunished": false, "like": 2100, "nick": "Art_Teacher", "replies": [{"content": "\uc624 \uae30\ub300\ub418\ub294\ub370\uc694? \ub098\uc911\uc5d0 \ud3ec\ud2b8\ud3f4\ub9ac\uc624 \ud55c\ubc88 \ubcf4\uace0 \uc2f6\ub124\uc694.", "nick": "Webtoon_PD"}], "time": "35\ubd84 \uc804"}, {"content": "\uadf8\ub9bc? \ub9cc\ud654? \uadf8\uac8c \ubc25 \uba39\uc5ec\uc8fc\ub0d0! \uae30\uc220\uc744 \ubc30\uc6cc\uc57c\uc9c0! \ub0b4\uac00 \uc2dc\uc7a5 \ub418\uba74 \ub9cc\ud654 \ub2e4 \uae08\uc9c0\uc2dc\ud0a4\uace0 \uacf5\uc7a5 \ubcf4\ub0bc \uac70\uc57c! \uc815\uc2e0\uad50\uc721\ub300 \ubd80\ud65c\uc2dc\ucf1c\uc57c \ud574!", "dislike": 3800, "isPunished": true, "like": 1, "nick": "YoonJaehoon(IP)", "replies": [{"content": "\uc9c0\uae08 K-\ucf58\ud150\uce20 \uc218\ucd9c\uc561\uc774 \uc5bc\ub9c8\uc778\uc9c0 \uc544\uc2ed\ub2c8\uae4c? \uc2dc\ub300\ucc29\uc624\uc801\uc778 \ubc1c\uc0c1 \uc880 \ubc84\ub9ac\uc138\uc694. \uadf8\ub7ec\ub2c8\uae4c \ub099\uc120\ud558\uc8e0.", "nick": "Content_Industry"}, {"content": "\uc544\uc800\uc528 \ub54c\ubb38\uc5d0 \ud22c\ud45c \uaf2d \ud574\uc57c\uaca0\ub2e4\ub294 \uc0dd\uac01\uc774 \ub4dc\ub124\uc694. \uac10\uc0ac\ud569\ub2c8\ub2e4 \ubc18\uba74\uad50\uc0ac\ub2d8.", "nick": "Student_Z"}], "time": "40\ubd84 \uc804"}, {"content": "\uc800\ub3c4 \uc9c0\uc6d0\ubc1b\uc740 \ud30c\uc2a4\ud154 \ud0ed \uc4f0\uace0 \uc788\ub294\ub370 \uc131\ub2a5 \uc9c4\uc9dc \uc88b\uc544\uc694. \uc778\uac15\ub3c4 \ub4e3\uace0 \uadf8\ub9bc\ub3c4 \uadf8\ub9ac\uace0... \uc608\uc804 \ub625\ucef4\uc774\ub791 \ube44\uad50\ubd88\uac00 \u3160\u3160 \uacf5\ubd80 \uc5f4\uc2ec\ud788 \ud560\uac8c\uc694!", "dislike": 0, "isPunished": false, "like": 1500, "nick": "Pastel_Tab_User", "replies": [{"content": "\ud654\uc774\ud305! \ub124 \uafc8\uc744 \uc751\uc6d0\ud574.", "nick": "Cheer_Up"}], "time": "45\ubd84 \uc804"}, {"content": "\ubc15\ud6a8\ube48 \uc2dc\uc7a5\ub2d8\uc758 \uacfc\uac70 \uc774\uc57c\uae30\uc5d0 \uae4a\uc740 \uac10\ub3d9\uc744 \ubc1b\uc558\uc2b5\ub2c8\ub2e4. \uc800\ud76c\uac00 \ubfcc\ub9b0 \uc791\uc740 \uc528\uc557\uc774 \uc232\uc774 \ub418\uc5c8\ub124\uc694. \ud6a8\ube48\uc2dc\uc758 \ubaa8\ub4e0 \uccad\uc18c\ub144\uc744 \uc751\uc6d0\ud569\ub2c8\ub2e4.", "dislike": 0, "isPunished": false, "like": 5000, "nick": "World_Vision", "replies": [{"content": "\uadf8\ub54c \uc8fc\uc2e0 \ub3c4\uc6c0, \ud3c9\uc0dd \uc78a\uc9c0 \uc54a\uace0 \uac1a\uc544\ub098\uac00\uaca0\uc2b5\ub2c8\ub2e4. \uac10\uc0ac\ud569\ub2c8\ub2e4.", "isOfficial": true, "nick": "Mayor_Hyobin"}], "time": "50\ubd84 \uc804"}, {"content": "\uc774\ubc88 \uc6d0\uc815\ub300 \uc9c4\ud589 \ub9e1\uc740 \uc5ec\ud589\uc0ac\uc785\ub2c8\ub2e4. \uc544\uc774\ub4e4\uc774 \uc9c8\uc11c\ub3c4 \uc798 \uc9c0\ud0a4\uace0 \ub108\ubb34 \ucc29\ud574\uc11c \uac10\ub3d9\ud588\uc2b5\ub2c8\ub2e4. \ud2b9\ud788 \uba58\ud1a0 \ub300\ud559\uc0dd\ubd84\ub4e4 \uace0\uc0dd \ub9ce\uc73c\uc168\uc5b4\uc694.", "dislike": 0, "isPunished": false, "like": 1200, "nick": "Travel_Agency", "replies": [], "time": "55\ubd84 \uc804"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

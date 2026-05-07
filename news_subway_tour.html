@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[여행] 주말엔 3호선(노란색) 타고 '철도박물관' 나들이 어때요? - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #FFCC11; text-decoration: underline; }
+        .news-nav .active { color: #FFCC11; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fef08a 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #d97706; }
+        .ranking-num { font-weight: bold; color: #d97706; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #fefce8; border: 1px solid #fef08a; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #d97706; font-weight: bold; }
+        .vote-btn.active { color: #d97706; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #d97706; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#d97706] font-bold">라이프/여행 > 주말 나들이</div>
+                <h2 class="article-title">[여행] 주말엔 3호선(노란색) 타고 '철도박물관' 나들이 어때요?</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">고나미 객원기자</span> (train_love@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.08 12:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#d97706] font-bold">창전구 팔조기지의 변신... '오타쿠와 가족 단위 관람객' 모두 잡은 핫플레이스<br>입장료 2,000원의 행복, 하지만 지갑 조심해야 할 '기적의 굿즈샵' 운영 중<br>3호선 마스코트 '박라미'의 전설적인 F학점 성적표 전시 등 이색 볼거리 가득</span></p>
+                    
+                    <div class="my-6">
+                        <img src="철도박물관_전경.png" alt="효빈 도시철도 3호선 전동차가 팔조차량사업소로 진입하는 모습" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Railway+Museum+Line+3'">
+                        <div class="img-caption">▲ 효빈 도시철도 3호선의 상징색인 노란색 전동차가 팔조차량사업소로 진입하고 있다. 기지 내 유휴 부지에 조성된 철도박물관은 최근 서브컬처 성지로 급부상하며 주말 나들이객들의 필수 코스가 되었다. (사진=효빈교통공사 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 고나미 기자] 화창한 봄날, 꽉 막힌 도로 위에서 시간을 버리는 대신 산뜻한 노란색 전동차를 타고 떠나는 '철도 여행'은 어떨까. 효빈광역시 창전구 끝자락에 위치한 팔조차량사업소와 그 안에 숨겨진 '효빈교통공사 철도박물관'이 이번 주말 최고의 가족·덕후 통합 나들이 장소로 주목받고 있다.</p>
+
+                    <p><strong>🚃 3호선 타고 떠나는 '노란색' 힐링 로드</strong></p>
+                    <p>효빈 도시철도 3호선은 효빈 남북을 잇는 핵심 노선으로, 러브라이브의 야마부키 사아야 이미지 컬러(#FFCC11)를 입어 '비타민 노선'이라는 별명을 갖고 있다. 종점인 팔조역 1번 출구와 바로 연결되는 철도박물관은 성인 기준 단돈 2,000원(효빈 패스 소지 시 1,000원)이면 입장이 가능하다.</p>
+
+                    <p><strong>🎻 '팔조(八潮)'가 부른 기적, 루이 팬들의 성지</strong></p>
+                    <p>이곳이 특별한 이유는 단순히 철도 때문만이 아니다. 뱅드림(BanG Dream!)의 밴드 Morfonica 멤버 '야시오 루이(八潮 瑠唯)'와 성씨 한자가 완벽히 일치한다는 사실이 알려지며 전국적인 '성지순례' 코스가 되었기 때문이다. 박물관 측은 매년 루이의 생일 이벤트를 열어주는 등 센스 있는 행정으로 팬들을 맞이하고 있다.</p>
+
+                    <p>박물관 내부에는 3호선 마스코트인 '박라미'와 7호선 '임세하'가 신형 열차를 구경하느라 수업을 빼먹고 받은 실제 <strong>'F학점 성적표'</strong>가 박제(?)되어 전시되어 있어 관람객들에게 큰 웃음을 선사한다. "덕질도 고집 있게 해야 성공한다"는 박효빈 시장의 철학이 엿보이는 대목이다.</p>
+
+                    <p><strong>🛍️ "입장료는 미끼"... 지갑 털어가는 굿즈의 향연</strong></p>
+                    <p>철도 동호인들 사이에서 이곳은 '무서운 곳'으로 통한다. 저렴한 입장료에 방심하고 들어갔다가, 퀄리티 높은 철도 모형과 캐릭터 한정판 굿즈가 즐비한 기념품 샵에서 월급을 탕진하기 일쑤이기 때문이다. 실제로 박물관 수익의 대부분이 입장료가 아닌 굿즈 판매에서 발생하며, 매달 완판 행진을 이어가는 <strong>'팔조역 역명판 키링'</strong>은 중고 거래 사이트에서 프리미엄까지 붙을 정도다.</p>
+
+                    <p><strong>👨‍👩‍👧‍👦 모두가 행복한 주말 나들이</strong></p>
+                    <p>효빈교통공사 최대현 사장은 "팔조기지는 단순한 철도 정비 시설을 넘어 시민들이 문화를 향유하고 즐거움을 얻는 복합 문화 공간"이라며 "아이들에게는 철도의 꿈을, 어른들에게는 건전한 취미 생활의 기쁨을 선사하겠다"고 밝혔다.</p>
+
+                    <p>이번 주말, 꽉 막힌 고송대로 대신 쾌적한 3호선 노란 열차에 몸을 싣고 팔조기지의 낭만을 만끽해 보는 것은 어떨까.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#d97706]" id="comment-count">15,842</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#d97706] text-white px-6 font-bold text-sm hover:bg-[#b45309] transition-colors" onclick="addComment(this)">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Lami_F_Duo", time: "방금 전", like: 18200, dislike: 5, isPunished: false,
+                                content: "드디어 우리 라미 성적표 보러 갑니다 ㅋㅋㅋ 3호선 타고 가면서 야마부키 사아야 노래 들으면 텐션 폭발할 듯! 굿즈샵 털 준비 완료했습니다. 제 지갑은 이미 효빈교통공사 겁니다. 💸",
+                                replies: [
+                                    { nick: "Train_Otaku", content: "F학점 성적표를 액자에 걸어두는 공기업이 있다?! ㅋㅋㅋ 마인드 진짜 힙하다" },
+                                    { nick: "Wallet_Guard", content: "굿즈샵 들어갈 때 지갑 잘 부여잡으세요... 저번 주에 갔다가 키링만 5만 원어치 삼 ㅠㅠ" },
+                                    { nick: "Saaya_Fan", content: "노란색 전동차 올 때마다 심장 떨림. 사아야 오시라면 3호선은 못 참지!!" },
+                                    { nick: "Subway_Lover", content: "라미랑 세하 컨셉 진짜 너무 귀여운 거 아님? 철도 덕후 캐릭터라니 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Payer_No1", time: "5분 전", like: 12, dislike: 48000, isPunished: true,
+                                content: "내 피 같은 세금으로 공기업 놈들이 애들 장난감이나 팔고 자빠졌네!! 철도는 교통수단이지 놀이터가 아니다!! 당장 박물관 폐쇄하고 요금이나 내려라!! 박효빈 이 포퓰리스트 시장아!!",
+                                replies: [
+                                    { nick: "Fact_Check_Bot", content: "박물관 수익이 흑자라서 오히려 공사 부채를 메우고 있다고 기사에 떡하니 나오잖아. 세금 낭비가 아니라 세금 벌어다 주는 효자다 빡통아." },
+                                    { nick: "Logic_Cutter", content: "철도공사가 철도박물관 짓는 게 왜 장난이야? 영국이나 일본 가보면 철도박물관이 지역 최고 명소인데 우물 안 개구리 ㅉㅉ" },
+                                    { nick: "Tax_Payer_No1", nickClass: "text-red-600 font-bold", content: "외국 놈들 하는 거 다 따라 하냐!! 세금 빼돌리는 수작인 거 다 안다!! 검찰 수사해라!!" },
+                                    { nick: "Sigh_Deeply", content: "이런 애들 특 : 지가 내는 세금은 편의점에서 과자 살 때 내는 부가세 100원이 전부임. 돈 벌어다 줘도 징징대네." },
+                                    { nick: "Read_The_Article", content: "난독증 환자는 제발 뉴스 댓글 좀 달지 마라 ㅋㅋㅋ '입장료는 미끼, 굿즈 판매로 흑자' 안 보이냐?" }
+                                ]
+                            },
+                            {
+                                nick: "Rui_Violin", time: "10분 전", like: 15400, dislike: 12, isPunished: false,
+                                content: "팔조(八潮)라는 지명 자체가 축복입니다... 루이 오시들은 무조건 가야 함. 저번에 갔을 때 루이 생일 카페 진짜 감동이었음. 박물관 내 카페에서 바이올린 곡만 틀어주는 거 보고 시장님이 진짜 성덕이라는 걸 다시 한번 깨달았습니다.",
+                                replies: [
+                                    { nick: "Morfonica_Fan", content: "루이 생일날 팔조역 역명판 앞에서 인증샷 찍는 건 국룰이죠 ㅋㅋㅋ 시장님 센스 쩔어" },
+                                    { nick: "Violin_Otaku", content: "카페 브금으로 Daylignt 바이올린 어레인지 나올 때 눈물 찔끔 흘렸습니다... 효빈시 사랑해요." },
+                                    { nick: "Holy_Place", content: "이름이 똑같다는 이유만으로 이렇게 성지로 떡상하다니 ㅋㅋ 스토리텔링의 힘이 대단하다 진짜." },
+                                    { nick: "Concert_Wait", content: "언젠가 효빈시에서 뱅드림 밴드들 내한 공연 했으면 좋겠다 ㅠㅠ HAF 때 제발!!" }
+                                ]
+                            },
+                            {
+                                nick: "Normal_Parent", time: "15분 전", like: 9800, dislike: 11, isPunished: false,
+                                content: "애들이 기차 좋아해서 데려갔는데, 정작 제가 더 신나서 굿즈 사고 나왔네요... ㅋㅋㅋ 3호선 노란색이라 너무 예쁘고 역마다 캐릭터 설정 보는 재미가 쏠쏠합니다. 효빈시는 진짜 심심할 틈이 없는 도시네요.",
+                                replies: [
+                                    { nick: "Dad_Of_Two", content: "공감 100% ㅋㅋㅋ 애들 철도 모형 사주러 갔다가 제 한정판 머그컵 사서 나왔습니다." },
+                                    { nick: "Family_Trip", content: "가족 단위로 가기 진짜 좋게 잘 꾸며놨더라고요. 입장료 2천 원이면 거저 아닙니까 완전." },
+                                    { nick: "Mom_Smile", content: "주차장도 넓고 3호선 타고 가도 편해서 주말 나들이로 이만한 데가 없습니다. 추천해요!" },
+                                    { nick: "Kid_Loves_Train", content: "저희 집 꼬맹이는 박라미 캐릭터 너무 좋아해서 맨날 노란 기차 타자고 난리에요 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Safety_First_Fake", time: "20분 전", like: 8, dislike: 38000, isPunished: true,
+                                content: "실제 열차 정비하는 기지 안에 일반인들 들이면 테러 위험이 얼마나 큰지 모르냐? 지하철 폭파되면 박효빈 니가 책임질래? 보안 의식 1도 없는 멍청한 행정이다!! 당장 민간인 통제해라!!",
+                                replies: [
+                                    { nick: "Staff_Member", content: "현직 효빈교통공사 보안팀입니다. 박물관 구역은 정비동과 완벽하게 물리적으로 분리되어 있고 보안 검색대 다 거쳐서 들어옵니다. 알지도 못하면서 테러 운운하지 마시죠." },
+                                    { nick: "Fear_Monger", content: "방구석에서 인터넷만 하니까 세상 모든 사람이 다 테러범으로 보이지? 정신병 초기 증상이다 병원 가라." },
+                                    { nick: "Safety_First_Fake", nickClass: "text-red-600 font-bold", content: "사고는 언제 어떻게 터질지 모르는 거다!! 안전 불감증 덩어리들!! 나중에 사고 나면 내 말 안 들은 거 후회할 거다!!" },
+                                    { nick: "Logic_Cutter_2", content: "니 논리대로면 비행기 테러 날까 봐 공항엔 어떻게 가냐? 평생 방구석에서 헬멧 쓰고 나오지 마라 ㅋㅋ" },
+                                    { nick: "Fact_Check_Bot", content: "일본 철도박물관도 다 실제 기지 부지 활용해서 만든단다. 글로벌 스탠다드 행정인데 혼자 난리네." }
+                                ]
+                            },
+                            {
+                                nick: "Line1_Fan", time: "25분 전", like: 14500, dislike: 6, isPunished: false,
+                                content: "아니 근데 기사 쓴 분 이름이 '고나미' 기자님인데 이거 1호선 마스코트 이름 아니냐?? ㅋㅋㅋㅋ 파란색 1호선 기관사가 노란색 3호선 박물관 기사 써주는 타노선 교류 훈훈하다 ㅋㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Sharp_Eyes", content: "헐 진짜네 ㅋㅋㅋㅋ 고나미 기관사님 언제 신문사 취직하셨대 ㅋㅋㅋㅋ 투잡 뛰시네" },
+                                    { nick: "Line1_Pride", content: "우리 1호선 고나미쨩 필력 보소 ㅋㅋ 철도 짬바 어디 안 가네 3호선 홍보도 찰지게 잘하네" },
+                                    { nick: "Rami_Crying", content: "라미는 F학점 받아서 징징대고 있는데 나미 선배는 기사 쓰고 있음 ㅋㅋㅋㅋ 능력치 차이 보소" },
+                                    { nick: "Cross_Promo", content: "효빈교통공사 마스코트들 세계관 통합 미쳤다 ㅋㅋㅋ 나중엔 다로나가 기사 쓰는 거 아님?" }
+                                ]
+                            },
+                            {
+                                nick: "Wallet_Empty", time: "30분 전", like: 17800, dislike: 9, isPunished: false,
+                                content: "입장료 2천 원의 행복(X) 입장료는 그물이고 본체는 굿즈샵(O) ㅋㅋㅋㅋ 2천 원 내고 들어가서 20만 원 긁고 나오는 기적의 테마파크입니다. 통장 잔고 넉넉히 채워가세요...",
+                                replies: [
+                                    { nick: "Same_Here", content: "ㄹㅇ ㅋㅋㅋ 팔조역 키링이랑 철도 모형 세트 담다 보면 10만 원 순삭임. 근데 퀄리티가 개좋아서 안 살 수가 없음." },
+                                    { nick: "Capitalism_Monster", content: "효빈교통공사가 진짜 돈 버는 법을 알아요. 오타쿠들 지갑 여는 포인트를 정확히 짚음." },
+                                    { nick: "No_Regrets", content: "내 돈 가져가서 안전하게 철도 운영해 준다면 기꺼이 바치겠습니다 ㅋㅋㅋ 모카선 영원하라!" },
+                                    { nick: "Merch_Reviewer", content: "저번 주에 산 라미 머그컵 회사에서 쓰는 중인데 다들 어디서 샀냐고 물어봄 ㅋㅋ 인싸템임." }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Japan_Warrior", time: "35분 전", like: 6, dislike: 51200, isPunished: true,
+                                content: "공기업이라는 놈들이 뱅드림인지 뭔지 쪽바리 애니메이션 캐릭터 빨아주면서 영업하는 게 정상이냐!! 효빈시가 일본 식민지야!! 매국노 박효빈은 사퇴하고 철도박물관 불태워라!!",
+                                replies: [
+                                    { nick: "Global_Citizen", content: "일본 애니 테마로 굿즈 팔아서 번 돈으로 우리 효빈시 지하철 적자 다 메우고 노인들 무임승차 비용 감당하고 있습니다 빡통아 ㅋㅋㅋ 돈 벌어오는데 왜 매국노야 애국자지." },
+                                    { nick: "Device_Checker", content: "니가 지금 타자 치고 있는 폰이나 컴퓨터 부품 다 일본산 들어갈 텐데 기기부터 부수고 독립운동 하세요 ㅋㅋㅋ" },
+                                    { nick: "Anti_Japan_Warrior", nickClass: "text-red-600 font-bold", content: "돈이면 나라 팔아먹어도 된다는 거냐!! 정신 나간 토착왜구 새끼들!! 천벌을 받을 거다!!" },
+                                    { nick: "History_Teacher", content: "문화 교류랑 역사 문제는 분리해서 볼 줄 아는 지성을 좀 기르세요. 21세기에 언제적 쇄국정책을 부르짖고 있습니까." },
+                                    { nick: "Logic_God", content: "일본 씹덕들 돈까지 쓸어 담아서 우리 지역 경제 살리는데 이게 진정한 극일(克日)이지 ㅋㅋㅋ 방구석에서 타자만 치는 니가 진정한 매국노다." }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "40분 전", like: 21300, dislike: 15, isPunished: false,
+                                content: "윤재훈이랑 그 일당들은 이런 평화로운 풍경이 싫어서 그렇게 깽판을 쳤던 거냐? ㅋㅋㅋ 구치소에서 망고나 구걸하지 말고, 이런 선진적인 문화 행정 좀 보고 배워라. 박효빈 시장님 지지율 78%가 괜히 나오는 게 아님.",
+                                replies: [
+                                    { nick: "Justice_Metro", content: "팩트 폭격 ㅋㅋㅋ 윤재훈은 평생 3호선 근처에도 못 오게 해야 함." },
+                                    { nick: "Hyobin_Pride", content: "맞음. 우리 라미 성적표 보면서 반성이나 하길. (물론 걔는 반성할 뇌가 없지만)" },
+                                    { nick: "Prison_Life", content: "윤재훈 감방에서 깍두기 국물 마시면서 이 기사 보면 피눈물 흘리겠네 ㅋㅋㅋㅋ 꺼어어어억~" },
+                                    { nick: "Vote_For_Hyo", content: "전임 시장 아들은 깡패 짓이나 하고 다니는데 현 시장은 철도 박물관 지어서 흑자 내고 있음. 비교 체험 극과 극 ㄷㄷ" }
+                                ]
+                            },
+                            {
+                                nick: "Boomer_K", time: "45분 전", like: 9, dislike: 46000, isPunished: true,
+                                content: "기차는 사람을 실어 나르는 엄숙한 교통수단이다!! 어디 신성한 철도에 만화 쪼가리를 붙이고 놀이터를 만들어!! 애들이 이거 보고 커서 무슨 큰 인물이 되겠냐!! 나라 망조가 들었다!!",
+                                replies: [
+                                    { nick: "Future_Engineer", content: "저거 보고 철도에 흥미 가져서 나중에 훌륭한 철도 공학자나 기관사가 되는 겁니다 어르신. 애들 꿈을 짓밟지 마세요." },
+                                    { nick: "Strict_Mind", content: "교통수단이 엄숙해야 한다는 법은 헌법 몇 조 몇 항에 나와 있습니까? ㅋㅋㅋ 꽉 막힌 마인드 진짜 숨 막히네." },
+                                    { nick: "Boomer_K", nickClass: "text-red-600 font-bold", content: "어디서 버르장머리 없이 어른한테 대들어!! 내가 니 애비뻘이야 임마!! 가정교육을 어떻게 받은 거야!!" },
+                                    { nick: "Sigh_Deeply", content: "논리 딸리면 무조건 나오는 필살기 '어른 공경' ㅋㅋㅋㅋ 나이 먹은 게 벼슬인 줄 아시나 본데 제발 탑골공원 가서 장기나 두세요." },
+                                    { nick: "Happy_Kid", content: "우리 애는 철도박물관 다녀와서 KTX 기장 되겠다고 책 엄청 열심히 읽습니다. 꼰대 아저씨보다 우리 애가 훨씬 훌륭한 인물이 될 듯 ^^" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        
+                        function addComment(btn) { 
+                            const input = document.getElementById('cmt-content');
+                            if(!input.value.trim()) return;
+                            const originalText = btn.innerText;
+                            btn.innerText = "등록 완료!";
+                            btn.classList.add("bg-green-600");
+                            btn.classList.remove("bg-[#d97706]", "hover:bg-[#b45309]");
+                            
+                            setTimeout(() => {
+                                btn.innerText = originalText;
+                                btn.classList.remove("bg-green-600");
+                                btn.classList.add("bg-[#d97706]", "hover:bg-[#b45309]");
+                                input.value = '';
+                            }, 1500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner" style="background-color: #fefce8; border-color: #facc15;">
+                <div>
+                    <div class="font-bold text-[#ca8a04] mb-1">이번 주말엔 효빈교통공사 철도박물관으로!</div>
+                    <div class="text-xs text-gray-700">3호선 팔조역 1번 출구에서 만나는 철도의 세계<br>라미 한정판 머그컵 재입고 완료!<br><span class="text-[#ca8a04] underline mt-1 inline-block font-bold">관람 안내 보기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

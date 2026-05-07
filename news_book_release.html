@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[신간] '효빈 도시철도의 역사'... 철도 동호인 필독서 등극 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #cce5ff 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">문화/출판 > 신간 소개</div>
+                <h2 class="article-title">[신간] '효빈 도시철도의 역사'... 철도 동호인 필독서 등극</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김독서 기자</span> (book_love@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.07 23:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈교통공사, 개통부터 서브컬처 융합까지 담은 800페이지 분량 공식 백서 출간<br>오다구 전 사장의 혜안부터 박효빈 시장의 '레일루미네' 완성까지... 파란만장한 비화 수록<br>초판 1만 부 반나절 만에 완판... 특별 부록 '마스코트 & 래핑열차 설정집'에 동호인들 환호</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈_도시철도의_역사_책_표지.png" alt="효빈 도시철도의 역사 책 표지 및 부록" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=History+of+Hyobin+Urban+Railway'">
+                        <div class="img-caption">▲ 7일 출간된 효빈교통공사의 공식 백서 '효빈 도시철도의 역사' 표지. 출간 직후 초판이 매진되며 전국 철도 동호인들과 애니메이션 팬덤 사이에서 머스트 해브 아이템으로 떠올랐다. (사진=효빈교통공사 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김독서 기자] 효빈광역시의 대동맥이자 전 세계 서브컬처 팬들의 거대한 성지인 효빈 도시철도의 어제와 오늘을 집대성한 공식 백서, 『효빈 도시철도의 역사: 안전과 문화가 그어낸 빛의 궤적』이 7일 정식 출간됐다.</p>
+
+                    <p>단순한 철도 기술 서적을 넘어 과거 시정의 억압에 맞선 시민들의 기록과 성공적인 문화 행정의 표본을 담은 이 책은, 출간 반나절 만에 초판 1만 부가 전량 매진되는 기염을 토했다.</p>
+
+                    <p>총 800페이지에 달하는 방대한 분량의 이 책은 크게 세 파트로 나뉜다. 1부에서는 1984년 1호선 개통을 시작으로 철도망이 뻗어나가던 태동기를 다루며, 서브컬처 접목의 초석을 다진 전설적인 인물 '오다구' 전 사장의 파격적인 보고서 원문이 최초로 공개됐다.</p>
+
+                    <p>2부 '어둠과 저항' 편은 독자들의 묵직한 공감을 이끌어낸다. 과거 윤대환 전 시장 시절 자행된 대중교통 축소 정책, 5호선 공사 중단 사태, 그리고 7호선(트램)을 지키기 위해 연대했던 시민들과 역무원(임세정 등)들의 치열했던 투쟁 기록이 생생하게 묘사되어 있다.</p>
+
+                    <p>가장 뜨거운 반응을 얻고 있는 부분은 단연 3부 '문화의 기적'이다. 박효빈 시장 취임 이후 완성된 고유 색상 기반의 철도 마스코트 세계관 '레일루미네(Rail-Lumine)'의 탄생 과정과, 부시로드(Bushiroad)와의 콜라보레이션인 '뱅드림!(BanG Dream!) 래핑열차' 도입 비화가 낱낱이 기록되었다.</p>
+
+                    <p>특히 부록으로 제공되는 '노선별 마스코트 & 래핑열차 공식 설정집'은 각 노선의 상징색 코드와 캐릭터 간의 유사성을 디테일하게 설명해 동호인들의 찬사를 받고 있다. 설정집에 명시된 노선별 매칭은 다음과 같다.</p>
+
+                    <ul class="list-disc pl-6 mb-6 space-y-1 text-sm bg-gray-50 p-4 rounded border border-gray-200">
+                        <li><strong>파란색(#0077DD) 1호선:</strong> 고나미 - 하나조노 타에</li>
+                        <li><strong>초록색(#00CCAA) 2호선:</strong> 하루빈 - 아오바 모카</li>
+                        <li><strong>노란색(#FFCC11) 3호선:</strong> 박라미 - 야마부키 사아야</li>
+                        <li><strong>주황색(#FF5522) 4호선:</strong> 다로나 - 토야마 카스미</li>
+                        <li><strong>빨간색(#EE0022) 5호선:</strong> 미소하 - 미타케 란</li>
+                        <li><strong>보라색(#881188) 6호선:</strong> 라세나 - 미나토 유키나</li>
+                        <li><strong>분홍색(#FF8899) 7호선:</strong> 임세정·임세하 - 치하야 아논</li>
+                        <li><strong>연보라색(#9856FF) 8호선:</strong> 유리아 - 와카미야 이브</li>
+                        <li><strong>연청색(#6677CC) 빈효선:</strong> 전노아 - 쿠라타 마시로</li>
+                    </ul>
+
+                    <p>이외에도 빈주1호선(황금색, #CFBA0F) 마스코트 박빛나, 빈주2호선(보라색, #C455F6) 김소빈, 그리고 덕주1호선(핫핑크, #FF4F91)까지 권역 전체를 아우르는 컬러 마케팅의 전모가 수록되어 있다.</p>
+
+                    <p>박효빈 시장은 추천사를 통해 "이 책은 단순한 철도의 역사가 아니라, 위기에 맞서 도시의 고유한 문화를 지켜낸 우리 효빈 시민들의 서사시"라며, "편견을 뚫고 달려온 효빈의 열차는 앞으로도 차별 없이 모든 이들의 일상을 싣고 달릴 것"이라고 밝혔다.</p>
+
+                    <p>『효빈 도시철도의 역사』는 효빈교통공사 본사 및 각 지하철역 거점 굿즈샵, 전국 주요 서점에서 구매할 수 있으며, 2쇄 발행본은 오는 주말부터 순차적으로 입고될 예정이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">14,592</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment(this)">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Train_Otaku_99", time: "방금 전", like: 21400, dislike: 12, isPunished: false,
+                                content: "와 진짜 예약 판매 열리자마자 서버 터지는 줄 ㅋㅋㅋ 겨우 1권 건졌습니다. 부록으로 주는 설정집에 색상 코드(HEX)까지 다 박혀 있는 거 보고 교통공사에 찐 광기들이 일하고 있다는 걸 다시 한번 느꼈음. 레일루미네 세계관 진짜 너무 완벽하다 ㅠㅠ",
+                                replies: [
+                                    { nick: "Design_Nerd", content: "디자인 전공자로서 색상 코드까지 공식으로 박아준 건 진짜 최고입니다. 2차 창작할 때 색깔 헤맬 일이 없어짐 ㅋㅋㅋ" },
+                                    { nick: "Scalper_Hater", content: "벌써 중고나라에 부록만 3배 가격으로 되팔이 올라옴;; 2쇄 주말에 풀린다니까 절대 되팔이 사주지 맙시다." },
+                                    { nick: "Official_Staff", content: "효빈교통공사 마케팅팀입니다. 여러분의 성원에 감사드립니다! 2쇄 넉넉하게 찍고 있으니 조금만 기다려주세요 ㅠㅠ" },
+                                    { nick: "Transit_Lover", content: "단순히 지하철 마스코트가 아니라 거의 라이트노벨급 세계관 설정이라 읽는 맛이 있네요." }
+                                ]
+                            },
+                            {
+                                nick: "Orange_Darona", time: "5분 전", like: 18950, dislike: 8, isPunished: false,
+                                content: "2부 어둠과 저항 편 읽다가 눈물 날 뻔했습니다. 윤대환이 멀쩡한 트램 부수려고 할 때 임세정 대리님이 맨몸으로 막아선 얘기는 진짜 영화로 만들어도 됨 ㅠㅠ 지금 이렇게 평화롭게 덕질하면서 4호선 주황색 열차 타고 다닐 수 있는 게 다 선배님들 덕분입니다.",
+                                replies: [
+                                    { nick: "Line7_Resident", content: "그때 7호선 공사 중단 반대 시위 나갔던 시민입니다. 책에 우리 투쟁 기록이 실렸다는 게 너무 감격스럽네요." },
+                                    { nick: "Respect_Seniors", content: "임세정 대리님 진짜 참공무원... 그분들 안 계셨으면 효빈시는 영원히 교통지옥이었을 겁니다 ㅠㅠ" },
+                                    { nick: "Book_Worm", content: "단순한 철도 백서인 줄 알았는데 2부는 무슨 정치 스릴러 소설 읽는 줄 알았음 ㅋㅋㅋ 몰입감 미침." },
+                                    { nick: "History_Buff", content: "역사를 잊은 도시에게 미래는 없습니다. 아픈 과거까지 가감 없이 기록한 게 진짜 대단하네요." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Hater", time: "12분 전", like: 15100, dislike: 24, isPunished: false,
+                                content: "윤재훈이랑 A씨 차량기지 쇠파이프 난동 사건도 실려 있나요? ㅋㅋㅋㅋㅋ 그거 없으면 철도 역사 책으로 인정 못함 ㅋㅋㅋㅋ 아 제발 그 찌질한 흑역사 영원히 박제해 줬으면 좋겠다.",
+                                replies: [
+                                    { nick: "Fact_Checker_79", content: "네, 3부 마지막 챕터에 '차량기지 무단 침입 사건'이라는 제목으로 아주 적나라하게 박제되어 있습니다. 성우들한테 팩폭 맞은 트윗까지 다 들어가 있음 ㅋㅋㅋ" },
+                                    { nick: "Metro_Master", content: "전 세계 동호인들이 보는 책에 영구 박제 ㅋㅋㅋㅋ 윤재훈 구치소에서 이 책 읽으면 혀 깨물 듯." },
+                                    { nick: "Justice_Served", content: "도망치다 잡혀서 50억 소송 맞은 것까지 확실하게 기록으로 남겨서 후세에 교훈을 줘야 함 ㅋㅋㅋ" },
+                                    { nick: "Troll_Hunter", content: "그 사건 때문에 효빈시 철도 보안 시스템이 싹 다 업그레이드됐으니까 나름 역사적 분기점은 맞음 ㅋㅋㅋㅋ 징그러운 빌런 새끼" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Payer_01", time: "18분 전", like: 11, dislike: 32500, isPunished: true,
+                                content: "공기업이 지하철이나 잘 굴릴 것이지 무슨 만화책 쪼가리 만들어서 세금 낭비하냐!! 시장이 오타쿠니까 공기업도 미쳐 돌아가는구나!! 내 피 같은 세금 돌려내라!!",
+                                replies: [
+                                    { nick: "Policy_Genius", content: "아저씨, 이 책이랑 굿즈 팔아서 남는 순이익만 수십억 원입니다. 그 돈으로 지하철 노후 에스컬레이터 고치고 낡은 화장실 리모델링하는 건데 세금 낭비라뇨? 경제 관념 좀 챙기세요." },
+                                    { nick: "Hyobin_Pride", content: "윤대환 때 뇌물로 세금 수백억 날려 먹은 건 기억 못 하고, 돈 벌어오는 효자 사업에만 거품 무시네 ㅉㅉ" },
+                                    { nick: "Read_The_Article", content: "반나절 만에 초판 1만 부 완판이라는데 한글 못 읽냐 빡통아? 돈을 벌어다 줘도 세금 낭비라고 지랄이네 ㅋㅋㅋ" },
+                                    { nick: "Finance_Bro", content: "공기업 수익 다각화 사업 중 역대급 1티어 성공 사례입니다. 타 지자체 교통공사들은 이거 벤치마킹 못해서 안달 났는데 헛소리는 ㅋㅋ" },
+                                    { nick: "Sigh_Machine", content: "이런 아재들 특징: 신문지나 고지서에 인쇄된 거 아니면 다 만화 쪼가리 세금 낭비인 줄 앎." }
+                                ]
+                            },
+                            {
+                                nick: "Green_Moca_Fan", time: "25분 전", like: 12800, dislike: 15, isPunished: false,
+                                content: "초록색 2호선 하루빈-모카 설정 매칭 진짜 소름 돋게 찰떡임 ㅋㅋㅋ 여유만만하게 굴다가 고송교차로역 헬게이트 열리면 미친 듯이 달리는 거 ㅋㅋㅋ 책에 코레일 효빈본부장 전설의 300페이지 보고서 내용도 들어있나요? 진짜 궁금함.",
+                                replies: [
+                                    { nick: "Korail_Insider", content: "네! 정시원 본부장님의 그 전설적인 '서브컬처 연계 수익 창출 방안' 300페이지 보고서가 4장에 핵심 요약본으로 실려있습니다. 진짜 현업자로서 무릎을 탁 쳤습니다." },
+                                    { nick: "Line2_Rider", content: "출퇴근 시간에 질주하는 하루빈 생각하니까 개웃기네 ㅋㅋㅋㅋ 고송교차로역에선 빵 먹을 시간도 없지 암" },
+                                    { nick: "Character_Design", content: "색상만 맞춘 게 아니라 성격이랑 노선 특성까지 완벽하게 매칭한 기획력 진짜 변태 같음 ㅋㅋㅋ (칭찬임)" },
+                                    { nick: "Anime_Fan", content: "저 책에 실린 일러스트 보려고 철도 1도 모르는데 책 샀습니다 ㅋㅋㅋ 소장 가치 100%" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Japan_Warrior", time: "30분 전", like: 5, dislike: 45000, isPunished: true,
+                                content: "공기업이라는 놈들이 일본 애니 캐릭터나 표절해서 갖다 붙이고 부끄럽지도 않냐!! 당장 책 전량 회수하고 불태워라!! 친일파 박효빈은 시장직에서 사퇴하라!!",
+                                replies: [
+                                    { nick: "Copyright_Lawyer", content: "표절이 아니라 일본 부시로드(Bushiroad) 본사랑 '정식 콜라보레이션' 계약 맺고 돈 주고 권리 사 와서 합법적으로 돈 버는 겁니다. 무식하면 제발 입 좀 닫으세요." },
+                                    { nick: "Logic_Police", content: "기본 마스코트인 하루빈, 고나미 등은 효빈시 순수 창작 캐릭터고, 래핑 열차 이벤트만 뱅드림이랑 엮어서 진행한 거란다. 기사 똑바로 안 읽냐?" },
+                                    { nick: "Economy_First", content: "니가 비하하는 그 '일본 만화' 콜라보로 전 세계 관광객들 효빈시로 몰려와서 수백억 원 외화 벌어들였다. 방구석 백수인 니가 진정한 매국노다." },
+                                    { nick: "Stop_Hating", content: "아저씨 제발 그 논리면 아저씨 폰에 들어간 일본산 부품부터 다 부수고 인터넷 끊으세요 ㅋㅋㅋ" },
+                                    { nick: "Anti_Japan_Warrior", nickClass: "text-red-600 font-bold", content: "돈이면 국가 자존심도 팔아먹는 토착왜구 새끼들!! 천벌을 받을 거다!!" }
+                                ]
+                            },
+                            {
+                                nick: "History_Teacher", time: "35분 전", like: 16500, dislike: 11, isPunished: false,
+                                content: "철도 기술 발전사부터 시민들의 교통권 투쟁, 그리고 문화 접목까지 다룬 아주 훌륭한 역사서입니다. 단순한 굿즈가 아니라 도서관에 비치되어 지역 향토 자료로 쓰이기에 충분한 사료적 가치가 높습니다.",
+                                replies: [
+                                    { nick: "Library_Librarian", content: "맞습니다. 저희 구립 도서관에도 이미 10권 희망 도서로 신청 들어와서 구매 결재 올렸습니다 ^^" },
+                                    { nick: "Urban_Planning", content: "타 지자체들도 인프라 개발 역사를 이런 식으로 재미있고 상세하게 문서화하는 작업을 본받아야 합니다. 효빈시 행정력 진짜 좋네요." },
+                                    { nick: "Rail_Student", content: "토목공학과 철도 전공 학생인데, 과거 선형 계획할 때의 비화 같은 내용이 전공 공부에 엄청 큰 도움이 됩니다." },
+                                    { nick: "Proud_Citizen", content: "교통공사가 일처리를 참 깔끔하게 잘하네요. 시민으로서 뿌듯합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Old_Teacher", time: "40분 전", like: 9, dislike: 38000, isPunished: true,
+                                content: "학생들이 공부할 생각은 안 하고 이런 만화책이나 줄 서서 사니까 나라 꼬라지가 이 모양이지!! 국영수를 파도 모자랄 시간에!! 부모들이 애들 교육을 어떻게 시키는 거냐!!",
+                                replies: [
+                                    { nick: "Top_Student", content: "저 이 책 샀고 전교 1등인데요? 남의 취미 생활에 오지랖 부릴 시간에 본인 노후나 챙기세요 어르신." },
+                                    { nick: "Future_Job", content: "아저씨, 이 '만화책' 기획하고 팔아서 돈 버는 사람들이 아저씨 평생 번 돈보다 훨씬 많이 법니다. 시대가 어느 땐데 아직도 국영수 타령이세요 ㅋㅋㅋ" },
+                                    { nick: "Change_Your_Mind", content: "도시의 교통 인프라 역사를 읽고 이해하는 게 진짜 살아있는 공부입니다. 꽉 막힌 화석 같은 마인드 진짜 징글징글하네요." },
+                                    { nick: "Mind_Your_Own", content: "이런 꼰대 분들 특징: 지 자식들한테도 이따구로 말해서 명절에 아무도 안 찾아옴." },
+                                    { nick: "Old_Teacher", nickClass: "text-red-600 font-bold", content: "어디서 버르장머리 없이 어른한테 대들어!! 내가 니들 부모뻘이야 임마!!" }
+                                ]
+                            },
+                            {
+                                nick: "Line1_Gonami_Love", time: "45분 전", like: 19200, dislike: 8, isPunished: false,
+                                content: "파란색 1호선 고나미 파트 보는데 진짜 가슴이 웅장해진다. 1984년 최초의 노선부터 지금까지 효빈을 지켜온 근본 노선 ㅠㅠ 고나미쨩은 진짜 전설이다...",
+                                replies: [
+                                    { nick: "Line1_Rider", content: "1호선의 낡았지만 든든한 짬바와 하나조노 타에의 마이페이스 조합은 진짜 완벽 그 자체입니다 ㅠㅠ" },
+                                    { nick: "Transit_History", content: "책에 80년대 초창기 1호선 전동차 흑백 사진 실려있던데 낭만 미쳤음... 고나미 디자인 변천사도 볼 수 있어서 너무 좋았어요." },
+                                    { nick: "Original_Fan", content: "효빈 교통의 척추! 파란색 1호선 영원하라!! 고나미 기관사님 충성충성!" },
+                                    { nick: "Merch_Collector", content: "부록으로 주는 고나미 아크릴 스탠드 퀄리티 개좋음. 이거 하나만으로도 책값 2만 원 뽕 뽑고도 남음 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Politics_Hater", time: "50분 전", like: 14, dislike: 41000, isPunished: true,
+                                content: "이거 다 박효빈 시장 다음 선거 출마하려고 세금으로 책 사재기해서 베스트셀러 만든 거다!! 공무원들 쥐어짜서 강매시킨 거 안 봐도 비디오네!! 조작된 인기 풀풀 난다!!",
+                                replies: [
+                                    { nick: "Publishing_Insider", content: "출판업계 종사자입니다. 전국 각지에서 개인이 1권씩 주문해서 서버가 터진 건데 그걸 어떻게 사재기로 조작합니까? 팬덤 구매력을 좆으로 보시네요 ㅋㅋㅋ" },
+                                    { nick: "Fact_Bomber", content: "선거 운동할 거면 지 자서전을 썼겠지, 800페이지짜리 철도 기술 백서를 왜 씀? 능지 수준 진짜 처참하다." },
+                                    { nick: "Defamation_Law", content: "시장과 공무원들 명예훼손 및 허위사실 유포로 캡처 땄습니다. 나중에 경찰서 가서도 '사재기'라는 증거 당당하게 제출해 보세요 ^^" },
+                                    { nick: "Touch_Grass", content: "이런 애들은 지구가 둥글다는 것도 일루미나티의 조작이라고 믿을 능지임. 모든 게 다 음모론이지 그냥 ㅉㅉ" },
+                                    { nick: "Politics_Hater", nickClass: "text-red-600 font-bold", content: "알바들 단체로 몰려와서 쉴드 치는 거 보소 ㅋㅋㅋ 나는 팩트만 말했을 뿐이다!! 진실은 밝혀진다!!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        // UI interaction functions
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        // Replacing alert with visual button feedback
+                        function addComment(btn) { 
+                            const input = document.getElementById('cmt-content');
+                            if(!input.value.trim()) return;
+                            const originalText = btn.innerText;
+                            btn.innerText = "등록 완료!";
+                            btn.classList.add("bg-green-600");
+                            btn.classList.remove("bg-[#0055aa]", "hover:bg-[#004499]");
+                            
+                            setTimeout(() => {
+                                btn.innerText = originalText;
+                                btn.classList.remove("bg-green-600");
+                                btn.classList.add("bg-[#0055aa]", "hover:bg-[#004499]");
+                                input.value = '';
+                            }, 1500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner" style="background-color: #f0f7ff; border-color: #0055aa;">
+                <div>
+                    <div class="font-bold text-[#0055aa] mb-1">효빈 도시철도의 역사 출간 기념 이벤트!</div>
+                    <div class="text-xs text-gray-700">공식 온라인 스토어 구매 시 무료 배송<br>초판 한정 부록 절대 놓치지 마세요!<br><span class="text-[#0055aa] underline mt-1 inline-block font-bold">도서 구매하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

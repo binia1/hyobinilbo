@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치/지자체] 효빈시의회, '윤대환 방지법' 만장일치 통과... "부패 고리 끊는다" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 (댓글용으로 남겨둠) */
+        .strike { text-decoration: line-through; color: #888; }
+        .drip { font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header">
+        <div id="common-header"></div>
+    </div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치 > 지자체/행정</div>
+                <h2 class="article-title">효빈시의회, '윤대환 방지법' 만장일치 통과... "부패 고리 끊는다"</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이지훈 기자</span> (local@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2023.08.17. 18:30 | 수정 2023.08.17. 18:50</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">전임 시장 일가 권력 사유화 사태 계기, 여야 모처럼 '한목소리'<br>고위 공직자 직계가족 시 발주 사업 및 수의계약 참여 전면 제한<br>직무 관련 미공개 정보 이용 투기 적발 시 징계 상향 및 환수 조치<br>박효빈 시장, "과거 관행 뿌리 뽑고 청렴한 공직 문화 확립할 것" 환영</span></p>
+                    
+                    <div class="my-6">
+                        <img src="효빈시의회.png" alt="효빈광역시의회 본회의장" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Hyobin+City+Council'">
+                        <div class="img-caption">▲ <a href="효빈광역시.html" class="text-blue-600 underline">효빈광역시</a>의회가 17일 열린 제285회 임시회 본회의에서 공직자 이해충돌 방지를 위한 '윤대환 방지법'을 통과시키고 있다. (사진=효빈시의회 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 이지훈 기자] 전임 시장 일가의 권력 사유화와 이권 개입 논란으로 진통을 겪었던 효빈광역시가 강력한 부패 방지책을 마련했다. 시의회는 여야 합의를 통해 공직자의 도덕적 해이를 원천 봉쇄하기 위한 법적 장치를 통과시켰다.</p>
+
+                    <p>효빈광역시의회는 17일 열린 제285회 임시회 본회의에서 **'효빈시 공직자 윤리 및 이해충돌 방지에 관한 조례 전부개정안'**, 이른바 **'윤대환 방지법'**을 재석 의원 전원 찬성으로 가결했다고 밝혔다.</p>
+
+                    <p>이번 조례안은 지난해 지방선거 이후 불거진 전임 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 시장 일가의 시정 개입 의혹을 해소하고, 공직 사회의 투명성을 회복하기 위해 발의되었다. 주요 핵심 조항으로는 ▲시장 및 고위 공직자 직계존비속의 시 발주 사업 참여 금지 ▲직무상 미공개 정보를 이용한 사적 이익 취득 시 가중 처벌 ▲공직자 가족의 채용 및 수의계약 체결 제한 등이 포함되었다.</p>
+
+                    <p>특히 윤 전 시장의 친인척인 윤재훈 씨 등이 연루된 '부정축재 의혹'과 유사한 사태가 재발하지 않도록, 공직자 본인뿐만 아니라 **가족의 재산 형성 과정에 대한 소명 절차를 의무화하는 고강도 규정**이 신설되었다.</p>
+
+                    <p>시의회 내부에서는 이번 조례안 통과를 두고 "시민들의 신뢰를 회복하기 위한 최소한의 안전장치"라는 평가가 나온다. 당초 여야 간의 세부 조항 이견이 있었으나, '깨끗한 시정'을 바라는 시민 여론이 거세지자 여야가 전격 합의하며 만장일치라는 결과를 이끌어냈다.</p>
+
+                    <div class="my-6">
+                        <img src="박효빈.png" alt="박효빈 효빈광역시장" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Mayor+Park+Hyo-bin'">
+                        <div class="img-caption">▲ 조례안 가결 직후 환영 성명을 발표하고 있는 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈광역시장.</div>
+                    </div>
+
+                    <p><a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈시장은 조례안 가결 직후 성명을 통해 환영의 뜻을 밝혔다. 박 시장은 "이번 '윤대환 방지법' 통과는 우리 효빈시가 과거의 어두운 부패 고리를 완전히 끊어내고 투명하고 공정한 행정 도시로 거듭나는 전환점이 될 것"이라며, **"과거의 잘못된 관행을 완전히 뿌리 뽑고, 오직 시민만을 바라보는 청렴한 공직 문화를 확립하겠다"**고 강조했다.</p>
+
+                    <p>한편, 이번 조례안은 공포 즉시 시행될 예정이며, 효빈시는 조만간 외부 전문가가 참여하는 '공직윤리특별위원회'를 구성해 조례의 실효성을 높이기 위한 후속 조치에 본격 착수할 계획이다. 감사원의 효빈시 전임 집행부 특혜 의혹 감사와 맞물려, 공직사회의 대대적인 쇄신 작업에 속도가 붙을 전망이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">18,342</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Clean_Hyobin", time: "방금 전", like: 31200, dislike: 15, isPunished: false,
+                                content: "와 여야 만장일치 통과라니 ㄷㄷ 윤대환 일가가 얼마나 해먹었으면 야당도 손절하고 바로 통과시키냐. 박효빈 시장님 취임하고 진짜 효빈시 행정 폼 미쳤다. 이참에 적폐청산 가즈아!",
+                                replies: [
+                                    { nick: "Citizen_B", content: "진짜 전임 시장 시절에는 무슨 사업만 하면 다 윤재훈 측근 수의계약이었음. 이제 좀 정상적인 도시가 되려나 보네요 ㅠㅠ" },
+                                    { nick: "Tax_Payer", content: "내 세금이 저놈들 주머니로 들어간 거 생각하면 아직도 뒷목이 뻐근함." },
+                                    { nickClass: "text-red-600 font-bold", nick: "True_Hyobin_Citizen", content: "이게 다 윤대환 전 시장님이 효빈시 인프라 탄탄하게 깔아놓은 덕분인데 배은망덕하네요 ㅉㅉ 효빈시 발전은 우파가 다 해놨습니다!" },
+                                    { nick: "Subway_Rider", content: "↑ 인프라(즈그 집 앞 상가로만 연결되는 <span class='strike'>비리</span> 도로) ㅋㅋㅋㅋ 양심 ㅇㄷ?" },
+                                    { nick: "Hyobin_Love", content: "진짜 박효빈 시장님 행정력 하나는 ㅇㅈ. 취임하자마자 적폐 청산 속도 미쳤음. 앓던 이가 다 빠진 기분이다." }
+                                ]
+                            },
+                            {
+                                nick: "Justice_Sword", time: "5분 전", like: 25400, dislike: 22, isPunished: false,
+                                content: "가족 재산 형성 과정 소명 의무화 ㅋㅋㅋㅋ 이거 진짜 핵심이다. 맨날 본인 이름 말고 사돈의 팔촌 이름으로 땅 투기하고 상가 사들이던 거 이제 싹 다 걸리겠네. 속이 다 시원함 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Estate_Watcher", content: "청엽구청 쪽에 땅값 오르기 직전에 귀신같이 땅 사들인 그 분들도 이제 밤잠 좀 설치겠네여 ^^" },
+                                    { nickClass: "text-red-600 font-bold", nick: "Lawyer_Kim", content: "헌법상 보장된 사유재산권 침해이자 연좌제 성격을 띤 위헌적 조례입니다. 곧 헌법소원 당하고 휴지조각 될 겁니다. 좌파들의 선동에 놀아나지 마십시오." },
+                                    { nick: "Fact_Check", content: "↑ 연좌제 뜻 모르냐? 범죄 저지른 거 소명하라는 게 무슨 연좌제야 ㅋㅋㅋ 찔리시나 봐요? 너 윤재훈 친척이지?" },
+                                    { nick: "Anti_Corruption", content: "이번 조례안 핵심이 이거지. 차명으로 돌려놓은 거 다 찾아내서 싹 다 환수하고 국고로 귀속시켜야 됨." },
+                                    { nick: "Youth_01", content: "와 내 집 마련은 꿈도 못 꾸고 원룸 전전하는데 저것들은 정보 빼돌려서 수십억 해먹었네... 다 토해내라 진짜 ㅡㅡ" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Supporter_01", time: "12분 전", like: 12, dislike: 58000, isPunished: true,
+                                content: "이것은 명백한 정치 보복입니다!! 전임 시장님의 위대한 업적을 깎아내리고 표적 수사하기 위한 악법입니다!! 당장 조례안 통과를 철회하십시오!!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "위대한 업적(측근 배불리기, 친인척 수의계약 싹쓸이, 공무원 사유화) ㅋㅋㅋㅋ 보복이 아니라 정상화입니다 아저씨. 헛소리 그만하시고 <a href='빈효선광역전철.html' style='color:#6677CC; font-weight:bold;'>연청색 빈효선</a> 타고 저 멀리 가세요." },
+                                    { nick: "Hyobin_Youth", content: "가족회사로 시 예산 수십억 빨아먹은 게 업적이면 나도 시장 할래 ㅋㅋㅋㅋ 양심 어디?" },
+                                    { nickClass: "text-red-600 font-bold", nick: "Free_Isaiah", content: "맞습니다!! 박효빈 시장의 독재 행정에 맞서 시민들이 일어서야 합니다!! 윤대환 시장님 시절이 훨씬 살기 좋고 자유로웠습니다!!" },
+                                    { nick: "Anti_Villain", content: "↑ 이차야 또 왔냐 ㅋㅋㅋㅋ 니가 찬양하던 시장님 감빵 가게 생겼는데 아직도 정신 못 차렸네. 넌 진짜 레전드다 ㅋㅋㅋㅋ" },
+                                    { nick: "Passerby", content: "살기 좋았겠지 ㅋㅋㅋ 끼리끼리 수의계약 해먹으면서 지들 주머니만 두둑해졌으니까 ㅋㅋㅋ 진짜 양심에 털 난 인간들 웩" },
+                                    { nickClass: "text-red-600 font-bold", nick: "Yoon_Fan_Club", content: "효빈시의 발전은 온전히 윤 시장님의 혜안 덕분입니다! 좌파 포퓰리즘 시장은 당장 사퇴하라!!" }
+                                ]
+                            },
+                            {
+                                nick: "Future_Hyobin", time: "20분 전", like: 18900, dislike: 8, isPunished: false,
+                                content: "공직윤리특별위원회 외부 전문가로 빡세게 구성해야 함. 조례만 번지르르하게 만들어놓고 유명무실해지는 경우 많은데, 박효빈 시장님 성격상 대충 안 넘어갈 듯. 이번 기회에 부패 찌꺼기들 싹 다 쳐냅시다.",
+                                replies: [
+                                    { nick: "Admin_Watcher", content: "맞아요. 제 식구 감싸기 못하게 시민단체나 완전 외부 인사로 꽉 채워야 함. 공무원들끼리 위원회 만들면 100% 무죄 뜸." },
+                                    { nick: "Hopeful_Citizen", content: "박효빈 시장님 성격상 대충 어물쩍 넘어가는 꼴은 절대 못 보실 듯. 멘토링 예산 삭감 때도 화끈하게 패시던 분인데 기대해 봅니다." },
+                                    { nickClass: "text-red-600 font-bold", nick: "Anonymous_Official", content: "이런 식으로 공무원들 잠재적 범죄자 취급하면서 사기 다 꺾어놓고 무슨 행정이 제대로 돌아가겠습니까? 행정을 마비시키는 포퓰리즘 조례입니다." },
+                                    { nick: "Civil_Servant_B", content: "↑ 너 청엽구청 건축과지? ㅋㅋㅋㅋ 사기는 니들이 뒷돈 받아먹다 걸릴까봐 떨어지는 거고, 일선에서 뼈 빠지게 일하는 9급 정상 공무원들은 쌍수 들고 환영한다 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Subway_Fan", time: "30분 전", like: 14500, dislike: 5, isPunished: false,
+                                content: "부패 고리 끊어낸 예산으로 우리 1호선이랑 2호선 전동차나 좀 팍팍 바꿔주십쇼 시장님!! 투명한 행정 응원합니다!!",
+                                replies: [
+                                    { nick: "Train_Otaku", content: "<span style='color:#0077DD; font-weight:bold;'>파란색 1호선</span> 고나미 랩핑 열차나 더 늘려주세요 시장님!! 인형 굿즈도 좀 팔아주고!!" },
+                                    { nick: "Commuter", content: "진짜 2호선 초록색(<span style='color:#00CCAA; font-weight:bold;'>#00CCAA</span>) 하루빈 똥차들 덜컹거리고 에어컨도 시원찮아서 죽겠음 ㅠㅠ 환수한 돈으로 제발 신형 열차 좀 사자." },
+                                    { nickClass: "text-red-600 font-bold", nick: "Bus_Maniac", content: "지하철에 세금 낭비 그만하고 두청운수 지원금이나 대폭 늘려라!! 대중교통의 핏줄은 버스다!! 버스가 미래다!!" },
+                                    { nick: "Subway_Lover", content: "↑ 어그로 등판 ㅋㅋㅋ 두청운수 똥색 버스에 75명 꾸역꾸역 짐짝처럼 타고 다니던 흑역사 시절이 그립냐? 플라스틱 시트에 엉덩이 깨져봐야 정신 차리지 ㅉㅉ 제발 입 좀 닫아" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Free") || reply.nick.includes("Yoon") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈광역시 공직비리 익명 신고센터</div>
+                    <div class="text-xs">깨끗한 시정을 위한 시민 여러분의 제보<br>철저한 익명 보장, 최대 10억 포상금<br><span class="text-[#0055aa] underline mt-1 inline-block">제보하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

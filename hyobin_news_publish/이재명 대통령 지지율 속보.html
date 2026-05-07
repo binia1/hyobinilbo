@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>이재명 대통령 국정 지지율 65% '고공행진'… 국민의힘 19% 출범 이래 '최저' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">이재명 대통령 국정 지지율 65% '고공행진'… 국민의힘 19% 출범 이래 '최저'</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">정치부 여론조사팀 강기자</span><br>
+                        <span class="text-xs text-gray-400">2026.03.27</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#0055aa] font-bold">한국갤럽 3월 4주차 조사… 긍정 65%, 부정 24% 기록<br/>부동산 정책 긍정률 51% 기록하며 13년 만에 절반 넘겨<br/>보수 텃밭 TK·PK에서도 긍정 우세… 국민의힘 지지율은 10%대로 추락</span></p>
+<div class="my-6">
+<img alt="" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=President+Lee+Jae-myung'" src="이미지/이재명대통령.png"/>
+<div class="img-caption">▲ <a class="text-blue-600 underline" href="이재명.html">이재명</a> 대통령이 용산 대통령실에서 국무회의를 주재하며 발언하고 있다. 취임 9개월 차를 맞은 이 대통령의 국정 지지율이 65%를 기록, 역대 대통령 동기 대비 세 번째로 높은 수치를 달성했다. (사진=효빈일보 사진부)</div>
+</div>
+<p>[효빈일보 = 강기자] <a class="text-blue-600 underline" href="대통령선거.html">조기 대선</a>으로 출범한 이재명 대통령의 직무 수행 지지율이 65%를 기록하며 압도적인 국정 동력을 과시하고 있는 것으로 나타났다. 반면 제1야당인 국민의힘 지지율은 당명 변경 이후 처음으로 10%대로 추락하며 최저치를 경신했다.</p>
+<p>여론조사 전문기관 <a class="text-blue-600 underline" href="한국갤럽.html">한국갤럽</a>이 27일 발표한 2026년 3월 4주차(24~26일) 정기 여론조사 결과에 따르면, 이 대통령이 직무를 '잘하고 있다'는 긍정 평가는 직전 조사(3월 3주차 67%) 대비 2%포인트 하락한 <strong>65%</strong>로 집계됐다. '잘못하고 있다'는 부정 평가는 전주 대비 1%포인트 하락한 24%였으며, 그 외 10%는 의견을 유보했다.</p>
+ 데이터 표 1: 대통령 직무 수행 평가 (생략 금지 지시 준수) 
+<table class="data-table">
+<caption>[표 1] 이재명 대통령 직무 수행 평가 (단위: %)</caption>
+<thead>
+<tr>
+<th width="20%">조사 기간</th>
+<th style="color: #e11d48;" width="26%">긍정 평가 (잘하고 있다)</th>
+<th style="color: #0055aa;" width="26%">부정 평가 (잘못하고 있다)</th>
+<th width="28%">어느 쪽도 아님 / 모름 / 무응답</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3월 3주차</td>
+<td style="color: #e11d48; font-weight: bold;">67</td>
+<td style="color: #0055aa; font-weight: bold;">25</td>
+<td>8</td>
+</tr>
+<tr style="background-color: #f1f8ff;">
+<td style="font-weight: bold;">3월 4주차 (이번주)</td>
+<td style="color: #e11d48; font-weight: bold; font-size: 18px;">65</td>
+<td style="color: #0055aa; font-weight: bold; font-size: 18px;">24</td>
+<td style="font-weight: bold;">10</td>
+</tr>
+</tbody>
+</table>
+<p>이번 조사에서 가장 눈에 띄는 점은 <strong>부동산 정책 긍정률</strong>이다. 응답자의 51%가 현 정부의 부동산 정책을 긍정적으로 평가했는데, 이는 무려 13년 만에 50%를 넘긴 수치다. 또한 전통적인 보수 텃밭인 대구·경북(TK)과 부산·울산·경남(PK)에서도 긍정 평가가 각각 52%, 57%로 우세했다.</p>
+<p>긍정 평가 이유로는 <strong>'경제/민생'(17%)</strong>과 <strong>'전반적으로 잘한다'(10%)</strong>, '외교' 및 '부동산 정책'(각 8%)이 최상위권에 꼽혔다. 부정 평가 이유로는 '경제/민생/고환율'(17%), '외교' 및 '부동산 정책'(각 7%), '도덕성'(7%), '자격 미달'(7%) 등이 언급됐다.</p>
+ 데이터 표 2: 긍정/부정 평가 이유 (생략 금지 지시 준수) 
+<table class="data-table">
+<caption>[표 2] 이재명 대통령 직무 수행 긍정/부정 평가 이유 (자유응답, 상위 4개)</caption>
+<thead>
+<tr>
+<th colspan="2" width="50%">긍정 평가 이유</th>
+<th colspan="2" width="50%">부정 평가 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="font-weight: bold; color: #e11d48;">경제/민생</td>
+<td>17%</td>
+<td style="font-weight: bold; color: #0055aa;">경제/민생/고환율</td>
+<td>17%</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #e11d48;">전반적으로 잘한다</td>
+<td>10%</td>
+<td style="font-weight: bold; color: #0055aa;">외교 및 부동산 정책</td>
+<td>7%</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #e11d48;">외교</td>
+<td>8%</td>
+<td style="font-weight: bold; color: #0055aa;">도덕성</td>
+<td>7%</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #e11d48;">부동산 정책</td>
+<td>8%</td>
+<td style="font-weight: bold; color: #0055aa;">자격 미달</td>
+<td>7%</td>
+</tr>
+</tbody>
+</table>
+<div class="my-6">
+<img alt="" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Gallup+Korea+Poll+Results'" src="이미지/갤럽조사결과.png"/>
+<div class="img-caption">▲ 정당 지지도 조사 결과, 더불어민주당이 46%로 선두를 달리고 있다. 반면 국민의힘은 19%를 기록, 당명 변경 이후 사상 최저치로 추락했다.</div>
+</div>
+<p>정당 지지도 조사에서는 명암이 극명하게 갈렸다. <strong><a class="text-blue-600 underline" href="더불어민주당.html">더불어민주당</a>이 46%</strong>를 기록하며 선두를 질주한 반면, 제1야당인 <strong><a class="text-blue-600 underline" href="국민의힘.html">국민의힘</a>은 19%</strong>에 머물렀다. 이는 2020년 '미래통합당'에서 '국민의힘'으로 당명을 바꾼 이후 최저치 기록이다.</p>
+<p>이어 <a class="text-blue-600 underline" href="개혁신당.html">개혁신당</a>이 3%, <a class="text-blue-600 underline" href="조국혁신당.html">조국혁신당</a> 2%, 진보당 1% 순이었으며, 지지하는 정당이 없는 무당층은 27%로 조사됐다.</p>
+ 데이터 표 3: 정당 지지도 (생략 금지 지시 준수) 
+<table class="data-table" style="margin-bottom: 20px;">
+<caption>[표 3] 주요 정당 지지도 (단위: %)</caption>
+<thead>
+<tr>
+<th width="50%">정당명</th>
+<th width="50%">지지도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="font-weight: bold; color: #0055aa;">더불어민주당</td>
+<td style="font-weight: bold; font-size: 16px;">46</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #e11d48;">국민의힘</td>
+<td style="font-weight: bold; font-size: 16px; color: #e11d48;">19 (당명 변경 후 최저)</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #FF5522;">개혁신당</td>
+<td>3</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #0077B6;">조국혁신당</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #888;">무당층 (어느 정당도 지지하지 않음)</td>
+<td>27</td>
+</tr>
+</tbody>
+</table>
+<p>정치권 전문가들은 다가오는 6월 <a class="text-blue-600 underline" href="지방선거.html">지방선거</a>를 앞두고 '샤이 보수' 층이 사실상 지지를 철회하고 무당층(27%)으로 대거 숨어든 결과라고 분석하고 있다. 효빈광역시와 같이 여당 소속 단체장(<a class="text-blue-600 underline" href="박효빈.html">박효빈</a> 시장)이 포진한 지역에서는 이러한 격차가 지방선거판을 완전히 흔들 것으로 예상된다.</p>
+<p style="font-size: 12px; color: #888; margin-top: 10px;">* 이번 조사는 한국갤럽이 2026년 3월 24~26일 전국 만 18세 이상 성인 1,000명을 대상으로 무선전화 가상번호 무작위 추출 방식으로 진행했다. 표본오차는 95% 신뢰수준에서 ±3.1%p다. 자세한 내용은 중앙선거여론조사심의위원회 홈페이지를 참조.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "\uc640 \uc9c0\uc9c0\uc728 65% \u3137\u3137 \uc5ed\ub300\uae09\uc774\ub124. \uc81c\uc77c \ub180\ub77c\uc6b4 \uac74 \uad6d\ud798 19%\uc784 \u314b\u314b\u314b\u314b 20% \ubcbd \uae68\uc9c0\uace0 \ub4dc\ub514\uc5b4 10%\ub300\ub85c \ucd94\ub77d\ud588\ub124. \uc624\ub298 \uc544\uce68 \uc5f0\uccad\uc0c9 \u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #6677CC;\u0027\u003e\ube48\ud6a8\uc120\uad11\uc5ed\uc804\ucca0\u003c/span\u003e \ud0c0\uba74\uc11c \ub274\uc2a4 \ubcf4\ub294\ub370 \uc9c4\uc2ec \ube75 \ud130\uc9d0. TK\uc5d0\uc11c\ub3c4 \ubbfc\uc8fc\ub2f9 \uae0d\uc815 \uc6b0\uc138\uba74 \uc0ac\uc2e4\uc0c1 \ubcf4\uc218 \uba78\ub9dd \uc120\uace0 \uc544\ub2d8?", "dislike": 430, "isPunished": false, "like": 52100, "nick": "Fact_Assassination", "replies": [{"content": "\ub9de\uc544\uc694 \uc544\uae4c \ud30c\ub780\uc0c9 \uad11\uc5ed\ubc84\uc2a4(\u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #485EC6;\u0027\u003e#485EC6\u003c/span\u003e)\uc5d0\uc11c\ub3c4 \ub2e4\ub4e4 \uadf8 \uc598\uae30\ud568 \u314b\u314b\u314b \uc9c4\uc9dc \uc9c0\ubc29\uc120\uac70 \uad6d\ud798 \uc804\uba78\uac01\uc774\ub2e4.", "nick": "Hyobin_Citizen"}, {"content": "\ubd80\ub3d9\uc0b0 \uc815\ucc45 50% \ub118\uae34 \uac70 13\ub144 \ub9cc\uc774\ub77c\ub294 \uac8c \ub808\uc804\ub4dc. \uc77c \uc798\ud558\ub2c8\uae4c \uc9c0\uc9c0\uc728 \uc624\ub974\ub294 \uac74 \ub2f9\uc5f0\ud55c \uac70\uc784.", "nick": "Economics_101"}], "time": "\ubc29\uae08 \uc804"}, {"content": "\uc194\uc9c1\ud788 \ub300\uc120 \ub54c \uc774\uc7ac\uba85 \uc548 \ucc0d\uc5c8\ub294\ub370, \uc8fc\uc2dd \uc0b4\ub9ac\uace0 \uc9d1\uac12 \uc548\uc815\ud654\ub418\ub294 \uac70 \ubcf4\ub2c8\uae4c \uc77c \uc798\ud558\ub294 \uac74 \uc778\uc815\ud574\uc57c\uaca0\ub2e4. \uc8fc\ud669\uc0c9 \u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #FF5522;\u0027\u003e4\ud638\uc120\u003c/span\u003e \ud0c0\uace0 \ud1f4\uadfc\ud558\uba74\uc11c \ubcf4\uc218 \uc720\ud29c\ube0c\ub9cc \ubcf4\ub358 \uc6b0\ub9ac \ubd80\uc7a5\ub2d8\ub3c4 \uc694\uc0c8\ub294 \uc8fc\uc2dd \uc571\ub9cc \ubcf4\uc2ec \u314b\u314b\u314b 65% \ub098\uc62c \ub9cc\ud558\ub124.", "dislike": 250, "isPunished": false, "like": 31200, "nick": "Middle_Voter", "replies": [{"content": "\uc778\uc815\ud560 \uac74 \uc778\uc815\ud558\ub294 \uac8c \uc9c4\uc9dc \uc9c0\uc131\uc778\uc785\ub2c8\ub2e4. \ub9f9\ubaa9\uc801 \uc9c0\uc9c0\ub098 \ube44\ub09c\ubcf4\ub2e4 \ud6e8\uc52c \uba4b\uc9c0\uc2dc\ub124\uc694.", "nick": "Intellectual"}, {"content": "\uc800\ub3c4 \uad6d\ud798 \uc9c0\uc9c0\uc790\uc600\ub294\ub370 \uc774\ubc88 \uc9c0\uc120\uc740 \ubc15\ud6a8\ube48 \uc2dc\uc7a5\ub2d8 \ucc0d\uc73c\ub824\uace0\uc694. \ub2a5\ub825\uc774 \ucd5c\uace0\uc784.", "nick": "Hyobin_Local"}], "time": "1\ubd84 \uc804"}, {"content": "\uc774\uac70 \ub2e4 \uc88c\ube68 \uac24\ub7fd\uc774 \uc5ec\ub860\uc870\uc0ac \uc870\uc791\ud55c \uac70\ub2e4!!!! \ub2f9\uc7a5 \ud55c\uad6d\uac24\ub7fd \uc555\uc218\uc218\uc0c9\ud574\ub77c!!!! \ub098\ub77c \uc0b4\ub9bc \uac70\ub35c\ub0b4\uace0 \ube5a\ub0b4\uc11c \ud37c\uc8fc\ub294 \uc774\uc7ac\uba85\uc744 65%\ub098 \uc9c0\uc9c0\ud55c\ub2e4\uace0??? \uac1c\ub3fc\uc9c0 \uad6d\ubbfc\ub4e4\uc774 \ub208\uc55e\uc5d0 \ub3c8 \uc880 \uc950\uc5b4\uc8fc\ub2c8\uae4c \ud5e4\ubc8c\ub808 \ud574\uac00\uc9c0\uace0 \ub098\ub77c \ub9dd\ud558\ub294 \uc904\ub3c4 \ubaa8\ub974\ub124 \ucead\ud264!!!! \uad6d\ubbfc\uc758\ud798\uc774 19%\ub77c\ub294 \uac74 \ubc31\ud37c\uc13c\ud2b8 \uc870\uc791\uc774\ub2e4!!!!", "dislike": 48900, "isPunished": true, "like": 140, "nick": "True_Conservative(IP: 14.33.*.*)", "replies": [{"content": "\ud560\ubc30\uc694... TK PK\uc5d0\uc11c\ub3c4 50% \ub118\uac8c \uc798\ud55c\ub2e4\uace0 \ud558\ub294\ub370 \uc870\uc791\ubb34\uc0c8 \uc9d3 \uc880 \uadf8\ub9cc\ud558\uc138\uc694. \ubd80\ub044\ub7fd\uc9c0\ub3c4 \uc54a\ub098 \u314b\u314b\u314b", "nick": "Fact_Check"}, {"content": "\uacc4\uc5c4\ub839 \ub0b4\ub9ac\ub358 \ub2f9\uc774 \uc544\uc9c1\ub3c4 19%\ub098 \ub098\uc624\ub294 \uac8c \ub354 \uc2e0\uae30\ud568. \ucf58\ud06c\ub9ac\ud2b8 \uc9c4\uc9dc \uc9d5\ud558\ub2e4.", "nick": "Stop_Delusion"}, {"content": "\uc5b4\ub974\uc2e0, \ud604\uc2e4 \ubd80\uc815 \ub2e8\uacc4\uc2dc\uad70\uc694. \ube68\uac04\uc0c9 \u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #EE0022;\u0027\u003e5\ud638\uc120\u003c/span\u003e \ud0c0\uace0 \ubcd1\uc6d0 \uac00\uc11c \ud608\uc555\uc57d \uc880 \ud0c0 \ub4dc\uc2ed\uc1fc. \ud654\ubcd1 \ub0a9\ub2c8\ub2e4.", "nick": "Mental_Care"}], "time": "2\ubd84 \uc804"}, {"content": "\uc774\uc7ac\uba85\uc774 \ub300\ud1b5\ub839 \ub418\uace0 \ub098\uc11c \ub0b4 \ub9c8\uc774\ub108\uc2a4 \uacc4\uc88c\uac00 \ub4dc\ub514\uc5b4 \ube68\uac04\ubd88\ub85c \ubcc0\ud588\ub2e4. \uc774\uac83\ub9cc\uc73c\ub85c\ub3c4 \ub09c \ud3c9\uc0dd \uc9c0\uc9c0\ud55c\ub2e4. \uae08\ud22c\uc138 \ud3d0\uc9c0\ud558\uace0 \uc0c1\ubc95 \uac1c\uc815\ud558\ub2c8\uae4c \uc678\uad6d\uc778\ub4e4 \uc4f8\uc5b4 \ub2f4\ub294 \uac70 \ubcf4\uc18c. \ubcf4\uc218 \uc815\uad8c\uc740 \ub9e8\ub0a0 \uae30\uc5c5 \ud3b8\ub9cc \ub4e4\ub354\ub2c8 \uacb0\uad6d \uac1c\ubbf8\ub4e4 \uc0b4\ub9b0 \uac74 \ubbfc\uc8fc\ub2f9\uc774\ub124.", "dislike": 310, "like": 28500, "nick": "KOSPI_ToTheMoon", "replies": [{"content": "\u3139\u3147 \uc8fc\uc2dd\uc7c1\uc774\ub4e4\uc740 \uae54 \uc218\uac00 \uc5c6\uc74c \u314b\u314b\u314b \ub0b4 \uc9c0\uac11 \ube75\ube75\ud558\uac8c \ud574\uc8fc\ub294\ub370 \ub204\uac00 \uc2eb\uc5b4\ud568?", "nick": "Stock_Ant"}, {"content": "\ubcf4\uc218\ub2f9\uc740 \uc785\uc73c\ub85c\ub9cc \uc2dc\uc7a5 \uce5c\ud654\uc801\uc774\uace0 \ud589\ub3d9\uc740 \uae30\ub4dd\uad8c \uce5c\ud654\uc801\uc774\uc5c8\uc9c0. \uc0c1\ubc95 \uac1c\uc815 \uacb0\uc0ac\ubc18\ub300\ud558\ub358 \uac70 \uc78a\uc9c0 \ub9d0\uc790.", "nick": "Fact_Assault"}], "time": "3\ubd84 \uc804"}, {"content": "\uad6d\ud798 19% \ucc0d\uc740 \uac70 \ubcf4\ub2c8\uae4c \uc9c4\uc9dc \ub05d\ub0ac\uad6c\ub098 \uc2f6\uc74c. \uc0e4\uc774 \ubcf4\uc218\uac00 \uc544\ub2c8\ub77c \uadf8\ub0e5 \uc250\uc784(Shame) \ubcf4\uc218 \ub41c \ub4ef \u314b\u314b\u314b \ubd80\ub044\ub7ec\uc6cc\uc11c \uad6d\ud798 \uc9c0\uc9c0\ud55c\ub2e4\uace0 \ub9d0\ub3c4 \ubabb \ud558\uace0 \ub2e4 \ubb34\ub2f9\uce35(27%)\uc73c\ub85c \ub3c4\ub9dd\uac04 \uac70 \uc544\ub2d8? 6\uc6d4 \uc9c0\uc120 \ud22c\ud45c\uc728\ub9cc \ub192\uc73c\uba74 \uc644\ubcbd\ud558\uac8c \uc2ec\ud310 \uac00\ub2a5\ud568.", "dislike": 210, "like": 35500, "nick": "Politics_Watcher", "replies": [{"content": "\uc724\ub300\ud658 \uc0ac\ud0dc \ub54c\ubd80\ud130 \uc774\ubbf8 \ubcf4\uc218\ub294 \ub3c4\ub355\uc131 \uc783\uace0 \ub098\ub77d \uac04 \uac70\uc784 \u314b\u314b\u314b \uc790\uc5c5\uc790\ub4dd.", "nick": "Big_Picture"}, {"content": "\uc9c0\ubc29\uc120\uac70 \ud22c\ud45c\uc728 70% \ub118\uaca8\uc11c \ud655\uc2e4\ud558\uac8c \ubc15\ud6a8\ube48 \uc2dc\uc7a5\ub2d8 \uc5f0\uc784\uc2dc\ud0b5\uc2dc\ub2e4!", "nick": "Vote_Power"}], "time": "5\ubd84 \uc804"}, {"content": "\uc9d1\uac12 \ub2e4 \ubc15\uc0b4 \ub0b4\ub193\uace0 \uae0d\uc815\ub960 51%\uac00 \ub9d0\uc774 \ub418\ub0d0??? \ub0b4 \uac15\ub0a8 \uc544\ud30c\ud2b8 \ud638\uac00 \ub5a8\uc5b4\uc9c4 \uac70 \uc0dd\uac01\ud558\uba74 \ud53c\uac00 \uac70\uafb8\ub85c \uc19f\ub294\ub2e4!! \ubb34\uc8fc\ud0dd\uc790 \uac70\uc9c0 \uc0c8\ub07c\ub4e4\ub9cc \uc0b4\uae30 \uc88b\uc740 \ub098\ub77c \ub9cc\ub4e0 \uc88c\ube68 \uc815\ubd80 \uc544\uc6c3!!! \ub0b4 \uc7ac\uc0b0 \ubb3c\uc5b4\ub0b4\ub77c!!!", "dislike": 31200, "isPunished": true, "like": 88, "nick": "RealEstate_King(IP: 211.33.*.*)", "replies": [{"content": "\uc544\uc800\uc528... \uc9d1\uac12\uc774 \u0027\uc548\uc815\ud654\u0027\ub41c \uac70\uc9c0 \ubc15\uc0b4 \ub09c \uac8c \uc544\ub2c8\uc5d0\uc694 \u314b\u314b\u314b \uc815\uc0c1\ud654\ub418\ub294 \uacfc\uc815\uc785\ub2c8\ub2e4.", "nick": "Fact_Check_Bot"}, {"content": "\ud22c\uae30\uafbc \uac80\uac70 \uc644\ub8cc \u314b\u314b\u314b \uc8fc\ud669\uc0c9 \uc88c\uc11d\ubc84\uc2a4(\u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #FF5800;\u0027\u003e#FF5800\u003c/span\u003e) \ud0c0\uace0 \uc678\uacfd\uc73c\ub85c \uc784\uc7a5\uc774\ub098 \ub2e4\ub2c8\uc2dc\uae38 \u314b\u314b\u314b", "nick": "Speculator_Out"}], "time": "7\ubd84 \uc804"}, {"content": "\uc6b0\ub9ac \ud6a8\ube48\uc2dc \ubc15\ud6a8\ube48 \uc2dc\uc7a5\ub2d8\uc774\ub791 \uc774\uc7ac\uba85 \ub300\ud1b5\ub839\ub2d8 \ud2f0\ud0a4\ud0c0\uce74 \ub108\ubb34 \uc88b\uc74c! \uc911\uc559\uc5d0\uc11c \uacbd\uc81c \uc0b4\ub824\uc8fc\uace0 \uc9c0\uc790\uccb4\uc5d0\uc11c \uccad\ub144 \uc8fc\ud0dd\uc774\ub791 \uc21c\ud658\ubc84\uc2a4(\u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #E7D600; color: #333;\u0027\u003e#E7D600\u003c/span\u003e) \ub298\ub824\uc8fc\ub2c8\uae4c \ud6a8\ube48\uc2dc \uc9c4\uc9dc \uc0b4 \ub9db \ub0a9\ub2c8\ub2e4! \uc774\ubc88 \uc9c0\uc120 \ubb34\uc870\uac74 \ud22c\ud45c\uc7a5 \uac11\ub2c8\ub2e4.", "dislike": 85, "like": 21000, "nick": "Hyobin_Youth", "replies": [{"content": "\ud6a8\ube48\uc2dc\ub294 \uc9c4\uc9dc \ucd95\ubcf5\ubc1b\uc740 \ub3c4\uc2dc\uc784 \u3160\u3160 \uc774\uc0ac \uc624\uae38 \uc798\ud588\ub2e4 \uc9c4\uc9dc.", "nick": "Hyobin_Pride"}, {"content": "\ub9c8\uc744\ubc84\uc2a4(\u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #A664A0;\u0027\u003e#A664A0\u003c/span\u003e) \ubc30\ucc28\ub3c4 \uc880\ub9cc \ub354 \uc904\uc5ec\uc8fc\uc2dc\uba74 \uc644\ubcbd\ud560 \ub4ef!!", "nick": "More_Bus_Plz"}], "time": "8\ubd84 \uc804"}, {"content": "\uad6d\ubbfc\uc758\ud798 \uc9c0\uc9c0\uc728 19% \u314b\u314b\u314b\u314b\u314b\u314b\u314b\u314b\u314b \ud734\ub300\ud3f0 \ubc30\ud130\ub9ac\ub3c4 19%\uba74 \ucda9\uc804\uae30 \uaf42\ub294\ub370 \uc800 \ub2f9\uc740 \uaf42\uc744 \ub370\uac00 \uc5c6\ub124 \u314b\u314b\u314b\u314b\u314b\u314b\u314b\u314b", "dislike": 110, "like": 45200, "nick": "RIP_PPP", "replies": [{"content": "\ube44\uc720 \ubbf8\ucce4\ub2e4 \u314b\u314b\u314b\u314b\u314b\u314b\u314b\u314b\u314b \uc62c\ud574\uc758 \ub4dc\ub9bd\uc0c1 \ub4dc\ub9bd\ub2c8\ub2e4.", "nick": "LOL_Master"}, {"content": "\ucda9\uc804\uae30 \uc5ed\ud560 \ud558\ub358 \uc724\ub300\ud658 \uc804 \uc2dc\uc7a5\uc774 15\ub144\ud615 \ubc1b\uace0 \uac10\ubc29 \uac14\uc796\uc544\uc694 \u314b\u314b\u314b\u314b \uaf42\uc744 \ub370\uac00 \uc5c6\uc74c \u314b\u314b\u314b", "nick": "Fact_Drop"}], "time": "9\ubd84 \uc804"}, {"content": "\ucd08\ub85d\uc0c9 \u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #00CCAA;\u0027\u003e2\ud638\uc120\u003c/span\u003e \ud0c0\uace0 \ucd9c\uadfc\ud558\ub294\ub370 \uae30\uc0ac \uc81c\ubaa9 \ubcf4\uace0 \ub450 \ubc88 \ub180\ub790\ub2e4. \uc774\uc7ac\uba85 65%\uc5d0 \ud55c \ubc88, \uad6d\ud798 19%\uc5d0 \ub610 \ud55c \ubc88 \u314b\u314b\u314b 13\ub144 \ub9cc\uc5d0 \ubd80\ub3d9\uc0b0 \uae0d\uc815 51% \ucc0d\uc740 \uac8c \uc9c4\uc9dc \ucef8\ub098 \ubd04. \ub0b4 \uc9d1 \ub9c8\ub828\uc758 \uafc8\uc774 \ub2e4\uc2dc \uc0b4\uc544\ub098\ub294 \uc911 \u3160\u3160", "dislike": 115, "like": 21200, "nick": "Subway_Commuter", "replies": [{"content": "\uc2dc\uc7a5\ub2d8\ub3c4 \ud6a8\ube48\uc2dc \uccad\ub144 \uc8fc\ud0dd \ub298\ub824\uc8fc\uc2e0\ub314\uc74c. \uc0b4\uae30 \uc88b\uc740 \ud6a8\ube48\uc2dc \ud3fc \ubbf8\ucce4\ub2e4 \u314b\u314b\u314b\u314b", "nick": "Hyobin_Love"}], "time": "10\ubd84 \uc804"}, {"content": "\uc5b4\ucc28\ud53c \uc800\uac70 \ub2e4 \uac70\ud488\uc784. 6\uc6d4 \uc120\uac70 \ub05d\ub098\uba74 \uc8fc\uc2dd \ud3ed\ub77d\ud558\uace0 \ubd80\ub3d9\uc0b0 \uc138\uae08 \ud3ed\ud0c4 \ub54c\ub9b4 \uac70 \ubed4\ud55c\ub370 \uba38\uc800\ub9ac\ub4e4 \uc88b\ub2e4\uace0 65% \uc9c0\uc9c0\ud558\ub124 \u314b\u314b\u314b \ud5ec\uc870\uc120\uc740 \ud0c8\ucd9c\uc774 \ub2f5\uc774\ub2e4. 19% \ub0a8\uc740 \ubcf4\uc218\ub4e4\uc774 \uc9c4\uc9dc \uc560\uad6d\uc790\uc784 \u3145\u3131", "dislike": 25500, "isPunished": true, "like": 85, "nick": "Doom_Sayer", "replies": [{"content": "\ubc29\uad6c\uc11d \ubc31\uc218 \ucfe8\ucc10 \ub4f1\uc7a5\uc774\uc694~ \uc5f0\ub450\uc0c9 \uacf5\ud56d\ubc84\uc2a4(\u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #84C36E;\u0027\u003e#84C36E\u003c/span\u003e) \ud0c0\uace0 \ube68\ub9ac \ud5ec\uc870\uc120 \ud0c8\ucd9c\ud558\uc148 \u314b\u314b\u314b \ube44\ud589\uae30 \ud45c \uc0b4 \ub3c8\uc740 \uc788\uace0?", "nick": "Duty_First"}, {"content": "19%\uac00 \uc560\uad6d\uc790\ub798 \u314b\u314b\u314b\u314b \uc0ac\uc774\ube44 \uc885\uad50 \ubbff\ub294 \uad11\uc2e0\ub3c4 \ub9c8\uc778\ub4dc \uc9d5\uae00\uc9d5\uae00\ud558\ub2e4.", "nick": "No_Troll"}], "time": "15\ubd84 \uc804"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

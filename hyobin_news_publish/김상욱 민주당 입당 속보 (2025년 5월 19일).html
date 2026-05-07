@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>대선 D-15… 김상욱, 더불어민주당 전격 입당 "이재명 후보 지지" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">대선 D-15… 김상욱, 더불어민주당 전격 입당 "이재명 후보 지지"</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">국회취재팀 최기자</span><br>
+                        <span class="text-xs text-gray-400">2025.05.19</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#0055aa] font-bold">국민의힘 탈당 11일 만에 야당행 결단… "위기에 빠진 나라 구하는 게 우선"<br/>이재명 대표 "국가와 국민을 위한 용기 있는 결단, 환영한다"<br/>민주당 의석 171석으로 증가… 여권은 "선거용 철새 정치" 맹비난</span></p>
+<div class="my-6">
+<img alt="" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Lee+Jae-myung+and+Kim+Sang-wook'" src="이미지/이재명김상욱악수.png"/>
+<div class="img-caption">▲ 19일 오전 여의도 <a class="text-blue-600 underline" href="국회의사당.html">국회의사당</a> 더불어민주당 당대표 회의실에서 열린 입당 환영식에서 <a class="text-blue-600 underline" href="이재명.html">이재명</a> 대선 후보(오른쪽)가 신임 입당자인 <a class="text-blue-600 underline" href="김상욱.html">김상욱</a> 의원과 손을 맞잡고 있다. 조기 대선을 불과 15일 앞두고 보수 진영 현역 의원이 제1야당에 전격 합류했다. (사진=효빈일보 사진부)</div>
+</div>
+<p>[효빈일보 = 최기자] <strong>6월 3일 <a class="text-blue-600 underline" href="대통령선거.html">조기 대선</a></strong>을 단 15일 앞둔 5월 19일, 대선 정국을 뒤흔들 초대형 변수가 발생했다. 지난 8일 국민의힘을 전격 탈당했던 김상욱 의원이 <strong><a class="text-blue-600 underline" href="더불어민주당.html">더불어민주당</a>에 전격 입당</strong>하며 이재명 후보 지지를 선언했다.</p>
+<p>김 의원은 이날 오전 국회 민주당 당대표 회의실에서 열린 입당 환영식에서 "보수의 쇄신을 기다리기에는 대한민국의 헌정 질서와 민생이 너무나 심각하게 무너지고 있다"며 "대선이라는 중대한 갈림길에서, 위기에 빠진 나라를 구하고 상식을 회복하기 위해 이재명 후보와 민주당에 힘을 싣기로 결단했다"고 입당 배경을 밝혔다.</p>
+<p>이재명 대선 후보는 김 의원에게 당원 가입 원서를 직접 전달받고 파란색 점퍼를 입혀주며 환영했다. 이 후보는 "대선을 코앞에 두고 김 의원님이 보여주신 진영을 뛰어넘는 용기 있는 결단에 깊이 감사드린다"며 "헌정 파괴 세력을 심판하고 민주주의를 굳건히 세워 승리로 보답하겠다"고 화답했다.</p>
+ 데이터 표 (생략 금지 지시 준수) 
+<table class="data-table">
+<caption>[표] 김상욱 의원 더불어민주당 입당에 따른 국회 의석수 변화 (2025.05.19 기준)</caption>
+<thead>
+<tr>
+<th width="25%">정당명</th>
+<th width="25%">김상욱 탈당 직후<br/>(5월 8일)</th>
+<th width="25%">김상욱 민주당 입당<br/>(현재)</th>
+<th width="25%">증감</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="font-weight: bold; color: #0055aa;">더불어민주당</td>
+<td>170석</td>
+<td style="font-weight: bold; color: #0055aa; font-size: 16px;">171석</td>
+<td style="color: red;">▲ 1 (대선 정국 호재)</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #e11d48;">국민의힘</td>
+<td>107석</td>
+<td style="font-weight: bold; color: #e11d48;">107석</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="font-weight: bold;">조국혁신당</td>
+<td>12석</td>
+<td>12석</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="font-weight: bold; color: #888;">무소속</td>
+<td>3석 (김상욱 포함)</td>
+<td>2석</td>
+<td style="color: blue;">▼ 1</td>
+</tr>
+</tbody>
+</table>
+<p>대선을 불과 보름 남긴 시점에서 보수 현역 의원의 제1야당 직행은 대선 판세를 요동치게 만들고 있다. 더불어민주당은 171석으로 덩치를 키웠으며, '통합과 포용'이라는 대선 프레임을 한층 강화하게 됐다.</p>
+<p>반면 보수 진영은 발칵 뒤집혔다. 국민의힘 선거대책위원회는 즉각 논평을 내고 "탈당 11일 만에 본색을 드러냈다. 표를 구걸하기 위해 좌파 진영에 투항한 선거용 철새 정치인의 전형"이라며 "울산 남구갑 유권자들에 대한 명백한 배신 행위는 대선에서 반드시 심판받을 것"이라고 맹비난했다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "\ud0c8\ub2f9\ud558\uace0 \ubb34\uc18c\uc18d\uc73c\ub85c \uc788\uc744 \uc904 \uc54c\uc558\ub294\ub370 \ubbfc\uc8fc\ub2f9 \uc785\ub2f9 \u3137\u3137 \ub300\uc120 15\uc77c \ub0a8\uae30\uace0 \uc9c4\uc9dc \ud070 \uac70 \uc654\ub124. \uc624\ub298 \uc5f0\ubcf4\ub77c\uc0c9 \u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #9856FF;\u0027\u003e8\ud638\uc120\u003c/span\u003e \ud0c0\uace0 \ucd9c\uadfc\ud558\uba74\uc11c \ub274\uc2a4 \ubcf4\ub294\ub370 \uc774\uc7ac\uba85 \ub300\ud45c\ub791 \uc545\uc218\ud558\ub294 \uc0ac\uc9c4 \ubcf4\uace0 \ube75 \ud130\uc9d0 \u314b\u314b\u314b \ud658\uc601\ud569\ub2c8\ub2e4!", "dislike": 820, "isPunished": false, "like": 35200, "nick": "Democracy_Win", "replies": [{"content": "\uac04\uc120\ubc84\uc2a4(\u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #01B7ED;\u0027\u003e#01B7ED\u003c/span\u003e) \ud0c0\uace0 \uc788\ub294\ub370 \uc5ec\uae30\ub3c4 \ub2e4 \uae40\uc0c1\uc6b1 \uc758\uc6d0 \uc598\uae30 \uc911\uc784. \uc774\ubc88 \uc870\uae30 \ub300\uc120\uc740 \ub05d\ub0ac\ub124\uc694 \u314b\u314b\u314b", "nick": "Hyobin_Bus"}, {"content": "\uacc4\uc5c4 \uc138\ub825 \uc2ec\ud310\uc744 \uc704\ud574 \ud798\uc744 \ud569\uce58\ub294 \uac8c \ub9de\uc9c0. \uad7f \ucd08\uc774\uc2a4!", "nick": "Good_Choice"}], "time": "\ubc29\uae08 \uc804"}, {"content": "\uae40\uc0c1\uc6b1 \uc774 \uae30\ud68c\uc8fc\uc758\uc790 \ucca0\uc0c8 \ub188\uc544!!!! \ud0c8\ub2f9\ud55c \uc9c0 2\uc8fc\uc77c\ub3c4 \uc548 \ub3fc\uc11c \ubbfc\uc8fc\ub2f9 \uc810\ud37c\ub97c \uc785\uc5b4??? \ubcf4\uc218 \uc720\uad8c\uc790\ub4e4\uc744 \ub2a5\uba78\ud574\ub3c4 \uc720\ubd84\uc218\uc9c0!!!! \ub300\uc120 \ub05d\ub098\uace0 \ubcf4\uc790 \uc774 \uc4f0\ub808\uae30 \uac19\uc740 \ub188!!!!", "dislike": 41900, "isPunished": true, "like": 155, "nick": "Angry_Conservative(IP: 14.33.*.*)", "replies": [{"content": "\ud560\ubc30\uc694... \ubbfc\uc2ec\uc744 \ub2a5\uba78\ud55c \uac74 \ub301\ub4e4 \ub2f9\uc774\uace0\uc694. \uc544\uc9c1\ub3c4 \uc815\uc2e0 \ubabb \ucc28\ub9ac\uc168\ub124.", "nick": "Fact_Check"}, {"content": "\ub300\uc120 2\uc8fc \ub0a8\uace0 \uc9c8 \uac70 \uac19\uc73c\ub2c8\uae4c \ud654\uac00 \ub9ce\uc774 \ub098\uc168\ub124\uc694. \ucd08\ub85d\uc0c9 \uc9c0\uc120\ubc84\uc2a4(\u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #37B484;\u0027\u003e#37B484\u003c/span\u003e) \ud0c0\uace0 \uc0b0\ucc45 \uc880 \ub2e4\ub140\uc624\uc2ed\uc1fc.", "nick": "Mental_Care"}], "time": "2\ubd84 \uc804"}, {"content": "\uc640 \ubbfc\uc8fc\ub2f9 171\uc11d \u3137\u3137\u3137 \ub300\uc120 \ubaa9\uc804\uc5d0 \ub450\uace0 \ud604\uc5ed \ube8f\uc5b4\uc624\uae30 \uc131\uacf5\ud588\ub124. \uad6d\ud798\uc740 107\uc11d\uc5d0 \ub300\uc120 \ubd84\uc704\uae30\ub3c4 \uc309\ucc3d\ub098\uace0 \uc9c4\uc9dc \ucd08\uc0c1\uc9d1\uc774\uaca0\ub2e4 \u314b\u314b\u314b 6\uc6d4 3\uc77c\uc5d0 \ud22c\ud45c\uc7a5 \uaf2d \uac00\uc57c\uc9c0", "dislike": 210, "like": 28500, "nick": "Politics_Watcher", "replies": [{"content": "\uc774\uc7ac\uba85 \ub300\ud45c \uc5bc\uad74\uc5d0 \uc6c3\uc74c\uaf43 \ud540 \uac70 \ubcf4\uc18c \u314b\u314b\u314b \ud45c\uc815 \uad00\ub9ac \uc548 \ub428.", "nick": "Big_Picture"}, {"content": "\uce68\ubab0\ud558\ub294 \ubc30\uc5d0\uc11c \ud0c8\ucd9c\ud55c \uae40\uc0c1\uc6b1 \uc758\uc6d0 \uc9c0\ub2a5 \uc0c1\uc704 1% \uc778\uc815", "nick": "Vote_Power"}], "time": "5\ubd84 \uc804"}, {"content": "\ube68\uac04\uc0c9 \u003cspan class=\u0027transit-badge\u0027 style=\u0027background-color: #D81C2F;\u0027\u003e\uae09\ud589\ubc84\uc2a4\u003c/span\u003e \uae30\ub2e4\ub9ac\uba74\uc11c \ubcf4\ub2e4\uac00 \uae5c\uc9dd \ub180\ub790\uc2b5\ub2c8\ub2e4. \uc6b0\ub9ac \ud6a8\ube48\uc2dc \uc2dc\ubbfc\ub4e4\ub3c4 6\uc6d4 3\uc77c \uc870\uae30 \ub300\uc120 \ub54c \ud22c\ud45c \uc81c\ub300\ub85c \ud574\uc11c \ub0a1\uc740 \uc815\uce58 \uc2ec\ud310\ud569\uc2dc\ub2e4!", "dislike": 115, "like": 23200, "nick": "Subway_Commuter", "replies": [{"content": "\ud22c\ud45c\uc728 80% \ucc0d\uc5b4\ubd05\uc2dc\ub2e4 \ud6a8\ube48\uc2dc \ud30c\uc774\ud305!", "nick": "Hyobin_Love"}], "time": "10\ubd84 \uc804"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

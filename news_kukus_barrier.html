@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[인권/법조] 혐오 표현엔 '무관용' 원칙... '쿠쿠스 배리어' 조례, 오늘부터 전격 시행 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 (댓글용으로 남겨둠) */
+        .strike { text-decoration: line-through; color: #888; }
+        .drip { font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">인권/법조 > 행정</div>
+                <h2 class="article-title">혐오 표현엔 '무관용' 원칙... '쿠쿠스 배리어' 조례, 오늘부터 전격 시행</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">법대로 기자</span> (local@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.06 14:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">지난해 HAF 인종차별 테러가 제정 촉발... 문화예술인 및 관람객 보호 명문화<br>증오 범죄 가해자 시 주관 행사 영구 출입 금지 및 막대한 구상권 청구 조항 포함<br>박효빈 시장 "혐오는 자유가 아닌 범죄... 효빈을 가장 안전한 문화 성지로 만들 것"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="쿠쿠스배리어_조례공포.png" alt="박효빈 시장 쿠쿠스 배리어 조례 공포식" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Kuku%27s+Barrier+Ordinance'">
+                        <div class="img-caption">▲ <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈광역시장이 6일 오전 시청 브리핑룸에서 '효빈광역시 문화예술인 보호 및 혐오 범죄 무관용 대응에 관한 조례(일명 쿠쿠스 배리어)'의 전격 시행을 발표하고 있다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 법대로 기자] 효빈광역시가 특정 인종, 국적, 문화적 취향에 대한 증오 범죄를 원천 차단하기 위해 제정한 '효빈광역시 문화예술인 보호 및 혐오 범죄 무관용 대응에 관한 조례', 일명 <strong>'쿠쿠스 배리어(Kuku's Barrier)'</strong>가 6일부로 전격 시행된다. 이로써 효빈시는 전국 지자체 중 최초로 혐오 세력의 문화 행사 방해 행위에 대해 가장 강력하고 즉각적인 법적 제재를 가할 수 있는 제도적 장치를 마련하게 됐다.</p>
+
+                    <p>이번 조례안은 지난해 11월 <a href="HAF.html" class="text-blue-600 underline">효빈 애니메이션 페스티벌(HAF)</a> 메인 스테이지에서 발생한 이른바 <a href="탕쿠쿠대첩.html" class="text-blue-600 underline">'탕쿠쿠 대첩'</a>이 결정적인 제정 계기가 되었다. 당시 전임 시장의 아들인 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a>과 그 일당은 중국 국적의 성우 <a href="리유.html" class="text-blue-600 underline">리유(Liyuu)</a>의 팬미팅 현장에 난입해 기물을 파손하고 입에 담기 힘든 인종차별적 폭언을 쏟아내며 행사를 훼방하려 한 바 있다.</p>
+
+                    <p>이 사건 직후 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장은 "문화와 사랑에는 국경이 없지만, 무식한 혐오에는 자비가 없다"며 혐오 범죄에 대한 전면전을 선포했고, 시의회와의 신속한 협의를 거쳐 본 조례안을 통과시켰다. 조례의 별칭인 '쿠쿠스 배리어' 역시 피해 당사자였던 캐릭터 <a href="탕쿠쿠.html" class="text-blue-600 underline">'탕 쿠쿠'</a>의 이름에서 따온 것으로, 피해자를 연대하고 보호하겠다는 시의 확고한 의지가 담겨 있다.</p>
+
+                    <div class="my-6">
+                        <img src="탕쿠쿠대첩_당시.png" alt="탕쿠쿠 대첩 당시 현장 사진" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=HAF+Incident+Scene'">
+                        <div class="img-caption">▲ 지난해 11월 HAF 메인 스테이지에서 발생한 '탕쿠쿠 대첩' 당시의 아수라장이 된 현장 모습. 이 사건은 이번 조례 제정의 직접적인 도화선이 되었다.</div>
+                    </div>
+
+                    <p>이날부터 시행되는 조례의 핵심은 <strong>'무관용'</strong>과 <strong>'철저한 책임 추궁'</strong>이다. 세부 조항에 따르면, 문화 행사 현장에서 혐오 발언이나 폭력 등 증오 범죄를 일으켜 적발된 자는 향후 효빈시가 주관하거나 후원하는 모든 행사 및 관내 공공 문화시설 출입이 영구적으로 금지된다.</p>
+
+                    <p>또한, 행정적 제재를 넘어 강력한 재정적 압박 조치도 포함되었다. 혐오 범죄로 인해 행사가 지연되거나 취소될 경우, 혹은 보안 유지를 위해 추가적인 행정력이 투입될 경우, 시는 발생한 모든 경제적 손실과 인력 낭비에 대한 <strong>구상권을 가해자에게 100% 청구하도록 명문화</strong>했다. 실제로 효빈시는 지난해 HAF 테러를 일으킨 윤재훈 일당에게 버스 래핑 복구비와 행사 지연 손해금 등을 포함해 총 50억 원대의 민사 소송을 진행 중이며, 이번 조례 시행으로 이러한 징벌적 손해배상 청구의 법적 근거가 더욱 탄탄해졌다.</p>
+
+                    <p>국내외 인권 단체와 전 세계 서브컬처 팬덤은 효빈시의 이번 조치에 뜨거운 지지와 환영의 뜻을 표하고 있다. 행사에 참여하는 아티스트와 관람객의 안전을 지자체가 조례를 통해 직접 보장함으로써, 효빈시가 진정한 '글로벌 문화 안전지대'로 거듭났다는 평가다.</p>
+
+                    <p>박효빈 효빈시장은 조례 시행을 앞두고 "누군가의 소중한 취향과 국적, 출신을 비하하는 행위는 표현의 자유가 아니라 명백한 폭력이자 사회악"이라며, "쿠쿠스 배리어의 시행을 통해 혐오 세력이 효빈시 땅에 발붙일 곳을 영구히 차단하고, 시민과 전 세계 관광객 모두가 안전하게 문화를 향유할 수 있는 든든한 방패를 제공하겠다"고 강조했다.</p>
+
+                    <p>혐오를 지성으로 분쇄하겠다는 효빈시의 단호한 결단이 국내 법조계와 행정 체계에 어떠한 나비효과를 불러올지 귀추가 주목된다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">18,402</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "HAF_Survivor", time: "방금 전", like: 45200, dislike: 12, isPunished: false,
+                                content: "와... 진짜 박효빈 시장 추진력 미쳤다. 작년 HAF 때 윤재훈 일당 난입해서 깽판 친 거 현장에서 직관했는데 진짜 트라우마 생길 뻔했음. 구상권 100% 청구 조항이 진짜 사이다네. 혐오충들 금융치료가 답이지 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Otaku_Life", content: "인정합니다. 50억 소송 들어간 거 보면 진짜 자비가 없음 ㅋㅋㅋ 시장님이 덕잘알이라 그런지 행사 망치면 어떻게 되는지 아주 뼈저리게 가르쳐주시는 중." },
+                                    { nick: "Liyuu_Fan", content: "리유쨩 울먹거리던 거 생각하면 아직도 피꺼솟함 ㅠㅠ 쿠쿠스 배리어 이름도 진짜 너무 감동적이다 ㅠㅠ 효빈시는 이제 덕후들의 성지다!" },
+                                    { nick: "Real_Man", nickClass: "text-red-600 font-bold", content: "솔직히 성우 하나 온다고 호들갑 떠는 씹덕들이 문제 아님? 재훈좌가 맞는말 했구만 ㅉㅉ" },
+                                    { nick: "Justice_Blade", content: "방구석 찐따 새끼 또 기어나왔네 ㅋㅋㅋ 니가 재훈좌라 부르는 그 새끼 지금 파산 직전이다 ㅋㅋㅋ" },
+                                    { nick: "Transit_Nerd", content: "맞는말 이지랄ㅋㅋ 남의 재산 부수고 혐오발언 하는게 맞는말이냐 범죄지 능지 처참하네" }
+                                ]
+                            },
+                            {
+                                nick: "Justice_Hyobin", time: "5분 전", like: 38500, dislike: 45, isPunished: false,
+                                content: "전임 시장 아들이란 놈이 무식하게 인종차별이나 하고 앉았고... 그걸 또 옹호하던 세력들 싹 다 효빈시 행사 영구 출입 금지시켜야 함. '문화와 사랑에는 국경이 없지만 무식한 혐오에는 자비가 없다' 명언 탄생이네 ㄷㄷ",
+                                replies: [
+                                    { nick: "Citizen_B", content: "ㄹㅇ 아빠 빽 믿고 나대다가 시장 바뀌니까 바로 50억 철퇴 맞는 거 개꿀잼 ㅋㅋㅋㅋ <span class='strike'>이참에 <span style='color:#6677CC;font-weight:bold;'>빈효선</span> 철로에 묶어놓고 싶다</span>" },
+                                    { nick: "Patriot_77", nickClass: "text-red-600 font-bold", content: "효빈시가 언제부터 짱깨랑 씹덕들 소굴이 됐냐? 전임 시장님이 그립다!!" },
+                                    { nick: "Fact_Bomber", content: "전임 시장님이 그리우시면 전임 시장님이랑 같이 사이좋게 감옥 가시든가요 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Love", content: "어디서 틀딱 쉰내가 진동을 하네... 쿠쿠스 배리어 발동!! 악령 퇴치!!" },
+                                    { nick: "Voter_20s", content: "짱깨 타령하는 니 폰부터 메이드 인 차이나일걸? ㅋㅋㅋㅋ 모순덩어리 인생" }
+                                ]
+                            },
+                            {
+                                nick: "Free_Speech_Warrior", time: "10분 전", like: 14, dislike: 72000, isPunished: true,
+                                content: "중국인 성우 오는데 반대 시위 좀 할 수 있는 거 아닙니까!! 이것도 표현의 자유입니다!! 효빈시가 중국에 나라를 팔아넘기려 합니다!! 박효빈 시장은 당장 사퇴하라!!",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "또 능지 처참한 혐오충 하나 등판했네 ㅋㅋㅋ 행사 기물 파손하고 사람한테 쌍욕 박는 게 시위냐 폭동이지 ㅋㅋㅋ 닌 평생 효빈시 올 생각 마라" },
+                                    { nick: "Fact_Check", content: "응 느그 재훈이 50억 뱉어내야 돼~ 표현의 자유는 니 일기장에나 쓰시고요 ㅋㅋㅋ" },
+                                    { nick: "Free_Speech_Warrior", nickClass: "text-red-600 font-bold", content: "너네 두고봐라!! 애국 보수 청년들이 다 들고 일어날 거다!! 재훈아 힘내라!! 우리가 지켜줄게!!" },
+                                    { nick: "Laughing_Dog", content: "애국 보수 청년(백수, 30대, 방구석 여포)" },
+                                    { nick: "Lawyer_Kim", content: "영업방해 및 재물손괴는 표현의 자유의 영역이 아닙니다. 나중에 법원 가서도 판사님한테 그렇게 당당하게 말씀해 보세요." }
+                                ]
+                            },
+                            {
+                                nick: "Global_Otaku", time: "15분 전", like: 29000, dislike: 8, isPunished: false,
+                                content: "해외 서브컬처 레딧에서도 지금 효빈시 난리 남. Kuku's Barrier 밈으로 번역돼서 퍼지고 있는데 다들 Hyobin City 시장님 찬양 중 ㅋㅋㅋ 진짜 글로벌 문화 안전지대 타이틀 얻는 건 시간문제일 듯.",
+                                replies: [
+                                    { nick: "K_Culture_Win", content: "진짜 K-행정의 매운맛을 전세계 오타쿠들에게 제대로 보여줬음 ㅋㅋㅋ 이게 선진국이지" },
+                                    { nick: "Welcome_To_HB", content: "올해 HAF는 외국인 관광객 역대급으로 터지겠네 ㅋㅋㅋ 시장님 큰그림 미쳤다 효빈시 돈 쓸어담겠누" },
+                                    { nick: "No_Japan_No_China", nickClass: "text-red-600 font-bold", content: "쪽바리 중국몽 애니메이션 축제가 자랑이냐? 부끄러운 줄 알아라 지자체가 미쳐가지고 나라 망신 다 시키네" },
+                                    { nick: "Global_Otaku", content: "니가 방구석에서 악플 다는 동안 효빈시는 저 행사 하나로 관광수입 수백억 땡긴다 ㅋㅋㅋ 경제관념 씹창난 새끼" },
+                                    { nick: "Local_Merchant", content: "효빈항 쪽 상인인데 작년 HAF 때 매출 3배 뛰었습니다. 제발 방구석 애국자님들은 오지 마세요 물 흐려지니까 ^^" }
+                                ]
+                            },
+                            {
+                                nick: "Bus_Lover", time: "20분 전", like: 21500, dislike: 5, isPunished: false,
+                                content: "아니 근데 구상권에 버스 래핑 복구비 포함된 거 개웃기네 ㅋㅋㅋㅋ 혐오충들이 우리 예쁜 효빈시 시내버스 래핑 찢은 거 생각하면 진짜... 싹 다 청구해서 파산시켜야 함.",
+                                replies: [
+                                    { nick: "Transit_Nerd", content: "ㄹㅇ <span style='color:#0077DD;font-weight:bold;'>1호선</span> 고나미 래핑 찢어진 거 보고 피눈물 흘렸다 ㅠㅠ 철저하게 보상받아야 함!" },
+                                    { nick: "Tax_Payer", nickClass: "text-red-600 font-bold", content: "그깟 오타쿠 그림 쪼가리 좀 찢어졌다고 50억 소송? 세금 낭비 오지네 박효빈 진짜 좌파식 포퓰리즘 역겹다" },
+                                    { nick: "Bus_Driver", content: "그깟 그림 쪼가리가 아니라 시 재산이고 특수 래핑이라 복구비 ㅈㄴ 깨진다 빡대갈아. 버스기사로서 저런 놈들은 승차거부 마려움" },
+                                    { nick: "Law_Student", content: "구상권 청구가 뭔지 모름? 가해자한테 돈 받아내는 거라 세금 낭비가 아니라 세금 환수입니다 ^^ 무식하면 용감하다더니" },
+                                    { nick: "Transit_Nerd", content: "효빈시 마스코트를 건드린 죄 달게 받아라. 고나미쨩 붐은 온다..." }
+                                ]
+                            },
+                            {
+                                nick: "Mayor_Park_Fan", time: "25분 전", like: 18200, dislike: 11, isPunished: false,
+                                content: "'혐오는 자유가 아닌 범죄' 이 멘트 진짜 역사에 남을 명언이다. 차별금지법 제정 지지부진한데 지자체 차원에서 이런 조례를 만들어낸 게 대단함.",
+                                replies: [
+                                    { nick: "Citizen_C", content: "ㄹㅇ 헌법 교과서에 실려야 할 수준임. 표현의 자유 뒤에 숨은 폭력충들 다 박멸해야 됨." },
+                                    { nick: "Human_Rights", content: "인권 단체들이 쌍수 들고 환영할 만함. 소수자와 문화예술인 모두를 지키는 진짜 실질적인 방패임." },
+                                    { nick: "Anti_Woke", nickClass: "text-red-600 font-bold", content: "PC주의에 절여진 시장 나셨네 ㅋㅋㅋ 동성애자 외국인 다 받다가 효빈시 범죄도시 될 거다 ㅉㅉ 곧 이슬람 테러범도 오겠네" },
+                                    { nick: "Fact_Machine", content: "범죄는 작년에 니들이 탕쿠쿠 대첩이랍시고 저지른 게 범죄고요 ㅋㅋㅋ 지들이 테러해놓고 남탓 오지네" },
+                                    { nick: "Normal_Person", content: "외국인 성우 팬미팅에서 깽판 친 놈들이 무슨 애국자 납셨네 ㅋㅋㅋ 니들 꼬라지가 제일 흉악범죄자 같아 혐오충아" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Jaehoon_Forever", time: "30분 전", like: 8, dislike: 65000, isPunished: true,
+                                content: "재훈이 형님 억울하게 마녀사냥 당하시는 거 너무 안타깝습니다 ㅠㅠ 우리가 십시일반해서 50억 모금합시다!! 우파의 희망 윤재훈 화이팅!!",
+                                replies: [
+                                    { nick: "Scam_Alert", content: "어 그래 많이 모아라 ㅋㅋㅋ 니 컵라면 사먹을 돈이나 있냐?" },
+                                    { nick: "Bank_Account", content: "계좌번호 까봐라 10원 입금하고 보이스피싱으로 압류 걸어줄 테니까 ㅋㅋㅋㅋ" },
+                                    { nick: "Yoon_Jaehoon_Forever", nickClass: "text-red-600 font-bold", content: "좌파 빨갱이 새끼들이 효빈시 장악해서 애국 청년 하나 죽이는구나!! 하늘이 무섭지 않냐!! 천벌을 받을 거다!!" },
+                                    { nick: "Police_Officer", content: "기물파손, 특수폭행, 모욕죄, 업무방해. 좌파 우파 따지기 전에 님 형님이 저지른 형법상 죄목입니다. 똑바로 알고 쉴드치세요." },
+                                    { nick: "Touch_Grass", content: "이런 애들 특징: 밖에 나가서 한마디도 못함. 제발 방구석에서 나와서 현실을 살아..." }
+                                ]
+                            },
+                            {
+                                nick: "Culture_Citizen", time: "35분 전", like: 15400, dislike: 4, isPunished: false,
+                                content: "효빈시 주관 행사 영구 출입 금지 조항 진짜 맘에 든다. 매번 이상한 정치병자들 난입해서 행사 망치는 거 꼴 보기 싫었는데 이제 쾌적하게 문화생활 가능할 듯.",
+                                replies: [
+                                    { nick: "HAF_Staff", content: "작년에 보안 스태프 뛰었는데 그 인간들 진짜 사람 아니었습니다. 쌍욕은 기본에 밀치고 난리도 아니었음. 블랙리스트 도입 대찬성입니다." },
+                                    { nick: "Movie_Goer", content: "국제 영화제 때도 와서 확성기 틀고 시위하던데 이제 싹 다 입구컷 당하겠네 ㅋㅋㅋ 속이 다 뻥 뚫리네~" },
+                                    { nick: "Alpha_Male", nickClass: "text-red-600 font-bold", content: "씹덕들 좋다고 헤헤거리는 꼬라지 역겹네 ㅋㅋ 남자새끼들이 계집애들 만화나 보고 나잇값 좀 해라 ㅋㅋ" },
+                                    { nick: "Gym_Bro", content: "본인 3대 500 치고 탕쿠쿠 오시인데, 작년 HAF에서 나한테 그딴 소리 지껄이다가 멱살 잡히고 경찰에 끌려간 게 너냐? ㅋㅋ 앞에서는 눈도 못마주칠거면서" },
+                                    { nick: "Alpha_Male_Hunter", content: "알파메일 호소인 등장 ㅋㅋㅋ 현실은 여자 손도 못 잡아본 거북유방단 아저씨 ㅠㅠ 거울 좀 보고 살아라" }
+                                ]
+                            },
+                            {
+                                nick: "Liyuu_S2", time: "40분 전", like: 14200, dislike: 2, isPunished: false,
+                                content: "리유쨩 이제 효빈시 안심하고 오세요! ㅠㅠ 시장님이 든든한 방패를 만들어 주셨습니다! 쿠쿠스 배리어 짱!!",
+                                replies: [
+                                    { nick: "Voice_Actor_Fan", content: "진짜 저번에 무대 뒤에서 울먹이는 거 직캠 보고 가슴 찢어지는 줄 알았는데... 이번 조례 통과돼서 너무 다행임 ㅠㅠ" },
+                                    { nick: "HB_Pride", content: "효빈시민으로서 작년 사건은 정말 얼굴 들고 다니기 부끄러웠는데, 행정으로 이렇게 참교육 해주니 다시 자랑스러워집니다." },
+                                    { nick: "No_China", nickClass: "text-red-600 font-bold", content: "착짱죽짱이다 이 매국노 새끼들아!! 중국몽 아웃!! 박효빈 아웃!! 빨갱이 시장 물러가라!!" },
+                                    { nick: "Report_Button", content: "응 혐오발언 신고 컷~ 너도 쿠쿠스 배리어 쳐맞고 싶냐? 평생 관공서 출입 금지 당해볼래?" },
+                                    { nick: "History_Teacher", content: "문화 교류랑 정치를 구분 못 하는 저능아들이 꼭 이런 데서 분탕을 치더라. 국적 혐오는 정신병입니다. 병원 가보세요." }
+                                ]
+                            },
+                            {
+                                nick: "Real_Conservative", time: "45분 전", like: 5, dislike: 88000, isPunished: true,
+                                content: "박효빈 이 인간은 전임 시장 지우기에만 혈안이 돼있네!! 전임 시장님이 이루어 놓은 업적은 다 박살 내고 씹덕들 표나 얻으려고 조례 만들고 자빠졌네!! 효빈시 미래가 어둡다!!",
+                                replies: [
+                                    { nick: "Citizen_D", content: "전임 시장 업적이 대체 뭔데? 아들내미 조폭 깡패로 키운 거? ㅋㅋㅋㅋ 가정교육이나 잘 시키지 그랬냐" },
+                                    { nick: "Fact_Os", content: "그 전임 시장 아들이 50억어치 깽판 친 거 수습하는 건데요? 전임 시장님이 남긴 빚 갚는 중인데 무슨 전임 시장 지우기야 ㅋㅋㅋ 똥 치우기지" },
+                                    { nick: "Real_Conservative", nickClass: "text-red-600 font-bold", content: "효빈시 경제 살려놓은 건 다 전임 시장님이다!! 니들이 뭘 알아!! 좌빨 선동에 놀아나는 개돼지들!!" },
+                                    { nick: "Economy_Student", content: "전임 시장 때 효빈시 부채비율 역대 최고 찍었는데요 ㅋㅋㅋ 통계청 자료 좀 보고 오세요 아재요. 뇌피셜로 우기지 말고." },
+                                    { nick: "Clean_HB", content: "어르신, 제발 탑골공원이나 경로당 가서 바둑이나 두세요. 인터넷에서 젊은 사람들 문화 망치면서 악플 달지 마시고." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 애니메이션 페스티벌(HAF) 안전 요원 모집</div>
+                    <div class="text-xs">혐오 세력으로부터 관람객을 지키는 든든한 방패!<br>무술 유단자 및 보안 경력자 우대<br><span class="text-[#0055aa] underline mt-1 inline-block">지원하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

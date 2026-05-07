@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>단 3표가 가른 효빈의 운명... '사죄' 택한 서무련과 '남 탓' 지총민의 엇갈린 최후 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">단 3표가 가른 효빈의 운명... '사죄' 택한 서무련과 '남 탓' 지총민의 엇갈린 최후</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">강정치 기자</span><br>
+                        <span class="text-xs text-gray-400">2026.04.16</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#0055aa] font-bold">2006년 제4회 지선, 단 3표 차이로 윤대환 당선... 분열이 부른 1년 4개월의 암흑기<br/>서무련, 7,000원 버스 참상에 충격... 빗속 108배 사죄 후 정계 은퇴·재단 설립<br/>지총민, "박현만이 무능한 탓" 적반하장 망언... 시민들 항의 시위 속 정치적 매장<br/>효빈 시민들, "분열의 뼈아픈 대가" 각성... 2022년 박효빈 시장 77.9% 압승의 거름 돼</span></p>
+<p>[효빈일보 = 강정치 기자] 2006년 치러진 제4회 효빈광역시장 선거는 효빈 현대사에서 가장 뼈아픈 상흔이자 위대한 각성의 시작점으로 기록된다. 단 **'3표'** 차이로 <a class="text-blue-600 underline" href="윤대환.html">윤대환</a> 후보가 당선되며, <a href="효빈6호선.html" style="color: #881188; font-weight: bold; text-decoration: underline;">6호선</a> 철도망 백지화와 '7,000원짜리 갈색 버스(두청운수)'라는 가혹한 대가를 치러야 했기 때문이다.</p>
+<p>당시 선거에서 진보·개혁 진영의 표심은 갈기갈기 찢겨 있었다. 무소속으로 출마했던 <a class="text-blue-600 underline" href="지총민.html">지총민</a>(12.29%, 256,384표)과 <a class="text-blue-600 underline" href="서무련.html">서무련</a>(7.26%, 151,464표)이 흡수한 약 19.5%의 득표는, 결과적으로 <a class="text-blue-600 underline" href="박현만.html">박현만</a> 당시 시장의 발목을 잡고 윤대환이라는 독재적 권력을 탄생시킨 결정적 요인이 되었다. 윤대환의 폭정이 본격화된 이후, 두 무소속 후보가 보여준 극명하게 엇갈린 행보는 오늘날 정치권에 무거운 질문을 던지고 있다.</p>
+<div class="my-6">
+<img alt="비 내리는 광장에서 절하는 서무련 후보" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Seo+Moo-ryun+Apology'" src="이미지/서무련_사죄시위.png"/>
+<div class="img-caption">▲ 2007년 어느 비 오는 날, 시청 앞 광장에서 "저의 욕심이 효빈의 철길을 끊었습니다"라는 피켓을 놓고 시민들에게 엎드려 사죄하고 있는 <a class="text-blue-600 underline" href="서무련.html">서무련</a> 전 후보. 그녀의 진심 어린 사죄는 분노했던 시민들의 마음을 움직였다. (사진=효빈일보 DB)</div>
+</div>
+<p><strong>◆ 죄책감이 빚은 사죄의 길, '서무련'의 속죄</strong></p>
+<p>7.26%를 득표했던 서무련 후보는 선거 직후 깊은 절망과 죄책감에 빠졌다. 6호선 공사가 중단되고, 통근열차가 폐지된 자리에 7,000원짜리 버스가 들어서 시민들이 가축처럼 실려 다니는 참상을 목격한 그녀는 식음을 전폐하고 극심한 외상 후 스트레스 장애(PTSD)를 겪었다.</p>
+<p>하지만 그녀는 은둔에 그치지 않았다. 정신을 차린 서무련은 비 내리는 시청 광장과 구 <a class="text-blue-600 underline" href="전차7호선.html">전차 7호선</a> 정류장으로 나갔다. 빗속에서 시민들을 향해 수없이 고개를 숙이며 "저의 출마가 여러분의 발을 묶었다. 저를 돌로 치시라"며 오열했다. 이후 2008년 완전한 정계 은퇴를 선언한 그녀는 사업가로 변신, **'무련 복지재단'**을 설립해 7,000원 버스의 상처를 입은 청년들을 지원하고 철도 복구 기금을 쾌척하며 속죄의 삶을 완성했다.</p>
+<div class="my-6">
+<img alt="지총민 사무실 앞 분노한 시민들" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Protests+against+Ji+Chong-min'" src="이미지/지총민_규탄시위.png"/>
+<div class="img-caption">▲ "3표 도둑 지총민은 입을 닫아라!" 2007년 말, 적반하장식 망언을 일삼은 <a class="text-blue-600 underline" href="지총민.html">지총민</a>의 사무실 앞에 모여든 효빈 시민들의 규탄 시위 현장.</div>
+</div>
+<p><strong>◆ 끝없는 아집과 망언, 시민의 적이 된 '지총민'</strong></p>
+<p>반면, 12.29%를 얻었던 지총민의 행보는 서무련과 정반대였다. 시민들이 교통 지옥에서 신음할 때, 그는 언론 인터뷰를 통해 "박현만이 무능해서 내가 표를 많이 얻은 것이다. 정책을 더 잘 짰어야지 내 탓이 아니다"라며 철저히 책임을 회피했다. 나아가 "박현만이 나에게 구걸하듯 빌었어야 했다"는 망언까지 쏟아냈다.</p>
+<p>자신의 한 표가 윤대환을 당선시켰다는 사실에 고통받던 지총민 투표자들조차 이 발언에 피눈물을 흘리며 등을 돌렸다. 시민들은 그의 사무실로 몰려가 거센 항의 시위를 벌였고, 터미널 근처에서 명함을 돌리던 그에게 명함 뭉치를 집어 던지며 분노를 표출했다. 결국 자신의 과오를 외면한 지총민은 2008년 재보궐 선거에서 3.29%라는 처참한 득표율을 기록하며 효빈 정치권에서 사실상 영구 퇴출당했다.</p>
+<p><strong>◆ 3표의 비극이 남긴 역사적 항체</strong></p>
+<table class="w-full text-sm text-left text-gray-500 border-collapse border border-gray-200 my-6">
+<thead class="text-xs text-gray-700 uppercase bg-gray-100">
+<tr>
+<th class="px-6 py-3 border border-gray-200" scope="col">후보</th>
+<th class="px-6 py-3 border border-gray-200" scope="col">2006년 득표율</th>
+<th class="px-6 py-3 border border-gray-200" scope="col">이후 행보 및 최후</th>
+<th class="px-6 py-3 border border-gray-200" scope="col">시민들의 평가</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b">
+<td class="px-6 py-4 font-bold border border-gray-200">서무련</td>
+<td class="px-6 py-4 border border-gray-200">7.26% (151,464표)</td>
+<td class="px-6 py-4 border border-gray-200">진심 어린 사죄, 정계 은퇴 후 복지재단 설립</td>
+<td class="px-6 py-4 text-blue-600 font-bold border border-gray-200">"비록 실책했으나 양심은 있었던 사람"</td>
+</tr>
+<tr class="bg-white border-b">
+<td class="px-6 py-4 font-bold border border-gray-200">지총민</td>
+<td class="px-6 py-4 border border-gray-200">12.29% (256,384표)</td>
+<td class="px-6 py-4 border border-gray-200">적반하장격 망언, 2008년 재보궐 참패 후 퇴출</td>
+<td class="px-6 py-4 text-red-600 font-bold border border-gray-200">"효빈의 미래를 망치고도 반성 없는 흉물"</td>
+</tr>
+</tbody>
+</table>
+<p>2006년의 교훈은 명확했다. 정치인의 얄팍한 명분과 분열이 시민의 일상을 어떻게 지옥으로 몰아넣는지 뼈저리게 학습한 효빈 시민들은 두 번 다시 같은 실수를 반복하지 않았다. 당시 서무련과 지총민에게 던져졌던 19.5%의 표심은, 이후 박현만 시장의 압도적 복귀를 넘어 2022년 <a class="text-blue-600 underline" href="박효빈.html">박효빈</a> 시장이 **77.9%**라는 유례없는 지지율로 당선되는 거대한 통합의 밑거름이 되었다.</p>
+<p>"지총민을 찍은 사람들은 분노를 배웠고, 서무련을 찍은 사람들은 슬픔을 배웠다. 그리고 그들 모두는 다시는 3표의 비극을 반복하지 않겠다는 결의로 하나가 되었다." 잘못을 저지른 후 정치인이 선택할 수 있는 '성찰'과 '파멸'의 두 가지 길은, 20년이 지난 지금도 효빈 정치사에 지워지지 않는 묵직한 이정표로 남아 있다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "\uadf8\ub54c \uc9c0\ucd1d\ubbfc \ucc0d\uace0 7000\uc6d0\uc9dc\ub9ac \uac08\uc0c9 \ubc84\uc2a4 \ud0c0\uba74\uc11c \uc9c4\uc9dc \ub9e4\uc77c\ub9e4\uc77c \ub0b4 \uc190\uac00\ub77d\uc744 \uc6d0\ub9dd\ud588\ub2e4... \uc9c0\ucd1d\ubbfc \uc800 \uc0c8\ub07c\uac00 \u0027\ub0b4 \ud0d3 \uc544\ub2d8 \u3145\u3131\u0027 \ud560 \ub54c \uc9c4\uc9dc \ub450\uccad\uc6b4\uc218 \ubc84\uc2a4\ub85c \ubc00\uc5b4\ubc84\ub9ac\uace0 \uc2f6\uc5c8\uc74c. 3\ud45c \ub3c4\ub451\ub188\uc740 \ud3c9\uc0dd \uc785 \ub2e4\ubb3c\uace0 \uc0b4\uc544\ub77c.", "dislike": 14, "isPunished": false, "like": 52100, "nick": "Bus_Survivor_06", "replies": [{"content": "\u3139\u3147 45\uc778\uc2b9\uc5d0 75\uba85 \ub07c\uc6cc \ud0c8 \ub54c\ub9c8\ub2e4 \uc724\ub300\ud658\uc774\ub791 \uc9c0\ucd1d\ubbfc \uc800\uc8fc\ud588\uc74c \u314b\u314b\u314b \uc9c0\uae08 2026\ub144\uc5d0 \u003ca href=\u0027\ube48\ud6a8\uc120\uad11\uc5ed\uc804\ucca0.html\u0027 style=\u0027color: #6677CC; font-weight: bold;\u0027\u003e\ube48\ud6a8\uc120\u003c/a\u003e \ud0c0\uba74\uc11c \uc0c1\ucc98 \uce58\uc720 \uc911 \u3160\u3160", "nick": "Fact_Check"}], "time": "\ubc29\uae08 \uc804"}, {"content": "\uc11c\ubb34\ub828 \ud6c4\ubcf4\ub2d8 \ube57\uc18d\uc5d0\uc11c \uc808\ud558\uc2e4 \ub54c \uc9c0\ub098\uac00\ub2e4 \ubd24\ub294\ub370 \uc9c4\uc9dc \ub208\ubb3c \ub0ac\uc74c... \uc0ac\ub78c\uc774 \uc2e4\uc218\ud560 \uc21c \uc788\uc5b4\ub3c4 \uc800\ub807\uac8c \uc9c4\uc2ec\uc73c\ub85c \ub258\uc6b0\uce58\uace0 \uc7ac\ub2e8 \uc138\uc6cc\uc11c \ub3c8\uc73c\ub85c \uc0ac\uc8c4(?)\ud558\ub294 \uc815\uce58\uc778\uc740 \ud754\uce58 \uc54a\uc9c0. \uc6b0\ub9ac \ub3d9\ub124 \u003ca href=\u0027\ud6a8\ube486\ud638\uc120.html\u0027 style=\u0027color: #881188; font-weight: bold;\u0027\u003e\ubcf4\ub77c\uc0c9 6\ud638\uc120\u003c/a\u003e \ubcf5\uad6c\ub420 \ub54c \uc11c\ubb34\ub828 \uc774\uc0ac\uc7a5\ub2d8\uc774 \uae30\ubd80\uae08 \ub0b4\uc8fc\uc2e0 \uac70 \ud3c9\uc0dd \uc548 \uc78a\uc74c.", "dislike": 22, "isPunished": false, "like": 41250, "nick": "Hyobin_Youth_881188", "replies": [{"content": "\uc11c\ubb34\ub828 \uc774\uc0ac\uc7a5\ub2d8 \ub355\ubd84\uc5d0 \uadf8 \uc9c0\uc625 \uac19\ub358 \uc2dc\uac04 \ubc84\ud17c\ub2e4... \uac15\uc131\ud0dd\uc774\ub791 \uc9c0\ucd1d\ubbfc \uc774 \ub178\uc778\ub124\ub4e4\uc740 \uc544\uc9c1\ub3c4 \uc815\uc2e0 \ubabb \ucc28\ub9ac\uace0 \uc785 \ud138\uace0 \ub2e4\ub2c8\ub358\ub370 \uc218\uc900 \ucc28\uc774 \ubcf4\uc18c", "nick": "Saya_Fan"}], "time": "5\ubd84 \uc804"}, {"content": "\uc724\ub300\ud658 \uc2dc\uc7a5\ub2d8\uc740 \ud6a8\ube48\uc758 \uae30\uac15\uc744 \ubc14\ub85c\uc7a1\uc73c\uc2e0 \uc704\ub300\ud55c \ubd84\uc774\uc168\uc2b5\ub2c8\ub2e4!! \ubc15\ud6a8\ube48\uacfc \uc88c\ud30c \uc138\ub825\ub4e4\uc774 7000\uc6d0 \ubc84\uc2a4\ub97c \ud551\uacc4\ub85c \uc120\ub3d9\ud558\ub294 \uac83\uc785\ub2c8\ub2e4!! \uc9c0\ucd1d\ubbfc \ud6c4\ubcf4\ub3c4 \uc18c\uc2e0 \uc788\ub294 \ud22c\uc7c1\uc744 \ud588\uc744 \ubfd0\uc785\ub2c8\ub2e4!!", "dislike": 85000, "isPunished": true, "like": 9, "nick": "Free_Isaiah", "replies": [{"content": "\uc654\ub2e4 \u003ca href=\u0027\uc774\ucc28\uc57c.html\u0027 class=\u0027text-blue-500 underline\u0027\u003e\uc774\ucc28\uc57c\u003c/a\u003e \u314b\u314b\u314b\u314b \uc57c \ub10c \uc724\ub300\ud658 \ucc2c\uc591\ud558\ub2e4 \ubabb\ud574 \uc774\uc820 \uc9c0\ucd1d\ubbfc\uae4c\uc9c0 \uc274\ub4dc\uce58\ub0d0? \uc4f0\ub808\uae30 \ucf5c\ub809\ud130\ub124 \uc644\uc804", "nick": "Normal_Citizen"}, {"content": "\uc774\ucc28\uc57c \uc81c\ubc1c \u003cspan style=\u0027color:#0077DD; font-weight:bold;\u0027\u003e\ud30c\ub780\uc0c9 1\ud638\uc120\u003c/span\u003e \ucca0\ub85c \uc704\uc5d0\uc11c \ub2c8\uac00 \ub9d0\ud558\ub294 \uadf8 \uae30\uac15 \uc880 \uc7a1\uc544\ubd10\ub77c \u314b\u314b\u314b \ucc0c\uc9c8\ud558\uac8c \uc5d0\ud0c0\uc5d0 \ub625\uae00 \uc2f8\uc9c0 \ub9d0\uace0", "nick": "Subway_Driver"}], "time": "10\ubd84 \uc804"}, {"content": "\uc2dc\ubbfc\ub4e4\uc774 \ud488\uaca9\uc744 \ubaa8\ub974\uace0 \uc800\uae09\ud55c \ub9cc\ud654 \ubc84\uc2a4\ub098 \uc88b\uc544\ud558\ub2c8 \uc724\ub300\ud658 \uc2dc\uc7a5\ub2d8\uc774 7000\uc6d0\uc73c\ub85c \uae08\uc735 \uce58\ub8cc\ub97c \ud574\uc8fc\uc2e0 \uac81\ub2c8\ub2e4!! \ubc15\ud6a8\ube48 \uc2dc\uc7a5\uc758 \ucca0\ub3c4 \uc815\ucc45\uc740 \ud3ec\ud4f0\ub9ac\uc998\uc5d0 \ubd88\uacfc\ud569\ub2c8\ub2e4!!", "dislike": 91000, "isPunished": true, "like": 5, "nick": "Yoon_Guard_99", "replies": [{"content": "\uae08\uc735\uce58\ub8cc \u3147\u3148\u3139 \u314b\u314b\u314b\u314b \uc724\uc7ac\ud6c8\uc774\ub0d0? \uc1e0\ud30c\uc774\ud504 \ub4e4\uace0 \u003ca href=\u0027\ud6a8\ube48\ud56d.html\u0027 class=\u0027text-blue-500 underline\u0027\u003e\ud6a8\ube48\ud56d\u003c/a\u003e \uc55e\ubc14\ub2e4\ub098 \uac00\ub77c \u314b\u314b\u314b", "nick": "Logic_Destroyer"}], "time": "12\ubd84 \uc804"}, {"content": "2006\ub144\uc5d0 \uadf8 \ub09c\ub9ac \uce58\uace0 \uae68\ub2ec\uc740 \uac8c \uc788\uc5b4\uc11c 2022\ub144\uc5d0 \ubc15\ud6a8\ube48 \uc2dc\uc7a5\ub2d8\ud55c\ud14c 77.9% \ubab0\ud45c \uac04 \uac70\uc784. \ubd84\uc5f4\ud558\uba74 \uc5b4\ub5bb\uac8c \ub418\ub294\uc9c0 \ubf08\uc800\ub9ac\uac8c \ubc30\uc6e0\uac70\ub4e0. \u003cspan class=\u0027strike\u0027\u003e\ub2e4\uc2dc\ub294 \ub0b4 \uc9c0\uac11\uc744 \ub450\uccad\uc6b4\uc218 \uac19\uc740 \ub188\ub4e4\ud55c\ud14c \ud138\ub9ac\uac8c \ub450\uc9c0 \uc54a\uaca0\ub2e4\u003c/span\u003e", "dislike": 8, "isPunished": false, "like": 39500, "nick": "Vote_For_HyoBin", "replies": [], "time": "15\ubd84 \uc804"}, {"content": "\ub0a8 \ud0d3\ub9cc \ud558\ub358 \uc9c0\ucd1d\ubbfc\uc740 3.29% \ubc1b\uace0 \uba78\ub9dd\ud558\uace0, \uc790\uae30 \ud0d3\ud558\ub358 \ubc15\ud604\ub9cc \uc2dc\uc7a5\ub2d8\uc740 \ubcf5\uadc0\ud574\uc11c 80%\ub300 \ucc0d\uc5c8\uc9c0. \ubed4\ubed4\ud55c \uc0c8\ub07c\ub4e4\uc740 \ud6a8\ube48\uc5d0\uc11c \ubc1c\ubd99\uc77c \uacf3 \uc5c6\uc74c. \uc720\uc131\ubbfc \ud6c4\ubcf4\uac00 \uad6d\ud798 \uc190\uc808 \uce5c \uac83\ub3c4 \ub2e4 \uc774\ub7f0 \uc5ed\uc0ac\uc801 \ub9e5\ub77d\uc774 \uc788\ub294 \uac70\uc784.", "dislike": 0, "like": 28900, "nick": "Hyobin_Pride", "replies": [], "time": "25\ubd84 \uc804"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

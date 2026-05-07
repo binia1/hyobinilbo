@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[복지/교육] "가난해도 덕질할 권리 있다"... 효빈시 '블루버드 정책'에 청소년 환호 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 (댓글용으로 남겨둠) */
+        .strike { text-decoration: line-through; color: #888; }
+        .drip { font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">복지/교육 > 행정</div>
+                <h2 class="article-title">"가난해도 덕질할 권리 있다"... 효빈시 '블루버드 정책'에 청소년 환호</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김복지 기자</span> (welfare@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.06 22:40</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">단순 행정 보조 넘은 '실전형 예비 공무원 육성'... 공공기관 취업률 45% 돌파<br>생활임금 1.2배 파격 지원... "학비·생활비는 물론 문화생활까지 완벽 보장"<br>박효빈 시장의 청년 시절 경험 녹여낸 '상생 복지'... 최고 30대 1 경쟁률 기록</span></p>
+                    
+                    <div class="my-6">
+                        <img src="블루버드_멘토단.png" alt="효빈시 블루버드 멘토단 발대식 현장" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Blue+Bird+Mentor+Program'">
+                        <div class="img-caption">▲ <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈광역시장이 시청 대강당에서 열린 '제4기 <a href="블루버드멘토단.html" class="text-blue-600 underline">블루 버드 멘토단</a> 발대식'에서 청년 단원들과 기념 촬영을 하고 있다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김복지 기자] 효빈광역시가 저소득층 청년들의 경제적 자립과 실무 역량 강화를 위해 도입한 '블루 버드 멘토단' 정책이 지역 청년들과 대학생들 사이에서 폭발적인 호응을 얻고 있다. "모든 청년은 가난과 상관없이 마음껏 문화생활을 향유할 권리가 있다"는 슬로건 아래 출범한 이 제도는, 단순한 금전적 지원을 넘어 청년들의 실질적인 취업 사다리 역할까지 톡톡히 해내며 지자체 복지 정책의 새로운 패러다임을 제시하고 있다.</p>
+
+                    <p>6일 효빈시 복지정책과에 따르면, 지난 2022년 하반기 첫발을 내디딘 '블루 버드 멘토단'은 누적 수료생 500명을 돌파했으며, 이들의 공무원 및 공공기관, 대기업 <strong>취업률은 45%를 상회</strong>하는 것으로 나타났다.</p>
+
+                    <p>이러한 눈부신 성과의 배경에는 기존의 관행을 완전히 뒤엎은 파격적인 운영 방식이 자리 잡고 있다. 일반적인 국가장학생이나 교내 근로장학생이 최저시급 수준의 급여를 받으며 복사, 우편물 정리 등 단순 노무에 투입되는 것과 달리, 블루 버드 멘토단은 철저한 <strong>'실무 중심'</strong>으로 운영된다. 선발된 학생들은 시청 내 기획, 복지, 문화관광 등 핵심 부서에 배치되어 현직 주무관들과 1대1 결연을 맺고, 정책 기획 보조, 빅데이터 분석, 현장 실태 조사 등 실제 행정 업무를 깊이 있게 경험하게 된다.</p>
+
+                    <p>가장 눈길을 끄는 대목은 압도적인 급여 수준이다. 효빈시는 참여 학생들에게 <strong>관내 생활임금의 1.2배에 달하는 파격적인 시급</strong>을 지급하고 있다. 이는 학비와 생계비 마련을 위해 여러 개의 아르바이트를 전전해야 하는 취약계층 학생들의 이른바 '시간 빈곤'을 근본적으로 해결하기 위한 조치다.</p>
+
+                    <div class="my-6">
+                        <img src="박효빈_청년정책.png" alt="박효빈 시장 청년 정책 브리핑" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Youth+Policy+Briefing'">
+                        <div class="img-caption">▲ 박효빈 시장이 청년 정책 브리핑에서 취약계층 청년들의 '시간 빈곤' 문제와 문화 향유권의 중요성을 설명하고 있다. 1996년생인 박 시장은 본인의 청년 시절 경험을 정책에 적극 반영하고 있다.</div>
+                    </div>
+
+                    <p>이 제도를 직접 기획한 박효빈 효빈시장은 본지와의 인터뷰에서 "과거 대학 시절 병든 가족을 부양하며 아르바이트 3개를 뛰느라 꿈이나 취미는 상상조차 할 수 없었다"며, "우리 효빈시의 후배 청년들만큼은 생계 걱정 없이 실무 스펙을 쌓고, <strong>남는 돈과 시간으로 서브컬처 축제를 즐기거나 굿즈를 구매하는 등 마음껏 문화생활(덕질)을 누릴 수 있도록 완벽한 경제적 자립을 보장</strong>하고 싶었다"고 정책 도입 취지를 설명했다.</p>
+
+                    <p>제도의 수혜를 입고 실제로 공직의 꿈을 이룬 성공 사례도 줄을 잇고 있다. 블루 버드 멘토단 1기 출신으로 치열한 경쟁을 뚫고 정식 9급 공채에 합격해 현재 시청 문화관광과에서 근무 중인 이 모 주무관이 대표적이다. 이 주무관은 "멘토단 시절 현장에서 직접 상권 분석 데이터를 취합하고 정책 회의에 참여했던 경험이 실제 면접과 현재의 실무에 결정적인 도움이 되었다"며, "경제적 압박에서 벗어나 미래를 준비할 수 있게 해준 효빈시의 지원에 깊이 감사드린다"고 전했다.</p>
+
+                    <p>실질적인 혜택과 우수한 취업 연계망이 입소문을 타면서, 최근 진행된 멘토단 모집에서는 <strong>평균 경쟁률이 30대 1</strong>을 훌쩍 넘어서는 등 웬만한 대기업 정규직 공채를 방불케 하는 뜨거운 열기를 보였다. 타 광역지자체들 역시 앞다투어 벤치마킹을 시도하고 있으나, 예산 확보의 한계와 실무 부서의 소극적인 태도로 인해 효빈시만큼의 성과를 내지 못하고 있는 실정이다.</p>
+
+                    <p>단순한 일회성 시혜가 아닌, 청년의 시간과 존엄성을 지켜주며 미래를 위한 가장 확실한 투자로 자리 잡은 효빈시의 '블루 버드 정책'. 청년들의 무거운 어깨를 가볍게 해주는 이 파랑새가 앞으로 얼마나 더 많은 청년들의 꿈을 비상하게 할지 지역사회의 기대가 모이고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">14,293</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "BlueBird_Alumni", time: "방금 전", like: 32500, dislike: 15, isPunished: false,
+                                content: "블루버드 2기 수료생입니다. 진짜 이 정책은 빛 그 자체예요. 국장이나 교내근로는 맨날 문서파쇄만 시키는데, 시청에서 현직자 멘토님이랑 공공데이터 포털 다루고 기획안 쓰는 법 빡세게 배웠습니다. 덕분에 올해 공기업 합격했어요 ㅠㅠ 박효빈 시장님 평생 지지합니다!",
+                                replies: [
+                                    { nick: "Job_Seeker", content: "와 축하드립니다! 기획안 쓰는 법 같은 건 학원 가도 제대로 못 배우는데 진짜 꿀이네요. 부럽다 ㅠㅠ" },
+                                    { nick: "Hater_Troll", nickClass: "text-red-600 font-bold", content: "어차피 지인 추천으로 들어간 거 아니냐? ㅋㅋㅋ 시청 알바가 무슨 실무야 알바충이 헛바람만 들었네" },
+                                    { nick: "Fact_Check", content: "경쟁률 30대 1이라 블라인드 면접 빡세게 본단다 방구석 백수야. 열폭할 시간에 자소서나 한 줄 더 써라." },
+                                    { nick: "Congrats_Man", content: "수료생님 악플 무시하세요. 저도 지원할까 고민 중인데 합격 기운 받아갑니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Otaku_Life", time: "5분 전", like: 28400, dislike: 42, isPunished: false,
+                                content: "'가난해도 덕질할 권리 있다' 와 진짜 이 워딩 보고 울컥했다... 맨날 돈 없어서 알바 뛰느라 최애캐 생일카페도 못 가고 굿즈도 못 샀는데, 시장님이 덕후 마음을 너무 잘 알아줌 ㅠㅠ",
+                                replies: [
+                                    { nick: "Boomer_K", nickClass: "text-red-600 font-bold", content: "가난한 주제에 무슨 사치스럽게 캐릭터 상품을 사고 축제를 가!! 그 돈으로 책을 사서 공부를 해라 쯧쯧쯧 요즘 애들은 정신머리가 썩었어!!" },
+                                    { nick: "MZ_Power", content: "가난하면 밥만 먹고 숨만 쉬고 기계처럼 일만 해야 합니까? 문화생활 누릴 권리는 헌법에도 나와있습니다 꼰대 할아버지." },
+                                    { nick: "Boomer_K", nickClass: "text-red-600 font-bold", content: "라떼는 말이야 흙 퍼먹으면서 공부했어 임마!! 배때지가 불렀지 아주!!" },
+                                    { nick: "Time_Machine", content: "어르신, 지금 2026년입니다. 타임머신 타고 1960년대로 돌아가세요 제발. 스마트폰은 왜 쓰십니까?" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Payer_No1", time: "10분 전", like: 12, dislike: 41000, isPunished: true,
+                                content: "내 피 같은 세금으로 오타쿠 새끼들 장난감 사라고 돈을 퍼주네 ㅋㅋㅋ 박효빈 완전 좌파식 포퓰리즘 미쳤다!! 1.2배 시급이 말이 되냐? 저딴 거 다 폐지하고 세금이나 깎아라!!",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "취업률 45%면 청년수당 그냥 뿌리는 것보다 100배는 훌륭한 '투자'인데요? 백수들 취업시켜서 세금 내게 만드는 건데 이게 왜 포퓰리즘?" },
+                                    { nick: "Tax_Payer_No1", nickClass: "text-red-600 font-bold", content: "취업률 45% 저거 다 조작된 통계다!! 좌빨 언론의 선동에 속지 마라!! 애국 보수 유튜버가 다 폭로했다!!" },
+                                    { nick: "Sigh_Deeply", content: "너 보나 마나 소득세 한 푼도 안 내는 방구석 앰생이잖아 ㅋㅋ 니가 내는 세금은 편의점에서 라면 살 때 붙는 부가세가 전부일 텐데 유세는 오지게 떠네" },
+                                    { nick: "Admin_Official", content: "단순 알바가 아니라 행정 보조 '실무'를 수행하기 때문에 생활임금 1.2배를 지급하는 겁니다. 노동에 대한 정당한 대가입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Sad_College_Student", time: "15분 전", like: 21500, dislike: 8, isPunished: false,
+                                content: "과거 정부에서 대학생 멘토링 장학금 시급 1350원 깎았던 거 기억나네. 그때 진짜 멘붕이었는데, 효빈시는 오히려 생활임금 1.2배를 쳐주네. 타 지자체랑 국가 장학재단은 효빈시 보고 좀 배워라 제발.",
+                                replies: [
+                                    { nick: "Remember_1350", content: "그때 진짜 합법적 강도질 당한 기분이었음. 150만 원 증발... 시장님이 그거 개빡쳐서 효빈시 자체 예산으로 막아준 거잖아 ㅠㅠ" },
+                                    { nick: "Troll_Master", nickClass: "text-red-600 font-bold", content: "국가 재정이 어려운데 좀 깎일 수도 있지 징징대네 ㅋㅋ 꼬우면 니들이 돈 많이 벌든가 가난한 게 벼슬이냐?" },
+                                    { nick: "Fact_Check_2", content: "재정이 어려워서 관저에 찜질방 짓고 사우나 지었냐 능지 처참한 새끼야 ㅋㅋㅋ" },
+                                    { nick: "Sad_College_Student", content: "장학금 깎아서 부자 감세 해준 게 팩트잖아요. 효빈시는 적어도 약자들 돈은 안 뺏습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Lover", time: "20분 전", like: 19800, dislike: 12, isPunished: false,
+                                content: "시장님이 96년생이시라 그런지 청년 세대의 진짜 결핍이 뭔지 너무 잘 아심. 단순히 밥 굶는 게 문제가 아니라 '시간 빈곤' 때문에 스펙 쌓을 시간도, 취미 즐길 시간도 없는 게 진짜 가난이라는 걸 정확히 짚어냄.",
+                                replies: [
+                                    { nick: "Real_Leader", content: "맞아요. 알바 3개 뛰면서 가족 부양해 본 진짜 '흙수저' 출신이라 디테일이 다름. 책상물림 정치인들은 절대 저런 정책 못 만듦." },
+                                    { nick: "Fake_News_Bot", nickClass: "text-red-600 font-bold", content: "박효빈 저 인간 지 아빠가 재벌이라며? 흙수저 코스프레 역겹네 ㅉㅉ 대중들 선동하기 참 쉽다" },
+                                    { nick: "Fact_Police", content: "어디서 또 이상한 찌라시 쳐읽고 왔네. 시장님 어릴 때 부모님 편찮으셔서 필리핀 혼혈로 차별받으면서 알바 뛴 거 다 아는구만 허위사실 유포로 고소당하고 싶냐?" },
+                                    { nick: "Hyobin_Pride", content: "젊은 나이에 저런 통찰력 갖기 쉽지 않은데. 효빈시의 보배다 진짜." }
+                                ]
+                            },
+                            {
+                                nick: "Job_Hunter", time: "25분 전", like: 15400, dislike: 9, isPunished: false,
+                                content: "공공기관 취업률 45%면 진짜 미친 수치 아님?? 요새 서류 통과도 하늘의 별 따기인데 저기 들어가면 스펙 종결이네. 나도 다음 기수 무조건 지원한다.",
+                                replies: [
+                                    { nick: "HR_Manager", content: "인사담당자 입장에서, 자소서에 '동사무소에서 등본 뗐습니다' 보다 '효빈시청에서 빅데이터 기반 상권 분석 보조했습니다' 가 훨씬 매력적이죠. 스펙 퀄리티가 다릅니다." },
+                                    { nick: "Jealousy_Man", nickClass: "text-red-600 font-bold", content: "저거 다 뒤로 부정채용 해주는 거 아님? 시청 알바생들 특혜 주는 거 보소 불공정하다!!" },
+                                    { nick: "Law_Student", content: "블라인드 채용인데 무슨 뒤로 부정채용이야 ㅋㅋㅋ 본인이 무능해서 취업 못하는 걸 왜 남 탓을 해" },
+                                    { nick: "Do_Your_Best", content: "경쟁률 30대 1 뚫고 들어가서 실무 빡세게 구른 결과입니다. 특혜가 아니라 노력의 결실이죠." }
+                                ]
+                            },
+                            {
+                                nick: "Clean_Web", time: "30분 전", like: 8, dislike: 32000, isPunished: true,
+                                content: "무슨 기사에 대놓고 '덕질' 이딴 상스러운 인터넷 용어를 쓰냐? 기레기 수준 ㅉㅉ 그리고 효빈시는 왜 자꾸 씹덕들 챙겨줌? 정상적인 문화행사를 하라고 토악질 나오네",
+                                replies: [
+                                    { nick: "Economy_King", content: "니가 상스럽다고 까는 그 서브컬처 축제로 작년에 효빈시가 수백억을 벌어들였습니다 방구석 경제학자님아 ㅋㅋㅋ" },
+                                    { nick: "Normal_Person", content: "덕질이 상스러운 단어인가? 그냥 팬 활동 말하는 건데 꼰대력 뭐임 ㅋㅋ 그리고 정상/비정상 나누는 니 사상이 더 무서워" },
+                                    { nick: "Clean_Web", nickClass: "text-red-600 font-bold", content: "애니메이션이나 쳐보는 찐따 새끼들이 단체로 몰려왔네 ㅋㅋㅋ 냄새나니까 좀 씻고 다녀라 어휴" },
+                                    { nick: "Mirror_Therapy", content: "하루 종일 뉴스 댓글창에 악플 다는 너보단 나가서 축제 즐기고 돈 쓰는 찐따가 국가 경제에 훨씬 이득이란다 ^^" }
+                                ]
+                            },
+                            {
+                                nick: "Move_To_Hyobin", time: "35분 전", like: 18200, dislike: 11, isPunished: false,
+                                content: "와... 진짜 효빈시로 전입신고 마렵다. <span style='color:#0077DD;font-weight:bold;'>1호선</span> 타고 내려가면 되나요? 월세 비싸도 저런 복지 혜택이면 무조건 남는 장사일 듯 ㅠㅠ 타 지역 청년은 광광 웁니다.",
+                                replies: [
+                                    { nick: "Real_Estate", content: "요즘 효빈시 청년 전입 인구 폭발해서 대학가 원룸 방이 없어요 ㅋㅋㅋ 진짜 <span style='color:#6677CC;font-weight:bold;'>빈효선</span> 라인도 꽉 찼음" },
+                                    { nick: "Local_Troll", nickClass: "text-red-600 font-bold", content: "오지 마라!! 외부인들 몰려와서 집값만 올리고 효빈시 다 망친다!! 박효빈 아웃!!" },
+                                    { nick: "Welcome_All", content: "청년 인구 유입되면 도시 전체에 활력 돌고 세수 늘어나는데 왜 망해 ㅋㅋㅋ 너 효빈 시민 아니지?" },
+                                    { nick: "Subway_Guide", content: "수도권이시면 <span style='color:#005BAC;font-weight:bold;'>빈주권광역철도</span> 타고 쾌적하게 오십시오. 환영합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Effort_Is_Key", time: "40분 전", like: 14, dislike: 28000, isPunished: true,
+                                content: "가난하면 자기 처지를 알고 공부나 기술을 배워서 돈 벌 생각을 해야지, 무슨 문화생활이고 나발이고 헛바람을 넣어주냐? 저런 돈 뿌리는 정책이 청년들 자생력을 다 갉아먹는 거다.",
+                                replies: [
+                                    { nick: "Human_Rights", content: "기술 배우고 공부하는 시간 벌어주려고 1.2배 시급 주는 거 안 보임? 난독증이냐 아니면 그냥 심보가 꼬인 거냐?" },
+                                    { nick: "Effort_Is_Key", nickClass: "text-red-600 font-bold", content: "헝그리 정신이 없으니까 조금만 힘들어도 포기하는 거다!! 배가 부르니까 덕질 타령이나 하지!!" },
+                                    { nick: "Doctor_K", content: "가난이 인간의 영혼을 어떻게 파괴하는지 1도 모르는 온실 속 화초의 배부른 소리. 니가 말하는 헝그리 정신은 아동 학대 수준이다." },
+                                    { nick: "Read_Again", content: "기사 세 번째 문단 다시 읽어보세요. 단순 노무가 아니라 '실무 중심'으로 스펙 쌓게 해준다고요. 이게 자생력 길러주는 거 아닙니까?" }
+                                ]
+                            },
+                            {
+                                nick: "Family_Love", time: "45분 전", like: 24500, dislike: 6, isPunished: false,
+                                content: "제 동생이 저거 3기 출신인데, 매일 알바 마치고 파김치 돼서 돌아오던 애가 시청 출근하면서부터 눈빛이 달라지더라고요. 지금은 번듯한 공기업 다니면서 주말엔 콘서트도 보러 다닙니다. 우리 가족 살려주셔서 정말 감사합니다 시장님.",
+                                replies: [
+                                    { nick: "Tears_Falling", content: "아침부터 훈훈한 썰 보고 눈물 찔끔 흘림 ㅠㅠ 동생분 진짜 대단하시네요. 앞으로 꽃길만 걸으시길!" },
+                                    { nick: "Suspicious_Mind", nickClass: "text-red-600 font-bold", content: "어디서 시청 알바단 풀었냐? ㅋㅋㅋ 레퍼토리가 다 똑같네 소설 쓰느라 고생이 많다 진짜" },
+                                    { nick: "Angry_Brother", content: "니 꼬인 인생이나 걱정해라. 남의 가족 진심 어린 감사 인사에 악플 다는 니 인성이 참 레전드다." },
+                                    { nick: "Mayor_Support", content: "이게 진짜 복지죠. 단순히 숨만 쉬게 해주는 게 아니라 사람답게 살게 해주는 거. 동생분 앞날을 응원합니다!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈광역시 제5기 블루버드 멘토단 모집</div>
+                    <div class="text-xs">실무 경험 100%, 빵빵한 급여 120%!<br>미래의 공직자와 핵심 인재를 기다립니다<br><span class="text-[#0055aa] underline mt-1 inline-block">지원하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

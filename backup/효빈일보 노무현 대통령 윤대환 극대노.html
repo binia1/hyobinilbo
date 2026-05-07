@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[정치/청와대] "부끄러운 줄 알아야지!" 노무현 대통령, 윤대환 '거지 동네' 망언에 극대노 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #004B87; text-decoration: underline; }
+        .news-nav .active { color: #004B87; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #bfdbfe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #004B87; }
+        .ranking-num { font-weight: bold; color: #004B87; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f8ff; border: 1px solid #bae6fd; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #004B87; font-weight: bold; }
+        .vote-btn.active { color: #004B87; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #004B87; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        strike { color: #888; text-decoration: line-through; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#004B87] font-bold">정치 > 청와대/중앙행정</div>
+                <h2 class="article-title">"부끄러운 줄 알아야지!" 노무현 대통령, 윤대환 '거지 동네' 망언에 극대노... "균형발전 전면 부정"</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 이기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2007.08.21. 10:30 | 수정 2007.08.21. 11:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#004B87] font-bold">국무회의서 '빈효선 광역전철 사태' 보고받고 노무현 대통령 "참담하다" 격노<br>"이웃 지자체에 기생충이라니, 명색이 광역시장이라는 사람이 부끄러운 줄 알아야지"<br>참여정부 핵심 국정과제인 '국가균형발전'에 정면 도전하는 행위로 규정<br>건설교통부, 효빈시에 "분담금 미납 시 국비 지원 전면 삭감" 초강수 경고</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/노무현_대통령_국무회의.png" alt="노무현 대통령 국무회의 발언" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/004B87/FFFFFF?text=President+Roh+Cabinet+Meeting'">
+                        <div class="img-caption">▲ 21일 오전 청와대에서 열린 국무회의에서 노무현 대통령이 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 효빈시장의 '거지 동네' 망언과 <a href="빈효선.html" class="text-blue-600 underline">빈효선</a> 분담금 거부 사태를 보고받은 뒤, 상기된 표정으로 강력한 질타를 쏟아내고 있다. (사진=청와대 사진기자단)</div>
+                    </div>
+
+                    <p>[효빈일보 = 이기자] <a href="천주시.html" class="text-blue-600 underline">천주시</a>와 약산시를 "효빈 덕에 먹고사는 거지 동네"라고 비하하며 광역전철 분담금 집행을 거부한 <a href="윤대환.html" class="text-blue-600 underline">윤대환</a> 효빈시장의 오만한 행태가 결국 청와대의 역린을 건드렸다. 노무현 대통령이 국무회의 석상에서 이를 직접 언급하며 공개적으로 벼락같은 호통을 쳤다.</p>
+
+                    <p>청와대 대변인실에 따르면, 노 대통령은 21일 오전 열린 국무회의에서 건설교통부 장관으로부터 '효빈권 광역철도(빈효선) 지자체 간 분쟁 상황'을 보고받았다. 보고 과정에서 윤 시장의 이른바 '기생충, 거지 동네' 발언이 언급되자, 노 대통령의 얼굴은 붉게 상기되었고 이내 강한 어조로 질타가 쏟아졌다고 참석자들은 전했다.</p>
+
+                    <p>노 대통령은 **"명색이 광역시를 책임진다는 시장이라는 사람이, 함께 상생해야 할 이웃 지자체를 향해 '거지 동네'니 '기생'이니 하는 막말을 던집니까. 부끄러운 줄 알아야지!"**라며 목소리를 높였다. 특유의 직설적이고 강단 있는 화법으로 윤 시장의 일탈을 정면으로 비판한 것이다.</p>
+
+                    <p>이어 노 대통령은 **"참여정부가 뼈를 깎는 노력으로 추진하고 있는 것이 바로 지방분권과 국가균형발전입니다. 그런데 광역교통망이라는 핵심 인프라 예산을 일방적으로 파기하는 것은, 국가의 균형발전 철학을 정면으로 부정하고 지역 이기주의의 끝을 보여주는 참담한 폭거입니다"**라고 강도 높게 비판했다.</p>
+
+                    <div class="my-6">
+                        <img src="이미지/청와대_브리핑.png" alt="청와대 대변인 브리핑" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/444444/FFFFFF?text=Cheong+Wa+Dae+Briefing'">
+                        <div class="img-caption">▲ 청와대 춘추관에서 대변인이 국무회의 결과를 브리핑하며, 효빈시의 광역철도 분담금 미납 시 엄중한 범정부적 제재가 뒤따를 것임을 시사하고 있다.</div>
+                    </div>
+
+                    <p>특히 청와대와 관계 부처는 윤 시장이 분담금을 거부하는 진짜 이유가 자신의 일가 기업인 <a href="두청운수.html" class="text-blue-600 underline">두청운수</a>의 7,000원짜리 시외버스 독점 노선을 보호하기 위함이라는 정황을 심각하게 주시하고 있는 것으로 알려졌다. 노 대통령은 이에 대해 "사사로운 이권 때문에 수백만 시민의 발을 볼모로 잡는 행위는 정부 차원에서 결코 용납하지 않겠다"고 단언했다.</p>
+
+                    <p>대통령의 격노에 중앙 부처도 즉각 초강경 대응에 나섰다. 건설교통부는 효빈시를 향해 "정해진 기일 내에 빈효선 분담금을 납부하지 않을 경우, 효빈시에 배정된 각종 국비 지원금과 교부세를 전면 삭감 내지 보류하겠다"는 최후통첩을 날렸다. <a href="강수성.html" class="text-blue-600 underline">강수성</a> 천주시장이 주도한 행정 소송과 보복 단속에 이어, 중앙정부의 막강한 자금줄 압박까지 더해진 셈이다.</p>
+
+                    <p>윤대환 시장은 그간 "지방자치의 독립성"을 방패 삼아 버텨왔으나, 국가 원수의 직접적인 질타와 국비 삭감이라는 범정부적 제재 앞에서는 사면초가에 몰리게 되었다. 효빈시청 내부에서도 "이러다 진짜 시 재정이 마비되는 것 아니냐"는 극도의 불안감이 감돌고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 의견 <span class="text-[#004B87]" id="comment-count">24,591</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#004B87] text-white px-6 font-bold text-sm hover:bg-[#003366] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Saida_Master", time: "2시간 전", like: 35800, dislike: 112, isPunished: false,
+                                content: "맞습니다 맞고요 ㅋㅋㅋㅋ 노짱 헌정 멘트 '부끄러운 줄 알아야지!' 떴다 ㅋㅋㅋㅋ 윤대환 이 미친 인간은 지자체장이면 다 지 맘대로 할 수 있는 줄 알았나 본데, 국가 전체의 균형발전 철학을 정면으로 들이받은 대가가 뭔지 뼈저리게 느껴봐라 ㅋㅋㅋ 가슴이 뻥 뚫리네 진짜 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Fact_Check", content: "국비 삭감이라는 핵폭탄 떨어짐 ㅋㅋㅋ 효빈시 예산 막히면 윤대환은 시장실에서 쫓겨나는 수준이 아니라 길거리에서 돌 맞을 듯." },
+                                    { nick: "Cheonju_Citizen", content: "강수성 시장님 든든한 백 생기셨네 ㅋㅋㅋ 중앙정부 + 천주시 + 약산시 연합군 vs 똥색 버스 윤대환 ㅋㅋㅋ 게임 끝났다." },
+                                    { nick: "Roh_Fan", content: "진짜 노무현 대통령 특유의 저 딕션은 텍스트로만 봐도 음성 지원이 확실하게 됨 ㅋㅋㅋ '부끄러운 줄 알아야지!'" }
+                                ]
+                            },
+                            {
+                                nick: "Patriot_Yoon", time: "1시간 50분 전", like: 45, dislike: 31800, isPunished: true,
+                                content: "이것은 명백한 좌파 정권의 우파 시장 죽이기다!! 지방자치의 숭고한 독립성을 훼손하는 노무현 정권의 폭거를 규탄한다!! 위대한 윤대환 시장님은 굴복하지 마시고 효빈시의 예산을 지켜주십시오!! 청와대로 몰려가서 두청운수 버스로 바리케이드를 치자!!",
+                                replies: [
+                                    { nick: "Economics_101", content: "지방 소멸 막고 같이 살자고 광역전철 뚫자는 건데 좌우가 어딨냐 똥멍청아 ㅋㅋㅋ 7000원 버스 요금 달달하게 빨아먹는 게 우파의 가치냐?" },
+                                    { nick: "Bus_Survivor", content: "두청운수 버스로 바리케이드? ㅋㅋㅋ 정비 불량이라서 서울 올라가다가 고속도로 한복판에서 퍼질 듯 ㅋㅋㅋ" },
+                                    { nick: "Law_Student", content: "할배요, 지방자치도 국가의 법률과 예산 테두리 안에서 하는 겁니다. 국책 사업 쌩까는 건 독립이 아니라 반역이에요." },
+                                    { nick: "Step_Forward", content: "영감님 혈압 오르시겠네. 노무현 대통령 극대노 1방 + 강수성 시장 과태료 폭탄 1방 맞고 오늘 저녁은 굶으십쇼." }
+                                ]
+                            },
+                            { 
+                                nick: "Hyobin_Pride", time: "1시간 40분 전", content: "효빈시민으로서 대통령님 말씀에 100% 동감합니다. 부끄러워서 고개를 들 수가 없네요. 단 3표 차이로 저런 괴물이 시장이 돼서 우리 효빈시를 '이기적이고 교만한 도시'로 전락시켰습니다. 청와대에서 제발 저 인간 콩밥 좀 먹여주십시오 ㅠㅠ", like: 21500, dislike: 32, 
+                                replies: [
+                                    {nick:"Vote_Matters", content:"3표의 나비효과가 진짜 국가적 재난 수준으로 커짐 ㅋㅋㅋ 선거가 이렇게 무섭습니다 여러분."}, 
+                                    {nick:"Yaksan_Resident", content:"효빈시민들 잘못 아닙니다. 윤대환 저놈이 일가친척 배불리려고 벌인 짓인 거 인근 지자체 사람들도 다 알아요 ㅠㅠ"}
+                                ] 
+                            },
+                            { 
+                                nick: "Tycoon_Watcher", time: "1시간 30분 전", content: "윤대환 저놈은 진짜 머리가 나쁜 듯. 자기 사업(두청운수) 지키려고 타 지자체 시장들한테 막말해서 적을 만들더니, 이젠 대통령 역린(균형발전)까지 건드려서 국가 권력이랑 맞짱을 뜨네 ㅋㅋㅋ 지가 무슨 독립국가 왕인 줄 아나 봐", like: 18200, dislike: 10, 
+                                replies: [
+                                    {nick:"Admin_God", content:"강수성 시장이 밑에서 치고 올라오고, 노무현 대통령이 위에서 짓밟는 완벽한 포위망 ㅋㅋㅋ 윤대환 샌드위치 꿀잼."}
+                                ] 
+                            },
+                            { 
+                                nick: "Bus_Driver", time: "1시간 10분 전", content: "두청운수 기사입니다. 저희 사장(윤대환 일가) 진짜 악덕입니다. 차는 브레이크도 안 듣는 똥차인데 배차 시간 못 맞추면 월급 까고, 강수성 시장님이 천주에서 단속한다고 저희한테 벌금 내라고 협박합니다. 차라리 회사가 망했으면 좋겠습니다.", like: 15500, dislike: 15, 
+                                replies: [
+                                    {nick:"Labor_Rights", content:"아이고 기사님들 무슨 고생입니까 ㅠㅠ 윗물이 썩으니 아랫사람들만 피눈물 흘리네요."}
+                                ] 
+                            },
+                            { 
+                                nick: "Rail_Geek", time: "50분 전", content: "아 빨리 빈효선 연청색 열차 타고 천주랑 약산 편하게 가고 싶다. 7000원 내고 갈색 똥버스 타는 거 진짜 지긋지긋함. 노 대통령님 제발 국비로라도 빈효선 뚫어주세요 ㅠㅠ", like: 11200, dislike: 5, 
+                                replies: [] 
+                            },
+                            { 
+                                nick: "Kang_Soo_Sung_Fan", time: "40분 전", content: "우리 강수성 천주시장님 진짜 정치력 대박인 듯. '주둥이 조심해라' 하고 과태료 때린 다음, 여론전으로 청와대 귀에까지 쏙 들어가게 만들어서 중앙정부 칼춤 추게 만듦 ㅋㅋㅋ 이래서 머리 좋고 꼼꼼한 엘리트를 뽑아야 함.", like: 9800, dislike: 12, 
+                                replies: [
+                                    {nick:"Future_Reader", content:"이런 분이 나중에 도지사 되면 도 전체를 기찻길로 덮어버릴 듯 ㅋㅋㅋ (레일로드 타이쿤 실사판)"}
+                                ] 
+                            },
+                            { 
+                                nick: "Ministry_Worker", time: "30분 전", content: "건설교통부 주무관입니다. 오늘 장관님 지시 떨어지고 효빈시청에 공문 보냈습니다. 국비 삭감 진짜 농담 아닙니다. 도로 보수할 돈까지 다 끊기기 전에 분담금 입금하시죠 윤대환 시장님.", like: 8500, dislike: 8, 
+                                replies: [
+                                    {nick:"Civil_Servant", content:"효빈시청 공무원들 멘탈 바사삭 터지는 소리 여기까지 들린다 ㅋㅋㅋ 미친 시장 만나서 웬 고생이냐 진짜."}
+                                ] 
+                            },
+                            { 
+                                nick: "Yoon_Supporter2", time: "20분 전", content: "이 나라가 공산화되고 있다!! 사유재산(두청운수)을 빼앗기 위해 국가 권력을 동원하다니!! 윤대환 시장님을 지키기 위해 시청 광장으로 횃불을 들고 모이자!!", like: 8, dislike: 7900, isPunished: true,
+                                replies: [
+                                    {nick:"Fact_Bomber", content:"니들 시장이 타 지자체 세금이랑 시민들 주머니 빼먹는 게 진짜 공산당 아님? ㅋㅋㅋ 능지 처참하네 진짜."},
+                                    {nick:"Police_Line", content:"횃불 들면 방화죄로 잡아넣습니다 영감님. 조용히 집에서 뉴스나 보세요."}
+                                ] 
+                            },
+                            { 
+                                nick: "Citizen_A", time: "방금 전", content: "사필귀정. 탐욕에 눈먼 권력자의 최후가 어떻게 되는지 교과서에 실려야 한다. 빈효선 광역전철 무조건 완공 가즈아!!", like: 4100, dislike: 0, 
+                                replies: [] 
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const isVillainComment = cmt.isPunished;
+                            const isBestComment = cmt.like > 10000;
+                            
+                            const div = document.createElement('div');
+                            
+                            if (isVillainComment) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (isBestComment) {
+                                div.className = "best-comment border-blue-200 bg-blue-50"; 
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // 베플, 악플의 대댓글은 기본적으로 펼쳐두기
+                                if(isBestComment || isVillainComment || idx === 0) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`; 
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const isVillain = reply.nick.includes("Patriot") || reply.nick.includes("Yoon_Supporter");
+                                    
+                                    let nickClass = "text-gray-700 font-bold";
+                                    if (isVillain) nickClass = "text-red-600 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${isVillainComment ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${isVillainComment ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner bg-white border border-gray-200 p-4 rounded text-center">
+                <div>
+                    <div class="font-bold text-[#004B87] mb-1">건설교통부 공지</div>
+                    <div class="text-xs text-gray-600">국가균형발전을 위한 광역교통망 확충<br><span class="font-bold">국민 여러분의 세금, 엄정하게 집행합니다.</span></div>
+                </div>
+            </div>
+            <div class="ad-banner p-4 rounded text-center" style="background: #e6f0ff; border: 1px solid #b3d1ff;">
+                <div>
+                    <div class="font-bold text-[#0077DD] mb-1">빈효선(연청색) 착공 기원 서명운동</div>
+                    <div class="text-xs text-blue-700">이기적인 7000원 갈색 똥버스를 끊어냅시다!<br>효빈-천주-약산 시민 연대!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

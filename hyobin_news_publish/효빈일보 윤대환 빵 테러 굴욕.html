@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>출소 직후 또 난동? 윤대환 전 시장, 청엽역서 시민들에게 '빵 세례' 굴욕 도주 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">출소 직후 또 난동? 윤대환 전 시장, 청엽역서 시민들에게 '빵 세례' 굴욕 도주</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">사회부 김기자</span><br>
+                        <span class="text-xs text-gray-400">2017.10.24</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#D4A000] font-bold">윤대환 전 시장, 청엽역 '빵지순례' 중이던 시민들에게 폭언하며 행패<br/>"불순한 문화와 빵 쪼가리로 도시 더럽힌다" 억지 주장 펴다 역풍<br/>분노한 시민들, 모카빵·메론빵 투척하며 항의... 윤 전 시장 황급히 도주<br/>日 성우 "빵 한 조각의 행복을 모르는 불쌍한 사람" 일침... 국제적 망신살</span></p>
+<div class="my-6">
+<img alt="청엽역에서 빵을 맞고 도망가는 윤대환 전 시장" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/444444/FFFFFF?text=Yoon+Dae-hwan+Fleeing'" src="윤대환_빵테러.png"/>
+<div class="img-caption">▲ 24일 오후, 효빈도시철도 3호선 <a class="text-blue-600 underline" href="청엽역.html">청엽역</a> 광장에서 시민들에게 시비를 걸다 '빵 세례'를 맞고 황급히 도주하는 <a class="text-blue-600 underline" href="윤대환.html">윤대환</a> 전 효빈시장의 모습. (사진=시민 제보)</div>
+</div>
+<p>[효빈일보 = 김기자] 살인미수 및 폭력 교사 등의 혐의로 징역을 살고 최근 출소한 <a class="text-blue-600 underline" href="윤대환.html">윤대환</a> 전 효빈시장이 대낮에 지하철역 광장에서 시민들을 상대로 난동을 부리다 '빵 세례'를 맞고 쫓겨나는 초유의 굴욕 사건이 발생했다.</p>
+<p>사건은 24일 오후 2시경, 효빈도시철도 3호선 <a class="text-blue-600 underline" href="청엽역.html">청엽역</a> 앞 베이커리 거리에서 일어났다. 청엽구 일대는 역명인 '청엽(靑葉)'이 일본 유명 애니메이션 캐릭터 '아오바 모카(青葉モカ)'의 성씨와 일치한다는 점과, 해당 캐릭터가 빵을 좋아한다는 설정이 지역의 대형 베이커리 상권과 맞물려 이른바 **'모카의 빵지순례'** 명소로 젊은 층 사이에서 큰 인기를 끌고 있는 곳이다.</p>
+<p>목격자들에 따르면, 윤 전 시장은 돌연 청엽역 광장에 나타나 빵을 들고 기념사진을 찍던 방문객과 시민들을 향해 고성을 지르기 시작했다. 그는 **"어디서 불순한 외래 문화를 들여와 우리 고유의 도시 인프라를 빵 쪼가리로 더럽히느냐! 당장 효빈시에서 나가라!"**며 시민들의 앞을 가로막고 물리적 위협을 가하려 했다.</p>
+<div class="my-6">
+<img alt="청엽역 빵지순례 방문객들" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/FFCC11/FFFFFF?text=Cheongyeop+Station+Bakery+Tour'" src="청엽역_빵지순례.png"/>
+<div class="img-caption">▲ 노란색(#FFCC11) 테마의 3호선 청엽역 일대는 다양한 베이커리가 밀집해 있어 서브컬처 팬들과 일반 시민 모두가 즐겨 찾는 문화 명소로 자리 잡았다.</div>
+</div>
+<p>그러나 과거 그의 강압적인 시정에 짓눌렸던 시민들은 이번엔 물러서지 않았다. 윤 전 시장의 상식 밖의 행태에 격분한 시민들과 방문객들은 들고 있던 모카빵, 메론빵, 크루아상 등을 윤 전 시장을 향해 집어 던지며 강력하게 항의했다. 사방에서 쏟아지는 '빵 세례'와 "빵이나 먹고 정신 차려라!", "범죄자는 조용히 살아라!"라는 시민들의 야유에 당황한 윤 전 시장은 결국 옷에 크림과 빵 부스러기를 잔뜩 묻힌 채 황급히 택시를 잡아타고 도주했다.</p>
+<p>이 우스꽝스러운 '빵 테러 굴욕 사건'은 현장에 있던 시민들의 스마트폰 카메라에 고스란히 담겨 SNS를 통해 순식간에 전국으로 퍼져나갔다. 효빈대학교 학생 커뮤니티인 '에브리타임' 등에서는 "살인미수로 감방 다녀오더니 이제 빵 셔틀로 전락했냐"며 조롱이 쏟아지고 있다.</p>
+<p>더욱이 이 사건은 바다를 건너 일본에까지 알려지며 국제적인 망신살을 뻗쳤다. 해당 캐릭터의 목소리를 연기한 일본 성우는 자신의 라디오 프로그램에서 사건을 언급하며 **"맛있는 빵을 무기로 쓰게 만들다니 너무 슬프다. 빵 한 조각이 주는 행복조차 모르는 정말 불쌍한 사람"**이라고 꼬집어, 맹목적인 고립주의에 빠진 전직 시장의 편협함을 간접적으로 비판했다.</p>
+<p>경찰은 현장에 출동했으나 윤 전 시장이 이미 도주한 뒤였으며, 빵을 투척한 시민들에 대해서도 별도의 입건 조치는 취하지 않았다고 밝혔다. 시민들은 "자신의 죄를 뉘우치기는커녕 여전히 과거의 권위주의와 혐오에 갇혀 있는 윤대환의 찌질한 밑바닥을 보았다"며 혀를 차고 있다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "\ud55c\uad6d \ud6a8\ube48\uc2dc\uc758 \uccad\uc5fd(\u9752\u8449)\uc5ed\uc5d0\uc11c \ub9ce\uc740 \ubd84\ub4e4\uc774 \ube75\uc744 \uc0ac\ub791\ud574 \uc8fc\uc2e0\ub2e4\ub2c8 \uc815\ub9d0 \uae30\ubed0\uc694! \ud83c\udf5e\u2728 \ubaa8\uce74\uca29\ub3c4 \ube75\uc744 \uc815\ub9d0\uc815\ub9d0 \uc88b\uc544\ud558\ub2c8\uae4c\uc694! \ud558\uc9c0\ub9cc \ub9db\uc788\ub294 \ube75\uc744 \ubb34\uae30\ub85c \uc368\uc57c\ub9cc \ud588\ub358 \uc0c1\ud669\uc740 \uc870\uae08 \uc2ac\ud390\uc5b4\uc694. \ube75 \ud55c \uc870\uac01\uc774 \uc8fc\ub294 \ud589\ubcf5\uacfc \ub530\ub73b\ud568\uc744 \ubaa8\ub974\ub294 \ubd84\uc774\ub77c\ub2c8, \uc815\ub9d0 \uc548\ud0c0\uae5d\ub124\uc694... \ub2e4\uc74c\uc5d0\ub294 \ubb34\uae30\uac00 \uc544\ub2c8\ub77c \ub2e4 \uac19\uc774 \uc6c3\uc73c\uba70 \ub098\ub220 \uba39\ub294 \ube75\uc774 \ub418\uc5c8\uc73c\uba74 \uc88b\uaca0\uc5b4\uc694! \ud6a8\ube48\uc2dc\uc758 \ud32c \uc5ec\ub7ec\ubd84, \uc6a9\uae30 \ub0b4\uc8fc\uc154\uc11c \uac10\uc0ac\ud569\ub2c8\ub2e4! \uc800\ub3c4 \uaf2d \uccad\uc5fd\uc5ed \ubca0\uc774\ucee4\ub9ac \uac70\ub9ac\uc5d0 \ubaa8\uce74\ube75 \uba39\uc73c\ub7ec \uac08\uac8c\uc694~ \uc5d0\ubaa8\uc774! \ud83c\udfb8 (\ud55c\uad6d\uc5b4 \ubc88\uc5ed\uae30\ub97c \uc0ac\uc6a9\ud588\uc2b5\ub2c8\ub2e4)", "dislike": 5, "isOfficial": true, "isPunished": false, "like": 165200, "nick": "\u4e09\u6fa4\u7d17\u5343\u9999 (\ubbf8\uc0ac\uc640 \uc0ac\uce58\uce74) \u003cspan class=\u0027text-yellow-600 font-bold\u0027\u003e\u2714 \uacf5\uc2dd\u003c/span\u003e", "replies": [{"content": "\u3141\u314a\u3141\u314a \uc0ac\uce58\uce74 \ub204\ub098 \ubcf8\uc778 \ub4f1\ud310 \u3160\u3160\u3160\u3160\u3160 \uc5d0\ubaa8\uc774!!!! \u3160\u3160\u3160\u3160", "nick": "Moca_Oshi"}, {"content": "\ube44\ucd94 5\uac1c \ub204\ub978 \ub188\ub4e4: \uc724\ub300\ud658 \ubd80\uc790, \ub450\uccad\uc6b4\uc218 \uc794\ub2f9\ub4e4 \u314b\u314b\u314b\u314b \ube75 \ub0c4\uc0c8\ub9cc \ub9e1\uc544\ub3c4 \ubc1c\uc791\ud560 \ub4ef \u314b\u314b\u314b", "nick": "Fact_Bomber"}, {"content": "\ubbf8\uc0ac\uc640 \uc0ac\uce58\uce74 \ub2d8, \uccad\uc5fd\uc5ed \ubc29\ubb38 \uc2dc \ubca0\uc774\ucee4\ub9ac \uac70\ub9ac \uc804\uccb4 \ub300\uad00\ud574 \ub4dc\ub9ac\uaca0\uc2b5\ub2c8\ub2e4. (\uacb0\uc7ac\ud310\uc5d0 \uc789\ud06c \ub9c8\ub974\uae30 \uc804\uc5d0 \ub3c4\uc7a5 \ucc0d\uc5b4\uc57c\uaca0\ub2e4)", "nick": "Mayor_Secret_Acc"}, {"content": "\uc9c4\uc9dc\ub85c 3\ud638\uc120 \uc548\ub0b4\ubc29\uc1a1\uc5d0 \uc0ac\uce58\uce74 \ubaa9\uc18c\ub9ac \ub123\uc5b4\uc57c \ud558\ub294 \uac70 \uc544\ub2d8? \uccad\uc5fd\uc5ed \uc9c4\uc785\ud560 \ub54c \u0027\uc5d0\ubaa8\uc774~\u0027 \uc6b8\ub824 \ud37c\uc9c0\uba74 \uadf9\ub77d\uc77c \ub4ef \u314b\u314b\u314b", "nick": "Hyobin_Metro"}, {"content": "\uc5b4\ub514\uc11c \uadfc\ubcf8 \uc5c6\ub294 \uc65c\uad6d \ub534\ub530\ub77c\uac00 \ud6a8\ube48\uc2dc\uc758 \uc704\ub300\ud55c \uc2dc\uc7a5\ub2d8\uc744 \ub2a5\uba78\ud558\ub290\ub0d0!! \ube75\uc774\ub098 \ub72f\uc5b4\uba39\ub294 \uc624\ud0c0\ucfe0\ub4e4 \uc2f9 \ub2e4 \uad6c\uc18d\ud558\ub77c!!", "nick": "Patriot_Yoon"}, {"content": "\u3134 \uc601\uac10\ub2d8 \ubaa8\uce74\ube75\uc5d0 \uc0dd\ud06c\ub9bc \ubc1c\ub77c\uc11c \ud0dd\uc2dc \ud0c0\uc168\uc73c\uba74 \uc870\uc6a9\ud788 \ud558\uc2ed\uc1fc \u314b\u314b\u314b \uc138\ud0c1\ube44 \uccad\uad6c \uc548 \ub41c \uac78 \ub2e4\ud589\uc73c\ub85c \uc544\uc1fc.", "nick": "Step_Forward"}], "time": "30\ubd84 \uc804"}, {"content": "\uc0b4\uc778\ubbf8\uc218\ub85c \uc9d5\uc5ed \uc0b4\uace0 \ub098\uc640\uc11c \ucc98\uc74c \ud55c \uc77c\uc774 \uc5ec\uace0\uc0dd \uce90\ub9ad\ud130 \ub355\uc9c8\ud558\ub294 \uc560\ub4e4\ud55c\ud14c \uc2dc\ube44 \uac78\ub2e4\uac00 \u003cstrike\u003e\ubaa8\uce74\ube75 \ub9de\uace0 \ud280\uae30\u003c/strike\u003e \ube75 \uc154\ud2c0\ub85c \uc804\ub77d\ud558\uae30 \u314b\u314b\u314b\u314b\u314b \uc9c4\uc9dc \ucd94\ud568\uc758 \ub05d\uc744 \ub2ec\ub9b0\ub2e4 \u314b\u314b\u314b\u314b \uc5b4\ub5bb\uac8c \uc804\uc9c1 \uc2dc\uc7a5\uc774\ub77c\ub294 \uc791\uc790\uac00 \uc800\ub807\uac8c \ucc0c\uc9c8\ud560 \uc218\uac00 \uc788\ub0d0 \u314b\u314b\u314b", "dislike": 15, "isPunished": false, "like": 15400, "nick": "Everytime_Legend", "replies": [{"content": "\ub098 \ud604\uc7a5\uc5d0 \uc788\uc5c8\ub294\ub370 \u314b\u314b\u314b \uc5b4\ub5a4 \uc544\uc800\uc528\uac00 \uac13 \uad6c\uc6b4 \ubc14\uac8c\ud2b8\ub85c \uc724\ub300\ud658 \uc815\uc218\ub9ac \ud6c4\ub824\uce60 \ub54c \uc8fc\ubcc0\uc5d0\uc11c \ud658\ud638\uc131 \ud130\uc9d0 \u314b\u314b\u314b\u314b", "nick": "Bread_Pilgrim"}, {"content": "\uac10\ubc29\uc5d0\uc11c \ucf69\ubc25 \uba39\ub290\ub77c \ube75\uc774 \uadf8\ub9ac\uc6e0\ub098 \ubd04 ^^ \uc6b0\ub9ac\uac00 \ubb34\ub8cc \ubc30\uc2dd \ud574\uc900 \uac74\ub370 \ubb50\uac00 \ubd88\ub9cc? \u314e\u314e", "nick": "Fact_Check"}, {"content": "\uc800 \uc778\uac04 \ub54c\ubb38\uc5d0 \ub450\uccad\uc6b4\uc218 \uac08\uc0c9 \ubc84\uc2a4 \ud0c0\uace0 \uace0\ud1b5\ubc1b\ub358 \uac70 \uc0dd\uac01\ud558\uba74 \uba54\ub860\ube75\uc774 \uc544\ub2c8\ub77c \ubcbd\ub3cc\uc744 \ub358\uc84c\uc5b4\uc57c \ud568.", "nick": "Local_Merchant"}], "time": "2\uc2dc\uac04 \uc804"}, {"content": "\ub2e4\ub4e4 \ubbf8\uce58\uc168\uc2b5\ub2c8\uae4c?! \uc6b0\ub9ac \uc544\ubc84\uc9c0\ub294 \ubd88\uc21c\ud55c \uc77c\ubcf8 \ubb38\ud654 \uc790\ubcf8\uc5d0 \ub9de\uc11c \ud6a8\ube48\uc2dc\uc758 \uc5bc\uc744 \uc9c0\ud0a4\ub824 \ud558\uc2e0 \uc704\ub300\ud55c \ud22c\uc0ac\uc785\ub2c8\ub2e4!! \uc2e0\uc131\ud55c \uad11\uc7a5\uc5d0\uc11c \ube75\uc744 \ubb34\uae30\ub85c \uc4f0\ub294 \uc800 \ubbf8\uac1c\ud55c \uc624\ub355\ub4e4\uc758 \ud3ed\ub825\uc774 \ubb38\uc81c \uc544\ub2d9\ub2c8\uae4c?! \ub2f9\uc7a5 \uc544\ubc84\uc9c0\ub97c \ud5a5\ud55c \uc870\ub871\uc744 \uba48\ucd94\uc2ed\uc2dc\uc624!!", "dislike": 19800, "isPunished": true, "like": 12, "nick": "Patriot_Youth", "replies": [{"content": "\uc5b4? \ub108 \ud639\uc2dc A\uc528 \ud615(\uc724\uc7ac\ud6c8)\uc774\ub0d0? \u314b\u314b\u314b\u314b \uc790\uae30 \uc785\uc73c\ub85c \uc544\ubc84\uc9c0\ub77c\uace0 \uc778\uc99d\ud574\ubc84\ub9ac\ub124 \ube61\ub300\uac00\ub9ac \u314b\u314b\u314b\u314b", "nick": "Logic_Police"}, {"content": "\uc544\ub4e4\uc544, \ub2c8\ub124 \uc544\ube60 \uba54\ub860\ube75\uc5d0 \uc0dd\ud06c\ub9bc \ubc94\ubc85 \ub3fc\uc11c \ud0dd\uc2dc \ud0c0\uace0 \ub3c4\ub9dd\uac00\ub354\ub77c \u314b\u314b\u314b \uc138\ud0c1\ube44\ub294 \ub2c8\uac00 \ub0b4\ub4dc\ub824\ub77c \u314b\u314b\u314b", "nick": "Moca_Bread"}, {"content": "\uc5d0\ud0c0\uc5d0\uc11c\ub3c4 \ub611\uac19\uc774 \uae00 \uc2f8\uc9c0\ub974\ub2e4\uac00 \uc870\ub9ac\ub3cc\ub9bc \ub2f9\ud558\ub354\ub2c8 \uc5ec\uae30\uae4c\uc9c0 \uc640\uc11c \ud328\ub95c \uc778\uc99d\ud558\ub124 \u314b\u314b\u314b \ubd80\uc804\uc790\uc804\uc774\ub2e4 \uc9c4\uc9dc.", "nick": "Everytime_User"}, {"content": "\ub108\ud76c \uc544\ubc84\uc9c0\uac00 \ud22c\uc0ac\uba74 \uc9c0\ub098\uac00\ub358 \ube44\ub458\uae30\ub294 \ud3c9\ud654\uc758 \uc0c1\uc9d5\uc774\ub2e4 \uc774 \ubc94\uc8c4\uc790 \uac00\uc871\uc544 \u3149\u3149", "nick": "Line3_User"}], "time": "1\uc2dc\uac04 50\ubd84 \uc804"}, {"content": "\uc544\uae4c\uc6b4 \ub0b4 \ubaa8\uce74\ube75... \uc724\ub300\ud658 \uba74\uc0c1\uc5d0 \ub358\uc9c0\uae30\uc5d4 \ube75\uc774 \ub108\ubb34 \ubd88\uc30d\ud588\ub2e4 \u3160\u3160 \uadf8\ub798\ub3c4 \ub355\ubd84\uc5d0 \ud0c0\uaca9\uac10\uc740 \uca54\uc5c8\uc74c. \uc131\uc6b0\ub2d8\uc774 \ub77c\ub514\uc624\uc5d0\uc11c \u0027\ube75\uc758 \ud589\ubcf5\uc744 \ubaa8\ub974\ub294 \ubd88\uc30d\ud55c \uc0ac\ub78c\u0027\uc774\ub77c\uace0 \uadf9\ub51c \ub123\uc740 \uac8c \uc624\ub298 \ucd5c\uace0\uc758 \uc0ac\uc774\ub2e4 \u314b\u314b\u314b\u314b", "dislike": 32, "like": 12500, "nick": "Moca_Oshi", "replies": [{"content": "\uc77c\ubcf8 \ub77c\ub514\uc624 \uc0dd\ubc29\uc73c\ub85c \ub4e3\uace0 \uc788\uc5c8\ub294\ub370 \uc0ac\uce58\uce74(\uc131\uc6b0) \ub204\ub098 \uc9c4\uc9dc \uc9c4\uc2ec\uc73c\ub85c \uc5b4\uc774\uc5c6\uc5b4\ud568 \u314b\u314b\u314b\u314b \uad6d\uc81c\uc801 \ub9dd\uc2e0 \u314b\u314b\u314b\u314b", "nick": "Seiyuu_Radio"}, {"content": "\uccad\uc5fd\uc5ed \uc55e \ube75\uc9d1 \uc0ac\uc7a5\uc785\ub2c8\ub2e4. \uc724\ub300\ud658 \uc7a1\ub294 \ub370 \uc4f0\uc2e0 \ube75, \uc601\uc218\uc99d \uac00\uc838\uc624\uc2dc\uba74 \uc0c8 \ube75\uc73c\ub85c \uad50\ud658\ud574 \ub4dc\ub9ac\uaca0\uc2b5\ub2c8\ub2e4 ^^7", "nick": "Bakery_Owner"}], "time": "1\uc2dc\uac04 40\ubd84 \uc804"}, {"content": "\uc6b0\ub9ac 3\ud638\uc120 \ud14c\ub9c8 \uceec\ub7ec\uac00 \ube75\uc774\ub791 \ucc30\ub5a1\uc778 \ub178\ub780\uc0c9(#FFCC11)\uc778\ub370 \u314b\u314b\u314b \ubaa8\uce74\uca29\uc774\ub791 \uc0ac\uc544\uc57c\uac00 \uc5bc\ub9c8\ub098 \uc88b\uc544\ud560 \ub3d9\ub124\uc778\ub370 \ubc94\uc8c4\uc790\uac00 \ubb3c\uc744 \ud750\ub9ac\ub124. \ub178\ub780\uc0c9 \uc804\ucca0 \ud0c0\uace0 \ub3c4\ub9dd\uac00\ub824\ub2e4 \uc81c\uc9c0\ub2f9\ud558\uace0 \ud0dd\uc2dc \ud0c4 \uac8c \ucf54\ubbf8\ub514\uc784 \u314b\u314b\u314b", "dislike": 10, "like": 11200, "nick": "Yellow_Line3", "replies": [{"content": "3\ud638\uc120 \ub9c8\uc2a4\ucf54\ud2b8 \ubc15\ub77c\ubbf8\uac00 \ub178\ub780\uc0c9 \ube57\uc790\ub8e8 \ub4e4\uace0 \uc724\ub300\ud658 \uc4f8\uc5b4\ubc84\ub838\uc5b4\uc57c \ub428 \u314b\u314b\u314b", "nick": "Park_Rami_Fan"}, {"content": "\ubc94\uc8c4\uc790\ub294 \ucf8c\uc801\ud55c \ud6a8\ube48\uad50\ud1b5\uacf5\uc0ac 3\ud638\uc120\uc744 \uc774\uc6a9\ud560 \uc790\uaca9\uc774 \uc5c6\uc2b5\ub2c8\ub2e4. \ud0dd\uc2dc\ub098 \ud0c0\uc2ed\uc1fc \u314b\u314b\u314b", "nick": "Hyobin_Metro"}], "time": "1\uc2dc\uac04 30\ubd84 \uc804"}, {"content": "\ub3d9\ub124 \uc8fc\ubbfc\uc785\ub2c8\ub2e4. \uc608\uc804\uc5d0 \uc724\ub300\ud658 \uc2dc\uc7a5 \uc2dc\uc808\uc5d4 \uccad\uc5fd\uad6c\uccad \uc55e\uc5d0 \ud22d\ud558\uba74 \uc6a9\uc5ed\ub4e4 \ud480\uc5b4\uc11c \uc1e0\ud30c\uc774\ud504 \ub4e4\uace0 \uc11c\ubbfc\ub4e4 \ucad3\uc544\ub0b4\ub358 \ubb34\uc11c\uc6b4 \uc778\uac04\uc774\uc5c8\ub294\ub370... \uc138\uc6d4 \ucc38 \uc88b\uc544\uc84c\ub124\uc694. \uadf8 \ubb34\uc18c\ubd88\uc704 \ub3c5\uc7ac\uc790\uac00 \ub3d9\ub124 \ud559\uc0dd\ub4e4 \ube75 \ucabc\uac00\ub9ac\uc5d0 \ucad3\uaca8 \ub3c4\ub9dd\uac00\ub294 \uaf34\uc744 \ubcf4\ub2e4\ub2c8 \uc2ed \ub144 \ubb35\uc740 \uccb4\uc99d\uc774 \ub0b4\ub824\uac11\ub2c8\ub2e4.", "dislike": 15, "like": 9500, "nick": "Cheongyeop_Resident", "replies": [{"content": "\uc9c4\uc9dc \uadf8 \uc2dc\uc808 \ub450\uccad\uc6b4\uc218 \uac08\uc0c9 \ubc84\uc2a4\uc5d0 \uc6a9\uc5ed \uae61\ud328\ub4e4 \uc0dd\uac01\ud558\uba74 \ud6a8\ube48\uc2dc\ub294 \uc9c0\uc625\uc774\uc5c8\uc74c. \uc9c0\uae08 \ube75 \ub9de\uace0 \ud280\ub294 \uac70 \ubcf4\ub2c8\uae4c \ud638\ub791\uc774 \ube60\uc9c4 \uc774\ube68\uc774\ub124 \u314b\u314b\u314b", "nick": "Dark_History"}], "time": "1\uc2dc\uac04 10\ubd84 \uc804"}, {"content": "\uace0\ub9bd\uc8fc\uc758\ub294 \ube75\uc758 \uc5f0\ub300\ub97c \uc774\uae38 \uc218 \uc5c6\ub2e4 \u314b\u314b\u314b\u314b \uc5d0\ud0c0 \uba85\uc5b8 \ub5b4\ub2e4 \u314b\u314b\u314b\u314b \ube75\uc73c\ub85c \ub300\ub3d9\ub2e8\uacb0 \u314b\u314b\u314b\u314b", "dislike": 5, "like": 8200, "nick": "Anime_Fan", "replies": [], "time": "50\ubd84 \uc804"}, {"content": "\uc194\uc9c1\ud788 \uc724\ub300\ud658 \uc544\uc9c1\ub3c4 \uc9c0\uac00 \uc2dc\uc7a5\uc778 \uc904 \uc54c\uace0 \ud589\uc138\ud558\ub294 \uac70 \uc5ed\uaca8\uc6c0. \uac10\uc625 \ub2e4\ub140\uc654\uc73c\uba74 \uc870\uc6a9\ud788 \ucc0c\uadf8\ub7ec\uc838 \uc788\uc9c0 \uc5b4\ub514\uc11c \uac10\ud788 \ubb38\ud654 \ub3c4\uc2dc\uc5d0 \uc4f0\ub808\uae30 \ud22c\ucc99\uc744 \ud574? \ub2e4\uc74c\uc5d4 \uba54\ub860\ube75\uc774 \uc544\ub2c8\ub77c \uc9c4\uc9dc \ub3cc\uba69\uc774 \ub0a0\uc544\uac08 \uc904 \uc54c\uc544\ub77c.", "dislike": 12, "like": 7800, "nick": "Hyobin_Pride", "replies": [], "time": "40\ubd84 \uc804"}, {"content": "\uc624\ub298 \uc724\ub300\ud658 \ucad3\uc544\ub0b4\uace0 \ub098\uc11c \ubaa8\uc778 \ub355\ud6c4\ub4e4\uc774\ub791 \uc2dc\ubbfc\ub4e4\ub07c\ub9ac \uccad\uc5fd\uc5ed 3\ubc88 \ucd9c\uad6c \uc55e\uc5d0\uc11c \ub0a8\uc740 \ube75 \ub098\ub220 \uba39\uc73c\uba74\uc11c \ucd95\uc81c \ubc8c\uc784 \u314b\u314b\u314b\u314b \uc774\uac8c \uc9c4\uc9dc \ubaa8\uce74\uc758 \ube75\uc9c0\uc21c\ub840\uc9c0 \u314b\u314b\u314b\u314b", "dislike": 8, "like": 6500, "nick": "Bread_Love", "replies": [{"content": "\uc774\uac8c \ud6a8\ube48\uc2dc\uc758 \uc9c4\uc9dc \ub0ad\ub9cc\uc774\ub2e4 \u314b\u314b\u314b\u314b \ubc94\uc8c4\uc790\ub294 \ucad3\uc544\ub0b4\uace0 \uc6b0\ub9b0 \ube75\uc744 \ub098\ub208\ub2e4 \u314b\u314b\u314b", "nick": "Peaceful_City"}], "time": "30\ubd84 \uc804"}, {"content": "\ud1b5\ud0c4\ud560 \ub178\ub987\uc774\ub2e4!! \uc704\ub300\ud55c \uc2dc\uc7a5\ub2d8\uc744 \uac10\ud788 \ube75 \uc870\uac01\uc73c\ub85c \ubaa8\uc695\ud558\ub2e4\ub2c8!! \uc774\ub798\uc11c \uc80a\uc740\uac83\ub4e4\uc740 \uc548 \ub3fc!! \uc608\uc758\ub3c4 \uc5c6\uace0 \ub098\ub77c\uc758 \uae30\uac15\ub3c4 \uc5c6\uace0!! \ud6a8\ube48\uc2dc\uac00 \uc644\uc804\ud788 \uc624\ud0c0\ucfe0\ub4e4\ud55c\ud14c \uba39\ud614\uad6c\ub098!!", "dislike": 5900, "isPunished": true, "like": 5, "nick": "Yoon_Supporter", "replies": [{"content": "\ub2c8\ub124 \uc704\ub300\ud55c \uc2dc\uc7a5\ub2d8 \ud06c\ub9bc\ube75 \ub9de\uace0 \uc9c8\uc9c8 \uc9dc\uba74\uc11c \ud0dd\uc2dc \ud0c0\uc2dc\ub354\ub77c \u314b\u314b\u314b \uae30\uac15\uc740 \uac10\ube75\uc5d0\uc11c\ub098 \ucc3e\uc73c\uc2ed\uc1fc \u314b\u314b\u314b", "nick": "Fact_Bomber"}, {"content": "\uc0b4\uc778\ubbf8\uc218 \uc804\uacfc\uc790 \ube60\ub294 \ud560\ubc30\uac00 \uc608\uc758 \ud0c0\ub839 \u314b\u314b\u314b\u314b \uc5b4\ubd88\uc131\uc124 \uc624\uc9c4\ub2e4 \u314b\u314b\u314b", "nick": "Smart_City"}], "time": "20\ubd84 \uc804"}, {"content": "\ubc15\ud604\ub9cc \uc2dc\uc7a5\ub2d8\uc774 \ub9cc\ub4e4\uc5b4\ub193\uc740 \uc790\uc720\ub85c\uc6b4 \ubb38\ud654 \ub3c4\uc2dc\ub97c \uc804\uacfc\uc790 \ud55c \ub188\uc774 \ub9dd\uce58\uac8c \ub458 \uc21c \uc5c6\uc9c0. \ube75 \ub358\uc9c0\uc2e0 \ubd84\ub4e4 \uc6a9\uae30\uc5d0 \ubc15\uc218\ub97c \ubcf4\ub0c5\ub2c8\ub2e4. \ud6a8\ube48\uc2dc \ud654\uc774\ud305!", "dislike": 0, "like": 3100, "nick": "Citizen_A", "replies": [], "time": "\ubc29\uae08 \uc804"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

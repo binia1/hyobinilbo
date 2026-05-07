@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>'28초의 승부'가 가른 운명... 박효빈 77.9% 압승, 윤재훈 4.8% 몰락 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">'28초의 승부'가 가른 운명... 박효빈 77.9% 압승, 윤재훈 4.8% 몰락</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">김정치 기자</span><br>
+                        <span class="text-xs text-gray-400">2022.06.02</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#0055aa] font-bold">TV 토론회 방송사고 직후 지지율 '골든 크로스' 아닌 '수직 상승'<br/>보수 무소속 유성민 12% 득표로 윤재훈 3위 추락 '수모'<br/>박효빈 당선인 "과거의 상처로 정치하지 않겠다" 통합 메시지</span></p>
+<div class="my-6">
+<img alt="박효빈_시장_당선확정_만세.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/0077DD/FFFFFF?text=Park+Hyobin+Victory'" src="박효빈_당선.png"/>
+<div class="img-caption">▲ 2일 새벽 박효빈 당선인이 선거 캠프에서 당선 확정 소식을 듣고 지지자들에게 손을 흔들고 있다.</div>
+</div>
+<p>[효빈일보 = 김정치 기자] 2022 효빈광역시장 선거는 결국 '품격'의 승리로 끝났다. 더불어민주당 <a class="text-blue-600 underline" href="박효빈.html">박효빈</a> 후보가 77.90%라는 압도적인 득표율로 당선된 반면, 국민의힘 <a class="text-blue-600 underline" href="윤재훈.html">윤재훈</a> 후보는 4.8%라는 치욕적인 성적표를 받아들고 정치적 사망 선고를 받았다.</p>
+<p>이번 선거의 승패는 지난달 17일 있었던 **'TV 토론회 방송사고'**가 결정지었다. 토론회 직전까지 박 후보는 60%대의 안정적인 지지율을 유지했으나, 윤 후보가 생방송 중 박 후보에게 패륜적인 욕설과 폭력을 시도하는 장면이 전파를 타면서 여론은 급격히 박 후보에게 쏠렸다.</p>
+<div class="chart-box">
+<div class="chart-title">📊 2022 효빈광역시장 선거 여론조사 추이</div>
+<canvas id="pollChart"></canvas>
+</div>
+<table class="poll-table">
+<thead>
+<tr>
+<th>구분</th>
+<th>박효빈 (민주)</th>
+<th>윤재훈 (국힘)</th>
+<th>이사원 (정의)</th>
+<th>강성택 (진보)</th>
+<th>유성민 (보수)</th>
+<th>부동층</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1차 여조</td>
+<td>60.50%</td>
+<td>14.80%</td>
+<td>2.60%</td>
+<td>4.00%</td>
+<td>4.00%</td>
+<td>13.90%</td>
+</tr>
+<tr>
+<td>2차 여조</td>
+<td>64.87%</td>
+<td>13.10%</td>
+<td>2.70%</td>
+<td>3.50%</td>
+<td>5.00%</td>
+<td>11.23%</td>
+</tr>
+<tr>
+<td>3차 여조</td>
+<td>64.95%</td>
+<td>12.64%</td>
+<td>2.50%</td>
+<td>3.50%</td>
+<td>6.00%</td>
+<td>10.41%</td>
+</tr>
+<tr>
+<td>4차 여조</td>
+<td>66.76%</td>
+<td>11.12%</td>
+<td>2.50%</td>
+<td>3.12%</td>
+<td>6.00%</td>
+<td>10.20%</td>
+</tr>
+<tr class="highlight-row">
+<td>5차 여조 (토론회 직후)</td>
+<td style="color: #0055aa;">75.10%</td>
+<td style="color: red;">6.65%</td>
+<td>1.90%</td>
+<td>1.50%</td>
+<td style="color: green;">9.00%</td>
+<td>5.41%</td>
+</tr>
+<tr>
+<td><b>최종 득표율</b></td>
+<td><b>77.90%</b></td>
+<td><b>4.80%</b></td>
+<td><b>2.10%</b></td>
+<td><b>1.80%</b></td>
+<td><b>12.04%</b></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>특히 주목할 점은 보수 표심의 이동이다. 토론회 파행 이후 실망한 보수층은 윤재훈 후보 대신 무소속으로 출마한 보수 성향의 <b>유성민 후보</b>에게 결집했다. 유 후보는 12.04%를 득표하며 윤 후보(4.8%)를 제치고 2위를 차지하는 기염을 토했다. 이는 효빈 시민들이 보수 정당이 아닌 '상식'을 선택했음을 보여준다.</p>
+<p>박효빈 당선인은 당선 소감에서 "저를 지지하지 않은 시민들의 마음까지 헤아리는 통합의 시장이 되겠다"며 "과거의 아픔을 딛고 미래로 나아가는 효빈을 만들겠다"고 포부를 밝혔다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "77.9% \u314b\u314b\u314b \uc5ed\ub300\uae09 \uc555\uc2b9\uc774\ub2e4. \uc724\uc7ac\ud6c8 4.8% \uc2e4\ud654\ub0d0? \uc120\uac70\ube44 \ubcf4\uc804 1\uc6d0\ub3c4 \ubabb \ubc1b\uaca0\ub124. \uaf2c\uc2dc\ub2e4.", "dislike": 10, "isPunished": false, "like": 12500, "nick": "Hyobin_Forever", "replies": [{"content": "\ub4dd\ud45c\uc728 10% \ubbf8\ub9cc\uc774\ub77c \uae30\ud0c1\uae08, \uc120\uac70\ube44\uc6a9 \uc804\uc561 \ubcf8\uc778 \ubd80\ub2f4\uc785\ub2c8\ub2e4. \uc9d1\uc548 \uae30\ub465\ubfcc\ub9ac \ubf51\ud788\uaca0\ub124\uc694.", "nick": "Fact_Check"}], "time": "\ubc29\uae08 \uc804"}, {"content": "\ubd80\uc815\uc120\uac70\ub2e4! \uac1c\ud45c \uae30\uacc4\uac00 \uc870\uc791\ub410\ub2e4! \ub0b4\uac00 \uc5b4\ub5bb\uac8c 4.8%\ubc16\uc5d0 \uc548 \ub098\uc640? \ub0b4 \uc9c0\uc9c0\uc790\uac00 \uc5bc\ub9cc\ub370! \ubc15\ud6a8\ube48 \ub124\uac00 \uc2ec\uc5b4\ub193\uc740 \uac04\ucca9\ub4e4\uc774 \ud45c\ub97c \ubc14\uafd4\uce58\uae30\ud588\uc5b4! \ub2f9\uc7a5 \ubb34\ud6a8 \uc18c\uc1a1 \ub0bc \uac70\uc57c!", "dislike": 9800, "isPunished": false, "like": 2, "nick": "YoonJaehoon", "replies": [{"content": "\ucc38\uad00\uc778 \uc785\ud68c \ud558\uc5d0 \uacf5\uc815\ud558\uac8c \uac1c\ud45c\ub418\uc5c8\uc2b5\ub2c8\ub2e4. \ud5c8\uc704\uc0ac\uc2e4 \uc720\ud3ec\ub294 \ucc98\ubc8c \ub300\uc0c1\uc785\ub2c8\ub2e4.", "nick": "Election_Commission"}, {"content": "\ubb34\uc18c\uc18d \ud6c4\ubcf4\ud55c\ud14c\ub3c4 3\ubc30 \ucc28\uc774\ub85c \uc84c\ub294\ub370 \ubb34\uc2a8 \uc870\uc791\uc785\ub2c8\uae4c. \uadf8\ub0e5 \ubbfc\uc2ec\uc774 \ub5a0\ub09c \uac81\ub2c8\ub2e4.", "nick": "Math_Prof"}, {"content": "\ub2d8 \uc9c0\uc9c0\uc790\uc694? \ud1a0\ub860\ud68c \ub54c \ub2e4 \ub3c4\ub9dd\uac14\uc5b4\uc694.", "nick": "Citizen_A"}], "time": "5\ubd84 \uc804"}, {"content": "\ubcf4\uc218\uc9c0\ub9cc \uc724\uc7ac\ud6c8\uc740 \ub3c4\uc800\ud788 \ubabb \ucc0d\uaca0\ub354\ub77c. \uc720\uc131\ubbfc \ud6c4\ubcf4 \ucc0d\uc74c. 12%\uba74 \uc120\uc804\ud588\ub124. \ub2e4\uc74c\uc5d4 \uc81c\ubc1c \uc815\uc0c1\uc801\uc778 \ud6c4\ubcf4 \uc880 \ub0b4\ubcf4\ub0b4\ub77c \uad6d\ud798\uc544.", "dislike": 5, "isPunished": false, "like": 8500, "nick": "Conservative_Voter", "replies": [{"content": "\uc778\uc815. \uc724\uc7ac\ud6c8\uc740 \ubcf4\uc218\uc758 \uc218\uce58\uc784. \uc720\uc131\ubbfc\uc774 \ucc28\ub77c\ub9ac \ub0ab\uc9c0.", "nick": "Real_Right"}], "time": "10\ubd84 \uc804"}, {"content": "5\ucc28 \uc5ec\uc870 \ub54c \uc724\uc7ac\ud6c8 \uc9c0\uc9c0\uc728 \ubc18\ud1a0\ub9c9 \ub09c \uac70 \ubcf4\uc18c \u314b\u314b\u314b \ud1a0\ub860\ud68c\uc5d0\uc11c \ucc45\uc0c1 \uac77\uc5b4\ucc30 \ub54c \ub0b4 \ud45c\ub3c4 \uac19\uc774 \ub0a0\uc544\uac14\ub2e4.", "dislike": 0, "isPunished": false, "like": 6200, "nick": "TV_Debate_Legend", "replies": [], "time": "15\ubd84 \uc804"}, {"content": "\uc720\uc131\ubbfc? \uadf8 \ubc30\uc2e0\uc790\uac00 \ub0b4 \ud45c\ub97c \uac09\uc544\uba39\uc5c8\uc5b4! \ubcf4\uc218 \ubd84\uc5f4 \ucc45\uc784\uc744 \ubb3c\uc5b4\uc11c \ucd9c\ub2f9\uc2dc\ucf1c\uc57c \ud574! \ub0b4\uac00 \uc9c4\uc9dc \ubcf4\uc218\ub2e4! \ubc15\ud6a8\ube48\uc740 \ube68\uac31\uc774\uace0!", "dislike": 8900, "isPunished": false, "like": 1, "nick": "YoonJaehoon", "replies": [{"content": "\uc720\uc131\ubbfc \ud6c4\ubcf4\uac00 \ub2d8\ubcf4\ub2e4 \ub4dd\ud45c\uc728 3\ubc30 \ub192\uc544\uc694. \ub2d8\uc774 \ubd84\uc5f4\uc758 \uc6d0\ud749\uc785\ub2c8\ub2e4.", "nick": "Poli_Sci"}, {"content": "\ud604\uc2e4 \ubd80\uc815\uc774 \uc2ec\ud558\uc2dc\ub124\uc694. \uc0c1\ub2f4 \uad8c\uc720 \ub4dc\ub9bd\ub2c8\ub2e4.", "nick": "Psychiatrist"}], "time": "20\ubd84 \uc804"}, {"content": "\ubc15\ud6a8\ube48 \ub2f9\uc120\uc778\ub2d8, \uc555\ub3c4\uc801 \uc9c0\uc9c0 \uc78a\uc9c0 \ub9c8\uc138\uc694. \uc6b0\ub9ac \ud6a8\ube48\uc2dc \uc798 \ubd80\ud0c1\ub4dc\ub9bd\ub2c8\ub2e4. 8\ud638\uc120 \uc815\uc0c1\ud654 \uaf2d \ud574\uc8fc\uc138\uc694!", "dislike": 0, "isPunished": false, "like": 5500, "nick": "Park_Supporter", "replies": [{"content": "\uc800\ud76c\ub3c4 \uc2dc\uc7a5\ub2d8 \ubbff\uace0 \uc5f4\uc2ec\ud788 \ub6f0\uaca0\uc2b5\ub2c8\ub2e4.", "nick": "Metro_Union"}], "time": "25\ubd84 \uc804"}, {"content": "\uc724\uc7ac\ud6c8 \uc120\uac70 \ud3ec\uc2a4\ud130 \ubcfc \ub54c\ub9c8\ub2e4 \ucc22\uace0 \uc2f6\uc5c8\ub294\ub370 \uc18d\uc774 \ub2e4 \uc2dc\uc6d0\ud558\ub2e4. \uc774\uc81c \ud6a8\ube48\uc2dc\uc5d0\uc11c \uc5bc\uad74 \uc548 \ubd24\uc73c\uba74 \uc88b\uaca0\ub2e4.", "dislike": 1, "isPunished": false, "like": 4000, "nick": "Angry_Taxpayer", "replies": [], "time": "30\ubd84 \uc804"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

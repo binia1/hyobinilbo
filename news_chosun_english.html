@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[미디어] 조선일보 영문판에도 '정정 보도'... 국제적 망신 자초 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">미디어 > 언론/비평</div>
+                <h2 class="article-title">[미디어] 조선일보 영문판에도 '정정 보도'... 국제적 망신 자초</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">김미디어 기자</span> (media@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.07 22:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">'탕쿠쿠 폭행 사건' 가짜 뉴스 영문 번역본 송출했다가 국제적 질타 직면<br>"오타쿠 시장의 정치 보복" 억지 프레임, 필리핀 등 외신 팩트체크에 '백기'<br>박효빈 시장 "국격 떨어뜨린 악의적 오보, 타협 없이 법적 책임 물을 것"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="조선일보_영문판_정정보도.png" alt="조선일보 영문판 홈페이지 정정 보도문 캡처" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=English+Edition+Correction'">
+                        <div class="img-caption">▲ 지난주 송출되었던 왜곡 영문 기사를 삭제하고 사과문을 게재한 해당 언론사 영문판 홈페이지의 모습. 효빈시가 공개한 CCTV 영상 하나에 거짓 선동 카르텔이 무너져 내렸다.</div>
+                    </div>
+
+                    <p>[효빈일보 = 김미디어 기자] 최근 효빈광역시에서 발생한 이른바 <a href="탕쿠쿠파일.html" class="text-blue-600 underline">'탕쿠쿠 파일 폭행 및 인종차별 사건'</a>과 관련해, 가해자를 일방적으로 옹호하는 가짜 뉴스를 보도했던 조선일보가 자사 영문판(The Chosun Ilbo English Edition)에도 굴욕적인 정정 보도문을 게재하며 국제적인 망신을 자초했다.</p>
+
+                    <p>7일 언론계와 효빈시 등에 따르면, 조선일보 영문판은 홈페이지 메인 화면을 통해 지난주 송출했던 "효빈시 공무원, 시장의 서브컬처 취향 비판했다 파면(Hyobin City Official Fired for Criticizing Mayor's Subculture Hobby)"이라는 제목의 영문 기사를 삭제하고, 해당 보도가 사실과 달랐음을 시인하는 영문 정정 보도문을 게재했다.</p>
+
+                    <p>문제가 된 기사는 과거 윤대환 전 시장의 선거 캠프 출신으로 밝혀진 객원기자 최 모 씨가 작성한 국문 기사를 그대로 번역해 송출한 것이다. 기사 본문은 가해자인 전직 김 모 팀장의 폭행을 <strong>'업무 지도 중 발생한 우발적 접촉'</strong>으로 축소하고, 피해자를 향해 내뱉은 심각한 인종차별적 망언은 완전히 누락한 채, <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 시장이 자신의 '오타쿠' 취미를 비판한 직원에 대해 정치적 보복을 가했다는 악의적인 프레임으로 점철되어 있었다.</p>
+
+                    <p>그러나 이 억지 주장은 국경을 넘어 번역되는 순간, 참담한 외교적 결례이자 국제적 조롱거리로 전락했다. 앞서 필리핀 최대 방송사인 ABS-CBN과 GMA 네트워크 등이 김 전 팀장의 "똥남아", "필리핀 튀기" 발언을 다문화 가정을 향한 명백한 혐오 범죄로 규정하고 대서특필한 상황이었기 때문이다.</p>
+
+                    <div class="my-6">
+                        <img src="CCTV_원격공개.png" alt="효빈시가 공개한 4K CCTV 폭행 원본 영상" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=4K+CCTV+Footage'">
+                        <div class="img-caption">▲ 효빈시가 가짜 뉴스에 대응하기 위해 전격 공개한 당시 사건 현장의 4K CCTV 영상 캡처본. 김 전 팀장이 결재판과 굿즈 파일로 부하 직원의 머리를 무자비하게 내리찍는 장면이 선명하게 담겨 있다.</div>
+                    </div>
+
+                    <p>진실을 알고 있는 전 세계 서브컬처 팬덤과 필리핀 교민 사회, 그리고 글로벌 네티즌들은 한국의 주요 언론사가 명백한 인종차별과 특수상해 범죄를 두둔하고 피해자를 폄훼하는 영문 기사를 냈다는 사실에 경악을 금치 못했다. 소셜 미디어에서는 해당 영문 기사 링크와 함께 효빈시가 전격 공개한 4K CCTV 원본 영상(김 전 팀장이 결재판으로 부하 직원의 머리를 내리찍는 장면)이 교차 검증되며, "한국의 레거시 미디어는 혐오 범죄를 감싸는 카르텔이냐"는 거센 비판이 쏟아졌다.</p>
+
+                    <p>결국 전 세계적인 비난 여론이 거세지고 언론중재위원회의 강력한 제재 조치마저 내려지자, 버티기로 일관하던 해당 언론사 역시 백기를 들고 국문판에 이어 영문판까지 정정 보도를 내보내는 초유의 사태를 맞이하게 된 것이다.</p>
+
+                    <p>효빈시 측은 이번 사태를 단순한 해프닝으로 넘기지 않겠다는 강경한 입장이다. 박효빈 효빈시장은 7일 오후 시정 브리핑을 통해 "특정 카르텔의 이익을 위해 쓰인 거짓 기사가 번역되어 전 세계로 퍼져나가며, 졸지에 대한민국은 다문화 가정을 향한 폭력과 차별을 옹호하는 후진국으로 오해받을 뻔했다"며 깊은 유감을 표명했다. 이어 "국격과 효빈시의 명예를 심각하게 훼손한 이번 악의적 오보 사태에 대해서는, 정정 보도에 만족하지 않고 기사 작성자와 데스크를 상대로 끝까지 엄중한 법적 책임을 물을 것"이라고 강조했다.</p>
+
+                    <p>어설픈 언론 플레이로 반대파를 매장하려 했던 구태 정치 카르텔의 얄팍한 시도는, 진실을 요구하는 국제 사회의 날카로운 팩트체크 앞에 대한민국 언론사에 지울 수 없는 흑역사만 남긴 채 씁쓸하게 막을 내리게 되었다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">29,841</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_Justice", time: "방금 전", like: 52100, dislike: 15, isPunished: false,
+                                content: "시장님 진짜 추진력 사이다네요. 언론사가 거짓말하면 4K 원본 영상 까버리고 소송 걸어버리는 마인드 ㅋㅋㅋ 가짜 뉴스는 저렇게 금융치료를 해줘야 다시는 깝치지 못합니다.",
+                                replies: [
+                                    { nick: "Legal_Team", content: "효빈시 법무팀 일 잘하네 ㅋㅋㅋ 소송 걸어서 받아낸 돈으로 시내버스 래핑이나 새로 바꿨으면 좋겠다." },
+                                    { nick: "Fact_Check", content: "진짜 영상 보니까 살인미수 급으로 내려치던데 그걸 '우발적 접촉'이라고 기사 쓴 기자는 양심이 있냐? 기자 자격 박탈해야 함." },
+                                    { nick: "Citizen_A", content: "시장님 끝까지 선처해주지 마세요! 저런 부패 카르텔은 뿌리를 뽑아야 합니다." },
+                                    { nick: "Good_Admin", content: "이게 진짜 행정이지. 시민 명예 훼손하는 집단이랑은 타협 안 하는 거 너무 멋있다." }
+                                ]
+                            },
+                            {
+                                nick: "Right_Wing_Warrior", time: "5분 전", like: 12, dislike: 89000, isPunished: true,
+                                content: "언론 탄압 좌파 독재 박효빈!! 조선일보가 국민을 위해 진실을 말하니까 권력으로 입막음하려 하네!! 공산당 빨갱이 시장은 당장 사퇴하라!! 우리가 지켜줄게 기자님!!",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "4K 화질로 사람 뚝배기 깨는 영상 전세계에 다 풀렸는데 무슨 진실 타령이야 빡대가리야 ㅋㅋㅋ 니 눈깔엔 그게 우발적 접촉으로 보이디?" },
+                                    { nick: "Netizen_C", content: "저 기사 쓴 최모 기자, 전임시장 윤대환 캠프 출신이라고 기사에 떡하니 나오잖아. 카르텔이 누구보고 독재래 ㅋㅋㅋ" },
+                                    { nick: "Right_Wing_Warrior", nickClass: "text-red-600 font-bold", content: "그 영상 다 AI로 조작된 가짜 영상이다!! 좌빨들의 치밀한 선동에 속아 넘어가는 개돼지들 ㅉㅉ" },
+                                    { nick: "Global_Shame", content: "미국 레딧에서도 코미디라고 비웃는데 방구석 여포가 세계구급 망상병에 걸렸네 병원이나 가라 아재요" },
+                                    { nick: "Facepalm_Emoji", content: "이런 애들 특징: 지들 불리하면 다 AI 조작이라고 우김 ㅋㅋㅋ 지능 수준이 진짜 레전드다" }
+                                ]
+                            },
+                            {
+                                nick: "Foreign_Resident", time: "10분 전", like: 41000, dislike: 21, isPunished: false,
+                                content: "미국 유학생인데, 진짜 어제 학교에서 현지 친구가 그 영문 기사 링크 보여주면서 '너희 나라 시장은 취미 비판했다고 직원 자르냐'고 묻는데 얼굴이 화끈거려서 죽는 줄 알았습니다... 다행히 CCTV 영상 떠서 반박하긴 했네요 ㅠㅠ",
+                                replies: [
+                                    { nick: "Overseas_Korean", content: "진짜 공감 ㅠㅠ 필리핀 친구가 메인 뉴스 봤다면서 저한테 인종차별 심하냐고 묻더라고요. 국격 떨어뜨리는 레거시 미디어 진짜 극혐입니다." },
+                                    { nick: "News_Critic", content: "국내용 선동 기사를 겁도 없이 영문으로 번역해서 올리다니 ㅋㅋㅋ 해외 언론 팩트체크 시스템을 좆으로 봤나 보네" },
+                                    { nick: "Embarrassed", content: "기레기 한 명 때문에 외국 나간 교민들이 무슨 죄냐 진짜. 고소 꼭 당해라." },
+                                    { nick: "Mayor_Fan", content: "시장님이 빠른 대처 안 했으면 진짜 독재 국가 프레임 씌워질 뻔... 시장님 고생 많으셨습니다 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "Pure_Korean", time: "15분 전", like: 18, dislike: 75000, isPunished: true,
+                                content: "어디서 근본도 없는 동남아 튀기 시장이 들어와서 정통 한국인 공무원을 짜르냐!! 저 팀장님이 한국인의 자존심을 지켜준 애국자다!! 조선일보가 애국 언론이다!!",
+                                replies: [
+                                    { nick: "Human_Rights", content: "인종차별 + 폭력 전과자를 애국자라 부르는 니 인성 수준 잘 봤습니다. 사이버 경찰청에 혐오 발언으로 고발 접수했습니다 ㅅㄱ" },
+                                    { nick: "Subway_Commuter", content: "니가 말하는 정통 한국인이 결재판으로 사람 패고 다니면 그게 깡패지 공무원이냐? 대가리에 든 게 없으니 튀기 타령이나 하지" },
+                                    { nick: "Pure_Korean", nickClass: "text-red-600 font-bold", content: "다문화 정책 때문에 우리나라 치안 다 박살났다!! 조선족이랑 동남아 놈들 다 추방시켜야 나라가 산다!!" },
+                                    { nick: "Fact_Bomber", content: "치안 박살은 작년 HAF 때 윤재훈이 낸 거고요 ㅋㅋㅋ 통계청 자료 보면 외국인 범죄율이 내국인보다 낮은데 방구석에서 뇌피셜만 오지네" },
+                                    { nick: "History_Nerd", content: "뇌가 19세기 쇄국정책 시절에 멈춰있는 불쌍한 영혼... 평생 그렇게 미움만 가득 품고 살아라" }
+                                ]
+                            },
+                            {
+                                nick: "Transparency_Win", time: "20분 전", like: 36800, dislike: 11, isPunished: false,
+                                content: "4K 화질 CCTV 원본을 무편집으로 시청 홈페이지에 박아버린 게 진짜 신의 한 수였음 ㅋㅋㅋ 기레기들 말장난할 틈도 안 주고 '이래도 우발적 접촉이냐?' 하고 증거를 들이미니까 조선일보도 백기 들지 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Tech_Admin", content: "효빈시 전산팀 열일했네 ㅋㅋㅋ 화질 진짜 엄청 선명해서 파일 모서리에 찍히는 거 다 보이더라 소름" },
+                                    { nick: "Truth_Teller", content: "영상 없었으면 또 지들끼리 짬짜미해서 '쌍방 과실' 이딴 식으로 무마시켰을 듯. 진짜 다행이다." },
+                                    { nick: "HAF_Supporter", content: "시민의 알 권리를 핑계로 허위사실 유포하는 기레기들에겐 투명한 팩트 공개가 최고의 무기죠." },
+                                    { nick: "Respect_Park", content: "박효빈 시장님이 젊어서 그런지 미디어전에서 어떻게 이기는지 정확히 아는 듯 ㅋㅋㅋ 구시대 언론들 참교육 폼 미쳤다" }
+                                ]
+                            },
+                            {
+                                nick: "Old_Generation", time: "25분 전", like: 14, dislike: 62000, isPunished: true,
+                                content: "다 큰 어른이 만화나 쳐보니까 직원이 한소리 한거지!! 시장 체면이 있지 ㅉㅉ 그걸로 파면이라니 너무 심하네!! 기자가 오죽 답답했으면 그런 기사를 썼겠냐!!",
+                                replies: [
+                                    { nick: "Reading_Comprehension", content: "한소리 한 게 아니라 부하 직원 머리를 파일 모서리로 내리찍었다고 글 못 읽냐 난독증 환자야? 폭행을 한소리로 쉴드치네" },
+                                    { nick: "Troll_Hunter", content: "니 자식이 직장 상사한테 대가리 깨져서 와도 '아유 상사가 답답해서 한소리 하셨구나' 할 거냐? 꼰대 마인드 역겹다 진짜" },
+                                    { nick: "Old_Generation", nickClass: "text-red-600 font-bold", content: "어디 버르장머리 없이 어른한테 대들어!! 요즘 MZ 새끼들은 맷집이 없어서 조금만 혼내도 징징대!!" },
+                                    { nick: "Economy_Fact", content: "니가 무시하는 그 '만화' 축제로 효빈시가 수천억을 벌어들인단다. 방구석 백수가 훈수질은 ㅋㅋㅋ" },
+                                    { nick: "Sigh_Machine", content: "나이 먹은 게 벼슬인 줄 아는 전형적인 틀딱. 이런 애들 때문에 나라 발전이 안 됨." }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Check_Pro", time: "30분 전", like: 28500, dislike: 9, isPunished: false,
+                                content: "기사 쓴 최모 기자 = 전임 시장 윤대환 선거 캠프 출신 ㅋㅋㅋㅋ 와 진짜 카르텔 수준 너무 투명해서 할 말이 없네. 지들 카르텔 밥그릇 뺏기니까 시장 끌어내리려고 작정을 했구나.",
+                                replies: [
+                                    { nick: "Cartel_Out", content: "효빈시 토착 비리 세력들 다 드러나네 ㅋㅋㅋ 저런 애들이 기자랍시고 완장 차고 있으니 언론 신뢰도가 바닥이지" },
+                                    { nick: "Voter_Hyobin", content: "윤재훈 50억 배상 판결 나니까 앙심 품고 가짜 뉴스 쓴 게 100%임. 시장님 제발 선처 없이 다 감방에 넣어주세요." },
+                                    { nick: "Journalism_Dead", content: "언론의 탈을 쓴 사설 정보지 수준 ㅋㅋㅋ 부끄러운 줄 알아라 진짜" },
+                                    { nick: "Clean_City", content: "저런 카르텔 다 쳐내고 있는 박효빈 시장님 진짜 응원합니다. 효빈시 정화 화이팅!" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Guardian", time: "35분 전", like: 11, dislike: 51000, isPunished: true,
+                                content: "소송한다고 또 시민들 세금 낭비하겠네!! 걍 쟤네가 영문판 정정 보도까지 했으면 대충 넘어가라 쫌생이 시장아!! 지 무능한 거 가리려고 언론이랑 싸우는 척 쇼하네 ㅉㅉ",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "가짜 뉴스 때문에 효빈시 관광 이미지 박살 나서 생기는 경제적 손실이 얼만데 대충 넘어가 이 빡통아? 허위보도로 피해 본 건 효빈시 전체다." },
+                                    { nick: "Law_Student", content: "징벌적 손해배상 청구해서 돈 벌어올 건데 무슨 세금 낭비? 언론사 상대로 승소하면 시 재정에 이득이다 바보야 ㅋㅋㅋ" },
+                                    { nick: "Tax_Guardian", nickClass: "text-red-600 font-bold", content: "어차피 변호사 수임료로 세금 다 나간다!! 다 지들끼리 해쳐먹는 거다!! 깨어있는 시민은 안 속는다!!" },
+                                    { nick: "Admin_Official", content: "효빈시청 법무팀 소속 변호사들은 원래 공무원이라 월급 받고 일하는 거다. 수임료 타령하는 거 보니 법알못 인증이네 ㅋㅋㅋ 효빈시 법무팀 월급값 하는 중인데 뭐가 문제냐?" },
+                                    { nick: "No_Answer", content: "지 돈 아니라고 막말하네 범죄자 편드는 클라스 ㅋㅋ 넌 평생 사기나 당하고 살아라." }
+                                ]
+                            },
+                            {
+                                nick: "Kuku_Fanclub", time: "40분 전", like: 24100, dislike: 13, isPunished: false,
+                                content: "탕쿠쿠가 또 1승 챙겨가네 ㅋㅋㅋ 파일 모서리에 맞고 주무관님 뚝배기 깨진 것도 모자라, 그 사건 영상 공개돼서 대형 언론사 뚝배기까지 깨버림 ㅋㅋㅋ 진정한 정의의 사도 쿠쿠쨩 ㅠㅠ",
+                                replies: [
+                                    { nick: "LoveLive_Fan", content: "ㅋㅋㅋㅋ 쿠쿠스 배리어 폼 미쳤다. 물리 방어도 모자라 언론 방어까지 완벽함 ㅋㅋㅋ" },
+                                    { nick: "HAF_Participant", content: "작년 HAF 때 저 탕쿠쿠 굿즈 받은 사람인데, 진짜 저 빳빳한 파일이 대한민국 언론계를 정화할 줄은 상상도 못했다 ㅋㅋㅋ" },
+                                    { nick: "Justice_File", content: "이쯤 되면 효빈시청 명예직원으로 탕쿠쿠 임명해야 함 ㅋㅋㅋ" },
+                                    { nick: "Heal_Soon", content: "근데 맞으신 주무관님 진짜 아프셨을 텐데 얼른 쾌차하시길 ㅠㅠ 정의는 승리합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Media_Reform", time: "45분 전", like: 19800, dislike: 8, isPunished: false,
+                                content: "필리핀 방송사들 팩트체크가 한국 메이저 언론보다 낫다는 게 참 아이러니하다. 자국민 피해자는 무시하고 권력자 편만 드는 레거시 미디어는 이제 도태되어야 함. 시장님 소송 꼭 이겨주세요.",
+                                replies: [
+                                    { nick: "Agree_100", content: "진짜 ABS-CBN 앵커가 '이건 인종차별이다'라고 꼬집을 때, 한국 언론은 '업무 중 우발적 접촉'이라고 쉴드 치고 있었음 ㅋㅋㅋ 참담하다." },
+                                    { nick: "Wake_Up_Korea", content: "해외 언론 없었으면 이 사건도 묻혔을 거 생각하니 소름 돋네. 글로벌 시대에 언론 통제가 통할 줄 알았나." },
+                                    { nick: "Support_HB", content: "적폐 언론 청산의 신호탄이 효빈시에서 시작되는구나. 박효빈 시장 화이팅!" },
+                                    { nick: "Future_Hope", content: "이런 게 진정한 정의 구현이지. 죄 지은 놈은 벌 받고, 거짓말 한 놈은 대가를 치러야 함." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner" style="background-color: #fce4e4; border-color: #d32f2f;">
+                <div>
+                    <div class="font-bold text-[#d32f2f] mb-1">효빈시청 법무팀 경력 변호사 채용</div>
+                    <div class="text-xs text-gray-700">가짜 뉴스와 혐오 범죄에 맞설 인재를 모십니다.<br>시민의 명예를 지키는 최전선에 함께하세요!<br><span class="text-[#d32f2f] underline mt-1 inline-block font-bold">채용 공고 바로가기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

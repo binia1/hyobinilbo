@@ -57,27 +57,7 @@
 <body>
 
     <!-- 헤더 -->
-    <header class="news-header">
-        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
-            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
-            <div class="flex gap-2 relative">
-                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
-                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold" onclick="document.getElementById('hnNewsSearchInput').focus()">검색</button>
-            </div>
-        </div>
-        <nav class="border-t border-gray-200">
-            <div class="max-w-[1100px] mx-auto flex news-nav">
-                <a href="index.html">홈</a>
-                <a href="politics.html">정치</a>
-                <a href="economy.html">경제</a>
-                <a href="society.html">사회</a>
-                <a href="world.html">국제</a>
-                <a href="culture.html">문화</a>
-                <a href="news_list.html" class="active border-l border-gray-300 ml-2 pl-4">전체 기사</a>
-            </div>
-        </nav>
-    </header>
-
+    <div id="common-header"></div>
     <div class="article-container">
         <!-- 메인 콘텐츠: 리스트 -->
         <div class="main-content shadow-sm">
@@ -100,21 +80,11 @@
             </div>
         </div>
 
-        <!-- 사이드바 -->
-        <div class="side-content">
-            <div class="ranking-box shadow-sm">
-                <div class="ranking-title">
-                    <span class="text-[#0055aa]">많이 본 뉴스</span>
-                </div>
-                <ul class="ranking-list" id="ranking-list">
-                    <li><span class="ranking-num">1</span> <a href="[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html" class="ranking-link font-bold text-[#0055aa]">[속보] 계엄 해제에 효빈 시민들 환호</a></li>
-                    <li><span class="ranking-num">2</span> <a href="[선택 2025] 이재명, 제21대 대통령 당선.html" class="ranking-link">이재명, 제21대 대통령 당선 확정</a></li>
-                    <li><span class="ranking-num">3</span> <a href="효빈일보 - 윤재훈 선거법 고발 참사.html" class="ranking-link">윤재훈 황당 고발, 선관위 철퇴</a></li>
-                    <li><span class="ranking-num">4</span> <a href="[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html" class="ranking-link">박효빈 시장 지지율 82.4% 고공행진</a></li>
-                    <li><span class="ranking-num">5</span> <a href="archive_2007_brown_winter.html" class="ranking-link">[아카이브] 2007 갈색 겨울 사태</a></li>
-                </ul>
-            </div>
-            
+
+                    <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
             <!-- 광고 -->
             <div class="ad-banner">
                 <div>
@@ -124,24 +94,6 @@
             </div>
         </div>
     </div>
-
-    <!-- 푸터 -->
-    <footer>
-        <div class="max-w-[1080px] mx-auto px-4 flex justify-between">
-            <div>
-                <p class="font-bold text-gray-300 text-sm mb-2">효빈일보</p>
-                <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
-                <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
-                <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
-            </div>
-            <div class="flex gap-4">
-                <a href="#" class="hover:text-white">회사소개</a>
-                <a href="#" class="hover:text-white">이용약관</a>
-                <a href="#" class="hover:text-white font-bold">개인정보처리방침</a>
-                <a href="#" class="hover:text-white">기사제보</a>
-            </div>
-        </div>
-    </footer>
 
 <script>
 (function(){
@@ -570,5 +522,12 @@
     }
 })();
 </script>
+    <!-- 푸터 및 모달 (기존과 동일) -->
+    <div id="common-footer"></div>
+    
+    <!-- 모달 스크립트 생략 (기존과 동일) -->
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+
 </body>
 </html>

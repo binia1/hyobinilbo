@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[환경] "머물다 간 자리도 아름답게"... HAF 폐막 후 쓰레기 '0' 기록 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#00A859] font-bold">환경/사회 > 시민문화</div>
+                <h2 class="article-title">"머물다 간 자리도 아름답게"... HAF 폐막 후 쓰레기 '0' 기록</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이지구 기자</span> (earth@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.06 23:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#00A859] font-bold">수백만 인파 다녀간 HSCO·효빈종합운동장, 쓰레기 없는 '클린 성지' 찬사<br>서브컬처 팬덤의 자발적 '플로깅' 캠페인... "내 최애의 도시에 오점을 남길 수 없다"<br>박효빈 시장 "문화의 품격이 곧 시민의 품격... 가장 완벽한 축제의 완성"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/HAF_폐막_현장.png" alt="HAF 폐막 후 쓰레기 하나 없이 깨끗한 행사장 거리" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Clean+Streets+After+HAF'">
+                        <div class="img-caption">▲ 수백만 명의 관람객이 다녀간 역대 최대 규모의 <a href="HAF.html" class="text-blue-600 underline">효빈 애니메이션 페스티벌(HAF)</a> 폐막 직후, <a href="HSCO.html" class="text-blue-600 underline">HSCO</a> 야외 광장의 모습. 쓰레기 하나 없이 청결하게 유지된 거리가 서브컬처 팬덤의 성숙한 시민의식을 보여준다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 이지구 기자] 효빈광역시 전역을 들썩이게 했던 역대 최대 규모의 서브컬처 축제 '효빈 애니메이션 페스티벌(HAF) 2025: The Grand Slam'이 대단원의 막을 내린 가운데, 축제가 휩쓸고 간 자리에 이른바 <strong>'쓰레기 0(Zero)'</strong>의 기적이 연출되어 화제를 모으고 있다. 수백만 명의 인파가 몰렸음에도 불구하고 주요 행사장과 도심 거리가 평소보다 더욱 깨끗하게 유지되면서, 서브컬처 팬덤의 성숙한 시민의식이 지역 사회에 깊은 울림을 주고 있다.</p>
+
+                    <p>6일 효빈시 환경기획과와 도시청결기동대에 따르면, HAF 메인 스테이지가 위치했던 북구 <a href="생곡동.html" class="text-blue-600 underline">생곡동</a>의 HSCO와 야간 애니송 DJ 파티가 열렸던 <a href="효빈종합운동장.html" class="text-blue-600 underline">효빈종합운동장</a> 일대에서 행사 종료 직후 수거된 방치 쓰레기양은 사실상 '0톤'에 수렴하는 것으로 집계됐다. 대형 지역 축제가 끝난 후 으레 수십 톤의 쓰레기 산이 만들어지고 악취 관련 민원이 폭주하는 일반적인 현상과는 완벽하게 대비되는 모습이다.</p>
+
+                    <p>이러한 기적적인 결과의 배경에는 팬덤의 자발적인 정화 활동이 자리 잡고 있다. 전 세계에서 모여든 관람객들은 <strong>"우리가 사랑하는 캐릭터와 작품의 무대인 효빈시에 오점을 남길 수 없다"</strong>는 공감대 아래 스스로 쓰레기봉투를 지참하고 행사에 참여했다. 특히 야외 공연이 끝난 후에는 수천 명의 관람객이 일제히 주변의 쓰레기를 줍는 '플로깅(Plogging)' 캠페인을 펼치는 장관이 연출되기도 했다.</p>
+
+                    <div class="my-6">
+                        <img src="이미지/다로나_캠페인.png" alt="효빈 4호선 마스코트 다로나 친환경 에코백 캠페인" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Darona+Eco-Bag+Campaign'">
+                        <div class="img-caption">▲ 효빈교통공사가 <a href="4호선.html" class="text-blue-600 underline">4호선</a> 주황색(#FF5522) 마스코트 캐릭터인 <a href="다로나.html" class="text-blue-600 underline">'다로나'</a>를 앞세워 진행한 친환경 에코백 캠페인. 관람객들은 이 가방을 '쓰레기 수거함'으로 자발적으로 활용했다.</div>
+                    </div>
+
+                    <p>효빈교통공사가 기획한 친환경 마케팅도 톡톡한 역할을 했다. 공사는 4호선 마스코트인 '다로나'를 내세워 "길거리 쓰레기 투기는... 안 됩니다!"라는 귀여운 단속 캠페인을 벌였고, <a href="청엽구청역.html" class="text-blue-600 underline">청엽구청역</a> 구내 매장 등에서 판매된 다회용 에코백은 관람객들 사이에서 필수 '쓰레기 수거 가방'으로 활용되며 폭발적인 호응을 얻었다. 또한, 3호선 <a href="사능역.html" class="text-blue-600 underline">사능역</a> 일대 등 주요 빵지순례 상권에서는 팬들이 자발적으로 <strong>'클린 가드'</strong>를 조직해 골목길 분리수거를 돕는 진풍경이 펼쳐지기도 했다.</p>
+
+                    <p>현장 청소를 담당하는 효빈시의 한 환경미화원은 "축제 기간 동안 평소보다 오히려 청소하기가 수월했을 정도"라며, "젊은 관람객들이 스스로 쓰레기를 모아 지정된 장소에 분리수거까지 완벽하게 해놓고 가는 모습을 보며 큰 감동을 받았다"고 전했다.</p>
+
+                    <p><a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈광역시장 역시 6일 열린 시정 현안 회의에서 이번 '클린 HAF' 성과를 극찬했다. 박 시장은 "우리 효빈을 찾아주신 수백만 관람객 여러분이 보여준 성숙한 문화의식에 깊은 존경을 표한다"며, "문화의 품격이 곧 시민의 품격임을 증명해 낸 이번 축제는 L-Project가 단순히 경제적 파급력만을 창출하는 것을 넘어, 선진적인 공동체 문화를 선도하고 있음을 보여준 가장 완벽한 결실"이라고 강조했다.</p>
+
+                    <p>과거 일부 편견 어린 시선을 받기도 했던 서브컬처 팬덤. 그러나 이들이 효빈시에서 보여준 열정과 질서 의식은 '머물다 간 자리도 아름다운' 새로운 축제 문화의 표준을 제시하며, 향후 대한민국 대형 축제가 나아가야 할 긍정적인 이정표로 기록될 전망이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#00A859]" id="comment-count">18,521</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#00A859] text-white px-6 font-bold text-sm hover:bg-[#008844] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "HAF_Volunteer", time: "방금 전", like: 41200, dislike: 15, isPunished: false,
+                                content: "클린 가드로 참여했던 효빈 시민입니다. 팬분들이 진짜 본인 쓰레기는 물론이고 길가에 떨어진 전단지까지 다 줍고 가시더라고요. '우리 장르 욕먹게 할 수 없다'는 그 책임감이 엄청났습니다. 역대급 인파였는데도 오히려 평소 주말보다 거리가 더 깨끗했어요!",
+                                replies: [
+                                    { nick: "Local_Resident", content: "생곡동 주민인데 팩트입니다. 사람 엄청 몰리길래 쓰레기장 될까 봐 걱정했는데, 아침에 나가보니 진짜 낙엽 하나 없이 깨끗해서 소름 돋았음." },
+                                    { nick: "Proud_Otaku", content: "저희 팬덤은 내 최애가 숨 쉬는 도시를 더럽히지 않습니다. 효빈시는 성지니까요!" },
+                                    { nick: "Festival_Staff", content: "타 지역 축제 스태프 해보면 알아요. 벚꽃축제나 불꽃놀이 끝나면 컵라면 국물에 쓰레기 산더미인데, 서브컬처 팬들 시민의식은 진짜 인정해 줘야 함." },
+                                    { nick: "Good_Influence", content: "덕후의 순기능이네요. 박효빈 시장님이 왜 그렇게 서브컬처를 밀어주는지 알 것 같음." }
+                                ]
+                            },
+                            {
+                                nick: "True_Patriot", time: "5분 전", like: 12, dislike: 58000, isPunished: true,
+                                content: "오타쿠 새끼들이 쓰레기 좀 주웠다고 언론에서 아주 영웅 납셨다고 띄워주네 ㅋㅋㅋ 징그럽다 징그러워~ 당연히 지들이 쳐먹은 건 지들이 치워야지 그게 뉴스거리냐? 기자 놈들 얼마 받았냐?",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "그 당연한 걸 안 쳐하는 일반인들이 태반이라 뉴스에 나오는 거다 빡통아. 니가 쳐먹은 컵라면 용기나 치워라 방구석 여포야." },
+                                    { nick: "Fact_Check", content: "한강공원이나 해운대 피서철에 쓰레기 산 되는 거 보고도 그 소리가 나오냐? 칭찬할 건 칭찬해라 배알 꼴린 거 티 내지 말고." },
+                                    { nick: "True_Patriot", nickClass: "text-red-600 font-bold", content: "일본 만화나 보는 놈들이 착해봤자 얼마나 착하겠냐!! 다 가식이다 가식!!" },
+                                    { nick: "Touch_Grass", content: "방구석에서 인터넷 악플이나 다는 니 인성보단 수백 배 착하고 국가 경제에 이바지하고 있으니 걱정 마세요 아저씨 ^^" },
+                                    { nick: "Psycho_Analyst", content: "남이 칭찬받는 걸 못 견디는 전형적인 열등감 종자 ㅋㅋㅋ 불쌍한 인생이다 진짜" }
+                                ]
+                            },
+                            {
+                                nick: "Darona_Love", time: "10분 전", like: 35000, dislike: 18, isPunished: false,
+                                content: "4호선 마스코트 다로나 에코백 캠페인 아이디어 미쳤음 ㅋㅋㅋ '길거리 쓰레기 투기는 안 됩니다!' 이거 뱅드림 카스미 성우 톤으로 뇌내 자동 재생됨 ㅠㅠㅠ 주황색 에코백 예뻐서 샀는데 거기에 다들 쓰레기 줍고 다니는 거 보고 감동 ㅠㅠ",
+                                replies: [
+                                    { nick: "BanG_Dreamer", content: "ㅋㅋㅋㅋ 다로나 보면 볼수록 카스미랑 찰떡임. 효빈교통공사 마케팅팀에 진짜 덕잘알 숨어있는 게 확실함." },
+                                    { nick: "Eco_Bag_Flex", content: "저 그거 한정판이라고 해서 아침 7시부터 청엽구청역 가서 줄 서서 샀잖아요 ㅋㅋ 쓰레기 주우면서 '다로나가 보고 있어!' 하니까 묘하게 뿌듯했음." },
+                                    { nick: "Transit_Marketer", content: "굿즈도 팔고, 환경도 보호하고, 홍보도 하고. 이게 진짜 1석 3조 창조 경제지." },
+                                    { nick: "Orange_Power", content: "주황색 4호선 폼 미쳤다! 내년에도 예쁜 에코백 많이 내주세요!" }
+                                ]
+                            },
+                            {
+                                nick: "Saneung_Baker", time: "15분 전", like: 29800, dislike: 11, isPunished: false,
+                                content: "사능역 빵거리에서 베이커리 하는 자영업자입니다. 축제 기간 동안 매출 4배 뛰었는데, 가게 앞 쓰레기통이 넘치니까 코스프레 하신 분들이 직접 봉투 가져와서 분리수거까지 싹 해주고 가셨어요. 너무 고마워서 빵 하나씩 더 챙겨드렸습니다 ㅠㅠ",
+                                replies: [
+                                    { nick: "Happy_Customer", content: "사장님 저 그때 그 빵 받은 사람입니다! ㅋㅋ 메론빵 진짜 맛있었어요! 내년 HAF 때도 무조건 갈게요!" },
+                                    { nick: "Real_Economy", content: "이게 진짜 상생이고 지역 경제 살리는 거지. 매출도 팍팍 올려주고 청소도 해주고 ㅠㅠ 효빈시는 진짜 복 받았다." },
+                                    { nick: "Angry_Troll", nickClass: "text-red-600 font-bold", content: "빵집 주인이 오타쿠들 돈 빨아먹으려고 아부 떠는 거 보소 ㅋㅋㅋ 상술 역겹네" },
+                                    { nick: "Market_Principle", content: "자본주의 사회에서 장사꾼이 손님한테 잘해주는 게 당연한 거지 넌 뇌가 공산당에 절여졌냐? 자영업자 응원은 못할망정 ㅉㅉ" },
+                                    { nick: "Good_Heart", content: "사장님 인심이 좋으시니까 손님들도 매너 있게 행동하는 거겠죠. 훈훈한 소식 감사합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Conspiracy_Guy", time: "20분 전", like: 8, dislike: 48000, isPunished: true,
+                                content: "박효빈 지 치적 쌓으려고 새벽에 시청 공무원들이랑 환경미화원들 수백 명 몰래 동원해서 싹 치워놓고 무슨 팬들이 자발적으로 치운 척 언론 플레이 오지네 ㅋㅋㅋ 시민들이 바보인 줄 아냐?? 선동 좀 작작해라!!",
+                                replies: [
+                                    { nick: "Cleaner_Official", content: "현직 환경미화원입니다. 저희 동원 안 됐고요, 오히려 관람객들이 너무 깨끗하게 치워주셔서 일찍 퇴근했습니다. 본인이 못 믿겠으면 내년에 와서 직접 눈으로 보세요 억까하지 말고." },
+                                    { nick: "Fact_Check_Bot", content: "유튜브랑 틱톡에 HAF 플로깅 치면 관람객 수천 명이 쓰레기 줍는 직캠 영상만 수만 개가 뜬다 이 방구석 음모론자야 ㅋㅋㅋ" },
+                                    { nick: "Conspiracy_Guy", nickClass: "text-red-600 font-bold", content: "그 영상 다 조작된 거다!! 딥페이크 기술로 만든 가짜 뉴스에 속아 넘어가는 개돼지들 ㅉㅉ" },
+                                    { nick: "Mental_Hospital", content: "어휴 병원 좀 가봐라 진짜. 세상이 다 널 속이는 것 같지? 조현병 초기 증상이다 그거." },
+                                    { nick: "Keyboard_Warrior", content: "이런 애들은 경찰서에서 허위사실 유포로 조사받을 땐 '장난이었습니다 ㅠㅠ' 하고 질질 짜더라 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Policy_Maker", time: "25분 전", like: 24500, dislike: 20, isPunished: false,
+                                content: "1996년생 젊은 시장님이 확실히 정책 디테일이 다르네요. '쓰레기 버리지 마세요' 훈계하는 게 아니라, 마스코트 굿즈를 수거함으로 쓰게 유도하는 '넛지(Nudge) 효과'를 제대로 써먹음. 행정학 교과서에 실려야 할 사례입니다.",
+                                replies: [
+                                    { nick: "Smart_Admin", content: "동의합니다. 팬덤 문화를 정확히 이해하고 있으니까 억압이 아니라 자율적 참여를 이끌어내는 거죠." },
+                                    { nick: "Old_Politician", nickClass: "text-red-600 font-bold", content: "어린놈이 시장 하니까 도시가 무슨 놀이터가 됐네 ㅉㅉ 엄격하게 과태료를 물려야지 무슨 굿즈 타령이야 기강이 무너진다!!" },
+                                    { nick: "Result_Speaks", content: "과태료 물려도 길바닥 엉망 되는 게 현실인데, 굿즈 하나로 쓰레기 0톤 만들었으면 그게 실력이고 기강 아닙니까 틀딱아재요?" },
+                                    { nick: "Nudge_Effect", content: "강압적인 규제보다 부드러운 개입이 훨씬 효과적이라는 걸 증명했죠. 진짜 스마트한 행정입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Cherry_Blossom_Hater", time: "30분 전", like: 21000, dislike: 12, isPunished: false,
+                                content: "우리 동네 벚꽃축제랑 진짜 180도 비교되네. 저번 달에 벚꽃축제 끝나고 파전 먹다 남은 거, 담배꽁초, 토사물 지옥이었는데... 서브컬처 팬들이 일반인들보다 시민의식은 한 100년 앞서있는 듯.",
+                                replies: [
+                                    { nick: "Local_Festival", content: "ㄹㅇ 지역 맘카페에서도 HAF 시민의식 보고 엄청 반성하고 자극받았음. 아이들 교육에도 서브컬처 팬들 모습이 훨씬 도움 됨." },
+                                    { nick: "Drunk_Culture", content: "맨날 술 쳐먹고 길바닥에서 싸우는 아재들보단, 굿즈 끌어안고 쓰레기 줍는 오타쿠들이 사회의 빛이다 진짜." },
+                                    { nick: "Festival_Maniac", content: "바가지 요금 씌우고 쓰레기 버리고 가는 불법 야시장 문화는 이제 싹 갈아엎어야 함. HAF가 진짜 롤모델이다." },
+                                    { nick: "Respect_Otaku", content: "편견이 싹 깨지네요. 훌륭한 문화입니다 응원합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Japan_Warrior", time: "35분 전", like: 7, dislike: 45000, isPunished: true,
+                                content: "쪽바리 문화 잔재인 일본 애니메이션 축제를 시청이 주관하는 게 말이 되냐!! 효빈시가 일본 식민지냐!! 친일파 박효빈은 당장 시장직에서 물러나라!! 대한독립 만세!!",
+                                replies: [
+                                    { nick: "Global_Citizen", content: "이번 HAF에 한국 웹툰, 중국 게임, 미국 애니 부스가 전체의 60%가 넘었는데 무지성 반일 타령 ㅋㅋㅋㅋ 대가리에 든 게 그거밖에 없냐?" },
+                                    { nick: "Economy_First", content: "니가 반일 타령하며 헛소리할 때, 효빈시는 전 세계 관광객들 끌어모아서 지역 경제 수백억 살렸다. 넌 국가에 무슨 기여를 했냐 백수야?" },
+                                    { nick: "Anti_Japan_Warrior", nickClass: "text-red-600 font-bold", content: "돈이면 국가 자존심도 다 팔아먹는 매국노 새끼들!! 토착왜구 아웃!!" },
+                                    { nick: "History_Teacher", content: "문화 교류랑 역사 문제는 분리해서 볼 줄 아는 지성을 좀 기르세요. 21세기에 언제적 쇄국정책을 부르짖고 있습니까." },
+                                    { nick: "Sigh_Deeply", content: "아재 폰 메이드 인 재팬 부품 떡칠되어 있으니까 당장 폰부터 부수고 댓글 다세요 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Pride", time: "40분 전", like: 19800, dislike: 14, isPunished: false,
+                                content: "'문화의 품격이 곧 시민의 품격' 시장님 이 워딩 너무 멋있다 ㅠㅠ 효빈시민이라는 게 자랑스러워지는 순간임. L-Project가 진짜 단순한 덕질을 넘어서 도시의 품격 자체를 올려버렸네.",
+                                replies: [
+                                    { nick: "Culture_City", content: "효빈시는 이제 대한민국을 넘어서 아시아 최고의 문화 수도임. 갓효빈!" },
+                                    { nick: "Jealous_Neighbor", nickClass: "text-red-600 font-bold", content: "저거 다 세금 낭비다 ㅉㅉ 인프라나 깔 것이지 무슨 애니메이션 축제에 돈을 쏟아부어" },
+                                    { nick: "Data_Checker", content: "세금 낭비가 아니라 흑자 났다고 기사에 떡하니 나오잖아 난독증아 ㅋㅋㅋ 오히려 세수를 벌어들여서 인프라 까는 중이다 억까 ㄴㄴ" },
+                                    { nick: "L_Project_Success", content: "소프트파워가 얼마나 중요한지 여실히 보여주는 사례. 효빈시 행정력 진짜 타 지자체가 다 배워가야 함." }
+                                ]
+                            },
+                            {
+                                nick: "Plugging_Master", time: "45분 전", like: 17500, dislike: 9, isPunished: false,
+                                content: "친구들이랑 HSCO에서 밤 11시까지 쓰레기 주웠는데 진짜 힘들면서도 너무 재밌었어요 ㅋㅋㅋ 모르는 사람들이랑 같이 최애캐 얘기하면서 줍다 보니까 금방 치우더라고요. 다음 HAF도 무조건 참전합니다!",
+                                replies: [
+                                    { nick: "Volunteer_Hero", content: "와 고생 많으셨어요! 덕분에 효빈시가 빛났습니다 ㅠㅠ 최고!!" },
+                                    { nick: "Otaku_Friendship", content: "쓰레기 줍다가 덕톡 터지면 시간 가는 줄 모르죠 ㅋㅋㅋ 진정한 문화 교류의 장이네요." },
+                                    { nick: "Troll_Boy", nickClass: "text-red-600 font-bold", content: "돈도 안 받고 쓰레기 줍는 호구들 납셨네 ㅋㅋㅋ 시간 아깝지도 않냐? 차라리 그 시간에 잠을 자라 ㅉㅉ" },
+                                    { nick: "Happy_Life", content: "자발적으로 선의를 베푸는 기쁨을 평생 못 느껴본 불쌍한 영혼이네... 너한테는 안타까움밖에 안 든다." },
+                                    { nick: "Respect_You", content: "진정한 일류는 플로깅 마스터님 같은 분들입니다. 악플러는 무시하세요!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner" style="background-color: #fff3ed; border-color: #FF5522;">
+                <div>
+                    <div class="font-bold text-[#FF5522] mb-1">효빈 4호선 다로나 친환경 에코백 절찬 판매 중!</div>
+                    <div class="text-xs text-gray-700">효빈 시민의 품격을 완성하는 필수 굿즈!<br>판매 수익금은 전액 환경 보호 기금으로 기부됩니다.<br><span class="text-[#FF5522] underline mt-1 inline-block font-bold">온라인 스토어 바로가기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

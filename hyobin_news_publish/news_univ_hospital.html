@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>효빈대, 덕북 약산시에 제2병원 '약산병원' 착공... "의료 공백 메운다" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">효빈대, 덕북 약산시에 제2병원 '약산병원' 착공... "의료 공백 메운다"</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">최생명 기자</span><br>
+                        <span class="text-xs text-gray-400">2026.01.06</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#0055aa] font-bold">덕북권 최대 규모 500병상·스마트 진료 시스템 구축... 2029년 완공 목표<br/>민부선 총장 "효빈 넘어 덕북 전체 아우르는 의료 허브 될 것"</span></p>
+<div class="my-6">
+<img class="w-full" onerror="this.src='https://via.placeholder.com/800x450/2a3a8c/FFFFFF?text=Yaksan+Hospital+Groundbreaking'" src="약산병원_조감도.png"/>
+<div class="img-caption">▲ 효빈대학교 제2병원인 '약산병원' 조감도. 자연 친화적인 설계와 최첨단 의료 시설이 어우러진 모습이다. (사진=효빈대병원)</div>
+</div>
+<p>[효빈일보 = 최생명 기자] 효빈대학교가 덕북권역의 의료 인프라 확충을 위해 추진해 온 **제2병원 '약산병원'** 건립 사업이 마침내 첫 삽을 떴다. 6일 덕북 약산시 건립 부지에서 열린 기공식에는 박효빈 효빈시장, 민부선 효빈대 총장, 약산시장 등 주요 내외빈이 참석해 축하를 나눴다.</p>
+<p>약산병원은 약산시 약산지구 내 대지 면적 2만 평, 연면적 5만 평 규모로 지어지며, 지하 4층, 지상 12층에 **500병상**을 갖춘 덕북권 최대 규모의 종합병원으로 탄생할 예정이다. 2029년 완공을 목표로 총 3,500억 원이 투입된다.</p>
+<p>민부선 효빈대 총장은 기념사에서 "그동안 덕북 지역은 대형 의료기관이 부족해 중증 환자들이 서울이나 수도권으로 원정 진료를 가야 하는 불편을 겪었다"며 "약산병원은 심뇌혈관센터, 암센터 등 전문 진료 센터와 AI 기반의 스마트 의료 시스템을 갖춰 지역민들에게 최상의 의료 서비스를 제공할 것"이라고 밝혔다.</p>
+<p>박효빈 시장은 축사에서 "약산병원 착공은 효빈시와 덕북 약산시가 의료 협력을 통해 상생 발전하는 중요한 이정표"라며 "효빈대병원이 본원과 제2병원을 잇는 탄탄한 의료 네트워크를 구축해 경기 남부와 덕북을 아우르는 의료 허브로 도약하기를 기대한다"고 말했다.</p>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "\ub4dc\ub514\uc5b4 \uc6b0\ub9ac \ub3d9\ub124\uc5d0\ub3c4 \ub300\ud559\ubcd1\uc6d0\uc774 \ub4e4\uc5b4\uc624\ub294\uad6c\ub098 \u3160\u3160 80\uc138 \ub178\ubaa8 \ubaa8\uc2dc\uace0 \ub9e4\ubc88 \uc218\uc6d0\uae4c\uc9c0 \uac00\ub290\ub77c \uc9c0\uc625 \uac19\uc558\ub294\ub370 \uc815\ub9d0 \uac10\uc0ac\ud569\ub2c8\ub2e4. \ubbfc\ubd80\uc120 \ucd1d\uc7a5\ub2d8, \ubc15\ud6a8\ube48 \uc2dc\uc7a5\ub2d8 \ub9cc\uc138!", "dislike": 15, "isBest": true, "like": 2500, "nick": "\uc57d\uc0b0\ud1a0\ubc15\uc774", "replies": [{"content": "\ucd95\ud558\ub4dc\ub9bd\ub2c8\ub2e4! \uc57d\uc0b0\uc2dc \ubc1c\uc804\ud558\uaca0\ub124\uc694.", "nick": "\ud6a8\ube48\uc2dc\ubbfc"}, {"content": "\uc9c4\uc9dc \ub355\ubd81 \uc758\ub8cc \uc18c\uc678 \uc2ec\uac01\ud588\ub294\ub370 \ub2e4\ud589\uc785\ub2c8\ub2e4. \uc0ac\ub78c \uc0b4\ub9ac\ub294 \uac8c \uba3c\uc800\uc8e0.", "nick": "\uac74\uac15\uc81c\uc77c"}], "time": "14:35"}, {"content": "\uc57d\uc0b0\uc9c0\uad6c \uc9d1\uac12 \ub5a1\uc0c1 \uac01\uc774\ub124. \ubcd1\uc6d0 \ub4e4\uc5b4\uc624\uba74 \uc0c1\uad8c \uc0b4\uace0 \uc720\ub3d9\uc778\uad6c \ub298\uc5b4\ub098\uace0... \ubbf8\ub9ac \uc0ac\ub454 \uc0ac\ub78c \uc2b9\ub9ac\uc790. \uc57d\uc0b0\uc2dc \uc774\uc81c \uc2dc\uace8 \uc544\ub2d8.", "dislike": 200, "isBest": false, "like": 500, "nick": "\ubd80\ub3d9\uc0b0\uc804\ubb38\uac00", "replies": [{"content": "\ubcd1\uc6d0 \uae30\uc0ac\uc5d0 \uc9d1\uac12 \uc598\uae30 \uc880 \uadf8\ub9cc\ud574\ub77c. \uc0ac\ub78c\uc774 \uc544\ud30c\uc11c \uc8fd\ub124 \uc0ac\ub124 \ud558\ub294\ub370 \ub3c8 \uc598\uae30\ubfd0\uc774\ub0d0?", "nick": "\ud22c\uae30\uafbc\uc544\uc6c3"}, {"content": "\uadfc\ub370 \uc0ac\uc2e4\uc774\uae34 \ud568. \ub300\ud559\ubcd1\uc6d0\uc740 \ud655\uc2e4\ud55c \ud638\uc7ac \ub9de\uc74c. \uc695\ud560 \uac74 \uc544\ub2d8.", "nick": "\ud329\ud2b8\ud3ed\uaca9"}], "time": "14:40"}, {"content": "\uc6b0\ub9ac \ud559\uad50 \ud3fc \ubbf8\ucce4\ub2e4 \u314b\u314b\u314b \uae00\ub85c\uceec \uc120\uc815\uc5d0 \uc81c2\ubcd1\uc6d0 \ucc29\uacf5\uae4c\uc9c0... \ub4f1\ub85d\uae08 \ub0b8 \ubcf4\ub78c\uc774 \uc788\ub124. \uc758\ub300\uc0dd\ub4e4 \uc2e4\uc2b5 \uac08 \uacf3 \ub298\uc5b4\uc11c \uc88b\uaca0\ub2e4. \ubbfc\ubd80\uc120 \ucd1d\uc7a5\ub2d8 \uce74\ub9ac\uc2a4\ub9c8 \uad7f.", "dislike": 5, "isBest": true, "like": 1800, "nick": "\ud6a8\ube48\ub300\uc0dd", "replies": [{"content": "\ubcf8\uacfc\uc0dd\uc778\ub370 \uc9c4\uc9dc \ub2e4\ud589\uc784. \ubcd1\uc0c1 \uc218 \ubd80\uc871\ud574\uc11c \uc2e4\uc2b5 \ub54c \ub208\uce58 \ubcf4\uc600\ub294\ub370.", "nick": "MedicalStudent"}], "time": "14:50"}, {"content": "\ub3c8 \uc9c0\ub784 \ud558\ub124 \u314b\u314b \ub355\ubd81 \ucd0c\uad6c\uc11d\uc5d0 500\ubcd1\uc0c1? \uc801\uc790 \ub098\uc11c 5\ub144 \uc548\uc5d0 \ub9dd\ud55c\ub2e4\uc5d0 \ub0b4 \uc190\ubaa9 \uac74\ub2e4. \uc774\uac8c \ub2e4 \ubc15\ud6a8\ube48\uc774 \ud45c \uc5bb\uc73c\ub824\uace0 \uc1fc\ud558\ub294 \uac70\ub2e4! \uc724\ub300\ud658 \uc2dc\uc7a5\ub2d8 \uacc4\uc2e4 \ub550 \uc774\ub7f0 \ub0ad\ube44 \uc5c6\uc5c8\ub2e4!", "dislike": 3500, "isBest": false, "like": 12, "nick": "\uc724\ub300\ud658\uc0ac\ub791\ud68c", "replies": [{"content": "\uc774\uac70 \ud6a8\ube48\ub300 \uc7ac\ub2e8 \ub3c8\uc73c\ub85c \uc9d3\ub294 \uac74\ub370\uc694? \uc2dc \uc608\uc0b0\uc774\ub791 \ubb54 \uc0c1\uad00? \uc5b5\uae4c \uc791\uc791 \uc880. \uadf8\ub9ac\uace0 \uc724\ub300\ud658\uc740 \ud6a1\ub839\ubc94\uc778\ub370\uc694?", "nick": "\ud329\ud2b8\uccb4\ud06c"}, {"content": "\uc5b4? \uc774 IP \uc724\uc7ac\ud6c8 \ub313\uae00 \uacf5\uc791\ud560 \ub54c \uc4f0\ub358 IP\ub791 \uac19\uc740 \ub300\uc5ed\uc778\ub370? \u314b\u314b\u314b \uc544\uc9c1\ub3c4 \uc815\uc2e0 \ubabb \ucc28\ub838\ub0d0? \ud560\ubc30\uc694.", "nick": "IP_Tracker"}, {"content": "\ub108 \uac19\uc740 \ub188\uc740 \uc544\ud30c\ub3c4 \uc57d\uc0b0\ubcd1\uc6d0 \uc624\uc9c0 \ub9c8\ub77c. 119 \ubd88\ub7ec\uc11c \uc11c\uc6b8 \uac00\ub77c.", "nick": "\uc57d\uc0b0\uc0ac\ub78c"}], "time": "15:00", "type": "bad"}, {"content": "\ubbfc\ubd80\uc120 \ucd1d\uc7a5\ub2d8 \uc624\ub298 \uc5f0\uc124\ud558\uc2e4 \ub54c \ubaa9\uc18c\ub9ac \ud1a4\ubd80\ud130 \ub2e4\ub974\ub354\ub77c. \ubb35\uc9c1\ud558\uace0 \uce74\ub9ac\uc2a4\ub9c8 \ub118\uce68. \u0027\uc758\ub8cc \uacf5\ubc31 \uba54\uc6b0\uaca0\ub2e4\u0027 \ud560 \ub54c \uc18c\ub984 \ub3cb\uc74c. \uc5ed\uc2dc \ub0a8\uc790\ub294 \ub2a5\ub825\uc774\uc9c0.", "dislike": 2, "isBest": false, "like": 800, "nick": "MinBusun_Fan", "replies": [], "time": "15:05"}, {"content": "\ubcd1\uc6d0 \uc9d3\ub294 \uac74 \uc88b\uc740\ub370 \uc758\ub8cc\uc9c4 \uc218\uae09\uc740 \ub418\ub824\ub098? \uc9c0\ubc29 \ubcd1\uc6d0 \uc758\uc0ac \uad6c\ud558\uae30 \ud798\ub4e4\ub2e4\ub358\ub370.", "dislike": 5, "isBest": false, "like": 100, "nick": "Concerned", "replies": [{"content": "\ud6a8\ube48\ub300\ubcd1\uc6d0 \ubcf8\uc6d0\uc774\ub791 \uc21c\ud658 \uadfc\ubb34 \uc2dc\uc2a4\ud15c \uac16\ucd98\ub2e4\uace0 \ud568. \uac71\uc815 \u3134\u3134", "nick": "HospitalStaff"}], "time": "15:10"}, {"content": "\uc800\uac70 \uc9d3\ub2e4\uac00 \ubd80\ub3c4\ub0a0 \uac70\ub2e4. \ub0b4\uac00 \uc7a5\ub2f4\ud55c\ub2e4. \ud6a8\ube48\ub300 \uc7ac\ub2e8 \ub3c8 \uc5c6\ub294 \uac70 \ub0b4\uac00 \ub2e4 \uc548\ub2e4.", "dislike": 2000, "isBest": false, "like": 1, "nick": "YoonJaeHoon(IP)", "replies": [{"content": "\uc7ac\ub2e8 \uc7ac\uc815 \uac74\uc804\uc131 \ucd5c\uc0c1\uc704 \ub4f1\uae09\uc785\ub2c8\ub2e4. \ub2d8\ub124 \ub450\uccad\uc6b4\uc218\ub098 \uac71\uc815\ud558\uc138\uc694 ^^ \uc555\ub958 \ub4e4\uc5b4\uac14\ub358\ub370?", "nick": "AuditTeam"}, {"content": "\uc7ac\ud6c8\uc544 \ucd94\ud558\ub2e4...", "nick": "Student"}], "time": "15:15", "type": "bad"}, {"content": "\ud604\uc7a5 \uc18c\uc7a5\uc785\ub2c8\ub2e4. \uc548\uc804\ud558\uac8c \ud2bc\ud2bc\ud558\uac8c \uc798 \uc9d3\uaca0\uc2b5\ub2c8\ub2e4. \uc57d\uc0b0\uc2dc\uc758 \ub79c\ub4dc\ub9c8\ud06c\uac00 \ub420 \uac81\ub2c8\ub2e4.", "dislike": 0, "isBest": true, "like": 1500, "nick": "Construction", "replies": [{"content": "\uace0\uc0dd \ub9ce\uc73c\uc2ed\ub2c8\ub2e4! \uc548\uc804 \uc81c\uc77c!", "nick": "Citizen"}], "time": "15:20"}, {"content": "\uc774\ub7f0 \uac8c \uc9c4\uc9dc \ubcf5\uc9c0\ub2e4. \ub9e8\ub0a0 \ubcf4\ub3c4\ube14\ub85d \ub4a4\uc9d1\ub294 \uac83\ubcf4\ub2e4 \ubcd1\uc6d0 \ud558\ub098 \uc9d3\ub294 \uac8c \ubc31\ubc30 \ub0ab\uc9c0. \ubc15\ud6a8\ube48 \uc77c \uc798\ud558\ub124.", "dislike": 10, "isBest": true, "like": 1200, "nick": "TaxPayer", "replies": [], "time": "15:25"}, {"content": "\uc9c0\ub09c\ubc88\uc5d0 \uc6b0\ub9ac \uc560 \uc5f4 40\ub3c4\uc778\ub370 \ubc1b\uc544\uc8fc\ub294 \ubcd1\uc6d0 \uc5c6\uc5b4\uc11c \uc751\uae09\uc2e4 \ube91\ube91\uc774 \ub3cc\ub2e4\uac00 \ud53c \ub9d0\ub77c \uc8fd\ub294 \uc904 \uc54c\uc558\ub2e4. \uc57d\uc0b0\ubcd1\uc6d0 \ube68\ub9ac \uc9c0\uc5b4\uc8fc\uc138\uc694 \u3160\u3160", "dislike": 0, "isBest": true, "like": 2000, "nick": "AngryMom", "replies": [{"content": "\uad8c\uc5ed\uc751\uae09\uc758\ub8cc\uc13c\ud130\ub3c4 \uac19\uc774 \ub4e4\uc5b4\uc628\ub2f5\ub2c8\ub2e4. \uc870\uae08\ub9cc \uae30\ub2e4\ub824\uc8fc\uc138\uc694.", "nick": "Doctor"}], "time": "15:30"}, {"content": "\ubbfc\ubd80\uc120 \ucd1d\uc7a5\uc774 \ubbfc\uc8fc\ub2f9\uc774\ub77c\uba70? \ud559\uad50\ub098 \uc798 \uc9c0\ud0a4\uc9c0 \ubb54 \ubcd1\uc6d0 \uc0ac\uc5c5\uc774\uc57c. \uc218\uc0c1\ud558\ub2e4 \uc218\uc0c1\ud574. \uc88c\ud30c\uac00 \ud558\ub294 \uc77c\uc5d4 \ud56d\uc0c1 \uafcd\uafcd\uc774\uac00 \uc788\uc9c0.", "dislike": 1000, "isBest": false, "like": 5, "nick": "Patriot", "replies": [{"content": "\ubcd1\uc6d0 \uc9d3\ub294 \uac70\uc5d0 \uc88c\uc6b0\uac00 \uc5b4\ub528\uc2b5\ub2c8\uae4c? \uc0ac\ub78c \uc0b4\ub9ac\ub294 \uac8c \uba3c\uc800\uc9c0. \uc0c9\uae54\ub860 \uc9c0\uacb9\uc9c0\ub3c4 \uc54a\uc73c\uc138\uc694?", "nick": "Citizen"}, {"content": "\uc6b0\ub9ac \ucd1d\uc7a5\ub2d8 \uc5e0\ub9c8 \ubca0\ub974\ub370 \uc88b\uc544\ud558\ub294 \ub355\ud6c4\uc2e0\ub370... \uc815\uce58 \uc131\ud5a5\uc774 \ubb54 \uc0c1\uad00? \uc77c\ub9cc \uc798\ud558\uba74 \ub410\uc9c0.", "nick": "Student"}], "time": "15:35", "type": "bad"}, {"content": "\uac04\ud638\uc0ac\uc778\ub370 \uc57d\uc0b0\ubcd1\uc6d0 \ucc44\uc6a9 \uc5b8\uc81c \ub728\ub098\uc694? \ud6a8\ube48\ub300\ubcd1\uc6d0\uc774 \ubcf5\uc9c0 \uc88b\ub2e4\uace0 \uc18c\ubb38\ub0ac\ub358\ub370 \uc774\uc9c1\ud558\uace0 \uc2f6\ub124\uc694.", "dislike": 0, "isBest": false, "like": 300, "nick": "Nurse", "replies": [{"content": "\ub0b4\ub144 \ud558\ubc18\uae30\ubd80\ud130 \uc21c\ucc28\uc801\uc73c\ub85c \ucc44\uc6a9 \uacf5\uace0 \ub098\uac08 \uc608\uc815\uc785\ub2c8\ub2e4. \ub9ce\uc740 \uad00\uc2ec \ubd80\ud0c1\ub4dc\ub824\uc694.", "nick": "HR"}], "time": "15:40"}, {"content": "\ub355\ubd81 \ud640\ub300\ub860 \uc774\uc81c \uc3d9 \ub4e4\uc5b4\uac00\uaca0\ub124. \uc9c0\ud558\ucca0\ub3c4 \ub6ab\ub9ac\uace0 \ubcd1\uc6d0\ub3c4 \uc0dd\uae30\uace0. \uc0b4\uae30 \uc88b\uc544\uc84c\ub2e4.", "dislike": 2, "isBest": false, "like": 600, "nick": "DeokbukGuy", "replies": [], "time": "15:45"}, {"content": "\uc120\uac70\ucca0 \ub418\ub2c8\uae4c \ub610 \ud1a0\uac74 \uc0ac\uc5c5 \ubc8c\uc774\ub294\uad6c\ub9cc. \uc644\uacf5\ub418\ub294\uc9c0 \ub450\uace0 \ubcf4\uc790.", "dislike": 300, "isBest": false, "like": 20, "nick": "Skeptic", "replies": [{"content": "\ucc29\uacf5\uc2dd \ud588\ub2e4\uc796\uc544. \uae00 \ubabb \uc77d\uc74c? \uc608\uc0b0\ub3c4 \uc774\ubbf8 \ud655\ubcf4\ub428.", "nick": "Fact"}], "time": "15:50", "type": "bad"}, {"content": "\uc554 \uc218\uc220 \ubc1b\uc73c\ub7ec \uc11c\uc6b8 \uac00\uc57c \ud558\ub098 \uace0\ubbfc\ud588\ub294\ub370, 29\ub144 \uc644\uacf5\uc774\uba74 \uadf8\ub54c\uae4c\uc9c0 \uac74\uac15 \uad00\ub9ac \uc798\ud574\uc57c\uaca0\ub2e4. \ud6a8\ube48\ub300 \uc758\ub8cc\uc9c4 \ubbff\uc2b5\ub2c8\ub2e4.", "dislike": 0, "isBest": false, "like": 800, "nick": "Patient", "replies": [], "time": "15:55"}, {"content": "\ubcd1\uc6d0 \uc55e \uc0c1\uac00 \ubd84\uc591 \uc5b8\uc81c \ud568? \uce58\ud0a8\uc9d1 \uc790\ub9ac \uc54c\uc544\ubcf4\ub7ec \uac04\ub2e4.", "dislike": 5, "isBest": false, "like": 100, "nick": "ChickenHead", "replies": [], "time": "16:00"}, {"content": "\uc57d\uc0b0\ubcd1\uc6d0 \uc0dd\uae30\uba74 3\ud638\uc120 \uc5f0\uc7a5 \uba85\ubd84 \ud655\uc2e4\ud574\uc9c0\ub124. \uad50\ud1b5 \uc218\uc694 \ud3ed\ubc1c\ud560 \ub4ef.", "dislike": 1, "isBest": false, "like": 400, "nick": "SubwayFan", "replies": [], "time": "16:05"}, {"content": "\ucd1d\uc7a5\ub2d8 \uc624\ub298 \ub125\ud0c0\uc774 \uc0c9\uae54 \uc5f0\ub450\uc0c9\uc774\uc2dc\ub358\ub370... \ud639\uc2dc \uc5e0\ub9c8 \ubca0\ub974\ub370 \uc0c1\uc9d5\uc0c9? \u314b\u314b\u314b \uacf5\uc2dd\uc11d\uc0c1\uc5d0\uc11c\ub3c4 \ub355\uc2ec\uc744 \uc228\uae30\uc9c0 \uc54a\uc73c\uc2dc\ub294...!", "dislike": 2, "isBest": false, "like": 500, "nick": "EmmaVerde", "replies": [{"content": "\uc640 \ub300\ubc15 \u314b\u314b\u314b \uc9c4\uc9dc\ub124. \ucd1d\uc7a5\ub2d8 \ub9ac\uc2a4\ud399.", "nick": "Student"}], "time": "16:10"}, {"content": "\uc624\ub298 \uae30\uacf5\uc2dd \ub5a1\uc774\ub791 \uc218\uac74 \ubc1b\uc544\uc654\ub294\ub370 \ud004\ub9ac\ud2f0 \uc88b\ub124. \ubcd1\uc6d0\ub3c4 \uc774\ub807\uac8c \ud2bc\ud2bc\ud558\uac8c \uc9c0\uc5b4\uc8fc\uae38.", "dislike": 0, "isBest": false, "like": 200, "nick": "HappyDay", "replies": [], "time": "16:15"}, {"content": "\ud6a8\ube48\ub300 \uc758\ub300 \uc9c0\ub9dd\uc0dd\uc785\ub2c8\ub2e4. \uc57d\uc0b0\ubcd1\uc6d0 \uc644\uacf5\ub420 \ub54c\ucbe4\uc774\uba74 \uc800\ub3c4 \uc778\ud134 \ud560 \uc218 \uc788\uaca0\uc8e0? \uc5f4\uc2ec\ud788 \uacf5\ubd80\ud558\uaca0\uc2b5\ub2c8\ub2e4!", "dislike": 0, "isBest": true, "like": 1000, "nick": "FutureDoc", "replies": [{"content": "\uc5b4\uc11c \uc640\ub77c \uc9c0\uc625... \uc544\ub2c8 \ucc9c\uad6d\uc73c\ub85c ^^ \ud6c4\ubc30\ub2d8 \ud658\uc601\ud569\ub2c8\ub2e4.", "nick": "Senior"}], "time": "16:20"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

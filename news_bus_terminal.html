@@ -155,7 +155,7 @@
 
     <script>
         // 초기 댓글 데이터 (리얼한 반응 포함)
-        const initialComments = [
+        const commentsData = [
             {
                 nick: "LoveLive_Fan", time: "14:10", content: "와 여기가 그 전설의 성지인가요? ㅋㅋㅋ 윤재훈이 똥 지린 자리 어디인지 표시 좀 해주세요. 성지순례 가려고요. 리나 쨩 보드 앞에서 인증샷은 국룰이죠!", 
                 like: 4500, dislike: 15, isBest: true,
@@ -213,8 +213,8 @@
         // 페이지 로드 시 실행 (확실한 로딩을 위해 onload 사용)
         document.addEventListener("DOMContentLoaded", function() {
             // 댓글 렌더링
-            renderComments(initialComments);
-            document.getElementById('comment-count').innerText = initialComments.length;
+            renderComments(commentsData);
+            document.getElementById('comment-count').innerText = commentsData.length;
             
             // 랭킹 렌더링
             renderRanking();
@@ -320,17 +320,6 @@
     </script>
     <!-- 효빈일보 코어 스크립트 -->
     <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
 
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
-
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
-
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

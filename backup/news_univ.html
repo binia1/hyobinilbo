@@ -145,7 +145,7 @@
 
     <script>
         // 초기 댓글 데이터 (리얼한 반응 포함, 20개 이상)
-        const initialComments = [
+        const commentsData = [
             {
                 nick: "HNU_19학번", time: "14:20", content: "현장에 있었습니다. 윤재훈이 결식아동 빵에 침 뱉는 순간 진짜 피가 거꾸로 솟더군요. 그때 누가 먼저랄 것도 없이 '메카쿠시테' 외치는데 눈물 날 뻔했습니다. 우리 후배님들 진짜 자랑스럽습니다. 효빈대 포에버!", 
                 like: 4500, dislike: 12, isBest: true,
@@ -296,8 +296,8 @@
         // 페이지 로드 시 실행 (확실한 로딩을 위해 onload 사용)
         document.addEventListener("DOMContentLoaded", function() {
             // 댓글 렌더링
-            renderComments(initialComments);
-            document.getElementById('comment-count').innerText = initialComments.length;
+            renderComments(commentsData);
+            document.getElementById('comment-count').innerText = commentsData.length;
             
             // 랭킹 렌더링
             renderRanking();
@@ -403,13 +403,6 @@
     </script>
     <!-- 효빈일보 코어 스크립트 -->
     <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
 
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
-
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>

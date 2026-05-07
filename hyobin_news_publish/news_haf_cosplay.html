@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파이썬이 기사 제목을 꽂아줄 자리 -->
+    <title>"현실이야 만화야?"... 효빈시 수놓은 HAF 코스프레 퍼레이드 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .quote-box { background: #f8f9fa; border-left: 5px solid #0055aa; padding: 15px 20px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #333; line-height: 1.6;}
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">효빈일보 뉴스</div>
+                
+                <!-- 파이썬 렌더링 1: 기사 제목 -->
+                <h2 class="article-title">"현실이야 만화야?"... 효빈시 수놓은 HAF 코스프레 퍼레이드</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <!-- 파이썬 렌더링 2: 기자 이름과 날짜 -->
+                        <span class="font-bold">문덕후 기자</span><br>
+                        <span class="text-xs text-gray-400">2026.01.07</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <!-- 파이썬 렌더링 3: 기사 본문 (HTML 태그 그대로 꽂아줌) -->
+                <div class="article-body">
+                    
+<p><span class="text-[#0055aa] font-bold">역대 최대 규모 10만 인파 운집... '효빈터미널'부터 '고송대로'까지 마비<br/>글로벌 코스어 5천 명 참여, 영화제 방불케 하는 고퀄리티 의상 눈길<br/>박효빈 시장, 시민들과 함께 걷는 '깜짝 참여'로 축제 열기 더해</span></p>
+<div class="my-6">
+<img alt="HAF_코스프레_퍼레이드.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/9955FF/FFFFFF?text=HAF+Cosplay+Parade'" src="HAF_코스프레_퍼레이드.png"/>
+<div class="img-caption">▲ 7일 오후 효빈시 고송대로에서 열린 '제5회 HAF 코스프레 퍼레이드'. 전 세계에서 모인 코스어들이 화려한 퍼포먼스를 선보이고 있다.</div>
+</div>
+<p>[효빈일보 = 문덕후 기자] 효빈시가 다시 한번 '서브컬처의 메카'임을 입증했다. 7일 열린 제5회 효빈 애니메이션 페스티벌(HAF)의 백미, '코스프레 퍼레이드'에 역대 최대 인파인 10만 명이 몰리며 도시 전체가 만화 속 한 장면으로 변했다.</p>
+<p>오후 2시, <a class="text-blue-600 underline" href="효빈터미널.html">효빈터미널</a>에서 시작된 행진은 고송대로를 거쳐 효빈문화광장까지 약 2km 구간에 걸쳐 진행됐다. 이번 퍼레이드에는 국내외 유명 코스어 5,000여 명이 참여했으며, 단순한 의상 착용을 넘어 캐릭터의 동작과 말투까지 완벽히 재현해 관람객들의 찬사를 자아냈다.</p>
+<p>특히 눈길을 끈 것은 <a class="text-blue-600 underline" href="박효빈.html">박효빈</a> 시장의 깜짝 등장이었다. 박 시장은 특별한 의전 없이 평소 좋아하는 애니메이션 캐릭터의 소품을 착용한 채 시민들과 섞여 행진에 참여했다. 시민들은 "시장님이 아니라 진짜 동네 형, 오빠 같다"며 열광적인 호응을 보냈다.</p>
+<div class="my-6">
+<img alt="퍼레이드_관람객.png" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/333333/FFFFFF?text=Huge+Crowd+at+HAF'" src="코스프레_퍼레이드_인파.png"/>
+<div class="img-caption">▲ 퍼레이드를 관람하기 위해 구름 인파가 몰린 효빈시 고송대로. 인근 상권은 HAF 특수로 연일 최고 매출을 경신하고 있다.</div>
+</div>
+<p>퍼레이드 행렬이 지나는 길목마다 배치된 <a class="text-blue-600 underline" href="칠양여객.html">칠양여객</a>의 '래핑버스'들도 축제 분위기를 고조시켰다. 버스 기사들은 캐릭터 테마곡을 틀거나 손을 흔들어 화답하며 축제의 일부가 되었다. <a class="text-blue-600 underline" href="사능동.html">사능동</a> 베이커리 골목 상인들은 퍼레이드 참가자들에게 무료 시식용 빵을 나눠주는 등 민관이 하나 된 축제의 장이 펼쳐졌다.</p>
+<p>경제적 효과도 막대하다. 시 관계자는 "오늘 하루에만 지역 경제에 약 200억 원 이상의 부가가치가 창출된 것으로 추산된다"며 "HAF는 이제 효빈시를 넘어 대한민국을 대표하는 글로벌 축제로 자리매김했다"고 강조했다.</p>
+<p>한편, 일부 혐오 세력의 방해 우려에도 불구하고 효빈대 학생들의 자발적인 '질서 유지단' 활동 덕분에 단 한 건의 사고 없이 안전하게 행사가 마무리되었다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">0</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+        </div>
+    </div>
+
+    <!-- 댓글 및 상호작용 스크립트 -->
+    <script>
+        // 파이썬 렌더링 4: 데이터베이스의 댓글 배열을 JS 코드로 통째로 번역해서 꽂아줌!
+        let commentsData = [{"content": "\ub0b4 \ub208\uc774 \uc798\ubabb\ub41c \uc904 \uc54c\uc558\ub2e4... \ucf54\uc2a4\ud504\ub808 \ud004\ub9ac\ud2f0\uac00 \uac70\uc758 \ud5d0\ub9ac\uc6b0\ub4dc\uae09\uc784 \u3137\u3137 \uc2dc\uc7a5\ub2d8 \uc9c0\ub098\uac00\uc2e4 \ub54c \uac19\uc774 \ud558\uc774\ud30c\uc774\ube0c \ud588\ub294\ub370 \uc778\uc131 \uc9c4\uc9dc \uc88b\uc73c\uc2ec.", "dislike": 15, "like": 12000, "nick": "HAF_Mania", "replies": [{"content": "\ubd80\uc0b0\uc5d0\uc11c \uc62c\ub77c\uc628 \ubcf4\ub78c\uc774 \uc788\ub124\uc694. \ub0b4\ub144\uc5d4 \uc800\ub3c4 \ud37c\ub808\uc774\ub4dc \ucc38\uac00\ud560 \uac81\ub2c8\ub2e4!", "nick": "Busan_Otaku"}], "time": "\ubc29\uae08 \uc804"}, {"content": "\uc774\uac8c \ubb34\uc2a8 \uc9d3\uac70\ub9ac\ub0d0! \uc2e0\uc131\ud55c \ub3c4\ub85c\ub97c \uc624\ud0c0\ucfe0\ub4e4\uc774 \uc810\ub839\ud558\ub2e4\ub2c8! \uc724\ub300\ud658 \uc2dc\uc7a5\ub2d8 \ub54c\ub294 \uc0c1\uc0c1\ub3c4 \ubabb \ud560 \uc77c\uc774\ub2e4! \ub098\ub77c\uac00 \ub9dd\ud574\uac00\uace0 \uc788\ub2e4!", "dislike": 9800, "isPunished": true, "like": 5, "nick": "Yoon_Forever", "replies": [{"content": "\ub9dd\ud558\uae34\uc694 \u314b\u314b \uc624\ub298 \ud6a8\ube48\uc2dc \uc138\uc218\ub9cc \uc218\uc2ed\uc5b5 \ub298\uc5b4\ub0ac\ub294\ub370. \ub2d8\ub124 \uc724\ub300\ud658\uc740 \uc138\uae08 \ud6a1\ub839\ud574\uc11c \ub9dd\ud55c \uac70\uace0\uc694.", "nick": "Fact_Check"}, {"content": "\ub098 \uc911\uc559\ub300\ub85c \uc2dd\ub2f9 \uc0ac\uc7a5\uc778\ub370 \uc624\ub298 \ub9e4\ucd9c 500 \ucc0d\uc5c8\ub2e4. \uc724\ub300\ud658 \ub54c \ud30c\ub9ac \ub0a0\ub9ac\ub358 \uac70 \uc0dd\uac01\ud558\uba74 \uc9c0\uae08\uc774 \uadf9\ub77d\uc784. \ub2e5\uce58\uace0 \uc788\uc73c\uc1fc.", "nick": "Business_Owner"}, {"content": "\ub2d8 \uc778\uc0dd\uc774\ub098 \uac71\uc815\ud558\uc138\uc694. \uc5ec\uae30 \uc788\ub294 \ucf54\uc2a4\uc5b4\ub4e4 \ub300\ub2e4\uc218\uac00 \ub2d8\ubcf4\ub2e4 \uace0\ud559\ub825\uc5d0 \uace0\uc5f0\ubd09\uc790\ub4e4\uc784.", "nick": "Hyobin_Univ_Student"}], "time": "5\ubd84 \uc804"}, {"content": "\uc678\uad6d \ucf54\uc2a4\uc5b4 \uce5c\uad6c\ub4e4\uc774 \ud6a8\ube48\uc2dc \uce58\uc548\uc774\ub791 \uc2dc\ubbfc\uc758\uc2dd \ubcf4\uace0 \uc5c4\uccad \ub180\ub77c\ub354\ub77c\uace0\uc694. \uc4f0\ub808\uae30 \ud558\ub098 \uc548 \ub0a8\uae30\uace0 \uc815\ub9ac\ud558\ub294 \uac70 \ubcf4\uace0 \ub2e4\ub4e4 \ub9ac\uc2a4\ud399\ud2b8 \ubcf4\ub0c8\uc2b5\ub2c8\ub2e4! \ud6a8\ube48\uc2dc \ucd5c\uace0!", "dislike": 5, "like": 8500, "nick": "Cosplay_Queen", "replies": [{"content": "I love Hyobin City! Best anime festival ever!", "nick": "Global_Fan"}], "time": "10\ubd84 \uc804"}, {"content": "\ub2e4 \uc870\uc791\uc774\uc57c! \uc800\uac70 \ub2e4 \ubc15\ud6a8\ube48\uc774 \ub3c8 \uc8fc\uace0 \ub370\ub824\uc628 \uc678\uad6d\uc778\ub4e4\uc774\ub77c\uace0! \ub0b4 \ube75\uc774 \ub354 \ub9db\uc788\uc5b4! \uc73c\uc544\uc544\uc544!", "dislike": 11000, "isPunished": true, "like": 2, "nick": "YoonJaehoon(IP)", "replies": [{"content": "2508\ubc88, \ub3c5\ubc29\uc5d0\uc11c\ub3c4 \ud5db\uc18c\ub9ac\ub124. \uc624\ub298 \ucf69\ubc25 \ub300\uc2e0 \uad76\uace0 \uc2f6\ub0d0?", "nick": "Prison_Guard"}, {"content": "\uce68 \ubc49\uc740 \ube75\uc774\ub098 \uba39\uc5b4\ub77c \uc774 \ub354\ub7ec\uc6b4 \ub188\uc544.", "nick": "Saneung_Baker"}, {"content": "\uc7ac\ud6c8\uc544, 2.2%\uba74 \uadf8\ub0e5 \uc870\uc6a9\ud788 \uc788\ub294 \uac8c \ub3c4\uc640\uc8fc\ub294 \uac70\ub780\ub2e4.", "nick": "Realist"}], "time": "15\ubd84 \uc804"}, {"content": "\uc624\ub298 \uc190\ub2d8 90%\uac00 \ucd95\uc81c \uac00\ub294 \ubd84\ub4e4\uc774\uc5c8\uc74c. \ub2e4\ub4e4 \ub9e4\ub108 \uc88b\uace0 \ud6a8\ube48\uc2dc \uce6d\ucc2c \ub9ce\uc774 \ud558\ub354\ub77c. \uae30\uc0ac\ub85c\uc11c \ubfcc\ub4ef\ud55c \ud558\ub8e8\uc600\uc74c.", "dislike": 2, "like": 6200, "nick": "Taxi_Driver_Kim", "replies": [], "time": "20\ubd84 \uc804"}, {"content": "\uc774\uac8c \uc9c4\uc9dc \ub3c4\uc2dc \ud65c\ub825\uc774\uc9c0. \ub0a1\uc740 \uace0\uc815\uad00\ub150 \ubc84\ub9ac\ub2c8\uae4c \ub3c4\uc2dc\uac00 \uc0b4\uc544\ub098\ub124.", "dislike": 0, "like": 5800, "nick": "Hyobin_Pride", "replies": [], "time": "25\ubd84 \uc804"}, {"content": "\uc800\uac8c \ubb50 \ud558\ub294 \uc9d3\ub4e4\uc774\ub0d0... \ub2e4 \ud070 \uc5b4\ub978\ub4e4\uc774 \uc778\ud615\ub180\uc774 \ud558\uace0 \uc549\uc544\uc788\uace0... \u3149\u3149", "dislike": 7500, "isPunished": true, "like": 10, "nick": "Anti_Cringe", "replies": [{"content": "\ucd95\uad6c \ubcf4\uba74\uc11c \uc18c\ub9ac \uc9c0\ub974\ub294 \uac74 \ub418\uace0 \ucf54\uc2a4\ud504\ub808\ub294 \uc548 \ub428? \ucde8\ud5a5 \ucc28\uc774\uc77c \ubfd0\uc778\ub370 \uaf30\ub300\uc9c8 \uc624\uc9c0\ub124.", "nick": "Open_Mind"}, {"content": "\uc800 \u0027\uc778\ud615\ub180\uc774\u0027 \ud558\ub294 \ubd84\ub4e4\uc774 \uc624\ub298 \ud6a8\ube48\uc2dc \uacbd\uc81c \uc0b4\ub9b0 \uac70 \uc548 \ubcf4\uc774\uc2ec?", "nick": "Economy_101"}], "time": "30\ubd84 \uc804"}, {"content": "\ud37c\ub808\uc774\ub4dc \uc911\uac04\uc5d0 \uc5e0\ub9c8 \ube75 \ub098\ub220\uc900 \uc0c1\uc778\ubd84\ub4e4 \ub108\ubb34 \uac10\uc0ac\ud574\uc694! \ub2f9 \ubcf4\ucda9\ud558\uace0 \ub05d\uae4c\uc9c0 \uac78\uc5c8\uc2b5\ub2c8\ub2e4!", "dislike": 0, "id": 8, "like": 4200, "nick": "Miyu_Fan", "replies": [], "time": "35\ubd84 \uc804"}, {"content": "\uc560\ub4e4\uc774\ub791 \uac19\uc774 \uc654\ub294\ub370 \uc548\uc804 \uc694\uc6d0\ub4e4\uc774 \uc798 \ud1b5\uc81c\ud574\uc918\uc11c \ud3b8\ud558\uac8c \ubd24\uc2b5\ub2c8\ub2e4. \ud6a8\ube48\uc2dc \uc9c4\uc9dc \uc544\uc774 \ud0a4\uc6b0\uae30 \uc88b\uc740 \ub3c4\uc2dc\ub124\uc694.", "dislike": 1, "id": 9, "like": 3900, "nick": "Parent_A", "replies": [], "time": "40\ubd84 \uc804"}, {"content": "\u30d2\u30e7\u30d3\u30f3\u5e02\u306f\u30a2\u30cb\u30e1\u306e\u5929\u56fd\u3067\u3059\uff01(\ud6a8\ube48\uc2dc\ub294 \uc560\ub2c8\uc758 \ucc9c\uad6d\uc785\ub2c8\ub2e4!) \ub0b4\ub144\uc5d0\ub3c4 \uaf2d \uc62c\uac8c\uc694!", "dislike": 0, "id": 10, "like": 5100, "nick": "Tourist_JP", "replies": [], "time": "45\ubd84 \uc804"}, {"content": "\ud559\uc0dd\ud68c \uc18c\uc18d\uc73c\ub85c \uc548\ub0b4 \ubd09\uc0ac\ud588\ub294\ub370 \uc2dc\ubbfc\ubd84\ub4e4\uc774 \uac04\uc2dd\ub3c4 \uc8fc\uc2dc\uace0 \uaca9\ub824\ud574\uc8fc\uc154\uc11c \uc548 \ud798\ub4e4\uc5c8\uc2b5\ub2c8\ub2e4. \ubcf4\ub78c\ucc28\ub124\uc694.", "dislike": 0, "id": 11, "like": 3500, "nick": "Univ_Guard", "replies": [], "time": "50\ubd84 \uc804"}, {"content": "\ub3c4\ub85c \ud1b5\uc81c \ub54c\ubb38\uc5d0 \ucc28 \ub9c9\ud600 \uc8fd\ub294 \uc904 \uc54c\uc558\ub2e4! \uc624\ud0c0\ucfe0\ub4e4 \ub54c\ubb38\uc5d0 \uc2dc\ubbfc\ub4e4\uc774 \ud53c\ud574 \ubd10\uc57c \ud558\ub0d0!", "dislike": 6200, "id": 12, "isPunished": true, "like": 4, "nick": "Yoon_Squad_3", "replies": [{"content": "\uc9c0\ud558\ucca0 \ud0c0\uc138\uc694 \uc544\uc800\uc528. 6\ud638\uc120 \ubcf4\ub77c\uc0c9 \uc548 \ubcf4\uc784? \ubc30\ucc28 \uac04\uaca9\ub3c4 \uc9e7\uc740\ub370 \uad73\uc774 \ucc28 \ub04c\uace0 \ub098\uc640\uc11c \uc9d5\uc9d5\ub300\uae30\ub294.", "nick": "Metro_User"}]}, {"content": "\uad7f\uc988\uc0f5 \uc54c\ubc14\uc0dd\uc778\ub370 \uc624\ub298 \ud1f4\uadfc \ubabb \ud560 \ubed4... \uadf8\ub798\ub3c4 \uc190\ub2d8\ub4e4\uc774 \uc778\uc0ac\ud574\uc8fc\uace0 \uac00\uc154\uc11c \uae30\ubd84 \uc88b\uac8c \uc77c\ud588\uc2b5\ub2c8\ub2e4.", "dislike": 0, "id": 13, "like": 2800, "nick": "Shop_Staff", "replies": [], "time": "1\uc2dc\uac04 \uc804"}, {"content": "\uc5ed\ub300\uae09 \uc0ac\uc9c4 \ub9ce\uc774 \uac74\uc84c\uc2b5\ub2c8\ub2e4. \ucf54\uc2a4\uc5b4\ubd84\ub4e4 \uc5f4\uc815\uc774 \ub300\ub2e8\ud558\ub124\uc694. \uc804\uc2dc\ud68c \uc5f4\uace0 \uc2f6\uc744 \uc815\ub3c4!", "dislike": 0, "id": 14, "like": 3100, "nick": "Photo_Artist", "replies": [], "time": "1\uc2dc\uac04 10\ubd84 \uc804"}, {"content": "\ub098\uc774 \uba39\uc740 \uc0ac\ub78c\ub3c4 \uad6c\uacbd\ud558\ub2c8 \uc7ac\ubc0c\ub354\ub9cc. \uc138\uc0c1 \ucc38 \uc88b\uc544\uc84c\uc5b4. \uc80a\uc740\uc774\ub4e4\uc774 \uc6c3\uc73c\ub2c8 \ubcf4\uae30 \uc88b\ub124.", "dislike": 0, "id": 15, "like": 4500, "nick": "Grandpa_Park", "replies": [], "time": "1\uc2dc\uac04 20\ubd84 \uc804"}, {"content": "\uc774\uac8c \ub2e4 \uc120\ub3d9\uc774\ub2e4! \uc624\ud0c0\ucfe0\ub4e4 \uc138\ub1cc\uc2dc\ucf1c\uc11c \uc815\uce58\uc801\uc73c\ub85c \uc774\uc6a9\ud558\ub294 \uac70\ub2e4!", "dislike": 5500, "id": 16, "isPunished": true, "like": 1, "nick": "Yoon_Supporter", "replies": [{"content": "\uc138\uc0c1\uc744 \ub2e4 \uc74c\ubaa8\ub860\uc73c\ub85c \ubcf4\uc2dc\ub294 \uac70 \ubcf4\ub2c8 \uc0c1\ub2f4\uc774 \ud544\uc694\ud574 \ubcf4\uc785\ub2c8\ub2e4.", "nick": "Psychiatrist"}]}, {"content": "\ub798\ud551\ubc84\uc2a4\ub791 \ucf54\uc2a4\uc5b4\ub4e4 \uac19\uc774 \ucc0d\uc740 \uc0ac\uc9c4 \ubca0\uc2a4\ud2b8 \ucef7\uc784. \uce60\uc591\uc5ec\uac1d \uae30\uc0ac\ub2d8\ub4e4\ub3c4 \uc2e0\ub098 \ubcf4\uc774\uc168\uc74c \u314b\u314b", "dislike": 0, "id": 17, "like": 2900, "nick": "Railway_Fan", "replies": [], "time": "1\uc2dc\uac04 40\ubd84 \uc804"}, {"content": "\ud37c\ub808\uc774\ub4dc \ub05d\ub098\uace0 \ub4a4\uc5d0\uc11c \uc4f0\ub808\uae30 \uc90d\ub294 \ucf54\uc2a4\uc5b4\ubd84\ub4e4 \ubd24\uc74c... \uc778\uc131\uae4c\uc9c0 \uc644\ubcbd \uadf8 \uc790\uccb4.", "dislike": 0, "id": 18, "like": 4800, "nick": "Clean_Hyobin", "replies": [], "time": "1\uc2dc\uac04 50\ubd84 \uc804"}, {"content": "Hyobin is like Akihabara but bigger and cleaner. Amazing energy!", "dislike": 0, "id": 19, "like": 3600, "nick": "Foreigner_Mark", "replies": [], "time": "2\uc2dc\uac04 \uc804"}, {"content": "\ub098 \ubb34\uc8c4\uc57c! \uace7 \ub098\uac08 \uac70\uc57c! \ub098\uac00\uc11c \uc800\uae30 \uc788\ub294 \uac83\ub4e4 \ub2e4... \uc74d\uc74d!", "dislike": 8000, "id": 20, "isPunished": true, "like": 0, "nick": "YoonJaehoon(IP)", "replies": [{"content": "\ud611\ubc15\uc8c4 \ucd94\uac00\uc694~ \ud615\ub7c9 \ucc28\uace1\ucc28\uace1 \uc313\uc774\ub124.", "nick": "Lawyer_Lee"}]}, {"content": "\uc911\uc559\uc2dc\uc7a5 \ub5a1\ubcf6\uc774 \uc624\ub298 \ub2e4 \ud314\ub838\uc2b5\ub2c8\ub2e4! \uc80a\uc740 \uc190\ub2d8\ub4e4\uc774 \u0027\uc131\uc9c0\uc21c\ub840\u0027\ub77c\uba70 \ub9ce\uc774 \uc624\uc168\ub124\uc694. \ud6a8\ube48\uc2dc \ub9cc\uc138!", "dislike": 0, "id": 21, "like": 4100, "nick": "Market_Vendor", "replies": [], "time": "2\uc2dc\uac04 10\ubd84 \uc804"}, {"content": "\ud37c\ub808\uc774\ub4dc \ub300\uc5f4\uc5d0 \uc2dc\uc7a5\ub2d8 \uacc4\uc2e0 \uac70 \ubcf4\uace0 \uae5c\ub180 \u314b\u314b \uc9c4\uc9dc \uc18c\ud1b5\uc655 \uc778\uc815\ud569\ub2c8\ub2e4.", "dislike": 2, "id": 22, "like": 3700, "nick": "Student_B", "replies": [], "time": "2\uc2dc\uac04 20\ubd84 \uc804"}, {"content": "\uc758\uc0c1 \uc81c\uc791 \uae30\ubc95 \ubcf4\ub7ec \uac14\ub294\ub370 \ub514\ud14c\uc77c \ubbf8\ucce4\uc74c. \uc7a5\uc778 \uc815\uc2e0\uc774 \ub290\uaef4\uc9c0\ub124\uc694.", "dislike": 0, "id": 23, "like": 2500, "nick": "Fashion_Major", "replies": [], "time": "2\uc2dc\uac04 30\ubd84 \uc804"}, {"content": "\uc624\ud0c0\ucfe0 \uc2dc\uc7a5 \ubb3c\ub7ec\uac00\ub77c! \ub2e8\uc77c \ubbfc\uc871\uc758 \uc218\uce58\ub2e4!", "dislike": 4900, "id": 24, "isPunished": true, "like": 2, "nick": "Yoon_Bot", "replies": [{"content": "\uc2dc\uc7a5\ub2d8 \uc5b4\uba38\ub2c8 \ucf00\uc190\uc2dc\ud2f0 \uc0ac\ub78c\uc778 \uac8c \ubb50 \uc5b4\ub54c\uc11c? \uc77c\ub9cc \uc798\ud558\uba74 \uc7a5\ub561\uc774\uc9c0. \ub2d8\uc740 \uc77c\uc774\ub098 \ud558\uc1fc.", "nick": "Global_Citizen"}]}, {"content": "\ud070 \uc0ac\uace0 \uc5c6\uc774 \ub05d\ub098\uc11c \ub2e4\ud589\uc785\ub2c8\ub2e4. \ud611\uc870\ud574\uc8fc\uc2e0 \uc2dc\ubbfc \uc5ec\ub7ec\ubd84 \uac10\uc0ac\ud569\ub2c8\ub2e4.", "dislike": 0, "id": 25, "like": 5000, "nick": "Security_Team", "replies": [], "time": "2\uc2dc\uac04 50\ubd84 \uc804"}, {"content": "\uc624\ub298 \ud558\ub8e8 \ub108\ubb34 \ud798\ub4e4\uc5c8\uc9c0\ub9cc \uc0ac\ub78c\ub4e4\uc758 \ubbf8\uc18c \ubcf4\ub2c8\uae4c \ud53c\ub85c\uac00 \uc2f9 \uac00\uc2dc\ub124\uc694. \ub0b4\ub144\uc5d0 \ub610 \ub9cc\ub098\uc694!", "dislike": 0, "id": 26, "like": 3200, "nick": "HAF_Volunteer", "replies": [], "time": "3\uc2dc\uac04 \uc804"}, {"content": "\uc81c \ube14\ub85c\uadf8\uc5d0 \ud37c\ub808\uc774\ub4dc \uc0ac\uc9c4 500\uc7a5 \uc62c\ub838\uc2b5\ub2c8\ub2e4. \uad6c\uacbd \uc624\uc138\uc694!", "dislike": 0, "id": 27, "like": 1800, "nick": "Review_Blog", "replies": [], "time": "3\uc2dc\uac04 10\ubd84 \uc804"}, {"content": "\ud610\uc624 \uae00 \ubb34\uc2dc\ud569\uc2dc\ub2e4. \uc624\ub298 \uc6b0\ub9ac\ub294 \ucda9\ubd84\ud788 \ud589\ubcf5\ud588\uc73c\ub2c8\uae4c\uc694.", "dislike": 3, "id": 28, "like": 4400, "nick": "Peace_Maker", "replies": [], "time": "3\uc2dc\uac04 20\ubd84 \uc804"}, {"content": "\ud6a8\ube48\uc2dc\ub294 \uc774\uc81c \ub118\uc0ac\ubcbd\uc774\ub2e4. \ud610\uc624 \uc138\ub825\ub4e4\uc740 \uadf8\ub0e5 \ub2e4\ub978 \ub370\ub85c \uc774\uc0ac \uac00\uae38.", "dislike": 0, "id": 29, "like": 5500, "nick": "Final_Boss", "replies": [], "time": "3\uc2dc\uac04 30\ubd84 \uc804"}, {"content": "\ubc15\ud6a8\ube48 \uc2dc\uc7a5\ub2d8, \uc774 \ucd95\uc81c \ud3c9\uc0dd \ud558\uac8c \ud574\uc8fc\uc138\uc694! \uc0ac\ub791\ud569\ub2c8\ub2e4!", "dislike": 1, "id": 30, "like": 6000, "nick": "Hyobin_Lover", "replies": [], "time": "3\uc2dc\uac04 40\ubd84 \uc804"}];
+        let totalCommentCount = commentsData.length; 
+
+        // 1. 화면에 댓글 목록을 그려주는 함수
+        function renderComments() {
+            const container = document.getElementById('comment-list');
+            container.innerHTML = ""; 
+
+            // 총 댓글 수 업데이트
+            document.getElementById('comment-count').innerText = totalCommentCount.toLocaleString();
+
+            commentsData.forEach((cmt, idx) => {
+                const div = document.createElement('div');
+                div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 100 ? "best-comment" : "comment-item");
+                
+                let repliesHtml = "";
+                let replyButtonHtml = "";
+
+                if (cmt.replies && cmt.replies.length > 0) {
+                    replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                    repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                    cmt.replies.forEach(reply => {
+                        const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                        const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Ji_") || reply.nick.includes("A_ssi") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                        repliesHtml += `
+                            <div class="reply-item ${styleClass}">
+                                <span class="${nickClass}">${reply.nick}</span>: 
+                                <span>${reply.content}</span>
+                            </div>`;
+                    });
+                    repliesHtml += `</div>`;
+                }
+
+                // 투표 버튼 상태에 따른 클래스 부여
+                const likeActive = cmt.userVote === 'like' ? 'active' : '';
+                const dislikeActive = cmt.userVote === 'dislike' ? 'active-hate' : '';
+
+                div.innerHTML = `
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick} ${cmt.ip ? `(${cmt.ip})` : ''}</span>
+                        <span class="text-xs text-gray-500">${cmt.time || '방금 전'}</span>
+                    </div>
+                    <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                    <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                        <span class="vote-btn ${likeActive}" onclick="handleVote(${cmt.id || idx}, 'like', this)">공감 <span class="count">${(cmt.like || 0).toLocaleString()}</span></span>
+                        <span class="vote-btn ${dislikeActive}" onclick="handleVote(${cmt.id || idx}, 'dislike', this)">비공감 <span class="count">${(cmt.dislike || 0).toLocaleString()}</span></span>
+                        ${replyButtonHtml}
+                    </div>
+                    ${repliesHtml}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 2. 새로운 댓글을 등록하는 함수 (오류 완벽 수정)
+        function addComment() { 
+            const nickInput = document.getElementById('cmt-nick');
+            const pwInput = document.getElementById('cmt-pw');
+            const contentInput = document.getElementById('cmt-content');
+
+            if(!nickInput.value.trim() || !pwInput.value.trim() || !contentInput.value.trim()) {
+                alert("닉네임, 비밀번호, 내용을 모두 입력해주세요.");
+                return;
+            }
+
+            const newComment = {
+                id: Date.now(), // 고유 ID 생성
+                nick: nickInput.value,
+                time: "방금 전",
+                like: 0,
+                dislike: 0,
+                isPunished: false,
+                userVote: null,
+                content: contentInput.value.replace(/\n/g, "<br>"), // 줄바꿈 처리
+                replies: []
+            };
+
+            commentsData.unshift(newComment); // 배열 맨 앞에 추가
+            totalCommentCount++; // 전체 댓글 수 증가
+            
+            // 입력창 초기화
+            nickInput.value = '';
+            pwInput.value = '';
+            contentInput.value = '';
+
+            renderComments(); // 바뀐 데이터를 바탕으로 화면 즉시 갱신 (이제 댓글 바로 보임!)
+            alert("댓글이 등록되었습니다."); 
+        }
+
+        // 3. 추천/비추천 논리적 제어 (부분 렌더링으로 답글 창 안 닫힘!)
+        function handleVote(commentId, voteType, btnElement) {
+            // commentId로 찾거나, 없을 경우(더미데이터) index로 매칭
+            let cmt = commentsData.find(c => c.id === commentId);
+            if(!cmt) cmt = commentsData[commentId]; 
+            if(!cmt) return;
+
+            const parentDiv = btnElement.parentElement;
+            const likeBtn = parentDiv.children[0];
+            const dislikeBtn = parentDiv.children[1];
+
+            if (cmt.userVote === voteType) {
+                cmt[voteType]--;
+                cmt.userVote = null;
+                btnElement.classList.remove(voteType === 'like' ? 'active' : 'active-hate');
+            } else {
+                if (cmt.userVote) {
+                    cmt[cmt.userVote]--;
+                    if(cmt.userVote === 'like') likeBtn.classList.remove('active');
+                    else dislikeBtn.classList.remove('active-hate');
+                }
+                cmt[voteType]++;
+                cmt.userVote = voteType;
+                btnElement.classList.add(voteType === 'like' ? 'active' : 'active-hate');
+            }
+
+            // 화면을 다시 그리지 않고 해당 버튼의 숫자만 콕 집어서 변경! (답글창 유지됨)
+            likeBtn.querySelector('.count').innerText = cmt.like.toLocaleString();
+            dislikeBtn.querySelector('.count').innerText = cmt.dislike.toLocaleString();
+        }
+
+        // 4. 답글 열기/닫기 토글
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+
+        // 페이지 로드 시 최초 1회 화면 그리기 실행
+        renderComments();
+    </script>
+
+    <div id="common-footer"></div>
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

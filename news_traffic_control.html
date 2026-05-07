@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[교통/안전] 주말 HAF 퍼레이드로 고송대로 일부 통제... 2호선(초록색) 우회 안내 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #009988; text-decoration: underline; }
+        .news-nav .active { color: #009988; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #bbf7d0 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #009988; }
+        .ranking-num { font-weight: bold; color: #009988; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #009988; font-weight: bold; }
+        .vote-btn.active { color: #009988; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #009988; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#009988] font-bold">교통/안전 > 행사/통제</div>
+                <h2 class="article-title">[교통] 주말 HAF 퍼레이드로 고송대로 일부 통제... 2호선(초록색) 우회 안내</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">차안전 기자</span> (safe_drive@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.08 09:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#009988] font-bold">역대 최대 규모 HAF 코스프레 퍼레이드, 주말 고송교차로 일대 전면 통제<br>급행 04번 등 시내버스 14개 노선 우회... "지상 교통 혼잡, 지하철 이용 필수"<br>효빈교통공사, '모카선' 2호선(초록색) 주말 특별 증편... 성숙한 대중교통 이용 당부</span></p>
+                    
+                    <div class="my-6">
+                        <img src="고송대로_교통통제.png" alt="고송대로 교통 통제 및 2호선 우회 안내" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Gosong-daero+Traffic+Control'">
+                        <div class="img-caption">▲ 주말 대규모 퍼레이드를 앞두고 교통 통제가 예고된 북구 고송대로 일대와 우회 수단으로 적극 권장되는 효빈 도시철도 <a href="2호선.html" class="text-blue-600 underline">2호선(초록색)</a> 전동차의 모습. 성공적인 행사를 위해 시민들의 성숙한 대중교통 이용이 요구되고 있다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 차안전 기자] 수백만 명의 관람객을 동원하며 쓰레기 '0(Zero)'의 기적을 보여준 <a href="HAF.html" class="text-blue-600 underline">효빈 애니메이션 페스티벌(HAF)</a>이 이번 주말, 대규모 코스프레 퍼레이드를 맞이하여 절정에 달할 예정이다. 이에 따라 북구 도심의 대동맥인 고송대로 일대가 전면 통제되며, 효빈시는 시민과 관람객들에게 시내버스 우회 노선 확인 및 도시철도 2호선(초록색) 이용을 강력히 권고했다.</p>
+
+                    <p>8일 효빈광역시 교통기획과에 따르면, 퍼레이드 본행사가 열리는 이번 주 토요일 오후 1시부터 밤 10시까지 북구 구고송1동 네거리에서 고송해안교차로에 이르는 고송대로 약 8.5km 구간의 <strong>양방향 10차로 차량 통행이 전면 제한</strong>된다. 이에 따라 해당 구간을 관통하는 급행 04번, 간선 12번을 포함한 총 14개의 시내버스 노선이 인근 이면도로 및 우회도로로 노선을 임시 변경하여 운행하게 된다.</p>
+
+                    <p>시 교통 당국은 지상 도로의 극심한 정체가 예상되는 만큼, 축제 현장 방문객은 물론 일반 시민들 역시 승용차 및 버스 이용을 자제하고 궤도 교통망을 적극 활용해 줄 것을 당부했다. 특히, 통제되는 고송대로의 지하를 나란히 관통하며 행사장 핵심 거점을 모두 잇는 <strong>효빈 도시철도 2호선(초록색)</strong>이 주말 특별 수송의 중추적인 역할을 맡게 된다.</p>
+
+                    <p>효빈교통공사는 퍼레이드로 인해 폭증할 이동 수요를 분산시키기 위해 2호선의 주말 배차 간격을 평일 출퇴근 시간대 수준으로 대폭 단축한다. 서브컬처 팬들 사이에서 고유 색상(#00CCAA) 덕분에 이른바 <strong>'모카선'</strong>으로 불리며 큰 사랑을 받고 있는 2호선은, 행사 기간 동안 마스코트 <a href="하루빈.html" class="text-blue-600 underline">'하루빈'</a>을 앞세운 안전 탑승 캠페인을 전개하며 관람객들의 쾌적한 이동을 도울 예정이다.</p>
+
+                    <p>앞서 HAF 관람객들은 '머물다 간 자리도 아름답게'라는 슬로건 아래 수백만 인파가 몰렸음에도 자발적인 플로깅으로 거리를 청결하게 유지해 전국의 찬사를 받은 바 있다. 이번 교통 통제 상황에서도 이러한 성숙한 시민의식이 '질서 정연한 대중교통 이용'으로 이어질지 기대를 모으고 있다.</p>
+
+                    <p><a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈광역시장은 8일 대시민 담화문을 통해 "세계 최대의 서브컬처 축제이자 효빈의 자랑인 HAF 퍼레이드의 안전한 개최를 위해 고송대로 통제가 불가피한 점을 너그러이 양해해 주시길 바란다"며, "앞서 보여주신 쓰레기 '0'의 기적처럼, 이번 주말에는 꽉 막힌 도로 대신 우리의 쾌적한 초록빛 2호선을 이용하는 <strong>'교통 문화의 기적'</strong>을 다시 한번 완성해 주시길 부탁드린다"고 전했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#009988]" id="comment-count">12,304</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#009988] text-white px-6 font-bold text-sm hover:bg-[#007766] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Mocha_Line_Lover", time: "방금 전", like: 28150, dislike: 12, isPunished: false,
+                                content: "드디어 우리 모카선(2호선)이 주인공이 되는 날이 왔군요!!!💚 고송대로 통제돼도 걱정 없습니다. 지하철 타고 성지순례 다니는 게 HAF의 진짜 묘미죠 ㅋㅋㅋ 에어컨도 빵빵하고 배차도 줄여준다니 무조건 2호선 탑승합니다!",
+                                replies: [
+                                    { nick: "Subway_Otaku", content: "2호선 진짜 시원하고 쾌적해서 너무 좋아요 ㅋㅋ 배차 줄여주신다니 압도적 감사!" },
+                                    { nick: "Merch_Hunter", content: "혹시 하루빈 굿즈도 역사에서 파나요? ㅠㅠ 저번 4호선 다로나 에코백처럼 이벤트 좀 해줬으면 좋겠다." },
+                                    { nick: "Green_Light", content: "모카선 색감 진짜 예쁨 ㅠㅠ 사진 찍으면 완전 청량하게 나옴." },
+                                    { nick: "Smart_Citizen", content: "이번 주말 고송대로 쪽은 무조건 대중교통이 답입니다. 다들 2호선 타세요~" }
+                                ]
+                            },
+                            {
+                                nick: "Daily_Commuter", time: "5분 전", like: 15400, dislike: 24, isPunished: false,
+                                content: "토요일에 고송동 출근하는 직장인입니다... 버스 우회한다고 해서 막막했는데 2호선 증편해 준다니 다행이네요. 저번 플로깅 때 보니까 HAF 오시는 분들 질서도 엄청 잘 지키시던데 지하철에서도 배려하면서 잘 탔으면 좋겠습니다.",
+                                replies: [
+                                    { nick: "Cheer_Up", content: "직장인 화이팅 ㅠㅠ 주말 출근 힘내세요. 시원한 지하철 타고 가시길!" },
+                                    { nick: "Line2_Rider", content: "저도 주말 출근러라 2호선 타는데 증편 진짜 개꿀이네요. 효빈교통공사 일 잘함 ㅋㅋㅋ" },
+                                    { nick: "Peaceful_Mind", content: "덕후분들 알아서 질서 잘 지켜주셔서 출퇴근러 입장에서도 마음이 놓입니다. 같이 배려하며 타요!" },
+                                    { nick: "Good_Admin", content: "교통 통제에 대비해서 증편까지 완벽하게 준비하는 효빈시 행정력 칭찬합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Road_Rage", time: "12분 전", like: 15, dislike: 42000, isPunished: true,
+                                content: "무슨 애들 만화 축제한다고 멀쩡한 10차로 대로를 막냐?? 내 세금으로 길 닦아놨더니 길 다 막히게 생겼네. 시장이 오타쿠니까 도시가 아주 엉망진창으로 돌아가는구나!! 당장 통제 풀어라!!",
+                                replies: [
+                                    { nick: "Fact_Checker_79", content: "아저씨, HAF 행사로 효빈시가 벌어들이는 경제 효과가 수천억 원입니다. 행사 하루 통제해서 상권 다 살아나는데 경제관념이 없으신가 보네요. 꼬우면 2호선 타세요 쾌적하고 좋습니다 ^^" },
+                                    { nick: "Hyobin_Pride", content: "벚꽃축제나 마라톤 대회 할 때도 도로는 다 통제합니다. 애니메이션 행사라고 유독 거품 무시는 이유가?" },
+                                    { nick: "Subway_Master", content: "2호선 타보지도 않은 방구석 악플러 컷~" },
+                                    { nick: "Tax_Police", content: "님 같은 악플러들 세금 100년 치 다 합쳐도 저 축제 하루 매출 발끝도 못 따라감 ㅋㅋ 제발 경제 공부 좀 하셈." },
+                                    { nick: "Stay_Home", content: "제발 차 끌고 나오지 마라 집에서 잠이나 자. 너 하나 안 나온다고 길 안 막힌다." }
+                                ]
+                            },
+                            {
+                                nick: "Darona_And_Harubin", time: "18분 전", like: 21300, dislike: 8, isPunished: false,
+                                content: "지난번에 쓰레기 줍고 다녔던 클린 가드입니다! 이번 주말에는 고송교차로역에서 2호선 마스코트 하루빈 피켓 들고 안전 안내 자원봉사 할 예정입니다. 다들 밀지 마시고 질서 있게 초록색 2호선 애용해 주세요~",
+                                replies: [
+                                    { nick: "Wow_Hero", content: "헉 클린가드님! 저번 주에 쓰레기 봉투 나눠주신 분이시구나 ㅠㅠ 진짜 존경합니다!" },
+                                    { nick: "Volunteer_Respect", content: "자원봉사자분들 진짜 리스펙합니다. 여러분 덕분에 축제가 안전하게 돌아갑니다 ㅠㅠ" },
+                                    { nick: "Drink_Support", content: "하루빈 피켓 들고 계시면 가서 시원한 음료수라도 하나 드릴게요! 고생 많으십니다!" },
+                                    { nick: "City_Light", content: "덕분에 효빈시가 빛납니다 ㅠㅠ 우리 모두 질서 잘 지켜요!" }
+                                ]
+                            },
+                            {
+                                nick: "Policy_Genius_Park", time: "25분 전", like: 18900, dislike: 11, isPunished: false,
+                                content: "교통 통제로 민원 나올 법한 상황인데, 2호선 캐릭터(모카선, 하루빈) 스토리텔링 엮어서 오히려 덕후들이 자발적으로 지하철 타게 유도하는 시장님의 행정 센스 ㅋㅋㅋ 진짜 저런 건 어디서 배우는 건지 대단하다 대단해.",
+                                replies: [
+                                    { nick: "Nudge_Master", content: "ㄹㅇ 억지로 차 타지 말라고 훈계하는 것보다 마스코트로 꼬시는 게 효과 직빵임 ㅋㅋㅋ" },
+                                    { nick: "Admin_Textbook", content: "이게 바로 넛지(Nudge) 행정의 표본이네요. 똑똑하다 진짜." },
+                                    { nick: "Mind_Reader", content: "시장님이 진짜 서브컬처 팬덤 심리를 정확하게 꿰뚫고 있음. 굿즈나 캐릭터 엮어주면 말 안 해도 알아서 줄 섬 ㅋㅋㅋ" },
+                                    { nick: "Best_Mayor", content: "행정학 교과서에 실어야 한다 진짜. 대중교통 이용률 확 올라갈 듯." }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Waster", time: "30분 전", like: 9, dislike: 51200, isPunished: true,
+                                content: "지하철 텅텅 비어 다니는데 무슨 놈의 증편이냐!! 저거 전동차 굴리는 전기세 다 우리 혈세 아니냐!! 시장놈이 오타쿠들 기 살려주려고 시 재정을 파탄 내는구나!! 당장 철회해라!!",
+                                replies: [
+                                    { nick: "Blind_Guy", content: "텅텅 비긴 ㅋㅋㅋ 평소 주말에도 2호선 꽉 차서 터져나가는데 지하철 타본 적도 없는 백수 티 내네." },
+                                    { nick: "Math_Fail", content: "증편해서 늘어난 관람객들이 내는 표값 수익이 전기세보다 수십 배는 더 많아요 아재요. 경제 1도 모르시네." },
+                                    { nick: "Electric_Bill", content: "방구석에서 타자 치면서 낭비하는 니 집 전기세가 백배 천배는 더 아까움 ㅋㅋ" },
+                                    { nick: "Fact_Check_Bot", content: "HAF 기간 2호선 흑자 규모 통계자료 보고 와서 떠들어라 제발. 돈을 벌어다 줘도 욕하네 빡통이." }
+                                ]
+                            },
+                            {
+                                nick: "Cosplay_Ready", time: "35분 전", like: 14200, dislike: 15, isPunished: false,
+                                content: "코스프레 의상 입고 2호선 타도 눈치 안 보이는 효빈시 클라스 ㅋㅋㅋ 전 세계 어디에도 이런 서브컬처 친화적인 도시는 없을 듯 ㅠㅠ 사랑해요 효빈! 이번 주말 모카선에서 만나요!",
+                                replies: [
+                                    { nick: "HAF_Veteran", content: "작년에 탔을 때 객차 절반이 코스어였음 ㅋㅋㅋ 진짜 진풍경입니다 완전 재밌어요." },
+                                    { nick: "Citizen_Smile", content: "일반 시민들도 이제 적응해서 코스어들 보면 사진 찍어달라고 하시더라고요 ㅋㅋㅋ 너무 훈훈함." },
+                                    { nick: "Manner_First", content: "부피 큰 소품은 분해해서 타주시고, 질서만 잘 지키면 누구도 뭐라 안 합니다! 재밌게 즐기세요!" },
+                                    { nick: "Runway_Line2", content: "초록색 모카선이 진정한 런웨이네요 ㅋㅋㅋ 토요일이 너무 기대됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Extreme_Normal", time: "40분 전", like: 6, dislike: 48000, isPunished: true,
+                                content: "다 큰 어른들이 이상한 옷 입고 지하철 타는 거 혐오스럽다 진짜;; 애들 교육에 안 좋으니까 옷 갈아입고 타게 법으로 금지시켜라!! 풍기문란죄 아니냐!!",
+                                replies: [
+                                    { nick: "Personality_Check", content: "애들 교육엔 남의 취미 함부로 비하하고 악플 다는 당신 인성이 수만 배는 더 안 좋습니다." },
+                                    { Staff_Rule: "노출 심하거나 혐오감 주는 옷은 행사 규정으로 다 컷 당합니다. 알지도 못하면서 무지성으로 까기만 하네." },
+                                    { nick: "Mirror_Therapy", content: "니 심보 꼬인 얼굴이 제일 풍기문란이다 이 꼰대야 ㅋㅋ 거울 좀 보고 살아라." },
+                                    { nick: "Frog_In_Well", content: "외국 할로윈 파티 길거리 분위기 보면 기절하시겠네 우물 안 개구리 진짜 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Green_Line_Staff", time: "45분 전", like: 23000, dislike: 12, isPunished: false,
+                                content: "효빈교통공사 직원입니다. 주말 특별수송을 위해 비번인 직원들도 다 자발적으로 출근해서 안전 요원으로 투입됩니다. 계단이나 에스컬레이터에서 뛰지 마시고 천천히 이동해 주시면 감사하겠습니다! 안전이 최우선입니다!",
+                                replies: [
+                                    { nick: "Thank_You_Staff", content: "주말에 쉬지도 못하시고 정말 고생 많으십니다 ㅠㅠ 감사합니다!" },
+                                    { nick: "Safe_First", content: "직원분들 덕분에 저희가 안전하게 즐깁니다. 꼭 지시 따르고 천천히 이동할게요!" },
+                                    { nick: "Harubin_Care", content: "하루빈 인형탈 쓰신 직원분 쓰러지지 않게 쿨팩 많이 붙여주세요 ㅠㅠ 이 날씨에 진짜 쓰러집니다." },
+                                    { nick: "True_Heroes", content: "대중교통의 숨은 영웅들 ㅠㅠ 공사 직원분들 화이팅입니다!" }
+                                ]
+                            },
+                            {
+                                nick: "True_Patriot_K", time: "50분 전", like: 11, dislike: 62000, isPunished: true,
+                                content: "일본 캐릭터 축제에 우리 경찰이랑 교통공사 직원들이 왜 동원되냐!! 완전히 일본 식민지가 다 됐네!! 친일파 박효빈은 당장 사퇴하고 일본으로 꺼져라!!",
+                                replies: [
+                                    { nick: "Illiteracy_Test", content: "HAF에 한국 웹툰, 게임 작품이 절반이 넘는다고 백번을 말해도 못 알아쳐먹는 난독증 환자네." },
+                                    { nick: "Economy_Zero", content: "전 세계인들 모여서 한국에 외화 벌어다 주는데 국적 따지고 있네 ㅋㅋ 니가 국가 부도 내라 그냥." },
+                                    { nick: "Fact_Check_4", content: "친일파 타령하는 애들 특징 : 뒤에선 일본 애니 몰래 다 챙겨봄 ㅋㅋㅋ 겉으론 안 보는 척 위선 오짐." },
+                                    { nick: "Brain_Absence", content: "경찰이랑 공사가 수백만 자국민 안전 지키러 동원되지 그럼 길 막히는데 가만히 있냐? 뇌가 파업했네." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick || "Unknown"}</span>: 
+                                            <span>${reply.content || reply.Staff_Rule || ""}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner" style="background-color: #e6fcf5; border-color: #009988;">
+                <div>
+                    <div class="font-bold text-[#009988] mb-1">HAF 퍼레이드는 쾌적한 2호선(모카선)과 함께!</div>
+                    <div class="text-xs text-gray-700">고송대로 통제 구간, 지하철로 빠르게 이동하세요<br>하루빈이 여러분의 안전을 책임집니다!<br><span class="text-[#009988] underline mt-1 inline-block font-bold">노선도 및 우회버스 안내</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

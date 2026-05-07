@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[교통/안전] 시장님 출퇴근길 '6호선(보라색)', 안심 귀가 스카우트 배치 강화 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+        
+        /* 나무위키식 취소선 스타일 보조용 (댓글용으로 남겨둠) */
+        .strike { text-decoration: line-through; color: #888; }
+        .drip { font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#881188] font-bold">교통/안전 > 행정</div>
+                <h2 class="article-title">[교통/안전] 시장님 출퇴근길 '6호선(보라색)', 안심 귀가 스카우트 배치 강화</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">박안전 기자</span> (safety@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.06 22:55</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#881188] font-bold">중수동 관저~시청 구간 오가는 박효빈 시장, 시민 소통형 '6호선 출근' 지속<br>역세권 일대 '안심 귀가 스카우트' 추가 투입으로 밤길 안전 사각지대 해소<br>박 시장 "가장 수익성 높은 6호선, 가장 안전한 노선으로 만들 것"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="6호선_출근길.png" alt="6호선으로 출근하는 박효빈 시장" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Mayor+Park+on+Line+6'">
+                        <div class="img-caption">▲ <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈광역시장이 보라색 상징색의 효빈도시철도 <a href="6호선.html" class="text-blue-600 underline">6호선</a> 전동차 내에서 시민들과 대화를 나누며 '출근길 버스킹'을 진행하고 있다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박안전 기자] 효빈광역시가 시의 핵심 교통 동맥이자 박효빈 시장의 주된 출퇴근 경로인 6호선 일대를 중심으로 '안심 귀가 스카우트' 배치를 대폭 강화한다. 이번 조치는 시장이 직접 체감한 시민들의 건의사항을 시정에 즉각 반영한 '현장 밀착형 행정'의 일환으로 풀이된다.</p>
+
+                    <p><strong>■ "시장님, 밤길이 무서워요"... 출근길 '버스킹'이 낳은 안전 대책</strong></p>
+
+                    <p>박효빈 시장은 취임 이후 줄곧 관저가 위치한 북구 <a href="중수동.html" class="text-blue-600 underline">중수동</a>에서 시청이 있는 <a href="고송동.html" class="text-blue-600 underline">고송동</a>까지 관용차 대신 보라색 상징색(#881188)의 6호선 지하철을 이용해왔다. 이른바 '출근길 버스킹'이라 불리는 이 과정을 통해 박 시장은 수많은 시민과 직접 대화하며 민원을 수렴해왔다.</p>
+
+                    <p>최근 중수역과 <a href="북구청역.html" class="text-blue-600 underline">북구청역</a> 등 주요 거점 역을 이용하는 청년들과 아르바이트생들로부터 "막차 시간대 역에서 집까지 가는 골목길이 어두워 불안하다"는 의견이 잇따르자, 박 시장은 즉시 비서실과 안전총괄과에 '안심 귀가 스카우트' 인력 증원과 배치 구역 확대를 지시했다.</p>
+
+                    <p><strong>■ 6호선 흑자 수익, 시민의 '안전 방패'로 환원</strong></p>
+
+                    <p>이번 정책 강화의 재원은 6호선의 압도적인 경영 성과에서 마련된다. 6호선은 최근 일평균 역당 이용객수가 2만 1,000명을 돌파하며 효빈교통공사의 최대 흑자 노선으로 자리 잡았다.</p>
+
+                    <p>시는 이 막대한 수익 중 일부를 활용해, 6호선 전 구간 역세권 내 우범 지대에 안심 귀가 스카우트 대원을 기존 대비 2배 이상 추가 배치하기로 했다. 특히 6호선 마스코트인 <a href="라세나.html" class="text-blue-600 underline">'라세나'</a>와 협업한 홍보 캠페인을 통해, 여성과 청소년 등 범죄 취약 계층이 지하철에서 내리자마자 바로 스카우트의 도움을 받을 수 있는 <strong>'Zero-Gap' 안심 귀가 시스템</strong>을 구축할 계획이다.</p>
+
+                    <div class="my-6">
+                        <img src="안심귀가_스카우트.png" alt="6호선 안심 귀가 스카우트 대원들과 마스코트 라세나" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Safe+Return+Scouts+with+Rasena'">
+                        <div class="img-caption">▲ 효빈시가 새롭게 도입한 첨단 장비를 착용한 안심 귀가 스카우트 대원들. 6호선 마스코트 '라세나'가 그려진 보라색 조끼가 눈에 띈다.</div>
+                    </div>
+
+                    <p><strong>■ '블루버드 멘토단'과 연계... 지역 공동체 안전망 구축</strong></p>
+
+                    <p>이번에 확충되는 스카우트 인력에는 효빈시의 자랑인 <a href="블루버드멘토단.html" class="text-blue-600 underline">블루 버드 멘토단</a> 출신 청년들과 지역 자율방범대가 대거 합류한다. 이는 단순한 감시 활동을 넘어, 지역 선후배가 서로의 귀갓길을 지켜주는 끈끈한 지역 공동체 안전망을 형성하겠다는 박 시장의 복지 철학이 담긴 대목이다.</p>
+
+                    <p>또한, 시는 스카우트 대원들에게 최첨단 웨어러블 카메라와 GPS 장비를 지급하고, 관제 센터와의 실시간 핫라인을 구축해 비상 상황 발생 시 즉각적으로 경찰이 출동할 수 있는 체계를 완성했다.</p>
+
+                    <p>박효빈 시장은 본지와의 인터뷰에서 "내가 매일 타는 6호선이 시민들에게는 가장 편안하고 안전한 퇴근길이 되어야 한다"며, "안심 귀가 스카우트는 단순한 인력 배치가 아니라 혐오와 범죄가 발붙일 수 없는 효빈시를 만들겠다는 약속의 증표"라고 밝혔다.</p>
+
+                    <p>시민들은 이번 조치에 대해 "시장이 직접 지하철을 타고 소통하니 필요한 정책이 정말 빠르게 나온다", "보라색 6호선이 이제는 밤길의 든든한 등불처럼 느껴진다"며 뜨거운 반응을 보이고 있다. 보라색 불빛 아래 더욱 안전해질 효빈시의 밤거리에 귀추가 주목된다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#881188]" id="comment-count">21,844</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#881188] text-white px-6 font-bold text-sm hover:bg-[#660066] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Line6_Commuter", time: "방금 전", like: 45200, dislike: 21, isPunished: false,
+                                content: "시장님이 관용차 안 타고 매일 시민들이랑 지하철 타면서 민원 듣는 '출근길 버스킹' 진짜 너무 좋음. 어제는 중수역에서 퇴근길에 뵀는데 진짜 친근하게 인사해주심 ㅠㅠ 현장 행정의 정석이다.",
+                                replies: [
+                                    { nick: "Fact_Check", content: "96년생 시장이라 그런지 권위의식 1도 없음 ㅋㅋㅋ 전임 시장은 에쿠스 타고 다니면서 길 막고 난리도 아니었는데 비교 쌉오진다." },
+                                    { nick: "Hater_Troll", nickClass: "text-red-600 font-bold", content: "어휴 저거 다 카메라 돌 때만 저러는 보여주기식 쇼지 ㅋㅋㅋ 정치인들 속내를 그렇게 모르냐 개돼지들아 ㅉㅉ" },
+                                    { nick: "Logic_Cutter", content: "매일 아침 출퇴근 시간에 폰카로 시민들이 찍어서 올리는 직캠만 수백 개인데 그게 다 섭외된 거냐 능지 수준아 ㅋㅋ" },
+                                    { nick: "Daily_Observer", content: "쇼라도 좋으니 저렇게 매일매일 지하철 타면서 민원 해결해주면 평생 쇼하라고 박수쳐줌 ^^" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Jaehoon_Official", time: "3분 전", like: 48, dislike: 125000, isPunished: true,
+                                content: "존경하는 효빈시민 여러분! 저 국민의힘 기호 2번 윤재훈입니다! 박효빈은 6호선 흑자를 빌미로 자기 선거조직을 세금으로 키우고 있는 극좌 포퓰리스트입니다!! 안심 스카우트? 동네 마실 다니는 씹덕 알바생들한테 시민 혈세를 왜 퍼줍니까!! 저 윤재훈이 시장이 되었다면 6호선에 장갑차와 무장 특공대를 배치해서 완벽한 치안을 만들었을 것입니다!! 저를 지지해주신 4.8%의 깨어있는 애국 시민들은 진실을 알고 있습니다!! 박효빈은 당장 사퇴하라!!",
+                                replies: [
+                                    { nick: "Fact_Check", content: "시장 선거 득표율 4.8% 받고 선거비 보전도 못 받은 찌질이가 여긴 웬일이냐 ㅋㅋㅋ 아빠 빽 믿고 나대다가 50억 소송 맞고 파산 직전이라며?" },
+                                    { nick: "Logic_Cutter", content: "지하철역에 장갑차를 어떻게 배치해 이 빡대가리야 ㅋㅋㅋ 니가 시장 안 된 게 효빈시 건국 이래 최고의 축복이다 진짜" },
+                                    { nick: "Law_Student", content: "윤재훈(극우, 전 효빈시장 후보, 득표율 4.8%, 특수폭행 전과자, 50억 배상 피고인) 스펙 화려하다 화려해 ㅋㅋㅋㅋ 여기서 이러실 시간에 변호사나 만나세요." },
+                                    { nick: "Kuku_Fan", content: "쿠쿠스 배리어 조례 때문에 관공서 평생 출입 금지당한 새끼가 방구석에서 폰 잡고 악플이나 다네 ㅠㅠ 눈물겹다 진짜 ㅋㅋㅋ" },
+                                    { nick: "Line6_Commuter", content: "아직도 지가 유력 정치인인 줄 아네 ㅋㅋ 어제 법원 출석할 때 보니까 폐인 다 됐던데 정신 차리고 알바나 뛰어라 50억 갚으려면" }
+                                ]
+                            },
+                            {
+                                nick: "Rasena_Oshi", time: "5분 전", like: 38400, dislike: 42, isPunished: false,
+                                content: "6호선 상징색 보라색 #881188에 마스코트 '라세나' 조합 미쳤다 ㅠㅠ 라세나가 그려진 보라색 조끼 입은 스카우트 대원들이 밤길 지켜준다고 상상하니까 무슨 마법소녀물 같고 개멋있음 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "BangDream_Fan", content: "라세나면 뱅드림 미나토 유키나 모티브 맞죠? 유키나가 밤길 지켜주면 진짜 든든할 듯 ㅋㅋㅋ 당신들, 밤길 안전에 모든 것을 걸 각오는 되어 있나요?" },
+                                    { nick: "Boomer_K", nickClass: "text-red-600 font-bold", content: "아주 시정 홍보물에다가 일본 만화 캐릭터나 쳐넣고 자빠졌네 ㅉㅉ 시장이 씹덕이니까 행정도 씹덕판이 돼가는구나 나라 망신이다!!" },
+                                    { nick: "MZ_Power", content: "어르신, 저 캐릭터 굿즈 팔아서 작년에 6호선 적자 다 메웠습니다 ㅋㅋㅋ 자본주의 사회에서 돈 벌어오는 효녀한테 무슨 망발이십니까" },
+                                    { nick: "Line6_Pride", content: "6호선이 효빈시 교통공사 최대 흑자 노선인 이유가 있다 ㅋㅋ 덕후들의 지갑 파워를 무시하지 마라" }
+                                ]
+                            },
+                            {
+                                nick: "Elite_Citizen", time: "10분 전", like: 12, dislike: 51000, isPunished: true,
+                                content: "광역시 시장이라는 사람이 체통 없게 시민들이랑 부대끼면서 지하철이나 타고 다니냐? 관용차 세단 타고 다니면서 무게를 잡아야 도시의 품격이 올라가는 거다. 쯧쯧쯧 MZ 시장이라 그런가 기본이 안 되어 있네.",
+                                replies: [
+                                    { nick: "Time_Machine", content: "아재요, 쌍팔년도에서 타임머신 타고 오셨어요? 품격은 세단에서 나오는 게 아니라 시민들 안전 챙기는 정책에서 나오는 겁니다." },
+                                    { nick: "Traffic_Hell", content: "출퇴근 시간에 효빈시내 도로 꽉 막히는 거 뻔히 알면서 관용차 타면 그게 더 민폐지 ㅋㅋㅋ 지하철이 제일 빠르고 정확한데 억까 오지네" },
+                                    { nick: "Elite_Citizen", nickClass: "text-red-600 font-bold", content: "시장 경호는 어쩔 건데!! 저러다 테러라도 당하면 행정 공백 어쩔 거냐!! 무식한 놈들이 시장을 감싸고 도네!!" },
+                                    { nick: "Touch_Grass", content: "방구석에서 인터넷만 하니까 세상이 다 테러범으로 보이지? 현생을 살아라 좀... 님 같은 악플러가 제일 무서워요." }
+                                ]
+                            },
+                            {
+                                nick: "Night_Worker", time: "15분 전", like: 31500, dislike: 18, isPunished: false,
+                                content: "중수역 근처 고깃집에서 알바하고 새벽에 퇴근하는데 진짜 골목길 무서웠거든요 ㅠㅠ Zero-Gap 시스템 도입돼서 역에서 내리자마자 스카우트분들 만날 수 있다니 이제 안심하고 다닐 수 있겠어요!!",
+                                replies: [
+                                    { nick: "Empathy_100", content: "맞아요 북구청역 뒷골목도 가로등 어두워서 밤에 혼자 걷기 진짜 무서움... 시장님이 여심(女心)을 제대로 저격하셨네" },
+                                    { nick: "Alpha_Male", nickClass: "text-red-600 font-bold", content: "무서우면 택시를 타든가 일찍 일찍 쳐 다니면 되지 세금으로 별 짓거리 다 하네 ㅋㅋ 하여튼 계집애들 징징대는 건 알아줘야 함" },
+                                    { nick: "Fact_Bomber", content: "최저시급 받고 고기 구우면서 알바하는데 맨날 택시 타면 남는 게 있냐 빡통아? 니가 대신 택시비 내줄 거 아니면 입 다물어라" },
+                                    { nick: "Protect_Youth", content: "세금은 저런 알바생들이랑 서민들 밤길 안전하게 지켜주라고 내는 겁니다. 님 같은 방구석 여포들 살찌우는 데 쓰는 게 아니고요." }
+                                ]
+                            },
+                            {
+                                nick: "Welfare_Expert", time: "20분 전", like: 26800, dislike: 22, isPunished: false,
+                                content: "블루버드 멘토단이랑 연계한 거 진짜 똑똑하다. 취약계층 청년들한테 일자리(스카우트) 주면서 생활임금 1.2배 챙겨주고, 그 청년들이 다시 지역 주민들 안전을 지키는 선순환 구조... 이게 진짜 살아있는 복지 행정이지.",
+                                replies: [
+                                    { nick: "BlueBird_Alumni", content: "블루버드 3기 출신인데, 시청 행정 보조뿐만 아니라 지역 사회에 직접 기여할 수 있는 현장 업무 늘어나는 거 대찬성입니다!" },
+                                    { nick: "Troll_King", nickClass: "text-red-600 font-bold", content: "어린 대학생들 밤에 굴려서 강제노동 시키는 거 보소 ㅋㅋㅋ 열정페이 착취하는 악덕 시장이네!!" },
+                                    { nick: "Read_Again", content: "기사 좀 쳐 읽어라. '생활임금 1.2배' 안 보임? 최저시급 훌쩍 넘게 챙겨주면서 일자리 제공하는 건데 무슨 강제노동이야 난독증 환자야" },
+                                    { nick: "Good_Policy", content: "저출산 시대에 청년들한테 든든하게 돈 챙겨주고 공동체 의식도 심어주는 1석 2조 정책임. 까내릴 걸 까라." }
+                                ]
+                            },
+                            {
+                                nick: "Line1_Resident", time: "25분 전", like: 19400, dislike: 14, isPunished: false,
+                                content: "시장님 6호선만 챙기지 마시고 우리 파란색 1호선도 안심 귀가 스카우트 좀 늘려주세요 ㅠㅠ 고나미 그려진 파란 조끼 입은 스카우트 대원들 보고 싶습니다!! 1호선도 밤에 무섭단 말이에요 ㅠㅠ",
+                                replies: [
+                                    { nick: "Line2_Resident", content: "초록색 2호선 하루빈 조끼도 추가요!! 전 노선으로 확대 도입 시급합니다!!" },
+                                    { nick: "City_Admin", content: "시장님 인터뷰 보니까 6호선에서 시범 운영해서 성과 좋으면 전 노선(1~8호선, 빈효선 등)으로 쫙 깐다고 하셨음. 조금만 존버합시다!" },
+                                    { nick: "Jealousy_Guy", nickClass: "text-red-600 font-bold", content: "중수동 고송동 자기 출퇴근길만 챙기는 이기적인 시장 ㅉㅉ 표 떨어지는 소리 들린다~" },
+                                    { nick: "Map_Viewer", content: "6호선이 효빈시 정중앙 관통하는 핵심 동맥이라서 먼저 하는 건데 뭘 이기적이야 ㅋㅋ 제일 붐비고 흑자 나는 노선부터 투자하는 게 당연한 상식 아님?" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Complainer", time: "30분 전", like: 8, dislike: 42000, isPunished: true,
+                                content: "경찰 놔두고 왜 엄한 데다가 세금을 낭비하냐!! 스카우트인지 뭔지 동네 할아버지들 노란 조끼 입고 돌아다녀 봤자 범죄 예방 하나도 안 됨!! 싹 다 폐지하고 세금이나 환급해라!!",
+                                replies: [
+                                    { nick: "Illiterate_Hunter", content: "이 등신은 기사 제목만 보고 댓글 다네 ㅋㅋ 6호선 '흑자 수익'으로 재원 마련한다고 떡하니 적혀있구만 무슨 세금 낭비 타령이야" },
+                                    { nick: "Police_Officer", content: "현직 경찰입니다. 밤 시간대 주취자 처리하느라 지구대 인력 박살 납니다. 골목길 순찰 돌아주시는 스카우트분들 계시면 범죄 예방에 엄청난 도움 됩니다." },
+                                    { nick: "Tax_Complainer", nickClass: "text-red-600 font-bold", content: "흑자 난 돈이면 교통 요금을 깎아줘야지!! 그게 다 시민들 주머니에서 나온 돈 아니냐!!" },
+                                    { nick: "Economy_101", content: "님 안전 지켜주는 데 재투자하는 건데 요금 몇백 원 깎는 것보다 저게 훨씬 가치 있는 소비임. 님 목숨값이 몇백 원밖에 안 됨?" }
+                                ]
+                            },
+                            {
+                                nick: "Tech_Nerd", time: "35분 전", like: 18200, dislike: 11, isPunished: false,
+                                content: "단순히 인력만 푸는 게 아니라 스카우트 대원들한테 웨어러블 카메라랑 GPS 지급하고 관제센터 핫라인 연결한 게 신의 한 수네. 이러면 대원들 안전도 보장되고 범죄자들도 쫄아서 함부로 못 덤빔.",
+                                replies: [
+                                    { nick: "Safety_First", content: "맞음. 옛날처럼 경광봉 하나 들고 다니는 수준이 아님. 실시간으로 경찰이랑 연계되니까 진짜 든든함." },
+                                    { nick: "Privacy_Warrior", nickClass: "text-red-600 font-bold", content: "웨어러블 카메라? 저거 완전 사생활 침해 아니냐!! 길거리 다니는 시민들 다 불법 촬영해서 감시하겠다는 빅브라더 통제 사회의 서막이다!!" },
+                                    { nick: "CCTV_Master", content: "공공도로 걷는 게 무슨 사생활이야 ㅋㅋㅋ 이미 니 정수리 위에 CCTV 수십 대가 널려있어 빡통아 범죄 저지를 생각 없으면 쫄 이유가 1도 없음" },
+                                    { nick: "Law_Student", content: "범죄 예방 및 증거 수집 목적의 공무 수행 중 촬영은 합법입니다. 님 혼자 음침한 골목길에서 무슨 짓을 하길래 그렇게 카메라에 예민하심? ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Subway_Mascot", time: "45분 전", like: 21500, dislike: 9, isPunished: false,
+                                content: "다른 호선 밈도 재밌지만 역시 6호선 라세나(유키나 밈)가 제일 폼나긴 함 ㅋㅋㅋ '당신의 귀갓길, 안전에 모든 것을 걸 각오는 되어 있나요?' 하면서 스카우트 나타나면 범죄자들 다 도망갈 듯 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Otaku_Unite", content: "ㅋㅋㅋㅋ 6호선 탈 때마다 유키나 생각나서 웅장해짐. 시장님이 덕잘알이라 그런지 캐릭터 마케팅 진짜 찰지게 잘함." },
+                                    { nick: "Hater_Otaku", nickClass: "text-red-600 font-bold", content: "지자체 마스코트를 일본 애니 짝퉁으로 쳐만드는 게 제정신이냐? 반일 불매 운동 다 어디 갔냐 매국노 새끼들아!!" },
+                                    { nick: "Culture_Exchange", content: "서브컬처 오마주로 축제 열어서 전 세계 관광객들 효빈시로 다 끌어모으고 떼돈 벌고 있는데 반일 타령 ㅋㅋㅋ 국수주의 틀딱은 제발 시대의 흐름을 좀 읽으세요." },
+                                    { nick: "Mayor_Support", content: "돈 버는 덕질이 최고다 이말이야~ 보라색 6호선이랑 라세나 영원하라!!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner" style="background-color: #f3e5f5; border-color: #881188;">
+                <div>
+                    <div class="font-bold text-[#881188] mb-1">효빈 6호선 안심 귀가 스카우트 동행 신청</div>
+                    <div class="text-xs text-gray-700">늦은 밤 귀갓길, 라세나가 지켜드립니다!<br>도착 30분 전 앱으로 간편하게 신청하세요<br><span class="text-[#881188] underline mt-1 inline-block font-bold">효빈교통공사 앱 다운로드</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

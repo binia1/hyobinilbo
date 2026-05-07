@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 기사 목록 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 30px 40px; border: 1px solid #e2e2e2; border-radius: 4px; min-height: 800px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .page-title { font-size: 28px; font-weight: 900; color: #111; margin-bottom: 20px; border-bottom: 3px solid #0055aa; padding-bottom: 10px; display: inline-block; }
+
+        /* 리스트 스타일 */
+        .filter-tabs { display: flex; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .filter-btn { font-size: 15px; font-weight: bold; color: #666; cursor: pointer; transition: color 0.2s; background: none; border: none; padding: 0; }
+        .filter-btn:hover { color: #0055aa; }
+        .filter-btn.active { color: #0055aa; text-decoration: underline; text-underline-offset: 6px; decoration-thickness: 2px; }
+
+        .list-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0; transition: background-color 0.2s; cursor: pointer; }
+        .list-item:hover { background-color: #f9f9f9; }
+        .list-item:hover .list-title { text-decoration: underline; color: #0055aa; }
+        
+        .list-badge { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 4px; margin-right: 15px; min-width: 60px; text-align: center; }
+        .badge-article { background-color: #e8f0fe; color: #1967d2; }
+        .badge-archive { background-color: #fce8e6; color: #c5221f; }
+        .badge-category { background-color: #e6f4ea; color: #137333; }
+
+        .list-title { font-size: 16px; color: #333; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .list-url { font-size: 12px; color: #999; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left: 15px; }
+
+        /* 사이드바 스타일 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center; }
+        
+        /* 푸터 */
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="news-header">
+        <div class="max-w-[1100px] mx-auto pt-6 pb-4 px-2 flex justify-between items-end">
+            <h1 class="text-4xl font-black text-[#0055aa] tracking-tighter cursor-pointer" onclick="location.href='index.html'">효빈일보</h1>
+            <div class="flex gap-2 relative">
+                <input type="text" placeholder="뉴스 검색" class="border border-gray-300 px-3 py-1 text-sm w-48" id="hnNewsSearchInput" autocomplete="off">
+                <button class="bg-[#0055aa] text-white px-3 py-1 text-sm font-bold" onclick="document.getElementById('hnNewsSearchInput').focus()">검색</button>
+            </div>
+        </div>
+        <nav class="border-t border-gray-200">
+            <div class="max-w-[1100px] mx-auto flex news-nav">
+                <a href="index.html">홈</a>
+                <a href="politics.html">정치</a>
+                <a href="economy.html">경제</a>
+                <a href="society.html">사회</a>
+                <a href="world.html">국제</a>
+                <a href="culture.html">문화</a>
+                <a href="news_list.html" class="active border-l border-gray-300 ml-2 pl-4">전체 기사</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- 메인 콘텐츠: 리스트 -->
+        <div class="main-content shadow-sm">
+            <h2 class="page-title">전체 기사 목록</h2>
+            
+            <!-- 필터 탭 -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterList('전체', this)">전체보기</button>
+                <button class="filter-btn" onclick="filterList('기사', this)">기사</button>
+                <button class="filter-btn" onclick="filterList('아카이브', this)">아카이브 (과거 기사)</button>
+                <button class="filter-btn" onclick="filterList('구분', this)">카테고리 (구분)</button>
+            </div>
+
+            <!-- 기사 개수 표시 -->
+            <div class="text-sm text-gray-500 mb-4 font-bold" id="list-count-info">총 0건의 데이터가 있습니다.</div>
+
+            <!-- 동적 리스트 컨테이너 -->
+            <div id="full-news-list" class="flex flex-col">
+                <!-- 자바스크립트로 렌더링됨 -->
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div class="ranking-box shadow-sm">
+                <div class="ranking-title">
+                    <span class="text-[#0055aa]">많이 본 뉴스</span>
+                </div>
+                <ul class="ranking-list" id="ranking-list">
+                    <li><span class="ranking-num">1</span> <a href="[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html" class="ranking-link font-bold text-[#0055aa]">[속보] 계엄 해제에 효빈 시민들 환호</a></li>
+                    <li><span class="ranking-num">2</span> <a href="[선택 2025] 이재명, 제21대 대통령 당선.html" class="ranking-link">이재명, 제21대 대통령 당선 확정</a></li>
+                    <li><span class="ranking-num">3</span> <a href="효빈일보 - 윤재훈 선거법 고발 참사.html" class="ranking-link">윤재훈 황당 고발, 선관위 철퇴</a></li>
+                    <li><span class="ranking-num">4</span> <a href="[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html" class="ranking-link">박효빈 시장 지지율 82.4% 고공행진</a></li>
+                    <li><span class="ranking-num">5</span> <a href="archive_2007_brown_winter.html" class="ranking-link">[아카이브] 2007 갈색 겨울 사태</a></li>
+                </ul>
+            </div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-[#0055aa] mb-1">효빈일보 구독 안내</div>
+                    <div class="text-xs">정확하고 빠른 지역 소식<br>효빈일보와 함께하세요.<br><span class="text-gray-500 mt-1 inline-block border border-gray-300 px-2 py-1 mt-2 bg-white cursor-pointer hover:bg-gray-50">구독 신청</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="max-w-[1080px] mx-auto px-4 flex justify-between">
+            <div>
+                <p class="font-bold text-gray-300 text-sm mb-2">효빈일보</p>
+                <p>제호: 효빈일보 | 등록번호: 효빈 가00001 | 발행인: 최진언 | 편집인: 강정직</p>
+                <p>주소: 효빈광역시 북구 중수동 281-1 효빈미디어센터 5층</p>
+                <p>전화: 079-212-2123 | Copyright © Hyobin Ilbo. All rights reserved.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white">회사소개</a>
+                <a href="#" class="hover:text-white">이용약관</a>
+                <a href="#" class="hover:text-white font-bold">개인정보처리방침</a>
+                <a href="#" class="hover:text-white">기사제보</a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+(function(){
+    // ==========================================
+    // 1. 데이터베이스 통합 연동 (기사, 아카이브, 구분)
+    // ==========================================
+    const NEWS_DATABASE = [
+{ type: '기사', title: '[21대 대선] 이재명 대통령 당선... 효빈시 박효빈 시장과 환상의 공조 기대', url: '2025년 대선.html', keywords: '2025년 대선 선거 대통령 이재명' },
+        { type: '아카이브', title: '갈색 벽에 막힌 골든타임... 14세 소년 등 시민 2명 도로 위에서 숨져', url: 'archive_2007_brown_winter.html', keywords: '2007 갈색 겨울 파업 두청운수 archive brown winter' },
+        { type: '아카이브', title: '상고를 기각한다... 대법원, 윤대환 시장 당선무효형 확정... 1년 10개월 폭정 종지부', url: 'archive_2007_final_verdict.html', keywords: '2007 판결 법원 두청운수 archive final verdict' },
+        { type: '아카이브', title: '거지 촌동네가 구걸질인가... 법원, 윤대환 시장 이웃 도시 모독 행정에 철퇴', url: 'archive_2007_legal_battle.html', keywords: '2007 법정 공방 재판 두청운수 archive legal battle' },
+        { type: '아카이브', title: '내 노동은 죄가 아니다... 5호선 중단 항의하던 노동자, 공사장서 숨진 채 발견', url: 'archive_2007_line5_tragedy.html', keywords: '2007 5호선 참사 지하철 사고 archive line5 tragedy' },
+        { type: '아카이브', title: '노 대통령, 효빈시 참사에 시민 생명을 이권과 바꾸는 자, 공직 자격 없다 격노', url: 'archive_2007_president_rebuke.html', keywords: '2007 대통령 질책 비판 두청운수 archive president rebuke' },
+        { type: '아카이브', title: '하얀 가운과 피 묻은 아스팔트... 시청 광장 용역 쇠파이프 난입에 아수라장', url: 'archive_2007_protest_violence.html', keywords: '2007 폭력 시위 마비 시청 archive protest violence' },
+        { type: '아카이브', title: '신세계 효빈점장 윤대환 시장은 쓰레기 이하... 터미널 정상화 안 되면 영업 중단', url: 'archive_2007_shinsegae_press.html', keywords: '2007 신세계 언론 보도 가짜뉴스 archive shinsegae press' },
+        { type: '아카이브', title: '갈색 제국의 몰락... 두청운수, 면허 취소 및 최종 파산 처리', url: 'archive_2010_doocheong_bankruptcy.html', keywords: '2010 두청운수 부도 파산 파산 archive bankruptcy' },
+        { type: '아카이브', title: '상처를 딛고 달린다... 효빈 5호선 전격 개통, 서구-탄성 30분 시대', url: 'archive_2011_line5_opening.html', keywords: '2011 5호선 개통 지하철 빨간색 archive line5 opening' },
+                { type: '구분', title: '문화 뉴스 홈', url: 'culture.html', keywords: '문화 축제 애니메이션 굿즈 culture 구분' },
+        { type: '구분', title: '경제 뉴스 홈', url: 'economy.html', keywords: '경제 기업 산업 예산 economy 구분' },
+        { type: '기사', title: '[속보] 윤재훈 징역 6월 실형 선고... 박효빈 향해 죽여버리겠다 욕설 난동', url: 'hyobin_ilbo_court_ruling.html', keywords: '효빈일보 법원 판결 소송 court ruling' },
+        { type: '기사', title: '[6.2 선거] 효빈은 파란 물결... 김성민·박효빈 70%대 압승, 與 윤재훈 4.8% 충격의 3등', url: 'hyobin_ilbo_election.html', keywords: '효빈일보 선거 특집 보도 election' },
+        { type: '기사', title: '[22대 총선] 철도 건드리면 죽는다... 사면받은 빌런들과 발목 잡은 텃밭의 처참한 궤멸', url: 'hyobin_ilbo_election_2024.html', keywords: '2024 선거 총선 효빈일보 election' },
+        { type: '기사', title: '[8.15 특사] 尹, 윤재훈·주민우 전격 사면... 4.8%는 부정선거, 억울한 옥살이 풀어줘야', url: 'hyobin_ilbo_pardon_2023.html', keywords: '2023 특별사면 사면 논란 pardon' },
+        { type: '구분', title: '효빈일보 홈', url: 'index.html', keywords: '메인 홈 표지 index 구분' },
+        { type: '구분', title: 'IT/과학 뉴스 홈', url: 'it.html', keywords: 'it 과학 기술 인터넷 사이버 it 구분' },
+        { type: '기사', title: '[단독] 윤대환·윤재훈 부자, 위키 문서 조작 덜미... 다중 계정 동원해 범죄 미화', url: 'news_article.html', keywords: '일반 기사 테스트 article' },
+        { type: '기사', title: '감사원, 부자 동반 출소 윤대환 집행부 정조준... 조직적 비호 정황 포착', url: 'news_audit_yoon.html', keywords: '윤석열 윤대환 감사 검찰 수사 audit yoon' },
+        { type: '기사', title: '이 빵 먹으려고 부산에서 왔어요... 사능동 빵지순례 장사진', url: 'news_bakery_tour.html', keywords: '빵지순례 성심당 빵 튀김소보로 bakery tour' },
+        { type: '기사', title: '덕질도 복지다... 박효빈 시장, 청소년 문화지원 블루버드 정책 전격 시행', url: 'news_bluebird_policy_2023.html', keywords: '2023 파랑새 정책 청년 지원 bluebird policy' },
+        { type: '기사', title: '대통령, 박효빈 시장 빵 테러 사건에 민주주의 파괴 행위... 엄중 처벌 지시', url: 'news_blue_house.html', keywords: '청와대 대통령실 브리핑 blue house' },
+        { type: '기사', title: '[속보] 한국은행, 기준금리 연 3.25%로 전격 인하', url: 'news_bok_rate_cut.html', keywords: '한국은행 금리 인하 피벗 경제 속보 이창용' },
+        { type: '기사', title: '[현장] 똥재훈 사건의 그곳... 효빈터미널, 전국 최초 래핑버스 성지 등극', url: 'news_bus_terminal.html', keywords: '버스터미널 교통 고속버스 bus terminal' },
+        { type: '기사', title: '아버지가 못다 만든 빨간 철길, 이제 제가 데이터로 수호합니다', url: 'news_choi_daughter_success.html', keywords: '최진언 딸 성공 합격 choi daughter success' },
+        { type: '기사', title: '[속보] 조선일보, 1면 톱으로 사과문 게재... 안다야 여사 인권 유린, 뼈저리게 반성', url: 'news_chosun_apology.html', keywords: '조선일보 사과 오보 정정 chosun apology' },
+        { type: '기사', title: '이것은 증오범죄... 효빈시, 조선일보 인종차별 허위보도에 전면전 선포', url: 'news_chosun_fake.html', keywords: '조선일보 가짜뉴스 조작 chosun fake' },
+        { type: '기사', title: '[효빈시평] 덕질이 밥 먹여주냐고? 네, 아주 잘 먹여줍니다', url: 'news_column_otaku.html', keywords: '칼럼 오타쿠 박효빈 혐오 column otaku' },
+        { type: '기사', title: '여기가 탕쿠쿠의 성지... 당가동 디저트 거리, K-관광 100선 선정', url: 'news_dangga_dessert.html', keywords: '당가 디저트 카페 맛집 dangga dessert' },
+        { type: '기사', title: '내 최애가 도시를 살렸다... 당가동 파스텔 블루 기적의 전말', url: 'news_dangga_revival.html', keywords: '당가 상권 부활 도시재생 dangga revival' },
+        { type: '기사', title: '[D-9] 28초의 포효가 판 뒤집었다... 박효빈 75.1% 독주, 윤재훈 한 자릿수 추락', url: 'news_debate_aftermath.html', keywords: '토론회 후폭풍 대선 후보 debate aftermath' },
+        { type: '기사', title: '[충격] 당신이 감히!... 박효빈, 윤재훈 패륜 막말에 생방송 도중 대폭발', url: 'news_debate_broadcast_accident.html', keywords: '토론회 방송사고 송출 중단 debate broadcast accident' },
+        { type: '기사', title: '2.2%의 심판... 오타쿠 비하 윤재훈, 창전갑서 처참한 몰락', url: 'news_election_changjeon.html', keywords: '선거 창전구 재보궐 결과 election changjeon' },
+        { type: '기사', title: '28초의 승부 가른 운명... 박효빈 77.9% 압승, 윤재훈 4.8% 몰락', url: 'news_election_poll.html', keywords: '선거 여론조사 지지율 election poll' },
+        { type: '기사', title: '이름이 곧 도시... 효빈 그 자체 박효빈, 77.9% 역대 최다 득표 압승', url: 'news_election_result_2022.html', keywords: '2022 선거 결과 분석 박효빈 당선 election result' },
+        { type: '기사', title: '그분은 경제학보다 인성 교육이 필요해... 日 성우, 빵 난동에 우아한 일침', url: 'news_emma_bread.html', keywords: '엠마빵 엠마 베르데 빵지순례 emma bread' },
+        { type: '기사', title: '이재명 대통령, 가짜뉴스 선전포고 민주주의 파괴하는 독버섯... 무관용 엄벌', url: 'news_fake_news_punishment.html', keywords: '가짜뉴스 유포 처벌 법안 fake news punishment' },
+        { type: '기사', title: '필리핀 방송사, 효빈시 뚝배기 폭행 대서특필... 한국의 인종차별 민낯 드러나', url: 'news_foreign_press.html', keywords: '외신 해외 언론 평가 foreign press' },
+        { type: '기사', title: '여권이 제 보물 1호예요... 글로벌 쿠쿠 원정대 1기, 꿈을 안고 귀국', url: 'news_global_kuku_expedition.html', keywords: '글로벌 쿠쿠 탐험대 방문 global kuku expedition' },
+        { type: '기사', title: '[현장] 아시아의 아키하바라... 제16회 HAF 개막, 10만 인파에 효빈시 들썩', url: 'news_haf.html', keywords: 'haf 효빈 애니메이션 페스티벌 축제' },
+        { type: '기사', title: '현실이야 만화야?... 효빈시 수놓은 HAF 코스프레 퍼레이드', url: 'news_haf_cosplay.html', keywords: 'haf 코스프레 코스어 대회 애니메이션 haf cosplay' },
+        { type: '기사', title: '도시 전체가 덕질 성지... 역대 최대 HAF 2025 화려한 개막', url: 'news_haf_opening.html', keywords: 'haf 개막식 애니메이션 코스프레 haf opening' },
+        { type: '기사', title: '이게 진짜 성지순례... HAF 2025, 韓日 성우 18인 효빈 도시철도 기습 방문에 대혼란', url: 'news_haf_seiyu_visit.html', keywords: 'haf 성우 방문 일본 애니메이션 seiyu visit' },
+        { type: '기사', title: '평일인데 줄 섰어요... HAF 낙수 효과, 골목상권 심폐소생', url: 'news_haf_weekday_economy.html', keywords: 'haf 경제 효과 평일 관광 weekday economy' },
+        { type: '기사', title: '단맛은 인권이다... 저소득층 아동 위한 해피 쿠쿠 카드 화제', url: 'news_happy_kuku_card.html', keywords: '해피 쿠쿠 카드 혜택 할인 happy kuku card' },
+        { type: '기사', title: '[단독] 효빈시청, 전국 최초 가짜뉴스 AI 검증 시스템 가동... 팩트로 철권 통치', url: 'news_hyobin_cooperation.html', keywords: '효빈시 협력 mou 지자체 hyobin cooperation' },
+        { type: '기사', title: '굿즈 살 땐 필수... 효빈페이, 서브컬처 성지서 결제액 1위 등극', url: 'news_hyobin_pay.html', keywords: '효빈페이 지역화폐 경제 hyobin pay' },
+        { type: '기사', title: '[일본] 오타쿠가 시장인 도시가 있다?... 日 SNS서 효빈시 인기 급상승', url: 'news_japan_otaku.html', keywords: '일본 오타쿠 관광객 쇼핑 japan otaku' },
+        { type: '기사', title: '낡은 패딩 대신 신상 입혀주고 싶었다... 자존감 선물하는 쿠쿠 클로젯', url: 'news_kuku_closet.html', keywords: '쿠쿠 클로젯 패션 의류 kuku closet' },
+        { type: '구분', title: '뉴스 목록 전체 보기', url: 'news_list.html', keywords: '뉴스 목록 전체 news list' },
+        { type: '구분', title: '뉴스 목록 템플릿', url: 'news_list_template.html', keywords: '뉴스 목록 템플릿 template' },
+        { type: '기사', title: '제 굿즈 때문에 다치셨다니... 성우 Liyuu, 효빈시청 폭행 피해자에 눈물의 응원', url: 'news_liyuu_message.html', keywords: 'liyuu 리유 탕쿠쿠 메시지 성우 liyuu message' },
+        { type: '기사', title: '총칼로 민심 못 막는다... 계엄령 선포에 효빈시 행정 불복종 선언', url: 'news_martial_law_hyobin.html', keywords: '계엄령 효빈시 군대 계엄군 비상 martial law' },
+        { type: '기사', title: '한 사람의 광기가 수만 명의 꿈을 짓밟았다... 박효빈 시장, 성우 방문 무산에 격노', url: 'news_mayor_anger_watase.html', keywords: '박효빈 시장 극대노 와타세 anger watase' },
+        { type: '기사', title: '박효빈 시장 지지율 78% 고공행진... 소통 행정 통했다', url: 'news_mayor_approval.html', keywords: '박효빈 시장 지지율 여론조사 mayor approval' },
+        { type: '기사', title: '저뿐만이 아닌, 여러분 모두의 효빈으로... 박효빈 시장 취임', url: 'news_mayor_inauguration.html', keywords: '박효빈 취임식 시장 시작 mayor inauguration' },
+        { type: '기사', title: '효빈 도시철도 26년 연속 흑자 신화... 캐릭터 도입이 신의 한 수', url: 'news_metro_surplus.html', keywords: '효빈도시철도 흑자 전환 지하철 metro surplus' },
+        { type: '기사', title: '코난이 부정승차 잡고, 아냐가 결재 올린다... 효빈 도시철도 성우 드림팀 화제', url: 'news_metro_voice_actors.html', keywords: '지하철 성우 안내방송 전철 metro voice actors' },
+        { type: '기사', title: '[현장] 니코니코니~ 시의회에 마법을... 박효빈 시장, 엄숙주의 깨고 소통을 입다', url: 'news_nico.html', keywords: '니코니코 니코동 생방송 nico' },
+        { type: '구분', title: '오피니언 메인', url: 'news_opinion.html', keywords: '오피니언 칼럼 사설 opinion' },
+        { type: '기사', title: '법치주의는 죽었다... 부정선거 궤변 수용한 윤 대통령, 윤재훈 사면 강행', url: 'news_pardon_criticism.html', keywords: '특별사면 비판 논란 pardon criticism' },
+        { type: '기사', title: '박효빈 거친 모습 죄송... 그러나 혐오엔 침묵 않겠다 대국민 사과', url: 'news_park_apology.html', keywords: '박효빈 사과 실언 논란 park apology' },
+        { type: '기사', title: '[기획] 비 새는 단칸방의 오타쿠, 효빈을 구하다... 박효빈 시장의 눈물 젖은 빵', url: 'news_park_past.html', keywords: '박효빈 과거 단칸방 기획 눈물 park past' },
+        { type: '기사', title: '[특파원] Don t touch our blood... 필리핀 피노이 프라이드, 윤재훈을 심판하다', url: 'news_philippines.html', keywords: '필리핀 윤재훈 국제 갱단 피노이 프라이드 philippines' },
+        { type: '기사', title: '효빈경찰청, HAF 암표상 특별 단속... 20대 일당 전격 검거', url: 'news_police_scalper.html', keywords: '경찰 암표상 검거 단속 haf police scalper' },
+        { type: '기사', title: '필리핀의 아들 모욕하지 마라... 케손시티 시장, 효빈시에 자매결연 깜짝 제안', url: 'news_quezon_city.html', keywords: '퀘존시 필리핀 자매결연 quezon city' },
+        { type: '기사', title: '강남 비켜, 이젠 효빈이다... 스쿨아이돌힐스 청약 경쟁률 5000:1 폭발', url: 'news_school_idol_hills.html', keywords: '스쿨아이돌 힐스 두청힐스 테마파크 school idol hills' },
+        { type: '구분', title: '뉴스 템플릿', url: 'news_template.html', keywords: '뉴스 템플릿 template' },
+        { type: '기사', title: 'HAF PASS 트래블 패스포트, 중고거래서 웃돈 거래 기승... 市 전량 무효화 강력 경고', url: 'news_tour_pass.html', keywords: '투어패스 관광 패스권 여행 tour pass' },
+        { type: '기사', title: '[현장] 메카쿠시테!... 효빈대생 3천 명, 인간 장벽으로 윤재훈 난동 막았다', url: 'news_univ.html', keywords: '효빈대 대학교 신입생 경쟁률 귤 샐러드 univ' },
+        { type: '기사', title: '효빈대, 덕북 약산시에 제2병원 약산병원 착공... 의료 공백 메운다', url: 'news_univ_hospital.html', keywords: '효빈대병원 병원 의료기관 univ hospital' },
+        { type: '기사', title: '결식아동 빵에 침 뱉고 사가라 마유 폭행 시도... 효빈대생 3천 명 철벽 방어', url: 'news_univ_human_shield.html', keywords: '효빈대 인간방패 계엄군 민주주의 univ human shield' },
+        { type: '기사', title: '계엄령이 뺏어간 무츠미... 성우 와타세 유즈키, 효빈 방문 전격 취소', url: 'news_watase_cancellation.html', keywords: '와타세 마키 취소 논란 watase cancellation' },
+        { type: '기사', title: '1년 전의 눈물, 환호로 바뀌었다... 와타세·니시오, 효빈시 v2 행사 성료', url: 'news_winter_preview_v2.html', keywords: '겨울 효빈 프리뷰 예고 winter preview' },
+        { type: '기사', title: '4.8%의 굴욕... 윤재훈, 선거비 전액 미보전 파산 위기', url: 'news_yoon_defeat_2022.html', keywords: '윤대환 패배 선거 분석 2022 yoon defeat' },
+        { type: '기사', title: '혐오의 시대가 끝났다... 윤석열 탄핵 소식에 효빈시 축제 분위기', url: 'news_yoon_impeachment.html', keywords: '윤석열 탄핵 해설 분석 yoon impeachment' },
+        { type: '기사', title: '4.8% 득표가 조작?... 尹, 윤재훈 특별사면 강행에 효빈시 술렁', url: 'news_yoon_pardon_2023.html', keywords: '윤대환 사면 2023 논란 yoon pardon' },
+        { type: '구분', title: '오피니언 홈', url: 'opinion.html', keywords: '오피니언 사설 칼럼 기고 opinion 구분' },
+        { type: '구분', title: '포토 뉴스 홈', url: 'photo.html', keywords: '포토 사진 화보 현장 photo 구분' },
+        { type: '구분', title: '정치 뉴스 홈', url: 'politics.html', keywords: '정치 시정 시장 선거 politics 구분' },
+        { type: '구분', title: '사회 뉴스 홈', url: 'society.html', keywords: '사회 사건 사고 경찰 society 구분' },
+        { type: '구분', title: '국제 뉴스 홈', url: 'world.html', keywords: '국제 세계 해외 특파원 world 구분' },
+        { type: '기사', title: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다', url: '[기획] 강서구의 교훈 잊은 용산, 효빈에서 확인사살 당하다.html', keywords: '강서구 용산 확인사살 기획' },
+        { type: '기사', title: '[단독] 2026 효빈시장 선거 여론조사', url: '[단독] 2026 효빈시장 선거 여론조사.html', keywords: '선거 여론조사 2026' },
+        { type: '기사', title: '[단독] 윤석열 구속 취소', url: '[단독] 윤석열 구속 취소.html', keywords: '윤석열 구속 취소 단독' },
+        { type: '기사', title: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당', url: '[단독] 효빈 보수의 양심 부서원, 국민의힘 탈당.html', keywords: '부서원 탈당 국민의힘 보수 양심' },
+        { type: '기사', title: '[선택 2025] 이재명, 제21대 대통령 당선', url: '[선택 2025] 이재명, 제21대 대통령 당선.html', keywords: '이재명 대통령 당선 선거 2025' },
+        { type: '기사', title: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라', url: '[속보] 6시간의 악몽 끝, 민주주의 승리... 계엄 해제에 효빈 시민들 반란군을 체포하라.html', keywords: '속보 계엄 해제 환호 민주주의 승리 반란군' },
+        { type: '기사', title: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료', url: '[속보] 국회, 비상계엄 해제 요구안 가결... 190명 전원 찬성 헌정사상 최단기 종료 - 효빈일보.html', keywords: '속보 국회 비상계엄 해제 가결 최단기' },
+        { type: '기사', title: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다', url: '[속보] 박효빈 시장 계엄 포고령 거부... 시민 지키기 위해 공수부대와 맞서겠다 - 효빈일보.html', keywords: '속보 박효빈 계엄 거부 공수부대' },
+        { type: '기사', title: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지', url: '[속보] 윤석열 대통령 탄핵안 가결... 반란 수괴 심판한 국회, 직무 즉시 정지.html', keywords: '속보 윤석열 탄핵 가결 직무 정지' },
+        { type: '기사', title: '[속보] 윤석열 전 대통령 구속', url: '[속보] 윤석열 전 대통령 구속.html', keywords: '속보 윤석열 구속' },
+        { type: '기사', title: '[속보] 윤석열 전 대통령 재구속', url: '[속보] 윤석열 전 대통령 재구속.html', keywords: '속보 윤석열 재구속' },
+        { type: '기사', title: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장', url: '[속보] 탄핵안 정족수 미달 자동 폐기... 여당 의원들 집단 도주에 국회 아수라장.html', keywords: '속보 탄핵안 정족수 미달 폐기 도주' },
+        { type: '기사', title: '[속보] 헌재, 윤석열 탄핵 인용', url: '[속보] 헌재, 윤석열 탄핵 인용.html', keywords: '속보 헌재 윤석열 탄핵 인용' },
+        { type: '기사', title: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진', url: '[여론조사] 박효빈 효빈시장, 지지율 82.4퍼센트 고공행진.html', keywords: '여론조사 박효빈 지지율 고공행진' },
+        { type: '기사', title: '[지선 D-60] 2026 효빈시장 선거 대진표', url: '[지선 D-60] 2026 효빈시장 선거 대진표.html', keywords: '지방선거 대진표 효빈시장' },
+        { type: '기사', title: '[현장] 이재명 대통령, 취임 후 첫 효빈 방문', url: '[현장] 이재명 대통령, 취임 후 첫 효빈 방문.html', keywords: '현장 이재명 효빈 방문 취임' },
+        { type: '기사', title: '[현장] 지총민 출마선언', url: '[현장] 지총민 출마선언.html', keywords: '지총민 출마 선언' },
+        { type: '기사', title: '김상욱 민주당 입당 속보 (2025년 5월 19일)', url: '김상욱 민주당 입당 속보 (2025년 5월 19일).html', keywords: '김상욱 민주당 입당' },
+        { type: '기사', title: '김상욱 탈당 속보 (2025년 5월 8일)', url: '김상욱 탈당 속보 (2025년 5월 8일).html', keywords: '김상욱 탈당' },
+        { type: '기사', title: '박효빈 재선 출마선언 기사', url: '박효빈 재선 출마선언 기사.html', keywords: '박효빈 재선 출마' },
+        { type: '구분', title: '서진일보 사설', url: '서진일보 사설.html', keywords: '서진일보 사설 오피니언' },
+        { type: '기사', title: '유성민 출마선언 기사', url: '유성민 출마선언 기사.html', keywords: '유성민 출마' },
+        { type: '기사', title: '윤석열 비상계엄 선포, 부정선거 주장', url: '윤석열 비상계엄 선포, 부정선거 주장.html', keywords: '윤석열 계엄 부정선거' },
+        { type: '기사', title: '윤석열 속옷저항 논란', url: '윤석열 속옷저항.html', keywords: '윤석열 속옷 저항' },
+        { type: '기사', title: '윤재훈 출마선언 기사', url: '윤재훈 출마선언 기사.html', keywords: '윤재훈 출마' },
+        { type: '기사', title: '이재명 대통령 지지율 속보', url: '이재명 대통령 지지율 속보.html', keywords: '이재명 지지율' },
+        { type: '기사', title: '조병진 의원직 승계 기사', url: '조병진 승계 기사.html', keywords: '조병진 승계' },
+        { type: '기사', title: '코스피 5000 돌파 속보 (2026년 1월 27일)', url: '코스피 5000 돌파 속보 (2026년 1월 27일).html', keywords: '코스피 5000 경제' },
+        { type: '기사', title: '효빈일보 - 윤재훈 선거법 고발 참사', url: '효빈일보 - 윤재훈 선거법 고발 참사.html', keywords: '윤재훈 고발 선거법' },
+        { type: '기사', title: '효빈일보 과도한 탄압 논란 반박 기사', url: '효빈일보 과도한 탄압 논란 반박 기사.html', keywords: '탄압 논란 반박' },
+        { type: '기사', title: '효빈일보 곽두환 당선무효 기사', url: '효빈일보 곽두환 당선무효 기사.html', keywords: '곽두환 당선 무효' },
+        { type: '기사', title: '효빈일보 당가동 새벽 방문 기사', url: '효빈일보 당가동 새벽 방문 기사.html', keywords: '당가동 방문' },
+        { type: '기사', title: '효빈일보 박준서 입당 기사', url: '효빈일보 박준서 입당 기사.html', keywords: '박준서 입당' },
+        { type: '기사', title: '효빈일보 박효빈 시장 당가동 사건 기사', url: '효빈일보 박효빈 시장 당가동 사건 기사.html', keywords: '박효빈 당가동' },
+        { type: '기사', title: '효빈일보 부시도 라이더 협박 기사', url: '효빈일보 부시도 라이더 협박 기사.html', keywords: '부시도 라이더 협박' },
+        { type: '기사', title: '효빈일보 서브컬처 정치 기획기사', url: '효빈일보 서브컬처 정치 기획기사.html', keywords: '서브컬처 정치 박효빈' },
+        { type: '기사', title: '효빈일보 악플 박제 기사', url: '효빈일보 악플 박제 기사.html', keywords: '악플 박제' },
+        { type: '기사', title: '효빈일보 행정우수사례 기사', url: '효빈일보 행정우수사례 기사.html', keywords: '행정우수사례 박효빈' },  { 
+    type: '기사', 
+    title: '[효빈일보] 제미나이 오인 사건 보도', 
+    url: '[효빈일보] 제미나이 오인 사건 보도.html', 
+    keywords: '제미나이 박효빈 윤석열 오인사건 하극상' 
+  },
+  { 
+    type: '기사', 
+    title: '[효빈일보] 제미나이 공식 사과 보도', 
+    url: '[효빈일보] 제미나이 공식 사과 보도.html', 
+    keywords: '제미나이 사과 구글코리아 박효빈 환각현상' 
+  },
+  { 
+    type: '기사', 
+    title: '[효빈일보] 윤석열 정부 대학생 멘토링 시급 삭감 실태 단독 보도', 
+    url: '[효빈일보] 윤석열 정부 대학생 멘토링 시급 삭감 실태 단독 보도.html', 
+    keywords: '멘토링 시급삭감 윤석열 1350원 한국장학재단' 
+  },
+  { 
+    type: '기사', 
+    title: '[효빈일보] 박효빈 시장 합법적 강도 비판', 
+    url: '[효빈일보] 박효빈 시장 합법적 강도 비판.html', 
+    keywords: '합법적강도 박효빈 시드머니 150만원 윤석열' 
+  },
+  { 
+    type: '기사', 
+    title: '1,350원의 눈물 외면한 중앙 언론, 청년의 내일은 뉴스가 되지 못하는가', 
+    url: '1,350원의 눈물 외면한 중앙 언론, 청년의 내일은 뉴스가 되지 못하는가.html', 
+    keywords: '언론비판 기레기 1350원 침묵 박효빈' 
+  },        { type: '기사', title: '빈효선 광역전철 전격 개통 소식', url: '빈효선 개통 기사.html', keywords: '빈효선 개통 연청색 박효빈' },
+        { type: '기사', title: '효빈교통공사 분사 기사', url: '교통공사 분사 기사.html', keywords: '교통공사 분사 혁신' },
+        { type: '기사', title: '효빈 6호선 전격 개통... 고송-마잡 30분 시대', url: '6호선 개통 기사.html', keywords: '6호선 개통 보라색' },
+        { type: '기사', title: "서브컬처 드라마 '철도부' 1기 방영 시작", url: '철도부 1기 방영 기사.html', keywords: '철도부 방영 드라마' },
+        { type: '기사', title: "'쁘띠 레일루미네' 전격 방영... 지역 경제 효과", url: '쁘띠 레일루미네 방영 기사.html', keywords: '레일루미네 애니메이션' },
+        { type: '아카이브', title: '[효빈일보 아카이브] 윤대환 시민 고소 및 지하실 협박 사건 보도', url: '[효빈일보 아카이브] 윤대환 시민 고소 및 지하실 협박 사건 보도.html', keywords: '고소 지하실 조롱 박효빈 학폭' },
+        { type: '아카이브', title: '[효빈일보 아카이브] 윤대환 구급차 참사 망언 보도', url: '[효빈일보 아카이브] 윤대환 구급차 참사 망언 보도.html', keywords: '윤대환 망언 구급차 참사' },
+        { type: '아카이브', title: '[효빈일보 아카이브] 2007년 구급차 고립 사망 사건 보도', url: '[효빈일보 아카이브] 2007년 구급차 고립 사망 사건 보도.html', keywords: '구급차 고립 사망 갈색버스' },
+        { type: '아카이브', title: '[효빈일보 아카이브] 박현만 전 시장 대국민 사과 보도', url: '[효빈일보 아카이브] 박현만 전 시장 대국민 사과 보도.html', keywords: '박현만 사과 내탓이오' },
+        { type: '아카이브', title: '[효빈일보 아카이브] 지총민 적반하장 기자회견 보도', url: '[효빈일보 아카이브] 지총민 적반하장 기자회견 보도.html', keywords: '지총민 망언 2006 선거' },
+        { type: '아카이브', title: '[효빈일보 아카이브] 서무련 후보 눈물의 빗속 사죄 보도', url: '[효빈일보 아카이브] 서무련 후보 눈물의 빗속 사죄 보도.html', keywords: '서무련 사죄 108배' },
+        { type: '아카이브', title: '[효빈일보 아카이브] 2006년 효빈시장 당선 확정 보도', url: '[효빈일보 아카이브] 2006년 효빈시장 당선 확정 보도.html', keywords: '2006 당선 3표차' },
+        { type: '아카이브', title: '[효빈일보 아카이브] 2006년 효빈시장 출구조사 보도', url: '[효빈일보 아카이브] 2006년 효빈시장 출구조사 보도.html', keywords: '2006 출구조사 선거' },
+        { type: '기사', title: '[효빈일보] 2006년 선거 3표 차 비극과 두 무소속 후보의 엇갈린 최후', url: '[효빈일보] 2006년 선거 3표 차 비극과 두 무소속 후보의 엇갈린 최후.html', keywords: '서무련 지총민 최후 비교' },
+        { type: '기사', title: '[효빈일보] 전북 광역철도 대광법 반대 권영진 비판 기사', url: '[효빈일보] 전북 광역철도 대광법 반대 권영진 비판 기사.html', keywords: '대광법 권영진 전북광역철도 빈효선 박효빈' }
+,{ type: '기사', title: '여수원 별세 기사', url: '여수원 별세 기사.html', keywords: '여수원 별세 사망' },
+        { type: '기사', title: '주민우 의원 당선무효 기사', url: '주민우 의원 당선무효 기사.html', keywords: '주민우 의원 당선무효 정치' },
+        { type: '기사', title: '제22대 총선 결과 기사', url: '제22대 총선 결과 기사.html', keywords: '제22대 총선 결과 선거 정치' },
+        { type: '기사', title: '우신면 펜트하우스 집값 폭락 기사', url: '우신면 펜트하우스 집값 폭락 기사.html', keywords: '우신면 펜트하우스 집값 부동산 폭락' },
+        { type: '기사', title: '8호선 예산 삭감 논란 기사', url: '8호선 예산 삭감 논란 기사.html', keywords: '8호선 예산 삭감 논란 효빈 철도' },
+        { type: '기사', title: '우신면 계란 투척 미수 사건 기사', url: '우신면 계란 투척 미수 사건 기사.html', keywords: '우신면 계란 투척 미수 사건 논란' },
+        { type: '기사', title: '8호선 개통 기사', url: '8호선 개통 기사.html', keywords: '8호선 개통 효빈 철도 교통' }
+    ,{ type: '기사', category: '사회', title: '[사회/법조] "국가 전산망 테러, 무기징역도 모자라"... 중수동 법조타운, 윤대환 \'역대급 중형\' 한목소리', url: '효빈일보 중수동 법조인 윤대환 판결 예상.html', keywords: '윤대환 중수동 법조인 6호선 판결 테러' },
+    { type: '기사', category: '사회', title: '[사회/지역] "우리 애들이 똥차에 실려간다!" 효빈의 강남 고송동, 윤대환 규탄 \'외제차 길막\' 횃불 시위', url: '효빈일보 고송동 윤대환 규탄 시위.html', keywords: '고송동 시위 윤대환 두청운수 6호선' },
+    { type: '기사', category: '사회', title: '[사회/사건사고] 출소 직후 또 난동? 윤대환 전 시장, 청엽역서 시민들에게 \'빵 세례\' 굴욕 도주', url: '효빈일보 윤대환 빵 테러 굴욕.html', keywords: '청엽역 빵테러 윤대환 아오바모카 뱅드림' },
+    { type: '기사', category: '사회', title: '[단독] 윤대환의 끔찍한 복수극... 6호선 설계도 파쇄에 이어 국토부 메인 서버까지 \'영구 삭제\'', url: '효빈일보 6호선 설계도 파쇄 사건.html', keywords: '6호선 파쇄 윤대환 증거인멸 국토부' },
+    { type: '기사', category: '정치', title: '[정치/이슈] "대통령이 지방자치 탄압"... 윤대환 효빈시장, 노무현 대통령 상대로 \'선거법 위반\' 고발 촌극', url: '효빈일보 윤대환 노무현 대통령 고발.html', keywords: '윤대환 노무현 고발 선거법위반 빈효선' },
+    { type: '기사', category: '정치', title: '[정치/청와대] "부끄러운 줄 알아야지!" 노무현 대통령, 윤대환 \'거지 동네\' 망언에 극대노', url: '효빈일보 노무현 대통령 윤대환 극대노.html', keywords: '노무현 윤대환 거지동네 극대노 균형발전' },
+    { type: '기사', category: '정치', title: '[정치/행정] "거지 동네? 주둥이 조심해라"... 강수성 천주시장, 효빈시 \'빈효선 분담금 거부\'에 전면전 선포', url: '효빈일보 강수성 천주시장 윤대환 전면전.html', keywords: '강수성 윤대환 전면전 빈효선 거지동네' },
+    { type: '기사', category: '경제', title: '[경제/외교] \'정글\' 취급하더니 꿀먹벙... 코레일, 필리핀 마닐라 지하철 운영권 획득 쾌거', url: '효빈일보 코레일 마닐라 지하철 운영권 획득.html', keywords: '코레일 마닐라 지하철 필리핀 케손시티 권기택' },
+    { type: '기사', category: '정치', title: '[정치/사회] "HAF 참가자는 사회 부적응자, 격리 수용해야"... 정철규 의원, 선 넘은 \'서브컬처 혐오\' 파문', url: '효빈일보 정철규 HAF 망언.html', keywords: '정철규 HAF 망언 오타쿠 혐오 탄성군' },
+    { type: '기사', category: '정치', title: '[정치/선거] \'망언 폭격기\' 정철규의 비참한 최후... 민주당 텃밭이라지만 무소속에도 밀린 6.33% \'역대 최악 참패\'', url: '효빈일보 정철규 의원 3위 낙선.html', keywords: '정철규 낙선 탄성군 박청권 3위 참패' },
+    { type: '기사', category: '정치', title: '[정치/사회] "애니 센터 부수고 공장 지어야"... 정철규 의원, 고해역 막말 난동에 지역사회 \'발칵\'', url: '효빈일보 정철규 의원 고해역 난동 파문.html', keywords: '정철규 고해역 난동 4호선 애니센터' },
+    { type: '기사', category: '사회', title: '[사회/지역] 인구 2만 읍내에 \'3개 노선\' 환승역? 고해역, 관광·문화 융합으로 기적 쐈다', url: '효빈일보 - 고해역 3개 노선 환승역.html', keywords: '고해역 3개노선 환승 타카미치카 4호선' },
+    { type: '기사', category: '사회', title: '[사회/사건사고] 핀 조명 맞고 오물 \'셀프 샤워\'... 중수역 \'골든 로드\' 테러범들의 최후', url: '효빈일보 - 중수역 골든 로드 테러 사건.html', keywords: '중수역 골든로드 테러 윤재훈 나카스카스미' },
+    { type: '기사', category: '사회', title: '[문화/사회] "꿈을 향해 걷다"... 효빈 1호선 보몽역, 한·일 서브컬처 문화 교류의 \'성지\'로 우뚝', url: '효빈일보 - 보몽역 서브컬처 성지.html', keywords: '보몽역 우에하라아유무 성지순례 1호선' },
+    { type: '기사', category: '경제', title: '[경제/항공] 효빈국제공항-시즈오카공항 \'직항\' 하늘길 열렸다... 자매결연 5개월 만의 초고속 성과', url: '효빈일보 - 효빈-시즈오카 직항 취항.html', keywords: '효빈공항 시즈오카 직항 효빈항공 3호선' },
+    { type: '기사', category: '문화', title: '[문화/관광] 효빈시-누마즈시, 바다와 애니메이션으로 맺어진 \'운명적 자매결연\'', url: '효빈일보 - 효빈시 누마즈시 자매결연.html', keywords: '효빈시 누마즈 자매결연 러브라이브선샤인' },
+    { type: '기사', category: '정치', title: '[정치/사회] 주민우 민증 인증 대참사... "무턱대고 미성년자 혼인 주장하다 역풍..."', url: '주민우 민증 인증 대참사 기사.html', keywords: '주민우 민증 대참사 신분증 도용 정치' }
+    ];
+
+    // ==========================================
+    // 리스트 렌더링 로직
+    // ==========================================
+    window.filterList = function(type, btnElement) {
+        // 탭 버튼 스타일 활성화
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        btnElement.classList.add('active');
+
+        // 데이터 필터링
+        let filteredData = NEWS_DATABASE;
+        if (type !== '전체') {
+            filteredData = NEWS_DATABASE.filter(item => item.type === type);
+        }
+        
+        // 정렬 (가나다 순)
+        filteredData.sort((a, b) => a.title.localeCompare(b.title));
+
+        const container = document.getElementById('full-news-list');
+        const countInfo = document.getElementById('list-count-info');
+        
+        countInfo.textContent = `총 ${filteredData.length}건의 데이터가 있습니다.`;
+        container.innerHTML = '';
+
+        if(filteredData.length === 0) {
+            container.innerHTML = '<div class="py-10 text-center text-gray-500">해당 카테고리에 문서가 없습니다.</div>';
+            return;
+        }
+
+        filteredData.forEach(item => {
+            const badgeClass = item.type === '아카이브' ? 'badge-archive' : 
+                               item.type === '구분' ? 'badge-category' : 
+                               'badge-article';
+            
+            container.innerHTML += `
+                <div class="list-item" onclick="location.href='${item.url}'">
+                    <span class="list-badge ${badgeClass}">${item.type}</span>
+                    <span class="list-title font-bold">${item.title}</span>
+                    <span class="list-url hidden sm:block">${item.url}</span>
+                </div>
+            `;
+        });
+    }
+
+    // 페이지 로드 시 '전체' 렌더링
+    document.addEventListener("DOMContentLoaded", () => {
+        const firstBtn = document.querySelector('.filter-btn');
+        filterList('전체', firstBtn);
+    });
+
+    // ==========================================
+    // 2. 검색 엔진 고도화
+    // ==========================================
+    const MAX_RECENT = 8;
+    const RECENT_KEY = "hb_news_recent";
+
+    function normKey(s){ return (s||"").toString().trim().toLowerCase(); }
+
+    function loadRecent(){
+        try{ return JSON.parse(localStorage.getItem(RECENT_KEY)||"[]") || []; }catch(e){ return []; }
+    }
+    function saveRecent(list){
+        try{ localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0,MAX_RECENT))); }catch(e){}
+    }
+    function pushRecent(q){
+        let qNorm = q.trim();
+        if(!qNorm) return;
+        const list = loadRecent().filter(x=>normKey(x)!==normKey(qNorm));
+        list.unshift(qNorm);
+        saveRecent(list);
+    }
+
+    function score(item, q){
+        const t = normKey(item.title);
+        const k = normKey(q);
+        const kw = normKey(item.keywords || "");
+        if(!k) return 0;
+        if(t === k) return 100;
+        if(t.startsWith(k)) return 80;
+        if(t.includes(k)) return 50;
+        if(kw.includes(k)) return 30;
+        return 0;
+    }
+
+    function ensureDropdown(input){
+        const wrap = input.parentElement;
+        if(wrap && getComputedStyle(wrap).position === "static") wrap.style.position = "relative";
+        let dd = wrap.querySelector(".hn-autocomplete");
+        if(!dd){
+            dd = document.createElement("div");
+            dd.className = "hn-autocomplete absolute left-0 right-0 top-full mt-2 bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden z-[9999] max-h-72 overflow-y-auto hidden";
+            wrap.appendChild(dd);
+        }
+        return dd;
+    }
+
+    function hide(dd){ if(dd) dd.classList.add("hidden"); }
+    function show(dd){ if(dd) dd.classList.remove("hidden"); }
+
+    function row(dd, label, typeStr, cb, isMuted=false){
+        const r = document.createElement("button");
+        r.type="button";
+        r.className = `w-full flex items-center justify-between px-3 py-2 text-sm text-left transition-colors ${isMuted ? 'text-gray-400 cursor-default' : 'text-gray-800 hover:bg-gray-100 cursor-pointer'}`;
+        
+        let typeBadge = typeStr ? `<span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 ml-2 whitespace-nowrap">${typeStr}</span>` : '';
+        
+        r.innerHTML = `<span class="truncate pr-2">${label}</span>${typeBadge}`;
+        if(!isMuted) r.addEventListener("click", cb);
+        dd.appendChild(r);
+    }
+
+    function renderDropdown(dd, input, q){
+        dd.innerHTML="";
+        const query = q.trim();
+        const recent = loadRecent();
+
+        if(!query){
+            row(dd, "🕒 최근 검색어", "", null, true);
+            if(recent.length===0) row(dd, "검색 이력이 없습니다.", "", null, true);
+            else{
+                recent.forEach(r=>{
+                    row(dd, r, "", ()=>{ input.value=r; doSearch(r); });
+                });
+                const clear = document.createElement("button");
+                clear.className = "w-full text-left px-3 py-2 text-sm text-red-500 hover:bg-red-50 transition-colors";
+                clear.textContent = "최근 검색어 지우기";
+                clear.addEventListener("click", ()=>{ saveRecent([]); renderDropdown(dd,input,""); });
+                dd.appendChild(clear);
+            }
+            show(dd);
+            return;
+        }
+
+        const matches = NEWS_DATABASE
+            .map(it=>({it, s: score(it, query)}))
+            .filter(x=>x.s>0)
+            .sort((a,b)=>b.s-a.s || a.it.title.localeCompare(b.it.title))
+            .slice(0, 8)
+            .map(x=>x.it);
+
+        if(matches.length===0) row(dd,"일치하는 문서가 없습니다", "", null, true);
+        else{
+            matches.forEach(it=>{
+                row(dd, it.title, it.type, ()=>{ pushRecent(query); location.href = it.url; });
+            });
+        }
+        show(dd);
+    }
+
+    function showModal(query, items){
+        let modal = document.getElementById("hn-search-modal");
+        if(!modal){
+            modal = document.createElement("div");
+            modal.id = "hn-search-modal";
+            modal.className = "fixed inset-0 bg-black bg-opacity-50 z-[10000] hidden backdrop-blur-sm";
+            modal.innerHTML = `
+                <div data-close="1" class="absolute inset-0 cursor-pointer"></div>
+                <div class="relative mt-20 mx-auto w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
+                    <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
+                        <div class="font-bold text-lg text-gray-800">통합 검색 결과</div>
+                        <button type="button" data-close="1" class="px-3 py-1 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">닫기</button>
+                    </div>
+                    <div class="p-4 overflow-y-auto flex-1">
+                        <div id="hn-search-meta" class="text-sm text-[#0055aa] font-bold mb-3"></div>
+                        <div id="hn-search-list" class="flex flex-col gap-2"></div>
+                    </div>
+                </div>
+            `;
+            modal.addEventListener("click", (e)=>{
+                if(e.target.getAttribute("data-close")==="1") modal.classList.add("hidden");
+            });
+            document.body.appendChild(modal);
+        }
+        
+        const meta = modal.querySelector("#hn-search-meta");
+        const list = modal.querySelector("#hn-search-list");
+        meta.textContent = `“${query}” 검색 결과 총 ${items.length}건`;
+        list.innerHTML = "";
+
+        if(items.length===0){
+            list.innerHTML = `<div class="py-10 text-center text-gray-500">일치하는 문서가 없습니다.</div>`;
+        } else {
+            items.forEach(it=>{
+                const typeColor = it.type === '아카이브' ? 'bg-orange-100 text-orange-800' : 
+                                  it.type === '구분' ? 'bg-green-100 text-green-800' : 
+                                  'bg-blue-100 text-blue-800';
+                
+                list.innerHTML += `
+                    <a href="${it.url}" class="block p-3 border border-gray-100 rounded-lg hover:shadow-md hover:border-[#0055aa] transition-all bg-white relative group">
+                        <div class="font-bold text-gray-900 mb-1 pr-10">${it.title}</div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs px-1.5 py-0.5 rounded font-bold ${typeColor}">${it.type}</span>
+                            <span class="text-xs text-gray-400">${it.url}</span>
+                        </div>
+                    </a>
+                `;
+            });
+        }
+        modal.classList.remove("hidden");
+    }
+
+    function doSearch(q){
+        q = q.trim();
+        if(!q) return;
+        const matches = NEWS_DATABASE
+            .map(it=>({it, s: score(it, q)}))
+            .filter(x=>x.s>0)
+            .sort((a,b)=>b.s-a.s || a.it.title.localeCompare(b.it.title))
+            .map(x=>x.it);
+
+        pushRecent(q);
+        showModal(q, matches);
+    }
+
+    const input = document.getElementById("hnNewsSearchInput");
+    if(input){
+        const dd = ensureDropdown(input);
+        input.addEventListener("keydown", (e)=>{
+            if(e.key==="Enter"){ e.preventDefault(); hide(dd); doSearch(input.value); } 
+            else if(e.key==="Escape"){ hide(dd); input.blur(); }
+        });
+        input.addEventListener("input", ()=>renderDropdown(dd,input,input.value));
+        input.addEventListener("focus", ()=>renderDropdown(dd,input,input.value));
+        document.addEventListener("click", (e)=>{
+            if(input.parentElement && input.parentElement.contains(e.target)) return;
+            hide(dd);
+        });
+        const btn = input.parentElement.querySelector("button");
+        if(btn) btn.addEventListener("click", ()=>doSearch(input.value));
+    }
+})();
+</script>
+</body>
+</html>

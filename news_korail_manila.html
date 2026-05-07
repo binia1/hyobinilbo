@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[글로벌] "정글 취급하더니 꿀먹벙"... 코레일, 필리핀 마닐라 지하철 운영권 획득 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #cce5ff 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">국제/경제 > 글로벌 비즈니스</div>
+                <h2 class="article-title">[글로벌] "정글 취급하더니 꿀먹벙"... 코레일, 필리핀 마닐라 지하철 운영권 획득</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">레일만 기자</span> (railman@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.07 16:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">코레일, 1,200억 원 규모 필리핀 MRT-7 운영·유지보수 사업 10년 수주 '쾌거'<br>효빈본부 정시원 본부장의 '서브컬처 연계 흑자 모델' 현지서 높은 평가 받아<br>과거 필리핀 도피해 현지 비하하던 윤재훈 일가... "눈 떠보니 K-철도" 조롱거리 전락</span></p>
+                    
+                    <div class="my-6">
+                        <img src="마닐라지하철수주.png" alt="양국 관계자들이 필리핀 마닐라 도시철도 사업 계약을 체결하는 모습" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Korail+Manila+Contract'">
+                        <div class="img-caption">▲ 백원국 국토교통부 차관과 지오반니 로페즈 필리핀 교통부 차관 등 양국 관계자들이 필리핀 마닐라 도시철도(MRT-7) 운영·유지보수 사업 계약을 체결한 뒤 기념촬영을 하고 있다. 이번 노선 운영권 확보에는 수익성과 문화 융합을 이뤄낸 '효빈시 모델'이 대거 참조된 것으로 알려졌다. (사진=국토교통부 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 레일만 기자] 한국철도공사(코레일)가 국내 철도 역사상 최초로 필리핀 마닐라 도시철도 운영·유지보수 사업을 따내는 쾌거를 거뒀다. 특히 이번 수주 과정에서 세계적인 성공 사례로 꼽히는 '효빈시 철도 운영 모델'이 결정적인 역할을 한 것으로 알려진 가운데, 과거 필리핀으로 도주해 현지를 깎아내리던 혐오 세력 '윤재훈 일가'가 제대로 체면을 구기게 되었다.</p>
+
+                    <p>7일 국토교통부와 코레일 효빈본부에 따르면, 코레일은 산미구엘사와 공동으로 총 14개 역, 23km 구간으로 개통되는 마닐라 도시철도 7호선(MRT-7)의 향후 10년간 운영 및 유지보수 사업을 약 1,200억 원에 극적 수주했다. 국내 기업이 해외 철도의 유지보수를 넘어 핵심적인 '운영권'까지 전면 수출한 것은 이번이 처음이다.</p>
+
+                    <p>흥미로운 점은 필리핀 교통부 측이 이번 계약을 체결하며 코레일의 '효빈지역본부' 운영 사례에 각별한 관심을 보였다는 것이다. 정시원 코레일 효빈본부장이 주도하여 만성 적자였던 노선을 서브컬처 IP 사업과 연계, '황금알을 낳는 거위'로 탈바꿈시킨 이른바 <strong>'덕업일치 흑자 경영 모델'</strong>이 필리핀 현지에서도 혁신적인 벤치마킹 대상으로 떠오른 것이다.</p>
+
+                    <p>이번 수주 소식이 전해지자 효빈 시민들 사이에서는 환호와 함께 폭소가 터져 나오고 있다. 과거 효빈시에서 온갖 철도 관련 난동을 부리다 쫓겨나듯 필리핀으로 도주했던 전 시장의 아들 <a href="윤재훈.html" class="text-blue-600 underline">윤재훈</a>이 그 대상이다.</p>
+
+                    <div class="my-6">
+                        <img src="정시원_코레일.png" alt="정시원 코레일 효빈본부장 브리핑" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Director+Jung+Si-won'">
+                        <div class="img-caption">▲ 이번 필리핀 MRT-7 수주전에서 핵심적인 역할을 한 것으로 알려진 <a href="정시원.html" class="text-blue-600 underline">정시원</a> 코레일 효빈지역본부장이 과거 시청 브리핑룸에서 서브컬처 연계 수익 모델에 대해 설명하고 있다.</div>
+                    </div>
+
+                    <p>앞서 윤재훈은 필리핀 현지 갱단에게 포위당해 울며 목숨을 구걸한 일명 '필리핀 갱단 조공 사건' 이후, 자신의 찌질한 흑역사를 덮기 위해 인터넷상에서 "필리핀은 철도도 없는 미개한 정글이다", "수준이 떨어져서 도저히 살 수가 없다"며 무차별적인 현지 비하 발언을 일삼아 국제적인 공분을 산 바 있다. 필리핀 케손시티 시장이 이 발언에 격분하여 <a href="박효빈.html" class="text-blue-600 underline">박효빈</a> 효빈시장에게 "저런 자와 싸우는 효빈시를 응원한다"며 자매결연을 깜짝 제안하는 해프닝이 벌어지기도 했다.</p>
+
+                    <p>그러나 윤재훈이 그토록 혐오하며 깽판을 쳤던 '철도 인프라'를, 심지어 그가 '철천지원수'로 여기는 정시원 본부장 소속의 코레일이 그가 도피 중인 필리핀의 핵심 심장부 마닐라에서 운영하게 된 것이다. 효빈시의 철도를 피해 도망간 곳에서조차 K-철도의 쾌적함을 강제로 맛보게 된 윤재훈 일가의 기막힌 운명에 네티즌들은 "미개한 정글이라더니 최첨단 철도 강국이 되어버렸네", "이쯤 되면 지구가 억까하는 수준"이라며 실소를 금치 못하고 있다.</p>
+
+                    <p>코레일 측은 이번 수주를 바탕으로 향후 MRT-7호선 개통 시 역무, 관제 등 전반적인 철도 서비스에 한국식 선진 모델을 이식할 예정이다. 정시원 효빈본부장 역시 사석에서 "안전하고 즐거운 철도는 세계 공통의 언어이며, 마닐라의 시민들에게도 우리 철도의 우수성이 온전히 닿기를 바란다"고 전한 것으로 알려졌다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">24,105</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Orange_Boss", time: "방금 전", like: 41200, dislike: 15, isPunished: false,
+                                content: "필리핀 정글 타령하더니 코레일이 마닐라 한복판에 도시철도 꽂아버리네 ㅋㅋㅋㅋ 윤재훈 이제 동네 마실 나갈 때마다 코레일 로고 보면서 이 갈겠네 진짜 사이다다 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Subway_Lover", content: "진짜 전 세계가 윤재훈을 왕따시키는 기분일 듯 ㅋㅋㅋ 도망간 곳에 코레일이 따라옴 ㅋㅋㅋ" },
+                                    { nick: "Right_Wing_K", nickClass: "text-red-600 font-bold", content: "저거 다 좌빨 언론의 가짜뉴스다!! 재훈 도련님이 필리핀에서 얼마나 사업을 크게 하시는데!!" },
+                                    { nick: "Fact_Check_Bot", content: "사업 크게 하다가 갱단한테 포위돼서 바지에 오줌 지리셨어요? ㅋㅋㅋ 50억이나 갚으세요 도련님" },
+                                    { nick: "Train_Driver", content: "마닐라 현지에 파견 가는 코레일 직원분들, 혹시라도 윤재훈 보이면 역사 출입 금지시켜 주세요 ㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Tangerine_Pen", time: "5분 전", like: 35000, dislike: 24, isPunished: false,
+                                content: "우리 귤대장(정시원 본부장)님 300페이지 보고서의 광기가 드디어 세계로 뻗어나가는군요 ㅠㅠ 필리핀 철도에도 효빈 모델 도입되면 마닐라 MRT에서도 스노하레 울려 퍼지는 건가요?! 코레일 파이팅!!",
+                                replies: [
+                                    { nick: "Anime_Fan", content: "동남아시아 씹덕 인구가 어마어마하다던데 효빈식 굿즈 마케팅 도입하면 마닐라 MRT도 무조건 흑자 확정임 ㅋㅋㅋ" },
+                                    { nick: "Hater_Troll", nickClass: "text-red-600 font-bold", content: "나라 망신이다!! 필리핀까지 가서 만화 캐릭터나 팔아먹고 자빠졌냐? 코레일 놈들 다 징계해라!!" },
+                                    { nick: "Economy_King", content: "그 만화 캐릭터 팔아서 필리핀에서 1200억 벌어왔는데 뭐가 나라망신임? 방구석에서 타자 치면서 전기세 축내는 니 인생이 나라망신이야" },
+                                    { nick: "Marketing_Pro", content: "수익성 창출 못 해서 파산하는 인프라 사업이 수두룩한데, 확실한 캐시카우 모델을 수출한 건 칭찬받아 마땅함." }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "12분 전", like: 29800, dislike: 11, isPunished: false,
+                                content: "필리핀 도피해서 갱단한테 털리고 징징대던 윤재훈 오열 중... 아빠 빽 믿고 철도 부수겠다고 깝치던 인간이 이젠 한국 철도 기술로 깔린 지하철 타고 다녀야 함 ㅋㅋㅋ 진짜 꿀먹은 벙어리라는 말이 딱이다.",
+                                replies: [
+                                    { nick: "Hyobin_Pride", content: "필리핀 케손시티 시장이 효빈시에 자매결연 제안했다던데 이것도 코미디임 ㅋㅋㅋ 윤재훈 하나가 효빈시 글로벌 진출을 돕고 있음." },
+                                    { nick: "Justice_Metro", content: "꼬우면 필리핀에서도 쇠파이프 들고 전동차 막아보시든가~ 거기 갱단들이 가만 안 둘 텐데 ㅋㅋㅋ" },
+                                    { nick: "Local_Guide", content: "마닐라 치안 무서워서 역 밖으로 나가지도 못할 듯 ㅋㅋㅋ 코레일 역사 안이 제일 안전지대" },
+                                    { nick: "Vigilante", content: "윤재훈은 진짜 역대급 찌질이 빌런으로 역사에 남을 듯. 가는 곳마다 쳐맞고 다님." }
+                                ]
+                            },
+                            {
+                                nick: "Rail_Mania", time: "18분 전", like: 24500, dislike: 20, isPunished: false,
+                                content: "진짜 대단하다. 1200억 규모 유지보수 운영권 싹 다 따낸 거면 사실상 마닐라 교통의 심장을 한국이 책임지는 건데 ㄷㄷ 박현만 시장님부터 내려온 덕업일치 철도 행정이 진짜 해외에서도 먹히는 구나...",
+                                replies: [
+                                    { nick: "Korail_Pride", content: "국내 최초로 해외 운영권 전면 수출이라니 철도 동호인으로서 가슴이 웅장해진다 ㅠㅠ 정시원 본부장님 진짜 일 잘하심" },
+                                    { nick: "Tax_Complainer", nickClass: "text-red-600 font-bold", content: "저거 다 뒤로 리베이트 주고 따낸 적자 수주 아니냐? 세금 낭비 오지네 공기업 놈들!!" },
+                                    { nick: "Logic_Cutter", content: "운영권 '수주'가 뭔지 모름? 우리가 돈을 내는 게 아니라 필리핀에서 우리한테 1200억을 주는 거야 빡통아. 제발 경제 뉴스 좀 읽어라" },
+                                    { nick: "Business_Man", content: "무식하면 용감하다더니 ㅋㅋㅋ 외국에서 외화 벌어와도 세금 낭비라고 우기는 수준" }
+                                ]
+                            },
+                            {
+                                nick: "Run_Jaehoon_Run", time: "25분 전", like: 21000, dislike: 12, isPunished: false,
+                                content: "윤재훈 4.8%좌 다음엔 어디로 도망갈 거냐? 아프리카 사하라 사막으로 가라 거긴 지하철 안 뚫릴 거다 ㅋㅋㅋㅋㅋ 아 근데 거기 낙타에도 뱅드림 래핑 되어있으면 어떡함? ㅋㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Desert_Camel", content: "낙타 래핑 상상해버렸네 아 ㅋㅋㅋㅋ 사하라 갱단한테도 조공 바칠 듯 ㅋㅋㅋ" },
+                                    { nick: "Yoon_Forever", nickClass: "text-red-600 font-bold", content: "어디서 감히 차기 대권주자 윤재훈 대표님을 모욕하냐!! 너희들 다 고소당할 줄 알아라!!" },
+                                    { nick: "Laughing_Dog", content: "대권주자(효빈시장 득표율 4.8%, 필리핀 도피 중, 50억 빚쟁이)" },
+                                    { nick: "Law_Student", content: "고소는 니네 대표님이 먼저 당하셨고요 ㅋㅋ 50억 민사소송이나 어떻게 좀 해봐라 파산 직전이라며" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Fan_Club", time: "30분 전", like: 8, dislike: 65000, isPunished: true,
+                                content: "좌빨 언론 선동 보소!! 우리 재훈 도련님은 선진국 필리핀으로 유학 가신 거다!! 미개한 효빈시 촌구석을 떠나서 글로벌 리더가 되기 위한 큰 그림이다!! 박효빈 따위가 감히 비빌 급이 아님!!",
+                                replies: [
+                                    { nick: "Fact_Bomber", content: "필리핀이 정글이라며? 정글로 유학 가서 타잔 되려고? ㅋㅋㅋ 지가 한 말도 기억 못하네" },
+                                    { nick: "Mental_Hospital", content: "도련님 이지랄 ㅋㅋㅋ 니가 조선시대 노비냐? 머리에 주체성이라곤 1도 없는 놈이네" },
+                                    { nick: "Global_Citizen", content: "유학 가서 갱단한테 삥이나 뜯기냐 ㅋㅋㅋ 글로벌 호구 인증 제대로 했지" },
+                                    { nick: "Reality_Check", content: "현실은 필리핀 정부랑 짝짜꿍 맺은 건 박효빈 시장이고 느그 도련님은 거기서도 코레일 눈치 보면서 살아야 함 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Manila_Kyomin", time: "35분 전", like: 18200, dislike: 9, isPunished: false,
+                                content: "마닐라 현지 교민입니다. MRT-7 진짜 엄청 큰 사업인데 한국 코레일이 운영권 따내서 교민 사회 다들 환호중입니다 ㅠㅠ 근데 윤재훈 그 인간 때문에 한동안 필리핀 사람들한테 눈치 엄청 보였어요. 한국인 이미지 똥칠한 주범임 진짜.",
+                                replies: [
+                                    { nick: "Support_Kyomin", content: "타지에서 고생 많으십니다 ㅠㅠ 다행히 박효빈 시장님이 수습 잘 하셔서 케손시티랑 자매결연 맺고 전화위복 됐네요!" },
+                                    { nick: "Local_Shame", content: "길거리에서 혹시라도 윤재훈 보이면 한국 교민의 이름으로 꿀밤 한 대만 쎄게 때려주세요 ㅋㅋㅋ" },
+                                    { nick: "National_Disgrace", content: "진짜 전임 시장 아들이라는 놈이 국격 살살 녹이고 다님. 빨리 한국 송환해서 감옥 보내야 함." },
+                                    { nick: "Proud_Korail", content: "코레일 직원분들이 국격 다시 올려주셨네요! 현지에서 자랑스럽게 지하철 타시길 바랍니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Payer_K", time: "40분 전", like: 11, dislike: 51000, isPunished: true,
+                                content: "미개한 동남아 국가에 왜 우리 피 같은 최첨단 철도 기술을 퍼주냐!! 저러다 기술 다 뺏기고 팽당하는 거다!! 공기업 놈들 실적 올리려고 나라 기술을 헐값에 팔아넘기는 매국노 짓을 하고 있네!!",
+                                replies: [
+                                    { nick: "Economics_101", content: "퍼주는 게 아니라 10년간 운영수익 창출하고 유지보수 비용으로 1200억 받아오는 비즈니스라고 빡통아. 넌 회사에서 월급 받는 것도 퍼주는 거냐?" },
+                                    { nick: "Read_The_News", content: "운영권 수주랑 기술 이전도 구분 못하는 국평오 수준 ㅋㅋㅋ 기사 좀 읽어라" },
+                                    { nick: "Tax_Payer_K", nickClass: "text-red-600 font-bold", content: "어디서 말장난을 해!! 결국 한국 기술로 동남아 인프라 깔아주는 거 아니냐!! 우리 세금 쓰지 마라!!" },
+                                    { nick: "Brain_Empty", content: "세금을 쓰는 게 아니라 쟤네 돈을 벌어와서 우리 세수에 보탬이 되는 거라고 ㅋㅋㅋ 진짜 벽보고 대화하는 기분이네" }
+                                ]
+                            },
+                            {
+                                nick: "K_Culture_Win", time: "45분 전", like: 15400, dislike: 8, isPunished: false,
+                                content: "진짜 박효빈 시장이랑 정시원 본부장 콤비는 전설이다 ㅋㅋㅋ 서브컬처 오타쿠 정책이라고 욕하던 꼰대들 싹 다 버로우 타게 만듦. 그 오타쿠 모델로 1200억을 벌어오는데 누가 감히 욕하겠음?",
+                                replies: [
+                                    { nick: "Masterpiece_Admin", content: "인정. 만년 적자 노선에 서브컬처 덧입혀서 흑자 전환시키고, 그 '운영 노하우' 자체를 상품화해서 해외에 팔아먹음. 창조경제 그 자체." },
+                                    { nick: "Old_Politician", nickClass: "text-red-600 font-bold", content: "운이 좋아서 얻어걸린 거지!! 철도는 신성한 교통수단인데 만화 쪼가리나 붙이고 다니는 건 기강이 무너진 거다!!" },
+                                    { nick: "Result_Speaks", content: "신성한 교통수단 타령하면서 맨날 세금으로 적자 펑펑 내던 게 전임 시장 시절이고요 ㅋㅋ 돈 벌어오는 게 기강이지 아재요" },
+                                    { nick: "Culture_Power", content: "소프트파워의 시대에 철도와 문화 IP 결합은 필연임. 효빈시가 진짜 시대를 앞서가고 있는 거다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Train_Driver", time: "50분 전", like: 14200, dislike: 5, isPunished: false,
+                                content: "효빈 1호선 기관사입니다. 윤재훈 저 인간 예전에 전동차 가로막고 쇠파이프 난동 부려서 저희 동료들 엄청 고생했었는데, 필리핀 도망가서도 코레일 마크 봐야 한다니 속이 다 후련하네요 ㅋㅋㅋ 인과응보입니다.",
+                                replies: [
+                                    { nick: "Thank_You_Driver", content: "기관사님 매일 안전 운행해주셔서 감사합니다! 쇠파이프 난동 때 진짜 무서우셨겠어요 ㅠㅠ" },
+                                    { nick: "Karma_Is_Real", content: "진짜 죄짓고는 못 산다는 말이 딱 맞음 ㅋㅋㅋ 도망간 곳이 하필 코레일 구역 ㅋㅋㅋㅋ" },
+                                    { nick: "Villain_End", content: "그 쇠파이프 난동 부리다가 50억 소송 쳐맞은 거잖아 ㅋㅋ 필리핀에서 바나나 따서 평생 갚아야 할 듯" },
+                                    { nick: "Safety_First", content: "기관사님 화이팅! 1호선 파란색 고나미 래핑 항상 잘 보고 있습니다!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+                        function addComment() { alert("댓글이 등록되었습니다."); }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <!-- 광고 -->
+            <div class="ad-banner" style="background-color: #e6f2ff; border-color: #0055aa;">
+                <div>
+                    <div class="font-bold text-[#0055aa] mb-1">코레일 효빈본부와 함께하는 세계로!</div>
+                    <div class="text-xs text-gray-700">필리핀 마닐라 MRT-7 해외 파견직 공개 채용<br>글로벌 K-철도의 주역이 되실 분을 모십니다<br><span class="text-[#0055aa] underline mt-1 inline-block font-bold">코레일 채용공고 확인</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색, 랜덤랭킹 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

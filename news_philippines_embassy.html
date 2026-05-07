@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[외교] 주한 필리핀 대사, 효빈시청 방문... "박 시장은 우리의 자부심" - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .official-comment { background: #e8f0fe; border: 2px solid #8ab4f8; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .news-header { background: white; border-bottom: 1px solid #e2e2e2; }
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        footer { background: #333; color: #999; padding: 40px 0; font-size: 13px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">국제/외교 > 글로벌 도시 외교</div>
+                <h2 class="article-title">[외교] 주한 필리핀 대사, 효빈시청 방문... "박 시장은 우리의 자부심"</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">최글로벌 기자</span> (global@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.08 14:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">마리아 테레사 주한 필리핀 대사, 8일 오후 효빈시청 전격 방문<br>인종차별 사건 단호한 대처에 공식 감사... "필리핀 교민 사회의 큰 위로"<br>박효빈 시장 "어머니의 나라와 효빈시의 굳건한 연대, 흔들림 없이 이어갈 것"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="주한_필리핀_대사.png" alt="주한 필리핀 대사 효빈시청 방문 환담" class="w-full border border-gray-200" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Ambassador+Visit'">
+                        <div class="img-caption">▲ 8일 오후 마리아 테레사 주한 필리핀 대사가 효빈광역시청을 방문해 박효빈 시장과 환담을 나누고 있다. 주한 대사의 이번 방문은 최근 불거진 인종차별 논란을 딛고 양국 간의 지방 외교를 더욱 굳건히 다지는 계기가 되었다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 최글로벌 기자] 주한 필리핀 대사가 효빈광역시청을 전격 방문해 최근 박효빈 시장이 보여준 다문화 포용 리더십에 깊은 감사를 표했다. 일부 혐오 세력의 그릇된 행태가 도리어 국가 단위의 끈끈한 외교적 연대로 승화되는 모습이다.</p>
+
+                    <p>8일 오후 1시 30분경, 마리아 테레사 디존-데베가 주한 필리핀 대사는 효빈시청을 찾아 박효빈 시장과 약 40분간 단독 환담을 가졌다. 주한 대사가 지방자치단체장을 직접 예방하는 것은 이례적인 일로, 최근 시청 내부에서 발생한 이른바 <a href="탕쿠쿠파일.html" class="text-blue-600 underline">'탕쿠쿠 파일 폭행 및 인종차별 사건'</a>과 관련한 박 시장의 단호한 대처가 결정적인 계기가 된 것으로 전해졌다.</p>
+
+                    <p>앞서 효빈시청의 한 간부가 부하 직원을 폭행하며 박 시장의 혈통(어머니 안다야 여사)을 겨냥해 인종차별적 망언을 쏟아내자, 박 시장은 무관용 원칙을 적용해 해당 간부를 즉각 파면 조치한 바 있다.</p>
+
+                    <p>테레사 대사는 환담 자리에서 "시장님께서 보여주신 혐오와 차별에 대한 타협 없는 태도는 한국 내 6만여 필리핀 교민들은 물론, 고국에 있는 필리핀 국민들에게도 엄청난 감동과 위로를 주었다"며, <strong>"가난과 편견을 이겨내고 훌륭한 지도자로 성장한 박 시장님은 우리 필리핀의 커다란 자랑(Pinoy Pride)이자 자부심"</strong>이라고 공식적인 감사의 뜻을 전했다.</p>
+
+                    <p>이에 박효빈 시장은 유창한 타갈로그어 인사로 화답하며 "제 어머니의 고향이자 저의 뿌리 중 절반을 차지하는 필리핀을 모욕하는 것은 곧 저의 정체성을 부정하는 것과 같다"며, "위기를 기회 삼아 앞으로 효빈시를 국적과 배경에 상관없이 누구나 존중받는 진정한 글로벌 포용 도시로 만들겠다"고 강조했다.</p>
+
+                    <p>이날 만남에서는 양측 간의 실질적인 교류 확대 방안도 심도 있게 논의되었다. 특히 다음 달로 예정된 박 시장의 어머니 고향이자 필리핀 최대 도시인 <a href="케손시티.html" class="text-blue-600 underline">케손시티</a>와의 공식 자매결연 및 양해각서(MOU) 체결을 앞두고, 주한 필리핀 대사관 측에서 행정적·외교적 지원을 아끼지 않겠다고 약속했다.</p>
+
+                    <p>면담 종료 후, 테레사 대사는 시청 1층 로비에 마련된 <a href="HAF.html" class="text-blue-600 underline">'효빈 애니메이션 페스티벌(HAF)'</a> 특별 전시관을 박 시장과 함께 둘러보며 "문화와 산업을 결합해 도시를 부흥시킨 시장님의 통찰력이 놀랍다. 향후 필리핀의 젊은 인재들과 효빈시 간의 문화 교류 프로그램도 적극 추진하고 싶다"고 덧붙였다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">18,492</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment(this)">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Pinoy_Pride_1996", time: "방금 전", like: 38100, dislike: 12, isPunished: false,
+                                content: "와 진짜 대사님까지 직접 효빈시청에 방문하셨네요!! 필리핀계 한국인으로서 너무 가슴이 웅장해집니다. 차별 발언했던 그 파면 간부랑 윤재훈 일당들은 진짜 국가적 망신을 제대로 시켰는데, 시장님이 그걸 외교 무대로 완벽하게 수습하시네요. 시장님은 진정한 우리의 자부심입니다! 🇵🇭🇰🇷",
+                                replies: [
+                                    { nick: "Hyobin_Citizen", content: "대사관에서 직접 오신 거면 진짜 찐이죠. 자랑스럽습니다 시장님!" },
+                                    { nick: "Mabuhay_Korea", content: "필리핀 교민입니다. 정말 눈물 납니다. 효빈시는 우리의 제2의 고향입니다." },
+                                    { nick: "Anti_Hate", content: "차별하던 김팀장은 감옥에서 이거 보고 피눈물 흘리겠네 ㅋㅋㅋ 인종차별충의 최후" },
+                                    { nick: "Line1_Commuter", content: "진정한 위기 대처 능력 ㄷㄷ 이런 분이 파란색 1호선 타고 출퇴근하신다니 갓벽" }
+                                ]
+                            },
+                            {
+                                nick: "Diplomacy_Master", time: "5분 전", like: 32500, dislike: 15, isPunished: false,
+                                content: "시장님 타갈로그어까지 유창하게 하시는 거 진짜 개멋있다... 평소엔 덕후 시장님인 줄로만 알았는데, 위기 상황 오니까 대사관 상대하면서 외교력 뽐내는 거 보소 ㄷㄷ 케손시티 자매결연도 대박 나길 기원합니다.",
+                                replies: [
+                                    { nick: "Linguist", content: "어머니의 언어를 잊지 않고 구사하시는 모습 진짜 감동이네요 ㅠㅠ 진정성이 느껴짐" },
+                                    { nick: "Troll_A", nickClass: "text-red-600 font-bold", content: "저거 다 대본 써준 거 외워서 읽는 거잖아 ㅋㅋㅋ 쇼하네 진짜 좌파 정치인들 종특" },
+                                    { nick: "Fact_Check", content: "현장 라이브 방송 보니까 대본 없이 프리토킹 하시던데 억까 작작좀 ㅋㅋㅋ 팩트 체크 안하냐?" },
+                                    { nick: "Future_Voter", content: "억까충들은 제발 방구석에서 나와서 세상 돌아가는 꼴 좀 봐라 ㅉㅉ 니 인생이나 챙겨" }
+                                ]
+                            },
+                            {
+                                nick: "Pure_Blood_K", time: "12분 전", like: 11, dislike: 42100, isPunished: true,
+                                content: "야 이거 다 시장이 자기 정치생명 연장하려고 필리핀 대사 돈 주고 부른 쇼 아니냐? 시장이 혼혈이니까 아주 나라를 통째로 필리핀에 갖다 바치려고 환장을 했네!! 순혈 한국인이 시장을 해야지!!",
+                                replies: [
+                                    { nick: "Global_Mind", content: "한 나라의 공식 대사를 지자체장이 돈 주고 부른다는 발상 자체가 님 처참한 지능 수준을 보여주네요." },
+                                    { nick: "Justice_Hyobin", content: "21세기에 순혈 타령하는 거 보면 참 안타깝습니다. 님 같은 분들 때문에 오히려 시장님 지지율이 78%를 찍는 겁니다. 가서 초록색 2호선 타고 마음이나 진정시키고 오세요." },
+                                    { nick: "Hyobin_Pride", content: "혐오 세력들이 정글 타령하며 깎아내리더니, 정작 코레일은 마닐라 지하철 1200억 수주 따내고 대사관은 직접 찾아와서 협력 약속함 ㅋㅋㅋ 누가 매국노고 누가 애국자인지 딱 보이죠?" },
+                                    { nick: "Lawyer_Kim", content: "대사관 및 지자체장 명예훼손으로 고발당해봐야 정신 차리시려나? PDF 캡처 완료했습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Global_Hyobin", time: "18분 전", like: 27800, dislike: 18, isPunished: false,
+                                content: "그 김 팀장인가 뭔가 하는 꼰대 간부가 탕쿠쿠 파일 찢으면서 내뱉은 망언 한 마디가 쏘아 올린 작은 공 ㅋㅋㅋ 본인은 연금 반토막 나고 깜빵 갔는데, 효빈시는 글로벌 인권 도시로 떡상하고 대사님까지 등판하심 ㅋㅋㅋ 이 정도면 그 간부가 다크나이트 아니냐?",
+                                replies: [
+                                    { nick: "Kuku_Fan", content: "진짜 탕쿠쿠 파일이 쏘아올린 거대한 공 ㅋㅋㅋ 나비효과 오진다 쿠쿠쨩 최고!" },
+                                    { nick: "Admin_Staff", content: "그 인간 파면당하고 연금 깎인 거 생각하면 아직도 속이 뻥 뚫림 ㅋㅋㅋ 공무원 사회의 수치" },
+                                    { nick: "Karma_Is_Real", content: "악당이 자멸하면서 도시의 격을 전세계적으로 올려주는 기적의 전개 ㅋㅋㅋ 영화 시나리오로 써도 욕먹을 듯" },
+                                    { nick: "Transit_Fan", content: "김팀장은 평생 보라색 6호선 탈 때마다 라세나 보고 발작하겠네 ㅋㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Culture_Bridge", time: "25분 전", like: 22400, dislike: 10, isPunished: false,
+                                content: "필리핀이 영어도 잘하고 젊은 인구도 많아서, 효빈시가 추진하는 서브컬처나 IT 산업 교류 맺으면 시너지 엄청날 듯. 박현만 전 시장님이 하드웨어 깔아놨다면 박효빈 시장님은 소프트웨어랑 외교력으로 도시를 꽉 채우네요. 진짜 일 잘한다!",
+                                replies: [
+                                    { nick: "IT_Worker", content: "맞아요 필리핀 IT 아웃소싱 규모 엄청납니다. 교류하면 효빈시 테크 기업들한테 개이득임." },
+                                    { nick: "Econ_Major", content: "단순한 감성팔이가 아니라 완벽한 경제적 실리 외교라는 게 박효빈의 무서운 점이지." },
+                                    { nick: "Racist_Guy", nickClass: "text-red-600 font-bold", content: "똥남아 애들 와서 치안만 박살나겠지 ㅉㅉ 효빈시 범죄도시 예약이요" },
+                                    { nick: "Police_Officer", content: "외국인 범죄율이 내국인보다 훨씬 낮다는 객관적 통계는 죽어도 안 믿는 혐오충 컷" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Payer_Angry", time: "30분 전", like: 8, dislike: 48000, isPunished: true,
+                                content: "대사관 접대한다고 또 시민들 혈세 펑펑 썼겠네!! 필리핀 놈들한테 왜 굽신거리냐!! 시장이 혼혈이라 나라 예산을 다 필리핀에 퍼주네!! 이게 나라냐!!",
+                                replies: [
+                                    { nick: "Fact_Bomber", content: "대사가 효빈시청을 '방문'한 거지 우리가 필리핀에 가서 접대한 게 아니란다 제발 글 좀 읽어라 빡통아" },
+                                    { nick: "Logic_Police", content: "케손시티랑 MOU 맺어서 우리 철도 기술이랑 굿즈 팔아먹고 외화 벌어오는 건데 퍼주기는 무슨 ㅋㅋㅋ 니가 벌어오는 돈의 수만 배를 벌어온다" },
+                                    { nick: "Tax_Payer_Angry", nickClass: "text-red-600 font-bold", content: "그깟 만화 쪼가리 팔아서 얼마나 번다고!! 다 페이퍼 컴퍼니 세워서 돈 빼돌리는 거다!!" },
+                                    { nick: "Economy_God", content: "작년 HAF 경제효과가 수천억이다 방구석 경제학자야 ㅋㅋㅋ 니 통장 잔고나 걱정해" }
+                                ]
+                            },
+                            {
+                                nick: "HAF_Supporter", time: "35분 전", like: 19500, dislike: 14, isPunished: false,
+                                content: "대사님이 시청 로비에 있는 HAF 특별 전시관 둘러보신 거 대박이네요 ㅋㅋㅋ 외교관한테 K-서브컬처 강제 주입 성공! 문화의 힘이 진짜 대단하긴 하다.",
+                                replies: [
+                                    { nick: "Anime_Fan", content: "대사님도 2호선 마스코트 하루빈 인형탈 보고 귀엽다고 하셨을까 ㅋㅋㅋ 상상만 해도 훈훈함" },
+                                    { nick: "Soft_Power", content: "이게 바로 진정한 소프트 파워지 ㅋㅋㅋ 만화 축제가 외교 무기가 되는 시대 ㄷㄷ" },
+                                    { nick: "Merch_Collector", content: "대사님 돌아가실 때 4호선 다로나 에코백 하나 챙겨드렸기를 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Citizen", content: "진짜 HAF는 효빈시 최고의 아웃풋이다. 내년 축제엔 글로벌 부스 더 많아질 듯!!" }
+                                ]
+                            },
+                            {
+                                nick: "Old_Boomer", time: "40분 전", like: 5, dislike: 62000, isPunished: true,
+                                content: "어디 근본도 없는 동남아 튀기 새끼가 시장을 하니까 나라 꼴이 아주 우스워졌어!! 필리핀 식민지가 따로 없네!! 박효빈 당장 탄핵해라!!",
+                                replies: [
+                                    { nick: "Human_Rights", content: "21세기에 튀기 타령... 당신 같은 꼰대들이야말로 대한민국 발전의 최대 걸림돌입니다. 부끄러운 줄 아세요." },
+                                    { nick: "Report_Button", content: "쿠쿠스 배리어 조례 위반 현행범 발견. 특정 국적 혐오 발언으로 캡처해서 시청 법무팀에 넘겼습니다 ㅅㄱ 합의금 준비하세요" },
+                                    { nick: "Old_Boomer", nickClass: "text-red-600 font-bold", content: "어디 버르장머리 없이 어른한테 대들어!! 내 말이 틀렸냐!! 잡종 새끼들은 추방해야 돼!!" },
+                                    { nick: "Sigh_Machine", content: "나이 먹은 게 벼슬인 줄 아는 전형적인 폐급 꼰대. 님 자식들이 이 댓글 보면 참 자랑스러워하겠네요." }
+                                ]
+                            },
+                            {
+                                nick: "Global_Business", time: "45분 전", like: 17200, dislike: 8, isPunished: false,
+                                content: "케손시티 인프라 협력 대박이네요. 코레일 마닐라 진출에 이어 효빈시 기업들도 동남아 진출길 활짝 열린 듯! 이 맛에 효빈시에 세금 냅니다.",
+                                replies: [
+                                    { nick: "Trade_Company", content: "효빈시 소재 중소기업인데 이번 MOU 덕분에 필리핀 수출길 뚫려서 축제 분위기입니다! 시장님 감사합니다 ㅠㅠ" },
+                                    { nick: "Smart_Mayor", content: "인종차별 논란을 철도, 무역 수출이라는 엄청난 호재로 덮어버리는 미친 행정력 ㄷㄷ" },
+                                    { nick: "Future_CEO", content: "이래서 리더가 중요함. 혐오하고 찌질대던 전임 시장 아들이랑 너무 비교되잖아 ㅋㅋㅋ 윤재훈은 필리핀 갱단한테 털렸는데 현 시장은 필리핀 대사관이랑 협력함 극과 극 ㅋㅋㅋ" },
+                                    { nick: "Student_A", content: "케손시티랑 교환학생 프로그램도 생기면 좋겠다 ㅠㅠ 영어 공부하기 딱인데" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Jaehoon_Fan", time: "50분 전", like: 9, dislike: 55000, isPunished: true,
+                                content: "우리 재훈 도련님이 필리핀 갱단한테 당한 복수를 하기는커녕 꼬리 치고 앉아있네!! 자국민을 보호해야지!! 박효빈은 매국노다!!",
+                                replies: [
+                                    { nick: "Laughing_Hard", content: "도련님 이지랄 ㅋㅋㅋㅋㅋ 범죄자 새끼를 도련님이라 부르는 뼛속까지 노비 근성 레전드네 진짜" },
+                                    { nick: "Fact_Check_Pro", content: "현지 가서 술 쳐먹고 행패 부리다 갱단한테 참교육 당한 걸 무슨 국가적 억울한 피해자인 양 포장하네 ㅋㅋㅋ 자업자득이지" },
+                                    { nick: "Yoon_Jaehoon_Fan", nickClass: "text-red-600 font-bold", content: "재훈 형님은 억울하게 당하신 거다!! 좌빨들의 치밀한 공작 정치다!!" },
+                                    { nick: "Law_Order", content: "네 다음 50억 배상 피고인 지지자~ 그 형님 파산 직전이라던데 님이 대신 갚아주시든가요 ㅋㅋㅋ 방구석에서 타자만 치지 말고" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            if (cmt.isPunished) {
+                                div.className = "best-comment border-red-300 bg-red-50";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || "text-gray-700 font-bold";
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        // UI interaction functions without using alert()
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment(btn) { 
+                            const input = document.getElementById('cmt-content');
+                            if(!input.value.trim()) return;
+                            const originalText = btn.innerText;
+                            btn.innerText = "등록 완료!";
+                            btn.classList.add("bg-green-600");
+                            btn.classList.remove("bg-[#0055aa]", "hover:bg-[#004499]");
+                            
+                            setTimeout(() => {
+                                btn.innerText = originalText;
+                                btn.classList.remove("bg-green-600");
+                                btn.classList.add("bg-[#0055aa]", "hover:bg-[#004499]");
+                                input.value = '';
+                            }, 1500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner" style="background-color: #eef2ff; border-color: #3b82f6;">
+                <div>
+                    <div class="font-bold text-[#2563eb] mb-1">필리핀 여행은 효빈국제공항에서!</div>
+                    <div class="text-xs text-gray-700">마닐라, 케손시티 매일 직항 운항<br>아름다운 문화의 도시로 지금 떠나세요<br><span class="text-[#2563eb] underline mt-1 inline-block font-bold">특가 항공권 예매하기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

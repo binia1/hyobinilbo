@@ -143,7 +143,7 @@
 
     <script>
         // 초기 댓글 데이터 (20개 이상 리얼하게)
-        const initialComments = [
+        const commentsData = [
             {
                 nick: "약산토박이", time: "14:35", content: "드디어 우리 동네에도 대학병원이 들어오는구나 ㅠㅠ 80세 노모 모시고 매번 수원까지 가느라 지옥 같았는데 정말 감사합니다. 민부선 총장님, 박효빈 시장님 만세!", 
                 like: 2500, dislike: 15, isBest: true,
@@ -290,8 +290,8 @@
         // 페이지 로드 시 실행 (확실한 로딩을 위해 onload 사용)
         document.addEventListener("DOMContentLoaded", function() {
             // 댓글 렌더링
-            renderComments(initialComments);
-            document.getElementById('comment-count').innerText = initialComments.length;
+            renderComments(commentsData);
+            document.getElementById('comment-count').innerText = commentsData.length;
             
             // 랭킹 렌더링
             renderRanking();
@@ -397,13 +397,6 @@
     </script>
     <!-- 효빈일보 코어 스크립트 -->
     <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
 
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
-<div id="common-footer"></div>
-
-    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
-    <script src="assets/hb_news_core.js"></script>
 </body>
 </html>
