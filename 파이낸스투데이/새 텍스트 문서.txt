@@ -87,7 +87,7 @@
             <div class="main-section">
                 <div class="mb-8">
                     <span class="econ-tag">경제 > 교통정책 비판</span>
-                    <img src="두청운수_적자.png" alt="두청운수 버스 차고지" class="w-full h-64 object-cover mb-4 border border-gray-400" onerror="this.src='https://placehold.co/600x300/228b22/FFF?text=Doocheong+Bus+Crisis'">
+                    <img src="이미지/두청운수_적자.png" alt="두청운수 버스 차고지" class="w-full h-64 object-cover mb-4 border border-gray-400" onerror="this.src='https://placehold.co/600x300/228b22/FFF?text=Doocheong+Bus+Crisis'">
                     <h1 class="main-title" onclick="location.href='버스적자.html'">[단독] "지하철 색칠하느라 시 예산 탕진"... 두청운수, 지원금 끊겨 '부도 위기'</h1>
                     <p class="text-gray-700 leading-relaxed text-lg">
                         효빈시의 경제 대동맥인 <b>두청운수</b>가 멈출 위기에 처했다. 
@@ -98,7 +98,7 @@
 
                 <!-- 서브 뉴스 리스트 -->
                 <div class="sub-news-item">
-                    <img src="윤재훈_중고차.png" class="sub-thumb" onerror="this.src='https://placehold.co/130x90/000080/FFF?text=Used+Car'">
+                    <img src="이미지/윤재훈_중고차.png" class="sub-thumb" onerror="this.src='https://placehold.co/130x90/000080/FFF?text=Used+Car'">
                     <div class="sub-news-text">
                         <div onclick="location.href='윤재훈_눈물.html'">
                             <h4>윤재훈 대표, 아버지 옥바라지 위해 '포르쉐' 급매물 내놔</h4>
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="sub-news-item">
-                    <img src="지역화폐.png" class="sub-thumb" onerror="this.src='https://placehold.co/130x90/6677CC/FFF?text=Hyobin+Pay'">
+                    <img src="이미지/지역화폐.png" class="sub-thumb" onerror="this.src='https://placehold.co/130x90/6677CC/FFF?text=Hyobin+Pay'">
                     <div class="sub-news-text">
                         <div onclick="location.href='지역화폐.html'">
                             <h4>[진단] '효빈페이', 알고 보니 '피규어' 살 때만 적립금 10%?</h4>
@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="sub-news-item">
-                    <img src="부동산_폭락.png" class="sub-thumb" onerror="this.src='https://placehold.co/130x90/cc0000/FFF?text=Real+Estate'">
+                    <img src="이미지/부동산_폭락.png" class="sub-thumb" onerror="this.src='https://placehold.co/130x90/cc0000/FFF?text=Real+Estate'">
                     <div class="sub-news-text">
                         <div onclick="location.href='집값.html'">
                             <h4>"우리 아파트 이름에 '빈효' 들어갔다고 집값 뚝"... 주민들 분통</h4>

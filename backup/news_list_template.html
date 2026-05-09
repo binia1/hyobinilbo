@@ -228,7 +228,7 @@
             const h = newsData.headline;
             const html = `
                 <div class="headline-card" onclick="viewArticle('${h.id}')">
-                    <img src="${h.image}" class="headline-img" onerror="this.src='https://via.placeholder.com/800x400/333333/FFFFFF?text=Headline+Image'">
+                    <img src="이미지/${h.image}" class="headline-img" onerror="this.src='https://via.placeholder.com/800x400/333333/FFFFFF?text=Headline+Image'">
                     <div class="headline-content">
                         <div class="text-[#0055aa] font-bold text-sm mb-2">${h.category}</div>
                         <h2 class="headline-title">${h.title}</h2>
@@ -246,7 +246,7 @@
             newsData.subGrid.forEach(item => {
                 html += `
                     <div class="news-card" onclick="viewArticle('${item.id}')">
-                        <img src="${item.image}" onerror="this.src='https://via.placeholder.com/400x200/555555/FFFFFF?text=News+Image'">
+                        <img src="이미지/${item.image}" onerror="this.src='https://via.placeholder.com/400x200/555555/FFFFFF?text=News+Image'">
                         <div class="news-card-content">
                             <div class="news-card-title">${item.title}</div>
                             <div class="news-card-meta">${item.category}</div>
