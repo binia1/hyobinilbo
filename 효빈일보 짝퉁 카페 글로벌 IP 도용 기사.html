@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[단독] ‘따로나’ 카페의 후안무치... 글로벌 IP ‘러브라이브·뱅드림’까지 무단 도용 확인 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        /* 명시적인 기본 라이트 모드 테마 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        /* 기사 본문 스타일 */
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h3 { font-size: 19px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #0055aa; font-family: 'Noto Sans KR', sans-serif; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 하이라이트 댓글 스타일 (베스트/빌런) */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        /* 토스트 알림 (alert 대체) */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회/경제 > 사건/사고</div>
+                <h2 class="article-title">[단독] ‘따로나’ 카페의 후안무치... 글로벌 IP ‘러브라이브·뱅드림’까지 무단 도용 확인</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">경제부 기자</span> (economy@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 22:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈시-선라이즈·부시로드 간 정식 협약 무시한 ‘국제적 망신’<br>로열티 미지불 및 불법 캐릭터 래핑물 제작... 저작권 침해 규모 눈덩이<br>시 법무팀 “글로벌 기업과의 신뢰 훼손 행위, 강력한 법적 대응 예고”</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://placehold.co/800x450/eeeeee/333333?text=Fake+Cafe+Raided+Global+IP" alt="글로벌 IP를 도용한 짝퉁 카페 압수물" class="w-full h-auto border border-gray-200">
+                        <div class="img-caption">▲ 민생사법경찰단이 압수한 짝퉁 카페 '따로나'의 불법 제작 굿즈 및 컵홀더. 효빈교통공사 마스코트뿐만 아니라 일본 유명 IP인 '러브라이브'와 '뱅드림' 캐릭터까지 무단으로 합성하여 판매해 온 사실이 확인되었다. (사진=효빈광역시 제공)</div>
+                    </div>
+
+                    <p>[효빈타임즈 = 경제부] 효빈광역시의 마스코트를 도용하고 위생 불량으로 적발된 일명 ‘따로나 카페’가 글로벌 콘텐츠 기업인 선라이즈(러브라이브 시리즈)와 부시로드(뱅드림! 시리즈)의 저작권까지 무단으로 침해한 사실이 추가로 밝혀져 파장이 커지고 있다.</p>
+
+                    <h3>■ 공식 협약 비웃는 ‘무단 도용’... 국제적 저작권 분쟁 비화 조짐</h3>
+                    <p>효빈광역시는 그동안 시민들에게 수준 높은 문화 콘텐츠를 제공하기 위해 일본의 선라이즈 및 부시로드와 정식 라이선스 협약을 맺고, 로열티를 지불하며 주요 도시철도 노선에 캐릭터 래핑 열차를 운행하거나 공식 굿즈를 제작해 왔다.</p>
+
+                    <p>그러나 이번에 적발된 ‘따로나 카페’는 이러한 지자체의 노력을 비웃기라도 하듯, 아무런 권한 없이 ‘러브라이브’와 ‘뱅드림’의 인기 캐릭터들을 매장 인테리어와 음료 컵홀더, 자체 제작 굿즈에 무단으로 사용한 것으로 드러났다.</p>
+
+                    <p>특히 4호선의 테마 캐릭터로 알려진 특정 캐릭터의 이미지를 무단 복제하여 ‘따로나’라는 명칭과 결합해 판매함으로써, 효빈시와 글로벌 기업 간의 파트너십을 심각하게 훼손했다는 지적을 받고 있다.</p>
+
+                    <h3>■ “정식 로열티 한 푼 안 내”... 지적 재산권 침해 규모 막대</h3>
+                    <p>시 당국의 정밀 조사 결과, 해당 카페 업주는 캐릭터 사용에 따른 로열티를 단 한 차례도 지불하지 않았으며, 저작권자의 승인 없이는 제작이 금지된 래핑 상품들을 불법으로 양산하여 판매해 온 것으로 확인되었다.</p>
+
+                    <p>법조계 관계자는 “지자체가 공들여 쌓아온 글로벌 기업과의 신뢰 관계를 한 개인의 탐욕으로 망가뜨린 심각한 사건”이라며, “상표법 위반은 물론, 저작권법 위반에 따른 손해배상 청구 규모가 수억 원대에 이를 수 있다”고 경고했다.</p>
+
+                    <h3>■ 박효빈 시장 “효빈시의 대외 신인도 걸린 문제... 선처 없다”</h3>
+                    <p>사건을 보고받은 박효빈 효빈광역시장은 이번 사태를 단순한 개인의 일탈을 넘어선 ‘국제적 신뢰 훼손 사건’으로 규정하고 격노한 것으로 알려졌다. 박 시장은 시청 법무팀에 “효빈시가 선라이즈와 부시로드 등 글로벌 파트너사와 맺어온 정당한 계약 관계를 보호하고, 시민들이 정품 콘텐츠를 향유할 권리를 지켜야 한다”고 강조했다.</p>
+
+                    <p>이어 박 시장은 “글로벌 IP를 무단 도용해 우리 시의 이미지를 실추시킨 업주에게는 가능한 모든 법적 수단을 동원해 책임을 물을 것”이라며, “유관 기업들과 긴밀히 소통하여 효빈시의 대외 신인도에 타격이 없도록 사후 처리에 만전을 기하라”고 지시했다.</p>
+
+                    <h3>■ 시민들 “공식 카페인 줄 알았는데 배신감 느껴”</h3>
+                    <p>평소 4호선을 이용하며 캐릭터를 사랑해온 시민들의 반응도 냉담하다. 한 시민은 “공공기관에서 정식으로 운영하는 줄 알고 방문했는데, 위생도 엉망이고 저작권까지 훔친 ‘가짜’였다니 배신감이 크다”며 엄벌을 촉구했다.</p>
+
+                    <p>효빈광역시는 현재 선라이즈 및 부시로드 한국 지사 측에 해당 사실을 통보하고 공동 대응 방안을 논의 중이다. 시는 이번 사건을 계기로 시내에서 유통되는 모든 캐릭터 콜라보 상품에 대한 전수 조사를 실시하여 저작권 청정 도시로서의 위상을 회복하겠다는 방침이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">18,521</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "LoveLive_Forever", time: "방금 전", like: 16200, dislike: 14, isPunished: false,
+                                content: "효빈시가 러브라이브랑 뱅드림 측에 매년 정당하게 로열티 지불하고 공식 래핑 열차 운행해서 진짜 칭찬받고 있었는데, 짝퉁 카페 하나가 국제적 망신을 시키네요. 저작권 철저하게 보호해주시는 시장님 대처 진짜 시원합니다!",
+                                replies: [
+                                    { nick: "Idol_Fan", content: "맞아요 ㅠㅠ 공식 콜라보레이션인 줄 알고 가서 돈 쓴 사람들은 얼마나 배신감 들겠어요." },
+                                    { nick: "Protect_IP", content: "일본 본사에서도 이거 알면 진짜 황당해할 텐데, 시청 법무팀이 먼저 나서서 조치한다니 천만다행입니다." },
+                                    { nick: "Subway_Nerd", content: "역시 근본은 공식 4호선 래핑 전동차죠. 가짜 카페 따위 망해버려라." },
+                                    { nick: "LoveLive_Forever", nickClass: "text-[#0055aa] font-bold", content: "다들 공식 굿즈샵만 이용합시다! 불법 굿즈 아웃!!" }
+                                ]
+                            },
+                            {
+                                nick: "Bandori_Life", time: "5분 전", like: 14500, dislike: 11, isPunished: false,
+                                content: "뱅드림 캐릭터까지 도용했다고요?? 진짜 후안무치 끝판왕이네. 컵홀더 인쇄 상태도 엄청 조잡하더니 다 이유가 있었음 ㅋㅋㅋ 선라이즈랑 부시로드 법무팀 무서운 줄 모르네 저 사장. 평생 벌어서 합의금이나 내십쇼.",
+                                replies: [
+                                    { nick: "Kasumi_Love", content: "부시로드가 저작권 위반에 엄청 예민한데 ㅋㅋㅋ 인생 하드모드 즐기시네." },
+                                    { nick: "Quality_Check", content: "저도 카페 갔다가 일러스트 색감 다 깨져있어서 눈치챘습니다. 짝퉁은 티가 남 ㅉㅉ" },
+                                    { nick: "Legal_Hammer", content: "상표법 위반 + 저작권법 위반 + 식품위생법 위반... 형량 엄청 쎄겠네요." },
+                                    { nick: "Bandori_Life", nickClass: "text-[#0055aa] font-bold", content: "사이다 판결 나오길 기대합니다! 효빈시 일처리 나이스!" }
+                                ]
+                            },
+                            {
+                                nick: "Fake_Goods_Seller", time: "12분 전", like: 15, dislike: 41200, isPunished: true,
+                                content: "ㅋㅋ 멍청한 놈들 나는 단속 직전에 '따로나'에서 뱅드림 한정판 텀블러 100개 싹쓸이해 왔다 ㅋㅋㅋ 당근에 '판매 금지된 희귀 굿즈'라고 올리니까 호구들이 개당 15만 원에 사가네 ㅋㅋㅋ 돈 복사 개꿀~ 난 이거 팔아서 필리핀 간다 ㅅㄱ",
+                                replies: [
+                                    { nick: "Fact_Check_King", content: "불법 복제된 장물을 15만 원에 판다고 대놓고 자백하네;; 뇌가 어떻게 된 거 아님? 당장 당근마켓에 장물로 신고함." },
+                                    { nick: "Scam_Hunter", content: "희귀 굿즈가 아니라 그냥 '쓰레기 짝퉁'인데 그걸 속여서 파는 건 명백한 사기죄입니다. 감방 가기 딱 좋네요." },
+                                    { nick: "Fake_Goods_Seller", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 빙신들아 ㅋㅋㅋ 대포폰으로 가입해서 절대 못 잡아~ 이미 500만 원 입금 받아서 차명 계좌로 다 빼돌렸어 ㅋㅋㅋ" },
+                                    { nick: "Smart_Citizen", content: "차명 계좌 ㅋㅋㅋ 1분이면 동결되는 시대에 능지 처참하네 진짜 ㅋㅋㅋ" },
+                                    { nick: "Fake_Goods_Seller", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내 걱정 말고 니들 텅장이나 걱정해라 ㅋㅋㅋ 난 비행기 타러 간다~" },
+                                    { nick: "Hyobin_FSS_Cyber", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[경찰청 지능범죄수사대 및 저작권특별사법경찰] 저작권 침해 장물 유통 및 사기, 범죄수익은닉 정황을 인지하여 즉각 강제 수사에 착수했습니다. 금융결제원 공조로 귀하의 차명 계좌를 전면 동결(Freezing) 조치하였으며, 통신사 IP 및 기기 고유번호(MAC) 추적으로 거주지를 특정하여 형사들이 진입 중입니다. 필리핀 대신 구치소로 모시겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Law_Student", time: "18분 전", like: 10400, dislike: 8, isPunished: false,
+                                content: "법대생입니다. 지자체가 수억 원대 로열티 지불하고 맺은 글로벌 계약을 일개 개인 사업자가 도용한 거라서, 효빈시 입장에서도 일본 파트너사에게 위약금을 물어주거나 신뢰를 잃을 뻔한 중대 사안입니다. 박효빈 시장이 극대노한 게 당연해요. 저 업주는 민사로 영혼까지 털릴 겁니다.",
+                                replies: [
+                                    { nick: "Legal_Mind", content: "맞아요 국제 계약은 신뢰가 생명인데, 짝퉁 방치했으면 효빈시 전체가 욕먹을 뻔했죠." },
+                                    { nick: "Quick_Action", content: "시청 법무팀이 압수수색으로 빨리 쳐내서 다행이네요. 행정력 진짜 빠름 ㄷㄷ" },
+                                    { nick: "Bankruptcy_Ending", content: "선라이즈랑 부시로드 법무팀 연합해서 들어오면 저 사장 진짜 파산하겠네요 ㅋㅋㅋ" },
+                                    { nick: "Law_Student", nickClass: "text-[#0055aa] font-bold", content: "네 ㅋㅋㅋ 징벌적 손해배상까지 맞으면 3대째 갚아도 모자랄 겁니다. 인과응보죠." }
+                                ]
+                            },
+                            {
+                                nick: "No_Japan_IP", time: "25분 전", like: 21, dislike: 39800, isPunished: true,
+                                content: "시장이 미쳐가지고 일본 만화 쪼가리에 시민들 혈세로 로열티를 갖다 바치고 있었네!! 쪽발이들 배 불려주는 게 도시 행정이냐!! 내가 내일 4호선 차량기지 쳐들어가서 그 더러운 일본 캐릭터 래핑 열차에 휘발유 붓고 다 불태워버릴 거다!! 매국노 새끼들!!",
+                                replies: [
+                                    { nick: "Global_Standard", content: "문화 교류랑 정식 계약 맺는 게 매국이냐 ㅋㅋㅋ 방구석에서 혐오만 키운 꼰대 아저씨 티 좀 내지 마쇼." },
+                                    { nick: "Terror_Report", content: "차량기지 방화 테러 예고? 와 진짜 미친놈이네;; 대중교통 인프라 파괴는 국가보안법 위반 수준이다. 112 바로 신고함." },
+                                    { nick: "No_Japan_IP", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 매국노 앞잡이들아!! 내 차 트렁크에 이미 휘발유 20리터 실어놨다!! 내일 아침 4호선 전철은 화염에 휩싸일 거다!! 구국의 결단이다!!" },
+                                    { nick: "Scared_Citizen", content: "휘발유 20리터;; 와 진짜 돌았나 보다 빨리 잡아가세요 제발 ㅠㅠ" },
+                                    { nick: "No_Japan_IP", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "다 불태우고 나도 산화할 거다 ㅋㅋㅋ 일본 만화는 싹 다 소각해야 해!!" },
+                                    { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 국가 핵심 교통 인프라(차량기지) 및 다중이용시설에 대한 방화 및 대형 참사 테러 예고를 최고 수준의 안보 위협으로 간주하여 작전을 개시했습니다. 차량 GPS 및 IP 역추적으로 은신처를 완전히 포위하였으며 현 시간부로 무장 특공대원이 진입합니다. 인화물질 소지 시 즉각 물리력이 행사됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Citizen_A", time: "32분 전", like: 9100, dislike: 6, isPunished: false,
+                                content: "시장님의 빠른 대처 진짜 칭찬합니다. 이게 자칫하면 일본 뉴스에 '한국의 짝퉁 카페, 대놓고 일본 IP 도용' 이런 식으로 나가서 국가 망신당할 뻔한 거잖아요. 선제적으로 압수수색하고 법적 대응 발표해서 오히려 신뢰를 지켜낸 셈입니다.",
+                                replies: [
+                                    { nick: "Diplomacy_Win", content: "맞습니다. 문제 생겼을 때 덮으려고 안 하고 단호하게 잘라내는 게 진짜 글로벌 행정이죠." },
+                                    { nick: "Trust_Build", content: "부시로드나 선라이즈 쪽에서도 효빈시 일처리 깔끔하다고 오히려 더 좋아할 듯 ㅋㅋㅋ" },
+                                    { nick: "Fast_Admin", content: "민생사법경찰단 일처리 속도 무엇 ㄷㄷㄷ 효빈시는 공무원들이 일 진짜 잘하네요." },
+                                    { nick: "Hyobin_Citizen_A", nickClass: "text-[#0055aa] font-bold", content: "네! 이렇게 원리원칙대로 처리해주니 시민 입장에서도 행정력을 믿고 안심할 수 있습니다 ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Loyalist", time: "40분 전", like: 8, dislike: 42100, isPunished: true,
+                                content: "위대하신 윤대환 시장님이셨으면 소상공인 살리려고 눈감아 주셨을 텐데!! 좌파 빨갱이 박효빈 시장이 일본 기업 편들면서 힘없는 카페 사장을 탄압하고 있다!! 내일 시청 앞 광장에서 사제총기 들고 박효빈 시장 머리에 바람구멍을 내주겠다!! 애국 보수가 심판한다!!",
+                                replies: [
+                                    { nick: "Logic_Missing", content: "저작권 훔치고 썩은 재료로 장사하는 게 소상공인이냐 범죄자지 ㅋㅋㅋ 윤대환 지지자들 능지 수준 진짜 처참하다." },
+                                    { nick: "Call_112_Fast", content: "시장 암살 예고 ㄷㄷ 정치병에 미치면 살인 예고도 서슴지 않네. 당장 경찰청이랑 대테러센터에 캡처 넘겼습니다." },
+                                    { nick: "Yoon_Loyalist", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라!! 내일 시청 광장은 피바다가 될 것이다!! 쇠파이프 깎아서 만든 사제 총 장전 다 끝났다!! 멸공!!" },
+                                    { nick: "Citizen_Safety", content: "사제 총기 제작;; 진짜 위험한 놈이다;; 다들 내일 시청 근처 절대 가지 마세요 ㅠㅠ" },
+                                    { nick: "Yoon_Loyalist", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 지금 시청 맞은편 건물 옥상에 올라왔다 ㅋㅋㅋ 박효빈 차에서 내리기만 해봐라 바로 쏜다 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_SWAT_Sniper", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 광역자치단체장에 대한 불법 총기(사제총기) 제작 및 암살(Assassination) 테러 시도를 포착하여 즉각 1급 대테러 작전에 돌입했습니다. 현 시간부로 시청 주변 상가 옥상에 저격수(Sniper) 배치가 완료되었으며, 피의자의 미간에 레이저 포인터 조준이 완료되었습니다. 총기를 바닥에 버리고 양손을 올리십시오. 10초 내 불응 시 즉각 사살합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Official_Merch_Only", time: "48분 전", like: 8200, dislike: 5, isPunished: false,
+                                content: "어쩐지 '따로나' 카페에서 산 컵홀더 보니까 잉크 번져있고 그림 다 깨져있더라니 ㅋㅋㅋ 짝퉁이라서 그랬구나. 정식 계약 맺고 파는 콜라보 카페들은 퀄리티가 다릅니다. 다들 의심스러우면 효빈교통공사 공식 인증 마크 꼭 확인하세요!",
+                                replies: [
+                                    { nick: "Quality_Diff", content: "공식 굿즈는 홀로그램 스티커 붙어있습니다. 없는 건 다 짝퉁이니 사지 마세요!" },
+                                    { nick: "Health_Hazard", content: "짝퉁 컵홀더에서 나는 잉크 냄새 발암물질일 수도 있습니다. 위생도 최악이라니 진짜 소름 돋네요." },
+                                    { nick: "Support_Official", content: "정품을 사야 그 수익이 다시 우리 도시철도 환경 개선이랑 좋은 이벤트로 돌아옵니다. 불법충들 굶겨 죽입시다." },
+                                    { nick: "Official_Merch_Only", nickClass: "text-[#0055aa] font-bold", content: "맞습니다! 정당한 대가를 지불하고 문화를 즐기는 게 진정한 팬의 자세죠 ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "Dark_Hacker_99", time: "55분 전", like: 4, dislike: 38700, isPunished: true,
+                                content: "ㅋㅋ 병신 공무원들. 내가 방금 시청 법무팀 내부 서버망 해킹해서 러브라이브랑 뱅드림 공식 IP 원본 벡터 파일 싹 다 빼돌렸다 ㅋㅋㅋ 이거 중국 짝퉁 공장에 100비트코인 받고 넘길 거임 ㅋㅋㅋ 박효빈 시장 나한테 합의금 안 주면 다크웹에 무료로 뿌린다 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Tech_Expert", content: "망분리(Air-Gap) 되어있는 관공서 내부망을 방구석 찐따가 어떻게 해킹하냐 ㅋㅋㅋ 소설도 좀 말이 되게 써라." },
+                                    { nick: "Report_NIS", content: "국가 및 지자체 전산망 해킹 자백에 협박 범죄 ㄷㄷ 바로 국가정보원 사이버안보센터에 신고했습니다. 수고~" },
+                                    { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해봐라 빙신들아 ㅋㅋㅋ 토르 브라우저 3중 우회해서 절대 못 잡음~ 지금 중국 쪽에 파일 전송 99%다 ㅋㅋㅋ 내일이면 짝퉁 굿즈 수백만 개 풀릴 거다 ㅋㅋㅋ" },
+                                    { nick: "Mocking_Hacker", content: "중국에 전송 ㅋㅋㅋ 파일 하나 제대로 못 훔쳐서 허세 부리는 꼴 진짜 웃기네." },
+                                    { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "안 믿네? ㅋㅋㅋ 내일 뉴스에 '효빈시 기밀 파일 유출' 대문짝만하게 뜨면 내 이름 기억해라 ㅋㅋㅋ" },
+                                    { nick: "NIS_Cyber_Command", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 및 경찰청 사이버테러대응센터] 지자체 핵심 행정망 해킹 주장 및 기밀 유출 협박(사이버 테러)을 인지하여 최고 수준의 방첩 작전을 개시했습니다. 귀하가 침투했다고 착각한 서버는 당원이 구축한 '허니팟(추적용 가짜 서버)'이며, 딥웹 우회 경로 디코딩을 통해 피의자의 모텔 은신처를 특정했습니다. 현 시간부로 무장 특공대가 진입 중이니 컴퓨터에서 손을 떼십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Transit_Nerd", time: "1시간 2분 전", like: 12100, dislike: 7, isPunished: false,
+                                content: "공식 4호선 주황색 열차에 그려진 카스미 래핑은 매주 정기적으로 세차도 하고 공단에서 엄청 아껴서 관리합니다. 그런 퀄리티를 저딴 짝퉁 카페 따위가 어떻게 비벼요 ㅋㅋ 여러분 대중교통 이용하면서 진짜 래핑 열차 타세요 그게 근본입니다!",
+                                replies: [
+                                    { nick: "Train_Spotter", content: "맞아요 ㅋㅋㅋ 4호선 래핑 열차 지나갈 때마다 사진 찍는데 진짜 관리 상태 예술임 ㅠㅠ" },
+                                    { nick: "Darona_Love", content: "다로나 주임님이 불량식품 파는 놈들 다 단속해주길 ㅋㅋㅋ '불법 도용은... 안 됩니다!!'" },
+                                    { nick: "Hyobin_Metro", content: "효빈교통공사 일 잘하네요 진짜. 시민의 발이기도 하지만 문화 공간이기도 한 지하철 최고!" },
+                                    { nick: "Transit_Nerd", nickClass: "text-[#0055aa] font-bold", content: "이번 주말에도 4호선 타고 HAF 축제장 갑니다! 다들 공식 굿즈 입고 만나요!!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Cyber") || reply.nick.includes("Legal") || reply.nick.includes("Command") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function showToast(msg) {
+                            const toast = document.createElement('div');
+                            toast.innerText = msg;
+                            toast.className = 'toast-msg show';
+                            document.body.appendChild(toast);
+                            setTimeout(() => toast.remove(), 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">정품 굿즈는 공식 스토어에서!</div>
+                <div class="text-xs text-gray-500">
+                    효빈교통공사 공식 인증<br>
+                    콜라보레이션 팝업스토어 안내<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">위치 확인하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

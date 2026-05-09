@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[충격] 효빈교통공사 캐릭터 인기에 편승한 '따로나' 카페, 위생 최악 수준... 박효빈 시장 '격노' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        /* 명시적인 기본 라이트 모드 테마 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h3 { font-size: 19px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #0055aa; font-family: 'Noto Sans KR', sans-serif; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 하이라이트 댓글 스타일 (베스트/빌런) */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        /* 토스트 알림 (alert 대체) */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회/경제 > 사건/사고</div>
+                <h2 class="article-title">[충격] 효빈교통공사 캐릭터 인기에 편승한 '따로나' 카페, 위생 최악 수준... 박효빈 시장 '격노'</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">경제사회부 기자</span> (economy@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2025.07.08 10:30</span> <!-- 2025년 7월로 반영 -->
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈교통공사 공식 마스코트 '다로나' 교묘하게 비튼 '따로나'로 영업<br>유통기한 지난 오렌지 시럽 및 정체불명의 가루 발견... 시민 건강 위협<br>박효빈 시장 "공공 자산 도용 및 시민 기만행위, 무관용 원칙으로 엄단"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://placehold.co/800x450/eeeeee/333333?text=Fake+Cafe+Raided+by+Police" alt="민생사법경찰단이 적발한 짝퉁 카페 '따로나' 압수수색 현장" class="w-full h-auto border border-gray-200">
+                        <div class="img-caption">▲ 7일 효빈광역시 민생사법경찰단이 4호선 사가당역 인근에 위치한 무허가 짝퉁 카페 '따로나'를 압수수색하고 있다. 해당 업소에서는 유통기한이 수개월 지난 식자재가 대량으로 발견되었다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈타임즈 = 경제사회부] 효빈광역시의 상징이자 시민들의 사랑을 독차지하고 있는 도시철도 캐릭터의 인기를 악용한 무허가 ‘짝퉁’ 카페가 당국에 적발되어 큰 충격을 주고 있다. 특히 해당 업소는 기본적인 위생 수칙조차 지키지 않은 채 영업을 이어온 것으로 드러나 행정 당국의 강력한 조치가 이어지고 있다.</p>
+
+                    <h3>■ '다로나' 아닌 '따로나'... 교묘한 수법으로 시민 기만</h3>
+                    <p>지난 7일, 효빈광역시 민생사법경찰단은 4호선 사가당역 인근에서 영업 중이던 ‘따로나 콜라보 카페’를 전격 압수수색했다. 해당 업소는 효빈교통공사 4호선의 공식 마스코트인 ‘다로나’의 이름을 ‘따로나(DDARONA)’로 교묘하게 변조하여 공식 콜라보레이션 카페인 것처럼 위장 영업을 해왔다.</p>
+
+                    <p>현장에서 발견된 홍보물과 메뉴판은 공식 디자인 가이드라인을 무시한 채 조잡하게 제작되었으며, 특히 4호선 고유 상징색인 주황색(#FF5522) 대신 2호선의 초록색이나 3호선의 노란색을 혼용하는 등 노선 정체성을 심각하게 훼손한 것으로 확인되었다.</p>
+
+                    <h3>■ "쓰레기통 옆에서 주스 제조"... 차마 눈 뜨고 볼 수 없는 위생 상태</h3>
+                    <p>더욱 심각한 것은 해당 업소의 위생 상태였다. 단속 결과, 카페 내부 조리실에서는 유통기한이 수개월 지난 오렌지 농축액과 정체불명의 인공 색소 가루가 무더기로 발견되었다.</p>
+
+                    <p>단속에 참여한 관계자는 “음료 위에 올라가는 휘핑크림은 이미 변질되어 악취가 났으며, 식기 세척 시설조차 제대로 갖춰지지 않은 채 비위생적인 환경에서 음료가 제조되고 있었다”고 전했다. 실제로 일부 시민들 사이에서는 해당 카페 이용 후 배탈 증상을 호소하는 민원이 제기되기도 했다.</p>
+
+                    <h3>■ 박효빈 시장 "시민의 신뢰를 담보로 한 범죄... 뿌리 뽑겠다"</h3>
+                    <p>사건 보고를 받은 박효빈 효빈광역시장은 이례적으로 강도 높은 비판을 쏟아내며 즉각적인 시정명령과 고발 조치를 지시했다. 박 시장은 공식 브리핑을 통해 “효빈광역시의 공공 자산인 도시철도 캐릭터를 무단 도용하여 사익을 취하고, 심지어 불량 식품으로 시민의 건강을 위협한 것은 용납할 수 없는 범죄”라고 규정했다.</p>
+
+                    <p>이어 박 시장은 “이름 한 글자를 바꿔 법망을 피할 수 있다고 생각했다면 큰 오산”이라며, “이번 사건을 계기로 시내 전역의 무허가 캐릭터 도용 업소를 전수 조사하고, 지적 재산권 침해 및 식품위생법 위반에 대해 무관용 원칙으로 대응할 것”이라고 천명했다.</p>
+
+                    <h3>■ 정치권 일각의 '황당 옹호' 논란... 시민들은 "어이없다" 반응</h3>
+                    <p>한편, 이번 사건을 두고 시장 후보 출신인 윤재훈 씨가 본인의 SNS를 통해 “소상공인의 창의적인 변용을 박 시장이 공권력으로 탄압하고 있다”며 옹호 발언을 내뱉어 논란이 일고 있다.</p>
+
+                    <p>그러나 대다수의 효빈시민은 “위생 상태가 최악인 짝퉁 매장을 옹호하는 저의가 무엇인지 의심스럽다”, “4호선 상징색도 구분 못 하는 사람이 정치를 논하느냐”며 냉소적인 반응을 보이고 있다.</p>
+
+                    <p>효빈광역시는 해당 업주에 대해 영업장 폐쇄 명령과 함께 상표법 위반 및 식품위생법 위반 혐의로 검찰에 기소 의견으로 송치할 예정이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">14,208</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Orange_Darona_Fan", time: "방금 전", like: 15200, dislike: 14, isPunished: false,
+                                content: "헐 4호선 사가당역 근처면 제가 맨날 출퇴근하는 곳인데;; 따로나 ㅋㅋㅋ 이름부터 킹받네요. 주황색 대신 초록색 쓴 거 보니까 덕잘알도 아닌 사기꾼들이 분명함.",
+                                replies: [
+                                    { nick: "Line4_Love", content: "노선 색깔 틀린 건 진짜 선 넘었죠 ㅋㅋ 기본 조사가 1도 안 된 거임." },
+                                    { nick: "Hyobin_Citizen", content: "위생이 최악인 게 제일 화납니다. 먹는 걸로 장난을 쳐?" },
+                                    { nick: "Transit_Nerd", content: "우리 다로나 주임님 명예훼손 ㅠㅠ 짝퉁이라니 불쾌합니다." },
+                                    { nick: "Orange_Darona_Fan", nickClass: "text-[#0055aa] font-bold", content: "저런 곳은 영업정지가 답입니다. 효빈시 열일 응원합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Health_First_99", time: "5분 전", like: 12850, dislike: 8, isPunished: false,
+                                content: "배탈 나신 분들 너무 안타깝네요 ㅠㅠ 유통기한 수개월 지난 시럽을 쓰다니 양심이 있는 건가요? 박효빈 시장님 진짜 사이다 행정 감사합니다. 무관용 원칙 무조건 지지합니다!",
+                                replies: [
+                                    { nick: "Food_Safety", content: "먹는 걸로 장난치는 놈들은 가중처벌 해야 함. 애들도 많이 먹었을 텐데 ㅠㅠ" },
+                                    { nick: "Mayor_Fan", content: "시장님 격노하실 만하죠. 시민들 건강이 직결된 문제인데." },
+                                    { nick: "Law_Student", content: "식약처 고발까지 들어갔으니 감방 가겠네요. 벌금도 엄청 나올 겁니다." },
+                                    { nick: "Health_First_99", nickClass: "text-[#0055aa] font-bold", content: "효빈시 민생사법경찰단 열일하셨습니다! 앞으로도 꼼꼼한 단속 부탁드려요." }
+                                ]
+                            },
+                            {
+                                nick: "Fake_Cafe_Shield", time: "12분 전", like: 15, dislike: 38400, isPunished: true,
+                                content: "야 시럽 며칠 지난 거 먹는다고 안 죽어!! 깐깐하게 굴지 마라 오타쿠 새끼들아!! 내일 진짜 다로나 공식 팝업스토어 커피 머신에 쥐약 타서 니들 다 배 아파서 뒤지게 만들어줄 테니까 각오해라 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Fact_Check_Pro", content: "며칠이 아니라 수개월 지났다잖아 난독증아. 글 좀 읽어라 ㅉㅉ" },
+                                    { nick: "Citizen_Guard", content: "쥐약 테러 예고? 이거 완전 미친놈이네 바로 캡처해서 넘긴다." },
+                                    { nick: "Fake_Cafe_Shield", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 ㅋㅋㅋ 내일 팝업스토어 커피 마시는 놈들 다 병원 실려갈 거다 ㅋㅋㅋ 팝업 다 망하게 해주마!!" },
+                                    { nick: "Watchful_Eye", content: "진짜 살인 예고네;; 112 긴급 신고 넣었음. 행사장에 경찰들 쫙 깔리겠네." },
+                                    { nick: "Hyobin_Violent_Crime", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 강력계] 다중이용시설(팝업스토어) 음용수 대상 독극물 투입(살인미수) 예고를 인지하여 비상 대응 중입니다. IP 추적으로 거주지를 특정하여 형사들이 출동했습니다. 유치장에서 뵙겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "18분 전", like: 10400, dislike: 11, isPunished: false,
+                                content: "와 중에 윤재훈 저 인간은 또 숟가락 얹으면서 소상공인 탄압 드립 치고 있네 ㅋㅋㅋ 위생 엉망인 짝퉁 매장 쉴드 치는 게 정치인이 할 짓이냐? 시장 떨어지고 나서 진짜 뇌가 어떻게 된 듯.",
+                                replies: [
+                                    { nick: "Yoon_Hater", content: "윤재훈은 그냥 박효빈 시장이 하는 거면 다 반대하는 병에 걸린 게 확실함." },
+                                    { nick: "Imagine_Worst", content: "저런 사람이 시장 됐으면 지금쯤 효빈시 짝퉁 천국 됐을 듯 ㅋㅋㅋ 아찔하네." },
+                                    { nick: "Real_Merchant", content: "시민 건강 위협하는 게 무슨 소상공인이야 범죄자지. 소상공인 먹칠하지 마라." },
+                                    { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "윤재훈 쉴드 치는 꼬라지 보니까 짝퉁 카페 사장이랑 아는 사이 아님? 계좌 추적 조사해봐야 함." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_True_Patriot", time: "25분 전", like: 8, dislike: 41200, isPunished: true,
+                                content: "우리 윤재훈 대표님 말씀이 백번 천번 맞다!! 좌파 시장 박효빈이 영세 상인들 피를 빨아먹고 있다!! 내일 시청 앞 광장에서 사제 총기 난사해서 박효빈이랑 그 하수인들 싹 다 죽여버릴 거다!! 애국 보수의 맛을 봐라!!",
+                                replies: [
+                                    { nick: "Tired_of_This", content: "또 윤대환, 윤재훈 잔당이네;; 사제 총기 난사 예고라니 미친 거 아님?" },
+                                    { nick: "Call_Police", content: "정치에 미치면 사리 분별이 안 되나 보네. 바로 112 대테러센터에 신고함." },
+                                    { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해봐라 빨갱이들아 ㅋㅋㅋ 경찰 오기 전에 시청 광장 피바다로 만들 거다!! 멸공!!" },
+                                    { nick: "Scared_Citizen", content: "와 진짜 돌았네;; 내일 시청 근처 절대 가지 말아야지. 너무 무섭다." },
+                                    { nick: "Hyobin_SWAT_Sniper", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 관공서(시청) 대상 총기 난동 및 암살 테러 예고를 국가 안보 위협으로 간주하여 작전을 개시했습니다. 귀하의 은신처를 포위하였고 저격수 배치가 완료되었습니다. 10초 내 투항하십시오. 불응 시 사살될 수 있습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Line4_Darona_Fan", time: "32분 전", like: 8900, dislike: 5, isPunished: false,
+                                content: "4호선 주황색 캐릭터한테 초록색이랑 노란색을 썼다고? ㅋㅋㅋㅋ 짝퉁을 만들 거면 조사라도 제대로 하든가. 덕후들 눈이 얼마나 정확한데 색깔 배합 틀린 순간부터 그냥 동네방네 '나 가짜요' 광고하고 다닌 거임 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Color_Blind", content: "초록색은 2호선 하루빈이고 노란색은 3호선 사아야잖아 ㅋㅋㅋ 멍청한 사기꾼들." },
+                                    { nick: "Otaku_Power", content: "덕심을 무시한 죄, 달게 받아라 ㅋㅋㅋ 색깔 틀린 건 진짜 웃음벨이네." },
+                                    { nick: "Total_Mess", content: "위생도 엉망인데 색깔까지 엉망 ㅋㅋㅋ 총체적 난국이네요. 사기 치려면 머리라도 좋든가." },
+                                    { nick: "Line4_Darona_Fan", nickClass: "text-[#0055aa] font-bold", content: "다로나 주임님이 '불량 식품 판매는... 안 됩니다!' 하면서 단속 나갔을 듯 ㅋㅋㅋ 속 시원함!" }
+                                ]
+                            },
+                            {
+                                nick: "Smart_Reseller_1", time: "40분 전", like: 5, dislike: 38900, isPunished: true,
+                                content: "ㅋㅋㅋ '따로나' 짝퉁 텀블러 폐기 직전에 내가 한 트럭 빼돌렸다. 당근마켓에 '다로나 한정판 레어템'이라고 올리니까 벌써 50만 원에 사겠다는 호구들 줄 섬 ㅋㅋㅋ 돈복사 개꿀딱~ 난 돈 벌고 해외로 튄다 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Scam_Hunter", content: "짝퉁을 진품으로 속여 파는 건 명백한 사기죄입니다. 제정신이세요? 진짜 악질이네." },
+                                    { nick: "Warning_All", content: "여러분 당근에 올라온 거 절대 사지 마세요! 다 가짜입니다! 환경호르몬 범벅일 듯." },
+                                    { nick: "Smart_Reseller_1", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "대포통장이라 신고해도 절대 못 잡음 ㅅㄱ ㅋㅋㅋ 호구들 돈 쪽쪽 빨아먹고 마카오 갈 거다~ 잘 있어라 ㅋㅋㅋ" },
+                                    { nick: "Mocking_Scammer", content: "마카오 타령하는 사기꾼들 특: 여권도 없어서 절대 못 감 ㅋㅋㅋ 능지 박살났네." },
+                                    { nick: "Hyobin_FSS_Cyber", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈경찰서 지능범죄수사대 및 효빈교통공사 법무팀] 상표법 위반, 사기 및 장물 취득 혐의로 즉각 수사에 착수했습니다. 금융결제원 공조로 차명 계좌를 동결 조치했으며, 짝퉁 텀블러 보관 창고를 특정했습니다. 마카오가 아닌 효빈구치소로 출국 준비하시기 바랍니다." }
+                                ]
+                            },
+                            {
+                                nick: "Eco_Citizen_99", time: "48분 전", like: 7150, dislike: 6, isPunished: false,
+                                content: "이런 짝퉁 업체들 때문에 정식으로 라이선스 계약 맺고 성실하게 장사하는 소상공인들까지 피해 보는 겁니다. 효빈시청이 전수 조사한다고 하니 이번 기회에 불법 도용 업체들 싹 다 뿌리 뽑혔으면 좋겠네요!",
+                                replies: [
+                                    { nick: "True_Merchant", content: "맞습니다. 정식 콜라보 카페들은 매뉴얼 빡세서 위생 엄청 철저해요. 저런 미꾸라지 한 마리가 물 다 흐림." },
+                                    { nick: "Protect_IP", content: "지적 재산권 훔쳐 쓰는 도둑놈들은 망해야 함. 벌금 세게 매겨야 정신 차리죠." },
+                                    { nick: "Good_Admin", content: "전수조사 진짜 사이다네요. 시 행정력 든든합니다. 짝퉁들 다 덜덜 떨고 있을 듯." },
+                                    { nick: "Eco_Citizen_99", nickClass: "text-[#0055aa] font-bold", content: "정직하게 장사하는 분들만 대우받는 사회가 되길! 효빈시 응원합니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Otaku_Club", time: "55분 전", like: 9, dislike: 45200, isPunished: true,
+                                content: "아니 애초에 지하철 마스코트 따위에 열광하는 씹덕 새끼들이 문제 아니냐? 니들 때문에 저런 짝퉁이 생기는 거잖아! 내일 사가당역 4호선 스크린도어에 망치 들고 가서 싹 다 깨부수고 캐릭터 포스터 다 불태워버릴 거다!! 오타쿠들 싹 다 뒤져라!!",
+                                replies: [
+                                    { nick: "Logic_Missing", content: "피해자 탓 오지네;; 범죄자가 문제지 귀여운 캐릭터 좋아하는 게 무슨 죄임? 논리 수준 진짜 ㅋㅋㅋ" },
+                                    { nick: "Crazy_Terrorist", content: "지하철역 스크린도어를 부순다고? 진짜 미친 놈이네 이거;; 바로 철도경찰에 신고함." },
+                                    { nick: "Anti_Otaku_Club", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 ㅋㅋㅋ 내가 망치로 스크린도어 깨고 역사에 불지르면 니들 기차 탈 생각 마라 ㅋㅋㅋ 오타쿠 박멸!!" },
+                                    { nick: "Jail_Time", content: "철도 시설물 파손 및 방화 예고는 진짜 징역 세게 맞는데 능지 처참하네. 인생 하드모드 즐기시길." },
+                                    { nick: "Hyobin_Railway_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 지하철경찰대 및 경비과] 도시철도 운행 시설물(스크린도어) 파손 및 방화 테러 예고를 확인, 즉각 비상 체제로 전환했습니다. IP 역추적으로 자택을 특정하여 강력팀이 진입 중입니다. 철도안전법 위반으로 엄중 처벌됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Love_Forever", time: "1시간 전", like: 6200, dislike: 4, isPunished: false,
+                                content: "박효빈 시장님 진짜 열일하시네요. 짝퉁 단속부터 위생 불량 고발까지, 시민들 안전과 권리 지켜주셔서 든든합니다! 다음 달 HAF 2025 다가오면서 이런 얌체족들 많아질 텐데, 싹 다 잡아들여서 클린한 축제 됐으면 좋겠습니다.",
+                                replies: [
+                                    { nick: "Fast_Admin", content: "시장님 행정 속도가 진짜 LTE 급임 ㅋㅋㅋ 브리핑하는 거 보니까 속이 다 시원함." },
+                                    { nick: "Food_Safety_Win", content: "먹는 걸로 장난치는 놈들은 다시는 장사 못하게 영업 정지 쎄게 때려야 해요." },
+                                    { nick: "Protect_Symbol", content: "효빈시의 상징을 지키려는 의지가 돋보이네요. 레일루미네 건들면 가만 안 둠!" },
+                                    { nick: "Hyobin_Love_Forever", nickClass: "text-[#0055aa] font-bold", content: "맞습니다! 건강하고 안전한 효빈시, HAF 2025도 성공적으로 마무리되길 화이팅입니다!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("Police") || reply.nick.includes("SWAT") || reply.nick.includes("Legal") || reply.nick.includes("Cyber") || reply.nick.includes("Crime") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function showToast(msg) {
+                            const toast = document.createElement('div');
+                            toast.innerText = msg;
+                            toast.className = 'toast-msg show';
+                            document.body.appendChild(toast);
+                            setTimeout(() => toast.remove(), 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">정품 굿즈는 공식 스토어에서!</div>
+                <div class="text-xs text-gray-500">
+                    효빈교통공사 공식 인증<br>
+                    레일루미네 팝업스토어 안내<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">위치 확인하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

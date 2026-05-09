@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[집중취재] 윤재훈 "따로나 카페는 창조적 예술"... 시청 앞 '기괴한' 옹호 시위 논란 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        /* 명시적인 기본 라이트 모드 테마 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        /* 기사 본문 스타일 */
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h3 { font-size: 19px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #0055aa; font-family: 'Noto Sans KR', sans-serif; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 하이라이트 댓글 스타일 (베스트/빌런) */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        /* 토스트 알림 (alert 대체) */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">정치/사회 > 집중취재</div>
+                <h2 class="article-title">[집중취재] 윤재훈 "따로나 카페는 창조적 예술"... 시청 앞 '기괴한' 옹호 시위 논란</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">정치사회부 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.09 10:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">"선라이즈·부시로드 개입은 외세의 문화 침탈" 황당 주장... 시민들 '경악'<br>4호선 주황색 고집은 '박효빈식 색깔 파시즘'... 초록색 주스 원샷 퍼포먼스<br>시민들 "위생 불량 짝퉁 옹호하는 저의 의심스러워... 정치적 자살행위"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://placehold.co/800x450/eeeeee/333333?text=Yoon+Jaehoon+Protest" alt="시청 앞에서 '따로나 카페 살리기 결사대'와 함께 시위 중인 윤재훈 씨" class="w-full h-auto border border-gray-200">
+                        <div class="img-caption">▲ 지난 9일 오전, 윤재훈 전 시장 후보가 효빈시청 앞 광장에서 '따로나 카페' 단속에 항의하는 기괴한 퍼포먼스를 벌이고 있다. 그는 부패한 초록색 시럽 주스를 원샷하며 저작권 침해와 식품위생법 위반을 옹호해 시민들의 빈축을 샀다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>[효빈타임즈 = 정치사회부] 효빈광역시 4호선 마스코트 도용 및 위생 불량으로 적발된 '따로나 카페' 사건이 정쟁으로 비화하고 있다. 시장 후보 출신인 윤재훈 씨와 그 추종 세력이 이번 행정처분을 '정치적 탄압'으로 규정하며 연일 황당한 시위를 이어가고 있기 때문이다.</p>
+
+                    <h3>■ "이름 한 끗 차이가 창조성"... 저작권법 무시하는 궤변 쏟아내</h3>
+                    <p>지난 9일 오전, 윤재훈 씨는 효빈시청 앞 광장에서 이른바 '따로나 카페 살리기 결사대'와 함께 긴급 기자회견을 가졌다. 이 자리에서 윤 씨는 "다로나를 따로나라고 부르는 것은 언어의 유희이자 서민들의 해학"이라며, "이를 상표권 침해로 모는 박효빈 시장의 태도는 창작의 싹을 틔우지 못하게 하는 독재적 발상"이라고 주장했다.</p>
+
+                    <p>특히 그는 선라이즈와 부시로드 등 글로벌 IP 홀더들의 엄단 촉구에 대해 "거대 외세 자본을 끌어들여 영세 상인을 죽이려는 매국적 행위"라는 극단적인 표현을 사용하며, 이번 사건을 '문화 주권 수호'의 문제로 비약시켰다.</p>
+
+                    <h3>■ "색깔 선택은 개인의 자유"... 초록색 4호선 주스 마시기 퍼포먼스</h3>
+                    <p>시위 현장에서는 더욱 기괴한 장면이 연출되었다. 윤 씨는 4호선의 상징색인 주황색(#FF5522)을 부정하며, 짝퉁 매장에서 사용했던 초록색과 노란색이 섞인 음료를 들어 보였다.</p>
+
+                    <p>그는 "박효빈 시장이 4호선은 반드시 주황색이어야 한다고 강요하는 것은 시민의 시각적 자유를 억압하는 '색깔 파시즘'"이라며, "내 눈에는 이 초록색 주스가 가장 완벽한 4호선의 주황색으로 보인다"고 소리친 뒤 해당 음료를 단숨에 들이키는 퍼포먼스를 선보였다. 그러나 해당 음료는 전날 단속에서 적발된 비위생적 재료로 만들어진 것으로 알려져 현장 취재진을 당혹게 했다.</p>
+
+                    <h3>■ 유통기한 경과 재료 옹호... "발효와 부패 구별 못 하나"</h3>
+                    <p>위생 문제에 대한 윤 씨의 옹호 역시 시민들의 공분을 사고 있다. 그는 "우리 조상들은 장류를 숙성시켜 먹었다"며, "유통기한이 조금 지난 시럽을 '부패'라고 단정 짓는 것은 발효 식품에 대한 무지에서 비롯된 것"이라고 업주의 '빈티지 숙성' 주장을 전폭적으로 지지했다.</p>
+
+                    <p>이에 대해 시 보건환경연구원 관계자는 "식중독균이 검출된 변질된 시럽을 '발효'라고 주장하는 것은 의학적·과학적 상식을 완전히 무시하는 위험한 발언"이라며 강하게 반박했다.</p>
+
+                    <h3>■ 시민사회 냉소... "2.2% 지지율의 이유를 스스로 증명"</h3>
+                    <p>윤재훈계의 이러한 행보에 대해 효빈시민들의 반응은 냉담하다 못해 처참한 수준이다. 시청 앞을 지나던 한 시민은 "철도망을 망가뜨리려 했던 전 시장 아들이 이제는 철도 마스코트 짝퉁까지 옹호하고 있다"며 "법과 상식을 무시하는 저런 태도가 왜 지난 선거에서 낙선했는지를 여실히 보여준다"고 일갈했다.</p>
+
+                    <p>박효빈 시장은 이번 시위에 대해 별도의 공식 입장을 내지 않았으나, 시청 법무팀 관계자는 "정치적 소음과 관계없이 법적 절차는 엄정하게 진행될 것"이라며 "시위 과정에서 발생한 허위사실 유포 및 공무집행 방해 행위에 대해서도 채증을 완료했다"고 밝혀 추가적인 법적 조치를 암시했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">19,531</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_Citizen_A", time: "방금 전", like: 18200, dislike: 14, isPunished: false,
+                                content: "아니 저게 진짜 정치인 입에서 나올 소린가요? 유통기한 지난 썩은 시럽을 빈티지 숙성이랰ㅋㅋㅋㅋ 게다가 초록색 주스 원샷 퍼포먼스라니... 저분 내일 배탈 나서 응급실 실려갈 듯;; 진짜 정치적 자살행위를 실시간으로 보네요.",
+                                replies: [
+                                    { nick: "Doctor_Kim", content: "현직 의사입니다. 식중독균 득실거리는 음료를 원샷 하셨다니 조만간 응급실에서 뵙겠네요. 장염 조심하십시오." },
+                                    { nick: "Logic_Missing", content: "썩은 거랑 발효도 구분 못하는 사람이 무슨 정치를 하겠다고 ㅋㅋㅋ 능지 수준 실화냐" },
+                                    { nick: "Color_Blind", content: "주황색인데 자기 눈엔 초록색으로 보인대 ㅋㅋㅋ 저거 완전 우기기의 끝판왕 아님?" },
+                                    { nick: "Hyobin_Citizen_A", nickClass: "text-[#0055aa] font-bold", content: "진짜 기안84 만화에 나오는 기행을 현실에서 보는 느낌이네요 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "5분 전", like: 15400, dislike: 8, isPunished: false,
+                                content: "거대 외세 자본? 매국? ㅋㅋㅋ 선라이즈랑 부시로드가 정당한 권리 행사하는 걸 매국으로 몰아가는 프레임 오지네. 짝퉁 만들어서 남의 저작권 훔쳐먹는 도둑놈들 옹호하는 게 매국이지 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Global_Standard", content: "국제 사회에서 저작권 무시하면 미개국 소리 듣는 건데, 외교 감각 제로네요 진짜." },
+                                    { nick: "LoveLive_Fan", content: "남의 IP 훔쳐 쓴 범죄자를 서민으로 둔갑시키는 감성팔이 역겹다 ㅉㅉ" },
+                                    { nick: "Lawyer_Lee", content: "저 논리대로라면 짝퉁 명품 팔다 걸려도 '서민들의 해학'이라고 우기면 무죄인가요? 법치주의를 부정하는 발언입니다." },
+                                    { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "저런 사람이 시장 됐으면 지금쯤 효빈시는 짝퉁 천국 됐을 겁니다. 끔찍하네요." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_True_Hero", time: "12분 전", like: 15, dislike: 38400, isPunished: true,
+                                content: "우리 위대한 윤재훈 대표님 말씀이 백번 천번 맞다!! 좌파 오타쿠 시장 박효빈이 일본놈들 앞잡이 노릇이나 하고!! 우리 서민 상인 탄압하는 시청에 내일 화염병 10개 던지러 갈 거다!! 애국 보수의 맛을 보여주마!!",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "아저씨, 범죄자 옹호하는 게 언제부터 애국이 됐나요? 그리고 화염병 테러 예고? 이거 찐 범죄입니다." },
+                                    { nick: "Report_Master", content: "화염병 테러 예고로 경찰청 대테러센터에 캡처해서 바로 넘겼습니다. 빵집 사장님이랑 같이 깜빵에서 빈티지 숙성이나 하세요." },
+                                    { nick: "Yoon_True_Hero", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 매국노들아!! 내일 아침 시청 앞이 불바다가 될 것이다!! 멸공!!" },
+                                    { nick: "Crazy_Terrorist", content: "와 진짜 이 집단은 말이 안 통하네;; 화염병 10개면 살인 예고 아님?" },
+                                    { nick: "Yoon_True_Hero", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "지금 빈 소주병에 휘발유 다 채웠다 ㅋㅋㅋ 박효빈 차에다 던져버릴 테니까 딱 기다려 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Police_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 관공서(시청) 및 광역단체장을 겨냥한 화염병 투척 및 방화 테러 예고를 국가 최상위 안보 위협으로 간주하여 비상 작전을 개시했습니다. 현 시간부로 IP 역추적을 통해 은신처가 완전히 포위되었으며, 무장 특공대가 진입 중입니다. 인화물질 소지 확인 시 물리력이 행사됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Line4_Darona_Love", time: "18분 전", like: 12100, dislike: 11, isPunished: false,
+                                content: "우리 다로나 주임님 명예훼손 멈춰!! ㅠㅠ 4호선 주황색이 색깔 파시즘이면, 2호선 하루빈이 초록색인 것도 파시즘이냐? 설정 붕괴시켜놓고 예술 운운하는 거 진짜 킹받네... 다로나가 '설정 붕괴는... 안 됩니다!!' 하고 외쳤으면 좋겠다 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Orange_Train", content: "맞아요 ㅋㅋㅋ 4호선은 귤색(주황)이 진리인데 초록색 시럽 타놓고 예술이래 ㅋㅋㅋ" },
+                                    { nick: "Darona_Meme", content: "다로나: '유통기한 지난 시럽은... 안 됩니다!!' ㅋㅋㅋㅋ 자동음성지원" },
+                                    { nick: "Color_Concept", content: "캐릭터 아이덴티티를 무시한 건 그냥 조사가 안 된 거면서 혓바닥이 기네요 진짜 ㅋㅋㅋ" },
+                                    { nick: "Line4_Darona_Love", nickClass: "text-[#0055aa] font-bold", content: "다로나 주임님이 불량식품 단속반으로 나서야 할 듯 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Dark_Hacker_99", time: "25분 전", like: 8, dislike: 41200, isPunished: true,
+                                content: "ㅋㅋ 좆밥 시청 공무원들. 윤재훈 대표님 건드린 댓가로 오늘 밤에 내가 시청 법무팀 내부망 서버 해킹해서 '따로나 카페' 소송 자료 싹 다 삭제해버린다 ㅋㅋㅋ 덤으로 시장 개인정보 다크웹에 팔아넘길 거니까 수고해라 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Security_Pro", content: "망분리(Air-Gap) 되어있는 시청 내부망을 방구석 키보드 워리어가 어떻게 해킹하냐 ㅋㅋㅋ 소설 좀 작작 써라." },
+                                    { nick: "Cyber_Police_Call", content: "국가 전산망 해킹 예고 및 개인정보 유출 협박. 바로 국가정보원 사이버안보센터에 신고 꽂았습니다." },
+                                    { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해봐라 빙신들아 ㅋㅋㅋ 토르 브라우저 3중 우회해서 절대 못 잡아~ 지금 시청 서버 침투율 99%다 ㅋㅋㅋ 내일 아침 대참사 기대해라 ㅋㅋㅋ" },
+                                    { nick: "Tech_Nerd", content: "VPN 맹신하는 애들 특: 통신사 로그 까면 본가 주소 1초만에 다 털리는 줄 모름 ㅋㅋㅋ 능지 박살" },
+                                    { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "안 믿네? ㅋㅋㅋ 내일 뉴스에 '효빈시 기밀 파일 유출' 대문짝만하게 뜨면 내 이름 기억해라 ㅋㅋㅋ" },
+                                    { nick: "NIS_Cyber_Command", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 및 경찰청 사이버테러대응센터] 지자체 핵심 행정망 해킹 주장 및 기밀 유출 협박(사이버 테러)을 인지하여 최고 수준의 방첩 작전을 개시했습니다. 귀하가 침투했다고 착각한 서버는 당원이 구축한 '허니팟(추적용 가짜 서버)'이며, 딥웹 우회 경로 디코딩을 통해 피의자의 모텔 은신처를 특정했습니다. 현 시간부로 무장 특공대가 진입 중이니 컴퓨터에서 손을 떼십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Food_Safety_Win", time: "32분 전", like: 10400, dislike: 6, isPunished: false,
+                                content: "썩은 시럽을 빈티지 숙성이라고 우기는 거 보고 빵 터졌네 ㅋㅋㅋ 저 논리대로면 유통기한 10년 지난 우유는 블루치즈고, 썩은 고기는 드라이에이징이냐? ㅋㅋㅋ 저런 인간이 시장 후보였다는 게 효빈시 최대의 미스터리임.",
+                                replies: [
+                                    { nick: "Vintage_Sirup", content: "아 ㅋㅋㅋ 블루치즈 드립 뿜었네 ㅋㅋㅋ 빈티지 풍미 오지죠?" },
+                                    { nick: "Doctor_Kim", content: "장염 걸려서 응급실 실려 오면 빈티지 숙성균이라고 진단서 써드려야 할 듯 ㅋㅋㅋ" },
+                                    { nick: "Election_Mystery", content: "저런 논리로 어떻게 지지율 2.2%나 받은 건지 진짜 미스테리임... 0.2%도 아까움." },
+                                    { nick: "Food_Safety_Win", nickClass: "text-[#0055aa] font-bold", content: "박효빈 시장님이 당선된 게 진짜 천운입니다 ㅋㅋㅋ 저 사람 당선됐으면 효빈시민 다 식중독 걸렸을 듯" }
+                                ]
+                            },
+                            {
+                                nick: "Fake_Goods_Seller", time: "40분 전", like: 5, dislike: 38900, isPunished: true,
+                                content: "ㅋㅋㅋ 멍청한 놈들 나는 시위할 때 몰래 뒤에서 '따로나' 희귀 짝퉁 굿즈 당근마켓에 비싸게 싹 다 팔고 이미 코인으로 세탁 완료했다~ ㅋㅋㅋ 윤재훈이 어그로 끌어줘서 굿즈 가격 떡상함 ㅋㅋㅋ 난 이거 팔아서 마카오 뜬다 ㅅㄱ",
+                                replies: [
+                                    { nick: "Scam_Hunter", content: "불법 복제된 장물 팔고 자금 세탁 자백까지 ㅋㅋㅋ 뇌가 어떻게 된 거 아님? 당장 당근마켓에 장물로 신고함." },
+                                    { nick: "Smart_Citizen", content: "대포통장 써도 1분이면 다 잡히는 시대에 능지 처참하네 진짜 ㅋㅋㅋ" },
+                                    { nick: "Fake_Goods_Seller", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 빙신들아 ㅋㅋㅋ 대포폰으로 가입해서 절대 못 잡아~ 이미 500만 원 입금 받아서 차명 계좌로 다 빼돌렸어 ㅋㅋㅋ" },
+                                    { nick: "Tax_Report", content: "당장 국세청이랑 금감원에 신고 넣었습니다. 마카오가 아니라 감방이나 가시길." },
+                                    { nick: "Fake_Goods_Seller", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내 걱정 말고 니들 텅장이나 걱정해라 ㅋㅋㅋ 난 비행기 타러 간다~" },
+                                    { nick: "Hyobin_FSS_Cyber", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[경찰청 지능범죄수사대 및 저작권특별사법경찰] 저작권 침해 장물 유통 및 사기, 범죄수익은닉 정황을 인지하여 즉각 강제 수사에 착수했습니다. 금융결제원 공조로 귀하의 차명 계좌를 전면 동결(Freezing) 조치하였으며, 통신사 IP 및 기기 고유번호(MAC) 추적으로 거주지를 특정하여 형사들이 진입 중입니다. 마카오 대신 구치소로 모시겠습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Lawyer_Lee", time: "48분 전", like: 8200, dislike: 4, isPunished: false,
+                                content: "현직 변호사입니다. 상표권 침해에 대해 '언어의 유희'라고 항변하는 건 재판부에서 반성의 기미가 없는 것으로 간주해 가중처벌 대상입니다. 글로벌 IP 홀더들이 본사 차원에서 민사 소송 들어오면, 저 카페 업주는 파산을 넘어 영혼까지 털릴 겁니다. 윤 씨가 업주를 도와주는 게 아니라 사지로 몰아넣고 있네요.",
+                                replies: [
+                                    { nick: "Legal_Mind", content: "맞아요 ㅋㅋㅋ 재판장 앞에서 '빈티지 숙성' 드립 치면 판사님 극대노 하실 듯 ㅋㅋㅋ" },
+                                    { nick: "Bankruptcy_Ending", content: "징벌적 손해배상까지 맞으면 진짜 3대째 갚아도 모자랄 겁니다. 인과응보죠." },
+                                    { nick: "Fake_Friend", content: "윤재훈은 그냥 자기 정치적 입지 다지려고 카페 업주 장기말로 쓰는 거임. 진짜 악질." },
+                                    { nick: "Lawyer_Lee", nickClass: "text-[#0055aa] font-bold", content: "네, 맞습니다. 법은 창조성 운운하는 궤변을 들어주지 않거든요. 강력한 선례가 남길 기대합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Otaku_Club", time: "55분 전", like: 9, dislike: 45200, isPunished: true,
+                                content: "일본 만화 캐릭터 나부랭이 때문에 시장이 굽신거리면서 짝퉁 좀 만들었다고 아주 사람 하나를 죽이네 ㅋㅋㅋ 니들 꼴보기 싫어서 내가 내일 일본 본사 놈들 출국하기 전에 공항에서 황산 테러 간다!! 더러운 오타쿠 새끼들 다 녹여버릴 테니까 각오해라!!",
+                                replies: [
+                                    { nick: "Logic_Missing", content: "굽신거린 게 아니라 정당한 파트너로서 저작권 보호 협의를 한 건데 시각이 꼬여있으니 다 그렇게 보이지 ㅉㅉ" },
+                                    { nick: "Crazy_Terrorist", content: "와 이건 대놓고 외교 문제 비화될 수준의 살인 예고네;; 바로 112랑 공항경찰대에 캡처 넘김." },
+                                    { nick: "Anti_Otaku_Club", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 매국노 앞잡이들아!! 내일 공항 출국장 피바다 될 줄 알아라!! 오타쿠들은 싹 다 소각해야 한다!!" },
+                                    { nick: "Jail_Time", content: "진짜 위험한 놈이다;; 빨리 잡아가세요 제발 경찰관님들!!" },
+                                    { nick: "Anti_Otaku_Club", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "황산 한 통 꽉 채웠다 ㅋㅋㅋ 다 녹여주마 ㅋㅋㅋ" },
+                                    { nick: "Airport_Police_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[경찰청 국가수사본부 및 공항경찰단 특공대] 외국인 방문객 및 다중이용시설(공항)을 겨냥한 유해화학물질(황산) 테러 및 살인미수 예고를 1급 안보 위협으로 간주하여 비상 작전을 개시했습니다. IP 역추적으로 은신처를 특정, 현재 방호복을 착용한 무장 특공대가 진입 중입니다. 테러방지법 위반으로 엄단할 예정입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Hyobin_Metro_Fan", time: "1시간 5분 전", like: 9500, dislike: 7, isPunished: false,
+                                content: "시장님과 시청 법무팀의 단호한 대처 응원합니다! 이런 짝퉁 논란 흐지부지 넘어가면 글로벌 기업들이 효빈시에 투자하겠습니까? '저작권 청정 도시' 타이틀 확실하게 가져갑시다! 4호선 래핑 열차 영원하라~!!",
+                                replies: [
+                                    { nick: "Clean_City", content: "단호하게 잘라내는 게 진짜 글로벌 행정이죠. 일본 본사에서도 일처리 깔끔하다고 좋아할 듯." },
+                                    { nick: "Support_Mayor", content: "정치적 소음 무시하고 원리원칙대로 가는 게 맞습니다! 갓효빈 행정!!" },
+                                    { nick: "Official_Merch_Only", content: "정품을 사야 그 수익이 다시 우리 도시철도 환경 개선이랑 이벤트로 돌아옵니다. 불법충들 굶겨 죽입시다." },
+                                    { nick: "Hyobin_Metro_Fan", nickClass: "text-[#0055aa] font-bold", content: "맞습니다! 다들 이번 주말에 효빈교통공사 공식 팝업스토어 가서 돈쭐 냅시다!!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // Light mode styling for punished vs best comments
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // Punished threads are open by default to show the "cider" resolution
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Cyber") || reply.nick.includes("Command") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function showToast(msg) {
+                            const toast = document.createElement('div');
+                            toast.innerText = msg;
+                            toast.className = 'toast-msg show';
+                            document.body.appendChild(toast);
+                            setTimeout(() => toast.remove(), 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">정품 굿즈는 공식 스토어에서!</div>
+                <div class="text-xs text-gray-500">
+                    효빈교통공사 공식 인증<br>
+                    콜라보레이션 팝업스토어 안내<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">위치 확인하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

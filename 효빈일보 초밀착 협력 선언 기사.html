@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[현장] 효빈광역시, 선라이즈·부시로드와 '초밀착 협력' 선언... 콘텐츠 메카로 도약 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        /* 기본 라이트 모드 스타일 고정 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h3 { font-size: 19px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #0055aa; font-family: 'Noto Sans KR', sans-serif; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 댓글 섹션 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 하이라이트 댓글 스타일 (베스트/빌런) */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        /* 토스트 알림 */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">문화/예술 > 기획/현장</div>
+                <h2 class="article-title">[현장] 효빈광역시, 선라이즈·부시로드와 '초밀착 협력' 선언... 콘텐츠 메카로 도약</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">박행정 기자</span> (admin@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 14:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">2018년 김성민 전 시장의 토대 위, 박효빈 시장 취임 후 협력 범위 '파격 확대'<br>도시철도 전 노선 래핑 및 전용 굿즈 개발... '콘텐츠 융합 도시' 모델 제시<br>글로벌 기업들 "박 시장의 추진력 놀라워... 효빈시를 아시아 거점 도시로 선정"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://placehold.co/800x450/eeeeee/333333?text=Hyobin+Partnership+Ceremony" alt="효빈시 글로벌 파트너십 협약 연장식 현장" class="w-full h-auto border border-gray-200">
+                        <div class="img-caption">▲ 8일 오후 효빈광역시청에서 박효빈 시장과 글로벌 콘텐츠 기업 선라이즈, 부시로드의 최고 경영진들이 '전략적 동반자 관계' 격상을 알리는 협약 연장식을 마친 뒤 기념 촬영을 하고 있다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈타임즈 = 행정부] 효빈광역시가 전 세계가 주목하는 '서브컬처의 성지'로 거듭나기 위한 거대한 전환점을 맞이했다. 박효빈 시장 취임 이후 효빈시는 일본의 콘텐츠 거대 기업인 선라이즈(러브라이브 시리즈) 및 부시로드(뱅드림! 시리즈)와 협약 연장식을 갖고, 기존의 협력 관계를 '전략적 동반자 관계'로 격상시켰다.</p>
+
+                    <h3>■ 2018년의 씨앗, 박효빈 시장의 '르네상스'로 만개</h3>
+                    <p>효빈광역시와 글로벌 IP(지식재산권) 기업들 간의 협력은 지난 2018년 김성민 전 시장 재임 당시 처음 시작되었다. 당시 협약은 일부 노선에 한정된 캐릭터 홍보와 기초적인 라이선스 활용에 머물렀으나, 이는 효빈시가 콘텐츠 도시로 나아가는 소중한 토대가 되었다는 평가를 받는다.</p>
+
+                    <p>올해 취임한 박효빈 효빈광역시장은 이러한 기반을 바탕으로 '효빈 콘텐츠 르네상스' 정책을 전면에 내세웠다. 박 시장은 단순한 홍보를 넘어 도시의 인프라와 캐릭터가 하나로 융합되는 새로운 도시 마케팅 모델을 제시하며, 파트너 기업들과의 협약 범위를 전방위적으로 확대하는 성과를 이끌어냈다.</p>
+
+                    <h3>■ 도시철도 전 노선 래핑 및 '레일루미네' 브랜딩 가속화</h3>
+                    <p>이번 협약 연장의 핵심은 '일상 속의 콘텐츠화'다. 박 시장 취임 이후 효빈교통공사가 운영하는 1호선부터 8호선까지 전 노선에 캐릭터 래핑 열차가 상시 운행될 수 있는 기반이 마련되었다. 또한, 시 마스코트 캐릭터와 선라이즈·부시로드의 IP가 결합한 전용 굿즈와 콜라보레이션 상품들이 본격적으로 개발·보급되기 시작했다.</p>
+
+                    <p>박 시장은 "시민들이 매일 이용하는 지하철과 버스가 단순한 이동 수단을 넘어, 즐거움과 영감을 주는 문화 공간이 되어야 한다"며, "글로벌 파트너십을 통해 효빈시만의 독보적인 브랜드 가치를 창출하겠다"고 포부를 밝혔다.</p>
+
+                    <h3>■ 글로벌 기업들 "박효빈 시장의 전문성과 결단력에 깊은 신뢰"</h3>
+                    <p>연장식에 참석한 선라이즈와 부시로드의 최고 경영진들은 박 시장의 행정적 지원과 추진력에 놀라움을 표했다. 부시로드 관계자는 "박효빈 시장은 콘텐츠 산업에 대한 깊은 이해도를 갖춘 리더"라며, "전임 시장이 닦아놓은 길을 박 시장이 거대한 고속도로로 확장시켰다. 우리는 효빈시를 아시아에서 가장 중요한 전략적 거점 도시로 생각하고 있다"고 전했다.</p>
+
+                    <p>실제로 박 시장 취임 이후 효빈시를 찾는 국내외 관광객 수가 급증하고 있으며, 특히 캐릭터 래핑 열차를 보기 위해 해외에서 입국하는 이른바 '덕후 투어'가 지역 경제의 새로운 활력소로 떠오르고 있다.</p>
+
+                    <h3>■ 박효빈 시장 "콘텐츠는 도시의 미래... 시민과 함께 키울 것"</h3>
+                    <p>박효빈 시장은 협약식 마무리 발언에서 "2018년 김성민 시장님께서 심어주신 협력의 씨앗이 오늘날 큰 나무로 자라났다"며 전임 시장의 노고에 감사를 표하는 한편, "앞으로 효빈시는 캐릭터 저작권을 존중하고 창작의 가치를 높게 평가하는 '저작권 청정 도시'이자 전 세계 팬들이 사랑하는 '문화 수도'로 성장할 것"이라고 강조했다.</p>
+
+                    <p>이번 협약 연장을 통해 효빈광역시는 도시 전체를 하나의 거대한 테마파크로 변모시키겠다는 야심 찬 계획에 박차를 가하게 되었으며, 향후 글로벌 콘텐츠 기업들과의 공동 프로젝트를 더욱 확대해 나갈 방침이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">14,205</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_Pride", time: "방금 전", like: 21500, dislike: 14, isPunished: false,
+                                content: "전임 시장님이 깔아둔 토대 위에 박효빈 시장님이 고속도로를 뚫어버리셨네요 ㄷㄷ 전임자 지우기 안 하고 좋은 정책은 더 크게 키우는 게 진짜 정치인의 포용력이죠. 글로벌 기업들이 칭찬할 만합니다!",
+                                replies: [
+                                    { nick: "Good_Politics", content: "맞아요. 김성민 시장님도 대단하시고 박효빈 시장님도 대단하십니다." },
+                                    { nick: "Citizen_A", content: "이게 진짜 협치고 올바른 행정이죠. 효빈 시민이라서 자랑스럽습니다 ㅠㅠ" },
+                                    { nick: "Future_City", content: "덕분에 관광객 미어터져서 지역 상권도 살아나고 너무 좋습니다!" },
+                                    { nick: "Hyobin_Pride", nickClass: "text-[#0055aa] font-bold", content: "앞으로 효빈시가 아시아 원탑 문화 도시가 되길 응원합니다!!" }
+                                ]
+                            },
+                            {
+                                nick: "Metro_Otaku", time: "5분 전", like: 18200, dislike: 9, isPunished: false,
+                                content: "1호선부터 8호선까지 전 노선 래핑이라니 미쳤다 ㅋㅋㅋ 이거 하루 만에 8개 노선 다 타기 챌린지 무조건 갑니다. 일본에서도 못 하는 걸 효빈시가 해내네요 ㄷㄷ 성지순례 각 날카롭다!",
+                                replies: [
+                                    { nick: "Subway_Fan", content: "교통공사 일 진짜 개잘하네요 ㅋㅋㅋ 환승역마다 굿즈샵도 다 열어주세요!" },
+                                    { nick: "Challenge_Acc", content: "8노선 완주 챌린지 ㅋㅋㅋ 스탬프 투어 같은 거 기획해도 대박 날 듯" },
+                                    { nick: "Daily_Commute", content: "출퇴근할 때 지하철 탈 맛 나겠네요 ㅠㅠ 피로가 싹 풀릴 듯" },
+                                    { nick: "Darona_Love", content: "다로나 주임님 특별 래핑 열차도 꼭 만들어주십쇼!!!" }
+                                ]
+                            },
+                            {
+                                nick: "Scalper_VIP_01", time: "12분 전", like: 5, dislike: 38200, isPunished: true,
+                                content: "ㅋㅋ 전용 굿즈 출시되면 내가 매크로 100개 돌려서 온라인 수량 싹쓸이함 ㅋㅋㅋ 그리고 오프라인 팝업스토어는 알바생 20명 고용해서 밤샘 줄서기 시킬 거다. 당근에 10배 튀겨 팔면 흑우들이 다 사주겠지 ㅋㅋㅋ 난 람보르기니 뽑는다 ㅅㄱ",
+                                replies: [
+                                    { nick: "No_Scalping", content: "매크로 되팔이충 또 기어나왔네 ㅡㅡ 양심이 있으면 그런 짓 좀 하지 마라" },
+                                    { nick: "Report_Master", content: "바로 효빈경찰서랑 국세청에 탈세 및 업무방해로 캡처해서 신고함 수고해라" },
+                                    { nick: "Scalper_VIP_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 빙신들아 ㅋㅋㅋ 대포폰이랑 차명계좌 써서 절대 못 잡아~ 방구석 거지 새끼들 배 아파서 부들부들하네 ㅋㅋㅋ" },
+                                    { nick: "Smart_Citizen", content: "대포통장이면 더 좆되는 건데 능지 처참하네 진짜 ㅋㅋㅋ 깜빵 갈 준비나 하쇼" },
+                                    { nick: "Scalper_VIP_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어쩌라고 ㅋㅋㅋ 내일 아침에 굿즈 싹쓸이하는 거나 구경해라 ㅋㅋㅋ 난 돈 쓸어 담을 거다!" },
+                                    { nick: "Hyobin_Cyber_Cop", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 사이버범죄수사대 및 국세청] 부당한 매크로 사용(업무방해) 및 대포통장을 이용한 범죄수익은닉 정황을 포착했습니다. 금융결제원 공조로 귀하의 모든 계좌를 전면 동결(Freezing) 조치하였으며, 통신사 IP 추적으로 거주지를 특정해 현 시간부로 형사들이 출동했습니다. 람보르기니 대신 호송차를 탑승하시기 바랍니다." }
+                                ]
+                            },
+                            {
+                                nick: "Global_Anime_Fan", time: "18분 전", like: 15400, dislike: 8, isPunished: false,
+                                content: "아시아 거점 도시 선정 ㄷㄷ 일본 본사 임원진들이 직접 와서 인정해버렸네요. 아키하바라 긴장해야 할 듯 ㅋㅋㅋ 이제 전 세계 럽라, 뱅드림 팬들 효빈시로 성지순례 오는 건 시간문제입니다.",
+                                replies: [
+                                    { nick: "Akiba_Rival", content: "아키하바라는 그냥 상권 중심이고, 효빈은 도시 인프라 자체가 결합된 거라 파급력이 훨씬 클 겁니다." },
+                                    { nick: "Tourist_Boom", content: "글로벌 덕후들 다 모이겠네요 ㅋㅋㅋ 이번 HAF 축제 기대감 진짜 폭발함 ㄷㄷ" },
+                                    { nick: "Foreign_Friend", content: "제 미국인 친구도 래핑 열차 타보고 싶다고 벌써 비행기표 알아보고 있습니다 ㅋㅋ" },
+                                    { nick: "Global_Anime_Fan", nickClass: "text-[#0055aa] font-bold", content: "진짜 국위선양이 따로 없네요 ㅠㅠ 효빈시티즌인 게 너무 자랑스럽습니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Otaku_Bomber", time: "25분 전", like: 12, dislike: 45100, isPunished: true,
+                                content: "더러운 오타쿠 그림을 신성한 대중교통에 왜 발라!! 시민들이 불쾌해서 지하철을 탈 수가 없잖아!! 시장이 미쳐서 나라를 팔아먹고 있다!! 내일 아침 1호선 선로에 다이너마이트 설치해서 래핑 열차 싹 다 날려버릴 거다!!",
+                                replies: [
+                                    { nick: "Mad_Terrorist", content: "대중교통 선로 폭파 예고 ㄷㄷ 이거 진짜 미친 테러리스트네;; 당장 112 신고 넣음." },
+                                    { nick: "Call_111", content: "국정원이랑 대테러센터에 캡처 넘겼습니다. 불쾌하면 님이 걸어 다니세요 범죄자 새끼야" },
+                                    { nick: "Anti_Otaku_Bomber", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 매국노 앞잡이들아!! 폭탄 타이머 세팅 다 끝났다!! 내일 아침 효빈시가 불바다가 될 것이다!!" },
+                                    { nick: "Scared_Citizen", content: "와 진짜 돌았네;; 내일 1호선 타지 말아야겠다 너무 무서워 ㅠㅠ" },
+                                    { nick: "Anti_Otaku_Bomber", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "다 죽여버릴거야!! 멸망의 날을 즐겨라 ㅋㅋㅋ 오타쿠들은 싹 다 소각해야 해!!" },
+                                    { nick: "Hyobin_SWAT_EOD", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대 및 폭발물처리반(EOD)] 국가 핵심 교통망(도시철도)을 겨냥한 사제 폭발물 테러 예고 및 대량 살상 협박을 1급 안보 위협으로 간주하여 대테러 작전을 개시했습니다. 은신처를 완전히 포위하였으며 저격수 배치가 완료되었습니다. 기폭 장치에서 손을 떼고 양손을 올리십시오. 불응 시 즉각 사살합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Copyright_Guard", time: "32분 전", like: 12100, dislike: 11, isPunished: false,
+                                content: "기사 마지막에 '저작권 청정 도시' 선언한 거 너무 멋집니다. 예전에 따로나 카페 같은 짝퉁 매장들 싹 다 근절해야 일본 본사에서도 믿고 투자하죠. 박효빈 시장님 법무팀 열일 화이팅입니다!",
+                                replies: [
+                                    { nick: "Official_Only", content: "맞아요. 정품을 소비해야 그 돈이 다시 우리 도시 인프라랑 좋은 축제로 돌아옵니다." },
+                                    { nick: "Trust_Builder", content: "본사 임원진들도 시장님의 단호한 짝퉁 대처 보고 신뢰가 팍팍 쌓였을 듯 ㅋㅋㅋ" },
+                                    { nick: "Law_And_Order", content: "짝퉁충들 ㅂㄷㅂㄷ하겠네요 ㅋㅋㅋ 저작권법 무서운 줄 알아야지" },
+                                    { nick: "Copyright_Guard", nickClass: "text-[#0055aa] font-bold", content: "다들 팝업스토어 가서 공식 굿즈만 돈쭐 냅시다!!" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_True_Justice", time: "40분 전", like: 8, dislike: 52100, isPunished: true,
+                                content: "박효빈 이 사기꾼 새끼!! 위대하신 윤대환 시장님이 다 만들어 놓을 수 있었던 걸 지가 한 척 가로채고 있네!! 일본 기업에 아부나 떠는 좌파 매국노!! 내일 협약 연장식장에 찾아가서 박효빈 얼굴에 황산 뿌려버릴 거다!! 애국 보수의 매운맛을 봐라!!",
+                                replies: [
+                                    { nick: "Fact_Crusher", content: "윤대환은 시장 시절에 철도 다 없애버리려고 했던 놈인데 무슨 헛소리야 ㅋㅋㅋ 치매 왔음? 제발 팩트체크 좀 ㅋㅋㅋ" },
+                                    { nick: "Acid_Terror", content: "황산 테러 예고;; 이 아저씨들 진짜 선 넘네;; 정치병 말기다 진짜" },
+                                    { nick: "Yoon_True_Justice", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 빨갱이들아!! 황산 한 통 가득 채웠다!! 내일 아침 시청 로비가 지옥으로 변할 것이다 멸공!!" },
+                                    { nick: "Citizen_Safety", content: "바로 112랑 테러대응센터에 신고 넣었습니다. 감방 가서 정신 차리시길." },
+                                    { nick: "Yoon_True_Justice", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 겁먹을 줄 아냐? 다 녹여버릴 테니까 말리지 마라 ㅋㅋㅋ" },
+                                    { nick: "NIS_Anti_Terror", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 및 대테러특수기동대] 광역단체장 및 글로벌 기업 임원진을 겨냥한 유해화학물질(황산) 테러 예고를 국가 안보 위협으로 간주하여 비상 작전을 개시했습니다. 현 시간부로 귀하의 자택 주변 건물에 저격수(Sniper) 배치가 완료되었으며, 이마에 레이저 포인터 조준이 완료되었습니다. 위험물을 바닥에 버리고 양손을 올리십시오. 투항 거부 시 사살합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Local_Merchant_Win", time: "48분 전", like: 10400, dislike: 5, isPunished: false,
+                                content: "효빈역 근처에서 식당 하는 사장입니다. 캐릭터 래핑 열차 보러 온 관광객분들 덕분에 주말 매출이 평소보다 3배나 뛰었습니다 ㅠㅠ 박효빈 시장님 진짜 소상공인들의 구세주십니다. 평생 효빈시에서 장사할 겁니다!!",
+                                replies: [
+                                    { nick: "Rich_Boss", content: "오 사장님 돈쭐 제대로 나고 계시군요 ㅋㅋㅋ 축하드립니다!" },
+                                    { nick: "Otaku_Power", content: "덕후들 소비력 무시 못 하죠 ㅋㅋㅋ 맛집 투어 필수 코스임" },
+                                    { nick: "Win_Win_City", content: "문화가 살아야 지역 경제가 산다는 걸 보여주는 완벽한 예시네요 ㅠㅠ" },
+                                    { nick: "Local_Merchant_Win", nickClass: "text-[#0055aa] font-bold", content: "응원 감사합니다 ㅠㅠ 주말에 래핑 열차 사진 찍고 오시면 음료수 서비스 드리겠습니다! 많이 찾아주세요!" }
+                                ]
+                            },
+                            {
+                                nick: "Dark_Web_Spy_99", time: "55분 전", like: 4, dislike: 48900, isPunished: true,
+                                content: "ㅋㅋ 좆밥 시청 공무원들 보안 허술한 거 보소. 내가 어젯밤 부시로드랑 선라이즈 글로벌 연동 서버 백도어 뚫어서 뱅드림 미공개 음원이랑 신규 굿즈 3D 도면 싹 다 빼돌렸다 ㅋㅋㅋ 이거 중국 짝퉁 공장에 10억 받고 팔아넘김 ㅅㄱ ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Tech_Nerd", content: "글로벌 기업 핵심 서버를 방구석 스크립트 키디가 뚫는다고? 소설을 써라 소설을 ㅋㅋㅋ 망상도 병이다" },
+                                    { nick: "Report_To_NIS", content: "대놓고 산업스파이 자백 ㄷㄷ 국가정보원 국제범죄정보센터에 바로 캡처해서 넘겼음 수고~" },
+                                    { nick: "Dark_Web_Spy_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해봐라 빙신들아 ㅋㅋㅋ VPN 3중 우회해서 절대 못 잡아~ 지금 중국 쪽에 데이터 전송 99% 완료다 ㅋㅋㅋ 내일이면 짝퉁 굿즈 수만 개 풀릴 거다 ㅋㅋㅋ" },
+                                    { nick: "Mocking_Hacker", content: "VPN 맹신하는 애들 특: 통신사 로그 까면 본가 주소 1초만에 다 털림 ㅋㅋㅋ 능지 박살" },
+                                    { nick: "Dark_Web_Spy_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "안 믿네? ㅋㅋㅋ 내일 아침 뉴스에 기밀 파일 유출 대참사 뜨면 내 이름 기억해라 ㅋㅋㅋ 난 돈 받고 튄다~" },
+                                    { nick: "NIS_Cyber_Command", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 국제사이버안보센터 및 경찰청 사이버테러대응센터] 글로벌 기업의 핵심 서버 해킹 및 산업기술 유출 시도(사이버 테러)를 인지하여 최고 수준의 방첩 작전을 개시했습니다. 귀하가 침투했다고 착각한 서버는 당원이 구축한 '허니팟(가짜 서버)'이며, 딥웹 우회 경로 디코딩을 통해 피의자의 은신처를 특정했습니다. 현 시간부로 무장 특공대가 강제 진입 중이니 컴퓨터에서 손을 떼십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Forever_Partnership", time: "1시간 2분 전", like: 11100, dislike: 7, isPunished: false,
+                                content: "협약 연장 너무 축하합니다! 일회성 이벤트로 끝날 줄 알았는데 이렇게 초밀착 협력으로 이어지다니 정말 꿈만 같네요. 앞으로도 선라이즈, 부시로드랑 좋은 인연 계속 이어갔으면 좋겠습니다. 럽라 뱅드림 화이팅!!",
+                                replies: [
+                                    { nick: "Lifelong_Fan", content: "진짜 평생 가자 ㅠㅠ 이 파트너십 영원해야 함 ㅠㅠ" },
+                                    { nick: "Happy_Citizen", content: "이런 엄청난 콘텐츠를 동네에서 즐길 수 있다니 효빈시티즌이라 진짜 행복합니다." },
+                                    { nick: "Cafe_Collab_Plz", content: "다음번엔 전당 근처에 초대형 공식 콜라보 카페도 크게 열어주셨으면 좋겠어요!!" },
+                                    { nick: "Forever_Partnership", nickClass: "text-[#0055aa] font-bold", content: "맞아요! 이번 주말 HAF에 돈 쓰러 갑니다~ 다들 축제에서 만나요!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // Light mode styling for punished vs best comments
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // Punished threads are open by default to show the "cider" resolution
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Cyber") || reply.nick.includes("Command") || reply.nick.includes("Police") || reply.nick.includes("NIS") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function showToast(msg) {
+                            const toast = document.createElement('div');
+                            toast.innerText = msg;
+                            toast.className = 'toast-msg show';
+                            document.body.appendChild(toast);
+                            setTimeout(() => toast.remove(), 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">HAF 2026 X 글로벌 파트너십</div>
+                <div class="text-xs text-gray-500">
+                    압도적 스케일의 콜라보레이션<br>
+                    특별 래핑 열차 운행 시간표 확인<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">시간표 조회하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

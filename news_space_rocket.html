@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[우주] 한국형 발사체 핵심 부품, 효빈 산단서 품었다... 우주 강국 도약 '엔진 점화' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        /* 기본 라이트 모드 스타일 고정 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 라이트 모드 하이라이트 댓글 스타일 */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .strike { text-decoration: line-through; color: #888; }
+        
+        /* Custom Toast Alert Style */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">IT/과학 > 우주/항공</div>
+                <h2 class="article-title">[우주] 한국형 발사체 핵심 부품, 효빈 산단서 품었다... 우주 강국 도약 '엔진 점화'</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">박우주 기자</span> (space@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 20:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈국가산업단지 내 '항공우주 특화 콤플렉스' 조성... 차세대 발사체 부품 양산 돌입<br>효빈대 항공우주공학과 산학 연계 및 '효빈항물류지구(1호선)' 해상 운송 인프라 최적 평가<br>박효빈 시장 "만화적 상상력을 현실로 만들던 효빈시, 이제 우주를 향해 쏘아 올릴 것"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://via.placeholder.com/800x450/eeeeee/333333?text=Hyobin+Aerospace+Complex" alt="효빈 산단 항공우주 특화 콤플렉스 현장" class="w-full h-auto border border-gray-200">
+                        <div class="img-caption">▲ 8일 효빈광역시에 위치한 효빈국가산업단지 내 '항공우주 특화 콤플렉스'에서 첨단 로봇과 연구원들이 차세대 한국형 우주 발사체에 들어갈 핵심 엔진 부품을 정밀 가공하고 있다. 서브컬처 성지로 이름난 효빈시가 이제는 대한민국의 딥테크·우주 산업을 견인하는 전초기지로 급부상하고 있다. (사진=효빈정보산업진흥원 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박우주 기자] 효빈광역시가 대한민국 우주 시대의 든든한 심장부로 도약한다. 서브컬처와 스마트시티를 넘어, 이제는 우주 강국을 향한 핵심 전초기지로서의 입지를 확고히 다지게 되었다.</p>
+
+                    <p>8일 과학기술정보통신부와 한국항공우주연구원에 따르면, 2030년 달 착륙선 탑재를 목표로 개발 중인 '차세대 한국형 우주 발사체(KSLV-III)'의 핵심 엔진 부품과 초경량 페어링 제작 사업의 주관 생산 기지로 효빈국가산업단지가 최종 선정되었다. 이에 따라 산단 내 5만 평 규모의 부지에 '항공우주 특화 콤플렉스'가 이번 달부터 본격적인 가동에 들어갔다.</p>
+
+                    <p>첨단 산업의 쟁쟁한 경쟁 도시들을 제치고 효빈시가 발사체 생산 기지로 낙점된 결정적 이유는 완벽에 가까운 '물류 및 산학 연계 인프라' 덕분이다. 길이 수십 미터, 무게 수십 톤에 달하는 발사체 부품은 육상 운송이 극히 까다롭다. 그러나 효빈국가산단은 파란색(<span class="text-[#0077DD] font-bold">#0077DD</span>) 전동차가 달리는 효빈 도시철도 1호선의 효빈항물류지구역 및 효빈항과 직접 연결되어 있어, 생산된 대형 부품을 특수 바지선과 산업 철도망을 통해 나로우주센터로 직통 운송할 수 있는 최적의 지리적 이점을 갖췄다.</p>
+
+                    <p>또한, 전국구 수준의 연구 역량을 자랑하는 효빈대학교 항공우주공학과의 R&D 지원과, 앞서 성공적으로 안착한 약산시 바이오 클러스터, 테크노밸리의 AI 인프라가 융합되면서 차세대 정밀 가공의 메카로 평가받았다.</p>
+
+                    <p>이번 우주 특화 단지 가동으로 효빈시는 향후 10년간 약 3조 원의 경제적 파급 효과와 7,000여 명의 고급 이공계 일자리 창출 효과를 누릴 것으로 분석된다.</p>
+
+                    <p>박효빈 시장은 이날 특화 콤플렉스 현장 시찰에서 "애니메이션과 게임 속에서 만화적 상상력을 현실로 구현해 냈던 우리 효빈시가, 이제는 그 상상력을 실제 우주를 향해 쏘아 올리게 되었다"며, "문화의 힘으로 도시를 알렸다면, 이제는 항공우주 딥테크(Deep Tech) 산업의 힘으로 효빈의 100년 먹거리를 완벽하게 창출해 내겠다"고 강조했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">11,204</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 자바스크립트로 댓글 동적 생성 -->
+                </div>
+                <script>
+                    const commentsData = [
+                        {
+                            nick: "Space_Otaku_99", time: "방금 전", like: 19300, dislike: 15, isPunished: false,
+                            content: "와 ㅋㅋㅋㅋ 진짜 효빈시 폼 미쳤다. HAF 열어서 서브컬처로 전 세계 오타쿠들 싹 다 긁어모으더니, 이제는 우주 발사체까지 만드네요. 나중에 나로우주센터에서 로켓 발사할 때 겉면에 레일루미네 캐릭터 래핑 되는 거 아닙니까? 1호선 파란색 고나미 우주로 가자!!!",
+                            replies: [
+                                { nick: "Anime_Fan", content: "로켓에 고나미 그려져서 올라가면 진짜 일본 아키하바라도 기립박수 칠 듯 ㅋㅋㅋ K-덕력의 매운맛 가즈아" },
+                                { nick: "Rocket_Boy", content: "우주선 이름 '레일루미네 1호'로 합시다 ㅋㅋㅋ 발사할 때 1호선 구동음 나면 완벽" },
+                                { nick: "Mayor_Vision", content: "만화적 상상력을 우주로 쏘아올린다는 시장님 코멘트 진짜 소름돋네요. 낭만 미쳤다 ㅠㅠ" },
+                                { nick: "Space_Otaku_99", nickClass: "text-[#0055aa] font-bold", content: "진짜 효빈시는 파도 파도 미담과 혁신뿐이네요 ㅠㅠ 효빈시민인게 너무 자랑스럽습니다!!" }
+                            ]
+                        },
+                        {
+                            nick: "Hyobin_Port_Worker", time: "5분 전", like: 16400, dislike: 12, isPunished: false,
+                            content: "효빈항 물류지구에서 일하는 하역 노동자입니다. 최근에 효빈 1호선 산업철도 쪽으로 엄청나게 거대한 특수 컨테이너들 들어오길래 뭔가 했더니 우주선 부품이었군요 ㄷㄷㄷ 우리 효빈항에서 우주로 가는 부품이 실려 나간다니 자부심 오집니다!!",
+                            replies: [
+                                { nick: "Hard_Worker", content: "현장 노동자님들 진짜 고생 많으십니다! 우리나라 우주 강국 도약의 숨은 영웅이십니다." },
+                                { nick: "Logistics_Master", content: "발사체 단가랑 무게 생각하면 1호선 철도망이랑 항만 직결된 게 진짜 신의 한 수 였네요." },
+                                { nick: "Blue_Line_Pride", content: "1호선 라인업 진짜 미쳤네 ㅋㅋ 관광(곽암) + 물류(효빈항) 다 잡음" },
+                                { nick: "Hyobin_Port_Worker", nickClass: "text-[#0055aa] font-bold", content: "따뜻한 말씀 감사합니다! 기스 하나 안 나게 무진동 트레일러로 조심조심 잘 옮기겠습니다! 화이팅!" }
+                            ]
+                        },
+                        {
+                            nick: "Space_Waste_Hater", time: "12분 전", like: 21, dislike: 27500, isPunished: true,
+                            content: "지하철이나 똑바로 굴리지 무슨 뜬구름 잡는 우주 타령이냐!! 세금 낭비하지 말고 보도블록이나 갈아엎어라!! 시장이 아주 애니메이션 많이 보더니 지가 건담이라도 만드는 줄 아나 ㅉㅉ",
+                            replies: [
+                                { nick: "Fact_Checker_79", nickClass: "text-blue-600 font-bold", content: "아저씨, 과기부 국비 지원받아서 우리 지역에 조 단위로 돈 떨어지는 사업입니다. 일자리 7천 개 생기는데 세금 낭비 타령입니까? 윤대환 시절처럼 보도블록 뒤집는 데 뒷돈 빼돌리는 줄 아시나 봄?" },
+                                { nick: "Economy_Master", nickClass: "text-blue-600 font-bold", content: "우주 산업이 100년 먹거리인데 보도블록 타령 ㅋㅋㅋㅋ 시야가 참 좁으십니다." },
+                                { nick: "Space_Waste_Hater", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 어린놈의 새끼들이 말대꾸야!! 당장 내일 산업단지 정문에 트랙터 끌고 가서 공장 다 부숴버릴 테니까 각오해라!! 혈세 도둑놈들!!" },
+                                { nick: "Citizen_Guard", content: "방금 112랑 국가정보원에 '국가 핵심 산업시설 테러 예고'로 캡처해서 다 넘겼습니다. 콩밥 드실 준비 하세요~" },
+                                { nick: "Space_Waste_Hater", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 쫄보들아 ㅋㅋㅋ 내가 무서울 줄 아냐? 내 트랙터로 우주선 부품 다 찌그러트려줄게 ㅋㅋㅋ" },
+                                { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 국가 핵심 산업시설(우주항공 콤플렉스)에 대한 파괴 및 테러 예고를 1급 안보 위협으로 간주하여 비상 대응 체제로 전환했습니다. 현 시간부로 IP 추적을 통해 특정된 용의자의 거주지에 무장 특공대원이 진입합니다. 문 뒤로 물러서십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Hyobin_Univ_Aero", time: "18분 전", like: 13850, dislike: 9, isPunished: false,
+                            content: "효빈대 항공우주공학과 학생인데, 덕분에 선배들 요즘 죄다 산단 콤플렉스로 산학협력 인턴 나가고 취업률 떡상했습니다 ㅠㅠ 박효빈 시장님 우리 과의 구세주십니다. 열심히 배워서 한국판 스페이스X 효빈에서 만들겠습니다!",
+                            replies: [
+                                { nick: "Future_Elon", content: "오 효빈대 항우기 화이팅!! 지역 대학생들이 바로 지역 기업에 취업하는 완벽한 선순환이네요." },
+                                { nick: "Smart_Brain", content: "효빈대 공대 원래도 알아줬는데 이제 우주항공 원탑 되겠네요 ㄷㄷ 부럽습니다" },
+                                { nick: "Mom_Of_Student", content: "우리 아들도 효빈대 공대생인데 기사 보고 너무 기뻤어요 ㅠㅠ 훌륭한 인재로 자라주길!" },
+                                { nick: "Hyobin_Univ_Aero", nickClass: "text-[#0055aa] font-bold", content: "응원 감사합니다 ㅠㅠ HAF 축제 즐기던 덕후에서 이제 로켓 만드는 공돌이로 레벨업 하겠습니다 ㅋㅋㅋ" }
+                            ]
+                        },
+                        {
+                            nick: "Blue_Line_1", time: "25분 전", like: 10100, dislike: 7, isPunished: false,
+                            content: "생각해보니 파란색(#0077DD) 1호선 라인업 진짜 알짜배기네요. 곽암해수욕장 껴있어서 관광 수요도 빵빵한데, 효빈항 물류지구에 우주항공 산단까지 ㄷㄷㄷ 원리원칙주의자 고나미(1호선 마스코트)가 깐깐하게 우주선 부품 검수하는 상상 하니까 웃기네요 ㅋㅋㅋ",
+                            replies: [
+                                { nick: "Gonami_Love", content: "고나미: '부품 오차 0.001mm입니다! 불합격! 재가공하세요!' ㅋㅋㅋㅋ 상상 됨" },
+                                { nick: "Transit_Nerd", content: "1호선이 효빈시의 대동맥이죠. 여객이랑 물류를 다 커버하는 완벽한 인프라." },
+                                { nick: "Line1_Driver", content: "1호선 기관사입니다! 우주 강국으로 가는 길목을 달린다고 생각하니 어깨가 무겁네요 ㅎㅎ 안전 운행하겠습니다!" },
+                                { nick: "Blue_Line_1", nickClass: "text-[#0055aa] font-bold", content: "헐 기관사님 ㄷㄷ 항상 감사합니다! 1호선 파란 전동차 영원하라~!" }
+                            ]
+                        },
+                        {
+                            nick: "Dark_Hacker_99", time: "32분 전", like: 5, dislike: 38200, isPunished: true,
+                            content: "ㅋㅋ 허접한 효빈시 보안망 뚫어서 한국형 발사체 엔진 도면 다 빼돌렸다~ 이거 다크웹 거쳐서 중국에 100억 받고 넘길거임 ㅋㅋㅋ 국정원 븅신들아 막아볼테면 막아봐라 난 람보르기니 뽑으러 간다 ㅋㅋㅋ",
+                            replies: [
+                                { nick: "Security_Pro", content: "국가 핵심기술을 빼돌린다고 대놓고 예고를 하네. 방구석 스크립트 키디가 아주 영화를 찍어라 ㅋㅋㅋ" },
+                                { nick: "Report_NIS", content: "산업기술유출 및 국가보안법 위반. 당장 국가정보원 산업기밀보호센터에 다이렉트로 신고했습니다." },
+                                { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 븅신들아 ㅋㅋㅋ 토르 브라우저 3중 우회해서 절대 못 잡아~ 지금 중국 쪽 브로커랑 비트코인 거래 끝났다 ㅋㅋㅋ" },
+                                { nick: "Tech_Guru", content: "우주항공 콤플렉스 서버는 아예 외부 인터넷망이랑 분리된 망분리(Air-Gap) 상태인데 해킹? ㅋㅋㅋ 어디서 주워들은 건 있어가지고 소설을 쓰네" },
+                                { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "안 믿네? ㅋㅋㅋ 내일 뉴스에 한국형 발사체 도면 유출 대문짝만하게 뜨면 내 이름 기억해라 ㅋㅋㅋ" },
+                                { nick: "NIS_Cyber_Command", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 산업기밀보호센터 및 경찰청 안보수사국] 국가 핵심기술(우주 발사체) 해외 유출 자백 및 사이버 안보 위협을 인지하여 최고 수준의 방첩 작전을 개시했습니다. 귀하가 해킹했다고 착각한 서버는 당원이 구축한 '허니팟(추적용 가짜 서버)'이며, 전송된 데이터 역시 가짜(Fake) 파일입니다. 딥웹 경로 디코딩을 통해 피의자의 은신처를 파악했으며, 현 시간부로 무장 특공대가 진입 중이니 손을 머리 위로 올리십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Local_Economy_Fan", time: "40분 전", like: 8900, dislike: 6, isPunished: false,
+                            content: "처음 L-Project로 상권 살리고 서브컬처 인프라 다질 때만 해도 '그냥 오타쿠 친화 도시구나' 했는데... 그 인프라랑 물류, 청년 인구를 싹 다 융합해서 우주항공, 자율주행 같은 딥테크를 유치해버리네요. 박 시장님 진짜 시티 빌더 그 자체임.",
+                            replies: [
+                                { nick: "Big_Picture", content: "맞아요 문화로 사람을 모으고, 기술로 돈을 번다. 완벽한 도시 설계의 정석입니다." },
+                                { nick: "Hyobin_Future", content: "진짜 효빈시는 10년 뒤가 더 기대되는 도시입니다. 수도권 일극화 막을 유일한 희망 ㅠㅠ" },
+                                { nick: "SimCity_Master", content: "이 정도면 시장님이 심시티 현실판으로 하시는 거 아님? 적자 안 내고 흑자 전환하는 거 보소 ㄷㄷ" },
+                                { nick: "Local_Economy_Fan", nickClass: "text-[#0055aa] font-bold", content: "앞으로 효빈시가 어디까지 발전할지 너무 기대됩니다. 평생 세금 바칠게요!!" }
+                            ]
+                        },
+                        {
+                            nick: "Rich_Landlord", time: "48분 전", like: 12, dislike: 41000, isPunished: true,
+                            content: "아니 우리 아파트 옆에 시끄러운 공장 들어오면 집값 떨어지잖아!! 로켓 같은 소리 하네!! 내일 부녀회 총동원해서 효빈항 물류지구 진입로 트랙터로 다 막아버린다!! 혐오시설 당장 철회해라!!",
+                            replies: [
+                                { nick: "Logistics_Worker", content: "아줌마, 저기 매연 뿜는 굴뚝 공장이 아니라 초정밀 클린룸 갖춘 첨단 R&D 연구소입니다. 오히려 저거 들어오면 일자리 생겨서 집값 떡상하는데 경제 관념이 없으시네 ㅋㅋㅋ" },
+                                { nick: "Law_Student", content: "국가 핵심 산업단지 진입로를 막는다고요? 업무방해에 국가보안법까지 엮일 수 있습니다. 감방 가기 싫으면 가만히 계세요." },
+                                { nick: "Rich_Landlord", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "법이 밥 먹여주냐!! 내 재산 내가 지키겠다는데!! 내일 아침에 진짜 트랙터 몰고 가서 도로 다 파버릴 테니까 뉴스나 봐라 이 거지 새끼들아!!" },
+                                { nick: "Angry_Driver", content: "트랙터로 항구 도로를 막는다고? 진짜 이기주의가 도를 넘었네;; 제발 좀 잡아가라" },
+                                { nick: "Rich_Landlord", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "우리 부녀회 파워를 좆으로 보네 ㅋㅋㅋ 내일 오전 1호선 화물열차 싹 다 멈출 거니까 기대해라 ㅋㅋㅋ" },
+                                { nick: "Hyobin_Port_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈항만경찰대 및 관할경찰서] 국가 중요 보안시설(항만 및 국가산단) 진입로에 대한 불법 점거 및 특수재물손괴(도로 파괴) 테러 예고를 인지하였습니다. 현재 IP를 특정하여 모 아파트 부녀회장 자택으로 기동대가 출동 중이며, 귀하의 트랙터는 범행 도구로 즉각 압수 조치됩니다. 막대한 손해배상을 준비하십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Future_Astronaut", time: "55분 전", like: 12100, dislike: 4, isPunished: false,
+                            content: "효빈시 소재 고등학교 다니는 이과생입니다! 어릴 때부터 우주비행사가 꿈이었는데, 우리 동네에서 로켓을 만든다니 너무 가슴이 뜁니다 ㅠㅠ 꼭 효빈대 항공우주공학과 진학해서 연구원으로 취직할 거예요!!",
+                            replies: [
+                                { nick: "Cheer_Up_Boy", content: "학생 꿈을 진심으로 응원합니다! 꼭 훌륭한 엔지니어가 되길 바라요!" },
+                                { nick: "Hyobin_Univ_Aero", content: "오! 후배님 내년에 우리 과에서 봅니다 ㅋㅋ 열심히 공부하세요!" },
+                                { nick: "Dream_Come_True", content: "이렇게 지역 아이들이 꿈을 꿀 수 있게 해주는 게 진짜 훌륭한 행정이죠 ㅠㅠ 감동입니다." },
+                                { nick: "Future_Astronaut", nickClass: "text-[#0055aa] font-bold", content: "다들 응원 감사합니다!! 오늘 야자 끝나고 독서실에서 더 빡세게 공부하겠습니다!!" }
+                            ]
+                        },
+                        {
+                            nick: "Yoon_True_Patriot", time: "1시간 5분 전", like: 8, dislike: 58900, isPunished: true,
+                            content: "이것도 다 위대하신 윤대환 시장님이 닦아놓은 산업 인프라를 박효빈 이 뻔뻔한 놈이 가로챈 거다!! 우주 타령하면서 세금 빼돌리는 좌파 빨갱이 시장 내일 시청 출근길에 엽총으로 쏴 죽여버린다!! 애국 보수의 맛을 보여주마!!",
+                            replies: [
+                                { nick: "Fact_Cutter", content: "윤대환이 테크노밸리 부지 다 팔아넘겨서 아파트 올리려던 거 박 시장님이 막아내고 산단으로 살려낸 건데요? 치매 오셨음? 제발 팩트체크 좀 ㅋㅋㅋ" },
+                                { nick: "Call_112", content: "엽총으로 시장 암살 예고 ㄷㄷ 이거 진짜 미친 정치병자네;; 바로 국정원이랑 테러대응센터에 신고 넣음." },
+                                { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 빨갱이들아!! 내 할아버지가 쓰던 엽총 장전 다 끝났다!! 내일 아침 시청 앞이 피바다가 될 것이다!!" },
+                                { nick: "Citizen_Safety", content: "와 진짜 큰일 나기 전에 빨리 잡아야 함;; 제발 장난이길 빈다;;" },
+                                { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "지금 시청 앞 맞은편 상가 옥상 도착했다!! 박효빈 차 내리면 바로 방아쇠 당긴다!!" },
+                                { nick: "Hyobin_SWAT_Sniper", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 광역단체장에 대한 불법 총기(엽총) 소지 및 암살(Assassination) 테러 시도를 포착하여 즉각 대테러 작전에 돌입했습니다. 현 시간부로 시청 주변 건물에 저격수(Sniper) 배치가 완료되었으며, 피의자의 미간에 레이저 포인터 조준이 완료되었습니다. 무기를 바닥에 버리고 양손을 머리 위로 올리십시오. 10초 내 불응 시 즉각 사살합니다." }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    container.innerHTML = ""; 
+
+                    commentsData.forEach((cmt, idx) => {
+                        const div = document.createElement('div');
+                        
+                        if (cmt.isPunished) {
+                            div.className = "punish-comment";
+                        } else if (cmt.like > 10000) {
+                            div.className = "best-comment";
+                        } else {
+                            div.className = "comment-item";
+                        }
+                        
+                        let repliesHtml = "";
+                        let replyButtonHtml = "";
+
+                        if (cmt.replies && cmt.replies.length > 0) {
+                            replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                            repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                            
+                            // 제재받은 빌런 글은 답글(사이다 응징)을 기본적으로 펼쳐둠
+                            if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                            cmt.replies.forEach(reply => {
+                                const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Command") || reply.nick.includes("Police") || reply.nick.includes("Security") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                repliesHtml += `
+                                    <div class="reply-item ${styleClass}">
+                                        <span class="${nickClass}">${reply.nick}</span>: 
+                                        <span class="text-gray-800">${reply.content}</span>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+                        }
+
+                        div.innerHTML = `
+                            <div class="flex justify-between mb-2">
+                                <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                <span class="text-xs text-gray-500">${cmt.time}</span>
+                            </div>
+                            <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                ${replyButtonHtml}
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+
+                    function toggleReply(id) {
+                        const el = document.getElementById(id);
+                        if (el.style.display === 'block') el.style.display = 'none';
+                        else el.style.display = 'block';
+                    }
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                            btn.classList.remove('active');
+                            btn.classList.remove('active-hate');
+                            count--;
+                        } else {
+                            if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                            else btn.classList.add('active');
+                            count++;
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+
+                    function showToast(msg) {
+                        const toast = document.createElement('div');
+                        toast.innerText = msg;
+                        toast.className = 'toast-msg show';
+                        document.body.appendChild(toast);
+                        setTimeout(() => toast.remove(), 2500);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">효빈 우주항공 콤플렉스 채용</div>
+                <div class="text-xs text-gray-500">
+                    우주를 향한 위대한 도약<br>
+                    차세대 발사체 엔지니어 상시 모집<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">채용 공고 확인</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

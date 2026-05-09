@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[포토] 불 밝힌 약산시... 덕북의 새로운 랜드마크로 우뚝 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">포토 > 화보</div>
+                <h2 class="article-title">[포토] 불 밝힌 약산시... 덕북의 새로운 랜드마크로 우뚝</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">김사진 기자</span> (photo@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.01.04 18:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">인구 30만 돌파 약산시, 갑진년 새해맞이 화려한 도심 야경 뽐내<br>약산산업단지 및 바이오 클러스터 가동으로 '불 꺼지지 않는 경제 거점' 입증<br>덕빈북도(덕북)의 진정한 랜드마크이자 효빈-약산 메가시티의 핵심 축으로 성장</span></p>
+                    
+                    <div class="my-6">
+                        <img src="약산시 야경.png" alt="2026년 새해를 맞아 화려한 야경을 뽐내고 있는 약산시 도심과 산업단지의 전경" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Yaksan+Night+View'">
+                        <div class="img-caption">▲ 2026년 새해 첫 주말 저녁, 덕빈북도 약산시 도심 일대가 화려한 불빛으로 물들어 있다. 단순한 주거 배후 도시를 넘어 자족형 경제 도시로 성장한 약산시의 위상을 보여주듯, 상업지구의 네온사인과 인근 약산산업단지의 공장 불빛이 어우러져 장관을 연출하고 있다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>[효빈일보 = 김사진 기자] 매서운 겨울바람 속에서도 약산시의 밤은 그 어느 때보다 뜨겁고 밝게 빛나고 있다.</p>
+
+                    <p>4일 저녁, 역석동 약산시청 인근 고지대에서 바라본 약산시의 도심 스카이라인은 덕빈북도의 새로운 '랜드마크'라 부르기에 손색이 없는 웅장함을 자랑했다. 불과 몇 년 전만 해도 효빈광역시의 위성도시 역할에 머물렀던 약산시는, 이제 인구 30만 명을 거느린 명실상부한 경제·문화 거점으로 도약했다.</p>
+
+                    <p>도심 중앙을 가로지르는 간선도로를 따라 끝없이 이어지는 차량의 궤적은 약산시의 활기찬 역동성을 대변한다. 특히 사진 우측 상단으로 뻗어 나가는 불빛의 무리는 최근 본격적인 가동에 들어간 약산 바이오 클러스터와 첨단 산업단지다. 밤낮없이 돌아가는 연구실과 공장의 불빛은 덕빈북도 경제를 견인하는 든든한 심장 박동과도 같다.</p>
+
+                    <p>문화적 성장 또한 눈부시다. 최근 애니메이션 『봇치 더 록!』의 성지로 급부상하며 전국적인 관광객을 끌어모으고 있는 홍하면 일대 역시 주말 저녁을 맞아 환하게 불을 밝히며 새로운 서브컬처 중심지로서의 존재감을 드러내고 있다.</p>
+
+                    <p>이러한 약산시의 눈부신 야경은 향후 효빈 도시철도 4호선이 연장 개통되어 주황색(#FF5522) 전동차가 도심을 가로지르게 되면 한층 더 다채롭고 입체적인 스카이라인으로 진화할 전망이다. 새해를 맞아 불을 밝힌 약산시의 불빛은 단순한 조명이 아닌, 다가올 '효빈-약산 초연결 메가시티' 시대의 희망찬 신호탄이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">4,821</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Yaksan_Pride", time: "방금 전", like: 12400, dislike: 12, isPunished: false,
+                                content: "와, 우리 동네 야경이 이렇게 예뻤나요? 매일 출퇴근하면서 볼 때는 꽉 막힌 도로 때문에 짜증만 났는데, 위에서 내려다보니까 진짜 대도시 스카이라인 그 자체네요. 인구 30만 덕북 제1도시 약산시민으로서 뽕 차오릅니다!",
+                                replies: [
+                                    { nick: "Local_Lover", content: "진짜 효빈시 곁다리 취급 받던 게 엊그제 같은데 약산시 발전 속도 무섭네요 ㄷㄷ" },
+                                    { nick: "Good_View", content: "역석동 저 고지대 뷰포인트가 어딘지 아시는 분? 주말에 드라이브 가고 싶네요." },
+                                    { nick: "City_Lights", content: "상업지구 네온사인 엄청 화려하네요. 우리 동네가 저렇게 예뻤구나 ㅠㅠ" },
+                                    { nick: "Yaksan_Pride", nickClass: "text-[#0055aa] font-bold", content: "약산시청 뒤쪽 둘레길 전망대에서 보면 기사 사진처럼 쫙 보입니다! 꼭 가보세요 ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "Bio_Worker_01", time: "5분 전", like: 10250, dislike: 8, isPunished: false,
+                                content: "우측 상단에 밝게 빛나는 저 불빛... 저희 바이오 클러스터 연구원들이 주말 반납하고 야근하면서 태우고 있는 생명력입니다 ㅠㅠㅋㅋㅋ 약산시의 랜드마크가 되기 위해 오늘도 핫식스 마시면서 신약 개발 달립니다 흑흑",
+                                replies: [
+                                    { nick: "Thanks_For_Work", content: "연구원님들의 피땀눈물 덕분에 약산시 경제가 돌아갑니다 ㅠㅠ 화이팅하세요!" },
+                                    { nick: "Overtime_Sad", content: "야근의 불빛이었다니 ㅋㅋㅋ ㅠㅠ 슬프지만 응원합니다." },
+                                    { nick: "K_Bio_Power", content: "그 불빛 하나하나가 모여서 미래의 K-바이오를 이끄는 거겠죠. 고생 많으십니다 ㅠㅠ" },
+                                    { nick: "Bio_Worker_01", nickClass: "text-[#0055aa] font-bold", content: "다들 따뜻한 응원 감사합니다! 이왕 야근하는 거 제대로 성과 내서 약산시 떡상시켜보겠습니다 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Seoul_Elite_01", time: "12분 전", like: 15, dislike: 38400, isPunished: true,
+                                content: "촌구석 공장 불빛 켜진 거 가지고 무슨 랜드마크 타령이고 야경 타령이냐 ㅋㅋㅋ 서울 야경 반의 반도 못 따라가는구만 주제 파악 좀 해라. 내일 내가 약산 산단에 불 질러서 진짜 스펙타클한 불바다 야경이 뭔지 보여주마 ㅋㅋㅋ 촌놈들 기대해라!!",
+                                replies: [
+                                    { nick: "Logic_Cutter", content: "서울 야경 부심 부리더니 결국 한다는 게 방화 테러 예고? 능지 처참하네 진짜 ㅋㅋㅋ 감옥 뷰나 실컷 구경해라" },
+                                    { nick: "Report_Arson", content: "국가 핵심 산업시설 방화 테러 예고 ㄷㄷ 방금 112랑 국정원에 캡처해서 직통으로 찔렀습니다. 수고하세요~" },
+                                    { nick: "Seoul_Elite_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 쫄보 새끼들아 ㅋㅋㅋ 내가 VPN 3중 우회 돌려서 접속했는데 경찰이 퍽이나 잡겠다 ㅋㅋㅋ 내일 바이오 클러스터 잿더미 될 준비나 해라!!" },
+                                    { nick: "Tech_Expert", content: "방구석 키보드 워리어가 VPN 타령하는 거 개웃기네 ㅋㅋㅋ 통신사 로그 까면 니 위치 1초만에 특정되는데 능지가 박살났구나" },
+                                    { nick: "Seoul_Elite_01", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "아는 척 지리네 병신이 ㅋㅋㅋ 내일 시뻘건 불기둥 솟아오르면 그때 가서 울고불고 하지 마라 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Police_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 국가 핵심 산업시설(바이오 클러스터)을 겨냥한 방화 및 테러 예고를 국가 안보 위협으로 간주하여 비상 대응 체제로 전환했습니다. 딥웹 우회 경로 디코딩 결과 피의자의 은신처를 특정하였으며, 현 시간부로 무장 특공대가 진입 중입니다. 문 뒤로 물러서십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Orange_Line_Waiting", time: "18분 전", like: 8900, dislike: 5, isPunished: false,
+                                content: "야경 진짜 끝내주네요! 여기에 효빈 4호선(주황색) 고가 철교 딱 들어서서 밤에 전동차 지나가는 모습까지 추가되면 완벽한 사이버펑크 뷰 완성일 듯. 박효빈 시장님, 4호선 약산 연장 빨리 삽 뜹시다!!",
+                                replies: [
+                                    { nick: "Line4_Love", content: "주황색 열차 지나가는 야경 진짜 상상만 해도 미쳤다 ㅠㅠ 사이버펑크 그 자체" },
+                                    { nick: "Traffic_Plz", content: "4호선만 뚫리면 약산에서 효빈 남구청까지 출퇴근 20분 컷인데 제발 빨리 좀..." },
+                                    { nick: "Night_City", content: "고가 철교 위로 불빛 들어오는 전동차 달리는 모습이 진정한 랜드마크의 완성이죠 ㅋㅋㅋ" },
+                                    { nick: "Orange_Line_Waiting", nickClass: "text-[#0055aa] font-bold", content: "올해 예타 통과 소식 들리길 간절히 기도합니다! 주황색 4호선 가즈아!!" }
+                                ]
+                            },
+                            {
+                                nick: "Dark_Hacker_99", time: "25분 전", like: 12, dislike: 41200, isPunished: true,
+                                content: "ㅋㅋ 저깟 전구 쪼가리 켜진 게 야경이냐? 내가 오늘 밤 한전 약산변전소 서버 해킹해서 전력 싹 다 끊어버린다 ㅋㅋㅋ 랜드마크 야경? 도시 전체를 블랙아웃으로 만들어서 암흑 지대로 만들어주마 ㅋㅋㅋ 촛불이나 사둬라 병신들아",
+                                replies: [
+                                    { nick: "Cyber_Police_Call", content: "와 대놓고 국가 변전 시설 해킹 예고 ㄷㄷ 이거 단순 장난이 아니라 테러방지법 위반이다. 바로 사이버수사대에 고발장 접수함." },
+                                    { nick: "Security_Pro", content: "한전 폐쇄망을 방구석 스크립트 키디가 어떻게 해킹하냐 ㅋㅋㅋ 영화 너무 많이 본 거 티 내지 말고 잠이나 자라" },
+                                    { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "안 믿네 병신들 ㅋㅋㅋ 내가 다크웹에서 산 랜섬웨어 뿌리면 10분 컷이다. 카운트다운 들어간다 10... 9... 8..." },
+                                    { nick: "Laugh_At_You", content: "다크웹에서 사기당한 건 아니고? ㅋㅋㅋ 잼민아 빨리 자라 내일 학교 가야지" },
+                                    { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내일 아침에 도시 전체 전기 나가서 냉장고 다 썩고 지옥도 펼쳐지는 거나 구경해라 ㅋㅋㅋ 난 블랙아웃의 신이다 ㅋㅋㅋ" },
+                                    { nick: "NIS_Cyber_Command", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 및 경찰청 사이버테러대응센터] 국가 주요 전력망 기반시설에 대한 해킹 및 블랙아웃 테러 협박을 인지하여 1급 방첩 작전을 개시했습니다. 귀하가 접속을 시도한 서버는 당원이 구축한 '허니팟(추적용 가짜 서버)'이며, 해킹을 시도한 IP 로그를 역추적하여 은신처를 장악했습니다. 특공대가 문을 부수고 있으니 키보드에서 손 떼십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Hongha_Nijika", time: "32분 전", like: 7150, dislike: 11, isPunished: false,
+                                content: "홍하면 쪽 불빛 보니까 오늘 낮에 성지순례 다녀온 거 생각나네요. 조용하던 동네가 서브컬처 팬들로 북적북적하고 상권도 다 살아나서 밤늦게까지 환한 거 보니까 너무 좋습니다. 약산시도 효빈시 못지않은 문화 도시로 크고 있는 게 체감됩니다.",
+                                replies: [
+                                    { nick: "Botchi_Fan", content: "홍하면 성지 진짜 분위기 미쳤음 ㅠㅠ 골목길 걷다 보면 애니 속에 들어온 기분이에요." },
+                                    { nick: "Local_Merchant", content: "홍하면 상인입니다. 덕후 여러분들 덕분에 동네가 확 살아났습니다 ㅠㅠ 쓰레기도 다 주워가시고 질서도 최고예요 감사합니다!" },
+                                    { nick: "Culture_Power", content: "효빈시의 서브컬처 인프라가 약산시까지 퍼지면서 긍정적인 시너지가 엄청나네요 ㄷㄷ" },
+                                    { nick: "Hongha_Nijika", nickClass: "text-[#0055aa] font-bold", content: "앞으로 HAF 축제 때 홍하면도 같이 연계해서 행사하면 진짜 초대박 날 것 같습니다 ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "Drone_Voyeur", time: "40분 전", like: 8, dislike: 48900, isPunished: true,
+                                content: "고지대에서 저렇게 환하면 아파트 거실이랑 방구석 다 보이겠네 ㅋㅋㅋ 내일 고성능 줌 렌즈 단 드론 띄워서 약산시 아파트 여자들 사는 집 창문 다 훔쳐봐야지 ㅋㅋㅋ 옷 갈아입는 거 찍어서 야경 직캠으로 팔아먹으면 개꿀딱~ ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Disgusting", content: "와 진짜 구역질 나는 새끼네. 대놓고 불법 촬영이랑 몰카 범죄 예고를 하냐? 인간이길 포기했구나" },
+                                    { nick: "Report_Police", content: "성폭력 특례법 위반 및 주거침입 예고로 바로 사이버수사대에 고발 완료. 넌 진짜 사회에서 격리돼야 한다." },
+                                    { nick: "Drone_Voyeur", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 빙신들아 ㅋㅋㅋ 드론 등록번호 다 지웠고 밤에 조명 끄고 날리면 아무도 모른다~ 내일 텔레그램에 직캠 풀릴 거니까 구경이나 해라 ㅋㅋㅋ" },
+                                    { nick: "Drone_Law", content: "도심 야간 비행 자체가 불법인데 고성능 드론 띄우면 관제 레이더에 바로 걸리는데 멍청하네 진짜 ㅋㅋㅋ" },
+                                    { nick: "Drone_Voyeur", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내 컨트롤 실력을 좆으로 보네 ㅋㅋㅋ 안 걸리고 다 찍고 복귀시킬 수 있다!! 난 내일 야동 재벌이 될 거다 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Aviation_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 항공경찰대 및 여성청소년범죄수사대] 불법 드론 야간 비행 및 성폭력범죄의 처벌 등에 관한 특례법 위반(카메라 등 이용 촬영) 예고를 엄중히 인지하였습니다. IP 추적으로 거주지를 특정, 현 시간부로 자택 압수수색을 위한 영장이 발부되었습니다. 모든 전자기기와 드론은 압수 포렌식되며 중형을 피할 수 없습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "48분 전", like: 5820, dislike: 18, isPunished: false,
+                                content: "과거에 윤대환 같은 시장들이 약산을 그냥 효빈시 변두리 하청 공장 취급했었는데, 박효빈 시장님 체제 들어서고 교통이랑 문화 인프라 확충되니까 도시 격이 달라지네요. 덕빈북도 전체를 끌고 가는 쌍두마차로 영원히 빛나길 바랍니다.",
+                                replies: [
+                                    { nick: "History_Teacher", content: "진짜 윤대환 시절엔 약산시는 매연 뿜는 공장 취급만 당했죠. 상생이 뭔지 모르는 정치꾼들의 한계였습니다." },
+                                    { nick: "Mega_City", content: "효빈-약산 메가시티가 완성되면 진짜 수도권 부럽지 않은 메갈로폴리스가 될 듯 ㄷㄷ" },
+                                    { nick: "Vote_Power", content: "이래서 지도자를 잘 뽑아야 합니다. 도시의 100년 대계가 달라져요." },
+                                    { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "맞습니다! 두 도시가 서로 윈윈하며 성장하는 모습이 너무 보기 좋네요." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_True_Patriot", time: "55분 전", like: 9, dislike: 51200, isPunished: true,
+                                content: "오타쿠 좌파 시장 놈이 신성한 약산시까지 씹덕 문화로 오염시켰네!! 이게 다 나라가 망조가 든 증거다!! 위대하신 윤대환 시장님의 이름을 걸고 내일 약산시청에 다이너마이트 던지러 간다!! 빨갱이 도시 폭파시켜주마!!",
+                                replies: [
+                                    { nick: "Are_You_Mad", content: "약산시청 폭파 예고? 이거 완전 미친 폭탄 테러리스트네;; 정치에 미치면 사람이 이렇게 되냐" },
+                                    { nick: "Call_112_Fast", content: "방금 112랑 대테러센터에 캡처해서 긴급 신고 넣었습니다. 장난칠 게 따로 있지 다이너마이트 타령이냐" },
+                                    { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 빨갱이들아!! 나는 구국의 결단으로 순교할 것이다!! 내일 아침 약산시청 광장이 피바다가 될 테니 각오해라!!" },
+                                    { nick: "Insane_Alert", content: "순교 이 지랄 ㅋㅋㅋ 감방 가서 벽이나 보고 반성해라 진짜 미친놈이네" },
+                                    { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "지금 폭탄 제조 다 끝났다 ㅋㅋㅋ 내일 시청 폭발하면 다 같이 죽는 거다 멸공!!" },
+                                    { nick: "Hyobin_SWAT_EOD", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대 및 폭발물처리반(EOD)] 관공서(약산시청)를 겨냥한 사제 폭발물 테러 예고 및 대량 살상 협박을 국가 최상위 안보 위협으로 간주하여 대테러 작전을 개시했습니다. 현재 은신처를 완전히 포위하였으며 저격수 배치가 완료되었습니다. 폭발물에서 손을 떼고 양손을 올리십시오. 불응 시 즉각 사살합니다." }
+                                ]
+                            },
+                            {
+                                nick: "Night_Photo_Club", time: "1시간 전", like: 4100, dislike: 5, isPunished: false,
+                                content: "사진 동호회원입니다. 기사 사진 구도랑 노출값 진짜 완벽하네요. 빛 번짐 하나 없이 상업지구 네온사인과 공장 불빛 대비를 이렇게 깔끔하게 잡다니... 김사진 기자님 내공이 엄청나신 듯. 주말에 삼각대 들고 역석동으로 출사 나가야겠습니다.",
+                                replies: [
+                                    { nick: "Photo_Nerd", content: "저도 딱 보자마자 감탄했습니다 ㅋㅋ 망원렌즈로 당겨서 압축감 준 것도 예술이네요." },
+                                    { nick: "Camera_Pro", content: "주말 출사 장소로 약산시청 뒤쪽 전망대 강추합니다! 진짜 뷰 끝내줘요." },
+                                    { nick: "Lens_Master", content: "미세먼지 좋음 뜨는 날 골라서 가야겠네요 ㅋㅋ 겨울 야경이 진짜 쨍하고 이쁨." },
+                                    { nick: "Night_Photo_Club", nickClass: "text-[#0055aa] font-bold", content: "출사 포인트 공유 감사합니다! 다들 방한 단단히 하시고 멋진 사진 건져봅시다 ㅎㅎ" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Command") || reply.nick.includes("Police") || reply.nick.includes("Security") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function showToast(msg) {
+                            const toast = document.createElement('div');
+                            toast.innerText = msg;
+                            toast.className = 'toast-msg show';
+                            document.body.appendChild(toast);
+                            setTimeout(() => toast.remove(), 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">약산시 도시개발공사</div>
+                <div class="text-xs text-gray-500">
+                    불 꺼지지 않는 경제의 중심<br>
+                    약산산업단지 입주 기업 모집<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">입주 혜택 알아보기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

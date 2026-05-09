@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[모빌리티] 운전대 없는 버스가 온다... 효빈테크노밸리 자율주행 셔틀 운행 개시 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        .strike { text-decoration: line-through; color: #888; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">IT/과학 > 모빌리티</div>
+                <h2 class="article-title">[모빌리티] 운전대 없는 버스가 온다... 효빈테크노밸리 자율주행 셔틀 운행 개시</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">이미래 기자</span> (future@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.05.08 16:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">운전석·운전대 아예 없는 '레벨 4' 완전 자율주행 셔틀 3대 정식 투입<br>효빈과학기술원역(5호선)과 테크노밸리 주요 거점 연결... "라스트 마일 해소"<br>최근 도입된 'AI 스마트 신호등'과 V2X 통신으로 연동, 안전성 극대화</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://via.placeholder.com/800x450/eeeeee/333333?text=Autonomous+Shuttle+in+Hyobin+Techno+Valley" alt="효빈테크노밸리 완전 자율주행 셔틀버스 운행" class="w-full border border-gray-200">
+                        <div class="img-caption">▲ 8일 오후 효빈광역시에 위치한 첨단 산업 단지 '효빈테크노밸리' 일대에서 운전석이 없는 완전 자율주행 셔틀버스가 시범 운행을 하고 있다. 이 버스는 효빈 5호선과 연계되어 직장인들의 출퇴근 편의를 크게 높일 전망이다. (사진=효빈정보산업진흥원 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 이미래 기자] 영화 속에서나 보던 '운전대 없는 버스'가 효빈광역시 도로 위를 달리기 시작했다. 효빈시가 미래 모빌리티 생태계 구축을 위해 야심 차게 준비한 완전 자율주행 셔틀이 마침내 베일을 벗었다.</p>
+
+                    <p>8일 효빈교통공사와 미래교통혁신단은 첨단 IT 기업들이 밀집한 효빈테크노밸리 일대에서 '레벨 4' 수준의 자율주행 셔틀버스 운행을 정식 개시했다고 밝혔다. 레벨 4 자율주행은 비상 상황에서도 시스템이 스스로 대처할 수 있어, 차량 내부에 운전석이나 스티어링 휠(운전대)이 아예 존재하지 않는 것이 특징이다.</p>
+
+                    <p>이번에 투입된 셔틀버스 3대는 빨간색(#EE0022) 전동차가 달리는 효빈 도시철도 5호선 효빈과학기술원역을 기점으로 출발해, 테크노밸리 내 주요 기업 사옥과 연구소 등 8개 정류장을 약 5.2km 구간에 걸쳐 순환한다. 그동안 지하철역에서 직장까지 애매한 거리(라스트 마일)를 걷거나 전동 킥보드에 의존해야 했던 테크노밸리 입주 노동자들의 출퇴근 환경이 획기적으로 개선될 전망이다.</p>
+
+                    <p>무엇보다 눈에 띄는 것은 최근 효빈시가 도입한 **'AI 기반 스마트 교통신호 제어 시스템'과의 연동**이다. 셔틀버스는 도로 인프라와 실시간으로 정보를 주고받는 V2X(Vehicle to Everything) 통신 기술을 탑재했다. 교차로에 접근하면 AI 신호등이 셔틀버스의 위치를 파악해 멈춤 없이 통과할 수 있도록 신호를 최적화하거나, 돌발 보행자가 나타나면 버스에 즉각 감속 명령을 내려 사고를 원천 차단한다.</p>
+
+                    <p>셔틀버스의 이용 요금은 무료이며, 효빈시 공식 모바일 통합 교통 앱인 '효빈 패스'를 태그하여 누구나 자유롭게 탑승할 수 있다. 차량 내부는 운전석이 사라진 만큼 라운지 형태로 넓고 안락하게 디자인되었으며, 전면의 대형 디스플레이를 통해 실시간 주행 경로와 정류장 정보가 제공된다.</p>
+
+                    <p>박효빈 시장은 이날 오전 탑승 시연 행사에서 "효빈시는 철도라는 전통적이고 강력한 뼈대 위에, 자율주행이라는 첨단 모세혈관을 더해 가장 완벽한 대중교통 네트워크를 완성해 가고 있다"며, "앞으로 안전성 검증을 거쳐 테크노밸리뿐만 아니라 관광지, 신도시 등 효빈시 전역으로 자율주행 모빌리티를 확대해 나가겠다"고 포부를 밝혔다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">10,215</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list"></div>
+                <script>
+                    const commentsData = [
+                        {
+                            nick: "Techno_Valley_Ant", time: "방금 전", like: 14200, dislike: 12, isPunished: false,
+                            content: "효과기원역(5호선)에서 내려서 회사까지 여름에 걸어가면 땀 범벅 됐는데, 셔틀버스 생겨서 진짜 너무 좋습니다 ㅠㅠ 오늘 퇴근길에 타봤는데 운전석이 아예 없고 마주 보고 앉는 라운지 구조라서 무슨 미래 도시 온 줄 알았어요.",
+                            replies: [
+                                { nick: "Worker_A", content: "저도 오늘 탔습니다! 에어컨 빵빵하고 엄청 스무스하게 가더라고요. 킥보드 안 타도 돼서 너무 다행임 ㅠㅠ" },
+                                { nick: "IT_Slave", content: "무료라서 제일 좋습니다 ㅋㅋㅋ 효빈패스 그냥 띡 찍고 타면 끝. 디자인도 엄청 예뻐요." },
+                                { nick: "Transit_Love", content: "마주 보는 라운지 구조면 진짜 외국 공항 셔틀 느낌 나겠네요. 내일 출근길에 무조건 타봅니다." },
+                                { nick: "Red_Line_5", content: "5호선 빨간색 전동차에서 내려서 미래형 버스로 환승... 여기가 바로 사이버펑크 2026 효빈시티 ㄷㄷ" }
+                            ]
+                        },
+                        {
+                            nick: "Future_Tech_99", time: "5분 전", like: 11850, dislike: 8, isPunished: false,
+                            content: "얼마 전에 기사로 났던 AI 스마트 신호등이랑 자율주행 버스가 서로 통신을 한다고? 인프라 연계 진짜 소름 돋게 촘촘하게 짜놨네요. 박효빈 시장님 행정은 진짜 퍼즐 맞춰지듯이 딱딱 맞아떨어지는 쾌감이 있음.",
+                            replies: [
+                                { nick: "Smart_City", content: "저 V2X 통신이 자율주행의 핵심입니다. 차가 자체 센서만 쓰는 게 아니라 도로 전체랑 대화하면서 달리는 거라서 사고율이 0%에 수렴해요." },
+                                { nick: "Tech_Nerd", content: "단순히 보여주기식으로 버스 한 대 사다 놓은 게 아니라, 인프라를 먼저 깔아놓고 버스를 얹은 거네요. 기획력 진짜 도랐음." },
+                                { nick: "Policy_Genius", content: "박효빈 시장님 큰 그림 칭찬해~ 처음엔 AI 신호등 왜 까나 했더니 다 이거 때문이었음." },
+                                { nick: "Dev_Life", content: "저 V2X 시스템 유지보수 하는 게 저희 팀입니다... 야근 엄청 했지만 이렇게 시민들이 좋아해 주시니 뿌듯하네요 ㅠㅠ" }
+                            ]
+                        },
+                        {
+                            nick: "Safety_First_01", time: "12분 전", like: 21, dislike: 15300, isPunished: true,
+                            content: "컴퓨터가 지 혼자 운전하는 걸 어떻게 믿고 탑니까!! 돌발 상황 생겨서 사람 치면 저 버스가 감방 가나요? 멀쩡한 버스 기사들 일자리 뺏고 아주 세금으로 기계 장난감 굴리면서 신났네!! 내가 내일 저 버스 앞에 드러누워서 안 멈추면 시장 고소한다 뺑소니로 돈 좀 벌어보자!!",
+                            replies: [
+                                { nick: "Fact_Checker_79", content: "아저씨, 일반 도로 아무 데나 던져놓는 게 아니라 AI 신호등이랑 통신 인프라 다 깔려있는 통제된 테크노밸리 구간에서 달리는 겁니다. 사람보다 반응 속도 훨씬 빨라요." },
+                                { nick: "Transit_Nerd", content: "저 셔틀버스는 기존 노선버스 안 다니는 라스트마일 구간만 도는 거라 버스 기사님들 밥그릇 뺏는 거 아닙니다. 기사 좀 제대로 읽으세요." },
+                                { nick: "Citizen_B", content: "이 와중에 버스 앞에 드러눕겠다는 건 자해공갈 예고입니까? 님 그러다 진짜 크게 다쳐요; 정신 좀 차리세요." },
+                                { nick: "Hyobin_Police", nickClass: "text-blue-700 font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[공식] 효빈지방경찰청 교통범죄수사팀입니다. 해당 댓글은 명백한 보험사기(자해공갈) 및 교통방해 테러 예고로 간주됩니다. 현재 IP를 추적하여 자택으로 형사들이 출동 중입니다. 문 개방하시고 대기하십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Red_Misoha_Fan", time: "18분 전", like: 9100, dislike: 15, isPunished: false,
+                            content: "5호선 연계 셔틀이니까 안내방송은 당연히 우리 5호선 정책 덕후 '미소하'가 하는 거 맞죠?? \"테크노밸리 진입합니다. 안전 벨트 안 매면 벌금형 정책 발의할 거예요!\" 이런 멘트 나오면 매일 퇴근 안 하고 셔틀버스만 타고 뺑뺑이 돌 자신 있음 ㅋㅋㅋ",
+                            replies: [
+                                { nick: "Misoha_Love", content: "헐 미소하 안내방송 나오면 진짜 성지순례 각인데요 ㅋㅋㅋ 효빈교통공사 일하자!!!" },
+                                { nick: "Rail_Lumine_Fan", content: "공사 놈들 성향상 백퍼센트 '미소하' 보이스 팩 적용해서 한정판 굿즈 팔아먹을 듯. 제발 내 지갑을 가져가라" },
+                                { nick: "Transit_Staff", content: "교통공사 직원입니다. 스포일러는 못하지만... 이번 주말에 셔틀버스 한번 타보시길 강력히 권장합니다 ^_^" },
+                                { nick: "Red_Misoha_Fan", content: "대박!!!! 직원님 힌트 감사합니다!!! 토요일 아침 오픈런 대기탑니다 ㅠㅠㅠㅠ 미소하 ㅠㅠㅠㅠ" }
+                            ]
+                        },
+                        {
+                            nick: "Code_Breaker_Dark", time: "22분 전", like: 14, dislike: 18200, isPunished: true,
+                            content: "저거 와이파이로 굴러가는 거면 내 노트북 하나로 해킹해서 통제권 뺏을 수 있음 ㅋㅋㅋ 내일 퇴근 시간에 자율주행 버스 해킹해서 테크노밸리 사옥 1층 로비에 꼬라박게 만들어준다. 스펙타클한 불꽃놀이 기대해라 ㅋㅋㅋ",
+                            replies: [
+                                { nick: "Cyber_Security", content: "V2X 통신망은 상용 와이파이가 아니라 전용 폐쇄망에 양자암호화 기술 적용되어 있습니다. 방구석 키보드 워리어가 뚫을 수 있는 수준이 아니에요 ㅋㅋㅋ 중2병 심각하시네." },
+                                { nick: "Dev_Manager", content: "테크노밸리에 입주한 보안회사만 수십 갠데 그 앞에서 해킹 드립을 치네 ㅋㅋㅋㅋ 하룻강아지 범 무서운 줄 모른다더니" },
+                                { nick: "Code_Breaker_Dark", content: "니들이 몰라서 그러는데 이미 다크웹에서 보안 취약점 소스코드 샀음 ㅅㄱ 내일 뉴스 1면에 내 이름 대문짝만하게 날 거다 ㅋㅋㅋ" },
+                                { nick: "NIS_Cyber_Bureau", nickClass: "text-blue-700 font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[공식] 국가정보원 국가사이버안보센터입니다. 국가 주요 교통 인프라에 대한 해킹 시도 및 대형 인명 피해 테러 예고 혐의로 귀하의 신원을 즉각 특정하였습니다. 현재 경찰특공대(SWAT)와 함께 자택 진입 카운트다운 중입니다. 두 손 머리 위로 올리고 계십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Subway_Line_4", time: "25분 전", like: 7420, dislike: 5, isPunished: false,
+                            content: "테크노밸리는 IT 단지라서 레벨 4 자율주행 테스트베드로는 진짜 최적의 장소네요. 나중에 우리 4호선 약산 연장되면 약산 바이오 클러스터 쪽에도 주황색 셔틀버스 굴려주시면 완벽할 듯!!",
+                            replies: [
+                                { nick: "Yaksan_Citizen", content: "약산 시민으로서 극공감합니다! 바이오 클러스터 단지도 엄청 넓어서 라스트 마일 셔틀 꼭 필요해요." },
+                                { nick: "Orange_Kasumi", content: "주황색 자율주행 셔틀에 카스미 그려져 있으면 진짜 귀엽겠다 ㅋㅋㅋ 4호선 연장만 목 빠지게 기다립니다." },
+                                { nick: "Urban_Planner", content: "테크노밸리에서 1차 데이터 쌓고, 그 모델 그대로 약산이나 다른 신도시에 이식하는 게 시청의 최종 목표일 겁니다." },
+                                { nick: "Subway_Line_4", content: "역시 갓효빈시 행정은 다 계획이 있군요 ㅠㅠ 4호선 연장 가즈아!!" }
+                            ]
+                        },
+                        {
+                            nick: "Speed_Demon_V8", time: "30분 전", like: 12, dislike: 16500, isPunished: true,
+                            content: "시속 50km도 못 내는 거북이 깡통차 ㅋㅋㅋ 내일 내 튜닝카로 저 버스 앞에서 칼치기 쥰내 하고 급브레이크 밟아서 인공지능 놀래켜준다 ㅋㅋㅋ 시스템 버그 나서 사고 나면 시청에서 내 차 수리비 물어주겠지? 개꿀잼 예상 ㅋㅋㅋ",
+                            replies: [
+                                { nick: "Safe_Driver", content: "미친 건가요... 자율주행 차량 상대로 보복 운전하면 특수협박에 대형 사고 납니다. 진짜 감빵 가고 싶어서 환장하셨네." },
+                                { nick: "Car_Enthusiast", content: "튜닝카 이미지 먹칠하지 마라 쓰레기야. 저 셔틀버스 전방위 카메라 16개 달려있어서 니 번호판 1초 만에 다 따인다." },
+                                { nick: "Speed_Demon_V8", content: "알빠노? 번호판 떼고 달릴 건데? ㅋㅋㅋ 내일 오후 6시 테크노밸리 중앙 사거리에서 V8 엔진 배기음 들리면 나인 줄 아쇼 구경들 와라 ㅋㅋㅋ" },
+                                { nick: "Hyobin_Traffic_Police", nickClass: "text-blue-700 font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[공식] 효빈지방경찰청 교통범죄수사대 및 암행순찰대입니다. 특정 시간 및 장소를 지정한 고의 교통사고(보험사기 미수) 및 보복운전 테러 예고를 인지하였습니다. 즉시 귀하의 차량을 수배 조치하였으며, 차량 압수 및 면허 영구 취소 절차에 돌입했습니다. 내일 사거리가 아니라 유치장에서 뵙겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "Green_Moca_Train", time: "35분 전", like: 6200, dislike: 4, isPunished: false,
+                            content: "운전대 없는 셔틀버스 실제로 보니까 엄청 귀엽게 생겼어요 ㅋㅋㅋ 둥글둥글해서 마치 로봇 청소기가 커진 느낌? 승차감도 사람(초보운전)이 브레이크 밟는 것보다 훨씬 스무스하더라고요.",
+                            replies: [
+                                { nick: "Design_Fan", content: "맞아요 각진 버스보다 훨씬 미래지향적이고 귀여움 ㅋㅋㅋ 앞에 달린 LED 눈웃음 치는 거 보셨어요?" },
+                                { nick: "Tech_Reviewer", content: "라이다(LiDAR) 센서 튀어나온 것도 나름 디자인으로 잘 소화했더군요. 승차감은 AI가 미리 감속 타이밍을 다 계산해서 부드러운 겁니다." },
+                                { nick: "Citizen_A", content: "디자인팀 열일했네 ㅋㅋㅋ 우리 동네 아파트 단지 안에도 굴러다녔으면 좋겠다 귀여워서." },
+                                { nick: "Green_Moca_Train", content: "LED 눈웃음 진짜 심쿵이었습니다... 굿즈로 미니카 안 내주나 ㅠㅠ" }
+                            ]
+                        },
+                        {
+                            nick: "Local_Tyrant", time: "40분 전", like: 18, dislike: 21000, isPunished: true,
+                            content: "왜 테크노밸리 놈들만 무료로 태워주냐!! 우리 동네 아파트 단지 앞에도 정차 안 시키면 내일 아침에 옥상 올라가서 버스 뚜껑에 벽돌 던져서 박살 내버린다!! 세금 냈으면 우리 집 앞에도 모시러 와야 할 거 아니야!!",
+                            replies: [
+                                { nick: "Normal_Citizen", content: "테크노밸리 직장인들 라스트마일 해결하려고 만든 노선인데 주거단지로 왜 갑니까; 이기주의 진짜 토 나오네." },
+                                { nick: "Logic_Cutter", content: "무료 운행도 결국 시범 사업이라 기업들이랑 국비 지원받아서 하는 건데 왜 댁 아파트 단지로 갑니까. 그리고 벽돌 투척은 살인미수입니다." },
+                                { nick: "Local_Tyrant", content: "오타쿠 시장이 지 지지율 올리려고 쑈하는 꼴 못 본다!! 이미 베란다에 벽돌 5장 세팅해놨다. 내일 우리 동네 쪽으로 지나가기만 해봐라 아주 묵사발을 낼 테니!!" },
+                                { nick: "Hyobin_SWAT", nickClass: "text-blue-700 font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[공식] 효빈경찰서 특수범죄대응팀입니다. 운행 중인 대중교통에 대한 중량물 투척 및 특수손괴 예고는 대형 인명피해를 초래하는 중대 테러 범죄입니다. 현재 IP 추적을 통해 귀하의 아파트 동호수를 완벽히 특정하였습니다. 현관문 파쇄 후 강제 진입할 예정이니 벽돌 내려놓고 엎드리십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Data_Scientist", time: "45분 전", like: 5800, dislike: 6, isPunished: false,
+                            content: "이번 자율주행 셔틀 운행이 단순한 '교통수단'을 넘어서서 진짜 중요한 이유는, 저 버스들이 5km 구간을 매일 빙빙 돌며 수집하는 도로 요철, 보행자 동선, 신호 데이터가 효빈시 전체의 '스마트시티 빅데이터 센터'로 실시간으로 쌓인다는 겁니다. 진짜 행정 퀄리티가 다르네요.",
+                            replies: [
+                                { nick: "BigData_Lover", content: "와... 듣고 보니 소름 돋네요. 셔틀버스 자체가 돌아다니는 거대한 스캐너이자 데이터 수집기였군요." },
+                                { nick: "Urban_Planner", content: "맞습니다. 저렇게 수집된 데이터를 바탕으로 교차로 설계도 바꾸고, 보도블록 보수도 자동으로 지시하는 게 스마트시티의 완성형이죠." },
+                                { nick: "Tech_Student", content: "효빈시는 진짜 행정하는 사람들이 IT 기술 이해도가 엄청 높은 것 같아요. 시장님이 90년대생이라 그런가 ㄷㄷ" },
+                                { nick: "Data_Scientist", content: "단순히 하드웨어만 까는 게 아니라 소프트웨어 데이터 선순환 구조를 짜놓은 게 정말 훌륭합니다. 타 지자체들 벤치마킹 엄청 올 듯하네요." }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    container.innerHTML = ""; 
+
+                    commentsData.forEach((cmt, idx) => {
+                        const div = document.createElement('div');
+                        if (cmt.isPunished) {
+                            div.className = "best-comment border-red-300 bg-red-50";
+                        } else if (cmt.like > 10000) {
+                            div.className = "best-comment";
+                        } else {
+                            div.className = "comment-item";
+                        }
+                        
+                        let repliesHtml = "";
+                        let replyButtonHtml = "";
+
+                        if (cmt.replies && cmt.replies.length > 0) {
+                            replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                            repliesHtml = `<div class="reply-container" id="reply-${idx}" ${cmt.isPunished ? 'style="display:block"' : ''}>`;
+
+                            cmt.replies.forEach(reply => {
+                                const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                const nickClass = reply.nickClass || (reply.nick.includes("Safety") || reply.nick.includes("Dark") || reply.nick.includes("Demon") || reply.nick.includes("Tyrant") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                                repliesHtml += `
+                                    <div class="reply-item ${styleClass}">
+                                        <span class="${nickClass}">${reply.nick}</span>: 
+                                        <span>${reply.content}</span>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+                        }
+
+                        div.innerHTML = `
+                            <div class="flex justify-between mb-2">
+                                <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                                <span class="text-xs text-gray-500">${cmt.time}</span>
+                            </div>
+                            <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                ${replyButtonHtml}
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+
+                    function toggleReply(id) {
+                        const el = document.getElementById(id);
+                        if (el.style.display === 'block') el.style.display = 'none';
+                        else el.style.display = 'block';
+                    }
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                            btn.classList.remove('active');
+                            btn.classList.remove('active-hate');
+                            count--;
+                        } else {
+                            if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                            else btn.classList.add('active');
+                            count++;
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+
+                    function showToast(msg) {
+                        const toast = document.createElement('div');
+                        toast.innerText = msg;
+                        toast.style.position = 'fixed';
+                        toast.style.bottom = '20px';
+                        toast.style.left = '50%';
+                        toast.style.transform = 'translateX(-50%)';
+                        toast.style.background = '#333';
+                        toast.style.color = 'white';
+                        toast.style.padding = '10px 20px';
+                        toast.style.borderRadius = '5px';
+                        toast.style.zIndex = '9999';
+                        document.body.appendChild(toast);
+                        setTimeout(() => toast.remove(), 2000);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            <!-- 광고 -->
+            <div class="ad-banner">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈테크노밸리 자율주행 셔틀 안내</div>
+                    <div class="text-xs">효빈과학기술원역 ↔ 테크노밸리 순환<br>무료 탑승! 효빈패스 태그 필수<br><span class="text-[#0055aa] underline mt-1 inline-block">운행 노선도 보기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 효빈일보 코어 스크립트 (헤더, 푸터, 모달, 검색 등 자동 주입) -->
+    <script src="assets/hb_news_core.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[의료] 약산시 바이오 클러스터, 차세대 항암 신약 개발 '청신호' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) {
+            .article-container { flex-direction: row; }
+        }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .strike { text-decoration: line-through; color: #888; }
+        
+        /* Custom Toast Alert Style */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">IT/과학 > 과학/의료</div>
+                <h2 class="article-title">[의료] 약산시 바이오 클러스터, 차세대 항암 신약 개발 '청신호'</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">박연구 기자</span> (science@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 15:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">약산 바이오 융합연구소, AI 기반 표적 항암제 후보물질 'YS-Bio26' 임상 1상 성공<br>효빈대병원 권역응급의료센터와 산학연 협력 결실... '효빈-약산 메가 바이오벨트' 가속<br>"기존 항암제 부작용 대폭 감소"... 글로벌 제약사로의 대규모 기술 수출 기대감 고조</span></p>
+                    
+                    <div class="my-6">
+                        <img src="약산바이오클러스터.png" alt="약산시 첨단 바이오 클러스터 연구원들" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Yaksan+Bio+Cluster'">
+                        <div class="img-caption">▲ 약산시에 조성된 첨단 바이오 클러스터 융합연구소에서 연구원들이 차세대 항암 신약 후보물질을 분석하고 있다. 이번 성과는 인접한 효빈대학교병원과의 긴밀한 산학연 협력을 통해 이루어낸 쾌거로 평가받는다. (사진=효빈정보산업진흥원 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박연구 기자] 약산시가 미래 먹거리로 야심 차게 육성 중인 '약산 바이오 클러스터'에서 전 세계 의학계가 주목할 만한 차세대 항암 신약 개발 성과가 나왔다. 효빈광역시의 우수한 의료 인프라와 약산시의 첨단 연구 시설이 빚어낸 완벽한 시너지라는 평가다.</p>
+
+                    <p>8일 덕빈북도 약산 바이오 융합연구소는 인공지능(AI) 플랫폼을 활용해 자체 개발한 차세대 표적 항암제 후보물질 'YS-Bio26'의 임상 1상 시험을 성공적으로 마무리했다고 밝혔다. 이번 임상 시험은 인접한 효빈대학교병원 임상시험센터와 공동으로 진행되었다.</p>
+
+                    <p>'YS-Bio26'은 정상 세포는 보존하면서 암세포의 특정 변이 단백질만을 정밀하게 타격하는 구조로 설계되었다. 연구소 측에 따르면, 기존 화학 항암제의 치명적인 단점으로 꼽히던 탈모, 구토, 면역력 저하 등의 부작용을 획기적으로 줄이면서도 종양 억제 효과는 30% 이상 향상된 것으로 나타났다.</p>
+
+                    <p>이번 쾌거의 이면에는 '효빈-약산 메가 바이오벨트'라는 탄탄한 산학연 협력 네트워크가 자리 잡고 있다. 최근 임단협을 성공적으로 타결하며 조직의 안정을 꾀한 효빈대병원의 임상 데이터와 전공의 자원이 약산 바이오 클러스터의 연구진과 실시간으로 교류되며 신약 개발 기간을 대폭 단축한 것이다.</p>
+
+                    <p>약산시 경제진흥국 관계자는 "이번 신약 후보물질은 이미 다수의 글로벌 제약사로부터 수천억 원 규모의 기술 수출(라이선스 아웃) 제의를 받고 있다"며, "본격적인 상용화에 돌입할 경우 약산산업단지 내 바이오 파운드리 증설을 통해 약 5,000명의 고급 일자리가 창출될 것"이라고 내다봤다.</p>
+
+                    <p>이러한 연구·산업 교류가 활발해짐에 따라, 두 도시를 물리적으로 잇는 교통망 확충의 목소리도 더욱 커지고 있다. 현재 추진 중인 효빈 도시철도 4호선의 약산 연장이 이루어지면, 효빈대병원 연구진과 약산 바이오 클러스터 간의 이동 시간이 20분 이내로 단축되어 실질적인 '초연결 바이오 경제권'이 완성될 전망이다.</p>
+
+                    <p>박효빈 시장은 서면 축사를 통해 "약산시의 눈부신 과학적 성과에 효빈 시민을 대표해 뜨거운 박수를 보낸다"며, "앞으로도 효빈의 의료·교통 인프라와 약산의 첨단 산업이 맞물려 세계적인 혁신을 주도할 수 있도록 모든 행정적 지원을 아끼지 않겠다"고 밝혔다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">7,152</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Hope_For_Cure", time: "방금 전", like: 18200, dislike: 5, isPunished: false,
+                                content: "현재 항암 치료받고 있는 환자 가족입니다. 부작용 때문에 너무 고통스러워하시는데 부작용을 확 줄인 신약이라니 진짜 눈물이 날 만큼 반가운 기사네요. 하루빨리 임상 통과해서 상용화되었으면 좋겠습니다. 약산시 연구원분들 정말 감사합니다 ㅠㅠ",
+                                replies: [
+                                    { nick: "Stay_Strong", content: "환자분 꼭 쾌차하시길 진심으로 응원합니다. 가족분들도 힘내세요!" },
+                                    { nick: "Bio_Hope", content: "부작용 줄인 표적 항암제면 진짜 꿈의 약이네요 ㅠㅠ 빨리 시판되길!" },
+                                    { nick: "Hyobin_Citizen", content: "이런 좋은 소식이 있네요! K-바이오의 중심이 우리 동네라니 자랑스럽습니다." },
+                                    { nick: "Hope_For_Cure", nickClass: "text-[#0055aa] font-bold", content: "다들 따뜻한 응원 감사합니다! 덕분에 오늘 하루 큰 힘이 되네요 ㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "Yaksan_Pride", time: "5분 전", like: 14500, dislike: 12, isPunished: false,
+                                content: "약산시민으로서 가슴이 웅장해집니다. 맨날 효빈시의 위성도시 느낌이었는데, 이제는 바이오산업으로 전 세계에서 주목받는 갓-도시가 되었네요!! 기술 수출 대박 나서 우리 동네 경제 더 팍팍 살아났으면 좋겠습니다.",
+                                replies: [
+                                    { nick: "Local_Economy", content: "고급 일자리 5천 개면 진짜 약산시 엄청 커지겠네요 ㄷㄷ" },
+                                    { nick: "Win_Win", content: "효빈대병원(임상) + 약산연구소(개발) 조합이 진짜 신의 한 수 였음. 완벽한 윈윈이죠." },
+                                    { nick: "Yaksan_Lover", content: "이제 약산시는 단순한 공단이 아니라 첨단 연구도시입니다! 집값 오르는 소리 들린다 ㅋㅋㅋ" },
+                                    { nick: "Yaksan_Pride", nickClass: "text-[#0055aa] font-bold", content: "맞아요! 앞으로 4호선 연장까지 되면 교통까지 완벽해지겠네요 ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "Subway_Line_4", time: "12분 전", like: 11200, dislike: 8, isPunished: false,
+                                content: "기승전 4호선 연장 ㅋㅋㅋㅋ 근데 진짜 맞말임. 효빈대병원 의사들이랑 연구원들 약산 왔다 갔다 하려면 지금 도로 꽉 막혀서 혈압 오를 텐데, 4호선(주황색) 뚫려서 다로나 안내방송 들으면서 편하게 출퇴근해야 연구 능률도 오름.",
+                                replies: [
+                                    { nick: "Orange_Train", content: "다로나: '연구실에서 졸면... 안 됩니다!' ㅋㅋㅋ 안내방송 상상만 해도 커엽" },
+                                    { nick: "Traffic_Hell", content: "아침 8시에 고송대로 타고 약산 넘어가 본 사람만 앎... 지옥 그 자체임 ㅠㅠ 전철 필수!" },
+                                    { nick: "Rail_Lumine_Fan", content: "주황색 전동차 타고 출근하면 아침부터 카스미 활력 얻고 연구 대박 날 듯 ㅋㅋㅋ" },
+                                    { nick: "Subway_Line_4", nickClass: "text-[#0055aa] font-bold", content: "시장님 이거 보셨죠? 신약 개발 속도 올리려면 4호선 연장 조기 착공해야 합니다 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Fact_Checker_79", time: "18분 전", like: 9850, dislike: 15, isPunished: false,
+                                content: "어제 효빈대병원 파업 직전에 노사 타결됐다는 기사 떴었는데, 바로 이런 겹경사가 터지네요. 축제(HAF) 안전도 지키고 신약 개발도 하고. 효빈-약산 벨트는 진짜 요즘 국운이 트인 것 같습니다.",
+                                replies: [
+                                    { nick: "Good_News", content: "파업했으면 임상 데이터 못 넘어가서 신약 발표도 미뤄졌겠죠 ㄷㄷ 노사 타결 진짜 신의 한수였네" },
+                                    { nick: "Hospital_Staff", content: "병원 직원입니다. 타결 안 됐으면 응급실 마비되고 임상센터 올스톱이었어요 ㅠㅠ 다행입니다!" },
+                                    { nick: "Mayor_Magic", content: "이것도 박효빈 시장이 뒤에서 중재 잘한 덕분 아님? 진짜 행정력 미쳤다" },
+                                    { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "맞습니다. 의료, 교통, 산업, 축제까지 톱니바퀴처럼 완벽하게 굴러가네요. 갓효빈!" }
+                                ]
+                            },
+                            {
+                                nick: "Stock_Hunter", time: "25분 전", like: 15, dislike: 32400, isPunished: true,
+                                content: "그래서 저 약산 바이오 융합연구소랑 협력하는 상장사 어디입니까? 빨리 주식 풀매수 때려야 하는데 종목명 아시는 분 ㅋㅋㅋㅋ 글로벌 제약사에 수천억 기술 수출이면 이건 못 참지!! 아 내가 내부자 정보 빼와서 게시판에 뿌려줄 테니까 VIP 리딩방 가입비 100만 원씩 쏴라 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "No_Scam", content: "기사 뜨자마자 리딩방 사기꾼 등장 ㅋㅋㅋ 수천억짜리 정보를 100만 원에 푼다는 거 자체가 능지 처참한 사기꾼 인증이쥬?" },
+                                    { nick: "Report_To_FSS", content: "내부자 정보 유출 및 주가 조작(자본시장법 위반) 예고로 금융감독원이랑 경찰에 캡처해서 넘겼습니다 수고~" },
+                                    { nick: "Stock_Hunter", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 쫄보 새끼들아 ㅋㅋㅋ 나 텔레그램 비밀방 써서 절대 못 잡음 ㅋㅋㅋ 방금 연구소 직원한테 뇌물 먹이고 서류 빼왔다 낼 아침에 나만 떡상할거야 ㅋㅋㅋ" },
+                                    { nick: "Smart_Investor", content: "연구소 직원이 수천억 가치 서류를 리딩방 사기꾼한테 넘겼다고? 소설도 좀 개연성 있게 써라 ㅋㅋㅋ" },
+                                    { nick: "Stock_Hunter", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "진짜라니까 ㅋㅋㅋ 낼 아침 9시 장 열리면 상한가 가는 거 보고 배아파서 질질 짜라 거지들아 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_FSS_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[금융감독원 및 경찰청 지능범죄수사대] 미공개 중요정보 이용(주가 조작) 예고 및 유사투자자문업 사기 정황을 인지하여 즉각 강제수사에 착수했습니다. 텔레그램 우회 서버를 디코딩하여 귀하의 불법 리딩 사무실 위치를 특정하였으며, 현 시간부로 금융범죄 수사관들이 진입합니다. 컴퓨터와 스마트폰에서 손을 떼십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Bio_Researcher_K", time: "32분 전", like: 8200, dislike: 11, isPunished: false,
+                                content: "타 지역 바이오 연구원입니다. 효빈시의 인프라(효빈대병원 임상)와 약산시의 연구 시설(바이오파운드리)이 결합된 클러스터 모델은 정말 이상적이네요. 지자체 간 이기주의 없이 이렇게 협력해서 성과를 내는 모습, 우리 지역도 배워야 합니다.",
+                                replies: [
+                                    { nick: "Perfect_Match", content: "서로 중복 투자 안 하고 각자 잘하는 거 합치니까 시너지 쩌네요 ㄷㄷ" },
+                                    { nick: "Mega_City_Power", content: "이게 바로 메가시티의 위력 아닐까요. 행정구역은 달라도 경제권이 하나로 묶이니까요." },
+                                    { nick: "Local_Win", content: "매번 수도권에 뺏기다가 지방에서 이런 굵직한 신약 터지니까 너무 기분 좋습니다!" },
+                                    { nick: "Bio_Researcher_K", nickClass: "text-[#0055aa] font-bold", content: "네! 저도 기회만 되면 효빈-약산 클러스터로 이직하고 싶을 정도입니다 ㅠㅠ 정말 부럽네요!" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Doctor_01", time: "40분 전", like: 8, dislike: 48900, isPunished: true,
+                                content: "항암제는 다 제약회사랑 의사들이 돈 벌려고 만든 독약이다!! 저거 맞으면 사람 더 빨리 죽음!! 자연 치유가 답이다. 내가 파는 '만병통치 기적의 약수' 한 병이면 암세포 싹 다 죽는데 바보들 ㅉㅉ 10만 원에 팔 테니까 살 사람 댓글 달아라.",
+                                replies: [
+                                    { nick: "Science_Win", content: "와 아직도 안아키 같은 사이비 맹신하는 사람이 있네;; 암 환자들 절박함 이용해서 맹물 팔아먹으려는 쓰레기 보소" },
+                                    { nick: "Report_Fake_Med", content: "식품위생법 및 약사법 위반, 사기 혐의로 식약처랑 경찰에 신고 넣었습니다. 감방 가서 약수나 실컷 드세요." },
+                                    { nick: "Anti_Doctor_01", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해봐라 의사 앞잡이들아!! 내일 아침에 효빈대병원 응급실 쳐들어가서 저 독약들 싹 다 변기에 버려버릴 거니까!! 진실은 승리한다!!" },
+                                    { nick: "Crazy_Cult", content: "병원 응급실 쳐들어가서 약품 폐기 테러 예고? 이거 진짜 완전 미친 사이비네;;" },
+                                    { nick: "Anti_Doctor_01", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 성수 뿌려서 환자들 구원할 거다!! 병원 문 다 부수고 들어갈 테니까 막아보든가 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 권역응급의료센터(효빈대병원)를 겨냥한 시설물 파괴 및 의약품 훼손 테러 예고를 국가 재난 위협으로 간주하여 비상 대응 체제로 전환했습니다. IP 추적으로 피의자의 무허가 종교 시설을 특정하였으며, 현 시간부로 무장 특공대원이 강제 진입 중입니다. 불법 제조된 맹물(약수)은 전량 압수 폐기됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "HAF_Volunteer", time: "48분 전", like: 6500, dislike: 4, isPunished: false,
+                                content: "효빈대병원 의사 선생님들 HAF 축제 현장에도 의료 지원 엄청 많이 와주셨어요 ㅠㅠ 파업 타결되자마자 쉬지도 못하시고 응급 텐트에서 온열질환 환자들 돌보시는데 진짜 너무 감사했습니다. 신약 개발도, 현장 진료도 최고이십니다!",
+                                replies: [
+                                    { nick: "True_Hero", content: "진짜 의사 선생님들은 우리 사회의 영웅입니다 ㅠㅠ 고생 많으셨어요!" },
+                                    { nick: "Safety_First", content: "축제 안전 뒤에는 저분들의 희생이 있었군요. 다시 한번 감사드립니다!" },
+                                    { nick: "Hospital_Director", content: "저희 의료진의 노고를 알아주셔서 감사합니다. 시민의 생명과 안전을 지키는 것은 당연한 책무입니다. 축제 마지막 날까지 최선을 다하겠습니다!" },
+                                    { nick: "HAF_Volunteer", nickClass: "text-[#0055aa] font-bold", content: "헐 병원 관계자분 등판 ㄷㄷㄷ 진짜 너무 든든합니다! 감사합니다!!" }
+                                ]
+                            },
+                            {
+                                nick: "Tech_Spy_007", time: "55분 전", like: 5, dislike: 52100, isPunished: true,
+                                content: "ㅋㅋㅋ 멍청한 조선놈들. 내가 어젯밤에 약산 바이오 융합연구소 서버 백도어 뚫어서 YS-Bio26 임상 데이터 원본 파일 싹 다 빼돌렸다. 이거 중국 제약사에 넘기면 내 인생은 수백억 자산가로 역전이지 ㅋㅋㅋ 서버 보안 뚫린 것도 모르는 호구들 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "What_The_Hell", content: "국가 핵심 기술을 훔쳐서 해외에 팔아넘긴다고? 대놓고 산업스파이 인증을 하네 미친건가??" },
+                                    { nick: "Report_NIS", content: "산업기술유출방지법 위반 및 국가보안법 위반. 당장 국가정보원 산업기밀보호센터에 다이렉트로 꽂았습니다." },
+                                    { nick: "Tech_Spy_007", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 븅신들아 ㅋㅋㅋ 이미 다크웹 거쳐서 파일 전송 99%다. 난 내일 여권 파기하고 밀항선 탈거니까 평생 날 못 잡을 거다 ㅋㅋㅋ" },
+                                    { nick: "Security_Expert", content: "영화 너무 많이 봤네 ㅋㅋㅋ 국가 인트라넷 망이 니깟 놈한테 뚫릴 정도면 나라 이미 망했다 소설 작작 써라" },
+                                    { nick: "Tech_Spy_007", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "안 믿네? ㅋㅋㅋ 내일 뉴스에 약산 바이오 데이터 유출 대문짝만하게 뜨면 내 이름 기억해라 ㅋㅋㅋ 아 파일 전송 100% 완료 ㅅㄱ" },
+                                    { nick: "NIS_Cyber_Command", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 산업기밀보호센터 및 경찰청 안보수사국] 국가 핵심기술 해외 유출(산업스파이) 자백 및 국부 훼손 시도를 인지하여 최고 수준의 방첩 작전을 개시했습니다. 귀하가 해킹했다고 착각한 서버는 당원이 구축한 '허니팟(추적용 가짜 서버)'이며, 전송된 데이터 역시 가짜(Fake) 파일입니다. 귀하의 밀항 루트 차단 및 은신처 포위가 완료되었으니 양손을 들고 투항하십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Elite_Seoul_Citizen", time: "1시간 5분 전", like: 12, dislike: 38900, isPunished: true,
+                                content: "어차피 지방 지잡 도시에서 만든 약을 누가 믿고 쓰냐? ㅋㅋㅋ 서울 대형 병원에서 만든 것도 부작용 터지는 마당에, 효빈이니 약산이니 이름도 촌스러운 동네에서 뽀록으로 터진 거 가지고 호들갑 오지네 ㅉㅉ 어차피 상용화 절대 안 됨~",
+                                replies: [
+                                    { nick: "Stop_Discrimination", content: "지방 비하에 연구원들 땀방울까지 폄하하는 인성 수준 보소. 평생 남 깎아내리면서 살아라 ㅉㅉ" },
+                                    { nick: "Fact_Check_King", content: "글로벌 제약사들이 수천억 싸 들고 와서 러브콜 보내는데 방구석 앰생이 상용화 안 됨 웅앵웅 ㅋㅋㅋ 니 인생이나 상용화 시키세요" },
+                                    { nick: "Elite_Seoul_Citizen", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 지방충들이 서울 시민한테 대들어!! 내일 약산 연구소 쳐들어가서 저 가짜 약들 싹 다 망치로 부숴버릴 테니까 딱 기다려라!! 촌구석의 실체를 까발려주마!!" },
+                                    { nick: "Report_Terror", content: "연구소 무단 침입 및 기물 파손 예고? 이거 테러 협박입니다. 바로 경찰청에 캡처해서 신고 넣음." },
+                                    { nick: "Elite_Seoul_Citizen", nickClass: "text-red-500 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 서울에서 KTX 타고 내려갈 테니까 효빈역에 마중 나와라 이 촌놈들아 ㅋㅋㅋ 내가 망치로 연구소 유리창 다 박살 내줄게!!" },
+                                    { nick: "Hyobin_Police_Security", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 및 철도경찰대] 국가 핵심 연구시설에 대한 무단 침입 및 특수재물손괴(망치 파괴) 테러 예고를 확인했습니다. KTX 예매 내역을 조회하여 피의자 동선을 파악하였으며, 내일 오전 효빈역 승강장에 강력계 형사들이 마중 나갈 예정입니다. 망치 대신 은팔찌를 준비해 두겠습니다." }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Police") || reply.nick.includes("Command") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">약산 바이오 파운드리 채용</div>
+                <div class="text-xs text-gray-500">
+                    글로벌 혁신 신약을 이끌어갈<br>
+                    핵심 연구 인력을 모십니다<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">채용 공고 확인</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

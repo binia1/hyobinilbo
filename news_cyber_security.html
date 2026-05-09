@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[보안] "해킹 꼼짝 마"... 시청 전산망 '블록체인 보안' 구축 완료 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        /* 기본 라이트 모드 스타일 고정 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">IT/과학 > 보안</div>
+                <h2 class="article-title">[보안] "해킹 꼼짝 마"... 시청 전산망 '블록체인 보안' 구축 완료</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">박보안 기자</span> (security@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 07:05</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈광역시청, 전국 지자체 최초로 전 행정망에 '블록체인 분산 저장' 기술 도입<br>시민 개인정보 및 효빈패스 결제 데이터 원천 암호화... "위변조 절대 불가"<br>박효빈 시장 "사이버 테러로부터 시민의 정보 자산을 완벽하게 방어할 것"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://via.placeholder.com/800x450/eeeeee/333333?text=Blockchain+Security+System" alt="효빈광역시청 전산실 블록체인 보안 모니터링" class="w-full h-auto border border-gray-200">
+                        <div class="img-caption">▲ 8일 효빈광역시청 전산실에서 사이버 보안 전문가들이 새롭게 가동된 '블록체인 기반 통합 보안 시스템'의 트래픽을 모니터링하고 있다. 이번 시스템 도입으로 효빈시는 외부 해킹 및 데이터 위변조의 위험을 원천적으로 차단하게 되었다. (사진=효빈정보산업진흥원 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박보안 기자] 효빈광역시가 전국 지방자치단체 최초로 시청 전산망 전체에 '블록체인(Blockchain)' 기술을 적용한 통합 보안 시스템 구축을 완료하고 본격적인 가동에 들어갔다. 날이 갈수록 고도화되는 사이버 테러와 해킹 위협으로부터 수백만 시민의 데이터를 완벽하게 보호하기 위한 강력한 방어막이 완성된 것이다.</p>
+
+                    <p>8일 효빈정보산업진흥원은 지난 6개월간의 설계 및 테스트를 마치고, 자정부터 효빈시의 핵심 행정망과 대민 서비스 서버에 블록체인 분산 원장 기술을 전면 적용했다고 밝혔다.</p>
+
+                    <p>새롭게 도입된 시스템의 핵심은 '데이터의 분산 저장과 암호화'에 있다. 기존에는 시청 중앙 서버 한 곳에 데이터가 집중되어 있어 해커가 방화벽을 뚫고 들어오면 대규모 개인정보 유출이나 시스템 마비가 발생할 위험이 컸다. 그러나 블록체인 기술이 적용된 현재는 시민들의 주민등록 정보는 물론, 효빈 패스 대중교통 이용 내역과 효빈페이 결제 데이터가 수많은 노드(Node)에 쪼개져 암호화된 상태로 저장된다. 해커가 이를 위변조하려면 네트워크에 참여한 모든 서버의 데이터를 동시에 해킹해야 하므로 사실상 물리적인 해킹이 불가능해진다.</p>
+
+                    <p>이번 조치는 최근 효빈 애니메이션 페스티벌(HAF) 티켓 예매 사이트나 시청 민원 게시판을 겨냥해 악의적인 디도스(DDoS) 공격과 해킹을 시도했던 일부 혐오 세력의 사이버 테러를 원천 봉쇄하기 위한 선제적 대응으로 풀이된다.</p>
+
+                    <p>박효빈 효빈광역시장은 이날 오전 전산실을 직접 방문해 시스템 가동 상황을 점검하며, "스마트 시티의 가장 중요한 기반은 기술의 화려함이 아니라 시민들의 '디지털 신뢰'"라고 강조했다. 박 시장은 이어 "시민의 소중한 개인정보와 자산을 훔치거나 훼손하려는 어떠한 사이버 테러도 용납하지 않을 것이며, 세상에서 가장 안전한 전자 행정 서비스를 제공하겠다"고 밝혔다.</p>
+
+                    <p>한편, 효빈시는 시청 행정망의 블록체인 보안 구축 성공을 바탕으로, 하반기부터 이를 효빈교통공사의 도시철도 관제 시스템(ATC/ATO)으로 확대 적용할 계획이다. 이를 통해 1호선부터 8호선까지 이어지는 핵심 교통 인프라의 해킹 위험마저 완전히 제거하겠다는 방침이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">8,290</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <!-- 자바스크립트로 댓글 동적 생성 -->
+                </div>
+                
+                <script>
+                    const commentsData = [
+                        {
+                            nick: "Security_Expert_01", time: "방금 전", like: 15200, dislike: 12, isPunished: false,
+                            content: "와, 지자체 전체 행정망에 블록체인을 끼얹는다고요? ㄷㄷㄷ 효빈시 진짜 IT 쪽으로는 돈 안 아끼고 화끈하게 투자하네요. 요즘 타 지역에서 공공기관 털렸다는 뉴스 볼 때마다 불안했는데, 이제 효빈시민 개인정보는 해커 할아버지가 와도 못 뚫겠습니다.",
+                            replies: [
+                                { nick: "Net_izen", content: "진짜 공공기관 털려서 내 정보 다 털리는거 지겨웠는데 효빈시 일처리 폼 미쳤네요." },
+                                { nick: "Crypto_Nerd", content: "블록체인이 코인 원툴인줄 아는 사람 많은데, 분산원장 기술이라 보안엔 최고존엄입니다." },
+                                { nick: "Job_Seeker", content: "정보보안기사 공부하는 취준생인데 효빈시청 전산직 들어가고 싶어집니다 ㅠㅠ" },
+                                { nick: "Security_Expert_01", nickClass: "text-[#0055aa] font-bold", content: "이제 다른 지자체들도 이거 보고 벤치마킹하러 줄 서겠네요 ㅋㅋㅋ 자랑스럽습니다!" }
+                            ]
+                        },
+                        {
+                            nick: "Fact_Checker_79", time: "5분 전", like: 12850, dislike: 8, isPunished: false,
+                            content: "작년에 HAF 예매 사이트 디도스 공격했던 혐오 세력 놈들 지금쯤 피눈물 흘리고 있겠네요 ㅋㅋㅋ 지들 딴에는 사이버 테러로 축제 방해하려고 했겠지만, 덕분에 박효빈 시장님이 빡쳐서 아예 무적의 방패를 사 오셨음 ㅋㅋㅋㅋ",
+                            replies: [
+                                { nick: "Ticket_Master", content: "작년에 디도스 공격으로 예매창 터졌을때 제 앞번호 날아간거 생각하면 아오 ㅠㅠ" },
+                                { nick: "Mayor_Fan", content: "시장님 성격상 디도스 공격받고 '아예 시스템을 요새로 만들어버려라' 하고 오더 내리셨을듯 ㅋㅋㅋ" },
+                                { nick: "Urban_Planner", content: "진짜 위기를 기회로 만드는 행정력은 타의 추종을 불허합니다. 추진력 갓효빈 ㄷㄷ" },
+                                { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "혐오세력들 지금쯤 키보드 샷건 치면서 부들거리고 있을듯 ㅋㅋㅋ 꼴좋다!" }
+                            ]
+                        },
+                        {
+                            nick: "Yoon_True_Patriot", time: "12분 전", like: 21, dislike: 22400, isPunished: true,
+                            content: "시장이 횡령하려고 블록체인이니 암호화폐니 하는 이상한 기술 끌어들인 거 아니냐!! 투명하게 장부 공개해야지 무슨 암호를 걸어!! 세금으로 코인 하려는 수작 다 보인다!! 박효빈 사퇴하라!!",
+                            replies: [
+                                { nick: "Logic_Cutter", content: "아저씨, 블록체인=코인이라고 생각하는 수준 진짜 처참하네요. 데이터 위조 못 하게 여러 군데 나눠서 분산 저장하는 '보안 기술'을 도입한 건데 무슨 횡령 타령입니까? 뉴스 좀 보고 사세요." },
+                                { nick: "IT_Worker", content: "윤대환 지지자들은 진짜 능지가... 데이터 투명하게 보존하려고 도입한 기술 보고 장부 숨긴다고 하네 ㅋㅋㅋ 그쪽 시장님이 옛날에 똥색 버스 장부 조작하던 거랑 헷갈리셨나 봄?" },
+                                { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 어린놈의 새끼들이 말대꾸야!! 내일 내가 시청 전산실 찾아가서 망치로 그 블록체인인지 뭔지 하는 서버 다 때려 부숴버릴거니까 딱 기다려!! 빨갱이들!!" },
+                                { nick: "Report_Citizen", content: "공공기관 서버실 물리적 파괴 예고 ㄷㄷ 방금 112랑 사이버수사대에 캡처해서 넘겼습니다. 망치 들고 시청 오시길 기대할게요 ^^" },
+                                { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 빨갱이들아!! 내가 무서울 줄 아냐!! 내일 아침 시청 전산실은 피바다가 될 것이다!! 멸공!!" },
+                                { nick: "Hyobin_Police_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 국가 주요 정보통신기반시설(시청 전산실)을 향한 흉기(망치) 난동 및 파괴 테러 예고를 국가 안보 위협으로 간주하여 즉각 작전을 개시했습니다. 현재 IP 추적으로 자택을 포위하였으며 문을 강제 개방 중입니다. 흉기를 버리고 엎드리십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Hyobin_Pay_VVIP", time: "18분 전", like: 9500, dislike: 5, isPunished: false,
+                            content: "어제 효빈페이 백그라운드 NFC 결제 업데이트 기사 보고 엄청 편하겠다고 생각은 하면서도 살짝 보안이 걱정되긴 했거든요. 근데 하루 만에 블록체인 도입 기사 뜨는 거 보니까 진짜 든든합니다! 지갑 없이 안심하고 돌아다닐 수 있겠어요.",
+                            replies: [
+                                { nick: "Mobile_User", content: "맞아요! 효빈패스에 카드 연동해놔서 살짝 쫄렸는데 블록체인이면 안심이죠." },
+                                { nick: "NFC_Fan", content: "NFC 결제 엄청 빠르던데 보안까지 완벽하다니... 진정한 지갑 없는 스마트 시티 완성!" },
+                                { nick: "Cashback_Love", content: "10% 캐시백 받으면서 해킹 걱정 없는 앱이라니 ㅠㅠ 효빈페이 평생 씁니다." },
+                                { nick: "Hyobin_Pay_VVIP", nickClass: "text-[#0055aa] font-bold", content: "이런 완벽한 인프라 덕분에 주말 코스프레 할때 지갑 안들고 다녀도 돼서 너무 편해요 ㅋㅋㅋ" }
+                            ]
+                        },
+                        {
+                            nick: "Subway_Line_1_Fan", time: "25분 전", like: 8720, dislike: 11, isPunished: false,
+                            content: "하반기에 효빈교통공사 관제 시스템에도 블록체인 적용한다는 거 너무 좋습니다!! 도시철도는 해킹당하면 진짜 대형 사고인데, 파란색 열차 1호선부터 8호선까지 전부 보안 걸어준다니 안심하고 출퇴근하겠습니다. 고나미 기관사님이 깐깐하게 감시 잘해주실 듯 ㅋㅋㅋ",
+                            replies: [
+                                { nick: "Movie_Geek", content: "진짜 영화보면 해커들이 지하철 맘대로 조종해서 사고내고 그러잖아요. 그거 원천 차단하는거임 ㄷㄷ" },
+                                { nick: "ATC_Master", content: "ATC/ATO가 열차 자동제어 시스템인데, 이거 블록체인 연동되면 외부 침입 진짜 철벽 방어네요." },
+                                { nick: "Gonami_Love", content: "1호선 고나미 주임님이 엄청 깐깐하게 지켜보고 계실듯 ㅋㅋㅋ '해킹은... 안 됩니다!'" },
+                                { nick: "Subway_Line_1_Fan", nickClass: "text-[#0055aa] font-bold", content: "효빈교통공사 일처리 속도 무엇 ㅋㅋ 시민 안전이 최우선이네요 역시!" }
+                            ]
+                        },
+                        {
+                            nick: "Dark_Hacker_99", time: "32분 전", like: 8, dislike: 38200, isPunished: true,
+                            content: "ㅋㅋ 블록체인이고 나발이고 내가 맘만 먹으면 10분 컷으로 다 뚫음. 오늘 밤 12시에 효빈시 서버 싹 다 랜섬웨어 감염시키고 비트코인 100개 요구할거다 ㅋㅋㅋ 시장놈 질질 짜면서 코인 보내는 꼴 구경해라~",
+                            replies: [
+                                { nick: "Dev_Senior", content: "분산 원장을 10분만에 다 뚫는다고? 양자컴퓨터라도 방구석에 숨겨놨냐? ㅋㅋㅋ 소설을 써라 스크립트 키디야." },
+                                { nick: "White_Hacker", content: "랜섬웨어 유포 협박은 단순 장난이어도 징역형 쎄게 맞는데 인생 하드모드로 살고싶나보네;;" },
+                                { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "응~ 토르 브라우저 3중 우회해서 절대 못잡아~ 이미 서버 침투율 90%다 빙신들아 ㅋㅋㅋ 내일 아침 대참사 기대해라 ㅋㅋㅋ" },
+                                { nick: "Report_NIS", content: "국가 전산망 해킹 예고 및 금전 갈취 협박. 바로 국가정보원 사이버안보센터에 신고 꽂았습니다. 수고해라." },
+                                { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해봐라 ㅋㅋㅋ 내가 잡히나 ㅋㅋㅋ 난 100억 벌고 필리핀으로 뜬다 ㅋㅋㅋ" },
+                                { nick: "NIS_Cyber_Command", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 및 경찰청 사이버테러대응센터] 지자체 핵심 행정망 해킹 및 랜섬웨어 유포(사이버 테러) 예고를 인지하여 최고 수준의 방첩 작전을 개시했습니다. 딥웹 우회 경로 디코딩 결과 피의자의 은신처를 파악하였으며, 현 시간부로 무장 특공대가 진입 중이니 키보드에서 손을 떼십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Tech_Student", time: "40분 전", like: 7100, dislike: 6, isPunished: false,
+                            content: "컴공과 학생인데 효빈시 진짜 기술 도입 속도 미쳤습니다. 블록체인을 공공망에 적용하는 건 설계부터 난이도가 엄청난데 이걸 6개월 만에 실증부터 가동까지 끝내다니... 시청 전산직 공무원분들 갈려나간 소리가 여기까지 들리네요.",
+                            replies: [
+                                { nick: "Thanks_Dev", content: "공무원분들의 피, 땀, 눈물로 만들어진 철벽 보안 ㅠㅠ 감사합니다." },
+                                { nick: "Bonus_Plz", content: "이거 프로젝트 주도하신 분들 진짜 인센티브 팍팍 드려야함! 일처리 미쳤다 ㄷㄷ" },
+                                { nick: "Fast_Admin", content: "민간 대기업보다 기술 도입 속도가 빠른 지자체가 있다?! 효빈시티 만세" },
+                                { nick: "Hyobin_IT_Agency", nickClass: "text-[#0055aa] font-bold", content: "[효빈정보산업진흥원] 과찬이십니다! (머리숱을 제물로 바쳤지만) 시민분들이 안심하신다니 보람차네요! 앞으로도 철통 보안 유지하겠습니다!" }
+                            ]
+                        },
+                        {
+                            nick: "Scam_Phisher_007", time: "48분 전", like: 5, dislike: 41200, isPunished: true,
+                            content: "[효빈시청 긴급공지] 새로운 블록체인 보안 시스템 도입으로 인해 효빈패스 및 효빈페이 비밀번호를 재설정해야 합니다. 아래 링크(hyobin-pay-update.net)로 접속하여 인증하지 않으면 계정이 정지됩니다. 당장 클릭해서 인증하세요!",
+                            replies: [
+                                { nick: "Security_Guard", content: "URL 꼬라지 보소 ㅋㅋㅋ 대놓고 피싱 사이트 링크 쳐올리네 미친놈인가 진짜" },
+                                { nick: "Hyobin_Staff", nickClass: "text-[#0055aa] font-bold", content: "시청 및 진흥원에서는 절대로 링크를 통한 비밀번호 변경을 요구하지 않습니다! 절대 클릭하지 마세요!" },
+                                { nick: "Scam_Phisher_007", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "ㅋㅋㅋ 멍청한 할매 할배들 벌써 10명 넘게 낚여서 계좌 비밀번호 다 털렸다~ 내가 다 인출해서 마카오로 튈거다 ㅋㅋㅋ 개꿀딱~" },
+                                { nick: "Angry_Victim_Son", content: "와 우리 엄마 방금 저거 누를 뻔하셨다 미친 사기꾼 새끼야 넌 진짜 잡히면 죽는다" },
+                                { nick: "Scam_Phisher_007", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "이미 니네 엄마 돈 내 대포통장으로 들어옴 ㅅㄱ ㅋㅋㅋ 경찰이 나 잡을수 있을거같냐? ㅋㅋㅋ" },
+                                { nick: "Hyobin_FSS_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[금융감독원 및 경찰청 지능범죄수사대] 공공기관 사칭 스미싱 및 전기통신금융사기(보이스피싱) 정황을 포착하여 즉각 강제수사에 착수했습니다. 금융결제원 공조로 귀하의 대포통장을 즉시 동결(Freezing) 조치하였으며, 추적을 통해 작업장 위치를 특정했습니다. 마카오행 비행기 대신 효빈구치소로 모시겠습니다." }
+                            ]
+                        },
+                        {
+                            nick: "HAF_Waiting_2026", time: "55분 전", like: 10400, dislike: 9, isPunished: false,
+                            content: "작년에 서버 터져서 예매 튕겼을 때 진짜 세상이 무너지는 줄 알았는데, 올해 HAF 2026 예매는 진짜 안심하고 티켓팅 할 수 있겠네요! 블록체인 방패 든든합니다!",
+                            replies: [
+                                { nick: "Server_Stable", content: "맞아요 디도스 방어에 최적화된 기술이니까 올해는 진짜 내 손가락 속도만 믿으면 됨 ㅋㅋㅋ" },
+                                { nick: "No_Macro", content: "티켓 예매 정보도 블록체인에 기록되니까 암표상들 매크로 돌리거나 표 빼돌리는 것도 막을 수 있을 듯!" },
+                                { nick: "Ticket_Master", content: "암표상들 컷트 ㅋㅋㅋㅋ 진짜 갓효빈 행정 사랑합니다." },
+                                { nick: "HAF_Waiting_2026", nickClass: "text-[#0055aa] font-bold", content: "올해 HAF 라인업 엄청나던데 서버 터질 걱정 없이 즐길 수 있겠네요! 기대 만빵!" }
+                            ]
+                        },
+                        {
+                            nick: "Anti_Gov_Terrorist", time: "1시간 5분 전", like: 9, dislike: 58900, isPunished: true,
+                            content: "내 모든 개인정보가 컴퓨터 쪼가리에 암호로 저장된다고? 시청 놈들이 내 정보를 통제하고 감시하려는 빅브라더 수작이다!! 나는 내 자유를 지키기 위해 내일 시청 시장실에 사제폭탄 던져서 박효빈이랑 같이 산화할 거다!! 각오해라!!",
+                            replies: [
+                                { nick: "Common_Sense", content: "아저씨... 정보를 감시 못하게 쪼개서 분산 암호화하는 게 블록체인입니다... 제발 모르면 검색이라도 하세요." },
+                                { nick: "Call_112", content: "시장실 사제폭탄 테러 예고 ㄷㄷ 이거 진짜 미친놈 아님? 바로 테러대응센터에 캡처해서 신고함." },
+                                { nick: "Anti_Gov_Terrorist", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 이 짐승들아!! 나는 진실을 깨달은 투사다!! 다이너마이트 세팅 다 끝났다 내일 오전 9시 시청 폭발 카운트다운 들어간다!!" },
+                                { nick: "Citizen_Safe", content: "진짜 광기다;; 내일 시청 근처에 절대 가면 안될듯;; 완전 테러리스트네" },
+                                { nick: "Anti_Gov_Terrorist", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "다 같이 죽는 거다 ㅋㅋㅋ 효빈시를 잿더미로 만들어주마 ㅋㅋㅋ 멸망의 날을 즐겨라!" },
+                                { nick: "Hyobin_SWAT_EOD", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대 및 폭발물처리반(EOD)] 관공서(시청) 및 광역단체장을 겨냥한 사제 폭발물(다이너마이트) 테러 예고를 국가 최상위 안보 위협으로 간주하여 대테러 작전을 개시했습니다. 은신처를 완전히 포위하였으며 저격수 배치가 완료되었습니다. 폭발물에서 손을 떼고 양손을 올리십시오. 불응 시 즉각 사살합니다." }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    container.innerHTML = ""; 
+
+                    commentsData.forEach((cmt, idx) => {
+                        const div = document.createElement('div');
+                        
+                        if (cmt.isPunished) {
+                            div.className = "punish-comment";
+                        } else if (cmt.like > 10000) {
+                            div.className = "best-comment";
+                        } else {
+                            div.className = "comment-item";
+                        }
+                        
+                        let repliesHtml = "";
+                        let replyButtonHtml = "";
+
+                        if (cmt.replies && cmt.replies.length > 0) {
+                            replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                            repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                            
+                            if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                            cmt.replies.forEach(reply => {
+                                const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Command") || reply.nick.includes("Police") || reply.nick.includes("Staff") || reply.nick.includes("Agency") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                repliesHtml += `
+                                    <div class="reply-item ${styleClass}">
+                                        <span class="${nickClass}">${reply.nick}</span>: 
+                                        <span class="text-gray-800">${reply.content}</span>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+                        }
+
+                        div.innerHTML = `
+                            <div class="flex justify-between mb-2">
+                                <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                <span class="text-xs text-gray-500">${cmt.time}</span>
+                            </div>
+                            <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                ${replyButtonHtml}
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+
+                    function toggleReply(id) {
+                        const el = document.getElementById(id);
+                        if (el.style.display === 'block') el.style.display = 'none';
+                        else el.style.display = 'block';
+                    }
+                    
+                    function toggleVote(btn) {
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                            btn.classList.remove('active');
+                            btn.classList.remove('active-hate');
+                            count--;
+                        } else {
+                            if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                            else btn.classList.add('active');
+                            count++;
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+
+                    function showToast(msg) {
+                        const toast = document.createElement('div');
+                        toast.innerText = msg;
+                        toast.className = 'toast-msg show';
+                        document.body.appendChild(toast);
+                        setTimeout(() => toast.remove(), 2500);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">사이버 보안 캠페인</div>
+                <div class="text-xs text-gray-500">
+                    안전한 디지털 효빈시티<br>
+                    블록체인으로 내 정보 철벽 방어<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">보안 수칙 알아보기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

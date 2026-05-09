@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[교통] 효빈시, AI 신호등으로 '출퇴근 전쟁' 잡았다... 교통 혼잡 30% 감소 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        /* 기본 라이트 모드 스타일 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; } 
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">IT/과학 > 스마트시티</div>
+                <h2 class="article-title">[교통] 효빈시, AI 신호등으로 '출퇴근 전쟁' 잡았다... 교통 혼잡 30% 감소</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">박스마트 기자</span> (smart@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 14:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">효빈동신도시·약산시 시범 도입 한 달 만에 차량 통행 속도 25% 향상 쾌거<br>딥러닝 카메라가 실시간 차량 대기열·보행자 인식해 녹색불 시간 자동 조절<br>박효빈 시장 "똑똑한 도로 인프라 확충으로 시민들의 소중한 아침 시간 돌려드릴 것"</span></p>
+                    
+                    <div class="my-6">
+                        <img src="AI_신호등.png" alt="효빈광역시 교차로에 설치된 AI 기반 스마트 교통신호 제어 시스템 분석 화면" class="w-full h-auto border border-gray-200" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=AI+Smart+Traffic+Light'">
+                        <div class="img-caption">▲ 효빈광역시가 최근 효빈동신도시와 약산시 주요 교차로에 시범 도입한 'AI 기반 스마트 교통신호 제어 시스템'의 분석 화면. 딥러닝 기술을 활용해 차량과 보행자의 통행량을 실시간으로 분석, 신호 주기를 유동적으로 변경하여 교통 체증을 획기적으로 줄이고 있다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박스마트 기자] 효빈광역시와 약산시에 시범 도입된 'AI 기반 스마트 교통신호 제어 시스템'이 지옥 같던 출퇴근길 도로에 획기적인 숨통을 트이게 하고 있다.</p>
+
+                    <p>8일 효빈시 교통정보센터에 따르면, 지난달부터 효빈동신도시 진입로와 약산대로 일대 교차로 15곳에 시범 운영 중인 AI 스마트 신호등의 데이터를 분석한 결과, 해당 구간의 출퇴근 시간대 교통 혼잡도가 도입 전 대비 무려 <strong>30% 감소</strong>한 것으로 나타났다. 차량의 평균 통행 속도 역시 기존 18.5km/h에서 23.2km/h로 약 25% 향상되었다.</p>
+
+                    <p>기존의 교통신호등은 정해진 시간 주기에 따라 기계적으로 불빛이 바뀌는 방식(고정식)이라, 차량이 전혀 없는 한적한 야간에도 운전자들이 무의미하게 빨간불에서 대기해야 하는 비효율이 존재했다.</p>
+
+                    <p>그러나 이번에 도입된 'AI 스마트 신호등'은 교차로에 설치된 딥러닝 기반 스마트 CCTV가 차량의 대기열 길이, 직진 및 좌회전 차량의 비율, 횡단보도 대기 보행자 수를 실시간으로 파악한다. 만약 주도로에 차량이 꼬리를 물고 이어지면 녹색불을 탄력적으로 10~20초 연장하고, 횡단보도에 노약자나 장애인이 건너고 있을 경우 보행 신호를 자동으로 늘려주는 등 스스로 판단하여 교차로를 제어한다.</p>
+
+                    <p>특히 인구 30만을 돌파하며 출퇴근 병목현상이 심각했던 약산시와 효빈시를 잇는 '약산-효빈 간선도로'의 정체가 대폭 해소되며 시민들의 호평이 쏟아지고 있다. 시외버스와 광역버스들의 운행 정시성 또한 크게 개선되었다.</p>
+
+                    <p>박효빈 효빈광역시장은 이날 오전 스마트도시 조성 성과 보고회에서 "도시철도망 확충과 함께 지상 도로의 효율을 극대화하는 것이 교통 행정의 핵심"이라며, "차 없는 빈 도로에서 무의미하게 버려지던 시민들의 소중한 시간과 유류비를 AI 기술로 되찾아 드리겠다. 올해 하반기까지 해당 시스템을 상습 정체 구역인 고송대로와 시내 전역으로 확대 적용할 것"이라고 밝혔다.</p>
+
+                    <p>시는 이번 AI 신호등 도입으로 연간 수백억 원에 달하는 차량 연료비 절감과 탄소 배출 감소 효과는 물론, 보행자 무단횡단 감소로 인한 교통사고 예방 효과까지 거둘 수 있을 것으로 기대하고 있다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">8,912</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Yaksan_Driver", time: "방금 전", like: 12400, dislike: 8, isPunished: false,
+                                content: "진짜 이거 대박입니다. 약산에서 효빈 남구청 쪽으로 출퇴근하는데, 예전에는 차도 없는 사거리에서 빨간불 걸리면 멍때리면서 속 터졌거든요. 요즘은 차 없는 쪽 신호 팍팍 줄이고 직진 신호 길게 빼줘서 출근 시간 15분은 단축됐습니다!!",
+                                replies: [
+                                    { nick: "Commuter_Joy", content: "맞아요! 퇴근할 때도 차 막히는 거 보고 알아서 파란불 켜주니까 흐름이 안 끊겨서 너무 편함 ㅠㅠ" },
+                                    { nick: "Gas_Saver", content: "아침마다 브레이크 밟았다 뗐다 하는 빈도가 확 줄어서 기름값도 은근히 아껴지더라고요." },
+                                    { nick: "Fast_Forward", content: "15분 단축이면 수면 시간 15분 늘어난 거임 ㅋㅋㅋ 개이득" },
+                                    { nick: "Yaksan_Driver", nickClass: "text-[#0055aa] font-bold", content: "ㄹㅇ 아침잠 15분이 진짜 소중하죠 ㅠㅠ 박효빈 시장님 진짜 열일하시네요!" }
+                                ]
+                            },
+                            {
+                                nick: "Smart_City_Hyobin", time: "5분 전", like: 10250, dislike: 12, isPunished: false,
+                                content: "할머니 모시고 길 건널 때 걸음이 느리셔서 항상 파란불 깜빡일 때마다 가슴 졸였는데, CCTV가 사람 인식해서 보행 신호 자동으로 늘려준다는 거 보고 진짜 감동받았습니다. 기술은 이렇게 사람을 향해야 하는 게 맞죠 ㅠㅠ 박효빈 시장님 행정력 무엇...",
+                                replies: [
+                                    { nick: "Warm_Tech", content: "이게 진짜 선진국형 스마트시티죠. 약자 배려하는 시스템 너무 훈훈합니다." },
+                                    { nick: "Kids_Safe", content: "초등학교 앞 스쿨존에도 빨리 도입됐으면 좋겠네요! 꼬맹이들 건널 때 안전하게요!" },
+                                    { nick: "Disabled_Rights", content: "휠체어 타시는 분들한테도 진짜 꼭 필요한 기능입니다. 널리 널리 확대되길!" },
+                                    { nick: "Smart_City_Hyobin", nickClass: "text-[#0055aa] font-bold", content: "맞아요. 하반기엔 시내 전역으로 확대된다고 하니 스쿨존에도 꼭 들어갈 겁니다!" }
+                                ]
+                            },
+                            {
+                                nick: "Tax_Waste_Boomer", time: "12분 전", like: 15, dislike: 18400, isPunished: true,
+                                content: "야!! 신호등 쪼가리에 무슨 AI 카메라를 달아서 혈세를 낭비하냐!! 시장이 아주 돈 쓸 데가 없어서 안달이 났구나!! 차 막히면 그냥 니들이 아침 일찍일찍 다녀라 ㅉㅉ 세금 낭비하는 꼴을 못보겠네!",
+                                replies: [
+                                    { nick: "Logic_Cutter", nickClass: "text-blue-600 font-bold", content: "아저씨, 교차로 대기하면서 길바닥에 버리는 매연이랑 기름값이 시 전체로 따지면 1년에 수백억입니다. AI 카메라 달아서 그 돈 아끼는 건데 경제 관념이 그렇게 없으십니까?" },
+                                    { nick: "Tech_Nerd", nickClass: "text-blue-600 font-bold", content: "고정식 신호등 시대는 이미 끝났습니다. 타 지자체들도 다 벤치마킹하려고 줄 서 있는 시스템인데 억까 좀 작작 하세요." },
+                                    { nick: "Tax_Waste_Boomer", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "건방진 놈들이 어디서 어른한테 말대꾸야!! 내일 아침에 내가 야구빠따 들고 나가서 사거리에 달린 카메라 다 박살내버릴 거니까 딱 기다려!! 혈세 도둑놈들!!" },
+                                    { nick: "Citizen_Guard", content: "공공기물 파손 예고 ㄷㄷ 방금 스마트 국민제보 앱으로 특수재물손괴 및 테러 예고 신고 넣었습니다. 수고하세요." },
+                                    { nick: "Tax_Waste_Boomer", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 ㅋㅋㅋ 내가 못 부술 줄 아냐? 내일 아침 출근길 신호등 다 꺼져서 대혼돈이 일어나는 걸 구경해라 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Police_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 공공 교통 인프라 파괴(특수재물손괴) 및 사회 혼란 조장 테러 예고로 간주, 최고 수준의 비상 대응 체제로 전환했습니다. IP 역추적으로 은신처를 특정하였으며, 현 시간부로 자택 문을 강제 개방 중입니다. 야구방망이를 버리고 양손을 올리십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Bus_Rider_01", time: "18분 전", like: 8900, dislike: 5, isPunished: false,
+                                content: "버스 타고 출퇴근하는 입장에서 차 안 막히니까 너무 좋습니다. 쾌적한 전철(1호선) 타는 게 제일 좋긴 하지만 역에서 먼 동네는 버스 타야 하는데, 버스 정시성 엄청 좋아졌어요. 하반기에 고송대로까지 확대되면 HAF 행사 때도 길 덜 막히겠네요!",
+                                replies: [
+                                    { nick: "Bus_Driver_Kim", content: "시내버스 기사입니다. AI 신호등 생기고 나서 배차 간격 맞추기가 훨씬 수월해졌습니다 ㅠㅠ 스트레스 엄청 줄었어요!" },
+                                    { nick: "Commute_Easy", content: "맨날 버스 정류장에서 언제 오나 하염없이 기다렸는데 요즘은 도착 예정 시간에 딱딱 맞게 옴 굿굿" },
+                                    { nick: "HAF_Ready", content: "고송대로 막히면 답도 없는데 빨리 확대 도입됐으면 ㅠㅠ HAF 때 차 엄청 밀릴 텐데" },
+                                    { nick: "Bus_Rider_01", nickClass: "text-[#0055aa] font-bold", content: "버스 기사님 등판 ㄷㄷ 항상 안전 운전해주셔서 감사합니다! AI 신호등이 모두를 편하게 하네요 ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "Orange_Line_Waiting", time: "25분 전", like: 7150, dislike: 11, isPunished: false,
+                                content: "AI 신호등도 좋지만, 기승전 4호선 약산 연장이 최고 존엄입니다 ㅋㅋㅋ 빨리 주황색 전동차 타고 편하게 효빈시내 넘어가고 싶네요. 지상 교통은 AI한테 맡기고 우리는 다로나(4호선 마스코트) 보러 지하로 내려갑시다~",
+                                replies: [
+                                    { nick: "Line4_Lover", content: "주황색 4호선 연장 제발요 ㅠㅠㅠ 천가역에서 약산까지 지하철 뚫리면 게임 끝입니다!" },
+                                    { nick: "Darona_Fan", content: "다로나 NPC가 약산역에서 잔소리하는 거 듣고 싶네요 ㅋㅋㅋ 무단횡단 안 됩니다!" },
+                                    { nick: "Rail_Lumine", content: "지상은 AI가 책임지고 지하는 레일루미네가 책임진다! 효빈교통공사 화이팅!" },
+                                    { nick: "Future_City", content: "지상과 지하가 유기적으로 연결되는 완벽한 메가시티 ㄷㄷ 효빈시티즌인 게 자랑스럽습니다." }
+                                ]
+                            },
+                            {
+                                nick: "Speed_Demon_99", time: "32분 전", like: 8, dislike: 21500, isPunished: true,
+                                content: "AI 신호등? ㅋㅋㅋ 난 어차피 빨간불이든 뭐든 새벽에 150km로 쏘고 다니는데 알빠노? 저딴 카메라가 내 람보르기니 속도를 잡을 수 있냐? ㅋㅋㅋ 차 막히면 중앙선 넘어서 역주행하면 그만이지 답답한 놈들 ㅉㅉ",
+                                replies: [
+                                    { nick: "Safe_Driver", content: "새벽에 150km 밟고 역주행하는 게 자랑이다 예비 살인마야. 혼자 벽 박고 죽어라 엄한 사람 피눈물 흘리게 하지 말고." },
+                                    { nick: "Camera_Pro", content: "저 AI 카메라는 단속 기능이랑 다 연동돼서 니 차가 200km로 달려도 번호판 다 따임 ㅅㄱ 과태료 폭탄이나 쳐맞아라." },
+                                    { nick: "Speed_Demon_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "번호판 청테이프로 다 가렸지롱 ㅋㅋㅋ 오늘 밤 12시에 약산대로에서 폭주 뛸 거니까 길 막는 놈들은 다 차로 밀어버린다!! 걸리적거리면 뒤질 줄 알아라 ㅋㅋㅋ" },
+                                    { nick: "Night_Owl", content: "와 미친놈;; 대놓고 살인 뺑소니 예고 ㄷㄷ 이거 빨리 112 신고 ㄱㄱ 진심 위험해 보임." },
+                                    { nick: "Speed_Demon_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "다 치어 죽여버린다 ㅋㅋㅋ 분노의 질주가 뭔지 보여주마 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Traffic_Police", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 교통범죄수사대] 고의적 번호판 훼손, 과속 폭주 및 불특정 다수를 향한 특수상해(차량 돌진) 예고를 인지하였습니다. 현 시간부로 약산대로 전 구간에 스파이크 스트립(차단선) 구축 및 도주로 차단을 완료했습니다. 현재 귀하의 차고지 압수수색 영장이 발부되어 기동대가 투입 중입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Green_Eco_Life", time: "40분 전", like: 8200, dislike: 4, isPunished: false,
+                                content: "공회전 시간이 줄어드니까 매연 냄새도 확실히 덜 나네요! 교차로 주변에 살아서 창문 열면 항상 매연 때문에 고통받았는데, 통행 흐름이 원활해지니 미세먼지도 줄어든 기분입니다. 환경 정책으로도 최고네요!",
+                                replies: [
+                                    { nick: "Clean_Air", content: "맞아요 차들이 정차했다 출발할 때 매연 젤 많이 나오는데 그게 줄었으니 공기가 맑아지죠." },
+                                    { nick: "Carbon_Zero", content: "탄소 배출 30% 감소 효과면 나무 수만 그루 심은 거랑 똑같은 효과입니다 ㄷㄷ" },
+                                    { nick: "Healthy_Hyobin", content: "교통 지옥 탈출에 환경 보호까지 일석이조네요. 진짜 영리한 행정입니다." },
+                                    { nick: "Green_Eco_Life", nickClass: "text-[#0055aa] font-bold", content: "앞으로 효빈시 전역에 깔리면 진짜 전국에서 공기 제일 맑은 대도시 될 듯 ㅎㅎ" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_CCTV_007", time: "48분 전", like: 5, dislike: 29800, isPunished: true,
+                                content: "저거 순 뻥이다!! 저 AI 카메라로 시민들 얼굴 일일이 다 감시하고 개인정보 중국에 팔아먹으려는 수작임!! 빅브라더가 효빈시를 지배한다!! 내일 밤에 내가 시청 교통정보센터 서버 싹 다 해킹해서 신호등 올 빨간불로 만들어서 시스템 마비시켜버린다!!",
+                                replies: [
+                                    { nick: "IT_Expert", content: "제발 무식하면 가만히 있어라. 저 카메라는 객체 인식(차량 덩어리, 사람 실루엣)만 판단하지 번호판이나 얼굴 식별해서 데이터베이스에 저장 안 한다 ㅉㅉ" },
+                                    { nick: "Security_Guard", content: "교통 신호기 해킹해서 올 빨간불로 만든다고? 그거 국가기반시설 테러인데 간이 배 밖으로 나왔네 진짜 ㅋㅋㅋ 감방에서 평생 썩고 싶냐?" },
+                                    { nick: "Anti_CCTV_007", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내 해킹 실력이면 저딴 허접한 서버 10분이면 뚫음 ㅋㅋㅋ 내일 아침 효빈시 전역 교통 마비 대참사를 구경해라 ㅋㅋㅋ 내가 신이다 ㅋㅋㅋ" },
+                                    { nick: "Net_Citizen", content: "대놓고 사이버 테러 예고 ㄷㄷ 방금 국정원이랑 사이버수사대에 민원 다이렉트로 꽂았다 수고해라." },
+                                    { nick: "Anti_CCTV_007", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 병신들아 ㅋㅋㅋ 딥웹 우회해서 절대 못잡음 ㅋㅋㅋ 내일 교차로에서 차들끼리 쳐박고 싸우는 거나 구경해야지 ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Cyber_Security", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 및 효빈지방경찰청 사이버수사대] 국가주요기반시설(교통관제센터) 해킹 및 사이버 테러 예고를 인지, 최고 수준 안보 위협으로 간주하여 작전을 개시했습니다. 3중 우회 딥웹 경로를 디코딩하여 귀하의 은신처 IP 및 MAC 주소를 파악했습니다. 현 시간부로 무장 특공대가 진입 중이니 컴퓨터에서 손을 떼십시오." }
+                                ]
+                            },
+                            {
+                                nick: "Biz_Master_Kim", time: "55분 전", like: 12, dislike: 41200, isPunished: true,
+                                content: "ㅋㅋ 저 AI 시스템 사실 우리 하청업체가 대충 중국산 싼마이 카메라 달아놓고 펌웨어만 그럴싸하게 딥러닝인 척 속여서 시청에서 100억 해먹은 거임 ㅋㅋㅋ 눈먼 세금 타먹기 개꿀~ 난 이 돈으로 낼 포르쉐 뽑으러 간다 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Taxpayer_Angry", content: "와 미친 진짜 세금 도둑이 여기 대놓고 자백 인증을 하네? 간 땡이가 부었냐?" },
+                                    { nick: "Dev_Worker", content: "이거 진짜면 관급공사 납품 비리 게이트 수준인데? 당장 감사원이랑 시청 감사실 찔러야 함;;" },
+                                    { nick: "Biz_Master_Kim", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "찔러봐라 빙신들아 ㅋㅋㅋ 이미 차명계좌로 수수료 세탁 다 끝냈고 납품 서류 조작 완벽해서 털어도 절대 안 나옴 ㅋㅋㅋ 효빈시 공무원들 멍청해서 눈치도 못 챔 ㅋㅋㅋ" },
+                                    { nick: "Auditor_Pro", content: "차명계좌 금융실명제 위반, 사기, 배임, 조세포탈. 이거 죄다 합치면 특가법 적용돼서 징역 10년 넘게 뜰 텐데 ㅋㅋㅋ 잘 가라" },
+                                    { nick: "Biz_Master_Kim", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "응 난 내일 마카오 비행기표 끊었어 ㅋㅋㅋ 니들은 평생 버스나 타면서 세금이나 열심히 내라 거지들아~ ㅋㅋㅋ" },
+                                    { nick: "Hyobin_Audit_Legal", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[감사원 및 경찰청 지능범죄수사대] 관급공사 납품 비리, 서류 위조, 사기 및 조세포탈 혐의(특가법 위반)를 자백한 정황을 포착했습니다. 금융결제원 공조로 귀하의 차명계좌 5개를 전면 동결(Freezing) 조치하였으며, 마카오행 출국금지 명령 하달 및 구속영장이 발부되었습니다. 포르쉐 매장이 아닌 효빈구치소로 송치될 예정입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Future_Mayor_Fan", time: "1시간 전", like: 16500, dislike: 9, isPunished: false,
+                                content: "진짜 박효빈 시장님은 뜬구름 잡는 정치가 아니라 시민들 피부에 와닿는 체감형 행정을 너무 잘함. 출퇴근 시간 줄여주는 게 직장인들한텐 최고의 복지인데 이걸 기술로 해결해버리네. 차기 대권 가즈아!!",
+                                replies: [
+                                    { nick: "Admin_God", content: "L-Project부터 시작해서 교통, 상권, 쾌적함까지 전부 유기적으로 연결되는 게 진짜 시장님 머릿속에 도시의 큰 그림이 있는 것 같음." },
+                                    { nick: "Work_Life_Balance", content: "퇴근 15분 빨리 하니까 집에 가서 가족들이랑 밥 먹을 시간도 생기고 삶의 질이 수직 상승함 ㅠㅠ" },
+                                    { nick: "Hyobin_Forever", content: "이런 분이 평생 효빈시 시장 해주셔야 합니다 ㅋㅋㅋ 딴 데 못 보냄!" },
+                                    { nick: "Future_Mayor_Fan", nickClass: "text-[#0055aa] font-bold", content: "맞아요 ㅋㅋㅋ 시장님 여권 뺏어서 효빈시에 평생 가둬놔야 함 ㅋㅋㅋ 일 너무 잘해 ㅠㅠ" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Police") || reply.nick.includes("Security") || reply.nick.includes("Legal") || reply.nick.includes("Audit") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            let toast = document.getElementById('custom-toast');
+                            if (!toast) {
+                                toast = document.createElement('div');
+                                toast.id = 'custom-toast';
+                                toast.className = 'toast-msg';
+                                document.body.appendChild(toast);
+                            }
+                            toast.innerText = "댓글이 정상적으로 등록되었습니다.";
+                            toast.classList.add('show');
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                            }, 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">효빈시 스마트교통 캠페인</div>
+                <div class="text-xs text-gray-500">
+                    원활한 흐름, 맑은 공기<br>
+                    대중교통 이용을 생활화합시다<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">자세히 보기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

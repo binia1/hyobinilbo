@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[의료] 효빈대병원, AI 진단 시스템 '닥터 왓슨' 도입... 오진율 줄인다 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        /* 기본 라이트 모드 스타일 고정 */
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) { .article-container { flex-direction: row; } }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 라이트 모드 하이라이트 댓글 스타일 */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        /* Custom Toast Alert Style */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">IT/과학 > 과학/의료</div>
+                <h2 class="article-title">[의료] 효빈대병원, AI 진단 시스템 '닥터 왓슨' 도입... 오진율 줄인다</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">박메디 기자</span> (medical@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.08 09:00</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">엑스레이, MRI, 병리 조직까지 수초 만에 판독하는 첨단 의료 AI 전면 가동<br>수십만 건의 글로벌 임상 데이터 실시간 대조... 전문의 교차 검증으로 정확도 99% 육박<br>약산 바이오 클러스터와 데이터 연동... '스마트 헬스케어 메카'로 자리매김</span></p>
+                    
+                    <div class="my-6">
+                        <img src="https://via.placeholder.com/800x450/eeeeee/333333?text=Dr+Watson+AI+System" alt="효빈대병원 AI 닥터 왓슨 도입" class="w-full h-auto border border-gray-200">
+                        <div class="img-caption">▲ 8일 오전 효빈대학교병원 본관 영상의학과 판독실에서 의료진이 새롭게 도입된 첨단 AI 진단 시스템 '닥터 왓슨(Dr. Watson)'을 활용해 환자의 MRI 영상을 분석하고 있다. 효빈시는 인공지능을 활용한 스마트 헬스케어 인프라 확충에 박차를 가하고 있다. (사진=효빈대학교병원 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 박메디 기자] 효빈광역시의 지역 거점 의료기관인 효빈대학교병원이 인공지능(AI)을 활용한 최첨단 정밀 진단 시대를 열었다. 인간의 눈으로 놓치기 쉬운 미세한 병변까지 잡아내어 오진율을 획기적으로 낮추고, 의료진의 업무 피로도를 덜어줄 'AI 조수'가 본격적인 진료 현장에 투입된 것이다.</p>
+
+                    <p>8일 효빈대병원은 글로벌 의료 인공지능 플랫폼인 '닥터 왓슨(Dr. Watson)'의 최신 버전을 영상의학과, 병리과, 종양내과 등 주요 진료과에 전면 도입하고 가동을 시작했다고 밝혔다.</p>
+
+                    <p>'닥터 왓슨'은 환자의 X-ray, CT, MRI 영상이나 조직 검사 슬라이드를 입력하면, 클라우드에 축적된 수십만 건의 글로벌 암 환자 임상 데이터 및 최신 의학 논문과 실시간으로 대조 분석하는 시스템이다. 인간 의사가 수십 분에 걸쳐 들여다봐야 할 복잡한 판독을 단 몇 초 만에 완료하며, 종양의 위치와 악성 여부를 확률 수치로 제시한다.</p>
+
+                    <p>병원 측은 이번 AI 도입이 전문의의 진단을 '대체'하는 것이 아니라 '보조'하는 역할임을 강조했다. AI가 1차적으로 병변을 짚어내면, 숙련된 전문의가 이를 최종적으로 교차 검증하는 시스템을 통해 진단의 정확도를 99% 수준까지 끌어올렸다는 설명이다.</p>
+
+                    <p>특히 이번 시스템 도입은 인접한 약산시의 '바이오 클러스터'와 강력한 시너지를 낼 것으로 기대된다. 최근 임상 1상에 성공한 차세대 표적 항암제 'YS-Bio26' 연구에도 닥터 왓슨의 빅데이터 분석 역량이 투입될 예정이며, 이를 통해 환자 개인의 유전자 특성에 맞춘 초정밀 맞춤형 항암 치료(Precision Medicine)가 가능해질 전망이다.</p>
+
+                    <p>박효빈 시장은 "최근 도입된 'AI 스마트 교통신호'가 도시의 혈맥을 뚫었다면, 효빈대병원의 'AI 진단 시스템'은 시민들의 소중한 생명을 지키는 최후의 보루가 될 것"이라며, "교통, 문화, 첨단 의료가 빈틈없이 결합된 스마트 헬스케어 도시 효빈을 완성해 나가겠다"고 밝혔다.</p>
+
+                    <p>효빈대병원은 AI 진단 시스템 도입을 기념해 이달 말까지 지역 주민들을 대상으로 초기 폐암 및 유방암 AI 무료 스크리닝 검사 캠페인을 진행할 예정이다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">6,421</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <!-- Javascript will render comments here -->
+                </div>
+
+                <script>
+                    const commentsData = [
+                        {
+                            nick: "Smart_Health_99", time: "방금 전", like: 11200, dislike: 8, isPunished: false,
+                            content: "와, 이제 병원 진료도 AI가 도와주는 시대가 왔네요. 예전에 친척 분이 다른 병원에서 단순 염증인 줄 알았다가 나중에 큰 병원 가서 암 초기 판정받고 가슴 쓸어내린 적이 있었는데, 왓슨 도입되면 그런 억울한 오진은 싹 사라질 듯!! 효빈대병원 응원합니다!",
+                            replies: [
+                                { nick: "Citizen_A", content: "진짜 암은 초기 발견이 생명인데, 미세한 점까지 다 찾아준다니 너무 안심되네요 ㅠㅠ" },
+                                { nick: "Med_Student", content: "의사도 사람인지라 피곤하면 놓칠 수 있는 부분을 기계가 커버해주니 환자 입장에선 완벽한 이중 방어막이죠!" },
+                                { nick: "Local_Doc", content: "현직 영상의학과 전문의입니다. AI가 초벌 판독해주면 저희는 진단에 훨씬 더 집중할 수 있어서 업무 효율이 정말 좋아집니다." },
+                                { nick: "Smart_Health_99", nickClass: "text-[#0055aa] font-bold", content: "오 현직 전문의님 등판 ㄷㄷ 의사랑 AI가 협력하는 그림 진짜 든든합니다! 화이팅!" }
+                            ]
+                        },
+                        {
+                            nick: "AI_Doctor_Fan", time: "5분 전", like: 8950, dislike: 11, isPunished: false,
+                            content: "효빈시는 진짜 하루가 다르게 미래 도시가 되어가네요. 테크노밸리에는 자율주행 버스 다니고 도로에는 AI 신호등, 병원에는 AI 의사까지 ㄷㄷㄷ 서브컬처 성지라서 놀러 가기 좋은 줄만 알았는데 살기도 엄청 좋은 도시인 듯.",
+                            replies: [
+                                { nick: "Tech_Enthusiast", content: "행정 속도가 진짜 LTE 급임. 딴 동네는 예타 통과한다고 10년 걸릴 때 효빈시는 이미 실전 배치 끝남 ㅋㅋㅋ" },
+                                { nick: "Resident_Pride", content: "요즘 타 지역 친구들이 우리 동네 엄청 부러워합니다 ㅋㅋ 살기 좋은 스마트 시티 1티어 ㅠㅠ" },
+                                { nick: "Future_Hyobin", content: "문화랑 첨단 기술 밸런스 진짜 황금비율이죠. 시장님 큰 그림 오집니다." },
+                                { nick: "AI_Doctor_Fan", nickClass: "text-[#0055aa] font-bold", content: "이대로만 가면 서울 부럽지 않은 메가시티 확정이네요 ㅎㅎ" }
+                            ]
+                        },
+                        {
+                            nick: "Anti_AI_Hater", time: "12분 전", like: 15, dislike: 15200, isPunished: true,
+                            content: "기계 쪼가리가 의사 흉내 내는 걸 어떻게 믿고 내 몸을 맡기냐!! 컴퓨터 오류 나서 멀쩡한 사람 암환자 만들면 누가 책임질 거냐?? 시장이 아주 AI에 미쳐서 시민들 목숨 가지고 생체실험을 하네!! 기계 다 때려 부숴라!!",
+                            replies: [
+                                { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "아저씨, 기사 본문 좀 읽으세요. 기계가 혼자 확진 내리는 게 아니라 전문의가 최종 교차 검증한다고 떡하니 적혀 있습니다. 의사들이 놓칠 수 있는 미세한 점까지 AI가 한 번 더 짚어주는 건데 억까 좀 작작 하세요." },
+                                { nick: "Logic_Cutter", content: "이 아저씨는 저번 자율주행 기사에서도 로봇이 운전한다고 거품 물더니 병원 기사에도 등판하셨네 ㅋㅋㅋ 스마트폰은 어떻게 쓰심?" },
+                                { nick: "Anti_AI_Hater", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 어린놈의 새끼들이 말대꾸야!! 내 몸엔 절대 저딴 불결한 기계 못 댄다!! 내일 도끼 하나 들고 효빈대병원 쳐들어가서 그 왓슨인지 뭔지 하는 컴퓨터 싹 다 박살내버릴 거니까 딱 기다려라!!" },
+                                { nick: "Citizen_Guard", content: "와 대놓고 병원 기물 파손에 흉기 테러 예고하네;; 이거 진짜 위험한 놈이다 바로 112 신고 넣었습니다." },
+                                { nick: "Anti_AI_Hater", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 쫄보들아 ㅋㅋㅋ 내가 무서울 줄 아냐? 내 도끼 맛을 보여주마!!" },
+                                { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 다중이용시설(대학병원)을 겨냥한 흉기 난동 및 특수재물손괴 테러 예고를 국가 안보 위협으로 간주하여 비상 대응 체제로 전환했습니다. IP 역추적을 통해 귀하의 은신처를 특정하였으며, 현 시간부로 무장 특공대가 진입 중입니다. 도끼를 내려놓고 바닥에 엎드리십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Yaksan_Bio_Hope", time: "18분 전", like: 7300, dislike: 6, isPunished: false,
+                            content: "저번 주에 뜬 약산 바이오 클러스터 항암 신약 기사 보면서 4호선(주황색) 타고 효빈대병원 연구진들 오가면 딱 좋겠다고 생각했는데, 왓슨 데이터까지 연동되면 신약 개발 속도 엄청 빨라지겠네요! 진짜 효빈-약산 바이오벨트 대박 날 듯.",
+                            replies: [
+                                { nick: "Bio_Researcher", content: "연구원입니다! 왓슨의 방대한 암 환자 데이터랑 저희 약산 신약 데이터가 매칭되면 진짜 게임 체인저가 될 수 있습니다." },
+                                { nick: "Line4_Lover", content: "4호선 주황색 열차 타고 연구원분들이 데이터 들고 약산으로 가는 모습 상상되네요 ㅋㅋㅋ 낭만 있음" },
+                                { nick: "Yaksan_Resident", content: "약산 시민으로서 너무 뿌듯합니다 ㅠㅠ 4호선 빨리 연장돼서 물리적으로도 꽉 이어졌으면 좋겠어요!" },
+                                { nick: "Yaksan_Bio_Hope", nickClass: "text-[#0055aa] font-bold", content: "맞아요 ㅠㅠ 인프라랑 기술이 융합되는 게 이런 거군요! K-바이오 화이팅!" }
+                            ]
+                        },
+                        {
+                            nick: "Blue_Line_1_User", time: "25분 전", like: 6120, dislike: 4, isPunished: false,
+                            content: "부모님 모시고 AI 무료 스크리닝 검사받으러 가야겠습니다. 효빈대병원은 1호선이나 5호선 타고 가면 접근성도 좋아서 편해요! 항상 시민 건강 챙겨주는 효빈시 행정 칭찬합니다~",
+                            replies: [
+                                { nick: "Filial_Piety", content: "효자시네요! 5월 가정의 달 선물로 건강검진이 최고죠 ㅎㅎ" },
+                                { nick: "Subway_Commuter", content: "1호선 파란색 열차 타면 병원 본관까지 바로 연결돼서 어르신들 모시고 가기 진짜 편합니다." },
+                                { nick: "Hospital_Staff", content: "캠페인 기간 동안 혼잡할 수 있으니 미리 인터넷으로 예약하고 오시면 더 빠르게 안내받으실 수 있습니다! 환영합니다 ^^" },
+                                { nick: "Blue_Line_1_User", nickClass: "text-[#0055aa] font-bold", content: "직원분 꿀팁 감사합니다!! 내일 바로 예약 잡아야겠네요 ㅎㅎ" }
+                            ]
+                        },
+                        {
+                            nick: "Dark_Hacker_99", time: "32분 전", like: 8, dislike: 41200, isPunished: true,
+                            content: "ㅋㅋ 병원 컴퓨터에 환자 데이터 싹 다 모여있겠네? 오늘 밤에 내가 효빈대병원 서버 해킹해서 랜섬웨어 감염시키고 비트코인 뜯어내야지 ㅋㅋㅋ 왓슨인지 뭔지도 다 내 맘대로 멈춰주마 ㅋㅋㅋ 환자 목숨 인질로 잡으면 병원장도 꼼짝 못함 개꿀~",
+                            replies: [
+                                { nick: "Tech_Nerd", content: "와 대놓고 랜섬웨어 예고 ㅋㅋㅋ 병원 서버가 방구석 컴맹한테 뚫릴 정도로 호락호락해 보이냐? 망상도 병이다 진짜." },
+                                { nick: "Hospital_IT", content: "효빈대병원 의료정보팀입니다. 저희 시스템은 외부 인터넷망과 완벽히 분리된 망분리(Air-Gap) 환경입니다. 해킹 시도 시 즉각 국가정보원에 자동 통보됩니다." },
+                                { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "안 믿네 병신들 ㅋㅋㅋ 내가 다크웹에서 산 루트킷으로 뚫으면 10분 컷임 ㅋㅋㅋ 카운트다운 시작한다 10... 9... 8..." },
+                                { nick: "Report_NIS", content: "이건 단순 관종이 아니라 생명 위협하는 사이버 테러임. 바로 사이버안보센터에 신고 꽂았습니다." },
+                                { nick: "Dark_Hacker_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어쩌라고 빙시야 ㅋㅋㅋ 토르 브라우저라 절대 추적 안 됨 ㅋㅋㅋ 병원장 비트코인 준비해라 ㅋㅋㅋ" },
+                                { nick: "NIS_Cyber_Command", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[국가정보원 및 경찰청 사이버테러대응센터] 국가 주요 의료기반시설에 대한 랜섬웨어 및 사이버 테러 협박을 인지하여 1급 방첩 작전을 개시했습니다. 귀하가 접속을 시도한 서버는 당원이 구축한 '허니팟(추적용 가짜 서버)'이며, 딥웹 디코딩을 통해 피의자의 모텔 은신처를 특정했습니다. 현 시간부로 무장 특공대가 강제 진입합니다. 키보드에서 손을 떼십시오." }
+                            ]
+                        },
+                        {
+                            nick: "Miracle_Water_Seller", time: "40분 전", like: 12, dislike: 38900, isPunished: true,
+                            content: "암은 자연치유가 답입니다!! 저런 기계 상술과 서양 의학 독약에 속지 마세요. 제가 지리산에서 직접 달인 '신비의 약초수' 한 달만 마시면 말기 암세포도 싹 다 죽습니다. 1병 50만 원에 팝니다. 진짜 살고 싶으신 분만 계좌이체 하세요.",
+                            replies: [
+                                { nick: "Angry_Patient", content: "암 환자 가족의 절박함을 이용해서 이딴 맹물을 50만 원에 팔아먹으려고 하네 진짜 천벌 받을 악마 새끼." },
+                                { nick: "Medical_Pro", content: "전형적인 안아키 사이비 사기꾼이네요. 저런 거 먹고 치료 시기 놓쳐서 돌아가시는 분들이 한둘이 아닙니다. 절대 속지 마세요." },
+                                { nick: "Miracle_Water_Seller", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "무식한 의사 놈들 앞잡이들이 훼방을 놓네!! 내 약수는 만병통치약이다!! 못 믿겠으면 죽든가 ㅉㅉ 살고 싶은 사람만 쪽지해라!" },
+                                { nick: "Report_KFDA", content: "의료법, 약사법, 식품위생법 위반 및 사기 혐의로 식약처랑 경찰에 다이렉트로 신고했습니다. 감방 가서 약수나 실컷 드세요." },
+                                { nick: "Miracle_Water_Seller", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 ㅋㅋㅋ 어차피 대포통장이라 안 잡힘~ 이미 절박한 호구들 3명 입금 완료 ㅋㅋㅋ 150 달달하노 ㅋㅋㅋ" },
+                                { nick: "Hyobin_Police_Fraud", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[경찰청 지능범죄수사대 및 식약처] 무허가 불법 의약품 판매(사기) 및 대포통장을 이용한 범죄수익은닉 정황을 포착하여 즉각 강제수사에 착수했습니다. 금융결제원 공조로 해당 차명 계좌를 전면 동결(Freezing) 조치하였으며, 피의자의 불법 약수 제조 시설 위치를 파악하여 기동대가 진입 중입니다. 불법 제조된 맹물은 전량 압수 폐기됩니다." }
+                            ]
+                        },
+                        {
+                            nick: "Future_Doc_01", time: "48분 전", like: 8200, dislike: 11, isPunished: false,
+                            content: "현재 의대 본과생인데 왓슨 도입 정말 환영합니다. 영상 판독 같이 노동 집약적인 부분을 AI가 1차적으로 걸러주면, 의사들은 환자와 직접 소통하고 세밀한 치료 계획을 짜는 '인간적인 진료'에 더 집중할 수 있거든요. 의료 질이 훨씬 올라갈 겁니다!",
+                            replies: [
+                                { nick: "Med_Student", content: "동기 반갑습니다 ㅋㅋ 진짜 과로에 찌들어서 놓치는 실수들을 AI가 막아준다는 게 젤 큰 장점이죠." },
+                                { nick: "Senior_Doc", content: "예비 후배님들 말이 맞습니다. 기계가 대체하는 게 아니라, 훌륭한 '조수'가 하나 생기는 개념입니다. 더 나은 진료로 보답해야죠." },
+                                { nick: "Patient_Family", content: "의사 선생님들이 환자 얼굴 볼 시간이 더 많아진다니 환자 입장에서도 대환영입니다 ㅠㅠ" },
+                                { nick: "Future_Doc_01", nickClass: "text-[#0055aa] font-bold", content: "네! 나중에 효빈대병원 전공의로 들어가서 환자분들 따뜻하게 맞이하는 참의사가 되겠습니다 ㅎㅎ" }
+                            ]
+                        },
+                        {
+                            nick: "Yoon_True_Patriot", time: "55분 전", like: 5, dislike: 48900, isPunished: true,
+                            content: "멀쩡한 의사들 놔두고 컴퓨터 쪼가리에 수백억 예산 퍼붓는 박효빈 좌파 시장 사퇴하라!! 위대하신 윤대환 시장님 시절엔 이런 돈 낭비 절대 없었다!! 기계가 사람을 지배하는 세상이 오고 있다!!",
+                            replies: [
+                                { nick: "Fact_Checker_79", nickClass: "text-[#0055aa] font-bold", content: "아저씨, 윤대환 시절에 효빈대병원 응급실 예산 반토막 내서 환자들 뺑뺑이 돌다 죽은 거 팩트체크 해드릴까요? 병원 인프라 망친 주범이 누군데 적반하장이네 ㅋㅋㅋ" },
+                                { nick: "Psycho_Detector", content: "이 사람은 뭐만 하면 윤대환 타령이네 진짜 사이비 종교 믿나;; 환자 생명 살리는 AI 도입에도 정치병 걸려서 난리네" },
+                                { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 말대꾸야 이 빨갱이들아!! 내일 아침 효빈대병원 로비에 엽총 들고 가서 박효빈 보이면 사시미로 찔러 죽인다!! 쉴드치는 의사 놈들도 싹 다 찔러 죽여주마!!" },
+                                { nick: "Citizen_Guard", content: "와 대놓고 시장 암살 예고에 의료진 살해 협박 ㄷㄷ 이거 진짜 정신 나간 테러리스트네 바로 112 신고 넣음." },
+                                { nick: "Yoon_True_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 ㅋㅋㅋ 내가 내일 병원 피바다로 만들고 내 배 가르고 죽을 거다!! 멸공!!" },
+                                { nick: "Hyobin_SWAT_Sniper", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 광역자치단체장 및 의료진을 겨냥한 불법 총기/흉기 살상(Assassination) 테러 예고를 인지하여 즉각 대테러 작전에 돌입했습니다. 현 시간부로 피의자 자택 주변 건물에 저격수(Sniper) 배치가 완료되었으며, 이마에 레이저 포인터 조준이 완료되었습니다. 무기를 바닥에 버리고 양손을 머리 위로 올리십시오. 10초 내 불응 시 사살합니다." }
+                            ]
+                        },
+                        {
+                            nick: "Hyobin_Mom_Cafe", time: "1시간 5분 전", like: 9800, dislike: 15, isPunished: false,
+                            content: "동네 맘카페에도 소문 쫙 났어요~ 애기들 잔병치레 많아서 엑스레이 찍을 일 은근히 많은데, 교수님들이 한 번 보시고 AI가 혹시나 해서 한 번 더 꼼꼼하게 봐준다니 맘이 확 놓이네요. 무료 스크리닝도 남편 손잡고 꼭 다녀와야겠어요 ㅎㅎ",
+                            replies: [
+                                { nick: "Mom_A", content: "맞아요 ㅠㅠ 애기들 아플 땐 오진 날까 봐 진짜 가슴 졸이잖아요. 왓슨 도입 너무 든든합니다!" },
+                                { nick: "Dad_B", content: "저희 아내도 기사 보더니 당장 효빈대병원으로 병원 옮기자고 난리입니다 ㅋㅋㅋ 주말에 예약 잡아야겠네요." },
+                                { nick: "Health_Care", content: "가족 건강 지키는 데는 예방과 정확한 진단이 최고죠. 부부 동반으로 꼭 다녀오세요~" },
+                                { nick: "Hyobin_Mom_Cafe", nickClass: "text-[#0055aa] font-bold", content: "다들 같은 마음이시네요 ㅎㅎ 이런 좋은 인프라 깔아주는 효빈시 행정 진짜 사랑합니다!" }
+                            ]
+                        }
+                    ];
+
+                    const container = document.getElementById('comment-list');
+                    container.innerHTML = ""; 
+
+                    commentsData.forEach((cmt, idx) => {
+                        const div = document.createElement('div');
+                        
+                        if (cmt.isPunished) {
+                            div.className = "punish-comment";
+                        } else if (cmt.like > 10000) {
+                            div.className = "best-comment";
+                        } else {
+                            div.className = "comment-item";
+                        }
+                        
+                        let repliesHtml = "";
+                        let replyButtonHtml = "";
+
+                        if (cmt.replies && cmt.replies.length > 0) {
+                            replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                            repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                            
+                            // 제재받은 빌런 글은 사이다 결말을 보여주기 위해 기본적으로 펼쳐둠
+                            if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                            cmt.replies.forEach(reply => {
+                                const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Police") || reply.nick.includes("Command") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                repliesHtml += `
+                                    <div class="reply-item ${styleClass}">
+                                        <span class="${nickClass}">${reply.nick}</span>: 
+                                        <span class="text-gray-800">${reply.content}</span>
+                                    </div>`;
+                            });
+                            repliesHtml += `</div>`;
+                        }
+
+                        div.innerHTML = `
+                            <div class="flex justify-between mb-2">
+                                <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                <span class="text-xs text-gray-500">${cmt.time}</span>
+                            </div>
+                            <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                            <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                ${replyButtonHtml}
+                            </div>
+                            ${repliesHtml}
+                        `;
+                        container.appendChild(div);
+                    });
+
+                    function toggleReply(id) {
+                        const el = document.getElementById(id);
+                        if (el.style.display === 'block') el.style.display = 'none';
+                        else el.style.display = 'block';
+                    }
+                    
+                    function toggleVote(btn) {
+                        const parent = btn.parentElement;
+                        const countSpan = btn.querySelector('.count');
+                        let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                        if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                            btn.classList.remove('active');
+                            btn.classList.remove('active-hate');
+                            count--;
+                        } else {
+                            if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                            else btn.classList.add('active');
+                            count++;
+                        }
+                        countSpan.innerText = count.toLocaleString();
+                    }
+
+                    function showToast(msg) {
+                        const toast = document.createElement('div');
+                        toast.innerText = msg;
+                        toast.className = 'toast-msg show';
+                        document.body.appendChild(toast);
+                        setTimeout(() => toast.remove(), 2500);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">효빈대병원 AI 암 스크리닝</div>
+                <div class="text-xs text-gray-500">
+                    지역 주민 대상 무료 검진 캠페인<br>
+                    정확도 99%의 안심 진단<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">온라인 예약하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>
