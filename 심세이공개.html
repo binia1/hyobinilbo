@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[사회] 창전의 스카이라인 누빌 새 얼굴 '심세이' 전격 공개… 개통 전 마스코트 선공개 기조 굳히나 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; flex-direction: column; gap: 40px; padding: 0 15px; }
+        @media (min-width: 768px) {
+            .article-container { flex-direction: row; }
+        }
+        
+        .main-content { flex: 3; background: white; padding: 20px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        @media (min-width: 768px) { .main-content { padding: 40px; } }
+        
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 26px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        @media (min-width: 768px) { .article-title { font-size: 34px; } }
+        
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; }
+        .article-body { font-size: 16px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        @media (min-width: 768px) { .article-body { font-size: 17px; } }
+        
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; color: #111; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; background: white; color: #333; padding: 5px 10px; font-size: 13px; width: 100%; max-width: 150px; }
+        .comment-textarea-box { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 600px) { .comment-textarea-box { flex-direction: row; } }
+        
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        /* 라이트 모드 하이라이트 댓글 스타일 */
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .punish-comment { background: #fff5f5; border: 1px solid #fed7d7; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; display: inline-flex; align-items: center; gap: 4px; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 15px; border-left: 2px solid #eee; display: none; }
+        @media (min-width: 768px) { .reply-container { padding-left: 20px; } }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+        
+        .ad-banner { background: #f0f0f0; border: 1px solid #ddd; height: 120px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; font-size: 13px; text-align: center;}
+        
+        /* Custom Toast Alert Style */
+        .toast-msg { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 9999; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .toast-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <div id="common-header"></div>
+
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold">사회 > 교통/문화</div>
+                <h2 class="article-title">[사회] 창전의 스카이라인 누빌 새 얼굴 '심세이' 전격 공개… 개통 전 마스코트 선공개 기조 굳히나</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold text-gray-800">레일만 기자</span> (railman@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-500">입력 2026.05.07 15:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600">가+</button>
+                        <button class="border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 text-gray-600" onclick="window.print()">인쇄</button>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">스페인-한국 다문화 가정 2세... 우아한 은발의 명문 여고생 설정 눈길<br>완벽한 외모 뒤에 숨겨진 '구소쿠무시 댄스' 반전 매력에 대중들 폭발적 반응<br>효빈교통공사, 8호선 '유리아' 성공 이어 노선 개통 전 선제적 팬덤 구축 전략</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/심세이.png" alt="창전선 마스코트 심세이 공식 일러스트" class="w-full h-auto border border-gray-200">
+                        <div class="img-caption">▲ 7일 효빈교통공사가 전격 공개한 신규 모노레일 '창전선'의 공식 마스코트 '심세이'의 일러스트. 스페인-한국 다문화 가정 2세라는 설정과 함께 창전동 부촌 아가씨의 세련미를 한껏 뽐내고 있다. (사진=효빈교통공사 제공)</div>
+                    </div>
+
+                    <p>효빈교통공사가 야심 차게 준비 중인 신규 모노레일 '창전선'의 공식 마스코트 '심세이'가 7일 대중 앞에 전격 공개됐다. 창전선 개통이 아직 1년여 남은 시점에서 이루어진 이례적인 선행 데뷔로, 교통공사의 캐릭터 마케팅 기조가 완전히 바뀌었음을 시사하고 있다.</p>
+
+                    <p>이날 효빈교통공사와 효빈애니메이션본부가 공동으로 발표한 자료에 따르면, 심세이는 스페인인 어머니와 한국인 아버지 사이에서 태어난 17세 다문화 가정 2세다. 창전구 최고 명문으로 꼽히는 월삼여자고등학교 1학년에 재학 중이며, 우아한 은발 웨이브 헤어와 화려한 프릴 교복으로 창전동 부촌 아가씨의 세련미를 극대화했다.</p>
+
+                    <p>그러나 완벽해 보이는 외모와 달리, 열차가 흔들리거나 당황할 때 양팔을 꺾고 파닥거리는 이른바 '구소쿠무시 댄스'를 춘다는 파격적인 반전 설정이 더해졌다. 대중들은 "우아함과 깨방정의 완벽한 갭 모에"라며 폭발적인 반응을 쏟아내고 있다.</p>
+
+                    <p>주목할 점은 데뷔 시기다. 과거 교통공사는 노선 개통 시점에 맞춰 캐릭터를 공개하는 것이 관례였다. 그러나 8호선의 마스코트 '유리아'가 노선 개통 3년 전 애니메이션으로 선행 데뷔하여 거대한 팬덤을 형성하고, 정치권의 무리한 노선 백지화 시도를 팬덤의 화력으로 방어해 낸 기적적인 선례를 남긴 바 있다.</p>
+
+                    <p>전문가들은 이번 심세이의 조기 데뷔 역시 '유리아 모델'의 연장선에 있다고 분석한다. 철도 인프라 개통 지연으로 누적된 창전구민들의 피로감을 매력적인 마스코트를 통해 선제적으로 해소하고, 개통 전부터 든든한 팬덤 방어막을 구축하겠다는 교통공사의 치밀한 전략이라는 것이다.</p>
+
+                    <p>효빈교통공사 최대현 사장은 이날 브리핑에서 "심세이는 창전구의 품격과 효빈시의 다양성을 동시에 상징하는 완벽한 마스코트"라며, "개통을 손꼽아 기다리시는 시민분들이 심세이와 함께 창전선의 푸른 미래를 먼저 만나보실 수 있도록 앞으로 다양한 선행 홍보 활동을 전개하겠다"고 밝혔다.</p>
+
+                    <p>한편, 심세이의 공식 데뷔와 함께 본사 직영점을 비롯한 주요 효빈교통공사 굿즈샵에서는 심세이 관련 초기 MD 상품 예약 판매가 시작되었으며, 접속자 폭주로 한때 서버가 마비되는 등 뜨거운 열기를 입증했다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">14,295</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 bg-white text-gray-800 border border-gray-300 resize-none text-sm focus:outline-none focus:border-[#0055aa]" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 py-2 font-bold text-sm hover:bg-[#004499] transition-colors whitespace-nowrap" onclick="showToast('댓글이 등록되었습니다.')">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <script>
+                        const commentsData = [
+                            {
+                                nick: "Changjeon_Lover", time: "방금 전", like: 18200, dislike: 15, isPunished: false,
+                                content: "와 은발에 화려한 교복 미쳤다 진짜 ㅠㅠㅠㅠ 창전구 부촌 아가씨 설정 너무 찰떡이네요!! 교통공사 이 배운 변태들... 굿즈 언제 오프라인에 풀립니까 당장 월급 바치러 갑니다!!",
+                                replies: [
+                                    { nick: "Rail_Lumine_Fan", content: "디자인 진짜 역대급으로 잘 뽑혔네요 ㄷㄷ 유리아랑 투톱 달릴 듯" },
+                                    { nick: "Silver_Hair_Mania", content: "스페인 혼혈 설정이라니 효빈시의 다양성까지 품었네요. 너무 예쁨 ㅠㅠ" },
+                                    { nick: "Yoon_Jaehoon_Official", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "은발에 프릴? 쯧쯧.. 내 '따로나' 카페의 아방가르드한 색채 감각에 비하면 유치하기 짝이 없군. 효빈교통공사가 내 창조적 예술성을 질투해서 탄압하더니 결국 내 아이디어를 베낀 거다!!" },
+                                    { nick: "Fact_Crusher", content: "윤재훈씨 여기서 이러시면 안 됩니다 ㅋㅋㅋ 유통기한 3년 지난 곰팡이 시럽 먹고 뇌세포가 파괴되셨나? 짝퉁 팔다 걸려서 전재산 압류당한 분이 무슨 예술 타령입니까 ㅋㅋㅋ" },
+                                    { nick: "Justice_Citizen", content: "선라이즈랑 부시로드한테 수십억 고소장 날아왔다던데 합의금 마련할 노가다나 뛰시죠? ㅋㅋㅋ 어디서 뻔뻔하게 댓글질이야" },
+                                    { nick: "Changjeon_Lover", nickClass: "text-[#0055aa] font-bold", content: "어우 짝퉁 사장 난입해서 분위기 다 망치네;; 무시합시다! 심세이 만세!!" }
+                                ]
+                            },
+                            {
+                                nick: "Dance_Machine", time: "5분 전", like: 15400, dislike: 8, isPunished: false,
+                                content: "아니 그렇게 우아하게 생겨놓고 당황하면 '구소쿠무시 댄스' 춘다는 게 진짜 개웃기넼ㅋㅋㅋㅋ 완벽한 외모에 깨방정 반전 매력이라니... 이건 덕후들 심장 폭행하려고 작정하고 만든 캐릭이다 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Gap_Moe", content: "갭 모에는 진리죠 ㅋㅋㅋ 열차 덜컹거릴 때마다 파닥파닥 거리는 거 상상되네요" },
+                                    { nick: "Meme_Creator", content: "조만간 틱톡이나 숏츠에 구소쿠무시 댄스 챌린지 무조건 유행할 듯 ㅋㅋㅋ" },
+                                    { nick: "Ex_Assemblyman_Woo", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "나 전직 국회의원 우신면이다!! 어디 감히 근본도 없는 벌레춤을 공공기관 마스코트가 추고 자빠졌어!! 내가 8호선 때도 이런 저급한 오타쿠 짓거리 막으려고 그 고생을 했는데!! 요즘 어린것들은 이딴 경박한 춤이나 추니까 도시가 망조가 드는 거다!!" },
+                                    { nick: "City_Guy", content: "우신면 영감님 아직도 살아계셨네 ㅋㅋㅋ 8호선 훼방 놓다가 표 깎이고 낙선하신 분이 스마트폰은 어떻게 켜셨대 ㅋㅋㅋ" },
+                                    { nick: "Logic_Punch", content: "우신면 전 의원님 연세가 75세라던데 ㅋㅋㅋ 폰 보면서 화내시다가 목디스크나 조심하십쇼 할배요 ㅋㅋㅋ" },
+                                    { nick: "Dance_Machine", nickClass: "text-[#0055aa] font-bold", content: "HAF 축제 때 코스어분들 무조건 저 춤출 듯 ㅋㅋㅋㅋ 전 의원 할아버지도 구경 오세요 꿀잼 예약이요" }
+                                ]
+                            },
+                            {
+                                nick: "Pure_Blood_Patriot", time: "12분 전", like: 12, dislike: 38400, isPunished: true,
+                                content: "어디 근본 없는 스페인 혼혈 잡종을 공공기관 마스코트로 쓰냐!! 박효빈 시장이 튀기니까 도시 상징물도 다문화로 도배를 하네!! 대한민국은 단일민족이다!! 내일 당장 화염병 들고 효빈교통공사 본사에 쳐들어가서 불태워버릴 테니까 각오해라!!",
+                                replies: [
+                                    { nick: "Fact_Checker_79", content: "아직도 단일민족 타령하는 꼰대가 있네 ㅋㅋㅋ 지금이 어느 시댄데 혈통 따지고 앉아있냐? 혐오 발언도 모자라 방화 테러 예고까지 가지가지 한다 진짜." },
+                                    { nick: "Logic_Cutter", content: "글로벌 시대에 다문화 설정이 어때서? 디자인 예쁘고 스토리 좋은데 열폭 오지네 ㅉㅉ" },
+                                    { nick: "Pure_Blood_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 말대꾸야 빨갱이 새끼들이!! 내가 내일 본사 로비에 불 질러서 저 더러운 판넬 싹 다 태워버린다니까!! 애국 보수의 매운맛을 보여주마!!" },
+                                    { nick: "Citizen_Guard", content: "대놓고 공공기관 방화 테러 예고 ㄷㄷ 방금 112랑 국가정보원 테러대응센터에 캡처해서 직통으로 넘겼습니다. 콩밥 맛있게 드세요~" },
+                                    { nick: "Pure_Blood_Patriot", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 쫄보들아 ㅋㅋㅋ 내가 VPN 3중 우회 돌렸는데 퍽이나 잡히겠다 ㅋㅋㅋ 내일 효빈교통공사 잿더미 될 준비나 해라!!" },
+                                    { nick: "Hyobin_SWAT", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 대테러특수기동대] 공공기관(교통공사 본사)을 겨냥한 방화 및 대형 인명 피해 테러 예고를 국가 안보 위협으로 간주하여 비상 작전을 개시했습니다. 딥웹 우회 경로 디코딩 결과 피의자의 은신처를 특정하였으며, 현 시간부로 무장 특공대가 진입 중입니다. 화염병 등 인화물질 소지 확인 시 현장에서 즉각 물리력이 행사됩니다." }
+                                ]
+                            },
+                            {
+                                nick: "Yuria_Model_Win", time: "18분 전", like: 12100, dislike: 11, isPunished: false,
+                                content: "기사 분석 진짜 정확하네요. 8호선 유리아 때 노선 백지화될 뻔한 거 팬덤 화력으로 민원 폭탄 넣어서 지켜낸 거 생각하면... 창전선도 공사 늦어진다고 말 많았는데 심세이 팬덤 방어막 쳐두면 개통까지 무사히 갈 수 있을 듯. 교통공사 마케팅팀 똑똑합니다 👏",
+                                replies: [
+                                    { nick: "Policy_Expert", content: "민간의 팬덤 문화를 공공 행정 방어막으로 쓰는 건 전 세계에서 효빈시가 유일할 겁니다 ㅋㅋㅋ 대단함" },
+                                    { nick: "Smart_Marketing", content: "캐릭터 하나가 수백억짜리 민원 해결사 역할을 하는 셈이네요. 가성비 최고!" },
+                                    { nick: "Yoon_Daehwan_Fanclub", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "위대하신 윤대환 시장님이 계셨다면 저딴 장난감 열차 짓느라 시간 안 끌고 진작에 45인승 갈색 버스 100대 투입해서 교통 체증 다 해결하셨다!! 오타쿠 시장이 시민 혈세를 휴지조각에 낭비하고 있네!!" },
+                                    { nick: "Memory_Check", content: "윤대환이 그 갈색 버스에 사람 75명씩 짐짝처럼 쑤셔넣고 지 가족회사 배불리려다가 감옥 간 건 기억에서 지우셨나봄? ㅋㅋㅋ 치매 오셨어요?" },
+                                    { nick: "Transit_Nerd", content: "철도 공사 멈춰서 수천억 위약금 물어주게 생겼던 걸 팬덤 화력으로 막은 건데 세금 낭비 타령 ㅋㅋㅋ 팩트 체크 좀 하고 삽시다 꼰대 아저씨." },
+                                    { nick: "Yuria_Model_Win", nickClass: "text-[#0055aa] font-bold", content: "팬덤이 무너지지 않는 한 창전선은 무조건 완공됩니다 ㅋㅋㅋ 윤대환 잔당들은 무시합시다 심세이 코인 탑승이요~" }
+                                ]
+                            },
+                            {
+                                nick: "Scalper_Pro_99", time: "25분 전", like: 5, dislike: 45100, isPunished: true,
+                                content: "ㅋㅋㅋ 병신들 예약 서버 터졌다고 징징대네. 내가 매크로 100개 돌려서 심세이 초판 한정 아크릴이랑 뱃지 물량 80% 싹쓸이함 ㅅㄱ 당근에 10배 튀겨서 올렸으니 호구 새끼들은 내 돈이나 불려줘라 ㅋㅋㅋ 난 이거 팔아서 람보르기니 뽑는다~",
+                                replies: [
+                                    { nick: "No_Scalping", content: "와 대놓고 매크로 예고에 되팔이 인증;; 양심이 파탄 난 건가 진짜? 이딴 새끼들 때문에 진짜 팬들이 못 사지 ㅡㅡ" },
+                                    { nick: "Report_To_Karrot", content: "당근마켓에 장물 유통 및 암표 거래로 다 신고 넣었습니다. 람보르기니 같은 소리 하네 ㅋㅋㅋ" },
+                                    { nick: "Scalper_Pro_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "신고해라 븅신들아 ㅋㅋㅋ 대포폰이랑 차명계좌 써서 절대 못 잡아~ 벌써 눈먼 돈 300 입금됐네 개꿀 ㅋㅋㅋ" },
+                                    { nick: "Smart_Citizen", content: "요즘 대포통장 1분이면 다 동결되는데 능지 처참하네 진짜 ㅋㅋㅋ 감방 갈 준비나 해라." },
+                                    { nick: "Scalper_Pro_99", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "아 씨발 왜 인터넷 뱅킹 출금 정지됐냐?? 야 장난해?? 내 돈 내놔!!" },
+                                    { nick: "Hyobin_FSS_Cyber", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[경찰청 지능범죄수사대 및 금융감독원] 부당한 매크로 사용(업무방해) 및 차명 계좌(대포통장)를 통한 범죄수익은닉 정황을 포착했습니다. 금융결제원과 공조하여 해당 차명 계좌를 즉시 전면 동결(Freezing) 조치하였으며, IP 및 기기 고유번호 추적으로 은신처를 특정해 형사들이 출동 중입니다. 람보르기니 대신 호송차를 탑승하시기 바랍니다." }
+                                ]
+                            },
+                            {
+                                nick: "Voice_Actor_Guess", time: "32분 전", like: 10400, dislike: 9, isPunished: false,
+                                content: "외모는 우아한데 깨방정 떠는 다문화 10대 소녀라... 이거 성우 캐스팅 진짜 중요하겠네요 ㅋㅋㅋ 연기력 엄청 필요한 캐릭터인데 혹시 유력한 후보 있나요? HAF 때 성우 공개도 같이 하면 축제 분위기 미칠 듯 ㅠㅠ",
+                                replies: [
+                                    { nick: "Seiyuu_Otaku", content: "개인적으로 이슬기 성우님 찰떡일 거 같습니다 ㅋㅋㅋ 갭모에 연기 원탑이심!" },
+                                    { nick: "Casting_Wait", content: "교통공사 자금력이면 초호화 캐스팅 무조건 가능하죠. 빨리 목소리 듣고 싶다 ㅠㅠ" },
+                                    { nick: "Yoon_Jaehoon_Official", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "성우한테 줄 돈 있으면 우리 '따로나' 카페 살려내는 데 지원금이나 보태라!! 정 성우가 없으면 내가 무료로 더빙해 줄 테니까 박효빈 시장은 당장 나에 대한 고소를 취하해라!!" },
+                                    { nick: "Sound_Terror", content: "우웩;; 짝퉁 사기꾼 목소리를 누가 듣고 싶어 합니까? 고막 썩을 일 있나 ㅋㅋㅋ" },
+                                    { nick: "Police_Station", content: "무료 더빙은 경찰서 취조실 가서 형사님들 앞에서 실컷 하시고요 ㅋㅋㅋ 빨리 합의금이나 준비하세요~" },
+                                    { nick: "Voice_Actor_Guess", nickClass: "text-[#0055aa] font-bold", content: "맞아요 ㅠㅠ 성우 공개 순간이 제일 짜릿함. 제발 찌질이들 말고 연기력 쩌는 분으로 캐스팅되길!" }
+                                ]
+                            },
+                            {
+                                nick: "Boomer_Tax_Rage", time: "40분 전", like: 8, dislike: 52100, isPunished: true,
+                                content: "지하철이나 빨리 뚫을 생각은 안 하고 장난감 만화 쪼가리나 만들고 자빠졌네!! 오타쿠 시장이 도시를 말아먹고 있다!! 세금 낭비하는 꼬라지 못 본다!! 내일 아침에 내 트랙터 끌고 가서 창전선 공사 현장 철근 싹 다 뭉개버릴 테니까 딱 기다려라!!",
+                                replies: [
+                                    { nick: "Fact_Crusher", content: "캐릭터 굿즈 팔아서 올리는 흑자로 공사비 보태는 건데 세금 낭비 타령 ㅋㅋㅋ 님 같은 꼰대들 반대 때문에 공사 늦어진 건 생각 안 하심?" },
+                                    { nick: "Logic_God", content: "트랙터로 공사판을 민다고? 대놓고 건설 현장 파괴 예고 ㄷㄷ 이거 특수재물손괴에 테러 범죄다." },
+                                    { nick: "Boomer_Tax_Rage", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "어디서 어린놈의 쉐끼들이 말대꾸야!! 내일 아침 창전선 공사판 쑥대밭 되는 거나 구경해라 ㅋㅋㅋ 내가 무서울 줄 아냐!!" },
+                                    { nick: "Citizen_Safety", content: "방금 112랑 공사장 관할 경찰서에 테러 예고로 신고 넣었습니다. 감방 가서 정신 차리세요 아저씨." },
+                                    { nick: "Boomer_Tax_Rage", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "내가 다 밀어버릴 거다!! 오타쿠 철도 결사반대!!" },
+                                    { nick: "Hyobin_Metro_Security", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 및 교통공사 보안대응팀] 국가 중요 대중교통 인프라(창전선 공사 현장)를 겨냥한 중장비(트랙터) 동원 파괴 테러 예고를 확인하여 즉각 비상 대응 체제로 전환했습니다. IP 추적을 통해 귀하의 농기계 보관소 및 거주지를 완전히 포위하였으며 특공대가 진입합니다. 막대한 손해배상과 실형을 피할 수 없을 것입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Wolsam_High_Alumni", time: "48분 전", like: 8200, dislike: 6, isPunished: false,
+                                content: "헐 심세이 학교 설정이 월삼여고네요 ㅋㅋㅋ 월삼여고 졸업생인데 우리 학교가 레일루미네 세계관에 편입되다니 영광입니다 ㅠㅠ 교복 디테일 보니까 우리 학교 교복이랑 비슷하게 프릴 달아놔서 더 정감 가네요. 심세이 후배님 응원합니다!!",
+                                replies: [
+                                    { nick: "School_Pride", content: "오 월삼여고 나오셨군요! 명문고 설정 찰떡입니다 ㅋㅋㅋ 부러워요!" },
+                                    { nick: "Detail_King", content: "교통공사 설정 짜는 분들 진짜 디테일 깎는 장인인 듯. 동네 고등학교까지 고증하다니 ㄷㄷ" },
+                                    { nick: "Ex_Assemblyman_Woo", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "창전구 것들은 아주 배때지가 불렀지!! 나 전직 국회의원 우신면이다!! 감히 내 허락도 없이 저런 겉멋만 든 기집애를 마스코트로 만들어?! 당장 국회에 연락해서 창전선 공사 예산 전액 삭감안을 발의하도록 하겠다!!" },
+                                    { nick: "Map_Searcher", content: "할아버지, 낙선하셔서 이제 국회의원 아니시잖아요 ㅋㅋㅋ 백수가 무슨 예산 삭감안 발의 ㅋㅋㅋ 허언증 말기시네" },
+                                    { nick: "School_Pride_Defend", content: "우신면 전 의원님 제발 방구석에서 주무세요 ㅋㅋㅋ 8호선 때도 입만 살았다가 시민들한테 영혼까지 털리시더니 아직도 정신 못 차리셨네 ^^" },
+                                    { nick: "Wolsam_High_Alumni", nickClass: "text-[#0055aa] font-bold", content: "나중에 월삼여고 앞에서 콜라보 이벤트 같은 거 하면 무조건 달려갑니다 ㅋㅋㅋ 갓세이!!" }
+                                ]
+                            },
+                            {
+                                nick: "Hidden_Cam_007", time: "55분 전", like: 4, dislike: 48900, isPunished: true,
+                                content: "오 교복에 은발 쥑이네 ㅋㅋㅋ 이번 주말 행사 때 심세이 코스프레하고 오는 여자애들 엄청 많겠지? 백팩에 초소형 카메라 숨겨서 치마 밑 싹 다 찍어야겠다 ㅋㅋㅋ 텔레그램 VIP 방에 야동 직캠으로 풀 테니까 기대해라 ㅋㅋㅋ 개꿀",
+                                replies: [
+                                    { nick: "Normal_User", content: "와 진짜 이딴 버러지 같은 놈이 아직도 숨 쉬고 있네. 대놓고 불법 촬영 예고하는 능지 수준 실화냐?" },
+                                    { nick: "Report_User", content: "사이버수사대랑 효빈시청 성범죄 대응팀에 긴급 신고 넣었습니다. 콩밥 먹을 준비 단단히 하세요." },
+                                    { nick: "Hidden_Cam_007", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "응 신고해봐 빙신들아 ㅋㅋㅋ 카메라 진짜 단추만 해서 눈앞에 있어도 절대 못 찾음~ ㅋㅋㅋ 낼 고화질 직캠 기대해라 ㅋㅋㅋ" },
+                                    { nick: "Cos_Guard", content: "내일 행사장 곳곳에 사복 경찰이랑 보안 요원들 수십 명 풀려있는데 퍽이나 안 걸리겠다 ㅋㅋㅋ" },
+                                    { nick: "Hidden_Cam_007", nickClass: "text-red-600 font-bold", styleClass: "bg-red-50 border border-red-200", content: "경찰이 내 카메라를 어떻게 찾냐고 ㅋㅋㅋ 난 투명인간이나 다름없다 ㅋㅋㅋ 내일 다 찍어주마!!" },
+                                    { nick: "Hyobin_Cyber_Women", nickClass: "text-[#0055aa] font-bold", styleClass: "bg-blue-50 border border-blue-200", content: "[효빈지방경찰청 여성청소년범죄수사대] 성폭력범죄의 처벌 등에 관한 특례법 위반(카메라 등 이용 촬영) 예고를 엄중히 인지하였습니다. IP 추적으로 거주지를 특정, 현 시간부로 자택 압수수색을 위한 영장이 발부되었습니다. 모든 전자기기와 불법 촬영 장비는 압수 포렌식되며 중형을 피할 수 없습니다." }
+                                ]
+                            },
+                            {
+                                nick: "HAF_2026_Hype", time: "1시간 2분 전", like: 10200, dislike: 5, isPunished: false,
+                                content: "창전선 개통 1년이나 남았는데 벌써부터 떡밥 뿌리는 거 보니까 이번 주말 HAF 2026에서 심세이 관련 대형 발표 있을 느낌이네요 ㄷㄷ 혹시 창전선 테마곡 라이브 공연 같은 거 하려나?? 지갑 열고 대기합니다 ㅠㅠ",
+                                replies: [
+                                    { nick: "Big_Event", content: "맞아요 타이밍이 딱 HAF 노리고 선공개 한 느낌 ㅋㅋㅋ 교통공사 마케팅팀 폼 미쳤다" },
+                                    { nick: "Live_Concert", content: "테마곡 라이브 공연 하면 진짜 눈물 쏟을 듯 ㅠㅠ 무조건 메인 스테이지 사수합니다." },
+                                    { nick: "Ticket_Ready", content: "이래서 효빈시를 못 떠납니다 ㅋㅋㅋ 매일매일이 떡밥과 축제의 연속임 ㅠㅠ" },
+                                    { nick: "HAF_2026_Hype", nickClass: "text-[#0055aa] font-bold", content: "다들 이번 주말 축제에서 심세이 굿즈 들고 만납시다!! 갓세이 화이팅!!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // Light mode styling for punished vs best comments
+                            if (cmt.isPunished) {
+                                div.className = "punish-comment";
+                            } else if (cmt.like > 10000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let replyButtonHtml = "";
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                
+                                // Punished threads are open by default to show the "cider" resolution
+                                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                                    const nickClass = reply.nickClass || (reply.nick.includes("SWAT") || reply.nick.includes("Cyber") || reply.nick.includes("Security") || reply.nick.includes("Women") ? "text-[#0055aa] font-bold" : "text-gray-700 font-bold");
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="${nickClass}">${reply.nick}</span>: 
+                                            <span class="text-gray-800">${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : 'text-gray-800'}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : 'text-gray-800'}">${cmt.content}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center flex-wrap">
+                                    <span class="vote-btn" onclick="toggleVote(this)">👍 공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">👎 비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                    ${replyButtonHtml}
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleReply(id) {
+                            const el = document.getElementById(id);
+                            if (el.style.display === 'block') el.style.display = 'none';
+                            else el.style.display = 'block';
+                        }
+                        
+                        function toggleVote(btn) {
+                            const parent = btn.parentElement;
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function showToast(msg) {
+                            const toast = document.createElement('div');
+                            toast.innerText = msg;
+                            toast.className = 'toast-msg show';
+                            document.body.appendChild(toast);
+                            setTimeout(() => toast.remove(), 2500);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner rounded shadow-sm flex-col border border-gray-200">
+                <div class="font-bold text-[#0055aa] mb-1 text-sm">창전의 스카이라인, 심세이</div>
+                <div class="text-xs text-gray-500">
+                    효빈교통공사 공식 굿즈샵<br>
+                    심세이 런칭 기념 특별 기획전<br>
+                    <span class="text-[#0055aa] mt-2 inline-block cursor-pointer underline">굿즈 예약하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>
