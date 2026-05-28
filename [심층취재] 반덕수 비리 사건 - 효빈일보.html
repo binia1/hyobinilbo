@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[심층취재] '가짜 덕후'의 가면 뒤에 숨겨진 추악한 횡령... 반덕수의 '오이 지옥'은 기획된 범죄였다 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .poll-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; }
+        .poll-table th, .poll-table td { border: 1px solid #ccc; padding: 12px; text-align: center; vertical-align: middle; }
+        .poll-table th { background-color: #f0f4f8; font-weight: bold; color: #333; }
+        .poll-table tr:nth-child(even) { background-color: #fafafa; }
+        .poll-table td:nth-child(3) { font-weight: bold; font-size: 18px; }
+        
+        .bar-container { width: 100%; background-color: #e9ecef; border-radius: 4px; overflow: hidden; height: 20px; }
+        .bar { height: 100%; min-width: 2px; transition: width 0.5s ease; }
+
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-title { font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-list li:hover .ranking-link { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; font-style: italic; width: 20px; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        .analysis-box { background: #fdfdfd; border: 1px solid #ddd; border-top: 4px solid #0055aa; padding: 25px; margin: 30px 0; font-family: 'Noto Sans KR', sans-serif;}
+        .analysis-title { font-size: 20px; font-weight: bold; color: #0055aa; margin-bottom: 15px; border-bottom: 1px dashed #ccc; padding-bottom: 10px;}
+        .strike { text-decoration: line-through; color: #888; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">사회고발 > 심층취재</div>
+                <h2 class="article-title">[심층취재] '가짜 덕후'의 가면 뒤에 숨겨진 추악한 횡령... 반덕수의 '오이 지옥'은 기획된 범죄였다</h2>
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">사회부 현성진 기자</span> (hyun_sj@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2025.03.20. 09:00 | 수정 2025.03.20. 10:15</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p><span class="text-[#0055aa] font-bold">서브컬처 극혐하면서 'L-Project' 정책 이용해 예산 2억 원 가로채<br>사키코 이름 빌려 '풍천재단'으로 세탁... 시민의 고기 뺏어 호의호식<br>박효빈 시장의 '미친 디테일' 감사가 밝혀낸 반덕수의 이중생활 실체</span></p>
+                    
+                    <div class="my-6">
+                        <img src="이미지/오이지옥_사건.png" alt="풍천복지재단 로비에 박제된 등신대 사진" class="w-full" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333?text=Pungcheon+Foundation+Investigation'">
+                        <div class="img-caption">▲ 지난 18일 오전, 박효빈 효빈광역시장이 풍천복지재단을 특별 감사하며 반덕수 이사장(당시)의 횡령 실태를 적발하고 있다. (사진=효빈일보)</div>
+                    </div>
+
+                    <p><a href="풍천복지재단.html">풍천복지재단</a>의 전 이사장 <a href="반덕수.html">반덕수</a>(62) 씨의 파면 소식이 효빈시를 뒤흔든 가운데, 본보의 집중 취재 결과 반 씨의 행태는 단순한 운영 미숙이 아닌 치밀하게 계획된 조직적 횡령이었음이 드러났다. 특히 반 씨는 박효빈 시장의 서브컬처 친화 정책인 'L-Project'를 비웃기라도 하듯, 본인이 극도로 혐오하던 애니메이션 문화를 <strong>'학대의 도구'</strong>로 악용한 것으로 밝혀져 충격을 더하고 있다.</p>
+
+                    <h4 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">■ '토가와' 이름 빌려 '풍천'으로 세탁... 시장의 눈을 가린 '가짜 덕후'</h4>
+                    <p>반 씨의 범죄는 재단 명칭을 바꾸는 것부터 시작됐다. 본래 이름 없는 평범한 복지법인이었던 재단을 박 시장 취임 이후 돌연 '풍천(豊川)복지재단'으로 개명했는데, 이는 인기 밴드 애니메이션 BanG Dream!의 등장인물 <strong>'토가와 사키코(豊川 祥子)'</strong>의 성씨를 음독한 것이다.</p>
+
+                    <p>시 감사팀의 압수수색 결과, 반 씨는 평소 지인들에게 "요즘 젊은 시장이 만화에 미쳐있으니 이름만 대충 맞춰주면 보조금 따오기 쉽다"며 서브컬처 문화를 지속적으로 조롱해왔다. 그는 실제로 시장 앞에서는 열렬한 덕후인 척 연기하며 'L-Project' 연계 지원금을 따냈으나, 뒤로는 익명 커뮤니티에 <strong>"만화 보는 정신병자들 등 처먹는 법"</strong>이라는 혐오 글을 게시하는 추악한 이중생활을 즐겼다.</p>
+
+                    <h4 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">■ 시민의 고기 반찬 뺏어 챙긴 2억 원... 그 돈으로 '호의호식'</h4>
+                    <p>반 씨가 저지른 가장 악질적인 범죄는 '급식 단가 후려치기'를 통한 횡령이다. 그는 사키코의 '몰락한 영애' 설정을 행정에 도입하겠다며 <strong>"시민들도 고난의 서사를 체험해야 후원금이 잘 들어온다"</strong>는 희대의 망언과 함께 시설 거주인들에게 오직 생오이 네 조각과 물만 배급하는 극단적인 식단을 강요했다.</p>
+
+                    <p>이렇게 아낀 식비와 시에서 지원받은 시설 보강비 등 <strong>약 2억 원</strong>의 행방이 묘연했는데, 수사 결과 반 씨는 이 돈을 고스란히 본인의 해외 골프 여행과 고급 외제차 리스료로 사용한 것으로 드러났다. 약자들이 영양실조에 시달리며 생오이를 씹는 동안, 복지 재단 이사장은 시민들의 혈세로 '황제 생활'을 누린 셈이다.</p>
+
+                    <h4 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">■ 박효빈 시장의 '미친 디테일' 감사... "당신은 가짜다"</h4>
+                    <p>이 기막힌 사기극이 수면 위로 드러난 것은 <a href="박효빈.html">박효빈</a> 시장의 '15학번' 전공 지식을 살린 현장 감사 덕분이었다. 장부의 숫자 하나하나를 대조하던 박 시장은, 반 씨의 사무실 PC에서 <strong>'지자체 보조금 횡령 안 걸리는 법'</strong>이라는 검색 기록을 찾아내고 그 자리에서 각성했다.</p>
+
+                    <p>현장에서 이사장실 책상을 부수어질 듯 내려치며 반덕수를 몰아붙인 박 시장의 일갈은 이미 전설이 되었다. 당시 반 씨가 "어린 시장이 어른한테 반말한다"며 적반하장격으로 불쾌함을 표하자, 박 시장은 <strong>"당신은 사키코를 사랑한 게 아니라, 그녀의 비극을 이용해 내 시민들을 비웃었다. 당신은 세금 도둑이고 학대범이다. 오늘부로 파면이다"</strong>라며 서슬 퍼런 사형선고를 내렸다.</p>
+
+                    <h4 style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 20px; margin-top: 40px; margin-bottom: 15px; color:#111;">■ 윤대환 비자금 커넥션, 그리고 극우 매체의 억지 비판</h4>
+                    <p>더욱 충격적인 사실은 반덕수의 배후에 <strong><a href="윤대환.html">윤대환</a> 전 시장의 잔당</strong>이 얽혀있다는 점이다. 반덕수 파면 직후 파이낸스 투데이 등 극우 매체가 "60대 원로에게 반말을 한 20대 오타쿠 시장의 폭거"라며 억지 비판 기사를 쏟아냈으나, 시청 정보과 추적 결과 <strong>윤대환의 비자금이 해당 언론사의 홍보 컨설팅비로 유입된 영수증</strong>이 박 시장에 의해 만천하에 폭로되었다. 반덕수 구하기에 나섰던 부패 언론의 민낯이 드러난 것이다.</p>
+
+                    <div class="analysis-box">
+                        <div class="analysis-title">💡 기자수첩: 반덕수의 죄는 '돈'이 아니라 '영혼'을 훔친 것이다</div>
+                        <p>반덕수는 단순히 돈을 횡령한 잡범이 아니다. 그는 누군가에겐 위로였을 문화를 조롱의 도구로 썼고, 누군가에겐 생존이었을 복지를 비즈니스로 여겼다. 77.9%의 지지를 받는 박효빈 시장이 이성을 잃고 책상을 내리친 건, 그 추악한 위선에 대한 우리 시 전체의 분노였다.</p>
+                        
+                        <p>현재 반덕수는 구속 수감 중이며, 후임으로 임명된 <strong><a href="남기태.html">남기태</a> 신임 이사장</strong>은 "오이 냄새만 나도 사표를 쓰겠다"며 전 시설에 고기 반찬 무한 배식을 선포했다. 15학번 시장의 뼈아픈 자기반성과 디테일 행정이, 결국 가짜를 몰아내고 시민들의 식판을 지켜낸 것이다.</p>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    댓글 <span class="text-[#0055aa]" id="comment-count">45,821</span>
+                </div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-bold text-black mb-1">진짜 보수는 고기 반찬!</div>
+                    <div class="text-xs text-red-600 font-bold mb-2">사아야네 빵집 고로케 특별 할인</div>
+                    <div class="text-[10px] text-gray-500">효빈시 상인 연합회 일동</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <!-- 댓글 렌더링 스크립트 -->
+    <script>
+        const commentsData = [
+            {
+                nick: "Justice_15", time: "방금 전", like: 52140, dislike: 85, isPunished: false,
+                content: "진짜 기사 읽다가 폰 던질 뻔했다. 2억 횡령해서 골프 치러 다녔으면서 시민들한텐 생오이를 먹여? 시장님이 책상 부수고 멱살 잡은 게 아니라 소리로만 기선제압한 게 보살 수준이네. 박효빈 폼 미쳤다 진짜.",
+                replies: [
+                    { nick: "Social_Welfare_God", content: "행정 감시 소홀했다고 사과문 올리신 시장님이 진짜 레전드 ㅠㅠ 남 탓 안 하는 게 진정한 리더지." },
+                    { nick: "Pyeongdang_Resident", content: "우리 동네 할머니들 영양실조 걸린 거 생각하면 반덕수 저 놈은 평생 빵에서 오이만 씹게 해야 함." }
+                ]
+            },
+            {
+                nick: "YoonJaehoon(IP)", time: "5분 전", like: 12, dislike: 48500, isPunished: true,
+                content: "이것은 박효빈의 추악한 오타쿠 독재다!! 무고한 60대 원로 반덕수 열사를 희생양으로 삼다니!! 시청 앞에서 예의범절을 지키기 위한 오이 시위를 계속 벌일 것이다!! 박효빈은 사퇴하라!!",
+                replies: [
+                    { nick: "Fact_Check", content: "할아버지, 오이만 쳐먹고 2억 삥땅 쳐서 골프 치러 간 게 무고한 열사입니까? ㅋㅋㅋ 능지 처참하네." },
+                    { nick: "Doocheong_Driver", content: "효빈역에서 캐리어 끌고 노숙하는 윤재훈 어서오고~ 지지율 2.1%로 참 수고가 많다 ㅋㅋㅋ" },
+                    { nick: "Meat_Mandu_Lover", content: "시위대 할배들 어제 시장님이 준 고기만두 냄새 맡고 헐레벌떡 줄 서서 먹고 다 해산했다매 ㅋㅋㅋㅋ" },
+                    { nick: "Police_Cyber", content: "효빈지방경찰청 사이버수사대입니다. 허위사실 유포 및 범죄자 옹호 혐의로 해당 IP 추적 진행 중입니다." },
+                    { nick: "True_Education_1", content: "골프 여행 가고 외제차 리스한 게 보수 가치냐 이 기생충 새끼야 ㅉㅉ 오이나 깎아 먹어라." },
+                    { nick: "Subculture_King", content: "방구석 사령관 앰생련 또 왔네 ㅋㅋㅋ 장난감 총으로 오이나 썰어라 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Finance_Today_Fan", time: "12분 전", like: 35, dislike: 51200, isPunished: true,
+                content: "아무리 횡령을 했어도 60대 어르신한테 반말을 섞어가며 책상을 내리친 건 동방예의지국에서 있을 수 없는 폭거다!! 버릇없는 20대 시장이 도시를 망치고 있다!! 파이낸스 투데이 기사 못 봤냐!!",
+                replies: [
+                    { nick: "Journalist_Killer", content: "파이낸스 투데이 기레기 검거 ㅋㅋㅋㅋ 시킨 대로 기사 쓰느라 고생이 많다 이주노야~" },
+                    { nick: "Social_Worker", content: "클라이언트 학대하고 2억 훔친 도둑놈한테 '이사장님' 하면서 존댓말 해주는 게 사회복지냐? 그게 윤대환식 예절임?" },
+                    { nick: "Hyobin_Mom", content: "니네 집 할머니가 요양원에서 한 달 내내 오이만 씹어 드셔도 예의 타령 할래? 책상 안 부순 게 다행인 줄 알아라." },
+                    { nick: "Fact_Bomber", content: "윤대환한테 홍보비 명목으로 뒷돈 받은 영수증 브리핑룸에서 털렸으면 조용히 폐간이나 해라 기레기 새끼야 ㅋㅋㅋ" },
+                    { nick: "Legal_Team_H", content: "언론중재위원회에 1만 건 접수 완료되었습니다. 파이낸스 투데이 본사 압류 준비 끝났습니다. ㅅㄱ" },
+                    { nick: "Desk_Protector", content: "참고로 책상 유리 안 깨짐 ㅋㅋㅋ 시장님 완력 조절 만렙 ㅋㅋㅋ 세금 아끼는 갓효빈!" }
+                ]
+            },
+            {
+                nick: "Sakiko_Guardian", time: "18분 전", like: 41200, dislike: 56, isPunished: false,
+                content: "우리 사키코 이름 팔아서 자기 뱃속 채우고 '정신병자들 돈' 운운하다니 진짜 피가 거꾸로 솟는다. 성우 카논 쨩이 트위터에서 분노한 거 봤냐? 시장님이 등신대 옆에 반덕수 박제해버린 건 진짜 역사에 남을 참교육이다.",
+                replies: [
+                    { nick: "AveMujica_Fan", content: "일본에서도 난리 났음 ㅋㅋㅋ 타카오 카논이 시장님한테 다이내믹 로직 칭찬한 거 개웃김 ㅋㅋㅋ" },
+                    { nick: "Otaku_A", content: "시장님이 등신대 쓰다듬으면서 사키코 명예 홍보모델 시켜준 거 보고 찐감동 먹음 ㅠㅠ 평생 투표한다 진짜." }
+                ]
+            },
+            {
+                nick: "Nam_Gi_Tae_Fan", time: "25분 전", like: 38900, dislike: 22, isPunished: false,
+                content: "남기태 이사장님 평시설장일 때 자기 월급 털어서 몰래 고로케 사다 먹이신 분임 ㅠㅠ 박 시장님이 그 자리에서 이사장으로 승진시킨 거 진짜 인재 보는 눈 ㅆㅅㅌㅊ. 지금 재단 맨날 고기 반찬 나온다 함 ㅠㅠ",
+                replies: [
+                    { nick: "Light_Gitae", content: "오이 냄새만 나도 사표 쓴다는 취임사 개멋있었음 ㅋㅋㅋ 진정한 육식의 민주화!" },
+                    { nick: "True_Welfare", content: "복지는 서류가 아니라 식판이다... 진짜 올해의 명언이다 ㅠㅠ" }
+                ]
+            },
+            {
+                nick: "Tearful_Apology", time: "40분 전", like: 45600, dislike: 45, isPunished: false,
+                content: "기자수첩 내용이 다 맞다. 반덕수는 돈이 아니라 시민들의 영혼을 훔친 거다. 시장님이 98년도에 2살 때 윤대환 때문에 실직해서 굶었던 기억 꺼내시면서 화낼 때 나도 모르게 오열함... 77.9% 시장이 남 탓 안 하고 자기 탓 하는 거 처음 본다.",
+                replies: [
+                    { nick: "Respect_15", content: "15학번 선배님 진짜 존경합니다. 가짜가 판치는 세상에 진짜가 뭔지 보여주심." }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            div.className = cmt.isPunished ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                if(cmt.isPunished) repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    const nickClass = reply.nickClass || (reply.nick.includes("Yoon") || reply.nick.includes("Finance") ? "text-red-600 font-bold" : "text-gray-700 font-bold");
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${reply.nick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${cmt.isPunished ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${cmt.isPunished ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+    
+    <!-- 효빈일보 코어 스크립트 -->
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>
