@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>[단독] "만화 쪼가리 색깔 버스 안 돼!" 백민우 치원군수, 1000번 버스 거부 파문 - 효빈일보</title>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; word-break: keep-all; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; word-break: keep-all; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 그래프 박스 (본 기사에서는 미사용이나 템플릿 유지) */
+        .chart-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .chart-title { font-weight: bold; font-size: 18px; color: #333; margin-bottom: 15px; text-align: center; }
+        
+        /* 표 스타일 (본 기사에서는 미사용이나 템플릿 유지) */
+        .poll-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; }
+        .poll-table th { background: #0055aa; color: white; padding: 10px; text-align: center; }
+        .poll-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .poll-table tr:nth-child(even) { background-color: #f2f2f2; }
+        .highlight-row { background-color: #fff3cd !important; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; user-select: none; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+<!-- 헤더 -->
+<div id="common-header"></div>
+<div class="article-container">
+<div class="main-content shadow-sm">
+<div id="article-content-area">
+<div class="mb-2 text-[#0055aa] font-bold">정치/사회 &gt; 지자체 행정</div>
+<h2 class="article-title">[단독] "만화 쪼가리 색깔 버스 안 돼!" 백민우 치원군수, 1000번 버스 거부 파문… 비서실장도 '항명 사퇴'</h2>
+<div class="article-info">
+<div>
+<span class="font-bold">최사회 기자</span> (society@hyobinilbo.com)<br/>
+<span class="text-xs text-gray-400">입력 2023.04.30. 12:45</span>
+</div>
+<div class="flex gap-2 text-xs">
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가-</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+</div>
+</div>
+<div class="article-body">
+<!-- 요약 컨텐츠 박스 -->
+<p class="p-4 bg-gray-50 border-l-4 border-[#0055aa] font-bold text-[#0055aa] text-[16px] leading-relaxed font-sans mb-6">
+                        출퇴근 생명줄 '세츠나 레드' 1000번 급행버스, "군 기풍 해친다"며 억지 거부<br/>
+                        효빈시 광역버스(7000·7777번)까지 퇴출 시도... 상권 보호 핑계에 민심 '부글'<br/>
+                        비서실장 사표 집어던지며 "군민 발 자르는 역적 되기 싫다" 폭로글 파장
+                    </p>
+<div class="my-6">
+<img alt="치원군청 앞 트랙터 시위 현장" class="w-full" src="이미지/치원군청 앞 트랙터 시위 현장.png"/>
+<div class="img-caption">▲ 30일 오전 덕빈북도 치원군청 앞에서 후등면 산업단지 근로자들과 군민들이 백민우 군수의 '1000번 버스 인가 거부' 및 '효빈 광역버스 퇴출 시도'에 항의하며 트랙터 시위를 벌이고 있다. (사진=효빈일보 DB)</div>
+</div>
+<p><strong>[효빈일보 = 최사회 기자]</strong> 덕빈북도 치원군 백민우 군수의 이른바 '서브컬처 혐오'가 빚어낸 시대착오적 행정이 광역 교통 대란으로 번지고 있다. 치원군 후등면 산업단지 근로자들의 출퇴근 생명줄인 1000번 좌석급행버스 정차 인가를 "색깔이 만화 캐릭터 같다"는 황당한 이유로 거부한 데 이어, 기존 효빈시 광역버스 노선까지 쫓아내려다 측근인 비서실장이 사표를 던지는 초유의 사태가 발생했다.</p>
+<p>30일 효빈시와 치원군청 등에 따르면, 최근 약산시 박아상 시장 주도로 신설된 1000번 좌석급행버스가 후등면 산단 진입을 앞두고 백민우 군수의 최종 결재 단계에서 가로막혔다. 효빈시 3세대 시내버스 디자인 지침에 따라 급행 전용 도색인 <strong>'스칼렛 레드(#D81C2F)'</strong>가 적용되었는데, 이것이 서브컬처 캐릭터(유키 세츠나) 테마라는 사실을 안 백 군수가 서류를 집어 던지며 무정차 통과를 지시했기 때문이다.</p>
+<p>군청 관계자에 따르면, 백 군수는 "어디 신성한 치원군 땅에, 그것도 땀 흘려 일하는 산업단지 한복판에 일본 만화 쪼가리 색깔을 칠한 버스가 굴러다니냐"며 "이는 우리 군의 엄숙한 기풍을 해치고 청년들의 정신을 좀먹는 짓"이라는 황당한 논리를 내세운 것으로 전해졌다.</p>
+<p>백 군수의 몽니는 여기서 그치지 않았다. '효빈시로 상권이 빨려 나간다'는 명분을 내세워, 현재 공군 장병들과 성택대 학생, 후등면 근로자들의 핵심 출퇴근 노선으로 절찬리에 운행 중인 효빈 광역 7000번(카린 버스)과 효빈 좌석 7777번(아이 버스)마저 관내에서 쫓아내라는 지시를 내렸다.</p>
+<p>결국 참다못한 40대 비서실장 A씨가 "읍내에 영화관이나 대형 마트 하나 없으면서 젊은 사람들에게 읍내에서 돈을 쓰라고 강요하는 것은 어불성설"이라며, "군민의 발을 자르는 역적이 되기 싫다. 군수님 혼자 죽으시라"고 사직서와 공무원증을 집어 던진 뒤 직장인 익명 커뮤니티 '블라인드'에 이 사실을 폭로했다.</p>
+<p>이 같은 소식이 알려지자 치원 군민들의 분노는 걷잡을 수 없이 폭발하고 있다. 특히 과거 '두청운수 2세대 갈색 버스(똥색 버스)' 시절의 플라스틱 시트 과적 트라우마를 기억하는 군민들은 "군수가 직접 똥색 버스 타고 출퇴근해 봐라", "빨간색이 싫으면 관용차나 똥색으로 칠해라"라며 군청 앞 트랙터 시위를 불사하고 나섰다.</p>
+<p>사태가 악화되자 박효빈 효빈시장이 비공개 라인을 통해 치원군 측에 강력한 경고를 전달한 것으로 알려졌다. 지역 정가에 따르면 박 시장은 <strong>"버스 하나 막겠다고 어그로를 끌어 민심이 폭발하면, 그 악화된 여론을 향후 선거법 재판부 판사님이 참 예쁘게도 보시겠다"</strong>며 사법 리스크를 정조준했고, 이에 혼비백산한 백 군수가 결국 인가 서류에 도장을 찍었다는 후문이다.</p>
+<p>제 발로 굴러들어온 복을 걷어차고 군민들의 이동권마저 짓밟으려 했던 백민우 군수의 '아집 행정'은, 한동안 치원군을 넘어 덕빈권 전체의 조롱거리로 남을 전망이다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+</div>
+</div>
+<div class="comment-section">
+<div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">34,102</span>
+</div>
+<div class="comment-write-area mb-6">
+<div class="comment-inputs">
+<input id="cmt-nick" placeholder="닉네임" type="text"/>
+<input id="cmt-pw" placeholder="비밀번호" type="password"/>
+</div>
+<div class="comment-textarea-box">
+<textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" id="cmt-content" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+<button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" id="cmt-submit-btn" onclick="addComment()">등록</button>
+</div>
+</div>
+<div class="comment-list-container" id="comment-list">
+<script>
+                        const commentsData = [
+                            {
+                                nick: "Old_Bus_Hater", time: "방금 전", like: 28450, dislike: 31, isPunished: false,
+                                content: "두청운수 똥색 버스 시절에 75명씩 끼여서 학교 다녔던 PTSD가 아직도 생생한데, 에어컨 빵빵한 새 버스 들어오는 걸 만화 색깔이라고 막아? 군수 네가 걸어서 출근해라 진짜 ㅋㅋㅋ",
+                                replies: []
+                            },
+                            {
+                                nick: "Blind_Justice", time: "5분 전", like: 25120, dislike: 18, isPunished: false,
+                                content: "비서실장님 진짜 참공무원이네. \"군수님 혼자 죽으십시오\" ㅋㅋㅋㅋㅋㅋ 얼마나 옆에서 답답했으면 공무원증을 던지고 블라인드에 폭로를 하냐. 상권 핑계 대지 마라. 읍내에 할 게 있어야 상권을 살리지!",
+                                replies: [
+                                    { nick: "Jaehoon_Loyalty (윤재훈파)", content: "모시던 군수 통수 치고 블라인드에 꼰지르는 수준 보소 ㅉㅉ 의리라고는 1도 없는 배신자네. 딱 봐도 효빈시청 프락치구만. 우리 재훈 형님 계실 때는 저런 하극상 상상도 못 했는데." },
+                                    { nick: "Civil_Servant_A", content: "하극상은 니네 재훈 형님이 필리핀 현지 경찰한테 한 게 하극상이고요 ㅋㅋㅋ 불법적인 쇄국 행정 지시해서 실무진들 단체로 감방 가게 생겼는데, 그럼 군수 혼자 뻘짓한 거에 독박 쓰냐?" },
+                                    { nick: "Fact_Machine", content: "의리 타령하고 자빠졌네 ㅋㅋㅋ 범죄자 옹호하는 게 의리면 넌 그냥 공범이야. 니네 재훈 형님 마닐라 교도소 화장실 청소 당번이라던데 거기나 가서 의리 지키면서 같이 변기나 닦아라 앰생아 ㅉㅉ" }
+                                ]
+                            },
+                            {
+                                nick: "치원향우회_백사모", time: "8분 전", like: 45, dislike: 31400, isPunished: true,
+                                content: "우리 백민우 군수님이 치원의 숭고한 정기를 지키기 위해 고군분투하시는데 버릇없는 젊은것들이 선동이나 당하고 쯧쯧! 어디 신성한 치원 땅에 시뻘건 좌파 색깔, 일본 만화 쪼가리 색깔 칠한 버스가 들어오려 하느냐! 효빈시장 박효빈이는 말차 파르페로 우리 청년들을 세뇌시켜 치원군을 속국으로 만들려는 딥 스테이트 공작을 당장 멈춰라! 계속 들이밀면 우리 백사모가 트랙터로 정류장 막고 날계란으로 심판할 것이샤!",
+                                replies: [
+                                    { nick: "Fact_Assassination", content: "어르신, 파르페에 세뇌당할 능지면 대체 평소에 뭘 드시고 사시는 겁니까? ㅋㅋㅋㅋ 딥 스테이트 좋아하시네. 박효빈 시장한테 전화받고 덜덜 떨면서 인가 도장 찍은 게 백민우 군수 본인인데요?" },
+                                    { nick: "Supreme_Court_Dday", content: "소고기 돌리다 걸려서 2심에서도 벌금 150만 원 맞은 범죄자가 무슨 숭고한 정기입니까? ㅋㅋㅋ 치원군 정기 갉아먹는 건 그쪽 군수님이시고요. 대법원 선고일 엑셀 카운트다운이나 마저 세세요." },
+                                    { nick: "Egg_Price_High", content: "트랙터로 막고 날계란 던지십쇼 ㅋㅋㅋ 블랙박스에 다 찍혀서 특수재물손괴에 영업방해로 합의금 수천만 원 물어내 봐야 정신 차리시지. 연금 압류당하기 싫으시면 얌전히 집에서 쉬세요." },
+                                    { nick: "Green_Tea_Lover", content: "아 말차 파르페 개맛있는데 오늘 퇴근하고 하나 사 먹어야지~ 냠냠 ㅋㅋㅋㅋ 치원군청 앞 카페 사장님 매출 올려주셔서 감사합니다~" }
+                                ]
+                            },
+                            {
+                                nick: "두청운수_낭만파", time: "11분 전", like: 12, dislike: 33250, isPunished: true,
+                                content: "솔직히 요즘 효빈시 3세대 버스들 알록달록해서 유치하고 오타쿠 냄새나서 토 나옴. 윤대환 시장님 시절 두청운수 갈색(똥색) 버스가 진정한 상남자의 버스였지. 플라스틱 시트에 75명씩 꽉꽉 채워 타면서 사람 냄새도 나고 낭만 있었는데 ㅉㅉ 박효빈이랑 만화 보는 애들이 효빈시 다 망치고 있네. 우리 재훈 형님이 빨리 돌아오셔서 기강 한번 싹 잡고 두청운수 부활시켜야 함. 백 군수님이 유일하게 정상인 듯 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Orthopedics_VIP", content: "75명씩 구겨 타다가 급브레이크 밟아서 갈비뼈 3대 나가봐야 '아~ 이게 상남자의 낭만이구나' 하겠지? ㅋㅋㅋㅋ 똥색 버스 그립다는 놈 특: 지는 맨날 자가용 타고 다님." },
+                                    { nick: "Mabuhay_Jaehoon", content: "니네 재훈 형님 지금 필리핀 깜빵에서 현지 갱단들한테 삥 뜯기면서 배식 맛없다고 질질 짜고 있다던데 기강을 어떻게 잡아 ㅋㅋㅋㅋ 영구 입국 금지라 한국 땅 밟지도 못하니까 옥중 서신이나 주고받으쇼." },
+                                    { nick: "Bus_Driver_Kim", content: "폐업한 지 16년이 넘은 비리 운수회사를 빠는 능지니까 백민우를 정상이라고 생각하지. 칠양여객이 10년째 흑자 내면서 에어컨 빵빵하게 틀어주는 게 진짜 정상 행정이다. 알록달록한 게 똥색보단 백배 나음." }
+                                ]
+                            },
+                            {
+                                nick: "Scarlet_Red_1000", time: "12분 전", like: 21890, dislike: 42, isPunished: false,
+                                content: "색깔이랑 군의 엄숙한 기풍이랑 대체 무슨 상관인지 아시는 분? ㅋㅋㅋ 파란색은 민주당 색이라고 싫어하고, 스칼렛 레드는 씹덕 색이라고 싫어하면 버스 투명하게 만들어서 다닐까요?",
+                                replies: []
+                            },
+                            {
+                                nick: "Fact_Assassination", time: "18분 전", like: 19550, dislike: 24, isPunished: false,
+                                content: "박효빈 시장 명치 타격 미쳤다 진짜 ㅋㅋㅋ \"그 악화된 여론 판사님이 참 예쁘게 보시겠습니다\" ㅋㅋㅋㅋ 사법 리스크 건드리니까 손 덜덜 떨면서 바로 도장 찍는 찌질함 보소. 이게 96년생 시장과 꼰대 군수의 짬 차이다.",
+                                replies: []
+                            },
+                            {
+                                nick: "Save_Our_Commute", time: "25분 전", like: 16400, dislike: 15, isPunished: false,
+                                content: "7000번, 7777번 끊기면 공군 부대 장병들이랑 후등면 노동자들은 날아서 출퇴근하라는 거임? 진짜 지들 밥그릇 챙기겠다고 서민들 피 말려 죽이는 전형적인 악질 행정이다. 백사모 트랙터 시위하면 우리도 지게차 끌고 나갑니다.",
+                                replies: [
+                                    { nick: "치원_수호자 (백사모)", content: "어린놈의 새끼들이 어디 어른들 앞에서 버릇없이 지게차 타령이샤! 우리가 피땀 흘려 치원군을 어떻게 키웠는데! 동네 물 흐리는 시뻘건 만화 버스 보이면 지팡이로 다 박살 내버릴 거샤!" },
+                                    { nick: "Worker_Ant", content: "치원군을 키우긴 개뿔 ㅋㅋㅋ 상권 다 죽여서 젊은 사람들 쫓아내놓고 과거 영광에 갇혀 사시네. 지팡이로 에어로시티 유리창 깨트리시면 수리비 청구서 고스란히 댁들 자식들한테 날아갑니다~ 합의금 달라고 징징대지나 마십쇼 ^^" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // 비공감이 압도적으로 많거나 처벌 대상(빌런)인 경우 빨간 배경 처리
+                            if (cmt.isPunished || cmt.dislike > 10000) {
+                                div.className = "comment-item border-red-300 bg-red-50 p-4 border rounded";
+                            } else if (cmt.like > 1000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let nickStyle = "text-[#0055aa]";
+                            
+                            // 특정 닉네임 강조 스타일링
+                            if(cmt.nick.includes("백사모") || cmt.nick.includes("낭만파")) {
+                                nickStyle = "text-red-600 font-black";
+                            }
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    let rNickStyle = "text-[#0055aa]";
+                                    if (reply.nick.includes("백사모") || reply.nick.includes("윤재훈파")) {
+                                        rNickStyle = "text-red-600 font-black";
+                                    }
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            const input = document.getElementById('cmt-content');
+                            const btn = document.getElementById('cmt-submit-btn');
+                            
+                            if (input.value.trim() !== '') {
+                                input.value = '';
+                                const originalText = btn.innerText;
+                                btn.innerText = "등록 완료";
+                                btn.classList.add('bg-green-600');
+                                
+                                setTimeout(() => {
+                                    btn.innerText = originalText;
+                                    btn.classList.remove('bg-green-600');
+                                }, 2000);
+                            }
+                        }
+                    </script>
+</div>
+</div>
+</div>
+<!-- 사이드바 -->
+<div class="side-content">
+<div id="common-sidebar-ranking"></div>
+<div class="ad-banner" style="background: #e1f5fe; border-color: #b3e5fc; border-width: 1px; border-style: solid; padding: 20px; border-radius: 4px;">
+<div class="text-center">
+<div class="font-bold text-blue-600 mb-1">효빈광역시 통합 대중교통망</div>
+<div class="text-xs text-blue-400">어디서나 빠르고 편리하게!<br/>1000번 좌석급행 신규 개통</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 푸터 및 코어 스크립트 -->
+<div id="common-footer"></div>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="assets/hb_news_core.js"></script>
+</body>
+</html>

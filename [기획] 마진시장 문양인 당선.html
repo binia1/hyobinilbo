@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>[기획] "가만히 숨만 쉬었는데 시장이 되었습니다"... 마진시장 문양인, 기적의 '35.4%' 어부지리 당선 - 효빈일보</title>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; word-break: keep-all; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; word-break: keep-all; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 템플릿 유지용 차트 및 표 스타일 */
+        .chart-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .chart-title { font-weight: bold; font-size: 18px; color: #333; margin-bottom: 15px; text-align: center; }
+        .poll-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; }
+        .poll-table th { background: #0055aa; color: white; padding: 10px; text-align: center; }
+        .poll-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .poll-table tr:nth-child(even) { background-color: #f2f2f2; }
+        .highlight-row { background-color: #fff3cd !important; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; user-select: none; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+<!-- 헤더 -->
+<div id="common-header"></div>
+<div class="article-container">
+<div class="main-content shadow-sm">
+<div id="article-content-area">
+<div class="mb-2 text-[#0055aa] font-bold">정치 &gt; 지방선거 기획</div>
+<h2 class="article-title">[기획] "가만히 숨만 쉬었는데 시장이 되었습니다"... 마진시장 문양인, 기적의 '35.4%' 어부지리 당선</h2>
+<div class="article-info">
+<div>
+<span class="font-bold">최정치 기자</span> (politics@hyobinilbo.com)<br/>
+<span class="text-xs text-gray-400">입력 2026.06.05. 10:30</span>
+</div>
+<div class="flex gap-2 text-xs">
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가-</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+</div>
+</div>
+<div class="article-body">
+<!-- 요약 컨텐츠 박스 -->
+<p class="p-4 bg-gray-50 border-l-4 border-[#0055aa] font-bold text-[#0055aa] text-[16px] leading-relaxed font-sans mb-6">
+                        - '서류 원툴' 백수안, 컷오프 불복 무소속 출마로 민주당 표 '정확히 반토막' 트롤링<br/>
+                        - 35.4% 득표한 60대 수산업자 문양인, 1.5%p 차이로 뜻밖의 '당선증' 수령<br/>
+                        - 지역 사회 "대학생 많은 마진시, 운빨 당선된 꼰대 시장이 감당할 수 있나" 우려
+                    </p>
+<div class="my-6">
+<img alt="마진시장 당선인 문양인" class="w-full" src="이미지/마진시장 당선인 문양인.png"/>
+<div class="img-caption">▲ 5일 오전, 제9회 전국동시지방선거 덕빈남도 마진시장 선거에서 35.4%의 득표율로 당선이 확정된 국민의힘 문양인 후보가 선거 사무소에서 어리둥절한 표정으로 지지자들의 환호를 받고 있다. (사진=효빈일보 사진부)</div>
+</div>
+<p><strong>[효빈일보 = 최정치 기자]</strong> 제9회 전국동시지방선거 덕빈남도 마진시장 선거에서 대한민국 선거 역사상 길이 남을 '역대급 어부지리'가 탄생했다. 국민의힘 문양인 후보가 단 35.4%의 득표율만으로 마진시청의 주인이 된 것이다.</p>
+<p>승리의 1등 공신은 문 당선인 본인이 아니라, 다름 아닌 전임 시장인 무소속 백수안 후보였다. '젊은 엘리트'를 자처했으나 끔찍한 탁상행정으로 "일을 너무 못한다"는 굴욕적인 평가와 함께 더불어민주당 경선에서 컷오프당한 백 후보. 그가 앙심을 품고 무소속 출마를 강행하면서, 본 선거에서 민주당 성향의 표는 더불어민주당 양영현 후보(33.9%)와 무소속 백수안 후보(30.7%)로 완벽하게 반토막이 났다.</p>
+<p>진보 진영 표의 합이 무려 64.6%에 달했으나, 이들의 치킨게임 덕분에 기존 보수 콘크리트 표(35.4%)만 온전히 챙긴 문양인 후보가 1.5%p 차이로 어부지리 시장 배지를 달게 되었다. 이재명 정부 출범 초기 '허니문 선거'였던 탓에 일찌감치 "어차피 질 선거"라며 자포자기했던 국민의힘 마진시 당원협의회는 그야말로 축제 분위기다.</p>
+<p>하지만 문 당선인의 시정 전망은 그리 밝지 않다. 지역 수산업자 출신인 60대의 문 당선인은 마진해양대학교와 마진과학기술대학교 학생들로 북적이는 젊은 마진시의 분위기와는 거리가 멀다는 평가를 받는다. 시민단체와 공무원 노조 측에서는 "백수안의 자기 파괴적 트롤링이 만들어낸 100% 운빨 당선"이라며, "젊은 도시에 낙하산 타듯 내려온 60대 보수 인사가 과연 제대로 된 행정을 펼칠 수 있겠느냐"며 우려 섞인 시선을 보내고 있다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+</div>
+</div>
+<div class="comment-section">
+<div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">38,102</span>
+</div>
+<div class="comment-write-area mb-6">
+<div class="comment-inputs">
+<input id="cmt-nick" placeholder="닉네임" type="text"/>
+<input id="cmt-pw" placeholder="비밀번호" type="password"/>
+</div>
+<div class="comment-textarea-box">
+<textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" id="cmt-content" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+<button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" id="cmt-submit-btn" onclick="addComment()">등록</button>
+</div>
+</div>
+<div class="comment-list-container" id="comment-list">
+<script>
+                        const commentsData = [
+                            {
+                                nick: "Fact_Check_Machine", time: "방금 전", like: 32510, dislike: 24, isPunished: false,
+                                content: "진짜 백수안 저 찌질한 놈은 전설이다 ㅋㅋㅋ 서류로만 행정 하다가 가로등 설치해달라는 대학생들한테 '통계상 무의미하니 호루라기나 불어라' 드립 칠 때부터 알아봤음. 지가 무능해서 짤린 걸 당이 자길 버렸다고 징징대더니 결국 진보 표 정확히 반으로 갈라먹고 국힘한테 시장직 헌납함 ㅋㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Baek_Samo_01", content: "우리 백수안 시장님은 가장 과학적이고 효율적인 엑셀 경영을 하셨을 뿐입니다! 감성팔이나 하는 더불어민주당이 인재를 몰라본 거죠!" },
+                                    { nick: "Cider_Spritzer", content: "엑셀 경영 ㅋㅋㅋㅋ 폭설로 산간 마을 고립됐는데 \"제설차 가동 가성비 떨어지니 날씨 풀릴 때까지 대기하라\"고 지시한 게 과학적 경영이냐? 그냥 소시오패스지 ㅋㅋㅋ" },
+                                    { nick: "Logic_Crusher", content: "덕빈권 최악의 청년 정치인 1위 백수안 ㅋㅋㅋ 같은 90년대생인 낙주시장 최현수나 효빈시장 박효빈은 씹덕 소리 들어도 일 존나 잘해서 압도적으로 재선, 3선 하는데, 연세대 명문대생이 60대 어부 아저씨한테 어부지리로 털리는 게 코미디임." },
+                                    { nick: "Fact_Check_Machine", content: "백수안 30.7%, 양영현 33.9% ㅋㅋㅋㅋ 둘이 합치면 64.6%인데 35.4%한테 짐 ㅋㅋㅋㅋ 진짜 이보다 완벽한 트롤링은 역사에 없을 듯. 민주당원들 복장 터지는 소리 여기까지 들린다." }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Samo_Forever", time: "8분 전", like: 45, dislike: 48900, isPunished: true,
+                                content: "위대한 마진 시민들의 선택이다! 좌파 민주당 놈들이 나라를 망치는 꼴을 볼 수 없어, 진정한 보수 애국자 문양인 시장님을 선택한 것이다!! 이게 바로 윤석열 각하의 위대한 영도력이다!",
+                                replies: [
+                                    { nick: "Clear_Sky_00", content: "님아 눈이 있으면 숫자 좀 읽어보세요 ㅋㅋㅋ 양영현(33.9) + 백수안(30.7) = 좌파 표가 64%고, 문양인은 보수 텃밭 최저치인 35% 받고 빈집털이 한 건데 이게 무슨 보수의 승리임? ㅋㅋㅋ" },
+                                    { nick: "15_학번_동기", content: "윤석열 영도력 ㅋㅋㅋㅋㅋ 평양에 무인기 보내서 내란 조작하다가 '일반이적죄'로 징역 30년 처맞은 찐 간첩을 아직도 빠는 틀딱들은 진짜 능지가 처참하다 ㅠㅠ" },
+                                    { nick: "Yoon_Samo_Forever", content: "시끄럽다 이 빨갱이들아! 8호선 EMP로 조작된 재판 결과 따위 인정 못한다! 윤재훈 사령관님이 2.98%밖에 못 받은 것도 다 좌빨 오타쿠들의 음모다!!" },
+                                    { nick: "Metro_Lover_01", content: "EMP ㅋㅋㅋㅋㅋ 윤재훈 2.98% 받은 건 그냥 걔가 계엄령 때 완장 차고 남의 가게 털던 범죄자 양아치라서 그런 거고요 ㅋㅋㅋㅋ 현실 부정 오지네. 꼬우면 마진시 가서 엑셀이나 돌리쇼 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Majin_Uni_Student", time: "12분 전", like: 28400, dislike: 15, isPunished: false,
+                                content: "마진 과기대생입니다... 진짜 앞날이 깜깜하네요. 눈 치우기 귀찮다고 엑셀 돌리던 무능한 꼰대(백수안) 치우니까, 이번엔 진짜 60대 찐 꼰대 할아버지가 시장으로 옴 ㅋㅋㅋㅋ 대학가 상권 다 뒤지게 생겼네 하아...",
+                                replies: [
+                                    { nick: "Subculture_Capital", content: "월석동 외고 학부모들도 지금 멘붕임 ㅋㅋㅋ 학군지 신경이나 써주겠냐면서. 그냥 4년 동안 마진시는 행정 멈춤 상태라고 보면 됨." },
+                                    { nick: "Blue_Bass_Ryo", content: "그래도 백수안보다는 낫지 않음? ㅋㅋㅋ 백수안은 학생회에서 가로등 달아달라니까 호신용 호루라기 던져주던 사이코패스였는데, 60대 아저씨는 말은 안 통해도 최소한 민원 넣으면 \"에잉 쯧쯧\" 하면서 가로등은 달아줄 듯 ㅋㅋㅋ" },
+                                    { nick: "Majin_Uni_Student", content: "아 그건 맞음 ㅋㅋㅋ 백수안 그 새끼는 진짜 엘리트병 걸린 역대급 ㅂㅅ이었음. 지 혼자 일 다 하는 척하면서 실무진들 갈아먹고 성과는 0 ㅋㅋㅋ" },
+                                    { nick: "Cider_Spritzer", content: "ㅋㅋㅋㅋㅋ 진짜 마진시 공무원들이 제일 불쌍하다. 엑셀 사이코패스 밑에서 4년 고통받다가 이제 뱃사람 꼰대 밑에서 4년 또 고통받아야 함 ㅋㅋㅋㅋ 탈주각 날카롭다." }
+                                ]
+                            },
+                            {
+                                nick: "Patriot_Yoon_Blood", time: "15분 전", like: 32, dislike: 45100, isPunished: true,
+                                content: "문양인 시장님 당선을 축하드립니다!! 이제 마진시에 불어닥친 더러운 오타쿠 문화를 정화하고 진정한 보수의 가치를 세워주십시오!! 박효빈 같은 어린놈이 나라를 망치는 걸 막아주세요!!",
+                                replies: [
+                                    { nick: "Justice_For_Hyobin", content: "님아 마진시에는 애초에 오타쿠 문화가 없어요 ㅋㅋㅋ 마진시는 그냥 백수안이 엑셀로 도시 망쳐놓은 거밖에 없음 ㅋㅋㅋ 박효빈 시장님이 왜 여기서 나와?" },
+                                    { nick: "Fact_Check_Machine", content: "그리고 느그 보수 가치 세운답시고 깝치던 치원군수 백민우, 모제군수 오성국 이번 선거에서 다 떨어져서 백수 됐잖아요 ㅋㅋㅋ 꼰대질 하다가 반도체 기업 다 뺏기고 쫓겨난 거 벌써 잊음?" },
+                                    { nick: "Patriot_Yoon_Blood", content: "그건 부정선거다!! 친동생이 형을 배신하고 조작한 선거다!! 사법부는 당장 재투표를 실시하라!!" },
+                                    { nick: "2.98_Percent_Legend", content: "윤석열 징역 30년, 윤재훈 2.98%, 백민우 0.18%p 차 낙선, 오성국 반도체 이탈 역전패 ㅋㅋㅋ 이번 지선은 진짜 극우 꼰대들 완벽하게 관짝에 못 박은 축제다 ㅋㅋㅋ 니들 헛소리할수록 보수 표만 더 깎임 ㅅㄱ" }
+                                ]
+                            },
+                            {
+                                nick: "Clear_Sky_00", time: "20분 전", like: 26100, dislike: 11, isPunished: false,
+                                content: "가장 웃긴 건 도청 회의실 풍경일 듯 ㅋㅋㅋ 고포군수 문석준(공식 꼰대 빌런)이 유일하게 예뻐하던 '양복 입은 정상인' 백수안이 짤리고 동년배 꼰대가 들어왔으니, 이제 2030 MZ 오타쿠 시장 군수들 사이에서 늙은이 둘이서 고립될 예정 ㅋㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Metro_Lover_01", content: "아 상상만 해도 개웃기네 ㅋㅋㅋㅋ 오현주, 박효빈, 최현수 모여서 뱅드림 럽라 콜라보 이야기하면서 세수 쓸어 담을 계획 짤 때, 문석준이랑 문양인 둘이서 구석에서 \"에잉 쯧쯧 만화나 보는 놈들\" 하면서 깡소주 깔 듯 ㅋㅋㅋㅋ" },
+                                    { nick: "Logic_Crusher", content: "근데 백수안 있을 때가 더 웃겼음. 백수안이 눈치 없이 20대 시장들 사이에 끼려고 하면 관수군수 서윤수가 \"우린 일 잘하는 씹덕이라서요~ 컷오프나 수습하시죠 ㅋ 무사도!\" 하고 꼽주던 거 진심 레전드 ㅋㅋㅋ" },
+                                    { nick: "Blue_Bass_Ryo", content: "ㅋㅋㅋㅋㅋ 서윤수 인싸 웃음 지으면서 팩폭 박는 거 상상된다 ㅋㅋㅋ 명문대 나오면 뭐하냐? 씹덕들보다 일 처리 능력 딸려서 컷오프당하는 븅신인데 ㅋㅋㅋ" },
+                                    { nick: "Clear_Sky_00", content: "팩트) 박효빈, 오현주, 최현수는 취미가 씹덕일 뿐이지 행정 능력은 전국 탑티어 괴물들임. 백수안은 취미가 엑셀인 무능력자고 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Logic_Crusher", time: "25분 전", like: 24500, dislike: 25, isPunished: false,
+                                content: "솔직히 이번 마진시 선거는 민주당 도당이 공천 실패한 거임. 백수안이 아무리 일을 못해도 현역인데 컷오프를 시켜버리면 당연히 저렇게 깽판 칠 거 예상했어야지 ㅋㅋㅋ 양영현 후보만 불쌍하게 됐네.",
+                                replies: [
+                                    { nick: "Chiwon_Laborer", content: "근데 백수안은 진짜 냅두면 마진시 멸망할 수준이라서 잘랐어야 함. ㅋㅋㅋ 겨울에 눈 쌓여서 산동네 어르신들 굶어 죽게 생겼는데 가성비 드립 치는 사이코를 어떻게 다시 공천함?" },
+                                    { nick: "Cider_Spritzer", content: "맞음. 치원군에 윤간석(성범죄자) 공천했다가 염세현 쌍욕 터지고 당 터진 국민의힘 꼴 날 바에는, 차라리 한 턴 쉬더라도 암덩어리 도려내는 게 맞지." },
+                                    { nick: "Logic_Crusher", content: "하긴 ㅋㅋㅋ 엑셀 싸이코보단 걍 아무것도 안 하는 문양인이 나을 수도 있음." },
+                                    { nick: "Fact_Check_Machine", content: "문제는 문양인이 자기 실력으로 된 줄 알고 깝치다가 모제군 오성국처럼 상권 다 말아먹을까 봐 걱정이지 ㅋㅋㅋ 대학가에서 국밥집 간판 다 통일하라고 꼰대질할 관상임 딱 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Anti_Otaku_Force", time: "30분 전", like: 18, dislike: 41200, isPunished: true,
+                                content: "잘 들어라 좌빨들아. 백수안이든 문양인이든 중요한 건 이 나라의 젊은이들이 만화 쪼가리에 미쳐가는 걸 막는 것이다. 효빈시 꼴을 봐라! 온통 오타쿠 천지다! 마진시는 절대 저렇게 물들면 안 된다!",
+                                replies: [
+                                    { nick: "Subculture_Capital", content: "그 오타쿠 천지인 효빈시가 필리핀이랑 MOU 맺어서 수천억 벌어오고, 상안군은 뱅드림 콜라보로 건물주들 입꼬리 찢어지는데 마진시는 지금 뭐 함? ㅋㅋㅋ 엑셀 돌리다가 국힘에 시장직 헌납함 ㅋㅋㅋㅋ" },
+                                    { nick: "Hyobin_First_1996", content: "니들이 숭배하는 윤재훈은 2.98% 찍고 폭망했고 윤석열은 징역 30년 맞았어요 아저씨 ㅠㅠ 제발 방구석에서 안보 타령 그만하시고 현실을 사세요." },
+                                    { nick: "15_학번_동기", content: "아니 그리고 마진시에도 마진 과기대랑 해양대 있어서 젊은 애들 천지인데 거따 대고 꼰대질하면 모제군처럼 2030 몰표 맞고 역전패당하는 거임 ㅋㅋㅋ 문양인이 눈치 있으면 알아서 엎드리겠지." },
+                                    { nick: "Anti_Otaku_Force", content: "대학생들이 배때지가 불러서 그렇다! 우리 때는 눈이 오면 빗자루 들고 나가서 다 치웠어! 제설차 가성비 타령한 백수안이나, 그거 불만이라고 좌빨 짓 하는 대학생 놈들이나 똑같다!" }
+                                ]
+                            },
+                            {
+                                nick: "Cider_Spritzer", time: "35분 전", like: 21400, dislike: 14, isPunished: false,
+                                content: "진짜 35.4% 당선은 레전드다 ㅋㅋㅋㅋ 예전에 무슨 구의원 선거에서나 볼 법한 어부지리 당선이 인구 12만 대도시(중소도시) 시장 선거에서 나오네. 백수안 이 새끼는 평생 까여야 됨.",
+                                replies: [
+                                    { nick: "Fact_Check_Machine", content: "심지어 백수안 저놈은 지가 끝까지 잘난 줄 알고 \"내가 횡령을 했냐 범죄를 저질렀냐\" 이 지랄하면서 기자회견 한 게 개그 포인트임 ㅋㅋㅋ 범죄만 안 저지르면 뭐 함? 행정으로 사람을 말려 죽이는데." },
+                                    { nick: "Majin_Uni_Student", content: "횡령 안 한 건 맞음. 왜냐면 예산을 아예 안 썼거든 ㅋㅋㅋㅋㅋ 지표 좋아야 한다고 유지보수 예산 싹 다 동결시켜서 도로 다 파이고 가로등 다 꺼져있었음 ㅋㅋㅋㅋ 진짜 개병신." },
+                                    { nick: "2.98_Percent_Legend", content: "ㅋㅋㅋㅋ 예산 안 써서 흑자 낸 걸 지 성과라고 PPT 만들어서 도당에 제출했다가 \"미친 새끼냐\" 소리 듣고 컷오프당했다는 썰이 진짜였구나 ㅋㅋㅋㅋ" },
+                                    { nick: "Cider_Spritzer", content: "결국 자의식 과잉에 빠진 헛똑똑이 하나가 민주당 밥상 엎어버린 사건 ㅋㅋㅋ 문양인 캠프는 개표 방송 보면서 진짜 로또 맞은 기분이었겠다 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Blue_Bass_Ryo", time: "40분 전", like: 18500, dislike: 10, isPunished: false,
+                                content: "십색동(十色洞) 주민입니다... 택시 탈 때마다 발음 조심해야 해서 빡치는데, 우리 동네 이름 걸고 무소속 백수안 찍은 놈들 진짜 반성해라 ㅋㅋㅋㅋ 니들 때문에 60대 할아버지 시장님 모시게 생겼다 ㅠㅠ",
+                                replies: [
+                                    { nick: "Metro_Lover_01", content: "십색동 ㅋㅋㅋㅋㅋㅋ 아 진짜 마진시 갈 때마다 저 동네 이름 보고 터짐 ㅋㅋㅋㅋ 술 먹고 \"아저씨 십색동 갑시다!!\" 하면 싸움 난다는 그 전설의 동네 ㅋㅋㅋㅋ" },
+                                    { nick: "Clear_Sky_00", content: "그래도 백수안보단 문양인이 낫다. 백수안 이 새끼는 동네 이름 바꿔달라고 민원 넣으니까 \"행정구역 명칭 변경에 따른 사회적 매몰비용이 너무 커서 기각합니다\" 이 지랄하고 컷함 ㅋㅋㅋ" },
+                                    { nick: "Logic_Crusher", content: "매몰비용 ㅋㅋㅋㅋ 진짜 연세대 경영학과에서 나쁜 것만 배워왔네 ㅋㅋㅋ" },
+                                    { nick: "Blue_Bass_Ryo", content: "제발 문양인 시장님은 동네 이름 좀 바꿔주세요... 명함에 십색동 적혀 있으면 거래처 사람들이 자꾸 쪼개요 ㅠㅠㅠㅠ" }
+                                ]
+                            },
+                            {
+                                nick: "Justice_For_Hyobin", time: "45분 전", like: 16800, dislike: 22, isPunished: false,
+                                content: "이번 지선 요약: 효빈시는 서브컬처로 대박 나서 78.13% 압승 / 치원·모제군은 꼰대질 하다가 국힘 현역들 줄도산 / 마진시는 엑셀 빌런이 밥상 엎어서 35%짜리 빈집털이 탄생 ㅋㅋㅋ 진짜 대한민국 정치판 스펙타클하다.",
+                                replies: [
+                                    { nick: "15_학번_동기", content: "거기에 윤석열 평양 무인기 1심 징역 30년, 윤재훈 계엄 완장질 2.98% 폭망까지 완-벽 ㅋㅋㅋ" },
+                                    { nick: "Patriot_Yoon_Blood", content: "닥쳐라 좌빨들아!! 윤석열 각하와 윤재훈 사령관님은 무죄다!! 일반이적죄는 조작된 법리다!!" },
+                                    { nick: "Justice_For_Hyobin", content: "ㅋㅋㅋㅋ 징역 30년 맞은 간첩 쉴드 치는 진짜 종북 세력 어서 오고~ 영치금이나 낭낭하게 넣어드려라 ㅋㅋㅋ" },
+                                    { nick: "Fact_Check_Machine", content: "진심 이번 선거는 혐오와 무능력자들이 어떻게 투표로 심판받는지 보여주는 교과서 그 자체임. 박효빈 시장님이 럽라 좋아한다고 욕하던 극우 틀딱들 지금 싹 다 파산하고 감옥 갔쥬? ㅋㅋㅋ 정의 구현 개꿀~" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // 비공감이 압도적으로 많거나 처벌 대상(빌런)인 경우 빨간 배경 처리
+                            if (cmt.isPunished || cmt.dislike > 10000) {
+                                div.className = "comment-item border-red-300 bg-red-50 p-4 border rounded";
+                            } else if (cmt.like > 1000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let nickStyle = "text-[#0055aa]";
+                            
+                            // 특정 닉네임 강조 스타일링 (빌런들)
+                            const villainNicks = ["Patriot_Yoon_Blood", "Yoon_Samo_Forever", "Anti_Otaku_Force", "Baek_Samo_01"];
+                            if(villainNicks.some(v => cmt.nick.includes(v))) {
+                                nickStyle = "text-red-600 font-black";
+                            }
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    let rNickStyle = "text-[#0055aa]";
+                                    
+                                    if(villainNicks.some(v => reply.nick.includes(v))) {
+                                        rNickStyle = "text-red-600 font-black";
+                                    }
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            // HTML 삽입
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            const input = document.getElementById('cmt-content');
+                            const btn = document.getElementById('cmt-submit-btn');
+                            
+                            if (input.value.trim() !== '') {
+                                input.value = '';
+                                const originalText = btn.innerText;
+                                btn.innerText = "등록 완료";
+                                btn.classList.add('bg-green-600');
+                                
+                                setTimeout(() => {
+                                    btn.innerText = originalText;
+                                    btn.classList.remove('bg-green-600');
+                                }, 2000);
+                            }
+                        }
+                    </script>
+</div>
+</div>
+</div>
+<!-- 사이드바 -->
+<div class="side-content">
+<div id="common-sidebar-ranking"></div>
+<div class="ad-banner" style="background: #f0fdfa; border-color: #bbf7d0; border-width: 1px; border-style: solid; padding: 20px; border-radius: 4px;">
+<div class="text-center">
+<div class="font-bold text-green-700 mb-1">제9회 전국동시지방선거</div>
+<div class="text-xs text-green-600 mb-2">마진 시민 여러분의 현명한 선택!<br/>당선인의 공정한 시정을 기대합니다.</div>
+<div class="font-bold text-[10px] text-gray-500">덕빈남도 선거관리위원회</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 푸터 및 코어 스크립트 -->
+<div id="common-footer"></div>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="assets/hb_news_core.js"></script>
+</body>
+</html>

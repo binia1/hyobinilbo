@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>[기획] '복수귀' 주언일·'불도저' 강준영의 통쾌한 반란… 오만한 국힘, 안방서 '참교육' 당했다 - 효빈일보</title>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; word-break: keep-all; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; word-break: keep-all; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 템플릿 유지용 차트 및 표 스타일 */
+        .chart-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .chart-title { font-weight: bold; font-size: 18px; color: #333; margin-bottom: 15px; text-align: center; }
+        .poll-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; }
+        .poll-table th { background: #0055aa; color: white; padding: 10px; text-align: center; }
+        .poll-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .poll-table tr:nth-child(even) { background-color: #f2f2f2; }
+        .highlight-row { background-color: #fff3cd !important; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; user-select: none; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+<!-- 헤더 -->
+<div id="common-header"></div>
+<div class="article-container">
+<div class="main-content shadow-sm">
+<div id="article-content-area">
+<div class="mb-2 text-[#0055aa] font-bold">정치 &gt; 지방선거 기획</div>
+<h2 class="article-title">[기획] '복수귀' 주언일·'불도저' 강준영의 통쾌한 반란… 오만한 국힘, 안방서 '참교육' 당했다</h2>
+<div class="article-info">
+<div>
+<span class="font-bold">최정치 기자</span> (politics@hyobinilbo.com)<br/>
+<span class="text-xs text-gray-400">입력 2026.06.05. 11:00</span>
+</div>
+<div class="flex gap-2 text-xs">
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가-</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+</div>
+</div>
+<div class="article-body">
+<!-- 요약 컨텐츠 박스 -->
+<p class="p-4 bg-gray-50 border-l-4 border-[#0055aa] font-bold text-[#0055aa] text-[16px] leading-relaxed font-sans mb-6">
+                        - [곡천군] '고기방패' 주언일, 부패 군수 일가 팀킬 틈타 0.89%p 차 기적의 깃발<br/>
+                        - [인곡군] 컷오프 당한 강준영 무소속 압승… '이중 당적' 친윤 자객은 등록 무효 대참사<br/>
+                        - 이념과 꼰대 정치에 질린 지역민들의 심판… 실용주의 청년 단체장 전성시대 개막
+                    </p>
+<div class="my-6">
+<img alt="주언일 당선인과 강준영 당선인" class="w-full" src="이미지/주언일 당선인과 강준영 당선인.png"/>
+<div class="img-caption">▲ 제9회 전국동시지방선거에서 극적인 승리를 거둔 더불어민주당 주언일 곡천군수 당선인(왼쪽)과 무소속 강준영 인곡군수 당선인(오른쪽). 이들은 각각 부패한 보수 권력과 오만한 당 지도부의 탄압을 이겨내고 지역민들의 선택을 받았다. (사진=효빈일보 사진부)</div>
+</div>
+<p><strong>[효빈일보 = 최정치 기자]</strong> 보수 진영의 절대 텃밭으로 불리던 덕빈남도 내륙과 해안 전선에서 거대한 지각변동이 일어났다. 부패한 전임 군수에 맞서 내부 고발자로 각성한 더불어민주당 주언일 곡천군수 후보와, 당 지도부의 일방적 컷오프에 반발해 무소속으로 출마한 강준영 인곡군수 후보가 나란히 당선증을 거머쥐며 국민의힘 지도부에 뼈아픈 일격을 가했다.</p>
+<p class="text-xl font-bold text-[#0055aa] mt-8 mb-4">■ 곡천군: '유키나의 제물'에서 '복수귀'로… 정용석 일가의 환장할 자멸</p>
+<p>가장 극적인 승부가 연출된 곳은 곡천군이다. 주언일 당선인은 43.22%를 득표하며 국민의힘 오근태 후보(42.33%)를 불과 0.89%p(약 150여 표) 차이로 꺾고 파란 깃발을 꽂았다.</p>
+<p>주 당선인의 서사는 그야말로 한 편의 드라마다. 그는 당초 횡령 등으로 구속된 정용석 전 군수가 자신의 죄를 덮어씌울 '고기방패'로 발탁한 무소속의 전문대 출신 부군수였다. 그러나 그는 "제물이 되는 대신 죄를 기록하는 기록관이 되겠다"며 비밀 장부를 폭로해 정용석을 징역 3년으로 빵에 보내버리는 카운터펀치를 날렸다.</p>
+<p>이후 12·3 내란 사태 등 보수 진영의 민낯에 환멸을 느끼고 민주당에 입당한 그는 이번 선거에서 천운까지 따랐다. 감옥에 간 정용석의 친동생(정용선)이 "형님을 보낸 배신자를 심판하겠다"며 자유통일당으로 독자 출마해 보수 표심(3.22%)을 정확히 갈라버린 것이다. 결과적으로 정용석 일가의 앙심이 도리어 자신을 감옥에 보낸 주언일에게 어부지리 당선이라는 완벽한 복수를 완성해 준 셈이 되었다.</p>
+<p class="text-xl font-bold text-[#0055aa] mt-8 mb-4">■ 인곡군: '기계 결함' 친윤 자객 자멸, 공돌이 군수의 화려한 생환</p>
+<p>인곡군수 선거에서는 무소속 강준영 현 군수가 57.58%라는 압도적인 득표율로 가볍게 재선에 성공했다.</p>
+<p>당초 국민의힘 소속이었던 강 당선인은 덕빈권 단체장 중 유일한 40대 '정상인' 포지션으로, 신태양 하정시장 등 6070 꼰대 단체장들의 똥볼을 수습하며 고통받아 왔다. 그는 "이념이 밥 먹여주냐, 기계가 밥 먹여주지"라며 실용주의 행정을 펼쳤으나, 윤석열 정부를 비판했다는 이유로 당 지도부에 의해 일방적인 컷오프를 당했다.</p>
+<p>그러나 그를 내친 국민의힘 지도부의 선택은 역사에 남을 대참사로 끝났다. 강 당선인을 대신해 내려온 친윤 낙하산 진석휴 후보가 '이중 당적'과 '세금 체납 누락'이라는 치명적인 결격 사유로 선거운동 시작 전 후보 등록 무효 처리를 당하며 공중분해 된 것이다.</p>
+<p>강 당선인은 개표 직후 "기계 결함이 있는 부품을 쓰면 엔진(선거판)이 박살 난다고 경고하지 않았느냐"며 오만한 당 지도부를 향해 매서운 일침을 가했다.</p>
+<p>지역 정가 관계자는 "부패를 덮으려 청년을 희생양 삼으려 했던 곡천군, 실력 있는 일꾼을 이념 잣대로 쳐내려 했던 인곡군의 사례는 현재 국민의힘이 가진 고질적인 병폐를 그대로 보여준다"며 "유권자들은 더 이상 이념이 아니라 지역을 먹여 살릴 '실용'에 투표한다는 것을 명심해야 할 것"이라고 지적했다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+</div>
+</div>
+<div class="comment-section">
+<div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">48,211</span>
+</div>
+<div class="comment-write-area mb-6">
+<div class="comment-inputs">
+<input id="cmt-nick" placeholder="닉네임" type="text"/>
+<input id="cmt-pw" placeholder="비밀번호" type="password"/>
+</div>
+<div class="comment-textarea-box">
+<textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" id="cmt-content" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+<button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" id="cmt-submit-btn" onclick="addComment()">등록</button>
+</div>
+</div>
+<div class="comment-list-container" id="comment-list">
+<script>
+                        const commentsData = [
+                            {
+                                nick: "Fact_Check_Machine", time: "방금 전", like: 32510, dislike: 24, isPunished: false,
+                                content: "진짜 곡천군 정용석은 전설이다 ㅋㅋㅋㅋ 지 감옥 갈 때 덤터기 씌우려고 만만한 전문대생 하나 부군수 앉혀놨더니, 그 전문대생이 밤새서 비밀장부 영수증 다 찾아내서 징역 3년 카운터 먹임 ㅋㅋㅋㅋ 심지어 친동생이 트롤링해서 그 부군수한테 군수직까지 헌납 ㅋㅋㅋ 완벽한 콩가루 엔딩이다.",
+                                replies: [
+                                    { nick: "Cider_Spritzer", content: "ㅋㅋㅋㅋ 감방에서 개표 방송 보면서 \"아이고 내 동생이 파란 고양이한테 어부지리를 줬다니!!\" 하고 벽 쳤다는 카더라 진심 개웃김 ㅋㅋㅋㅋ 니들 형제가 곡천군 파란 물결의 1등 공신이다 이놈들아 ㅋㅋㅋ" },
+                                    { nick: "Blue_Bass_Ryo", content: "\"저를 제물 삼아 자신의 죄를 덮으려 했습니다. 하지만 저는 그 죄를 기록하는 기록관이 되기로 했습니다.\" <- 주언일 당선인 재판정 명대사 진짜 ㅈ간지 ㄷㄷㄷ 유키나 마인드 장착한 흑화 관료의 무서움이다 이게." },
+                                    { nick: "Logic_Crusher", content: "오근태(42.33) + 정용선(3.22) = 45.55% ㅋㅋㅋㅋ 진짜 동생 놈 안 나왔으면 주언일(43.22) 무조건 떨어지는 판이었음. 정용석 일가의 능지 처참한 복수혈전이 만들어낸 0.89%p의 기적 ㅋㅋㅋㅋ" },
+                                    { nick: "Gokcheon_Resident", content: "북동면 주민인데, 주언일 대행 때 진짜 일 빡세게 잘했음 ㅋㅋㅋ 과장들 결재 서류 던지면서 닦달할 때 속이 다 시원하더라. 파란 잠바 입고 왔을 때 동네 어르신들 뇌정지 온 건 안 비밀 ㅋㅋㅋㅋ 그래도 언일이가 최고여!" }
+                                ]
+                            },
+                            {
+                                nick: "Ingok_Mechanic", time: "5분 전", like: 28400, dislike: 15, isPunished: false,
+                                content: "인곡군 강준영 군수님 57% 압승 폼 미쳤다 ㄷㄷ 진짜 이념 타령하는 꼰대들 사이에서 고통받던 참된 공돌이 ㅠㅠ 트랙터 고쳐주면서 군정 돌보는데 그걸 컷오프시키는 국힘 지도부는 진짜 제정신이 아님.",
+                                replies: [
+                                    { nick: "Yoon_Samo_Forever", content: "당의 은혜를 입고 군수가 된 놈이 윤석열 대통령 각하께 대들다니 천벌을 받을 것이다!! 진석휴 후보의 등록 무효는 선관위에 침투한 좌빨 오타쿠들의 조작이다!!" },
+                                    { nick: "Clear_Sky_00", content: "이중 당적에 세금 체납까지 한 범죄자를 공천한 게 니들 각하의 안목이고요 ㅋㅋㅋ 선거 시작도 전에 후보 등록 무효 당해서 투표용지에 이름도 못 올린 역대급 코미디를 선관위 탓을 하네 ㅋㅋㅋ" },
+                                    { nick: "15_학번_동기", content: "\"기계 결함(이중 당적) 있는 부품 쓰면 엔진(선거) 박살 난다\" ㅋㅋㅋㅋ 강준영 군수님 이과식 비유 진짜 찰지네 ㅋㅋㅋ 컷오프시켜서 버려놨더니 후보 증발해서 꽁승 챙겨감 개꿀띠~" },
+                                    { nick: "Ingok_Mechanic", content: "신태양 하정시장이 효빈시 가서 망언할 때 옆에서 \"아 시발 쪽팔려...\" 하던 강준영 짤 아직도 내 폰에 있음 ㅋㅋㅋㅋ 그 꼰대들 곁을 탈출한 게 진짜 신의 한 수다." }
+                                ]
+                            },
+                            {
+                                nick: "Subculture_Capital", time: "10분 전", like: 24100, dislike: 22, isPunished: false,
+                                content: "강준영 군수님 요즘 입덕 부정기 오지게 겪고 있다며? ㅋㅋㅋ 맨날 \"만화 볼 시간에 농기계 고친다\" 하더니, 김도연 군수가 전차 엔진 회로도 보여주니까 눈 돌아가서 구경했다는 썰 개웃기네 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Anti_Otaku_Force", content: "쯧쯧... 멀쩡하던 젊은 군수마저 오타쿠 놈들의 마수에 걸려들었구나. 효빈시 박효빈이 뿌린 씹덕 바이러스가 덕빈남도를 통째로 오염시키고 있다!" },
+                                    { nick: "Metro_Lover_01", content: "니들이 물고 빠는 윤재훈은 계엄령 때 완장 차고 씹덕 굿즈샵 털다가 2.98% 받고 멸망했고요 ㅋㅋㅋ 강준영 군수는 탈당하고 57%로 압승했어요 아저씨 ㅠㅠ 민심이 누굴 씹덕 바이러스보다 혐오하는지 똑똑히 보쇼." },
+                                    { nick: "Subculture_Capital", content: "주말에 대건면에서 트랙터 오일 갈면서 뱅드림 오프닝 흥얼거렸다는 제보 떴다 ㅋㅋㅋㅋ 공돌이 이과 특) 기계적 고증 잘 되어있으면 결국 씹덕의 늪에 빠짐 ㅋㅋㅋ 환영합니다 군수님!" },
+                                    { nick: "Justice_For_Hyobin", content: "백수안 같이 엑셀만 돌리는 노멀(Normal) 컷오프 시장보단 씹덕이어도 일 잘하는 강준영, 박효빈이 100배 나음 ㅇㅇ 백수안은 결국 민주당 표 갈라먹고 국힘에 마진시장 헌납한 개트롤이잖아 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Patriot_Yoon_Blood", time: "15분 전", like: 32, dislike: 48900, isPunished: true,
+                                content: "부정선거다!! 명백한 8호선 EMP 조작이다!! 위대한 보수 텃밭인 곡천군이 파란색으로 물들 리가 없다! 조작된 투표함을 열어라!! 윤석열 각하와 윤재훈 사령관님을 석방하라!!",
+                                replies: [
+                                    { nick: "Fact_Check_Machine", content: "님들 사령관님 시장 선거 2.98% 찍고 선거비 미보전으로 신용불량자 되기 직전이랍니다 ㅋㅋㅋ 여기서 뻘글 쓸 시간에 쿠팡 알바라도 뛰어서 윤재훈 계좌에 돈이나 부쳐주쇼 ㅠㅠ" },
+                                    { nick: "Cider_Spritzer", content: "ㅋㅋㅋㅋㅋ 아직도 EMP 타령하는 환자가 실존하네 ㄷㄷ 8호선 카스미 랩핑 열차에서 무슨 전파라도 쏴서 곡천군 어르신들 뇌를 조종함? ㅋㅋㅋ" },
+                                    { nick: "Clear_Sky_00", content: "평양에 무인기 보내서 내란 조작하다가 '일반이적죄'로 1심 징역 30년 맞은 찐 간첩 윤석열 빠는 틀딱들이 대체 누굴 보고 종북이래 ㅋㅋㅋ 보수 갈라치기해서 주언일 당선시킨 건 니들 편인 정용석 동생이고요 ㅋㅋㅋ" },
+                                    { nick: "2.98_Percent_Legend", content: "이번 지선은 진짜 쓰레기들 분리수거 제대로 된 선거다 ㅋㅋㅋ 미성년자 건드린 윤간석 5.7%, 꼰대질 하던 치원군수 백민우 0.18%p 낙선, 이중 당적 진석휴 등록 무효 ㅋㅋㅋ 벌레 컷!" }
+                                ]
+                            },
+                            {
+                                nick: "Blue_Bass_Ryo", time: "20분 전", like: 19800, dislike: 11, isPunished: false,
+                                content: "주언일 당선인 박효빈 시장님 롤모델로 삼아서 '효빈-곡천 광역 복지 벨트' 추진한다던데 진짜 기대됨. 전임 정용석이 해먹은 50억 테마파크 예산 복지 쪽으로 싹 다 돌려서 청년들 살기 좋은 동네로 만들어주길!",
+                                replies: [
+                                    { nick: "Gokcheon_Resident", content: "ㄹㅇ 정용석 그 인간 테마파크 짓는답시고 예산 빼돌려서 지 측근들이랑 한정식집 투어 다닌 거 생각하면 아직도 이가 갈림 ㅋㅋㅋ 주언일 대행이 영수증 다 까발렸을 때 곡천군청 뒤집어졌었지." },
+                                    { nick: "Hyobin_First_1996", content: "효빈시청 입장에서도 꼰대 국힘 군수들보단 대화 통하고 복지 마인드 있는 주언일 군수랑 협력하는 게 훨씬 시너지 날 듯. 효빈시장님도 엄청 환영하시겠네 ㅋㅋㅋ" },
+                                    { nick: "Logic_Crusher", content: "주언일 멘탈 진짜 인정해 줘야 함. 당적도 없는 전문대생이라고 도청 가면 문전박대 당하고, 과장들한테 은근히 무시당하면서도 속으로 칼 갈고 비밀 장부 완성한 거 아님 ㅋㅋㅋ 진정한 인간 승리." },
+                                    { nick: "Blue_Bass_Ryo", content: "밤마다 군청 뒷마당 길고양이한테 츄르 주면서 \"형은 파란색으로 살 거다...\" 중얼거린 거 ㅈㄴ 짠함 ㅋㅋㅋㅋ 진성 유키나 오시의 독기 품은 생존기 ㅋㅋㅋ 파란 고양이 군수님 화이팅!" }
+                                ]
+                            },
+                            {
+                                nick: "Clear_Sky_00", time: "25분 전", like: 15400, dislike: 14, isPunished: false,
+                                content: "백수안이랑 문석준(고포군수) 반응 개궁금하네 ㅋㅋㅋ 자기가 제일 아끼던 연세대 출신 정상인 백수안은 무소속 트롤링하다가 3위로 떨어지고, 자기가 맨날 꼽주던 공돌이 강준영은 무소속으로 57% 압승 ㅋㅋㅋㅋ 문석준 뇌정지 올 듯 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Metro_Lover_01", content: "\"그래! 우리 백 시장처럼 머리에 든 게 많고 양복 입어야지!\" ㅋㅋㅋ 현실은 백수안 제설차 가성비 타령하다가 산동네 고립시키고 컷오프 ㅋㅋㅋㅋ" },
+                                    { nick: "Cider_Spritzer", content: "최민규 석창군수(코코로 군수)가 강준영한테 \"똥통에 갇혀 있지 말고 웃으면서 탈출하세요!\" 화환 보낸 게 진짜 신의 한 수였지 ㅋㅋㅋ 탈당 선배님의 선견지명 지렸다." },
+                                    { nick: "Fact_Check_Machine", content: "국민의힘 지도부는 진짜 마진시 백수안 트롤링 덕분에 문양인 35%로 주운 거 빼면 이번에 덕빈권에서 싹 다 망한 거임. 치원, 모제, 곡천 다 털렸잖아 ㅋㅋㅋ 오만함의 대가다." },
+                                    { nick: "15_학번_동기", content: "강준영 군수 도청 회의에서 꼰대들 잔소리 들을 때 책상 밑에서 이마 짚는 짤 당분간 못 보겠네 ㅋㅋㅋ 이제 무소속 불도저니까 맘 편하게 트랙터나 고치면서 덕질 시작하시길 ㅋㅋㅋ" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // 비공감이 압도적으로 많거나 처벌 대상(빌런)인 경우 빨간 배경 처리
+                            if (cmt.isPunished || cmt.dislike > 10000) {
+                                div.className = "comment-item border-red-300 bg-red-50 p-4 border rounded";
+                            } else if (cmt.like > 1000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let nickStyle = "text-[#0055aa]";
+                            
+                            // 특정 닉네임 강조 스타일링 (빌런들)
+                            const villainNicks = ["Patriot_Yoon_Blood", "Yoon_Samo_Forever", "Anti_Otaku_Force", "Baek_Samo_01"];
+                            if(villainNicks.some(v => cmt.nick.includes(v))) {
+                                nickStyle = "text-red-600 font-black";
+                            }
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    let rNickStyle = "text-[#0055aa]";
+                                    
+                                    if(villainNicks.some(v => reply.nick.includes(v))) {
+                                        rNickStyle = "text-red-600 font-black";
+                                    }
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            // HTML 삽입
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            const input = document.getElementById('cmt-content');
+                            const btn = document.getElementById('cmt-submit-btn');
+                            
+                            if (input.value.trim() !== '') {
+                                input.value = '';
+                                const originalText = btn.innerText;
+                                btn.innerText = "등록 완료";
+                                btn.classList.add('bg-green-600');
+                                
+                                setTimeout(() => {
+                                    btn.innerText = originalText;
+                                    btn.classList.remove('bg-green-600');
+                                }, 2000);
+                            }
+                        }
+                    </script>
+</div>
+</div>
+</div>
+<!-- 사이드바 -->
+<div class="side-content">
+<div id="common-sidebar-ranking"></div>
+<div class="ad-banner" style="background: #eff6ff; border-color: #bfdbfe; border-width: 1px; border-style: solid; padding: 20px; border-radius: 4px;">
+<div class="text-center">
+<div class="font-bold text-blue-800 mb-1">덕빈남도 발전 위원회</div>
+<div class="text-xs text-blue-600 mb-2">실용과 혁신으로 도약하는 덕빈남도<br/>청년 단체장들의 새로운 시작을 응원합니다!</div>
+<div class="font-bold text-[10px] text-gray-500">Deokbin Namdo Development Committee</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 푸터 및 코어 스크립트 -->
+<div id="common-footer"></div>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="assets/hb_news_core.js"></script>
+</body>
+</html>

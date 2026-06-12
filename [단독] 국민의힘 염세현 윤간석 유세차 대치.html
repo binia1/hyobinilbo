@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>[단독] "넌 이름도 윤간이더니!" VS "씨발 씹덕새꺄"… 치원군 국힘 유세차 '쌍욕 멸망전' 역대급 대참사 - 효빈일보</title>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; word-break: keep-all; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; word-break: keep-all; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 템플릿 유지용 차트 및 표 스타일 */
+        .chart-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .chart-title { font-weight: bold; font-size: 18px; color: #333; margin-bottom: 15px; text-align: center; }
+        .poll-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; }
+        .poll-table th { background: #0055aa; color: white; padding: 10px; text-align: center; }
+        .poll-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .poll-table tr:nth-child(even) { background-color: #f2f2f2; }
+        .highlight-row { background-color: #fff3cd !important; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; user-select: none; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+<div id="common-header"></div>
+<div class="article-container">
+<div class="main-content shadow-sm">
+<div id="article-content-area">
+<div class="mb-2 text-[#0055aa] font-bold">정치 &gt; 2026 지방선거</div>
+<h2 class="article-title">[단독] "넌 이름도 윤간이더니!" VS "씨발 씹덕새꺄"… 치원군 국힘 유세차 '쌍욕 멸망전' 역대급 대참사</h2>
+<div class="article-info">
+<div>
+<span class="font-bold">최정치 기자</span> (politics@hyobinilbo.com)<br/>
+<span class="text-xs text-gray-400">입력 2026.05.27. 10:15</span>
+</div>
+<div class="flex gap-2 text-xs">
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가-</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+</div>
+</div>
+<div class="article-body">
+<!-- 요약 컨텐츠 박스 -->
+<p class="p-4 bg-gray-50 border-l-4 border-[#0055aa] font-bold text-[#0055aa] text-[16px] leading-relaxed font-sans mb-6">
+                        치원군 다 선거구 '기호 2-가' 염세현 - '2-나' 윤간석, 유세차 대치 중 정면충돌<br/>
+                        윤간석, 도발 시도에 염 의원 이성 상실… 대낮 상가 한복판서 전무후무한 쌍욕 난사<br/>
+                        염세현 "네가 선생 맞냐, 그냥 뒤져라" 울부짖으며 '당선 후 민주당 입당' 폭탄선언<br/>
+                        지역 정가 경악 "보수 진영 공멸의 날"… 주민들 "대체 공천을 어떻게 했길래" 혀 차
+                    </p>
+<div class="my-6">
+<img alt="유세차 위에서 설전을 벌이는 두 후보" class="w-full" src="이미지/국민의힘 염세현 후보 유세 현장.png"/>
+<div class="img-caption">▲ 27일 오전 덕빈북도 치원군 후등면 산업단지 사거리에서 국민의힘 소속 기호 2-가 염세현 후보와 기호 2-나 윤간석 후보가 각각의 유세 차량을 대치시킨 채 마이크를 잡고 전무후무한 상호 쌍욕 설전을 벌이고 있다. 이 사태로 치원군 보수 진영은 완전히 분쇄되었다. (사진=효빈일보 DB)</div>
+</div>
+<p><strong>[효빈일보 = 최정치 기자]</strong> 제9회 지방선거 선거일이 임박한 가운데, 덕빈북도 치원군 다 선거구(후등면·산전면)에서 같은 정당 소속 후보들이 유세차 확성기를 잡고 대낮 길거리 한복판에서 상상을 초월하는 쌍욕과 인신공격을 주고받는 전대미문의 '멸망전'이 펼쳐졌다.</p>
+<p>27일 치원군 선관위와 각 후보 캠프, 현장 목격자들에 따르면 이날 오전 9시 30분경 후등면 산단 사거리에서 기호 2-가 염세현 후보의 유세차와 기호 2-나 윤간석 후보의 유세차가 맞닥뜨렸다. 그동안 윤 후보의 미성년자 성범죄 파문 및 '애니메이션 전공 아들 패드립' 설화로 인해 지지율 동반 폭락을 겪으며 멘탈 붕괴 상태에 직면했던 염 의원은 윤 후보를 철저히 무시하며 지나치려 했다.</p>
+<p>사태는 윤간석 후보의 도발로 시작됐다. 윤 후보가 확성기 마이크를 잡고 염 후보를 향해 <strong>"야, 염세현이 너도 저 오타쿠 씹덕 새끼들 편드냐? 내가 뭘 잘못했다고 혼자 살겠다고 도망치냐"</strong>며 윽박지른 것. 이에 지난 4년간 닦아놓은 지역구가 윤 후보 한 명 때문에 초토화된 것에 극도의 한이 맺혀있던 염 의원의 이성의 끈이 완전히 끊어지고 말았다.</p>
+<p>염 의원은 자신의 유세차 마이크 볼륨을 맥스로 높인 뒤, 대낮 상가 한복판에서 벼락같은 사자후와 쌍욕을 난사하기 시작했다. 다음은 현장 녹취록에 기록된 두 후보 간의 적나라한 설전 내용이다.</p>
+<p class="bg-gray-100 p-4 rounded-md font-sans text-sm mb-4 border border-gray-300">
+<span class="font-bold text-red-600">윤간석:</span> "야 씨발, 염세현이 애새꺄, 너도 만화 보냐? 씨발 씹덕새꺄, 내가 뭔 잘못을 했는데?!"<br/>
+<span class="font-bold text-blue-600 mt-2 block">염세현:</span> "씨발 윤간석이 개새끼야, 넌 이름도 윤간이더니 아주 지랄이구나 씨발련아!! 진짜 네가 선생 맞냐? 그냥 뒤져 제발 뒤지라고 씨발새꺄!!!"
+                    </p>
+<p>염 의원의 분노는 여기서 그치지 않았다. 그는 유세차 위에서 눈물을 흘리며 중앙당과 백민우 군수의 막장 공천을 성토한 뒤, <strong>"이런 성범죄자 놈이랑 기호를 묶어놓고 공천 취소도 안 해주는 게 보수면 난 오늘부로 보수 안 한다! 나 당선되면 이 당 당장 탈당하고 차라리 민주당으로 입당해버릴 거다 씨발련들아!"</strong>라며 현역 보수 의원으로서 상상조차 할 수 없는 '블루 웨이브 입당 폭탄선언'을 투척했다.</p>
+<p>대낮 사거리에 울려 퍼진 공포의 쌍욕 배틀과 정당 파괴 선언에 유세를 지켜보던 주민들과 출근길 근로자들은 일제히 얼어붙었다. 현장은 순식간에 정적에 휩싸였고, 윤 후보는 염 의원의 시퍼런 살기와 독설에 기가 눌려 황급히 유세차 마이크를 끄고 도망치듯 현장을 빠져나갔다.</p>
+<p>지역 정가 관계자는 "기초의원 선거에서 같은 당 후보끼리 마이크로 쌍욕을 주고받고 탈당 및 상대 당 입당을 선언한 것은 대한민국 헌정사 최초"라며 "백민우 군수의 무리한 공천이 결국 치원군 국민의힘을 산산조각 내버렸다"고 혀를 찼다.</p>
+<p>그러나 이 파멸적인 쌍욕전이 묘하게도 염 의원에게 '기적의 동정표'로 작용하고 있다. 사거리에서 눈물을 흘리며 윤간석을 향해 "제발 뒤져라"고 절규하는 염 의원의 유세 영상이 '분노의 진정성'이라는 제목으로 숏츠와 커뮤니티를 장악하자, 중도층과 심지어 민주당 지지층에서조차 "얼마나 고통스러웠으면 저러겠냐", "이번엔 인물 보고 2-가 찍어서 윤간석을 확실히 묻어버리자"는 여론이 급물살을 타며 지지율이 역주행하는 기현상이 벌어지고 있다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+</div>
+</div>
+<div class="comment-section">
+<div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">89,542</span>
+</div>
+<div class="comment-write-area mb-6">
+<div class="comment-inputs">
+<input id="cmt-nick" placeholder="닉네임" type="text"/>
+<input id="cmt-pw" placeholder="비밀번호" type="password"/>
+</div>
+<div class="comment-textarea-box">
+<textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" id="cmt-content" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+<button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" id="cmt-submit-btn" onclick="addComment()">등록</button>
+</div>
+</div>
+<div class="comment-list-container" id="comment-list">
+<script>
+                        const commentsData = [
+                            {
+                                nick: "Fact_Assassination", time: "방금 전", like: 78450, dislike: 22, isPunished: false,
+                                content: "\"넌 이름도 윤간이더니 아주 지랄이구나\" ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 아 미치겠다 염세현 의원 펀치라인 진짜 국회 힙합대전 나가도 올패스다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 성범죄자 파트너 만나서 4년 동안 갈아놓은 밭 오물 구덩이 됐는데 저 정도 욕 안 나오면 그게 부처지 ㅋㅋㅋ 염 의원님 눈물 닦고 민주당에서 만납시다 ㅋㅋㅋ",
+                                replies: []
+                            },
+                            {
+                                nick: "Blind_Justice", time: "4분 전", like: 72120, dislike: 14, isPunished: false,
+                                content: "진짜 대한민국 선거 역사상 역대급 명장면이다 ㅋㅋㅋ 유세차 두 대 대치해놓고 마이크로 \"씨발새끼야 그냥 뒤져라\" ㅋㅋㅋㅋㅋㅋㅋㅋ 윤간석 저 소시오패스는 지가 애들 성추행해서 파면당해놓고 끝까지 \"내가 뭘 잘못했는데?\" 이지랄 하니까 염세현이 대가리 터질 만도 하지 ㅋㅋㅋ 분노의 진정성 100% 인정한다.",
+                                replies: []
+                            },
+                            {
+                                nick: "치원_수호_백사모", time: "8분 전", like: 29, dislike: 81400, isPunished: true,
+                                content: "어허! 저 싸가지 없는 염세현이 저놈 저거 당장 제명해야 한샤! 어디 소속 정당의 훌륭한 윤간석 후보님한테 대낮에 길거리에서 입에 담지 못할 쌍욕을 퍼붓고 탈당이니 민주당이니 입에 올린단 말이랴! 저놈은 좌파 딥 스테이트 교육감 끄나풀이 명백하샤! 우리 백사모가 지팡이 들고 염세현 캠프 쳐들어갈 것이샤!",
+                                replies: [
+                                    { nick: "횡전리_지게차", content: "영감탱아 방구석에서 틀니나 닦으쇼 ㅋㅋㅋ 훌륭한 윤간석이가 지 입으로 \"몸 좀 만진 게 뭐 어떠냐\"고 자폭하는 거 전 국민이 다 들었는데 쉴드를 치냐? 염 의원이 댁들 몫까지 대신 욕해줘서 속이 다 시원하구마. 내일 지게차 몰고 군청 가니까 걸리적거리지 마샤." },
+                                    { nick: "Worker_Ant", content: "남자가 큰일(여중생 성추행)하다 실수할 수도 있다던 백사모 수준 ㅋㅋㅋ 염세현 의원이 보수 안 하겠다고 학을 떼는 이유가 윤간석이랑 당신들 같은 노인네들 때문임 ㅋㅋㅋ 쪽팔린 줄 아세요." },
+                                    { nick: "Supreme_Court_Dday", content: "백사모 영감들 염세현 캠프 가면 빠루 쳐맞습니다 ㅋㅋㅋ 지금 염 의원 눈에 뵈는 거 없어서 트랙터고 지팡이고 다 부숴버릴 기세던데 ㅋㅋㅋ" },
+                                    { nick: "말차파르페오너", content: "윤간석 쉴드 치는 백사모들 명단 작성해서 효빈지검 권유진 검사님 부서에 넘겨야 됨 ㅋㅋㅋ 같이 하드디스크 털어봐야 정신 차리지." }
+                                ]
+                            },
+                            {
+                                nick: "두청운수_낭만파", time: "11분 전", like: 9, dislike: 76250, isPunished: true,
+                                content: "솔직히 염세현 저 인간 근본이 없네. 정당 기호 묶였으면 밉든 고우든 같이 손잡고 선거 치러야지 어디서 혼자 살겠다고 마이크로 저질 쌍욕을 하냐 ㅉㅉ 옛날 윤대환 시장님이랑 두청운수 시절이었으면 저런 항명은 상상도 못 했다. 우리 재훈 형님이 필리핀에서 복귀하셔서 저 배신자 염세현이랑 만화 보는 이세리 패거리들 기강 싹 잡아야 하는데.",
+                                replies: [
+                                    { nick: "깜빵배식담당", content: "야 이 백수 새끼야 니네 형님 기강 잡혔다니까? ㅋㅋㅋㅋ 마닐라 교도소에서 바나나 훔쳐 먹다 현지 조폭 형님들한테 귓방망이 복날 먼지 나듯 털리고 변기통 붙잡고 울고 계신다고 ㅋㅋㅋㅋ 영구 입국 금지라 평생 깜빵에서 바퀴벌레랑 기강 잡아야 됨 ㅋㅋㅋ" },
+                                    { nick: "Orthopedics_VIP", content: "윤대환 똥색 버스 매연 처마셔서 뇌가 녹아내렸나 ㅋㅋㅋ 성범죄자랑 손잡고 으쌰으쌰 안 했다고 근본 타령하는 대가리 수준 진짜 경이롭다 경이로워." },
+                                    { nick: "Save_Our_Commute", content: "윤간석 기호 2-나 덕분에 2-가 염세현 의원 지지율 동정표로 떡상 중인 건 아냐? ㅋㅋㅋ 대중들도 다 염 의원 심정 백번 이해함 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Blue_Wave_2026", time: "25분 전", like: 65400, dislike: 12, isPunished: false,
+                                content: "민주당원인데 이번 치원군 다 선거구 투표 전략 확정했다 ㅋㅋㅋ 1-가 유진태 찍고, 나머지 한 표는 무조건 2-가 염세현 찍는다 ㅋㅋㅋ 어차피 당선되면 파란 피 수혈 확정인데 ㅋㅋㅋ 2-나 윤간석 저 변태 입걸레 새끼는 득표율 0%대 만들어서 선거 비용 한 푼도 보전 못 받고 집안 멸망하는 꼴 직관하자 가즈아!!",
+                                replies: [
+                                    { nick: "Rock_스타_이세리", content: "우리 4인방 단톡방도 지금 염세현 아저씨 동정 여론으로 대동단결함 ㅋㅋㅋ 아저씨 진짜 짠하긴 하더라 유세차에서 엉엉 우는데 ㅠㅠ 꼭 당선돼서 탈당하고 민주당 가세요 아저씨 화이팅! 윤간석은 빵으로!" },
+                                    { nick: "Vote_for_Justice", content: "ㄹㅇ 이게 진짜 신의 한 수 표 분산 전략임 ㅋㅋㅋ 염세현 찍어서 윤간석 확실하게 말려 죽이기 ㅋㅋㅋ 윤간석 파산 카운트다운 들어갑니다~" },
+                                    { nick: "Cheer_up_4", content: "염세현 의원님 조만간 스트레스성 원형탈모 오실 듯 ㅠㅠ 조금만 버티세요 2-나 윤간석만 거르면 치원군에 평화가 옵니다!!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            if (cmt.isPunished || cmt.dislike > 10000) {
+                                div.className = "comment-item border-red-300 bg-red-50 p-4 border rounded";
+                            } else if (cmt.like > 1000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let nickStyle = "text-[#0055aa]";
+                            
+                            if(cmt.nick.includes("백사모") || cmt.nick.includes("낭만파")) {
+                                nickStyle = "text-red-600 font-black";
+                            }
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    let rNickStyle = "text-[#0055aa]";
+                                    
+                                    if (reply.nick.includes("백사모") || reply.nick.includes("윤재훈파")) {
+                                        rNickStyle = "text-red-600 font-black";
+                                    }
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            const input = document.getElementById('cmt-content');
+                            const btn = document.getElementById('cmt-submit-btn');
+                            
+                            if (input.value.trim() !== '') {
+                                input.value = '';
+                                const originalText = btn.innerText;
+                                btn.innerText = "등록 완료";
+                                btn.classList.add('bg-green-600');
+                                
+                                setTimeout(() => {
+                                    btn.innerText = originalText;
+                                    btn.classList.remove('bg-green-600');
+                                }, 2000);
+                            }
+                        }
+                    </script>
+</div>
+</div>
+</div>
+<!-- 사이드바 -->
+<div class="side-content">
+<div id="common-sidebar-ranking"></div>
+<div class="ad-banner" style="background: #e0f2fe; border-color: #bae6fd; border-width: 1px; border-style: solid; padding: 20px; border-radius: 4px;">
+<div class="text-center">
+<div class="font-bold text-blue-700 mb-1">제9회 전국동시지방선거</div>
+<div class="text-xs text-blue-600">올바른 후보, 당당한 선택<br/>국민의힘을 지켜주십시오</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 푸터 및 코어 스크립트 -->
+<div id="common-footer"></div>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="assets/hb_news_core.js"></script>
+</body>
+</html>

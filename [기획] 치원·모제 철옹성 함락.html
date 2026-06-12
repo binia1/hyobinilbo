@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>[기획] '꼰대 행정·범죄·내분'이 부른 자멸… 국민의힘, 덕빈북도 '치원·모제' 철옹성 통째로 헌납 - 효빈일보</title>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; word-break: keep-all; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; word-break: keep-all; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 템플릿 유지용 차트 및 표 스타일 */
+        .chart-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .chart-title { font-weight: bold; font-size: 18px; color: #333; margin-bottom: 15px; text-align: center; }
+        .poll-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; }
+        .poll-table th { background: #0055aa; color: white; padding: 10px; text-align: center; }
+        .poll-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .poll-table tr:nth-child(even) { background-color: #f2f2f2; }
+        .highlight-row { background-color: #fff3cd !important; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; user-select: none; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+<!-- 헤더 -->
+<div id="common-header"></div>
+<div class="article-container">
+<div class="main-content shadow-sm">
+<div id="article-content-area">
+<div class="mb-2 text-[#0055aa] font-bold">정치 &gt; 지방선거 기획</div>
+<h2 class="article-title">[기획] '꼰대 행정·범죄·내분'이 부른 자멸… 국민의힘, 덕빈북도 '치원·모제' 철옹성 통째로 헌납</h2>
+<div class="article-info">
+<div>
+<span class="font-bold">최정치 기자</span> (politics@hyobinilbo.com)<br/>
+<span class="text-xs text-gray-400">입력 2026.06.05. 10:00</span>
+</div>
+<div class="flex gap-2 text-xs">
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가-</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+</div>
+</div>
+<div class="article-body">
+<!-- 요약 컨텐츠 박스 -->
+<p class="p-4 bg-gray-50 border-l-4 border-[#0055aa] font-bold text-[#0055aa] text-[16px] leading-relaxed font-sans mb-6">
+                        - [치원군] '선거법 위반' 백민우, 봇치 탄압·성범죄자 공천 대참사 속 '0.18%p 차' 낙선<br/>
+                        - [모제군] '역대급 헛발질' 오성국, 와카미야 이브 걷어차다 IT 기업 이탈… 진기현에 역전패<br/>
+                        - 무소속·개혁신당 등 보수 표 분열까지 겹치며 민주당 깃발… "혐오 행정의 인과응보"
+                    </p>
+<div class="my-6">
+<img alt="덕빈북도 지선 결과 요약" class="w-full" src="이미지/덕빈북도 지선 결과 요약.png"/>
+<div class="img-caption">▲ 제9회 전국동시지방선거 개표 결과, 보수 진영의 절대적 철옹성으로 꼽히던 덕빈북도 치원군과 모제군에서 국민의힘 현직 단체장들이 연달아 참패하며 더불어민주당 후보들에게 자리를 내주었다. 사진은 극적인 골든크로스를 달성한 유진태 치원군수 당선인(왼쪽)과 진기현 모제군수 당선인(오른쪽). (사진=효빈일보 사진부)</div>
+</div>
+<p><strong>[효빈일보 = 최정치 기자]</strong> 제9회 전국동시지방선거의 가장 큰 이변은 수도권이 아닌 보수의 심장, 덕빈북도 외곽 전선에서 일어났다. 수십 년간 보수 정당의 무덤이나 다름없었던 치원군과 모제군에서 더불어민주당 후보들이 현직 군수들을 꺾고 깃발을 꽂은 것이다.</p>
+<p>지역 정가에서는 "보수 성향이 강한 농촌 지역의 특성상 국민의힘 후보들이 무난히 이길 선거였으나, 현직 단체장들의 상상을 초월하는 무능과 범죄 혐의, 여기에 치명적인 보수 표 분열과 내분이 결합하며 스스로 무덤을 팠다"는 분석이 지배적이다.</p>
+<p class="text-xl font-bold text-[#0055aa] mt-8 mb-4">■ 치원군: '2심 무효형' 백민우의 폭주, 친동생마저 등 돌린 콩가루 자멸</p>
+<p>치원군수 선거에서는 더불어민주당 유진태 후보가 48.01%를 득표, 47.83%에 그친 국민의힘 백민우 현 군수를 단 0.18%p(201표 차) 차이로 제치고 기적 같은 유턴 승리를 거뒀다.</p>
+<p>백민우 군수의 낙선은 일찌감치 예견된 일이었다. 그는 이미 공직선거법 위반으로 2심에서 당선무효형(벌금 150만 원)을 선고받은 '식물 군수' 상태였다. 게다가 산단 근로자들의 발인 1000번 좌석급행버스를 단지 "도색이 만화 캐릭터(유키 세츠나) 색깔"이라며 막아서고, 후등면의 《봇치 더 락!》 콜라보 사업을 찢어발기는 등 지독한 '안티 오타쿠 꼰대 행정'으로 청년층의 분노를 샀다.</p>
+<p>결정타는 '내분'과 '범죄자 공천'이었다. 백 군수는 자신의 세력을 심기 위해 군의원 선거에 미성년자 제자 성범죄 혐의를 받는 윤간석 전 교장을 공천하는 대참사를 저질렀다. 이에 분노한 같은 당 염세현 후보가 유세차 위에서 공개 쌍욕 사자후를 터뜨리며 당이 반갈죽 났다.</p>
+<p>심지어 백 군수의 친동생마저 형의 꼰대질과 이세리 학생의 장학금 강탈 만행에 환멸을 느끼고 민주당에 입당, <strong>"우리 형이 백수가 돼야 치원군이 삽니다!"</strong>를 외치며 유진태 후보의 선거운동을 뛰는 초유의 콩가루 사태가 벌어졌다. 여기에 공천 불복 후 출마한 무소속 안흥민 후보가 보수 표 4.16%를 갉아먹으며 백 군수의 숨통을 완전히 끊어놓았다.</p>
+<p class="text-xl font-bold text-[#0055aa] mt-8 mb-4">■ 모제군: 황금알 제 발로 찬 오성국, '도게자 메타' 진기현에게 안방 헌납</p>
+<p>모제군 역시 더불어민주당 진기현 후보가 48.35%를 기록, 국민의힘 오성국 현 군수(46.67%)를 1.68%p 차로 누르고 극적인 골든크로스를 완성했다.</p>
+<p>오성국 군수의 패인은 '무능한 행정이 초래한 경제 파탄'이다. 오 군수는 약궁면 주민과 청년 공무원들이 준비한 《뱅드림!》의 와카미야 이브 캐릭터 연계 국궁장 성지화 기획안을 "쪽바리 만화"라며 반려했다. 이 기회를 낚아챈 이웃 동네 상안군(군수 강미소)이 이브 성지를 조성해 수십억 원의 관광 세수를 쓸어 담는 동안, 모제군은 손가락만 빨아야 했다.</p>
+<p>더 큰 참사는 IT·반도체 기업들의 이탈이었다. 오 군수의 배타적 문화 행정에 실망한 핵심 반도체 협력업체 3곳이 입주 계획을 전격 취소하고 상안군으로 공장 부지를 옮겨버린 것. 이로 인해 약궁면 신축 원룸들이 통째로 공실이 되자, 분노한 2030 반도체 노동자들과 임대업자들이 투표소로 몰려와 진기현 후보에게 70%가 넘는 몰표를 던졌다.</p>
+<p>반면 민주당 진기현 당선인은 과거 무소속 출마 이력으로 인한 '배신자' 프레임을 지우기 위해 바닥에 납작 엎드리는 '초강력 읍소(도게자) 메타'로 동정론을 이끌어냈고, 계엄령 투쟁 유공자 타이틀로 당원들을 결집시켰다. 여기에 개혁신당 기성현 후보가 보수 표 4.98%를 분산시키며 진 당선인의 완벽한 업보 청산 대역전극을 도왔다.</p>
+<p>지방정가 관계자는 "이번 치원·모제군의 민주당 탈환은 단순한 정당 지지율의 결과가 아니다"라며 "지자체장 개인의 편협한 혐오와 시대착오적 사고가 지역 경제를 얼마나 망가뜨릴 수 있는지 유권자들이 투표로 증명한 교과서적인 사건"이라고 평했다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+</div>
+</div>
+<div class="comment-section">
+<div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">41,209</span>
+</div>
+<div class="comment-write-area mb-6">
+<div class="comment-inputs">
+<input id="cmt-nick" placeholder="닉네임" type="text"/>
+<input id="cmt-pw" placeholder="비밀번호" type="password"/>
+</div>
+<div class="comment-textarea-box">
+<textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" id="cmt-content" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+<button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" id="cmt-submit-btn" onclick="addComment()">등록</button>
+</div>
+</div>
+<div class="comment-list-container" id="comment-list">
+<script>
+                        const commentsData = [
+                            {
+                                nick: "Fact_Check_Machine", time: "방금 전", like: 35120, dislike: 24, isPunished: false,
+                                content: "진짜 이번 선거는 꼰대들이 지 무덤 판 역대급 코미디다 ㅋㅋㅋ 백민우는 친동생한테 저격당해서 0.18%p 차로 백수 되고, 오성국은 이브 기획서 찢었다가 반도체 기업들 다 상안군에 뺏기고 원룸 공실 엔딩 ㅋㅋㅋ 자업자득 개꿀~",
+                                replies: [
+                                    { nick: "Patriot_Yoon_Blood", content: "부정선거다!! 감히 친형을 배신하고 좌빨들 앞잡이 노릇을 한 친동생 놈이랑, 근본 없는 일본 만화 쪼가리로 선동한 오타쿠 새끼들이 선거를 조작한 게 분명하다!! 백민우 군수님과 오성국 군수님은 무죄다!!" },
+                                    { nick: "Cider_Spritzer", content: "님아, 백민우는 선거법 위반으로 소고기 돌리다 이미 2심에서 벌금 150만 원 맞은 확정적 범죄자고요 ㅋㅋㅋ 부정선거 타령하기 전에 지들 후보 전과나 확인하쇼." },
+                                    { nick: "Logic_Crusher", content: "그리고 오성국이 걷어찬 그 '만화 쪼가리' 때문에 상안군은 세수 대박 나서 싱글벙글하는 중인데 ㅋㅋㅋ 모제군 원룸 공실 나서 파산 직전인 건물주들 앞에서도 그 소리 할 수 있음?" },
+                                    { nick: "Fact_Check_Machine", content: "팩트) 201표 차이로 떨어진 백민우나 1.68% 차로 털린 오성국이나, 보수 단일화도 못 하고 무소속 안흥민(4.16%), 개혁신당 기성현(4.98%)한테 표 사정없이 갈려 나간 능지처참한 자멸일 뿐임 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Clear_Sky_00", time: "8분 전", like: 32800, dislike: 15, isPunished: false,
+                                content: "치원군은 진짜 레전드 콩가루 집안이네 ㅋㅋㅋ 친동생이 파란 띠 두르고 \"우리 형 백수 만들어야 치원군이 삽니다\" 유세하고 다닌 게 신의 한 수였다. 동생분이 진정한 치원군의 애국자이심.",
+                                replies: [
+                                    { nick: "Yoon_Samo_Forever", content: "천륜을 저버린 배신자 자식!! 아무리 정치가 다르다고 해도 친형의 낙선을 돕다니 유교 국가에서 있을 수 없는 일이다! 저런 놈들이 지지하는 유진태는 종북 좌파 첩자가 확실하다!!" },
+                                    { nick: "Clear_Sky_00", content: "지독한 꼰대 논리 지렸다 ㅋㅋㅋ 친형이 지 장학금 수령자 딸래미 괴롭히던 학폭 가해자 연예원한테 뺏어서 몰아주고, 전교 1등 이세리 장학생한테는 만화 본다고 장학금 '0원 강탈'하는 만행 저지르는데 그걸 패밀리 비즈니스로 쉴드 쳐야 하냐?" },
+                                    { nick: "Metro_Lover_01", content: "심지어 계엄령 때 지 혼자 신나서 붉은 완장 차고 효빈시 당가동 굿즈샵 테러하던 윤재훈이랑 똑같이 행동하더니 ㅋㅋㅋ 찐 종북은 국가 안보 조작하다 징역 30년 맞은 니들 상왕 윤석열이고요 ㅋㅋㅋ" },
+                                    { nick: "2.98_Percent_Legend", content: "동생분은 형이 대법원 판결로 잘리기 전에 군민들 손으로 직접 명예로운 퇴진(해고) 시켜준 거임 ㅋㅋㅋ 형제간의 우애가 아주 눈물겹구만 뭘 그래 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Subculture_Capital", time: "12분 전", like: 29400, dislike: 12, isPunished: false,
+                                content: "모제군 오성국은 진짜 멍청함의 극치다. 와카미야 이브 국궁장 콜라보만 정상적으로 진행했어도 젊은 반도체 근로자들이 싱글벙글하면서 돈 쓰고 IT 기업들도 안 떠났을 텐데, 꼰대질 한 번에 수천억 날려 먹고 역전패 당하네.",
+                                replies: [
+                                    { nick: "Anti_Otaku_Force", content: "군수님이 나라의 얼을 지키기 위해 왜색 문화를 배척한 게 무슨 죄냐! 반도체 공장이나 돌리면 되지, 신성한 활터에 오타쿠들을 들이라는 게 제정신이냐? 진기현 저 배신자 놈이 선동한 거다!" },
+                                    { nick: "Subculture_Capital", content: "얼 지키다가 기업 3개 통째로 상안군에 뺏겨서 지역 경제 멸망했죠? ㅋㅋㅋ 상안군 강미소 군수는 오성국 덕분에 가만히 앉아서 대박 쳤다고 단체장 회의 때마다 큰절 올린다는데?" },
+                                    { nick: "Logic_Crusher", content: "진기현 당선인이 무소속 시절 다져놓은 콘크리트 조직표에다가, 오성국한테 빡친 약궁면 2030 근로자들이 70% 몰표 준 결과가 1.68%p 차이 골든크로스임. 유권자를 씹덕이라고 무시하다가 대가리 깨진 거임." },
+                                    { nick: "Fact_Check_Machine", content: "오성국 치하에서 모제군 공무원 퇴사율 덕빈북도 1위 찍은 건 알고 씨부리냐? ㅋㅋㅋ 지 무능은 생각 안 하고 맨날 박효빈 시장이 딥스테이트 공작 펼친다고 음모론이나 쓰던 꼰대의 말로다." }
+                                ]
+                            },
+                            {
+                                nick: "Justice_For_Hyobin", time: "15분 전", like: 27100, dislike: 22, isPunished: false,
+                                content: "치원군에 윤간석 공천한 건 진짜 국민의힘 희대의 자폭 수였다 ㅋㅋㅋ 미성년자 제자들 협박해서 이상한 사진 찍은 변태 성범죄자 교장을 자기 세력이라고 공천하니, 염세현 의원이 빡쳐서 유세차에서 사자후 지르고 당이 터지지 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Real_Conservative_77", content: "윤간석 교장 선생님은 좌파 학생들의 가짜 미투에 억울하게 당하신 거다!! 백민우 군수님은 훌륭한 교육자를 구제하려다 억울하게 정치적 유탄을 맞으신 것뿐이다!" },
+                                    { nick: "Cider_Spritzer", content: "가짜 미투 같은 소리 하네 ㅋㅋㅋ 법원에서 송선영 학생 의무기록이랑 오한숙 선생님 탄압 증거 다 유죄 인정돼서 감옥 가게 생겼는데 아직도 정신 못 차렸네. 변태 교장이랑 전과자 꽃뱀 연예원의 든든한 연대 잘 보았습니다 ㅋㅋㅋ" },
+                                    { nick: "Justice_For_Hyobin", content: "염세현 의원이 오죽 빡쳤으면 유세차에서 \"씨발 윤간석 이 개새끼야 제발 닥치고 나가!!\"라고 울부짖었겠냐 ㅋㅋㅋ 덕분에 염세현은 단 10표 차이로 겨우 살고 백민우는 동반 침몰함 ㅋㅋㅋ" },
+                                    { nick: "Blue_Bass_Ryo", content: "백민우 쉴드 치는 틀딱 새끼들은 진짜 뇌가 오염된 듯. 이적죄로 징역 30년 받은 간첩 윤석열 옹호하는 니들이 찐 종북이지, 억울한 세리 학생 구해주고 치원군에 말차 파르페 지원해 준 박효빈 시장님이 왜 종북이냐?" }
+                                ]
+                            },
+                            {
+                                nick: "Blue_Bass_Ryo", time: "20분 전", like: 25800, dislike: 18, isPunished: false,
+                                content: "치원군 시내버스 도색 사건도 진짜 웃음벨이었는데 ㅋㅋㅋ 백민우가 씹덕 색깔 싫다고 지 맘대로 고른 '핏빛 레드(#BB0033)'가 알고 보니 뱅드림 우다가와 토모에 상징색이랑 100% 일치 ㅋㅋㅋ 오타쿠 혐오하다가 도시 전체를 토모에 성지로 만들어버린 연금술사 백민우 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Anti_Otaku_Force", content: "그건 군청 내부의 불순한 공무원 놈들이 군수님을 속이고 결재 올린 조작 사건이다! 우리 군수님은 보수의 선명성을 위해 붉은색을 고르신 것뿐이다!" },
+                                    { nick: "Clear_Sky_00", content: "속아서 결재 도장 찍은 거면 본인이 무능한 머저리라는 걸 셀프 인증하는 꼴밖에 더 됨? ㅋㅋㅋ 능지가 처참하니까 실무진한테 엿 먹는 것도 모르고 \"이것이 민주당을 멸망시킬 보수의 핏빛!\" 이카면서 좋아했겠지 ㅋㅋㅋ" },
+                                    { nick: "Metro_Lover_01", content: "팩트는 1000번 버스 세츠나 레드 도색 만화 같다고 인가 거부하면서 으름장 놓다가, 박효빈 시장님이 사법 리스크 한 번 언급하니까 손 덜덜 떨면서 도장 찍은 게 느그 백민우 군수의 본 모습임 ㅋㅋㅋ" },
+                                    { nick: "Blue_Bass_Ryo", content: "돈 아깝게 멀쩡한 버스 도색 또 바꾸겠다고 세금 낭비하려다 치원군 상인회한테 팩트 폭격 맞고 깨갱한 찌질함의 아이콘... 0.18%p 차이 낙선은 과학입니다." }
+                                ]
+                            },
+                            {
+                                nick: "Logic_Crusher", time: "25분 전", like: 23400, dislike: 11, isPunished: false,
+                                content: "진기현 모제군수 당선인은 진짜 불사조네 ㅋㅋㅋ 컷오프 당하고 무소속 출마해서 팀킬 했다가, 2025년에 지역 당원들 찾아다니면서 \"저 때문에 나두길이 이겼습니다! 저를 매우 치십시오!\" 하고 도게자 무한 시전하더니 결국 귀환해서 안방 탈환함 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Yoon_Samo_Forever", content: "한번 당을 배신하고 나갔던 놈이 석고대죄 쇼 몇 번 했다고 넙죽 받아준 민주당이나, 거기다 표 던진 모제군 대깨문들이나 똑같다! 오성국 군수님이 지키던 청정 농촌이 좌빨 오타쿠 소굴이 되겠구나!" },
+                                    { nick: "Logic_Crusher", content: "넙죽 받아준 게 아니라 오성국이 워낙 거대하게 똥을 싸질러놓으니까 \"진기현 말고는 저 농촌 꼰대 콘크리트 뚫을 놈이 없다\"고 해서 복당 시켜준 거임 ㅋㅋㅋ 그리고 결과로 증명했잖아?" },
+                                    { nick: "Fact_Check_Machine", content: "청정 농촌 타령하기 전에 나이 먹고 자연 소멸하는 고령층 표만 믿고 까불던 오성국 정신 상태부터 개조해야 했음. 약궁면 반도체 공단 젊은 표심 다 등 돌리게 만든 게 누구냐 대체?" },
+                                    { nick: "15_학번_동기", content: "진기현 당선 축하연 때 와카미야 이브 등신대 세워놔야 한다는 드립이 괜히 나오는 게 아님 ㅋㅋㅋ 오성국의 그 오만한 꼰대 행정이 민주당 군수를 창조해 낸 일등 공신이다." }
+                                ]
+                            },
+                            {
+                                nick: "Metro_Lover_01", time: "30분 전", like: 21900, dislike: 14, isPunished: false,
+                                content: "치원군 유진태 당선인, 모제군 진기현 당선인 두 분 다 축하드립니다. 백민우, 오성국 같은 역대급 안티 씹덕 꼰대 듀오 밑에서 고통받던 지역 청년 공무원들과 근로자들이 드디어 빛을 보네. 후등면에 고토 히토리 동상 세워진다는 공약 벌써부터 기대됨 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Real_Conservative_77", content: "세금 가지고 만화 캐릭터 동상이나 세우는 게 정상적인 군정이냐? 군수라는 놈들이 일은 안 하고 옆 동네 박효빈 시장 밑에서 말차 파르페나 얻어먹으며 세뇌당한 첩자 새끼들이다!" },
+                                    { nick: "Metro_Lover_01", content: "백민우가 하도 찌질하게 군청 매점에 '녹차·말차 판매 금지령' 내리니까 어르신 민원인들이 빡쳐서 항의한 건 기억 안 남? ㅋㅋㅋ 파르페 하나에 세뇌당해서 속국이 될 군사력(?)이면 박효빈 시장님이 진작에 지구 정복했겠다 ㅋㅋㅋ" },
+                                    { nick: "Blue_Bass_Ryo", content: "전산시 장은재 시장도 유진태 유세차 보고 \"우와 부럽다.. 우리 동네도 마시로 동상 세우고 싶다\"면서 울었다던데 ㅋㅋㅋ 청년 친화 정책으로 인구 늘릴 생각은 안 하고 틀딱 안보 팔이만 하니 멸망하지." },
+                                    { nick: "Cider_Spritzer", content: "이세리 양 억울하게 장학금 뺏겼을 때 박효빈 시장님이 효빈교통공사 성골 장학생으로 200만 원 지원해 주고 대학교 보내줬음. 백민우가 엎어버린 밥상 민주당 군수들이 말차 파르페로 다시 차려준다는데 뭐가 불만임?" }
+                                ]
+                            },
+                            {
+                                nick: "Yoon_Samo_Killer", time: "35분 전", like: 19800, dislike: 26, isPunished: false,
+                                content: "보수 틀딱 새끼들 댓글창에서 단체로 발작하는 거 보소 ㅋㅋㅋ 느그 사령관 윤재훈 시장 선거 2.98% 충격의 4위 찍고 파산 직전인 건 눈에 안 보이지? 정의당한테도 털린 극우 쓰레기들의 말로 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Patriot_Yoon_Blood", content: "입 닥쳐라 좌빨 새끼야! 윤석열 대통령 각하와 윤재훈 사령관님이야말로 불순한 오타쿠 문화를 척결하고 진정한 국가 안보를 지키려던 영웅들이시다! 대법원에서 진실이 밝혀질 것이다!" },
+                                    { nick: "Yoon_Samo_Killer", content: "지 권력 유지하겠다고 비상계엄 핑계 만들려고 평양에 일부러 무인기 침투시켜서 1심에서 '일반이적죄'로 징역 30년 맞은 찐 간첩 윤석열을 아직도 각하라고 부르냐? ㅋㅋㅋ 진심 국보법 위반으로 신고함." },
+                                    { nick: "Clear_Sky_00", content: "적국인 북한을 이롭게 하고 국민 목숨 담보로 총풍 사건급 도박 지른 놈을 옹호하는 게 진짜 '종북'이지 ㅋㅋㅋ 애국 보수 타령하는 니새끼들 뇌 구조가 북한 노동당이랑 다를 게 없음 ㅇㅇ" },
+                                    { nick: "Fact_Check_Machine", content: "윤재훈은 계엄령 선포되니까 붉은 완장 차고 군인들 앞세워서 만화책방 털던 양아치 새끼인데 그걸 사령관이라고 모시는 수준 ㅋㅋㅋ 2.98%는 니들 인생 점수다 ㅋㅋㅋ" }
+                                ]
+                            },
+                            {
+                                nick: "Chiwon_Laborer", time: "40분 전", like: 18500, dislike: 13, isPunished: false,
+                                content: "후등면 첨단산단 노동자로서 이번 유진태 당선은 진짜 눈물 납니다. 출퇴근 광역버스(7000번, 7777번)까지 상권 빨아먹는다고 쫓아내려던 백민우의 독선 행정에 브레이크를 건 역사적인 선거임.",
+                                replies: [
+                                    { nick: "Anti_Otaku_Force", content: "광역버스 때문에 치원읍내 상권이 망해가는 건 팩트인데 노동자 새끼들이 지들 편하자고 고향을 배신하네. 읍내에서 돈 쓸 생각을 해야지 오타쿠 정글인 효빈시로 나가서 돈을 쓰냐?" },
+                                    { nick: "Chiwon_Laborer", content: "읍내에 영화관이 있냐 대형마트가 있냐? 젊은 공무원 에이스 비서실장도 버스 퇴출 공문 보고 어이없어서 사직서 집어 던지고 블라인드에 폭로하고 도망친 게 치원군청 현실이었음 ㅋㅋㅋ" },
+                                    { nick: "Logic_Crusher", content: "상권 보호한답시고 어르신들 무릎 침 맞으러 다니는 효빈대병원 행정 버스까지 단축시키려다 시장 바닥에서 \"대환(윤대환) 같은 놈\", \"확 씨겨버릴 노무 자식\" 소리 들으며 지팡이 찜질 당할 뻔한 백민우 ㅋㅋㅋ" },
+                                    { nick: "2.98_Percent_Legend", content: "결국 밤마다 깡소주 까면서 '두청운수 찬가' 부르며 선량한 20대 여성 근로자 폭행하고 버스 기사 지팡이로 때린 백사모 틀딱들 때문에 민심 완전히 관짝 들어간 거임. 자업자득 완벽한 엔딩." }
+                                ]
+                            },
+                            {
+                                nick: "Mije_Semiconductor", time: "45분 전", like: 16200, dislike: 8, isPunished: false,
+                                content: "모제군 약궁면 투표함 열릴 때 진기현 후보 표 70% 쏟아지는 거 보고 소름 돋았음 ㅋㅋㅋ 반도체 협력업체 3개 꼰대질로 날려 먹었을 때 이미 오성국은 낙선 확정이었음. 땅치고 후회해 봐라 ㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Yoon_Samo_Forever", content: "대기업들이 만화 캐릭터 하나 안 썼다고 입주를 취소했다는 선동 소설을 믿는 개돼지들 수준 ㅋㅋㅋ 국민의힘 오성국 군수님이 지켜온 보수의 가치는 무너지지 않는다! 항소할 것이다!" },
+                                    { nick: "Mije_Semiconductor", content: "기업들이 \"지자체장이 청년 문화에 극도로 배타적이라 직원 정주 환경 최악\"이라고 오피셜 때리고 상안군 이부면으로 공장 부지 옮긴 기사는 눈 가리고 아웅 하냐? ㅋㅋㅋ" },
+                                    { nick: "Clear_Sky_00", content: "단체장 협의회 가면 오성국 군수 멍청하다고 같은 보수 성향인 서진시장이나 저천군수도 대놓고 은따 시키고 거리 둔다는데 ㅋㅋㅋ 지 혼자 전통 지켰다고 자화자찬 정신승리 중 개웃김." },
+                                    { nick: "Fact_Check_Machine", content: "강미소 상안군수가 단체장 회의에서 \"오 군수님 덕분에 저희 이부면 세수가 20% 늘었습니다! 감사합니다!\" 하니까 얼굴 붉어지면서 회의장 뛰쳐나갔다던 썰 진짜 개터짐 ㅋㅋㅋㅋ 1.68%p 차이로 참교육 꺼억~" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // 비공감이 압도적으로 많거나 처벌 대상(빌런)인 경우 빨간 배경 처리
+                            if (cmt.isPunished || cmt.dislike > 10000) {
+                                div.className = "comment-item border-red-300 bg-red-50 p-4 border rounded";
+                            } else if (cmt.like > 1000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let nickStyle = "text-[#0055aa]";
+                            
+                            // 특정 닉네임 강조 스타일링 (빌런들)
+                            const villainNicks = ["Patriot_Yoon_Blood", "Yoon_Samo_Forever", "Anti_Otaku_Force", "Real_Conservative_77", "치원_수호자"];
+                            if(villainNicks.some(v => cmt.nick.includes(v))) {
+                                nickStyle = "text-red-600 font-black";
+                            }
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    let rNickStyle = "text-[#0055aa]";
+                                    
+                                    if(villainNicks.some(v => reply.nick.includes(v))) {
+                                        rNickStyle = "text-red-600 font-black";
+                                    }
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            // HTML 삽입
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            const input = document.getElementById('cmt-content');
+                            const btn = document.getElementById('cmt-submit-btn');
+                            
+                            if (input.value.trim() !== '') {
+                                input.value = '';
+                                const originalText = btn.innerText;
+                                btn.innerText = "등록 완료";
+                                btn.classList.add('bg-green-600');
+                                
+                                setTimeout(() => {
+                                    btn.innerText = originalText;
+                                    btn.classList.remove('bg-green-600');
+                                }, 2000);
+                            }
+                        }
+                    </script>
+</div>
+</div>
+</div>
+<!-- 사이드바 -->
+<div class="side-content">
+<div id="common-sidebar-ranking"></div>
+<div class="ad-banner" style="background: #e0e7ff; border-color: #bae6fd; border-width: 1px; border-style: solid; padding: 20px; border-radius: 4px;">
+<div class="text-center">
+<div class="font-bold text-blue-700 mb-1">제9회 전국동시지방선거</div>
+<div class="text-xs text-blue-600 mb-2">군민의 현명한 한 표가<br/>덕빈북도의 내일을 바꿉니다.</div>
+<div class="font-bold text-[10px] text-gray-500">효빈광역시선거관리위원회</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 푸터 및 코어 스크립트 -->
+<div id="common-footer"></div>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="assets/hb_news_core.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>[속보] 박효빈, 78.13% 압도적 지지로 효빈광역시장 재선 확정... 윤재훈은 2.98% '충격의 4위' - 효빈일보</title>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        /* 헤더 스타일 */
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        /* 레이아웃 */
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        /* 기사 본문 */
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; word-break: keep-all; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #dbeafe 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; word-break: keep-all; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 차트 및 표 스타일 */
+        .chart-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 30px 0; }
+        .chart-title { font-weight: bold; font-size: 18px; color: #333; margin-bottom: 15px; text-align: center; }
+        .poll-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; }
+        .poll-table th { background: #0055aa; color: white; padding: 10px; text-align: center; }
+        .poll-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .poll-table tr:nth-child(even) { background-color: #f2f2f2; }
+        .highlight-row { background-color: #fff3cd !important; font-weight: bold; }
+
+        /* 댓글 스타일 */
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; }
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; margin-right: 10px; font-size: 12px; color: #666; user-select: none; }
+        .vote-btn:hover, .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: block; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+
+        /* 사이드바 */
+        .ranking-box { background: white; border: 1px solid #e2e2e2; border-radius: 4px; padding: 20px; }
+        .ranking-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: flex; gap: 10px; cursor: pointer; }
+        .ranking-link { color: #333; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+        .ranking-link:hover { text-decoration: underline; color: #0055aa; }
+        .ranking-num { font-weight: bold; color: #0055aa; width: 20px; }
+    </style>
+</head>
+<body>
+<!-- 헤더 -->
+<div id="common-header"></div>
+<div class="article-container">
+<div class="main-content shadow-sm">
+<div id="article-content-area">
+<div class="mb-2 text-[#0055aa] font-bold">정치 &gt; 지방선거</div>
+<h2 class="article-title">[속보] 박효빈, 78.13% 압도적 지지로 효빈광역시장 재선 확정... 윤재훈은 2.98% '충격의 4위'</h2>
+<div class="article-info">
+<div>
+<span class="font-bold">최정치 기자</span> (politics@hyobinilbo.com)<br/>
+<span class="text-xs text-gray-400">입력 2026.06.04. 01:15</span>
+</div>
+<div class="flex gap-2 text-xs">
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가-</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+<button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+</div>
+</div>
+<div class="article-body">
+<!-- 요약 컨텐츠 박스 -->
+<p class="p-4 bg-gray-50 border-l-4 border-[#0055aa] font-bold text-[#0055aa] text-[16px] leading-relaxed font-sans mb-6">
+                        헌정 사상 '최대 득표율' 갱신... 서브컬처 친화 행보(L-Project)·글로벌 외교 성과 입증<br/>
+                        '계엄사령관 코스프레' 윤재훈, 정의당에게도 밀리며 보수 진영 완벽한 궤멸
+                    </p>
+<div class="my-6">
+<img alt="제9회 전국동시지방선거 당선 확정 후 환호하는 박효빈 시장" class="w-full" src="이미지/당선개꿀.png"/>
+<div class="img-caption">▲ 4일 새벽, 제9회 전국동시지방선거 효빈광역시장 개표가 98% 진행된 가운데, 박효빈 더불어민주당 후보가 당선이 확실시되자 선거 캠프에서 지지자들과 함께 환호하고 있다. (사진=효빈일보 사진부)</div>
+</div>
+<p><strong>[효빈일보 = 최정치 기자]</strong> 박효빈 현 효빈광역시장이 제9회 전국동시지방선거에서 역대 최고 득표율인 78.13%를 기록하며 재선 고지에 올랐다. 반면, 선거 기간 내내 기행과 혐오 발언을 일삼았던 윤재훈 국민의힘 후보는 2.98%라는 헌정 사상 유례없는 참담한 성적표를 받으며 정치적 사망 선고를 받았다.</p>
+<p>4일 오전 1시 15분 현재, 중앙선거관리위원회 개표 진행 상황(개표율 98.5%)에 따르면 박효빈 후보는 1,362,311표(78.13%)를 얻어 무소속 유성민 후보(15.07%), 정의당 이사원 후보(2.99%)를 아득히 따돌리고 당선을 확정 지었다. 국민의힘 윤재훈 후보는 51,879표(2.98%)를 얻는 데 그쳐 4위로 추락하는 굴욕을 맛보았다.</p>
+<!-- 선거 결과 차트 시각화 -->
+<div class="chart-box">
+<div class="chart-title">📊 제9회 효빈광역시장 선거 개표 현황 (개표율 98.5%)</div>
+<canvas height="100" id="electionResultChart"></canvas>
+</div>
+<p>이번 압승은 박효빈 시장이 지난 4년간 추진해 온 'L-Project(서브컬처 종주도시화)'의 대성공과 8호선 조기 개통, 그리고 최근 성사된 필리핀 케손시티와의 대규모 경제·문화 교류 MOU 등 실질적인 시정 성과가 시민들의 압도적인 지지를 이끌어낸 결과로 분석된다.</p>
+<p>반면, 윤재훈 후보 측은 작년 말 비상계엄 사태 당시 붉은 완장을 차고 당가동 굿즈샵을 테러하며 자칭 '효빈지구 계엄사령관' 행세를 했던 흑역사가 고스란히 발목을 잡았다. 여기에 과거 케손시티를 향한 인종차별적 망언까지 재조명되면서, 효빈시 유권자들은 보수 단일후보인 유성민 후보는 물론이고 정의당 이사원 후보에게도 표를 던지며 윤재훈을 철저히 외면했다. 4.8%에서 시작된 그의 득표율은 2.98%로 곤두박질치며 효빈시 극우 세력의 완벽한 궤멸을 알렸다.</p>
+<p>박효빈 시장은 당선 수락 연설에서 "시민 여러분께서 보내주신 78.13%라는 숫자는 단순한 지지율이 아니라, 혐오와 차별을 넘어 포용과 미래로 나아가자는 엄중한 명령"이라며, "앞으로의 4년도 서브컬처와 인프라가 융합된 글로벌 일류 도시 효빈을 완성하는 데 모든 헌신을 다하겠다"고 밝혔다.</p>
+<div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+</div>
+</div>
+<div class="comment-section">
+<div class="comment-header">
+                    네티즌 반응 <span class="text-[#0055aa]" id="comment-count">34,102</span>
+</div>
+<div class="comment-write-area mb-6">
+<div class="comment-inputs">
+<input id="cmt-nick" placeholder="닉네임" type="text"/>
+<input id="cmt-pw" placeholder="비밀번호" type="password"/>
+</div>
+<div class="comment-textarea-box">
+<textarea class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" id="cmt-content" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+<button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" id="cmt-submit-btn" onclick="addComment()">등록</button>
+</div>
+</div>
+<div class="comment-list-container" id="comment-list">
+<script>
+                        // 차트 렌더링 스크립트
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const ctx = document.getElementById('electionResultChart').getContext('2d');
+                            new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['박효빈 (민주당)', '유성민 (무소속)', '이사원 (정의당)', '윤재훈 (국민의힘)'],
+                                    datasets: [{
+                                        label: '득표율 (%)',
+                                        data: [78.13, 15.07, 2.99, 2.98],
+                                        backgroundColor: [
+                                            'rgba(0, 85, 170, 0.8)',   // 파랑
+                                            'rgba(22, 163, 74, 0.8)',  // 초록 (무소속)
+                                            'rgba(234, 179, 8, 0.8)',  // 노랑 (정의당)
+                                            'rgba(225, 29, 72, 0.8)'   // 빨강 (국힘)
+                                        ],
+                                        borderColor: [
+                                            'rgba(0, 85, 170, 1)',
+                                            'rgba(22, 163, 74, 1)',
+                                            'rgba(234, 179, 8, 1)',
+                                            'rgba(225, 29, 72, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    indexAxis: 'y',
+                                    scales: {
+                                        x: {
+                                            beginAtZero: true,
+                                            max: 100
+                                        }
+                                    },
+                                    plugins: {
+                                        legend: { display: false }
+                                    }
+                                }
+                            });
+                        });
+
+                        const commentsData = [
+                            {
+                                nick: "Hyobin_First_1996", time: "방금 전", like: 28450, dislike: 32, isPunished: false,
+                                content: "78.13% 폼 미쳤다 ㄷㄷㄷ 진짜 효빈시 역사상 최고의 시장임. 8호선 조기 개통에 케손시티 MOU로 경제 효과 쓸어 담고, 서브컬처로 10만 인파 모으는데 안 뽑을 이유가 있나? 윤재훈 2.98%는 진짜 과학이다 ㅋㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Patriot_Yoon_Blood", content: "부정선거다!! 좌빨 쁘락치들이 효빈시를 점령했다!! 윤석열 각하와 윤대환, 윤재훈 시장님을 당장 석방하라!! 정의로운 보수 시민들은 폭동을 일으켜서라도 저 오타쿠 시장을 끌어내릴 것이다!!" },
+                                    { nick: "Hyobin_First_1996", content: "폭동은 니들 징벌방에서 식판 던질 때나 하시고요 ㅋㅋㅋ 2.98%면 폭동 일으킬 인원도 안 모여요 아저씨 ㅠㅠ 정의당한테도 털린 주제에 무슨 부정선거 타령이야 ㅋㅋㅋ 선거비 보전이나 어떻게 할지 걱정해라." }
+                                ]
+                            },
+                            {
+                                nick: "Justice_For_Hyobin", time: "5분 전", like: 25120, dislike: 15, isPunished: false,
+                                content: "윤대환-윤석열-윤재훈 이 쓰리윤 트리오는 진짜 감옥에서 정모라도 하냐? 애비는 살인미수로 빵에 가고, 윤통은 계엄령 때리다 탄핵당하고, 아들내미는 완장 차고 굿즈샵 털다가 2.98% ㅋㅋㅋㅋ",
+                                replies: [
+                                    { nick: "Real_Conservative_77", content: "이딴 나라에 희망은 없다. 윤재훈 사령관님이야말로 불순한 오타쿠 문화를 정화하고 진정한 효빈시의 안보를 지킬 유일한 애국자셨다! 조작된 득표율 78% 따위 인정 못 한다!!" },
+                                    { nick: "Cider_Spritzer", content: "안보 지킨답시고 남의 나라 인종차별해서 외교 망칠 뻔한 거, 박 시장님이 나서서 케손시티랑 수천억 원대 MOU로 수습해 줬더니 어디서 양심 터진 소리를 ㅋㅋㅋ 니들 사령관님은 지금 안보가 아니라 본인 영치금 잔고부터 지키셔야 할 듯? 두부나 사 들고 면회나 가쇼." }
+                                ]
+                            },
+                            {
+                                nick: "Subculture_Capital", time: "12분 전", like: 21400, dislike: 45, isPunished: false,
+                                content: "진짜 통쾌하다. 당가동 테러당했을 때 피눈물 났었는데, 시민들이 투표로 완벽하게 심판해 줬네. HAF 노하우 필리핀 수출길까지 뚫렸으니 효빈시는 이제 진짜 글로벌 씹덕 수도다!!",
+                                replies: [
+                                    { nick: "Anti_Otaku_Force", content: "쯧쯧... 도시 꼴이 말이 아니네. 시장이란 놈이 애니메이션이나 쳐보고 앉아있고. 필리핀 정글에다 뭐? 수출? 나라 망조가 들었다. 윤재훈 시장님이 싹 다 불태워 버렸어야 했는데 아쉽다." },
+                                    { nick: "Fact_Check_Machine", content: "니들이 불태우려던 그 '애니메이션'이 이번에 효빈시에 끌어온 경제 유발 효과만 수천억이야 방구석 찌질아 ㅋㅋㅋ 방구석에서 악플이나 다는 니들보단 HAF 보러 오는 외국인 관광객들이 효빈시 세수 확보에 100배는 더 도움 됨. 현실을 살아라 2.98%야." }
+                                ]
+                            },
+                            {
+                                nick: "Clear_Sky_00", time: "18분 전", like: 19850, dislike: 12, isPunished: false,
+                                content: "오늘따라 효빈시 공기가 맑네요. 혐오 세력 싹 다 분리수거된 완벽한 아침입니다 ^^",
+                                replies: [
+                                    { nick: "Yoon_Samo_Forever", content: "웃어라 빨갱이들아. 곧 위대한 윤석열 대통령님께서 복귀하시고 윤재훈 후보가 진실을 밝힐 날이 올 것이다!!" },
+                                    { nick: "Clear_Sky_00", content: "넴 ㅋㅋㅋㅋ 꿈속에서 많이 복귀하세요~ 현실은 득표율 4위, 선거비 전액 미보전, 빚더미 엔딩입니다 ^^ 아침 약 챙겨 드시고요!" }
+                                ]
+                            }
+                        ];
+
+                        const container = document.getElementById('comment-list');
+                        container.innerHTML = ""; 
+
+                        commentsData.forEach((cmt, idx) => {
+                            const div = document.createElement('div');
+                            
+                            // 비공감이 압도적으로 많거나 처벌 대상인 경우 스타일링
+                            if (cmt.isPunished || cmt.dislike > 10000) {
+                                div.className = "comment-item border-red-300 bg-red-50 p-4 border rounded";
+                            } else if (cmt.like > 1000) {
+                                div.className = "best-comment";
+                            } else {
+                                div.className = "comment-item";
+                            }
+                            
+                            let repliesHtml = "";
+                            let nickStyle = "text-[#0055aa]";
+                            
+                            // 메인 댓글 작성자가 빌런인 경우 닉네임 강조
+                            if(cmt.nick === "Patriot_Yoon_Blood" || cmt.nick === "Real_Conservative_77" || cmt.nick === "Anti_Otaku_Force" || cmt.nick === "Yoon_Samo_Forever") {
+                                nickStyle = "text-red-600 font-black";
+                            }
+
+                            if (cmt.replies && cmt.replies.length > 0) {
+                                repliesHtml = `<div class="reply-container" id="reply-${idx}">`;
+                                cmt.replies.forEach(reply => {
+                                    const styleClass = "bg-gray-50 border border-gray-200";
+                                    let rNickStyle = "text-[#0055aa]";
+                                    
+                                    // 대댓글 작성자가 빌런인 경우 닉네임 빨간색 강조
+                                    if (reply.nick === "Patriot_Yoon_Blood" || reply.nick === "Real_Conservative_77" || reply.nick === "Anti_Otaku_Force" || reply.nick === "Yoon_Samo_Forever") {
+                                        rNickStyle = "text-red-600 font-black";
+                                    }
+
+                                    repliesHtml += `
+                                        <div class="reply-item ${styleClass}">
+                                            <span class="mr-1">↳</span><span class="font-bold ${rNickStyle}">${reply.nick}</span>: 
+                                            <span>${reply.content}</span>
+                                        </div>`;
+                                });
+                                repliesHtml += `</div>`;
+                            }
+
+                            // DOM 주입
+                            div.innerHTML = `
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-sm ${nickStyle}">${cmt.nick}</span>
+                                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                                </div>
+                                <p class="text-sm mb-2">${cmt.content.replace(/\n/g, '<br>')}</p>
+                                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                                </div>
+                                ${repliesHtml}
+                            `;
+                            container.appendChild(div);
+                        });
+
+                        function toggleVote(btn) {
+                            const countSpan = btn.querySelector('.count');
+                            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+                            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                                btn.classList.remove('active');
+                                btn.classList.remove('active-hate');
+                                count--;
+                            } else {
+                                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                                else btn.classList.add('active');
+                                count++;
+                            }
+                            countSpan.innerText = count.toLocaleString();
+                        }
+
+                        function addComment() { 
+                            const input = document.getElementById('cmt-content');
+                            const btn = document.getElementById('cmt-submit-btn');
+                            
+                            if (input.value.trim() !== '') {
+                                input.value = '';
+                                const originalText = btn.innerText;
+                                btn.innerText = "등록 완료";
+                                btn.classList.add('bg-green-600');
+                                
+                                setTimeout(() => {
+                                    btn.innerText = originalText;
+                                    btn.classList.remove('bg-green-600');
+                                }, 2000);
+                            }
+                        }
+                    </script>
+</div>
+</div>
+</div>
+<!-- 사이드바 -->
+<div class="side-content">
+<div id="common-sidebar-ranking"></div>
+<div class="ad-banner" style="background: #e0f2fe; border-color: #bae6fd; border-width: 1px; border-style: solid; padding: 20px; border-radius: 4px;">
+<div class="text-center">
+<div class="font-bold text-blue-700 mb-1">효빈광역시청</div>
+<div class="text-xs text-blue-600">포용과 미래로 나아가는 도시<br/>시민 여러분 감사합니다.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 푸터 및 코어 스크립트 -->
+<div id="common-footer"></div>
+<!-- 외부스크립트 절대 삭제 금지 지침 준수 -->
+<script src="assets/hb_news_core.js"></script>
+</body>
+</html>
