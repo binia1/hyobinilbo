@@ -48,7 +48,7 @@ for filename in os.listdir(html_folder):
         # 기사 정보
         title = soup.select_one('.article-title').get_text(strip=True) if soup.select_one('.article-title') else filename
         info_tag = soup.select_one('.article-info')
-        reporter = "정치부 김기자"
+        reporter = "정치부 김옥현"
         if info_tag and info_tag.select_one('.font-bold'):
             reporter = info_tag.select_one('.font-bold').get_text(strip=True)
         
