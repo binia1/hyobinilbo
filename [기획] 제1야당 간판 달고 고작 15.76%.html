@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[기획] 제1야당 간판 달고 고작 '15.76%'... '철새 장관' 박민식, 2026년 선거 최대의 코미디 - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">정치 > 지방선거·재보궐 기획</div>
+                <h2 class="article-title">[기획] 제1야당 간판 달고 고작 '15.76%'... '철새 장관' 박민식, 2026년 선거 최대의 코미디</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최정치 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력: 2026.06.06 10:30 | 수정: 2026.06.06 10:45</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <ul class="list-disc ml-6 space-y-2 mb-6 font-bold text-[#0055aa]" style="font-family: 'Noto Sans KR', sans-serif;">
+                        <li>[부산 북구 갑 보궐선거] 보수 텃밭 부산에서 제1야당 공식 후보가 선거비 보전 턱걸이 굴욕</li>
+                        <li>탈당한 무소속 한동훈(42.96%)에게 보수 표 싹쓸이 당해... 철저하게 버림받은 '친윤'</li>
+                        <li>험지 피해 요리조리 도망 다니던 '지역구 쇼핑'과 '탄핵 반대 팻말' 시위가 부른 완벽한 자멸</li>
+                    </ul>
+                    
+                    <div class="my-6">
+                        <img src="이미지/박민식_낙선.png" alt="제22대 국회의원 재보궐선거 부산 북구 갑 개표 현황" class="w-full" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Park+Min-sik+Defeated'">
+                        <div class="img-caption">▲ 4일 새벽, 부산 북구 갑 국회의원 재보궐선거 개표 결과 무소속 한동훈 후보가 당선된 가운데, 제1야당인 국민의힘 소속으로 출마한 박민식 후보가 15.76%라는 충격적인 득표율을 기록하며 사실상 정치적 사망 선고를 받았다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>[효빈일보 = 최정치 기자] 백수안의 '마진시 엑셀 트롤링', 조국혁신당의 '평택을 단일화 파기' 등 숱한 기행이 쏟아진 제9회 전국동시지방선거 및 재보궐선거 판에서 가장 처참하고 굴욕적인 성적표를 받아 든 인물은 단연 국민의힘 박민식 후보다. 보수의 심장이라 불리는 부산광역시, 그것도 자신이 과거 재선(18·19대)을 지냈던 북구 갑 지역구에서 제1야당의 점퍼를 입고 불과 15.76%를 득표하는 대참사를 낸 것이다.</p>
+
+                    <p>선거 결과를 뜯어보면 참담함 그 자체다. 무소속으로 출마한 한동훈 후보가 42.96%, 더불어민주당 하정우 후보가 41.26%를 얻으며 피 말리는 접전을 벌이는 동안, 명색이 장관 출신이자 공식 보수 후보인 박민식은 철저하게 '투명 인간' 취급을 받았다. 선거비 전액 보전 기준인 15%를 불과 0.76%p 차이로 간신히 턱걸이하며 알량한 밥값만 건진 셈이다.</p>
+
+                    <p>지역 정가에서는 박 후보의 몰락이 '명분 없는 철새 정치'와 '맹목적인 윤석열 호위'가 낳은 완벽한 자업자득이라고 입을 모은다.</p>
+
+                    <p>박 후보는 20대, 21대 총선에서 전재수 의원에게 연달아 패배한 뒤, 북구를 미련 없이 떠나 경기 분당 갑, 분당 을, 서울 영등포 을, 강서 을 등 이길 만한 자리를 찾아 쉴 새 없이 지역구 쇼핑을 다녔다. 그러다 강서 을에서 패배하고 전재수 의원이 부산시장 출마를 위해 사퇴하자, 무려 6년 만에 다시 북구로 기어들어 온 것이다. 북구 주민들 사이에서는 "우리가 호구냐", "갈 데 없으니 만만한 고향에 다시 빨대 꽂으러 왔다"는 극한의 비토 여론이 형성되어 있었다.</p>
+
+                    <p>여기에 기름을 부은 것은 그의 극우적 행보였다. 12·3 내란 사태 이후 이적죄로 징역 30년을 선고받은 윤석열 전 대통령을 비호하기 위해, 그는 헌법재판소 앞에서 '탄핵은 망국의 길'이라는 팻말을 목에 걸고 철야 농성을 벌였다. 페이스북에는 'Yoon is Back' 등 눈을 의심케 하는 충성맹세 글을 도배하다 논란이 되자 슬그머니 삭제하는 추태까지 보였다.</p>
+
+                    <p>결국 "저런 짐수레를 달고 선거를 치를 순 없다"고 판단한 보수 유권자들은 제1야당의 기호 2번을 과감히 버리고, 탈당하여 무소속으로 출마한 한동훈 후보에게 전략적 몰표를 던졌다. 윤석열 정부의 초대 국가보훈부 장관이자 특수통 검사 출신 엘리트 정치인의 말로는, 단 15%의 동정표만 남은 채 허무하게 막을 내렸다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    💬 네티즌 반응 <span class="text-[#0055aa]" id="comment-count">52,911</span>
+                </div>
+                <div style="font-size: 0.85em; color: #666; margin-bottom: 15px;">[ 타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다. ]</div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 패스 (H-Pass)</div>
+                    <div class="text-xs text-blue-600 font-bold mb-2">대중교통 무제한의 마법!</div>
+                    <div class="text-[10px] text-gray-500">효빈교통공사</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <script>
+        const commentsData = [
+            {
+                nick: "Fact_Check_Machine", time: "방금 전", like: 18450, dislike: 110, isPunished: false,
+                content: "진짜 부산에서 보수당 로고 달고 15% 받기도 힘들겠다 ㅋㅋㅋㅋ 어떻게 무소속이 42%를 먹는데 제1야당 후보가 15%냐? 유권자들이 단체로 \"박민식 넌 국힘 후보로도 안 쳐준다\" 하고 인간 취급을 안 해준 거임 ㅋㅋㅋ 이번 선거 최고의 븅신 인정.",
+                replies: [
+                    { nick: "Cider_Spritzer", time: "3분 전", content: "ㄹㅇ 15.76% ㅋㅋㅋㅋ 선거비 보전 15% 턱걸이하려고 막판에 싹싹 빈 거 생각하면 눈물이 다 난다 ㅋㅋㅋ 0.77%p만 낮았어도 빚더미 앉아서 파산하는 건데 아깝다 아까워 ㅋㅋㅋ" },
+                    { nick: "Logic_Crusher", time: "2분 전", content: "장관 출신에 해당 지역구 재선 국회의원이었던 양반이 체급 다 깎아 먹고 쩌리 됨 ㅋㅋㅋ 한동훈은 이사 온 지 한 달도 안 된 뜨내기인데 보수 표 싹 다 흡수함. 박민식의 처절한 인물론 패배다." },
+                    { nick: "Blue_Bass_Ryo", time: "1분 전", content: "보수 유권자들도 바보가 아님. 하정우 민주당 후보가 41% 득표하면서 치고 올라오는데, 눈치 없이 철새 박민식 찍었다간 민주당에 지역구 상납할 거 뻔히 보이니까 울며 겨자 먹기로 한동훈 밀어준 거지 ㅋㅋㅋ" },
+                    { nick: "Busan_Galmaegi", time: "방금 전", content: "솔직히 이번 선거는 한동훈이 잘한 게 아니라 박민식이 너무 개노답이라 보수 표가 도피한 거임 ㅋㅋㅋ 북구 버리고 요리조리 간 보다가 빈집 생기니까 헐레벌떡 돌아온 놈을 누가 예뻐함?" }
+                ]
+            },
+            {
+                nick: "Yoon_Samo_Forever", time: "5분 전", like: 45, dislike: 24500, isPunished: true,
+                content: "조작된 선거다!! 명백한 8호선 EMP 해킹이다!! 박민식 장관님은 위대한 윤석열 각하를 끝까지 지킨 진정한 보수의 의리남이시다! 배신자 한동훈과 좌빨 하정우가 결탁해 선거를 훔쳐 간 것이다!!",
+                replies: [
+                    { nick: "Hyobin_First_1996", time: "4분 전", content: "할배요... 북구 갑에는 효빈 8호선이 안 다녀요... 뇌가 EMP에 튀겨지셨나 왜 자꾸 헛소리야 ㅋㅋㅋㅋ 한동훈이랑 하정우가 결탁했으면 표가 한쪽으로 몰렸겠지 1.7% 차이로 피 터지게 싸웠겠냐? ㅋㅋㅋ" },
+                    { nick: "Clear_Sky_00", time: "3분 전", content: "윤석열 징역 30년 간첩한테 의리 지키느라 유권자들한테는 배신 때린 결과가 15.76%입니다 ^^ 팻말 목에 걸고 노숙 투쟁하시던 분이 국회의원은 무슨 ㅋㅋㅋ 걍 서울역 가서 마저 노숙이나 하쇼." },
+                    { nick: "Justice_For_Hyobin", time: "2분 전", content: "니들 사령관 윤재훈은 효빈 시장 선거 나가서 2.98% 받고 멸망했잖아 ㅋㅋㅋ 그나마 박민식은 15%라도 받아서 선거비는 건졌으니 윤재훈보다는 낫네 ㅋㅋㅋ 영치금이나 낭낭하게 넣어드려라." },
+                    { nick: "Metro_Lover_01", time: "방금 전", content: "진정한 보수 ㅋㅋㅋㅋ 내란 일으킨 놈들 빠는 종북 사이비 집단이 어딜 감히 보수 참칭을 함? 15.76%가 딱 니들 극우 사이비 틀딱들 지분율이니까 겸허하게 받아들여라 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Subculture_Capital", time: "8분 전", like: 15200, dislike: 65, isPunished: false,
+                content: "철새 짓도 정도껏 해야지 ㅋㅋㅋ 북구 -> 분당 갑 -> 영등포 을 -> 강서 을 -> 북구 갑 ㅋㅋㅋㅋ 무슨 기차표 예매하냐? 자리 남으면 일단 찌르고 봄 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Cider_Spritzer", time: "6분 전", content: "ㅋㅋㅋㅋ 철새도 저렇게는 안 날아다닌다 ㅋㅋㅋ 철새는 계절 따라 정해진 루트라도 있지, 이 양반은 그냥 빈자리 냄새 맡고 귀신같이 날아오는 똥파리 수준임." },
+                    { nick: "Logic_Crusher", time: "5분 전", content: "전재수 의원님한테 영혼까지 털리고 도망갔을 때 이미 정치 생명 끝난 건데, 윤석열 빽으로 보훈부 장관 하나 받아먹더니 지가 뭐라도 된 줄 알고 깝친 거임." },
+                    { nick: "15_학번_동기", time: "3분 전", content: "하정우 후보가 정치 신인인데도 41.26%나 받은 거 보면, 민주당 지지자들도 \"한동훈은 싫지만 철새 박민식은 더 싫다\"고 결집한 거임. 박민식이 너무 개폐급이라 하정우 당선될 뻔함 ㅋㅋㅋ" },
+                    { nick: "Fact_Check_Machine", time: "방금 전", content: "강서 을에서 진성준한테 10% 차이로 개털리고 북구로 도망쳐 왔을 때 북구 주민들 반응이 진짜 킬포였음. \"또 왔냐 빙시나\" 딱 이 표정 ㅋㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Democratic_Core", time: "12분 전", like: 21300, dislike: 150, isPunished: false,
+                content: "아 솔직히 이번 지선 3대 ㅄ 라인업 ㅈㄴ 화려함. 1. 마진시장 무소속 출마로 국힘 당선시켜준 엑셀 사이코 '백수안' / 2. 평택을 단일화 파기하고 유의동 4선 만들어준 '조국' / 3. 제1야당 간판 달고 15% 따리 받은 철새 '박민식' ㅋㅋㅋㅋ 진짜 전설이다.",
+                replies: [
+                    { nick: "Blue_Bass_Ryo", time: "10분 전", content: "ㅋㅋㅋㅋㅋ 라인업 가슴이 웅장해지네. 백수안(30.7%)이 그나마 표는 제일 많이 받았는데 결과적으론 제일 쓰레기 짓 한 거고, 박민식(15.76%)은 본인이 보수 갉아먹을 뻔하다가 한동훈 개인기 체급에 눌려서 지 혼자 찌그러진 거임 ㅋㅋㅋ" },
+                    { nick: "Majin_Uni_Student", time: "8분 전", content: "마진 과기대생인데 백수안 이름만 들어도 치가 떨립니다 ㅠㅠ 제설차 가성비 타령하던 무능한 꼰대 새끼... 박민식은 떨어지기라도 했지 백수안은 트롤링으로 우리 동네에 60대 할아버지 시장 강림하게 만들었음 ㅠㅠ" },
+                    { nick: "Pyeongtaek_Citizen", time: "5분 전", content: "평택 시민도 웁니다 ㅠㅠ 조국이 선거유세 깽판 쳐서 유의동 4선 된 거 보면 진짜 야권은 단일화 못 하면 죽어야 함. 그나마 부산 북구 갑은 박민식이 15%로 짜그러져서 망정이지, 박민식이 25%만 먹었어도 하정우가 당선되는 그림이었음 ㅋㅋㅋ" },
+                    { nick: "2.98_Percent_Legend", time: "방금 전", content: "그리고 잊지 말자, 0순위 ㅄ은 2.98% 받고 빚더미에 앉은 효빈시 계엄 사령관 '윤재훈'이다 ㅋㅋㅋㅋ 이번 지선은 쓰레기들 분리수거 제대로 된 아주 건전한 선거였다 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Clear_Sky_00", time: "15분 전", like: 16800, dislike: 82, isPunished: false,
+                content: "박민식 헌재 앞에서 노숙 농성할 때 페이스북에 '하늘의 뜻이다. 윤석열 대통령은 복귀한다' 쓴 거 아직도 캡처 박제돼서 돌아다님 ㅋㅋㅋㅋ 진짜 검사 출신이란 양반이 내란범 옹호하면서 법치주의 부정하는 꼬라지 역겨웠음.",
+                replies: [
+                    { nick: "Logic_Crusher", time: "13분 전", content: "ㄹㅇ ㅋㅋㅋ 대법원 판결문 잉크도 안 말랐는데 팻말충 코스프레 하던 거 개소름. 그 지랄 해놓고 보수 유권자들이 지 뽑아줄 거라고 생각한 능지가 레전드." },
+                    { nick: "Cider_Spritzer", time: "11분 전", content: "한동훈은 내란 터졌을 때 \"이건 미친 짓\"이라고 바로 선 그으면서 체급 키웠는데, 박민식은 \"각하 만세!!\" 하다가 같이 수장됨. ㅋㅋㅋ 정치 감각 차이가 이렇게 납니다 여러분." },
+                    { nick: "Fact_Check_Machine", time: "8분 전", content: "팩트) 박민식은 김홍수 게이트 때 증거 조작 의혹 있는 다이어리로 수사하다가 재판 개털린 이력도 있음. 애초에 검사 시절부터 무리한 수사 원툴이었지 제대로 된 실력파도 아니었음 ㅇㅇ" },
+                    { nick: "Metro_Lover_01", time: "방금 전", content: "이제 국힘도 탈당했고(사실 쫓겨난 거지만 ㅋㅋㅋ) 선거 4연뻥 낙선에 윤석열 꼬리표까지 붙었으니 정치판에서 영원히 아웃임. 그냥 변호사 개업해서 전관예우나 쪽쪽 빨아먹고 사십쇼 ㅋㅋㅋ" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            // 처벌받은 댓글(악플)이거나 베댓인 경우 스타일 분기
+            let isTroll = cmt.isPunished;
+            div.className = isTroll ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}" style="${isTroll ? 'display:block;' : 'display:block;'}">`; // 악플은 기본 펼침, 나머지도 펼쳐둠
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    
+                    // 닉네임 색상 로직: 악플러와 팩폭러 구분
+                    let nickClass = "text-gray-700 font-bold";
+                    if (reply.nick.includes("Yoon") || reply.nick.includes("Patriot") || reply.nick.includes("JCM_")) {
+                        nickClass = "text-red-600 font-bold";
+                    }
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${reply.nick}</span> <span class="text-xs text-gray-400">(${reply.time})</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${isTroll ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${isTroll ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+    
+    <!-- 필수 외부 스크립트 (절대 생략 금지) -->
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

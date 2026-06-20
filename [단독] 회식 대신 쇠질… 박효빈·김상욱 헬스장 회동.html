@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[단독] "회식 대신 쇠질"... 박효빈·김상욱, 넥타이 풀고 헬스장 직행 '강철 동맹' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">홈 > 정치 > 지역협력·비하인드</div>
+                <h2 class="article-title">[단독] "룸살롱 회식 대신 쇠질"... 박효빈·김상욱, 넥타이 풀고 헬스장 직행 '강철 동맹'</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최인프라 기자</span> (infra@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력 2026.06.22 10:00 | 수정 2026.06.22 10:25</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <ul class="list-disc ml-6 space-y-2 mb-6 font-bold text-[#0055aa]" style="font-family: 'Noto Sans KR', sans-serif;">
+                        <li>교통 MOU 체결 직후, 두 단체장 효빈시청 지하 체력단련실로 전격 이동</li>
+                        <li>'3대 300' 헬스 마니아 박효빈 vs '맨몸운동 달인' 김상욱의 자존심 건 쇠질 매치</li>
+                        <li>고급 요정·룸살롱 회식 대신 '프로틴 건배'... 청년 정치인들의 새로운 협치 문화</li>
+                        <li>김상욱 "박 시장 밀어내는 힘 벤치 100kg급... 이 힘으로 버스 노선 밀어붙일 것"</li>
+                    </ul>
+                    
+                    <div class="my-6">
+                        <img src="이미지/박효빈_김상욱_헬스장.png" alt="박효빈 시장과 김상욱 당선인의 헬스장 회동" class="w-full" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Mayor+Park+and+Kim+at+Gym'">
+                        <div class="img-caption">▲ 지난 20일 오후, 효빈-울산 광역 철도 인프라 업무협약을 마친 박효빈 효빈광역시장(오른쪽)과 김상욱 울산광역시장 당선인(왼쪽)이 시청 지하 체력단련실에서 벤치프레스를 보조하며 환하게 웃고 있다. 넥타이를 매고 술잔을 기울이던 구시대적 정치 회동의 틀을 깬 파격적인 행보로 주목받고 있다. (사진=효빈시 제공)</div>
+                    </div>
+
+                    <p>[효빈일보 = 최인프라 기자] 광역단체장들의 만남이 끝난 뒤 이어지는 뻔한 코스가 있다. 최고급 한정식집에서의 만찬, 혹은 외부의 눈을 피해 은밀하게 이어지는 룸살롱이나 요정에서의 술자리. 이른바 '구태 정치'의 전형적인 결속 방식이다. 그러나 역대 최연소(96년생) 박효빈 효빈시장과 차연소(80년생) 김상욱 울산시장 당선인의 만남 뒤엔 고급 술상 대신 '덤벨'과 '프로틴'이 있었다.</p>
+
+                    <p>지난 20일, 효빈-울산 간 광역 대중교통 인프라 융합을 위한 포괄적 업무협약(MOU)을 성공적으로 마친 두 사람은 양 도시 실무진들을 해산시킨 뒤, 넥타이를 풀고 효빈시청 지하에 위치한 직원 체력단련실로 직행했다. 정치권 소문난 '헬스 마니아'인 두 청년 리더의 이색 '강철 동맹' 현장을 본보가 단독 취재했다.</p>
+
+                    <p><strong style="font-size: 19px; color: #111;">■ '3대 300' 박효빈의 완벽한 보조 vs 벤치프레스 100kg·턱걸이 15개 김상욱</strong></p>
+                    <p>현장을 지켜본 시청 관계자에 따르면, 두 사람의 헬스 회동은 단순한 '보여주기식 쇼'가 아니었다. 174.5cm의 다부진 체격을 자랑하는 박효빈 시장은 바쁜 시정 업무 속에서도 3대 운동(스쿼트, 벤치프레스, 데드리프트) 중량 합 300kg을 가뿐히 넘기는 이른바 '근수저'다. 과거 맥도날드 기계 청소 등 고된 쓰리잡을 버티기 위해 시작한 생존형 쇠질이 지금의 탄탄한 체력을 만들었다.</p>
+
+                    <p>반면 김상욱 당선인은 특전사 출신을 방불케 하는 '맨몸 운동'의 달인이다. 12·3 내란 사태 당시 극우 세력의 살해 협박과 쏟아지는 정치적 스트레스를 견디기 위해 국회 소통관 철봉에 매달려 턱걸이와 평행봉을 하며 멘탈을 다잡은 일화는 유명하다.</p>
+
+                    <p>이날 체력단련실에서 박 시장은 김 당선인이 벤치프레스 100kg을 밀어 올릴 때 뒤에서 '스폿(보조)'을 서주며 탄탄한 호흡을 맞췄다. 이어 김 당선인은 철봉에 매달려 반동 없는 정자세 턱걸이 15개를 가볍게 당기며 40대 중반이라고는 믿기지 않는 엄청난 코어 근육을 과시했다.</p>
+
+                    <p>김상욱 당선인은 거친 숨을 고르며 "박 시장님의 밀어내는 힘이 장난이 아니다. 역시 이 정도 추진력이 있으니 효빈시 8호선을 조기 개통시키고 H-Pass를 안착시킨 것 같다"며 혀를 내둘렀다. 이어 "이 강철 같은 힘을 본받아, 저도 취임하자마자 울산 시민들을 고통받게 하는 엉망진창 시내버스 노선을 불도저처럼 밀어버리겠다"고 의지를 불태웠다.</p>
+
+                    <p><strong style="font-size: 19px; color: #111;">■ "정치는 체력, 복지는 근력"... 낡은 여의도 정치판 향한 묵직한 경고</strong></p>
+                    <p>두 사람의 헬스 회동은 단순한 가십거리를 넘어 한국 정치 문화에 던지는 메시지가 작지 않다. 과거 윤대환 전 시장이나 모제군수 오성국 등 구시대 단체장들이 지역 건설업자들과 골프장을 돌고 요정에서 밀실 야합을 하다가 부패의 늪에 빠진 것과 극명하게 대비되기 때문이다.</p>
+
+                    <p>박효빈 시장은 "정치인이 체력이 없으면 결국 기득권이 써주는 기안서에 도장이나 찍는 꼭두각시가 된다. 밤새워 예산안을 분석하고, 현장에서 부당한 억압(오이 지옥 등)에 맞서 책상을 내리치며 분노할 수 있는 힘은 결국 하체와 코어 근력에서 나온다"고 강조했다.</p>
+
+                    <p>땀범벅이 된 채 초코맛 단백질 보충제(프로틴)를 텀블러에 부딪치며 '건배'를 나눈 두 단체장. 이념 갈라치기와 술판으로 점철됐던 낡은 정치를 끝내고, 맑은 정신과 강철 같은 체력으로 시민의 밥그릇을 지키겠다는 영남-덕북권 '청년 실용 벨트'의 미래가 체력단련실의 쇳소리만큼이나 묵직하게 다가온다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <div class="comment-section">
+                <div class="comment-header">
+                    💬 네티즌 반응 <span class="text-[#0055aa]" id="comment-count">78,512</span>
+                </div>
+                <div style="font-size: 0.85em; color: #666; margin-bottom: 15px;">[ 타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다. ]</div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-bold text-black mb-1">근성장엔 역시 고기 만두!</div>
+                    <div class="text-xs text-blue-600 font-bold mb-2">효빈시 착한식당 연합회</div>
+                    <div class="text-[10px] text-gray-500">운동 후 단백질 보충은 여기서</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="common-footer"></div>
+
+    <script>
+        const commentsData = [
+            {
+                nick: "Gym_Rat_Politician", time: "방금 전", like: 24500, dislike: 85, isPunished: false,
+                content: "와 ㅋㅋㅋㅋ 며칠 전 기사 댓글창에서 두 분이서 턱걸이 15개 합의(?) 보셨다고 장난치시더니, 진짜로 지하 헬스장 끌고 가서 쇠질 하셨네 ㅋㅋㅋㅋㅋ 벤치 100kg 보조 서주는 단체장 투샷은 진짜 대한민국 헌정 사상 최초일 듯 ㅋㅋㅋ 가슴이 웅장해진다 진짜.",
+                replies: [
+                    { nick: "Iron_Muscle_Mayor", content: "프로틴 건배 미쳤냐고 ㅋㅋㅋㅋ 룸살롱에서 양주 까면서 세금 축내는 꼰대 새끼들 보다가 텀블러 짠~ 하는 거 보니까 안구 정화 제대로 됨." },
+                    { nick: "Fitness_Core", content: "박 시장님이 반덕수 책상 내리칠 때 유리가 안 깨진 이유가 여기 있었네. 근신경계 완벽 통제 쌉가능 ㄷㄷ" },
+                    { nick: "Healthy_Mind", content: "솔직히 밤새워서 서류 보고 현장 뛰려면 체력 ㅈㄴ 필요한데, 저렇게 평소에 몸 만들어두는 단체장이면 일 못할 수가 없음. 78% 지지율 폼 미쳤다." },
+                    { nick: "[✅ 공식] 김상욱 (울산광역시장 당선인)", content: "하하, 박 시장님의 '스폿' 덕분에 100kg 거뜬하게 밀었습니다. 효빈시청 헬스장 기구들이 아주 훌륭하더군요. 다음번 울산 회동 때는 저희 시청에서 제대로 데드리프트 대결을 펼쳐보겠습니다! 🏋️‍♂️" },
+                    { nick: "[✅ 공식] 박효빈 (효빈광역시장)", content: "김 당선인님의 무반동 턱걸이는 진짜 특전사 교관님들도 울고 갈 수준이었습니다 ㄷㄷ... 데드리프트 대결, 기꺼이 받아들이겠습니다! 그 전에 울산 시내버스 노선부터 시원하게 들어 올려(개편) 주십시오! 🔥" }
+                ]
+            },
+            {
+                nick: "Patriot_Yoon_Blood", time: "5분 전", like: 32, dislike: 29800, isPunished: true,
+                content: "시장이라는 작자들이 품격 없이 지하 창고 같은 곳에서 땀 뻘뻘 흘리며 쇳덩이나 들고 있다니!! 이래서 근본 없는 천것들은 안 된다는 것이다! 정치의 품격은 요정과 골프장에서 나오는 고도의 협상력에 있거늘!! 윤재훈 사령관님처럼 지적인 분이 시장을 하셔야 도시의 격이 산다!!",
+                replies: [
+                    { nick: "Fact_Check_Machine", content: "아저씨... 골프 치고 요정 가서 양주 까면서 지역 토호들이랑 세금 도둑질하는 게 품격이에요? ㅋㅋㅋ 그래서 니들 윤대환 시절에 효빈시가 파산 직전까지 갔구나 ㅋㅋㅋ" },
+                    { nick: "Cider_Spritzer", content: "지적인 윤재훈 ㅋㅋㅋㅋ 외국 나가서 갱단한테 쫄아가지고 바지에 똥 지린 놈이 지성은 무슨 ㅋㅋㅋ 지성이 아니라 지린 거겠지 ㅋㅋㅋ" },
+                    { nick: "Clear_Sky_00", content: "운동해서 땀 흘리는 청년들이 천것이면, 니들처럼 방구석에서 타이핑이나 치며 간첩(윤석열) 옹호하는 틀딱들은 뭐 불가촉천민임? ㅋㅋㅋ 제발 밖에 나가서 산책이라도 하세요." },
+                    { nick: "Logic_Crusher", content: "그리고 아재요 2.98% 받은 놈은 사령관이 아니라 그냥 길거리 백수예요 ㅠㅠ 정신병원 예약해 드려요?" }
+                ]
+            },
+            {
+                nick: "Democratic_Core", time: "10분 전", like: 18200, dislike: 110, isPunished: false,
+                content: "마진시 백수안 그 병신 엑셀 소시오패스가 가로등 예산 깎고 제설차 안 돌리다가 쫓겨나서 무소속 출마로 트롤링할 때, 박효빈 시장님은 헬스장 가서 근력 키우면서 시민들 지킬 힘을 기르고 계셨네. 엘리트병 걸린 샌님 정치인보다 쇠질하는 흙수저 출신이 100배 낫다 진짜.",
+                replies: [
+                    { nick: "Baek_Samo_01", content: "우리 백수안 시장님은 머리로 행정을 하시는 분입니다! 땀 흘리는 무식한 짓은 하급 공무원들이나 하는 겁니다!" },
+                    { nick: "Majin_Uni_Student", content: "야 백사모 틀딱아 입 다물어라. 폭설 왔을 때 책상에 앉아서 '제설차 가성비 안 나옴 ㅋ' 하면서 시민들 고립시킨 게 니들 엘리트 행정이냐? ㅋㅋㅋ 결국 35% 문양인한테 시장직 바친 역대급 트롤러 주제에." },
+                    { nick: "Pyeongtaek_Citizen", content: "백수안이나 평택을에서 트롤링한 조국이나, 자기 잘난 맛에 사는 부류들은 절대 박효빈, 김상욱처럼 바닥부터 올라온 실용파들 못 이김. 땀의 가치를 아는 사람이 진짜 정치인이다." }
+                ]
+            },
+            {
+                nick: "Ulsan_Bus_Fan", time: "15분 전", like: 16500, dislike: 65, isPunished: false,
+                content: "김상욱 시장님 100kg 벤치프레스 미는 힘으로, 작년에 엉망진창으로 꼬여버린 우리 울산 시내버스 노선들도 시원하게 펴주세요 ㅠㅠ 특히 123번, 307번 강제 폐선시킨 거 진짜 살려내야 됩니다 ㅠㅠ",
+                replies: [
+                    { nick: "Ulsan_Survivor", content: "ㅇㅈ ㅋㅋㅋ 벤치 100kg 미는 불도저 추진력이면 탁상행정으로 노선 자른 놈들 다 목날아갈 듯 ㅋㅋㅋ" },
+                    { nick: "Transit_Mania_01", content: "박효빈 시장님이 보조 잘 서주셨으니, 효빈시 '시즈쿠 시스템(대칭 번호)' 모델 울산에 이식하는 거 일사천리로 진행될 듯. 두 근육맨들의 교통 행정 기대합니다!" },
+                    { nick: "Hyobin_Bus_Nerd", content: "옛날에 윤대환이 버스 노선 맘대로 잘랐다가 박효빈 시장님한테 참교육 당했지. 김상욱 시장님도 울산 교통과 적폐들 싹 다 바벨로 눌러버리시길 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Yoon_Samo_Forever", time: "20분 전", like: 18, dislike: 22100, isPunished: true,
+                content: "좌빨 새끼들이 쇼하는 거에 속아 넘어가는 개돼지들 보소!! 박효빈 저놈은 일본 만화나 쳐보는 오타쿠 놈이 무슨 헬스야!! 뽕 넣은 가짜 근육이다!! 우리 위대한 보수는 흔들리지 않는다!! 투표함을 까라!!",
+                replies: [
+                    { nick: "Otaku_Power", content: "오타쿠가 헬스하면 뭐 불법임? ㅋㅋㅋ 니들은 방구석에서 키보드만 치니까 배만 튀어나왔지 ㅋㅋㅋ 시장님은 덕질할 체력 기르려고 스쿼트 치시는 분이다 ㅋㅋㅋ" },
+                    { nick: "Subculture_Capital", content: "박효빈 시장님 3대 300에 78.13% 당선 ㅋㅋㅋ 니들 사령관님 3대 50은 치냐? 지지율 2.98% 받은 주제에 근육 뽕 타령 ㅋㅋㅋ" },
+                    { nick: "Cider_Spritzer", content: "어제 부산시장 전재수 당선인한테도 통일교 운운하더니 오늘 또 투표함 타령 ㅋㅋㅋ 니들은 평택을에서 조국이 트롤링해서 유의동(국힘) 34% 당선된 것도 조작이라고 하잖아 ㅋㅋㅋ 그냥 맘에 안 들면 다 조작이지 아주 ㅋㅋㅋ" },
+                    { nick: "2.98_Percent_Legend", content: "간첩 윤석열 비호하려고 헌재 앞에서 노숙하던 박민식 부산 북구갑에서 15% 따리 컷 당한 거 보고도 보수가 안 흔들린다고 정신승리 중 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Busan_Galmaegi", time: "25분 전", like: 15400, dislike: 45, isPunished: false,
+                content: "영남-덕북권 청년 벨트 미쳤다 ㅋㅋㅋ 전재수(부산)가 HMM 본사 끌고 와서 해양 인프라 깔아주고, 박효빈(효빈)이 서브컬처 IP 얹고, 김상욱(울산)이 트램이랑 대중교통망 연결하면 부울경 메가시티 씹어먹을 듯. 꼰대 정치인들 다 은퇴해라 ㅋㅋㅋ",
+                replies: [
+                    { nick: "Yeongdo_Marine", content: "ㄹㅇ 영도 조선소에 효빈 마스코트 붙고 벡스코에서 지스타랑 HAF 연계 콜라보 하면 지역 경제 대폭발함 ㅋㅋㅋ 박형준처럼 이명박 데려와서 보수 결집 쇼하다가 역풍 맞은 거랑 질적으로 다름." },
+                    { nick: "Chiwon_Laborer", content: "치원군수 백민우가 동생한테 팀킬 당해서 0.18%p 차이로 백수 되고, 모제군수 오성국이 꼰대질로 반도체 뺏기고 낙선한 거 보면, 시민들은 확실히 '실용'을 원함. 이념 타령하는 새끼들은 짐 쌀 시간이다." },
+                    { nick: "Fact_Check_Machine", content: "박효빈, 김상욱, 전재수, 주언일(곡천군), 강준영(인곡군). 이번 지선 승리자들 공통점: 자기 실무 능력으로 입증한 워커홀릭들임. 정치학 교과서 새로 써야 됨 진짜 ㅋㅋㅋ" }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            
+            let isTroll = cmt.isPunished;
+            div.className = isTroll ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}" style="${isTroll ? 'display:block;' : 'display:block;'}">`;
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    
+                    let nickClass = "text-gray-700 font-bold";
+                    if (reply.nick.includes("Yoon") || reply.nick.includes("Patriot") || reply.nick.includes("Red_Armband") || reply.nick.includes("Baek_Samo")) {
+                        nickClass = "text-red-600 font-bold";
+                    } else if (reply.nick.includes("[✅ 공식]")) {
+                        nickClass = "text-[#0055aa] font-bold";
+                    }
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${reply.nick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${isTroll ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${isTroll ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+    
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>

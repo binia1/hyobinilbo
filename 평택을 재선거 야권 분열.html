@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[기획] 평택을 재선거 야권 분열, 유의동 34.27% '기적의 4선' - 효빈일보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f7fa; color: #333; }
+        
+        .news-header { border-bottom: 1px solid #e2e2e2; background: white; }
+        .news-nav a { color: #333; font-weight: bold; padding: 0 12px; font-size: 15px; text-decoration: none; }
+        .news-nav a:hover { color: #0055aa; text-decoration: underline; }
+        .news-nav .active { color: #0055aa; }
+
+        .article-container { max-width: 1080px; margin: 20px auto; display: flex; gap: 40px; }
+        .main-content { flex: 3; background: white; padding: 40px; border: 1px solid #e2e2e2; border-radius: 4px; }
+        .side-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+        .article-title { font-size: 34px; font-weight: bold; line-height: 1.3; color: #111; margin-bottom: 10px; letter-spacing: -1px; }
+        .article-info { font-size: 13px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .article-body { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Nanum Myeongjo', serif; } 
+        .article-body strong { font-weight: 800; background: linear-gradient(to top, #fecaca 50%, transparent 50%); }
+        .article-body p { margin-bottom: 24px; text-align: justify; }
+        .img-caption { font-size: 13px; color: #666; margin-top: 8px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; font-family: 'Noto Sans KR', sans-serif;}
+
+        .article-body a { color: #0055aa; text-decoration: none; font-weight: bold; font-family: 'Noto Sans KR', sans-serif;}
+        .article-body a:hover { text-decoration: underline; }
+
+        .comment-section { margin-top: 50px; border-top: 2px solid #333; padding-top: 20px; font-family: 'Noto Sans KR', sans-serif;}
+        .comment-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; }
+        .comment-write-area { border: 1px solid #ddd; background: #f9f9f9; padding: 15px; }
+        .comment-inputs { display: flex; gap: 10px; margin-bottom: 10px; }
+        .comment-inputs input { border: 1px solid #ccc; padding: 5px 10px; font-size: 13px; width: 150px; }
+        .comment-textarea-box { display: flex; gap: 10px; }
+        .comment-list-container { margin-top: 20px; }
+        .comment-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .best-comment { background: #f0f7ff; border: 1px solid #cce5ff; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+        
+        .vote-btn { cursor: pointer; user-select: none; margin-right: 10px; font-size: 12px; color: #666; }
+        .vote-btn:hover { color: #0055aa; font-weight: bold; }
+        .vote-btn.active { color: #0055aa; font-weight: bold; }
+        .vote-btn.active-hate { color: red; font-weight: bold; }
+
+        .reply-toggle { cursor: pointer; font-size: 12px; color: #555; margin-left: 10px; font-weight: bold; }
+        .reply-toggle:hover { text-decoration: underline; color: #0055aa; }
+        .reply-container { margin-top: 10px; padding-left: 20px; border-left: 2px solid #eee; display: none; }
+        .reply-item { margin-bottom: 8px; font-size: 13px; background: #fafafa; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <div id="common-header"></div>
+    
+    <div class="article-container">
+        <div class="main-content shadow-sm">
+            <div id="article-content-area">
+                <div class="mb-2 text-[#0055aa] font-bold" style="font-family: 'Noto Sans KR', sans-serif;">정치 > 지방선거·재보궐 기획</div>
+                <h2 class="article-title">[기획] 마진시에 '백수안'이 있다면, 평택을엔 '야권 분열'이 있었다... 유의동 34.27% '기적의 4선'</h2>
+                
+                <div class="article-info">
+                    <div>
+                        <span class="font-bold">정치부 최정치 기자</span> (politics@hyobinilbo.com)<br>
+                        <span class="text-xs text-gray-400">입력: 2026.06.05 12:00 | 수정: 2026.06.05 12:30</span>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">가+</button>
+                        <button class="border px-2 py-1 rounded hover:bg-gray-100">인쇄</button>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <ul class="list-disc ml-6 space-y-2 mb-6 font-bold text-[#0055aa]" style="font-family: 'Noto Sans KR', sans-serif;">
+                        <li>[평택을 국회의원 재선거] 진보 진영 치킨게임 끝에 국민의힘 유의동 '어부지리 당선'</li>
+                        <li>더불어민주당 김용남(29.15%) vs 조국혁신당 표 분산... 합치면 60% 넘는데 자멸</li>
+                        <li>덕빈남도 마진시장 선거(문양인 35.4% 당선)와 완벽한 평행이론... "단일화 실패의 참사"</li>
+                        <li>유의동, 한동훈 영입 움직임... 윤대환·윤재훈 등 극우 세력은 '견제구'</li>
+                    </ul>
+                    
+                    <div class="my-6">
+                        <img src="이미지/유의동_당선.png" alt="유의동 평택시을 국회의원 당선인" class="w-full" onerror="this.src='https://placehold.co/800x450/eeeeee/333333?text=Yoo+Eui-dong+Elected'">
+                        <div class="img-caption">▲ 4일 새벽, 경기도 평택시을 국회의원 재선거 개표가 완료된 가운데, 34.27%의 득표율로 당선이 확정된 국민의힘 유의동 후보가 지지자들의 환호에 답하고 있다. 진보 진영의 표 분산이 만들어낸 전형적인 어부지리 승리다. (사진=효빈일보 사진부)</div>
+                    </div>
+
+                    <p>덕빈남도 마진시장에 35.4%로 당선된 문양인 국민의힘 후보의 '어부지리 기적'이 수도권 한복판인 경기도 평택시을 국회의원 재선거에서도 똑같이 재현되었다. 더불어민주당과 조국혁신당 등 범야권(현 범여권)의 지독한 치킨게임이 보수 중진에게 4선 배지를 떠먹여 준 셈이다.</p>
+
+                    <p>4일 중앙선거관리위원회에 따르면, 제9회 지방선거와 함께 치러진 평택시을 국회의원 재선거에서 국민의힘 유의동 후보가 34.27%를 얻어 초박빙 역전승을 거뒀다. 반면 더불어민주당 김용남 후보는 29.15%에 그치며 고배를 마셨고, 조국혁신당 후보 역시 유의미한 득표를 기록하며 진보 표심을 정확히 반으로 갈랐다.</p>
+
+                    <p>이번 재선거는 선거 전부터 "야권 단일화 없이는 필패"라는 지적이 끊이지 않았다. 사전 여론조사(에스티아이)에서도 단일화 시 진보 진영 후보가 52.5%의 과반 지지를 얻는 것으로 나타났으나, 민주당과 혁신당 양측은 "우리가 본진"이라며 끝내 단일화 합의에 이르지 못했다.</p>
+
+                    <p>결국 개표함이 열리자 우려는 현실이 되었다. 진보 성향 유권자들의 표가 60% 가까이 쏟아졌음에도, 표가 김용남 후보와 혁신당 측으로 쪼개지는 바람에 기존 보수 콘크리트 표(34.27%)를 온전히 흡수한 유의동 후보가 1위로 결승선을 통과했다. 한편 '진짜 보수'를 자처하며 독자 창당한 '자유와혁신' 소속 황교안 후보는 10%의 벽조차 넘지 못하며 참패했다.</p>
+
+                    <p>이는 덕빈남도 마진시장 선거에서 컷오프 불복으로 무소속 출마한 백수안(30.7%)과 민주당 양영현(33.9%)이 표를 갈라 먹어 국민의힘 문양인이 35.4%로 시장이 된 것과 완벽한 평행이론이다. 지역 정가에서는 "오만함에 빠진 진보 진영이 유권자의 뜻을 거스르고 밥그릇 싸움을 하다가 보수 진영에 헌납한 최악의 자멸극"이라는 매서운 비판이 쏟아지고 있다.</p>
+
+                    <p>한편, 극적으로 4선 고지에 오른 유의동 당선인의 향후 행보에도 관심이 쏠리고 있다. 당내 소장파로 꼽히는 유 당선인 측은 당의 쇄신을 위해 한동훈 전 비대위원장 등 새로운 인물들을 끌어들이려는 움직임을 보이고 있다.</p>
+                    
+                    <p>그러나 이러한 행보를 두고 보수 진영 내 극우 세력의 몽니도 만만치 않다. 이번 선거에서 한 자릿수 득표로 체면을 구긴 자유와혁신(황교안) 세력과, 이들과 결을 같이 하는 윤재훈(효빈시장 낙선, 2.98%) 등 강경 보수 세력은 유의동 당선인을 탐탁지 않게 여기고 있다. 일부 극우 유튜버와 지지자들은 "유의동이 한동훈을 방패 삼아 좌파들과 내통하려 황교안의 표를 빼앗았다"는 식의 사전투표 조작 음모론까지 설파하며 소장파의 당권 장악을 필사적으로 저지하려는 모양새다.</p>
+
+                    <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500" style="font-family: 'Noto Sans KR', sans-serif;">&lt;저작권자 © 효빈일보, 무단 전재 및 재배포 금지&gt;</div>
+                </div>
+            </div>
+
+            <!-- 댓글창 영역 -->
+            <div class="comment-section">
+                <div class="comment-header">
+                    💬 네티즌 반응 <span class="text-[#0055aa]" id="comment-count">51,204</span>
+                </div>
+                <div style="font-size: 0.85em; color: #666; margin-bottom: 15px;">[ 타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다. ]</div>
+                
+                <div class="comment-write-area mb-6">
+                    <div class="comment-inputs">
+                        <input type="text" id="cmt-nick" placeholder="닉네임">
+                        <input type="password" id="cmt-pw" placeholder="비밀번호">
+                    </div>
+                    <div class="comment-textarea-box">
+                        <textarea id="cmt-content" class="w-full h-20 p-2 border border-gray-300 resize-none text-sm" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙에 따라 제재받을 수 있습니다."></textarea>
+                        <button class="bg-[#0055aa] text-white px-6 font-bold text-sm hover:bg-[#004499] transition-colors" onclick="addComment()">등록</button>
+                    </div>
+                </div>
+
+                <!-- 댓글 목록 -->
+                <div class="comment-list-container" id="comment-list">
+                    <!-- JavaScript에서 동적 렌더링 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 사이드바 -->
+        <div class="side-content">
+            <div id="common-sidebar-ranking"></div>
+            
+            <div class="ad-banner bg-[#f9f9f9] border border-gray-200 p-4 text-center mt-4">
+                <div>
+                    <div class="font-bold text-black mb-1">효빈 패스 (H-Pass)</div>
+                    <div class="text-xs text-blue-600 font-bold mb-2">대중교통 무제한의 마법!</div>
+                    <div class="text-[10px] text-gray-500">효빈교통공사</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="common-footer"></div>
+
+    <script>
+        const commentsData = [
+            {
+                nick: "Democratic_Core", time: "30분 전", like: 15200, dislike: 110, isPunished: false,
+                content: "아니 시발 백번 양보해서 독자 출마까지는 그렇다 쳐. 근데 왜 국힘 유의동을 안 까고 우리 당 김용남 후보 선거운동을 방해하냐고 ㅋㅋㅋ 유세차 옆에 와서 확성기로 깽판 치고 네거티브 문자 돌린 건 진짜 선 넘은 쓰레기 짓 아님? 조국혁신당 니들은 앞으로 지민비조 입에 올리지도 마라.",
+                replies: [
+                    { nick: "Cider_Spritzer", content: "ㄹㅇ 네거티브 ㅈㄴ게 하더라. 정책 대결은 1도 없고 김용남 흠집 내기에만 혈안이 돼 있었음. 그 지랄을 하니까 중도층이 질려서 다 떨어져 나가지 ㅋㅋㅋ 유의동 4선 달아준 1등 공신들." },
+                    { nick: "Logic_Crusher", content: "조국혁신당 이번 평택을 선거 전략은 진짜 정치공학적으로 최악의 멍청한 짓이었음. 지들이 김용남 물어뜯어서 깎아내리면 그 표가 자기들한테 올 줄 알았나 봄? 현실은 진보 파이 전체가 썩어버리면서 보수한테 34% 빈집털이 당함 ㅋㅋㅋ" },
+                    { nick: "Pyeongtaek_Citizen", content: "평택 시민인데 선거 기간 내내 짜증 나서 미치는 줄 알았음. 민주당이랑 혁신당이랑 서로 현수막 걸고 물어뜯고 싸우는데 진짜 꼴 보기 싫더라. 차라리 김용남으로 깔끔하게 뭉쳤으면 60% 압승이었을텐데." }
+                ]
+            },
+            {
+                nick: "Fact_Check_Machine", time: "25분 전", like: 14800, dislike: 95, isPunished: false,
+                content: "마진시 백수안이랑 조국혁신당 평택 공관위랑 단체로 손잡고 한강물 온도나 재러 가라 ㅋㅋㅋ 엑셀 빌런 새끼는 무능해서 짤렸다고 깽판 쳐서 시장직 바치고, 혁신당 놈들은 지들 지분 챙기겠다고 같은 편 등에 칼 꽂아서 국회의원 배지 바침 ㅋㅋㅋ 이번 지선 진보진영 혈압 상승의 투톱이다 진짜.",
+                replies: [
+                    { nick: "Blue_Bass_Ryo", content: "ㅋㅋㅋㅋㅋ 유의동 캠프에선 개표 방송 보면서 조국 방향으로 큰절 세 번 올렸을 듯 ㅋㅋㅋ 가만히 숨만 쉬고 있었는데 알아서 상대편 에이스 암살해 주고 당선증 떠먹여 줌 ㅋㅋㅋ" },
+                    { nick: "Logic_Crusher", content: "마진시 백수안(30.7%), 민주당 양영현(33.9%) = 문양인(35.4%) 당선. 평택을 김용남(29.1%) + 혁신당 = 유의동(34.2%) 당선. 공식이 완전 똑같음 ㅋㅋㅋㅋ 진보 분열은 곧 국힘의 로또다." }
+                ]
+            },
+            {
+                nick: "Patriot_Yoon_Blood", time: "20분 전", like: 45, dislike: 18500, isPunished: true,
+                content: "유의동 저 배신자 좌파 프락치 새끼가 당선된 건 100% 사전투표 조작 부정선거다!! 자유와혁신 황교안 대표님이 10%도 못 받았다는 게 말이 되느냐!! 유의동이 한동훈 끌어들여서 보수 궤멸시키려고 투표지를 바꿔치기한 거다!! 빼앗긴 황교안의 표를 되찾자!!",
+                replies: [
+                    { nick: "Hyobin_First_1996", content: "황교안 자유와혁신 당으로 나와서 정정당당하게 10% 미만으로 쳐발렸잖아 ㅋㅋㅋㅋ 표를 도둑맞은 게 아니라 평택 시민들이 니들 쉰내 나서 거른 거야 ㅋㅋㅋ 능지 실화냐?" },
+                    { nick: "Justice_For_Hyobin", content: "보수 후보(유의동)가 당선됐는데 지들 입맛에 맞는 극우가 한 자릿수 득표했다고 부정선거 발작하는 레전드 상황 ㅋㅋㅋㅋ" },
+                    { nick: "Clear_Sky_00", content: "같은 당 계열 보수 의원이 4선 성공했는데 축하는 못할망정 '한동훈 데려온다'고 좌파 프락치 취급 ㅋㅋㅋㅋ 진짜 황교안 빠는 극우들은 구제 불능이다." },
+                    { nick: "2.98_Percent_Legend", content: "니들 사령관 윤재훈 2.98% 폭망한 거나 챙겨 ㅋㅋㅋ 유의동이 소장파 결집할까봐 부들거리는 꼴 개웃기네 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Yoon_Samo_Forever", time: "15분 전", like: 12, dislike: 19200, isPunished: true,
+                content: "유의동 저놈은 소장파 탈을 쓴 위장 우파다!! 한동훈이랑 야합해서 위대한 윤재훈 사령관님을 몰아내려는 수작이다! 중앙선관위의 바코드 조작과 8호선 EMP로 황교안 대표님의 압승을 뺏어간 거다!! 당장 평택을 투표함 까라!!",
+                replies: [
+                    { nick: "Metro_Lover_01", content: "아 쫌 ㅋㅋㅋㅋ 8호선 EMP 타령 좀 그만해라 ㅋㅋㅋ 황교안 출마해서 한 자릿수 받아놓고 무슨 바코드를 조작해 ㅋㅋㅋ 뇌가 우동사리냐?" },
+                    { nick: "15_학번_동기", content: "아니 국힘 후보가 이겼다니까? ㅋㅋㅋ 이겨도 지랄이네 진짜 ㅋㅋㅋ 자유와혁신인지 뭔지 10%도 못 넘겼으면 걍 찌그러져 있으라고 ㅋㅋㅋ" },
+                    { nick: "Fact_Check_Machine", content: "유의동이 소장파고 한동훈이랑 손잡으려 하니까 윤대환/윤재훈 계열 틀딱들이 쫄아서 '좌파랑 내통한다' 음모론 퍼뜨리는 거 ㅈㄴ 투명하네 ㅋㅋㅋ 니들 2.98% 사령관님이나 챙기라고 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Moderate_Conservative", time: "12분 전", like: 13500, dislike: 450, isPunished: false,
+                content: "솔직히 윤석열 징역 30년 맞고 당이 개판인데 유의동 의원 살아남은 건 기적 맞음. 근데 윤재훈이나 '자유와혁신' 황교안 빠는 극우 틀딱들은 제발 유의동 의원님 발목 좀 잡지 마라. 한동훈 데려와서 당 쇄신하겠다는데 웬 부정선거 타령에 좌파 프락치 음모론임?",
+                replies: [
+                    { nick: "Right_Wing_Normal", content: "ㄹㅇ 윤대환, 윤재훈, 자유와혁신 계열은 그냥 정계 은퇴가 답임. 지들 후보가 10%도 못 받아서 처참하게 깨졌으면 반성을 해야지, 유의동 이겼다고 투표함 까라질 않나 ㅋㅋㅋ 제정신이 아님." },
+                    { nick: "Political_Analyzer", content: "본인들 입맛에 맞는 극우 안 뽑혔다고 같은 당 중진한테 프락치 프레임 씌우는 거 보소. 유의동이 소장파 결집해서 당 갈아엎어야 보수가 산다." },
+                    { nick: "Stop_Fake_News", content: "파이낸스 투데이 같은 찌라시들이 '유의동 당선 = 선관위 조작' 이런 쓰레기 기사 또 쏟아내겠지 ㅋㅋㅋ" }
+                ]
+            },
+            {
+                nick: "Gokcheon_Resident", time: "10분 전", like: 11200, dislike: 32, isPunished: false,
+                content: "평택을 보니까 진보 진영 분열이 진짜 치명적이네. 우리는 곡천군 주언일 군수님 당선될 때 반대로 보수가 분열해서 (정용석 동생 출마) 0.89%p 차이로 기적같이 이겼는데. 선거는 진짜 트롤러가 없는 쪽이 이기는 듯.",
+                replies: [
+                    { nick: "Clear_Sky_00", content: "조국혁신당은 진짜 평택을에 왜 나온 건지 이해가 안 됨. 정책 비전도 없고 그냥 김용남 떨어뜨리러 나온 자객 같았음." }
+                ]
+            },
+            {
+                nick: "Democratic_Tears", time: "5분 전", like: 12800, dislike: 120, isPunished: false,
+                content: "마진시랑 평택을 선거 결과 보고 오늘 연차 내고 술 마시고 있습니다... 이길 수 있는 선거를 내부 총질로 날려 먹는 게 민주 진영 고질병이긴 한데, 이번엔 데미지가 너무 큽니다. 조국혁신당의 명분 없는 출마가 뼈아프네요.",
+                replies: [
+                    { nick: "Cider_Spritzer", content: "토닥토닥... 그래도 효빈시 78% 압승이랑 덕빈북도 치원, 모제, 곡천 탈환한 걸로 위안을 삼으십쇼 ㅠㅠ 혁신당 같은 폭탄은 한 번쯤 도려내는 게 장기적으로 당에 이득임." },
+                    { nick: "Blue_Bass_Ryo", content: "혁신당 저대로 뒀으면 4년 뒤엔 더 크게 뒤통수 쳤을 거임. 달달하게 빨아먹더니 지역구에서 뒤통수 치는 거 보고 정 다 떨어짐." }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('comment-list');
+        container.innerHTML = ""; 
+
+        commentsData.forEach((cmt, idx) => {
+            const div = document.createElement('div');
+            // 처벌받은 댓글(악플)이거나 베댓인 경우 스타일 분기
+            let isTroll = cmt.nick.includes("Yoon_Samo") || cmt.nick.includes("Patriot") || cmt.nick.includes("JCM_") || cmt.nick.includes("Yoon_Secret");
+            div.className = isTroll ? "best-comment border-red-300 bg-red-50" : (cmt.like > 1000 ? "best-comment" : "comment-item");
+            
+            let repliesHtml = "";
+            let replyButtonHtml = "";
+
+            if (cmt.replies && cmt.replies.length > 0) {
+                replyButtonHtml = `<span class="reply-toggle" onclick="toggleReply('reply-${idx}')">답글 ${cmt.replies.length}개 보기 ▼</span>`;
+                repliesHtml = `<div class="reply-container" id="reply-${idx}" style="display:block">`; // 기본으로 펼쳐둠
+
+                cmt.replies.forEach(reply => {
+                    const styleClass = reply.styleClass || "bg-gray-50 border border-gray-200";
+                    
+                    // 닉네임 색상 로직: 공식 계정은 파란색, 악플러는 빨간색, 나머지는 기본
+                    let nickClass = "text-gray-700 font-bold";
+                    if (reply.nick.includes("Yoon") || reply.nick.includes("Patriot") || reply.nick.includes("JCM_")) {
+                        nickClass = "text-red-600 font-bold";
+                    } else if (reply.nick.includes("[✅ 공식]")) {
+                        nickClass = "text-[#0055aa] font-bold";
+                    }
+
+                    repliesHtml += `
+                        <div class="reply-item ${styleClass}">
+                            <span class="${nickClass}">${reply.nick}</span>: 
+                            <span>${reply.content}</span>
+                        </div>`;
+                });
+                repliesHtml += `</div>`;
+            }
+
+            div.innerHTML = `
+                <div class="flex justify-between mb-2">
+                    <span class="font-bold text-sm ${isTroll ? 'text-red-600' : ''}">${cmt.nick}</span>
+                    <span class="text-xs text-gray-500">${cmt.time}</span>
+                </div>
+                <p class="text-sm mb-2 ${isTroll ? 'text-red-800 font-bold' : ''}">${cmt.content.replace(/\n/g, '<br>')}</p>
+                <div class="text-xs text-gray-500 mb-2 flex gap-3 items-center">
+                    <span class="vote-btn" onclick="toggleVote(this)">공감 <span class="count">${cmt.like.toLocaleString()}</span></span>
+                    <span class="vote-btn" onclick="toggleVote(this)">비공감 <span class="count">${cmt.dislike.toLocaleString()}</span></span>
+                    ${replyButtonHtml}
+                </div>
+                ${repliesHtml}
+            `;
+            container.appendChild(div);
+        });
+
+        function toggleReply(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') el.style.display = 'none';
+            else el.style.display = 'block';
+        }
+        
+        function toggleVote(btn) {
+            const parent = btn.parentElement;
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.innerText.replace(/,/g, ''));
+            if (btn.classList.contains('active') || btn.classList.contains('active-hate')) {
+                btn.classList.remove('active');
+                btn.classList.remove('active-hate');
+                count--;
+            } else {
+                if (btn.innerText.includes('비공감')) btn.classList.add('active-hate');
+                else btn.classList.add('active');
+                count++;
+            }
+            countSpan.innerText = count.toLocaleString();
+        }
+        function addComment() { alert("댓글이 등록되었습니다."); }
+    </script>
+    
+    <!-- 필수 외부 스크립트 (절대 생략 금지) -->
+    <script src="assets/hb_news_core.js"></script>
+
+</body>
+</html>
